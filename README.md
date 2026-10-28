@@ -24,6 +24,7 @@ tools/validate.py                 checks every exam file against the spec
 tools/build.py                    shuffles each exam, writes data/*.js and index.html, builds the PDFs
 tools/xcheck.py                   compares each transcription with the text of its source PDF
 tools/mjtest.html                 renders every string on the site with MathJax and reports TeX errors
+tools/find_new_exams.py           lists (and downloads) exams on the KFUPM page that are not built yet
 ```
 
 - **Site:** one static `index.html` (vanilla JavaScript, no framework), with MathJax 3 for the maths.
@@ -34,12 +35,56 @@ tools/mjtest.html                 renders every string on the site with MathJax 
   re-solved and verified in Python (SymPy). The official key is always used. Where the official key
   looks wrong, or a question was missing from the published file, it is documented in [NOTES.md](NOTES.md).
 
-Rebuild everything:
+## How to update and how it works
+
+### How to update
+
+When KFUPM publishes new old exams:
+
+1. Open this folder in Claude Code and type `/update-old-exams` (or say "check for new old exams").
+2. Wait for the report. It lists the new exams it added and anything doubtful (for example an official
+   key that looks wrong).
+3. Look at the new exam on the local preview if you like, then commit and push yourself. The skill never
+   commits or pushes.
+
+To only check what is new, without Claude:
+
+```
+python -I tools/find_new_exams.py              # list exams on the KFUPM page that are not built yet
+python -I tools/find_new_exams.py --download   # also download their PDFs to ../Ice_Math_OldExams_sources/
+```
+
+To rebuild everything by hand:
 
 ```
 python -I tools/validate.py src/*/*.json
 python -I tools/build.py
 ```
+
+### How it works
+
+The update is a pipeline. Scripts do the mechanical parts; Claude only does the part that needs judgement
+(reading and solving an exam).
+
+1. **Find** (script, no AI): `tools/find_new_exams.py` reads the KFUPM exam page, turns every link into
+   course, term and kind (Major I = `e1`, Major II = `e2`, Final = `fx`; Stat 319 counts as Stat 201), and
+   compares that with the files in `src/`. Exams we deliberately skip are listed with a reason in
+   `tools/known_skips.json`, so they are not reported again.
+2. **Download** (script): the new PDFs go to `../Ice_Math_OldExams_sources/<course>/`, outside the repo.
+3. **Build the exam** (Claude, following `.claude/skills/update-old-exams/SKILL.md`): Claude reads each page
+   as an image, transcribes the master version, solves and verifies every answer in Python, writes the
+   hints and the step-by-step solution, and saves one JSON file per exam in `src/<course>/`. The format
+   and rules are in `tools/SPEC.md`.
+4. **Check** (scripts): `tools/validate.py` checks the JSON (format, LaTeX that would break, duplicate
+   choices, table columns); `tools/xcheck.py` compares the transcription with the PDF text;
+   `tools/mjtest.html` renders every string on the site and reports maths errors.
+5. **Build** (script): `tools/build.py` shuffles each exam once with a fixed seed, writes the site data
+   (`data/`), `index.html` and the PDFs (`pdf/`). The website and the PDF always use the same order.
+6. **Record**: the skill adds what changed to `NOTES.md` and updates the counts in this README and
+   `PROGRESS.md`. Then you commit and push.
+
+The skill works in the main Claude session and does not start subagents unless you ask for them in your
+request, because they cost a lot of usage.
 
 ## Found a mistake?
 

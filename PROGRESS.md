@@ -25,4 +25,7 @@ Total: 154 exams. Build everything: `python -I tools/build.py` (writes data/, pd
 Total now 154 exams.
 
 ## If something needs redoing
-Sources: ../Ice_Math_OldExams_sources/<course>/<term>-<kind>.pdf. Rebuild one exam with the exam-builder agent (see .claude/agents/exam-builder.md), then validate, cross-check and build.
+Sources: ../Ice_Math_OldExams_sources/<course>/<term>-<kind>.pdf. Redo one exam in the main session following step 2 of the update-old-exams skill (rules: .claude/agents/exam-builder.md); use subagents only if the owner asks. Then validate, cross-check and build.
+
+## Adding new exams later
+Use the `/update-old-exams` skill (.claude/skills/update-old-exams/SKILL.md): `python -I tools/find_new_exams.py` lists what is new; exams deliberately not built are in tools/known_skips.json.
