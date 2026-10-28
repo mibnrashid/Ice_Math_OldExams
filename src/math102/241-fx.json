@@ -1,0 +1,480 @@
+{
+  "course": "math102",
+  "term": "241",
+  "kind": "fx",
+  "date": "19 December 2024",
+  "minutes": 120,
+  "source": "math102-241-fx.pdf",
+  "note": "No official key; answers derived and verified (hand work and sympy). The master lists choice (a) first for every question and this agrees with the derived answers. Red source annotations (textbook references) were not transcribed. Date and 120 minutes are printed on the cover.",
+  "qs": [
+    {
+      "sec": "9.10",
+      "q": "The Maclaurin series for the function $f(x)=\\cos^2 x$ is:",
+      "opts": [
+        "$\\dfrac12\\left[1+\\sum_{n=0}^{\\infty}\\dfrac{(-1)^n(2x)^{2n}}{(2n)!}\\right]$",
+        "$\\sum_{n=0}^{\\infty}\\dfrac{(-1)^n(2x)^{2n}}{(2n)!}$",
+        "$1+\\sum_{n=0}^{\\infty}\\dfrac{(-1)^n(2x)^{2n}}{(2n)!}$",
+        "$\\dfrac12+\\sum_{n=0}^{\\infty}\\dfrac{(-1)^n(2x)^{2n}}{(2n)!}$",
+        "$\\dfrac12\\left[1+\\sum_{n=0}^{\\infty}\\dfrac{(-1)^n(2x)^{n}}{n!}\\right]$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Rewrite the square of cosine with a trigonometric identity so that a known Maclaurin series applies.",
+        "Express $\\cos^2 x$ in terms of $\\cos 2x$, then substitute $2x$ into the cosine series.",
+        "$\\cos^2\\theta=\\dfrac{1+\\cos 2\\theta}{2}$ and $\\cos u=\\sum_{n=0}^{\\infty}\\dfrac{(-1)^n u^{2n}}{(2n)!}$."
+      ],
+      "steps": [
+        "$\\cos^2x=\\dfrac{1+\\cos 2x}{2}$.",
+        "$\\cos 2x=\\sum_{n=0}^{\\infty}\\dfrac{(-1)^n(2x)^{2n}}{(2n)!}$.",
+        "So $\\cos^2x=\\dfrac12\\left[1+\\sum_{n=0}^{\\infty}\\dfrac{(-1)^n(2x)^{2n}}{(2n)!}\\right]$ (check: the constant term is $\\frac12(1+1)=1=\\cos^2 0$)."
+      ],
+      "brief": "$\\cos^2x=\\frac{1+\\cos2x}{2}$, then use the cosine series with $u=2x$."
+    },
+    {
+      "sec": "9.9",
+      "q": "A power series for $f(x)=\\ln x$ centered at $x=1$ is",
+      "opts": [
+        "$\\sum_{n=0}^{\\infty}(-1)^n\\dfrac{(x-1)^{n+1}}{n+1}$",
+        "$\\sum_{n=0}^{\\infty}\\dfrac{(x-1)^{n+1}}{n+1}$",
+        "$\\sum_{n=0}^{\\infty}\\dfrac{x^{n+1}}{n+1}$",
+        "$\\sum_{n=0}^{\\infty}(-1)^n(x-1)^{n+1}$",
+        "$\\sum_{n=0}^{\\infty}(-1)^n\\dfrac{(x-1)^{n}}{n+2}$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Obtain the series for the logarithm by integrating a geometric series term by term.",
+        "Write $\\ln x=\\int_1^x\\frac{dt}{t}$ and expand $\\frac1t$ as a geometric series in powers of $(t-1)$.",
+        "$\\dfrac1{1+u}=\\sum_{n=0}^{\\infty}(-1)^nu^n$ for $|u|<1$, and a power series can be integrated term by term."
+      ],
+      "steps": [
+        "$\\dfrac1x=\\dfrac1{1+(x-1)}=\\sum_{n=0}^{\\infty}(-1)^n(x-1)^n$ for $|x-1|<1$.",
+        "Integrate: $\\ln x=\\sum_{n=0}^{\\infty}(-1)^n\\dfrac{(x-1)^{n+1}}{n+1}+C$.",
+        "At $x=1$ both sides are $0$, so $C=0$.",
+        "Hence $\\ln x=\\sum_{n=0}^{\\infty}(-1)^n\\dfrac{(x-1)^{n+1}}{n+1}$."
+      ],
+      "brief": "Integrate $\\frac1x=\\sum(-1)^n(x-1)^n$: $\\ln x=\\sum(-1)^n\\frac{(x-1)^{n+1}}{n+1}$."
+    },
+    {
+      "sec": "9.8",
+      "q": "The interval of convergence for $\\sum_{n=1}^{\\infty}\\dfrac{(-1)^nx^n}{n}$ is",
+      "opts": [
+        "$(-1,1]$",
+        "$[-1,1)$",
+        "$[-1,1]$",
+        "$(-1,1)$",
+        "$(-\\infty,\\infty)$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Find the radius of convergence first, then test the two endpoints separately.",
+        "Apply the ratio test to find where the series converges absolutely, then substitute each endpoint into the series.",
+        "If $\\lim|a_{n+1}/a_n|=L$, the series converges for $L<1$ and diverges for $L>1$. The harmonic series $\\sum\\frac1n$ diverges; an alternating series with decreasing terms tending to $0$ converges."
+      ],
+      "steps": [
+        "Ratio test: $\\left|\\dfrac{x^{n+1}/(n+1)}{x^n/n}\\right|=|x|\\dfrac{n}{n+1}\\to|x|$, so $R=1$.",
+        "At $x=1$: $\\sum\\dfrac{(-1)^n}{n}$ converges by the Alternating Series Test.",
+        "At $x=-1$: $\\sum\\dfrac{(-1)^n(-1)^n}{n}=\\sum\\dfrac1n$ diverges (harmonic).",
+        "Interval of convergence: $(-1,1]$."
+      ],
+      "brief": "$R=1$; converges at $x=1$ (alternating), diverges at $x=-1$ (harmonic): $(-1,1]$."
+    },
+    {
+      "sec": "9.7",
+      "q": "If a Taylor polynomial for $f(x)=\\dfrac2x$ centered at $c=1$ is written in the form $p_3(x)=a_3x^3+a_2x^2+a_1x+a_0$, then $a_3+a_2+a_1+a_0=$",
+      "opts": [
+        "$2$",
+        "$1$",
+        "$0$",
+        "$-1$",
+        "$-2$"
+      ],
+      "ans": 0,
+      "hints": [
+        "The requested sum is the value of the polynomial at one particular input.",
+        "Do not expand the polynomial. Instead, find which value of $x$ makes $a_3+a_2+a_1+a_0$ equal to $p_3(x)$, and use what is known about $p_3$ at its center.",
+        "The Taylor polynomial of degree $n$ at $c$ satisfies $p_n(c)=f(c)$, and $p_n(1)=a_n+\\dots+a_1+a_0$ for $p_n(x)=a_nx^n+\\dots+a_0$."
+      ],
+      "steps": [
+        "$a_3+a_2+a_1+a_0=p_3(1)$.",
+        "Since the polynomial is centered at $c=1$, $p_3(1)=f(1)$.",
+        "$f(1)=\\dfrac21=2$."
+      ],
+      "brief": "Sum of coefficients $=p_3(1)=f(1)=2$ (the polynomial is $8-12x+8x^2-2x^3$)."
+    },
+    {
+      "sec": "9.6",
+      "q": "By calculating $L=\\lim_{n\\to\\infty}\\sqrt[n]{|a_n|}$, where $a_n=\\dfrac{(n!)^n}{(n^n)^2}$, the series $\\sum_{n=1}^{\\infty}a_n$",
+      "opts": [
+        "diverges and $L=\\infty$",
+        "converges and $L=0$",
+        "converges and $L=\\dfrac12$",
+        "diverges and $L=2$",
+        "converges and $L=1$"
+      ],
+      "ans": 0,
+      "hints": [
+        "This is the root test.",
+        "Take the $n$th root of $a_n$ and simplify the powers of $n$ before taking the limit.",
+        "Root test: with $L=\\lim\\sqrt[n]{|a_n|}$, the series converges if $L<1$ and diverges if $L>1$ (including $L=\\infty$); also $(n^n)^2=n^{2n}$ and $n!$ grows faster than any fixed power of $n$."
+      ],
+      "steps": [
+        "$a_n=\\dfrac{(n!)^n}{n^{2n}}$, so $\\sqrt[n]{a_n}=\\dfrac{n!}{n^2}$.",
+        "$\\dfrac{n!}{n^2}=\\dfrac{(n-1)!}{n}=(n-2)!\\cdot\\dfrac{n-1}{n}\\to\\infty$ (for $n\\ge2$).",
+        "So $L=\\infty>1$ and the series diverges."
+      ],
+      "brief": "$\\sqrt[n]{a_n}=\\frac{n!}{n^2}\\to\\infty$, so $L=\\infty$ and the series diverges."
+    },
+    {
+      "sec": "9.5",
+      "q": "The series $\\sum_{n=2}^{\\infty}\\dfrac{(-1)^n}{n\\ln n}$",
+      "opts": [
+        "converges conditionally",
+        "diverges",
+        "converges absolutely",
+        "diverges by the Alternating Series Test",
+        "converges absolutely by the Integral Test"
+      ],
+      "ans": 0,
+      "hints": [
+        "Check convergence of the alternating series, then of the series of absolute values.",
+        "Use the Alternating Series Test, then apply the Integral Test to $\\sum\\frac1{n\\ln n}$.",
+        "Alternating Series Test: $b_n$ decreasing with $b_n\\to0$ gives convergence. Integral Test: $\\sum f(n)$ and $\\int f$ converge or diverge together for positive decreasing $f$; also $\\int\\frac{du}{u}=\\ln|u|$."
+      ],
+      "steps": [
+        "$b_n=\\dfrac1{n\\ln n}$ is positive, decreasing, and tends to $0$, so the series converges.",
+        "Absolute values: $\\int_2^{\\infty}\\dfrac{dx}{x\\ln x}=\\lim_{b\\to\\infty}\\ln(\\ln x)\\Big|_2^b=\\infty$.",
+        "So $\\sum\\frac1{n\\ln n}$ diverges, and the original series converges conditionally."
+      ],
+      "brief": "Alternating test gives convergence; $\\int_2^\\infty\\frac{dx}{x\\ln x}$ diverges: conditional."
+    },
+    {
+      "sec": "9.5",
+      "q": "The least number of terms required to approximate the sum of the series $\\sum_{n=1}^{\\infty}\\dfrac{(-1)^{n+1}}{n^4}$ with an error of less than $0.001$ is",
+      "opts": [
+        "$5$",
+        "$7$",
+        "$9$",
+        "$4$",
+        "$8$"
+      ],
+      "ans": 0,
+      "hints": [
+        "This is an alternating series, so use the alternating series remainder estimate.",
+        "The error after $N$ terms is at most the first omitted term; require it to be less than $0.001$ and find the smallest $N$.",
+        "For a convergent alternating series with decreasing terms $b_n\\to0$, $|S-S_N|\\le b_{N+1}$."
+      ],
+      "steps": [
+        "Here $b_n=\\dfrac1{n^4}$, decreasing to $0$, so $|R_N|\\le b_{N+1}=\\dfrac1{(N+1)^4}$.",
+        "Need $\\dfrac1{(N+1)^4}<0.001$, i.e. $(N+1)^4>1000$.",
+        "$5^4=625<1000$ and $6^4=1296>1000$, so $N+1\\ge6$, i.e. $N\\ge5$.",
+        "The least number of terms is $5$."
+      ],
+      "brief": "$|R_N|\\le\\frac1{(N+1)^4}<0.001\\Rightarrow N+1\\ge6$, so $N=5$ terms."
+    },
+    {
+      "sec": "9.4",
+      "q": "Which one of the following series is convergent? \\[ \\text{I) }\\sum_{n=1}^{\\infty}\\frac{n}{n^2+1}\\qquad \\text{II) }\\sum_{n=1}^{\\infty}\\frac{2^n+1}{5^n+1}\\qquad \\text{III) }\\sum_{n=1}^{\\infty}\\sin\\frac1n \\]",
+      "opts": [
+        "II only",
+        "I and II only",
+        "II and III only",
+        "I and III only",
+        "I, II, and III"
+      ],
+      "ans": 0,
+      "hints": [
+        "Compare each series with a simpler series using comparison or limit comparison.",
+        "For each, find the dominant behaviour of the general term and compare with a $p$-series or a geometric series.",
+        "Limit comparison: if $\\lim a_n/b_n=c$ with $0<c<\\infty$, then $\\sum a_n$ and $\\sum b_n$ behave alike. $\\sum\\frac1{n^p}$ converges iff $p>1$; $\\sum r^n$ converges iff $|r|<1$; $\\lim_{u\\to0}\\frac{\\sin u}{u}=1$."
+      ],
+      "steps": [
+        "I: $\\dfrac{n/(n^2+1)}{1/n}\\to1$, and $\\sum\\frac1n$ diverges, so I diverges.",
+        "II: $\\dfrac{(2^n+1)/(5^n+1)}{(2/5)^n}\\to1$, and $\\sum(2/5)^n$ converges, so II converges.",
+        "III: $\\dfrac{\\sin(1/n)}{1/n}\\to1$, and $\\sum\\frac1n$ diverges, so III diverges.",
+        "Only II converges."
+      ],
+      "brief": "I and III behave like $\\sum\\frac1n$ (diverge); II behaves like $\\sum(2/5)^n$ (converges)."
+    },
+    {
+      "sec": "9.3",
+      "q": "Which one of the following series is divergent? \\[ \\text{I) }\\sum_{n=1}^{\\infty}\\frac{1}{n^{5/3}}\\qquad \\text{II) }\\sum_{n=1}^{\\infty}\\frac{1}{\\sqrt[5]{n}}\\qquad \\text{III) }\\sum_{n=1}^{\\infty}ne^{-n/2} \\]",
+      "opts": [
+        "II only",
+        "I and II only",
+        "II and III only",
+        "I and III only",
+        "I, II, and III"
+      ],
+      "ans": 0,
+      "hints": [
+        "Identify a $p$-series among them and use the Integral Test or Ratio Test for the others.",
+        "Write the general terms with exponents of $n$ and compare each exponent with $1$; for the exponential one, use the ratio test.",
+        "$\\sum\\frac1{n^p}$ converges iff $p>1$; ratio test: $L=\\lim|a_{n+1}/a_n|<1$ means convergence."
+      ],
+      "steps": [
+        "I: $p=\\frac53>1$, so I converges.",
+        "II: $\\dfrac1{\\sqrt[5]{n}}=\\dfrac1{n^{1/5}}$ with $p=\\frac15\\le1$, so II diverges.",
+        "III: $\\dfrac{a_{n+1}}{a_n}=\\dfrac{n+1}{n}e^{-1/2}\\to e^{-1/2}<1$, so III converges.",
+        "Only II diverges."
+      ],
+      "brief": "I: $p=\\frac53>1$ converges; II: $p=\\frac15$ diverges; III: ratio $\\to e^{-1/2}<1$ converges."
+    },
+    {
+      "sec": "9.2",
+      "q": "$\\sum_{n=0}^{\\infty}\\dfrac{3}{2^n}+\\sum_{n=1}^{\\infty}\\dfrac{2}{4n^2-1}=$",
+      "opts": [
+        "$7$",
+        "$9$",
+        "$5$",
+        "$11$",
+        "$10$"
+      ],
+      "ans": 0,
+      "hints": [
+        "One series is geometric and the other is telescoping.",
+        "Sum the geometric series with the formula, and split the second general term into two fractions by partial fractions.",
+        "Geometric series: $\\sum_{n=0}^{\\infty}ar^n=\\dfrac{a}{1-r}$ for $|r|<1$. Telescoping: if $a_n=b_n-b_{n+1}$ and $b_n\\to0$, then $\\sum_{n=1}^{\\infty}a_n=b_1$."
+      ],
+      "steps": [
+        "$\\sum_{n=0}^{\\infty}3\\left(\\tfrac12\\right)^n=\\dfrac{3}{1-\\frac12}=6$.",
+        "$\\dfrac{2}{4n^2-1}=\\dfrac{2}{(2n-1)(2n+1)}=\\dfrac1{2n-1}-\\dfrac1{2n+1}$.",
+        "The partial sums telescope to $1-\\dfrac1{2N+1}\\to1$.",
+        "Total: $6+1=7$."
+      ],
+      "brief": "Geometric sum $=6$; telescoping $\\frac1{2n-1}-\\frac1{2n+1}$ sums to $1$; total $7$."
+    },
+    {
+      "sec": "9.1",
+      "q": "The sequence $a_n=\\dfrac{n^2}{2^n-1}$",
+      "opts": [
+        "converges and its limit equals $0$",
+        "diverges",
+        "converges and its limit equals $1$",
+        "converges and its limit equals $4$",
+        "converges and its limit equals $2$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Compare the growth rate of a polynomial with that of an exponential.",
+        "The limit has the form $\\infty/\\infty$ as $n\\to\\infty$, so apply L'Hopital's rule to the corresponding function of $x$.",
+        "If $\\lim_{x\\to\\infty}f(x)=L$, then $\\lim_{n\\to\\infty}f(n)=L$; exponentials $b^x$ with $b>1$ grow faster than any power of $x$."
+      ],
+      "steps": [
+        "Consider $f(x)=\\dfrac{x^2}{2^x-1}$, of the form $\\infty/\\infty$.",
+        "L'Hopital: $\\dfrac{2x}{2^x\\ln2}$, still $\\infty/\\infty$; again: $\\dfrac{2}{2^x(\\ln2)^2}\\to0$.",
+        "So $\\lim a_n=0$ and the sequence converges to $0$."
+      ],
+      "brief": "L'Hopital twice: $\\frac{2}{2^x(\\ln2)^2}\\to0$, so the limit is $0$."
+    },
+    {
+      "sec": "8.8",
+      "q": "$\\int_1^{\\infty}(1-x)e^{-x}\\,dx=$",
+      "opts": [
+        "converges to $\\dfrac{-1}{e}$",
+        "diverges",
+        "converges to $e$",
+        "converges to $1$",
+        "converges to $0$"
+      ],
+      "ans": 0,
+      "hints": [
+        "This is an improper integral with an infinite limit; the integrand is a polynomial times an exponential.",
+        "Find an antiderivative using integration by parts, then take the limit of the upper bound.",
+        "$\\int_a^{\\infty}f\\,dx=\\lim_{b\\to\\infty}\\int_a^bf\\,dx$; integration by parts is $\\int u\\,dv=uv-\\int v\\,du$; $xe^{-x}\\to0$ as $x\\to\\infty$."
+      ],
+      "steps": [
+        "Parts with $u=1-x$, $dv=e^{-x}dx$: $\\int(1-x)e^{-x}dx=-(1-x)e^{-x}-\\int e^{-x}dx=-(1-x)e^{-x}+e^{-x}=xe^{-x}$.",
+        "So $\\int_1^b(1-x)e^{-x}dx=be^{-b}-e^{-1}$.",
+        "As $b\\to\\infty$, $be^{-b}\\to0$, so the integral equals $-\\dfrac1e$."
+      ],
+      "brief": "Antiderivative $xe^{-x}$; $\\lim_{b\\to\\infty}(be^{-b}-e^{-1})=-\\frac1e$."
+    },
+    {
+      "sec": "8.8",
+      "q": "$\\int_{-1}^{2}\\dfrac{dx}{x^3}$",
+      "opts": [
+        "diverges",
+        "converges to $\\dfrac38$",
+        "converges to $3$",
+        "converges to $0$",
+        "converges to $1$"
+      ],
+      "ans": 0,
+      "hints": [
+        "The integrand is undefined inside the interval, so this is an improper integral.",
+        "Split the integral at the discontinuity and examine each piece as a limit.",
+        "If $f$ is discontinuous at an interior point $c$, then $\\int_a^bf=\\int_a^cf+\\int_c^bf$, and the integral converges only if both pieces converge; $\\int_0^1x^{-p}dx$ converges iff $p<1$."
+      ],
+      "steps": [
+        "The integrand is unbounded at $x=0$, inside $[-1,2]$, so split: $\\int_{-1}^0+\\int_0^2$.",
+        "$\\int_0^2\\dfrac{dx}{x^3}=\\lim_{a\\to0^+}\\left[-\\dfrac1{2x^2}\\right]_a^2=\\lim_{a\\to0^+}\\left(-\\dfrac18+\\dfrac1{2a^2}\\right)=\\infty$.",
+        "One piece diverges, so the whole integral diverges (it is not $0$ by symmetry cancellation)."
+      ],
+      "brief": "$\\int_0^2x^{-3}dx$ diverges ($p=3\\ge1$), so the integral diverges."
+    },
+    {
+      "sec": "8.5",
+      "q": "$\\int\\dfrac{5}{x^2+3x-4}\\,dx=$",
+      "opts": [
+        "$\\ln\\left|\\dfrac{x-1}{x+4}\\right|+c$",
+        "$\\left|\\dfrac{x+1}{x+4}\\right|+c$",
+        "$\\ln\\left|\\dfrac{x+1}{x-4}\\right|+c$",
+        "$\\ln\\left|\\dfrac{x+4}{x+1}\\right|+c$",
+        "$\\left|\\dfrac{x+4}{x+1}\\right|+c$"
+      ],
+      "ans": 0,
+      "hints": [
+        "The integrand is a rational function whose denominator factors.",
+        "Factor the denominator and decompose into partial fractions.",
+        "For distinct linear factors, $\\dfrac{P}{(x-a)(x-b)}=\\dfrac{A}{x-a}+\\dfrac{B}{x-b}$, and $\\int\\dfrac{dx}{x-a}=\\ln|x-a|$."
+      ],
+      "steps": [
+        "$x^2+3x-4=(x+4)(x-1)$.",
+        "$\\dfrac{5}{(x+4)(x-1)}=\\dfrac{A}{x-1}+\\dfrac{B}{x+4}$ gives $A=1$ (at $x=1$) and $B=-1$ (at $x=-4$).",
+        "$\\int\\left(\\dfrac1{x-1}-\\dfrac1{x+4}\\right)dx=\\ln|x-1|-\\ln|x+4|+c$.",
+        "$=\\ln\\left|\\dfrac{x-1}{x+4}\\right|+c$."
+      ],
+      "brief": "$\\frac{5}{(x-1)(x+4)}=\\frac1{x-1}-\\frac1{x+4}$, so $\\ln\\left|\\frac{x-1}{x+4}\\right|+c$."
+    },
+    {
+      "sec": "8.4",
+      "q": "$\\int\\dfrac{dx}{x^2\\sqrt{9-x^2}}=$",
+      "opts": [
+        "$-\\dfrac{\\sqrt{9-x^2}}{9x}+c$",
+        "$\\dfrac{\\sqrt{9-x^2}}{9x}+c$",
+        "$-\\dfrac{\\sqrt{9-x^2}}{x}+c$",
+        "$-\\dfrac{\\sqrt{9-x^2}}{9x^2}+c$",
+        "$\\dfrac{\\sqrt{9-x^2}}{9x^2}+c$"
+      ],
+      "ans": 0,
+      "hints": [
+        "The integrand contains $\\sqrt{a^2-x^2}$, so use a trigonometric substitution.",
+        "Let $x=3\\sin\\theta$, simplify to an integral in $\\theta$, and convert back using a right triangle.",
+        "For $\\sqrt{a^2-x^2}$ use $x=a\\sin\\theta$, $dx=a\\cos\\theta\\,d\\theta$, $\\sqrt{a^2-x^2}=a\\cos\\theta$; and $\\int\\csc^2\\theta\\,d\\theta=-\\cot\\theta+C$."
+      ],
+      "steps": [
+        "$x=3\\sin\\theta$, $dx=3\\cos\\theta\\,d\\theta$, $\\sqrt{9-x^2}=3\\cos\\theta$.",
+        "$\\int\\dfrac{3\\cos\\theta\\,d\\theta}{9\\sin^2\\theta\\cdot3\\cos\\theta}=\\dfrac19\\int\\csc^2\\theta\\,d\\theta=-\\dfrac19\\cot\\theta+c$.",
+        "From the triangle, $\\cot\\theta=\\dfrac{\\sqrt{9-x^2}}{x}$.",
+        "So the integral is $-\\dfrac{\\sqrt{9-x^2}}{9x}+c$."
+      ],
+      "brief": "$x=3\\sin\\theta$: $\\frac19\\int\\csc^2\\theta\\,d\\theta=-\\frac19\\cot\\theta=-\\frac{\\sqrt{9-x^2}}{9x}+c$."
+    },
+    {
+      "sec": "8.2",
+      "q": "$\\int\\dfrac{\\ln x}{x^3}\\,dx=$",
+      "opts": [
+        "$-\\dfrac{1}{2x^2}\\ln x-\\dfrac1{4x^2}+c$",
+        "$-\\dfrac1{x^2}\\ln x-\\dfrac1{4x^2}+c$",
+        "$-\\dfrac1{2x^2}\\ln x+\\dfrac1{2x^2}+c$",
+        "$-\\dfrac1{2x^2}\\ln x+\\dfrac1{4x^2}+c$",
+        "$-\\dfrac1{x^2}\\ln x+\\dfrac1{x^2}+c$"
+      ],
+      "ans": 0,
+      "hints": [
+        "A logarithm times a power of $x$ suggests integration by parts.",
+        "Choose $u=\\ln x$ (it simplifies on differentiation) and $dv=x^{-3}dx$.",
+        "$\\int u\\,dv=uv-\\int v\\,du$ and $\\int x^n\\,dx=\\dfrac{x^{n+1}}{n+1}$ for $n\\neq-1$."
+      ],
+      "steps": [
+        "$u=\\ln x$, $dv=x^{-3}dx$, so $du=\\dfrac{dx}{x}$ and $v=-\\dfrac1{2x^2}$.",
+        "$\\int\\dfrac{\\ln x}{x^3}dx=-\\dfrac{\\ln x}{2x^2}+\\dfrac12\\int x^{-3}dx$.",
+        "$\\dfrac12\\int x^{-3}dx=\\dfrac12\\left(-\\dfrac1{2x^2}\\right)=-\\dfrac1{4x^2}$.",
+        "Result: $-\\dfrac1{2x^2}\\ln x-\\dfrac1{4x^2}+c$."
+      ],
+      "brief": "By parts, $u=\\ln x$, $dv=x^{-3}dx$: $-\\frac{\\ln x}{2x^2}-\\frac1{4x^2}+c$."
+    },
+    {
+      "sec": "7.2",
+      "q": "The volume of the solid generated by revolving the region bounded by the graphs of $y=\\sqrt x$, $y=0$, and $x=3$ about the $x$-axis is",
+      "opts": [
+        "$\\dfrac{9\\pi}{2}$",
+        "$\\dfrac{7\\pi}{2}$",
+        "$\\dfrac{11\\pi}{2}$",
+        "$\\dfrac{13\\pi}{2}$",
+        "$\\dfrac{15\\pi}{2}$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Revolving a region that touches the axis of revolution gives a solid made of disks.",
+        "Find the $x$-limits from the curves ($y=\\sqrt{x}$ meets $y=0$ at the origin), and set up the disk integral with radius $\\sqrt{x}$.",
+        "Disk method about the $x$-axis: $V=\\pi\\int_a^b[R(x)]^2\\,dx$."
+      ],
+      "steps": [
+        "The region lies over $0\\le x\\le3$ with radius $R=\\sqrt x$.",
+        "$V=\\pi\\int_0^3(\\sqrt x)^2dx=\\pi\\int_0^3x\\,dx$.",
+        "$=\\pi\\left[\\dfrac{x^2}{2}\\right]_0^3=\\dfrac{9\\pi}{2}$."
+      ],
+      "brief": "Disks: $V=\\pi\\int_0^3x\\,dx=\\frac{9\\pi}{2}$."
+    },
+    {
+      "sec": "7.1",
+      "q": "The area of the region bounded by the graphs of the equations $y=x^2-1$, $y=-x+2$, $x=0$ and $x=1$ is",
+      "opts": [
+        "$\\dfrac{13}{6}$",
+        "$\\dfrac{13}{5}$",
+        "$\\dfrac{17}{6}$",
+        "$\\dfrac{13}{4}$",
+        "$\\dfrac{13}{2}$"
+      ],
+      "ans": 0,
+      "hints": [
+        "The region lies between two curves over a given $x$-interval.",
+        "Decide which curve is on top over $[0,1]$ (check that the curves do not cross there), then integrate top minus bottom.",
+        "Area between curves: $A=\\int_a^b[f(x)-g(x)]\\,dx$ where $f\\ge g$ on $[a,b]$."
+      ],
+      "steps": [
+        "Compare: $(-x+2)-(x^2-1)=3-x-x^2$, which is $3$ and $1$ at $x=0,1$, and its roots $\\frac{-1\\pm\\sqrt{13}}2$ (about $1.30$ and $-2.30$) lie outside $[0,1]$, so the line is on top throughout.",
+        "$A=\\int_0^1(3-x-x^2)\\,dx$.",
+        "$=\\left[3x-\\dfrac{x^2}{2}-\\dfrac{x^3}{3}\\right]_0^1=3-\\dfrac12-\\dfrac13=\\dfrac{13}{6}$."
+      ],
+      "brief": "Top $y=-x+2$: $\\int_0^1(3-x-x^2)dx=3-\\frac12-\\frac13=\\frac{13}{6}$."
+    },
+    {
+      "sec": "5.5",
+      "q": "$\\int\\dfrac1{t^2}\\left(2^{-1/t}\\right)dt=$",
+      "opts": [
+        "$\\dfrac{2^{-1/t}}{\\ln2}+c$",
+        "$2^{-1/t}+c$",
+        "$\\dfrac{-2^{-1/t}}{\\ln2}+c$",
+        "$-2^{-1/t}+c$",
+        "$\\dfrac{2^{1/t}}{\\ln2}+c$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Look for an inner function whose derivative appears elsewhere in the integrand, so use substitution.",
+        "Let $u$ be the exponent of the power of $2$ and compute $du$.",
+        "$\\int a^u\\,du=\\dfrac{a^u}{\\ln a}+C$ for $a>0,\\ a\\neq1$."
+      ],
+      "steps": [
+        "Let $u=-\\dfrac1t$, so $du=\\dfrac1{t^2}dt$.",
+        "$\\int2^u\\,du=\\dfrac{2^u}{\\ln2}+c$.",
+        "Substitute back: $\\dfrac{2^{-1/t}}{\\ln2}+c$."
+      ],
+      "brief": "$u=-1/t$, $du=dt/t^2$: $\\int2^u\\,du=\\frac{2^{-1/t}}{\\ln2}+c$."
+    },
+    {
+      "sec": "5.5",
+      "q": "$\\int_1^e\\dfrac{\\ln x}{x}\\,dx=$",
+      "opts": [
+        "$\\dfrac12$",
+        "$1$",
+        "$0$",
+        "$\\dfrac1e$",
+        "$e$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Use substitution: the derivative of $\\ln x$ appears in the integrand.",
+        "Let $u=\\ln x$ and change the limits of integration as well.",
+        "With $u=g(x)$: $\\int_a^bf(g(x))g'(x)\\,dx=\\int_{g(a)}^{g(b)}f(u)\\,du$, and $\\int u\\,du=\\frac{u^2}{2}$."
+      ],
+      "steps": [
+        "$u=\\ln x$, $du=\\dfrac{dx}{x}$; $x=1\\Rightarrow u=0$, $x=e\\Rightarrow u=1$.",
+        "$\\int_0^1u\\,du=\\dfrac{u^2}{2}\\Big|_0^1$.",
+        "$=\\dfrac12$."
+      ],
+      "brief": "$u=\\ln x$: $\\int_0^1u\\,du=\\frac12$."
+    }
+  ]
+}

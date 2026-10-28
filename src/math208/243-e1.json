@@ -1,0 +1,368 @@
+{
+  "course": "math208",
+  "term": "243",
+  "kind": "e1",
+  "date": "3 July 2025",
+  "minutes": 90,
+  "source": "math208-243-e1.pdf",
+  "qs": [
+    {
+      "sec": "1.6",
+      "q": "If the differential equation \\[ \\left(5x^4-4x^3y^3\\right)dx+\\left(5+kx^4y^2\\right)dy=0 \\] is an exact differential equation, then $k=$",
+      "opts": [
+        "$-3$",
+        "$-4$",
+        "$-5$",
+        "$-6$",
+        "$-7$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Use the test for exactness of $M\\,dx+N\\,dy=0$.",
+        "Identify $M$ and $N$, then compute $\\partial M/\\partial y$ and $\\partial N/\\partial x$ and set them equal.",
+        "$M\\,dx+N\\,dy=0$ is exact if and only if $M_y=N_x$."
+      ],
+      "steps": [
+        "$M=5x^4-4x^3y^3$, so $M_y=-12x^3y^2$.",
+        "$N=5+kx^4y^2$, so $N_x=4kx^3y^2$.",
+        "Exactness $M_y=N_x$ gives $4k=-12$, so $k=-3$."
+      ],
+      "brief": "$M_y=-12x^3y^2$, $N_x=4kx^3y^2$, so $4k=-12$ and $k=-3$."
+    },
+    {
+      "sec": "1.1",
+      "q": "The sum of all values of $r$ such that $y=x^r$ is a solution of the differential equation \\[ 3x^2y''+6xy'+y=0 \\] is",
+      "opts": [
+        "$-1$",
+        "$-2$",
+        "$-3$",
+        "$-4$",
+        "$-5$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Substituting a power $y=x^r$ into the equation gives an equation for $r$.",
+        "Compute $y'$ and $y''$ for $y=x^r$, substitute, and divide by $x^r$.",
+        "For $y=x^r$: $y'=rx^{r-1}$ and $y''=r(r-1)x^{r-2}$. The roots of $ar^2+br+c=0$ are $r=\\dfrac{-b\\pm\\sqrt{b^2-4ac}}{2a}$, and they add up to $-\\dfrac{b}{a}$."
+      ],
+      "steps": [
+        "With $y=x^r$: $y'=rx^{r-1}$, $y''=r(r-1)x^{r-2}$.",
+        "Substitute: $3r(r-1)x^r+6rx^r+x^r=0$, so $3r^2+3r+1=0$.",
+        "Quadratic formula: $r=\\dfrac{-3\\pm\\sqrt{9-12}}{6}=-\\dfrac12\\pm\\dfrac{\\sqrt3}{6}i$ (complex roots).",
+        "Their sum is $-\\dfrac12-\\dfrac12=-1$."
+      ],
+      "brief": "$3r^2+3r+1=0$, $r=-\\frac12\\pm\\frac{\\sqrt3}{6}i$, so the sum is $-1$.",
+      "note": "The two values of r are complex (no real r works); the master still asks for their sum, which is -1."
+    },
+    {
+      "sec": "1.2",
+      "q": "If the acceleration of a particle is $a(t)=18\\cos(3t)$, the initial velocity is $v_0=4$, and the initial position is $x_0=-7$, then $x\\left(\\dfrac{\\pi}{2}\\right)=$",
+      "opts": [
+        "$2\\pi-5$",
+        "$2\\pi-7$",
+        "$2\\pi+5$",
+        "$2\\pi+7$",
+        "$7-2\\pi$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Acceleration is the derivative of velocity, and velocity is the derivative of position, so integrate twice.",
+        "Integrate $a(t)$ once to get $v(t)$ and use $v(0)=v_0$ to find the first constant.",
+        "$v(t)=\\int a(t)\\,dt+C_1$ and $x(t)=\\int v(t)\\,dt+C_2$, using $\\int\\cos(bt)\\,dt=\\dfrac{\\sin(bt)}{b}$ and $\\int\\sin(bt)\\,dt=-\\dfrac{\\cos(bt)}{b}$."
+      ],
+      "steps": [
+        "$v(t)=\\int 18\\cos(3t)\\,dt=6\\sin(3t)+C_1$, and $v(0)=C_1=4$.",
+        "$x(t)=\\int\\left(6\\sin(3t)+4\\right)dt=-2\\cos(3t)+4t+C_2$.",
+        "$x(0)=-2+C_2=-7$, so $C_2=-5$ and $x(t)=-2\\cos(3t)+4t-5$.",
+        "$x\\left(\\dfrac{\\pi}{2}\\right)=-2\\cos\\dfrac{3\\pi}{2}+2\\pi-5=2\\pi-5$."
+      ],
+      "brief": "$v=6\\sin3t+4$, $x=-2\\cos3t+4t-5$, so $x(\\frac{\\pi}{2})=2\\pi-5$."
+    },
+    {
+      "sec": "1.4",
+      "q": "A culture initially has $P_0$ number of bacteria. At $t=1$ hour the number of bacteria is measured to be $\\dfrac32P_0$. If the rate of growth is proportional to the number of bacteria $P(t)$ present at time $t$, the time necessary for the number of bacteria to triple is",
+      "opts": [
+        "$\\dfrac{\\ln 3}{\\ln 3-\\ln 2}$",
+        "$\\dfrac{\\ln 3}{\\ln 3+\\ln 2}$",
+        "$\\dfrac{\\ln 3}{\\ln 4-\\ln 3}$",
+        "$\\dfrac{\\ln 3}{\\ln 7-\\ln 5}$",
+        "$\\dfrac{\\ln 2}{\\ln 5-\\ln 4}$"
+      ],
+      "ans": 0,
+      "hints": [
+        "A rate proportional to the amount present means natural (exponential) growth.",
+        "Write the exponential growth solution and use the measurement at $t=1$ to find the growth constant $k$.",
+        "$\\dfrac{dP}{dt}=kP$ gives $P(t)=P_0e^{kt}$; solve $e^{kt}=m$ with $t=\\dfrac{\\ln m}{k}$, and $\\ln\\dfrac ab=\\ln a-\\ln b$."
+      ],
+      "steps": [
+        "$\\dfrac{dP}{dt}=kP$ gives $P(t)=P_0e^{kt}$.",
+        "$P(1)=\\dfrac32P_0$: $e^{k}=\\dfrac32$, so $k=\\ln\\dfrac32=\\ln3-\\ln2$.",
+        "Tripling: $P_0e^{kt}=3P_0$, so $e^{kt}=3$ and $kt=\\ln3$.",
+        "$t=\\dfrac{\\ln3}{\\ln3-\\ln2}$ hours."
+      ],
+      "brief": "$P=P_0e^{kt}$, $k=\\ln\\frac32$; $e^{kt}=3$ gives $t=\\frac{\\ln3}{\\ln3-\\ln2}$."
+    },
+    {
+      "sec": "1.5",
+      "q": "The general solution of the linear differential equation $xy'=2y+x^3\\cos x$ is given by",
+      "opts": [
+        "$y(x)=x^2(\\sin x+c)$",
+        "$y(x)=x^2(\\cos x+c)$",
+        "$y(x)=x^3(\\sin x+c)$",
+        "$y(x)=x^3(\\cos x+c)$",
+        "$y(x)=x(\\sin x+c)$"
+      ],
+      "ans": 0,
+      "hints": [
+        "This is a first-order linear equation in $y$.",
+        "Move the $y$ term to the left and divide by $x$ to get the form $y'+P(x)y=Q(x)$, then find the integrating factor.",
+        "$\\rho=e^{\\int P\\,dx}$ and $(\\rho y)'=\\rho Q$, so $y=\\dfrac{1}{\\rho}\\left(\\int\\rho Q\\,dx+C\\right)$."
+      ],
+      "steps": [
+        "Standard form: $y'-\\dfrac2x\\,y=x^2\\cos x$.",
+        "$\\rho=e^{\\int -\\frac2x\\,dx}=e^{-2\\ln x}=x^{-2}$.",
+        "$\\left(x^{-2}y\\right)'=x^{-2}\\cdot x^2\\cos x=\\cos x$.",
+        "Integrate: $x^{-2}y=\\sin x+c$, so $y=x^2(\\sin x+c)$."
+      ],
+      "brief": "$y'-\\frac2xy=x^2\\cos x$, $\\rho=x^{-2}$: $(x^{-2}y)'=\\cos x$, $y=x^2(\\sin x+c)$."
+    },
+    {
+      "sec": "1.6",
+      "q": "A general solution of the exact differential equation \\[ \\left(e^{2y}-y\\cos(xy)\\right)dx+\\left(2xe^{2y}-x\\cos(xy)+2y\\right)dy=0 \\] is",
+      "opts": [
+        "$xe^{2y}-\\sin(xy)+y^2=c$",
+        "$2xe^{2y}-\\sin(xy)+y^2=c$",
+        "$xe^{2y}-x\\sin(xy)+y^2=c$",
+        "$xe^{2y}+y\\sin(xy)+y^2=c$",
+        "$3xe^{2y}+y\\sin(xy)+y^2=c$"
+      ],
+      "ans": 0,
+      "hints": [
+        "The equation is exact, so look for a potential function $F(x,y)$.",
+        "Integrate $M$ with respect to $x$ (treating $y$ as a constant), adding an unknown function $g(y)$.",
+        "For an exact equation, $F=\\int M\\,dx+g(y)$ with $F_y=N$, and the solution is $F(x,y)=C$."
+      ],
+      "steps": [
+        "$M_y=2e^{2y}-\\cos(xy)+xy\\sin(xy)=N_x$, so the equation is exact.",
+        "$F=\\int\\left(e^{2y}-y\\cos(xy)\\right)dx=xe^{2y}-\\sin(xy)+g(y)$.",
+        "$F_y=2xe^{2y}-x\\cos(xy)+g'(y)$; matching $N$ gives $g'(y)=2y$, so $g(y)=y^2$.",
+        "Solution: $xe^{2y}-\\sin(xy)+y^2=c$."
+      ],
+      "brief": "$F=\\int M\\,dx=xe^{2y}-\\sin(xy)+g(y)$, $g'=2y$: $xe^{2y}-\\sin(xy)+y^2=c$."
+    },
+    {
+      "sec": "1.4",
+      "q": "The solution of the initial-value problem \\[ \\left(x^2-9\\right)\\frac{dy}{dx}=12y, \\qquad y(0)=4 \\] is",
+      "opts": [
+        "$y=4\\left(\\dfrac{x-3}{x+3}\\right)^2$",
+        "$y=-4\\left(\\dfrac{x-3}{x+3}\\right)^3$",
+        "$y=4\\left(\\dfrac{x-3}{x+3}\\right)^4$",
+        "$y=4\\left(\\dfrac{x-2}{x+2}\\right)^2$",
+        "$y=-4\\left(\\dfrac{x-2}{x+2}\\right)^3$"
+      ],
+      "ans": 0,
+      "hints": [
+        "The equation is separable.",
+        "Put $y$ with $dy$ and the $x$ terms with $dx$, then split the $x$ side with partial fractions.",
+        "$\\dfrac{1}{x^2-a^2}=\\dfrac{1}{2a}\\left(\\dfrac{1}{x-a}-\\dfrac{1}{x+a}\\right)$ and $\\int\\dfrac{dy}{y}=\\ln|y|$; use the initial condition to find the constant."
+      ],
+      "steps": [
+        "Separate: $\\dfrac{dy}{y}=\\dfrac{12}{x^2-9}\\,dx=\\left(\\dfrac{2}{x-3}-\\dfrac{2}{x+3}\\right)dx$.",
+        "Integrate: $\\ln|y|=2\\ln|x-3|-2\\ln|x+3|+C$, so $y=K\\left(\\dfrac{x-3}{x+3}\\right)^2$.",
+        "$y(0)=K(-1)^2=K=4$.",
+        "So $y=4\\left(\\dfrac{x-3}{x+3}\\right)^2$."
+      ],
+      "brief": "$\\frac{dy}{y}=(\\frac{2}{x-3}-\\frac{2}{x+3})dx$: $y=K(\\frac{x-3}{x+3})^2$, $K=4$."
+    },
+    {
+      "sec": "1.6",
+      "q": "By making a suitable substitution, the differential equation $xy'=y+\\sqrt{x^2+y^2}$ can be transformed into a separable differential equation",
+      "opts": [
+        "$\\dfrac{1}{\\sqrt{1+v^2}}\\,dv=\\dfrac1x\\,dx$",
+        "$\\dfrac{1}{\\sqrt{1+v^2}}\\,dv=\\dfrac{1}{x^2}\\,dx$",
+        "$\\sqrt{1+v^2}\\,dv=\\dfrac1x\\,dx$",
+        "$\\sqrt{1+v^2}\\,dv=x\\,dx$",
+        "$\\dfrac{1}{\\sqrt{1+v^2}}\\,dv=x^2\\,dx$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Every term has the same degree in $x$ and $y$, so the equation is homogeneous.",
+        "Divide by $x$ to write $y'$ as a function of $y/x$ (take $x>0$), then substitute $v=y/x$.",
+        "With $v=\\dfrac yx$: $y=vx$ and $y'=v+xv'$; the resulting equation in $v$ and $x$ is separable."
+      ],
+      "steps": [
+        "For $x>0$, divide by $x$: $y'=\\dfrac yx+\\sqrt{1+\\left(\\dfrac yx\\right)^2}$.",
+        "Put $y=vx$, $y'=v+xv'$: $v+xv'=v+\\sqrt{1+v^2}$.",
+        "So $x\\dfrac{dv}{dx}=\\sqrt{1+v^2}$.",
+        "Separate: $\\dfrac{1}{\\sqrt{1+v^2}}\\,dv=\\dfrac1x\\,dx$."
+      ],
+      "brief": "Homogeneous, $v=y/x$: $xv'=\\sqrt{1+v^2}$, so $\\frac{dv}{\\sqrt{1+v^2}}=\\frac{dx}{x}$."
+    },
+    {
+      "sec": "1.6",
+      "q": "By making a suitable substitution, the differential equation $x^2y'+2xy=5y^4$ can be transformed into a linear differential equation",
+      "opts": [
+        "$v'-\\dfrac6xv=-\\dfrac{15}{x^2}$",
+        "$v'+\\dfrac6xv=-\\dfrac{14}{x^2}$",
+        "$v'-\\dfrac6xv=-\\dfrac{20}{x^2}$",
+        "$v'+\\dfrac6xv=-\\dfrac{10}{x^2}$",
+        "$v'-\\dfrac3xv=-\\dfrac{12}{x^2}$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Besides the linear terms the equation has a $y^4$ term, so it is a Bernoulli equation.",
+        "Divide by the coefficient of $y'$ to reach $y'+P(x)y=Q(x)y^n$, then substitute $v=y^{1-n}$.",
+        "For $y'+Py=Qy^n$, the substitution $v=y^{1-n}$ gives $v'=(1-n)y^{-n}y'$, and the equation becomes $v'+(1-n)Pv=(1-n)Q$."
+      ],
+      "steps": [
+        "Divide by $x^2$: $y'+\\dfrac2x\\,y=\\dfrac{5}{x^2}y^4$, so $n=4$.",
+        "Let $v=y^{1-4}=y^{-3}$, so $v'=-3y^{-4}y'$.",
+        "Multiply the equation by $-3y^{-4}$: $-3y^{-4}y'-\\dfrac6x\\,y^{-3}=-\\dfrac{15}{x^2}$.",
+        "That is $v'-\\dfrac6x\\,v=-\\dfrac{15}{x^2}$."
+      ],
+      "brief": "Bernoulli $n=4$, $v=y^{-3}$: multiply by $-3y^{-4}$ to get $v'-\\frac6xv=-\\frac{15}{x^2}$."
+    },
+    {
+      "sec": "1.6",
+      "q": "A general solution of the differential equation $y'=(9x+4y)^2$ is given by",
+      "opts": [
+        "$y=\\dfrac38\\left[\\tan(6x+c)-6x\\right]$",
+        "$y=\\dfrac18\\left[\\tan(6x+c)-6x\\right]$",
+        "$y=\\dfrac18\\left[\\tan(6x+c)+6x\\right]$",
+        "$y=\\dfrac15\\left[\\tan(6x+c)-6x\\right]$",
+        "$y=\\dfrac35\\left[\\tan(6x+c)+6x\\right]$"
+      ],
+      "ans": 0,
+      "hints": [
+        "The right side depends on $x$ and $y$ only through one linear combination, so use a substitution $v=ax+by$.",
+        "Let $v$ be the expression inside the square, find $v'$ in terms of $y'$, and replace $y'$.",
+        "With $v=ax+by$, $v'=a+by'$; the new equation is separable, and $\\int\\dfrac{dv}{a^2+b^2v^2}=\\dfrac{1}{ab}\\arctan\\dfrac{bv}{a}+C$ for $a,b>0$."
+      ],
+      "steps": [
+        "Let $v=9x+4y$, so $v'=9+4y'=9+4v^2$.",
+        "Separate: $\\dfrac{dv}{9+4v^2}=dx$, so $\\dfrac16\\arctan\\dfrac{2v}{3}=x+C$.",
+        "Then $\\dfrac{2v}{3}=\\tan(6x+c)$, so $v=\\dfrac32\\tan(6x+c)$.",
+        "$y=\\dfrac{v-9x}{4}=\\dfrac38\\tan(6x+c)-\\dfrac94x=\\dfrac38\\left[\\tan(6x+c)-6x\\right]$."
+      ],
+      "brief": "$v=9x+4y$: $v'=9+4v^2$, $v=\\frac32\\tan(6x+c)$, $y=\\frac38[\\tan(6x+c)-6x]$."
+    },
+    {
+      "sec": "4.2",
+      "q": "Which one of the following subsets is a subspace of $\\mathbb{R}^4$?",
+      "opts": [
+        "The set of all vectors $(x_1,x_2,x_3,x_4)$ such that $x_1=0$",
+        "The set of all vectors $(x_1,x_2,x_3,x_4)$ such that $x_1x_2=0$",
+        "The set of all vectors $(x_1,x_2,x_3,x_4)$ such that $x_1x_3=0$",
+        "The set of all vectors $(x_1,x_2,x_3,x_4)$ such that $x_1=1$",
+        "The set of all vectors $(x_1,x_2,x_3,x_4)$ such that $x_1+x_2=1$"
+      ],
+      "ans": 0,
+      "hints": [
+        "A subset is a subspace when it contains $\\mathbf{0}$ and is closed under addition and scalar multiplication.",
+        "Check each set for the zero vector first, then look for a pair of vectors whose sum breaks the condition.",
+        "The solution set of a homogeneous linear system $A\\mathbf{x}=\\mathbf{0}$ is always a subspace of $\\mathbb{R}^n$; a set that misses $\\mathbf{0}$ never is."
+      ],
+      "steps": [
+        "$x_1=0$ is a homogeneous linear equation, so its solution set contains $\\mathbf{0}$ and is closed under sums and scalar multiples: a subspace.",
+        "$x_1x_2=0$: $(1,0,0,0)$ and $(0,1,0,0)$ are in it, but their sum has $x_1x_2=1$.",
+        "$x_1x_3=0$: $(1,0,0,0)$ and $(0,0,1,0)$ are in it, but their sum has $x_1x_3=1$.",
+        "$x_1=1$ and $x_1+x_2=1$: the zero vector gives $0\\neq1$, so $\\mathbf{0}$ is not in either set."
+      ],
+      "brief": "Only $x_1=0$ (homogeneous linear) gives a subspace; the others fail sums or miss $\\mathbf{0}$."
+    },
+    {
+      "sec": "4.1",
+      "q": "The value of $k$ for which the vectors $\\mathbf{u}=(1,0,2)$, $\\mathbf{v}=(-1,2,k)$ and $\\mathbf{w}=(0,9,3)$ of $\\mathbb{R}^3$ are linearly dependent is",
+      "opts": [
+        "$-\\dfrac43$",
+        "$-\\dfrac23$",
+        "$\\dfrac23$",
+        "$\\dfrac45$",
+        "$\\dfrac34$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Three vectors in $\\mathbb{R}^3$ are dependent exactly when the matrix built from them is singular.",
+        "Put $\\mathbf{u}$, $\\mathbf{v}$, $\\mathbf{w}$ as the rows (or columns) of a $3\\times3$ matrix and compute its determinant as a function of $k$.",
+        "$n$ vectors in $\\mathbb{R}^n$ are linearly dependent if and only if the matrix having them as columns (or rows) has determinant $0$."
+      ],
+      "steps": [
+        "Take $\\det\\begin{bmatrix}1&0&2\\\\-1&2&k\\\\0&9&3\\end{bmatrix}$ and expand along the first row.",
+        "$=1(6-9k)-0+2(-9-0)=-12-9k$.",
+        "Dependent means $-12-9k=0$, so $k=-\\dfrac43$."
+      ],
+      "brief": "$\\det=1(6-9k)+2(-9)=-12-9k=0$, so $k=-\\frac43$."
+    },
+    {
+      "sec": "4.2",
+      "q": "The solution space of the system \\[\\begin{aligned} x_1-2x_2+2x_3+x_4&=0\\\\ x_1-x_2+2x_3+5x_4&=0\\\\ x_1-4x_2+2x_3-7x_4&=0 \\end{aligned}\\] is the set of all linear combinations of the form $s\\mathbf{u}+t\\mathbf{v}$, where $s$ and $t$ are real numbers and",
+      "opts": [
+        "$\\mathbf{u}=(-2,0,1,0)$ and $\\mathbf{v}=(-9,-4,0,1)$",
+        "$\\mathbf{u}=(2,0,1,0)$ and $\\mathbf{v}=(9,-4,0,1)$",
+        "$\\mathbf{u}=(-2,0,-1,0)$ and $\\mathbf{v}=(9,-4,0,1)$",
+        "$\\mathbf{u}=(-2,0,1,0)$ and $\\mathbf{v}=(-9,-4,0,-1)$",
+        "$\\mathbf{u}=(-2,0,1,0)$ and $\\mathbf{v}=(9,4,0,1)$"
+      ],
+      "ans": 0,
+      "hints": [
+        "The solution space of a homogeneous system is found by reducing its coefficient matrix to reduced echelon form.",
+        "Row reduce the $3\\times4$ coefficient matrix, identify the free variables, and set them equal to $s$ and $t$.",
+        "In reduced echelon form, write each leading variable in terms of the free variables; the coefficient vectors of the free parameters span the solution space."
+      ],
+      "steps": [
+        "$R_2-R_1$ and $R_3-R_1$ give rows $(0,1,0,4)$ and $(0,-2,0,-8)$; then $R_3+2R_2$ gives a zero row.",
+        "$R_1+2R_2$: the reduced form is $\\begin{bmatrix}1&0&2&9\\\\0&1&0&4\\\\0&0&0&0\\end{bmatrix}$.",
+        "Free variables $x_3=s$, $x_4=t$: $x_1=-2s-9t$ and $x_2=-4t$.",
+        "$(x_1,x_2,x_3,x_4)=s(-2,0,1,0)+t(-9,-4,0,1)$."
+      ],
+      "brief": "RREF rows $(1,0,2,9)$, $(0,1,0,4)$: $s(-2,0,1,0)+t(-9,-4,0,1)$."
+    },
+    {
+      "sec": "4.1",
+      "q": "Let $\\mathbf{v}=(2,5,-4)$ and $\\mathbf{w}=(1,-2,-3)$ be two vectors in $\\mathbb{R}^3$. Find $|\\mathbf{v}-2\\mathbf{w}|$",
+      "opts": [
+        "$\\sqrt{85}$",
+        "$\\sqrt{83}$",
+        "$\\sqrt{87}$",
+        "$9$",
+        "$\\sqrt{17}$"
+      ],
+      "ans": 0,
+      "hints": [
+        "This combines scalar multiplication, vector subtraction and the length of a vector.",
+        "Compute $2\\mathbf{w}$ and subtract it from $\\mathbf{v}$ component by component.",
+        "$c(a_1,a_2,a_3)=(ca_1,ca_2,ca_3)$ and $|(a_1,a_2,a_3)|=\\sqrt{a_1^2+a_2^2+a_3^2}$."
+      ],
+      "steps": [
+        "$2\\mathbf{w}=(2,-4,-6)$.",
+        "$\\mathbf{v}-2\\mathbf{w}=(2-2,\\ 5+4,\\ -4+6)=(0,9,2)$.",
+        "$|\\mathbf{v}-2\\mathbf{w}|=\\sqrt{0+81+4}=\\sqrt{85}$."
+      ],
+      "brief": "$\\mathbf{v}-2\\mathbf{w}=(0,9,2)$, length $\\sqrt{81+4}=\\sqrt{85}$."
+    },
+    {
+      "sec": "4.1",
+      "q": "Let $\\mathbf{u}=\\langle 2,3\\rangle$, $\\mathbf{v}=\\langle -4,5\\rangle$, $\\mathbf{w}=\\langle -16,42\\rangle$ be vectors in $\\mathbb{R}^2$. If $\\mathbf{w}=a\\mathbf{u}+b\\mathbf{v}$, then $a+b=$",
+      "opts": [
+        "$10$",
+        "$8$",
+        "$9$",
+        "$4$",
+        "$6$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Writing $\\mathbf{w}$ as a linear combination of $\\mathbf{u}$ and $\\mathbf{v}$ is a linear system in $a$ and $b$.",
+        "Compare the first components and the second components to get two equations in $a$ and $b$.",
+        "$a\\langle u_1,u_2\\rangle+b\\langle v_1,v_2\\rangle=\\langle au_1+bv_1,\\ au_2+bv_2\\rangle$; solve the $2\\times2$ system by elimination."
+      ],
+      "steps": [
+        "Components: $2a-4b=-16$ and $3a+5b=42$.",
+        "The first gives $a=2b-8$.",
+        "Substitute: $3(2b-8)+5b=42$, so $11b=66$ and $b=6$, $a=4$.",
+        "$a+b=10$."
+      ],
+      "brief": "$2a-4b=-16$, $3a+5b=42$: $a=4$, $b=6$, so $a+b=10$."
+    }
+  ]
+}

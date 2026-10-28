@@ -1,0 +1,432 @@
+{
+  "course": "math102",
+  "term": "222",
+  "kind": "e1",
+  "date": "",
+  "minutes": 90,
+  "source": "math102-222-ex1.pdf",
+  "note": "Date and exam length are not printed on the cover (page 1 is only the answer key, headed Math 102, 222, Exam 1); minutes set to 90 by default. Master key is A for all 18 questions and agrees with my own solutions (verified with sympy). Q6 figure cropped from the master page; handwritten blue annotations whited out except a tiny blue dot at (5,1) on the line. Q18 region taken as lying below min(f,g) and above h in the first quadrant (matches key).",
+  "qs": [
+    {
+      "sec": "5.3",
+      "q": "If \\[ \\int_{-1}^{1} f(x)\\,dx=-3 \\quad\\text{and}\\quad \\int_{0}^{1} f(x)\\,dx=5, \\] then $\\int_{-1}^{0} f(x)\\,dx=$",
+      "opts": [
+        "$-8$",
+        "$-\\dfrac32$",
+        "$5$",
+        "$2$",
+        "$8$"
+      ],
+      "ans": 0,
+      "hints": [
+        "This is about the additivity property of definite integrals over adjacent intervals.",
+        "Split the integral over $[-1,1]$ at the point $0$.",
+        "For any $a<c<b$: $\\int_a^b f\\,dx=\\int_a^c f\\,dx+\\int_c^b f\\,dx$."
+      ],
+      "steps": [
+        "Split: $\\int_{-1}^{1}f=\\int_{-1}^{0}f+\\int_{0}^{1}f$.",
+        "Substitute: $-3=\\int_{-1}^{0}f+5$.",
+        "So $\\int_{-1}^{0}f=-3-5=-8$."
+      ],
+      "brief": "$-3=\\int_{-1}^0 f+5$, so $\\int_{-1}^0 f=-8$."
+    },
+    {
+      "sec": "5.2",
+      "q": "$\\sum_{i=1}^{n}\\frac{8i+3}{n^2}=$",
+      "opts": [
+        "$4+\\dfrac7n$",
+        "$4+\\dfrac4n$",
+        "$4+\\dfrac2n+\\dfrac3{n^2}$",
+        "$4+\\dfrac3{n^2}$",
+        "$4+\\dfrac3n$"
+      ],
+      "ans": 0,
+      "hints": [
+        "This is a sum that can be evaluated with the standard summation formulas.",
+        "Pull the constant $1/n^2$ out and split the sum into a sum of $i$ and a sum of a constant.",
+        "$\\sum_{i=1}^n c=cn$ and $\\sum_{i=1}^n i=\\dfrac{n(n+1)}{2}$."
+      ],
+      "steps": [
+        "$\\sum\\frac{8i+3}{n^2}=\\frac1{n^2}\\left(8\\sum i+3\\sum 1\\right)$.",
+        "$=\\frac1{n^2}\\left(8\\cdot\\frac{n(n+1)}2+3n\\right)=\\frac{4n^2+4n+3n}{n^2}$.",
+        "$=\\frac{4n^2+7n}{n^2}=4+\\frac7n$."
+      ],
+      "brief": "$\\frac1{n^2}\\left(4n(n+1)+3n\\right)=4+\\frac7n$."
+    },
+    {
+      "sec": "5.2",
+      "q": "Using the Midpoint Rule with $n=3$, the area of the region bounded by the graph of $f(x)=\\sin^2x$ and the $x$-axis over the interval $[0,\\pi]$ is approximately equal to",
+      "opts": [
+        "$\\dfrac{\\pi}{2}$",
+        "$\\dfrac{2\\pi}{3}$",
+        "$\\dfrac{\\pi}{3}$",
+        "$\\dfrac{\\pi}{\\sqrt3}$",
+        "$\\dfrac{\\pi}{4}$"
+      ],
+      "ans": 0,
+      "hints": [
+        "This is a midpoint-rule approximation of an area.",
+        "Find the width of each subinterval, split $[0,\\pi]$ into three equal pieces, and take the midpoint of each piece.",
+        "Midpoint rule: $\\sum_{i=1}^n f(m_i)\\Delta x$ with $\\Delta x=\\dfrac{b-a}{n}$ and $m_i$ the midpoint of the $i$th subinterval."
+      ],
+      "steps": [
+        "$\\Delta x=\\frac{\\pi}{3}$; the subintervals are $[0,\\frac\\pi3],[\\frac\\pi3,\\frac{2\\pi}3],[\\frac{2\\pi}3,\\pi]$ with midpoints $\\frac\\pi6,\\frac\\pi2,\\frac{5\\pi}6$.",
+        "$f=\\sin^2x$ takes the values $\\frac14,\\ 1,\\ \\frac14$ at these midpoints.",
+        "Area $\\approx\\frac\\pi3\\left(\\frac14+1+\\frac14\\right)=\\frac\\pi3\\cdot\\frac32=\\frac\\pi2$."
+      ],
+      "brief": "Midpoints $\\frac\\pi6,\\frac\\pi2,\\frac{5\\pi}6$: $\\frac\\pi3\\left(\\frac14+1+\\frac14\\right)=\\frac\\pi2$."
+    },
+    {
+      "sec": "5.4",
+      "q": "If $F(x)=\\int_{3}^{x^3}\\frac{3}{t^3+3}\\,dt$, then $F'(x)=$",
+      "opts": [
+        "$\\dfrac{9x^2}{x^9+3}$",
+        "$\\dfrac{9x^2}{x^6+3}$",
+        "$\\dfrac{3}{x^9+3}$",
+        "$\\dfrac{3}{x^9+3}-\\dfrac1{10}$",
+        "$\\dfrac{-9x^2}{x^9+3}$"
+      ],
+      "ans": 0,
+      "hints": [
+        "The variable appears in the upper limit of an integral, so use the Second Fundamental Theorem of Calculus.",
+        "Substitute the upper limit into the integrand and multiply by the derivative of the upper limit (chain rule).",
+        "If $F(x)=\\int_a^{g(x)}h(t)\\,dt$, then $F'(x)=h(g(x))\\,g'(x)$."
+      ],
+      "steps": [
+        "Upper limit $g(x)=x^3$, $g'(x)=3x^2$.",
+        "$F'(x)=\\dfrac{3}{(x^3)^3+3}\\cdot3x^2$.",
+        "$=\\dfrac{9x^2}{x^9+3}$."
+      ],
+      "brief": "$F'(x)=\\frac{3}{(x^3)^3+3}\\cdot3x^2=\\frac{9x^2}{x^9+3}$."
+    },
+    {
+      "sec": "5.4",
+      "q": "If $f(x)=\\int_{\\sqrt x}^{x}e^{t^2}\\,dt$, then $f'(4)=$",
+      "opts": [
+        "$e^{16}-\\dfrac{e^4}{4}$",
+        "$\\dfrac{e^4}{4}-e^{16}$",
+        "$e^{16}-e^4$",
+        "$4e^{16}-e^4$",
+        "$8e^{16}-4e^4$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Both limits of the integral depend on $x$, so use the Second Fundamental Theorem with the chain rule at each limit.",
+        "Differentiate the upper limit term minus the lower limit term, each one the integrand evaluated at the limit times the derivative of the limit.",
+        "$\\dfrac{d}{dx}\\int_{a(x)}^{b(x)}h(t)\\,dt=h(b(x))\\,b'(x)-h(a(x))\\,a'(x)$."
+      ],
+      "steps": [
+        "$f'(x)=e^{x^2}\\cdot1-e^{(\\sqrt x)^2}\\cdot\\dfrac1{2\\sqrt x}=e^{x^2}-\\dfrac{e^x}{2\\sqrt x}$.",
+        "At $x=4$: $e^{16}-\\dfrac{e^4}{2\\cdot2}$.",
+        "$f'(4)=e^{16}-\\dfrac{e^4}{4}$."
+      ],
+      "brief": "$f'(x)=e^{x^2}-\\frac{e^x}{2\\sqrt x}$, so $f'(4)=e^{16}-\\frac{e^4}4$."
+    },
+    {
+      "sec": "5.3",
+      "q": "$\\int_{-4}^{5}f(x)\\,dx=$ (the graph of $y=f(x)$ is given below)",
+      "opts": [
+        "$\\dfrac52-2\\pi$",
+        "$6+2\\pi$",
+        "$3-2\\pi$",
+        "$5+2\\pi$",
+        "$\\dfrac32-2\\pi$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Interpret the definite integral as signed area using the geometric shapes in the graph.",
+        "Break the interval into pieces where the graph is a line segment or a half circle, and note which pieces lie below the $x$-axis (negative area).",
+        "Signed area: $\\int_a^b f\\,dx=$ (area above the axis) $-$ (area below the axis). Triangle: $\\frac12bh$. Half circle of radius $r$: $\\frac12\\pi r^2$. Also $\\int_a^b=\\int_a^c-\\int_b^c$ for $a<b<c$."
+      ],
+      "steps": [
+        "On $[-4,-2]$ the graph is a segment below the axis forming a triangle with base 2 and height 1: $-\\frac12(2)(1)=-1$.",
+        "On $[-2,2]$ the graph is a lower half circle of radius 2: $-\\frac12\\pi(2)^2=-2\\pi$.",
+        "On $[2,5]$: $\\int_2^6 f=\\frac12(4)(2)=4$ and $\\int_5^6 f=\\frac12(1)(1)=\\frac12$, so $\\int_2^5 f=4-\\frac12=\\frac72$.",
+        "Total: $-1-2\\pi+\\frac72=\\frac52-2\\pi$."
+      ],
+      "brief": "$-1-2\\pi+\\left(4-\\frac12\\right)=\\frac52-2\\pi$.",
+      "img": "math102-222-e1-q6.png"
+    },
+    {
+      "sec": "5.4",
+      "q": "The average value of $f(x)=\\sqrt x$ over the interval $[1,4]$ is",
+      "opts": [
+        "$\\dfrac{14}{9}$",
+        "$\\dfrac79$",
+        "$\\dfrac83$",
+        "$\\dfrac29$",
+        "$\\dfrac73$"
+      ],
+      "ans": 0,
+      "hints": [
+        "This asks for the average value of a function on an interval.",
+        "Set up the integral of $f$ over the interval and divide by the length of the interval.",
+        "$f_{\\text{avg}}=\\dfrac1{b-a}\\int_a^b f(x)\\,dx$ and $\\int x^{n}dx=\\dfrac{x^{n+1}}{n+1}$."
+      ],
+      "steps": [
+        "$f_{\\text{avg}}=\\dfrac1{4-1}\\int_1^4x^{1/2}dx$.",
+        "$=\\dfrac13\\cdot\\dfrac23x^{3/2}\\Big|_1^4=\\dfrac29(8-1)$.",
+        "$=\\dfrac{14}{9}$."
+      ],
+      "brief": "$\\frac13\\int_1^4\\sqrt x\\,dx=\\frac29(8-1)=\\frac{14}9$."
+    },
+    {
+      "sec": "5.5",
+      "q": "If $f$ is an even function and $\\int_{0}^{1}f(x)\\,dx=5$, then $\\int_{-1}^{1}(3x-4)f(x)\\,dx=$",
+      "opts": [
+        "$-40$",
+        "$40$",
+        "$20$",
+        "$-20$",
+        "$0$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Use the symmetry of even and odd functions over an interval $[-a,a]$.",
+        "Expand $(3x-4)f(x)$ into two integrals and decide whether each integrand is even or odd.",
+        "If $g$ is even, $\\int_{-a}^a g=2\\int_0^a g$; if $g$ is odd, $\\int_{-a}^a g=0$. (Odd times even is odd.)"
+      ],
+      "steps": [
+        "Expand: $\\int_{-1}^1(3x-4)f=3\\int_{-1}^1xf(x)\\,dx-4\\int_{-1}^1f(x)\\,dx$.",
+        "$xf(x)$ is odd, so its integral over $[-1,1]$ is $0$.",
+        "$f$ is even, so $\\int_{-1}^1f=2\\int_0^1f=10$; result $=0-4\\cdot10=-40$."
+      ],
+      "brief": "$xf(x)$ odd gives $0$; $-4\\cdot2\\cdot5=-40$."
+    },
+    {
+      "sec": "5.5",
+      "q": "$\\int\\frac{2x-1}{\\sqrt{x+3}}\\,dx=$",
+      "opts": [
+        "$\\dfrac23(2x-15)\\sqrt{x+3}+C$",
+        "$\\dfrac23(2x-1)\\sqrt{x+3}+C$",
+        "$(2x-15)\\sqrt{(x+3)^3}+C$",
+        "$2(2x-15)\\sqrt{x+3}+C$",
+        "$\\dfrac13(x+3)(2x-1)+C$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Use a substitution for the expression under the square root.",
+        "Let $u$ be the expression under the root and rewrite the numerator in terms of $u$ as well.",
+        "If $u=x+a$ then $x=u-a$, $du=dx$, and $\\int u^{n}du=\\dfrac{u^{n+1}}{n+1}+C$."
+      ],
+      "steps": [
+        "Let $u=x+3$, so $x=u-3$ and $du=dx$: $\\int\\frac{2u-7}{\\sqrt u}du=\\int\\left(2u^{1/2}-7u^{-1/2}\\right)du$.",
+        "$=\\frac43u^{3/2}-14u^{1/2}+C=u^{1/2}\\left(\\frac43u-14\\right)+C$.",
+        "Back to $x$: $\\sqrt{x+3}\\left(\\frac43(x+3)-14\\right)=\\sqrt{x+3}\\left(\\frac43x-10\\right)$.",
+        "$=\\frac23(2x-15)\\sqrt{x+3}+C$."
+      ],
+      "brief": "$u=x+3$: $\\frac43u^{3/2}-14u^{1/2}+C=\\frac23(2x-15)\\sqrt{x+3}+C$."
+    },
+    {
+      "sec": "5.9",
+      "q": "$\\int_{0}^{\\ln 2}\\tanh x\\,dx=$",
+      "opts": [
+        "$\\ln\\left(\\dfrac54\\right)$",
+        "$\\ln\\left(\\dfrac32\\right)$",
+        "$\\ln(2)$",
+        "$1$",
+        "$0$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Rewrite the hyperbolic tangent in terms of $\\sinh$ and $\\cosh$ and use the log rule.",
+        "Write $\\tanh x=\\frac{\\sinh x}{\\cosh x}$ and substitute $u=\\cosh x$, changing the limits.",
+        "$\\dfrac{d}{dx}\\cosh x=\\sinh x$, $\\cosh x=\\dfrac{e^x+e^{-x}}2$, and $\\int_{a}^{b}\\dfrac{du}{u}=\\ln\\dfrac ba$ for $a,b>0$."
+      ],
+      "steps": [
+        "$\\int\\tanh x\\,dx=\\int\\frac{\\sinh x}{\\cosh x}dx$; let $u=\\cosh x$, $du=\\sinh x\\,dx$.",
+        "Limits: $x=0\\Rightarrow u=1$; $x=\\ln2\\Rightarrow u=\\frac{2+\\frac12}{2}=\\frac54$.",
+        "$\\int_1^{5/4}\\frac{du}{u}=\\ln\\frac54$."
+      ],
+      "brief": "$u=\\cosh x$: $\\int_1^{5/4}\\frac{du}u=\\ln\\frac54$."
+    },
+    {
+      "sec": "7.1",
+      "q": "The area of the region bounded by the curves $y=(x+1)^2$ and $y=1-|x|$ is equal to",
+      "opts": [
+        "$\\dfrac16$",
+        "$\\dfrac56$",
+        "$\\dfrac23$",
+        "$1$",
+        "$\\dfrac13$"
+      ],
+      "ans": 0,
+      "hints": [
+        "This is the area between two curves; first find where they intersect.",
+        "Solve $(x+1)^2=1-|x|$ separately for $x\\ge0$ and $x<0$, then decide which curve is on top between the intersection points.",
+        "$A=\\int_a^b\\left(f_{\\text{top}}-f_{\\text{bottom}}\\right)dx$ between consecutive intersection points."
+      ],
+      "steps": [
+        "For $x\\ge0$: $(x+1)^2=1-x$ gives $x^2+3x=0$, so $x=0$. For $x<0$: $(x+1)^2=1+x$ gives $x=-1$ or $x=0$.",
+        "The region lies on $[-1,0]$, with top curve $y=1+x$ and bottom curve $y=(x+1)^2$.",
+        "$A=\\int_{-1}^0\\left[(1+x)-(x+1)^2\\right]dx=\\int_{-1}^0(-x^2-x)\\,dx$.",
+        "$=\\left[-\\frac{x^3}3-\\frac{x^2}2\\right]_{-1}^0=0-\\left(\\frac13-\\frac12\\right)=\\frac16$."
+      ],
+      "brief": "Intersect at $x=-1,0$: $\\int_{-1}^0(-x^2-x)\\,dx=\\frac16$."
+    },
+    {
+      "sec": "5.7",
+      "q": "$\\int_{e}^{e^2}\\frac{1}{x(\\ln x^2)^3}\\,dx=$",
+      "opts": [
+        "$\\dfrac{3}{64}$",
+        "$\\dfrac{3}{16}$",
+        "$\\dfrac{1}{64}$",
+        "$\\dfrac{5}{32}$",
+        "$\\dfrac{5}{16}$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Look for an inner function whose derivative also appears in the integrand, and use substitution.",
+        "Let $u=\\ln x^2$, find $du$, and change the limits of integration.",
+        "$\\dfrac{d}{dx}\\ln x^2=\\dfrac2x$ and $\\int u^{-3}du=\\dfrac{u^{-2}}{-2}+C$."
+      ],
+      "steps": [
+        "Let $u=\\ln x^2$, so $du=\\frac2x\\,dx$, i.e. $\\frac{dx}x=\\frac12du$. Limits: $x=e\\Rightarrow u=2$; $x=e^2\\Rightarrow u=4$.",
+        "$\\frac12\\int_2^4u^{-3}du=\\frac12\\left[-\\frac1{2u^2}\\right]_2^4$.",
+        "$=-\\frac14\\left(\\frac1{16}-\\frac14\\right)=\\frac{3}{64}$."
+      ],
+      "brief": "$u=\\ln x^2$: $\\frac12\\int_2^4u^{-3}du=\\frac3{64}$."
+    },
+    {
+      "sec": "5.7",
+      "q": "$\\int t\\sec t^2\\cdot\\left(2\\sec t^2+\\tan t^2\\right)dt=$",
+      "opts": [
+        "$\\tan t^2+\\dfrac12\\sec t^2+C$",
+        "$\\dfrac12\\tan t^2+\\dfrac12\\sec t^2+C$",
+        "$\\tan^2t^2+\\sec^2t^2+C$",
+        "$\\sec t^2\\cdot\\tan t^2+C$",
+        "$\\ln\\left|\\sec t^2+\\tan t^2\\right|+C$"
+      ],
+      "ans": 0,
+      "hints": [
+        "The factor $t\\,dt$ suggests a substitution, after which you need basic trigonometric integrals.",
+        "Let $u=t^2$, rewrite the integral in $u$, and distribute $\\sec u$ over the bracket.",
+        "$\\int\\sec^2u\\,du=\\tan u+C$ and $\\int\\sec u\\tan u\\,du=\\sec u+C$."
+      ],
+      "steps": [
+        "Let $u=t^2$, $du=2t\\,dt$: the integral becomes $\\frac12\\int\\sec u(2\\sec u+\\tan u)\\,du$.",
+        "$=\\frac12\\int\\left(2\\sec^2u+\\sec u\\tan u\\right)du=\\frac12\\left(2\\tan u+\\sec u\\right)+C$.",
+        "Back to $t$: $\\tan t^2+\\frac12\\sec t^2+C$."
+      ],
+      "brief": "$u=t^2$: $\\frac12\\int(2\\sec^2u+\\sec u\\tan u)\\,du=\\tan t^2+\\frac12\\sec t^2+C$."
+    },
+    {
+      "sec": "5.7",
+      "q": "$\\int_{0}^{3}\\frac{x^2+2}{x+1}\\,dx=$",
+      "opts": [
+        "$\\dfrac32+3\\ln4$",
+        "$\\dfrac52$",
+        "$2-\\ln4$",
+        "$3+3\\ln4$",
+        "$\\dfrac12-2\\ln4$"
+      ],
+      "ans": 0,
+      "hints": [
+        "The integrand is a rational function whose numerator has higher degree than the denominator.",
+        "Divide the numerator by the denominator using long division, then integrate term by term.",
+        "$\\dfrac{P(x)}{D(x)}=Q(x)+\\dfrac{R}{D(x)}$ and $\\int\\dfrac{dx}{x+1}=\\ln|x+1|+C$."
+      ],
+      "steps": [
+        "Long division: $\\frac{x^2+2}{x+1}=x-1+\\frac3{x+1}$.",
+        "$\\int_0^3\\left(x-1+\\frac3{x+1}\\right)dx=\\left[\\frac{x^2}2-x+3\\ln|x+1|\\right]_0^3$.",
+        "$=\\frac92-3+3\\ln4=\\frac32+3\\ln4$."
+      ],
+      "brief": "$x-1+\\frac3{x+1}$: $\\left[\\frac{x^2}2-x+3\\ln|x+1|\\right]_0^3=\\frac32+3\\ln4$."
+    },
+    {
+      "sec": "5.2",
+      "q": "The area of the region bounded by the graph of $f(x)=4-x^2$, the $x$-axis and the vertical lines $x=1$ and $x=2$ is given by (choose $c_i$ to be the right endpoint)",
+      "opts": [
+        "$\\lim_{n\\to\\infty}\\left(\\frac3n\\sum_{i=1}^n1-\\frac2{n^2}\\sum_{i=1}^ni-\\frac1{n^3}\\sum_{i=1}^ni^2\\right)$",
+        "$\\lim_{n\\to\\infty}\\left(\\frac4n\\sum_{i=1}^n1-\\frac1{n^2}\\sum_{i=1}^ni-\\frac2{n^3}\\sum_{i=1}^ni^2\\right)$",
+        "$\\lim_{n\\to\\infty}\\left(\\frac1n\\sum_{i=1}^n3-\\frac1{n^2}\\sum_{i=1}^ni\\right)$",
+        "$\\lim_{n\\to\\infty}\\left(\\frac1n\\sum_{i=1}^n3+\\frac1{n^2}\\sum_{i=1}^ni+\\frac1{n^3}\\sum_{i=1}^ni^2\\right)$",
+        "$\\lim_{n\\to\\infty}\\left(\\frac1n\\sum_{i=1}^n2-\\frac3{n^2}\\sum_{i=1}^ni+\\frac1{n^3}\\sum_{i=1}^ni^2\\right)$"
+      ],
+      "ans": 0,
+      "hints": [
+        "This is the limit definition of area using right-endpoint Riemann sums.",
+        "Find $\\Delta x$ and the right endpoint $c_i$ for the interval $[1,2]$, substitute into $f(c_i)\\Delta x$, expand, and split the sum.",
+        "$A=\\lim_{n\\to\\infty}\\sum_{i=1}^nf(c_i)\\Delta x$ with $\\Delta x=\\dfrac{b-a}{n}$ and $c_i=a+i\\Delta x$."
+      ],
+      "steps": [
+        "$\\Delta x=\\frac{2-1}n=\\frac1n$ and $c_i=1+\\frac in$.",
+        "$f(c_i)=4-\\left(1+\\frac in\\right)^2=3-\\frac{2i}n-\\frac{i^2}{n^2}$.",
+        "$f(c_i)\\Delta x=\\frac3n-\\frac{2i}{n^2}-\\frac{i^2}{n^3}$.",
+        "Summing: $\\lim_{n\\to\\infty}\\left(\\frac3n\\sum1-\\frac2{n^2}\\sum i-\\frac1{n^3}\\sum i^2\\right)$."
+      ],
+      "brief": "$c_i=1+\\frac in$: $f(c_i)\\Delta x=\\frac3n-\\frac{2i}{n^2}-\\frac{i^2}{n^3}$."
+    },
+    {
+      "sec": "5.4",
+      "q": "The velocity (in $m/s$) of a particle moving along a line is given by \\[ v(t)=t^2-t-12. \\] The total distance the particle travels over the interval $0\\le t\\le5$ is",
+      "opts": [
+        "$\\dfrac{77}{2}$",
+        "$\\dfrac{55}{3}$",
+        "$\\dfrac{125}{6}$",
+        "$\\dfrac{53}{2}$",
+        "$\\dfrac{67}{3}$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Total distance is the integral of speed, not of velocity.",
+        "Find where $v(t)=0$ in the interval, determine the sign of $v$ on each piece, and split the integral there.",
+        "Total distance $=\\int_a^b|v(t)|\\,dt$; on a piece where $v<0$ use $|v|=-v$."
+      ],
+      "steps": [
+        "$v=(t-4)(t+3)$ is $0$ at $t=4$ (in $[0,5]$), $v<0$ on $[0,4)$ and $v>0$ on $(4,5]$.",
+        "$\\int_0^4-(t^2-t-12)\\,dt=\\left[-\\frac{t^3}3+\\frac{t^2}2+12t\\right]_0^4=-\\frac{64}3+8+48=\\frac{104}3$.",
+        "$\\int_4^5(t^2-t-12)\\,dt=\\left[\\frac{t^3}3-\\frac{t^2}2-12t\\right]_4^5=\\left(\\frac{125}3-\\frac{25}2-60\\right)-\\left(\\frac{64}3-56\\right)=\\frac{23}{6}$.",
+        "Total $=\\frac{104}3+\\frac{23}6=\\frac{231}{6}=\\frac{77}2$."
+      ],
+      "brief": "$|v|$ split at $t=4$: $\\frac{104}3+\\frac{23}6=\\frac{77}2$."
+    },
+    {
+      "sec": "5.8",
+      "q": "$\\int_{0}^{\\pi/6}\\frac{4\\cos x}{1+4\\sin^2x}\\,dx=$",
+      "opts": [
+        "$\\dfrac{\\pi}{2}$",
+        "$\\dfrac{\\pi}{4}$",
+        "$\\pi$",
+        "$4\\pi$",
+        "$2\\pi$"
+      ],
+      "ans": 0,
+      "hints": [
+        "The integrand looks like the derivative of an inverse tangent after a substitution.",
+        "Let $u$ be a multiple of $\\sin x$ so that $4\\sin^2x$ becomes $u^2$, and change the limits.",
+        "$\\int\\dfrac{du}{1+u^2}=\\arctan u+C$, and $\\dfrac{d}{dx}\\sin x=\\cos x$."
+      ],
+      "steps": [
+        "Let $u=2\\sin x$, $du=2\\cos x\\,dx$, so $4\\cos x\\,dx=2\\,du$. Limits: $x=0\\Rightarrow u=0$; $x=\\frac\\pi6\\Rightarrow u=1$.",
+        "$\\int_0^1\\frac{2}{1+u^2}du=2\\arctan u\\Big|_0^1$.",
+        "$=2\\left(\\frac\\pi4-0\\right)=\\frac\\pi2$."
+      ],
+      "brief": "$u=2\\sin x$: $\\int_0^1\\frac{2\\,du}{1+u^2}=2\\cdot\\frac\\pi4=\\frac\\pi2$."
+    },
+    {
+      "sec": "7.1",
+      "q": "The area of the region in the first quadrant bounded by the graphs of \\[ f(x)=x^2+2,\\qquad g(x)=4-x^2,\\qquad h(x)=2-x \\] is equal to",
+      "opts": [
+        "$2$",
+        "$3$",
+        "$\\dfrac52$",
+        "$4$",
+        "$\\dfrac72$"
+      ],
+      "ans": 0,
+      "hints": [
+        "This is an area between curves where the upper boundary changes from one curve to another.",
+        "Find where the curves cross for $x\\ge0$ and sketch them to see which curve forms the upper and which the lower boundary on each piece.",
+        "$A=\\int_a^b(\\text{upper}-\\text{lower})\\,dx$, computed piece by piece when the upper or lower curve changes at an intersection point."
+      ],
+      "steps": [
+        "Intersections: $f=g$ at $x=1$; $f=h$ at $x=0$; $g=h$ at $x=2$.",
+        "On $[0,1]$ the upper curve is $f$ and the lower is $h$; on $[1,2]$ the upper is $g$ and the lower is $h$.",
+        "$A=\\int_0^1(x^2+x)\\,dx+\\int_1^2(2+x-x^2)\\,dx=\\left(\\frac13+\\frac12\\right)+\\left(\\frac{10}{3}-\\frac{13}{6}\\right)$.",
+        "$\\frac56+\\frac76=2$."
+      ],
+      "brief": "$\\int_0^1(x^2+x)\\,dx+\\int_1^2(2+x-x^2)\\,dx=\\frac56+\\frac76=2$."
+    }
+  ]
+}

@@ -1,0 +1,356 @@
+{
+  "course": "math201",
+  "term": "233",
+  "kind": "e1",
+  "date": "",
+  "minutes": 90,
+  "source": "math201-233-e1.pdf",
+  "note": "Date and exam length are not printed on the master (the scan has no cover page). Minutes (90) assumed as the usual length of a major exam. Answer key table confirms 15 questions, master key all A, and all agree with my own solutions (sympy-checked). Handwritten annotations in the scan were ignored. Q9 (surface of revolution of a polar curve) is labelled section 10.5 on the scan.",
+  "qs": [
+    {
+      "sec": "10.2",
+      "q": "The curve represented by the parametric equations \\[ x=\\sec^2 t,\\quad y=\\cos t,\\quad 0\\le t<\\frac{\\pi}{2} \\] is represented by the rectangular equation",
+      "opts": [
+        "$y=\\dfrac{1}{\\sqrt{x}},\\ x\\ge 1$",
+        "$y=\\dfrac{1}{\\sqrt{x}},\\ x>0$",
+        "$y=-\\dfrac{1}{\\sqrt{x}},\\ x\\ge 1$",
+        "$y=\\dfrac{1}{x^2},\\ x>0$",
+        "$y=\\dfrac{1}{x^2},\\ x\\ge 1$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Eliminate the parameter, and then look at the range of $x$ and $y$ allowed by the interval for $t$.",
+        "Write $x$ in terms of $\\cos t$, replace $\\cos t$ by $y$, and find the sign of $y$ and the smallest value of $x$ on the given interval.",
+        "$\\sec t=\\dfrac{1}{\\cos t}$, and the restriction on the parameter restricts the values of $x$ and $y$ on the resulting curve."
+      ],
+      "steps": [
+        "$x=\\sec^2t=\\dfrac{1}{\\cos^2t}=\\dfrac{1}{y^2}$, so $y^2=\\dfrac1x$.",
+        "For $0\\le t<\\frac{\\pi}{2}$, $y=\\cos t>0$, so $y=\\dfrac{1}{\\sqrt x}$.",
+        "Also $\\sec^2 t\\ge1$ on this interval, so $x\\ge1$."
+      ],
+      "brief": "$x=1/y^2$, $y>0$, $x=\\sec^2t\\ge1$: $y=1/\\sqrt{x}$, $x\\ge1$."
+    },
+    {
+      "sec": "10.2",
+      "q": "The graph of the parametric equations \\[ x=\\cos t,\\quad y=2\\cos t+1 \\] is",
+      "opts": [
+        "a line segment",
+        "a circle",
+        "an ellipse",
+        "a hyperbola",
+        "a parabola"
+      ],
+      "ans": 0,
+      "hints": [
+        "Eliminate the parameter and identify the resulting equation.",
+        "Substitute $x=\\cos t$ into the equation for $y$, then think about which values $x$ can take.",
+        "$-1\\le\\cos t\\le1$, and an equation of the form $y=mx+b$ is a line."
+      ],
+      "steps": [
+        "$y=2\\cos t+1=2x+1$.",
+        "This is a line, but $x=\\cos t$ only takes values in $[-1,1]$.",
+        "So the graph is the part of the line $y=2x+1$ with $-1\\le x\\le1$, a line segment."
+      ],
+      "brief": "$y=2x+1$ with $-1\\le x\\le1$: a line segment."
+    },
+    {
+      "sec": "10.3",
+      "q": "The slope of the tangent line to the parametric curve \\[ x=t^2-t,\\quad y=t^3-3t-1 \\] at the point corresponding to $t=2$ is equal to",
+      "opts": [
+        "$3$",
+        "$-2$",
+        "$-\\dfrac13$",
+        "$6$",
+        "$4$"
+      ],
+      "ans": 0,
+      "hints": [
+        "This is a slope of a parametric curve.",
+        "Differentiate $x$ and $y$ with respect to $t$, then form the ratio and evaluate at the given $t$.",
+        "For a parametric curve, $\\dfrac{dy}{dx}=\\dfrac{dy/dt}{dx/dt}$ when $dx/dt\\neq0$."
+      ],
+      "steps": [
+        "$\\dfrac{dx}{dt}=2t-1$ and $\\dfrac{dy}{dt}=3t^2-3$.",
+        "$\\dfrac{dy}{dx}=\\dfrac{3t^2-3}{2t-1}$.",
+        "At $t=2$: $\\dfrac{12-3}{4-1}=3$."
+      ],
+      "brief": "$\\frac{dy}{dx}=\\frac{3t^2-3}{2t-1}$, at $t=2$ equals $\\frac93=3$."
+    },
+    {
+      "sec": "10.3",
+      "q": "The arc length of the parametric curve \\[ x=e^t\\cos t,\\quad y=e^t\\sin t,\\quad 0\\le t\\le 1 \\] is equal to",
+      "opts": [
+        "$\\sqrt2\\,(e-1)$",
+        "$\\sqrt2\\,(e^2-1)$",
+        "$e+1$",
+        "$2(e-1)$",
+        "$\\sqrt2\\,(e+1)$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Use the arc length formula for a parametric curve.",
+        "Differentiate $x$ and $y$ with the product rule and simplify $(x')^2+(y')^2$.",
+        "$L=\\int_a^b\\sqrt{(x')^2+(y')^2}\\,dt$, and $(\\cos t-\\sin t)^2+(\\cos t+\\sin t)^2=2$ because $\\sin^2t+\\cos^2t=1$."
+      ],
+      "steps": [
+        "$x'=e^t(\\cos t-\\sin t)$, $y'=e^t(\\cos t+\\sin t)$.",
+        "$(x')^2+(y')^2=e^{2t}\\left[2\\cos^2t+2\\sin^2t\\right]=2e^{2t}$.",
+        "$L=\\int_0^1\\sqrt2\\,e^t\\,dt=\\sqrt2\\,(e-1)$."
+      ],
+      "brief": "$(x')^2+(y')^2=2e^{2t}$, $L=\\int_0^1\\sqrt2e^t\\,dt=\\sqrt2(e-1)$."
+    },
+    {
+      "sec": "10.4",
+      "q": "Converting the rectangular equation \\[ (x^2+y^2)^2-4x^2+4y^2=0 \\] to polar form, we get",
+      "opts": [
+        "$r^2=4\\cos(2\\theta)$",
+        "$r^2=2\\cos(2\\theta)$",
+        "$r^2=4(\\cos\\theta-\\sin\\theta)$",
+        "$r=2\\sin(2\\theta)$",
+        "$r^2=4\\sin(2\\theta)$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Convert using the polar substitutions and then simplify with a double-angle identity.",
+        "Replace $x^2+y^2$ by $r^2$, $x$ by $r\\cos\\theta$ and $y$ by $r\\sin\\theta$, then factor out the common power of $r$.",
+        "$x=r\\cos\\theta$, $y=r\\sin\\theta$, $x^2+y^2=r^2$, and $\\cos^2\\theta-\\sin^2\\theta=\\cos 2\\theta$."
+      ],
+      "steps": [
+        "$r^4-4r^2\\cos^2\\theta+4r^2\\sin^2\\theta=0$.",
+        "Factor: $r^2\\left(r^2-4(\\cos^2\\theta-\\sin^2\\theta)\\right)=0$.",
+        "The factor $r^2=0$ is only the origin, which is already on the other curve, so $r^2=4\\cos(2\\theta)$."
+      ],
+      "brief": "$r^4=4r^2(\\cos^2\\theta-\\sin^2\\theta)$, so $r^2=4\\cos2\\theta$."
+    },
+    {
+      "sec": "10.4",
+      "q": "The polar curve $r=2\\csc\\theta+3$ has a horizontal tangent line when",
+      "opts": [
+        "$\\theta=\\dfrac{\\pi}{2}$",
+        "$\\theta=\\dfrac{\\pi}{3}$",
+        "$\\theta=\\dfrac{\\pi}{4}$",
+        "$\\theta=\\dfrac{\\pi}{6}$",
+        "$\\theta=\\dfrac{\\pi}{8}$"
+      ],
+      "ans": 0,
+      "hints": [
+        "A horizontal tangent line occurs where $dy/d\\theta=0$ (and $dx/d\\theta\\neq0$).",
+        "Write $y=r\\sin\\theta$ and simplify it before differentiating.",
+        "For $r=f(\\theta)$, $y=f(\\theta)\\sin\\theta$ and $x=f(\\theta)\\cos\\theta$; the tangent is horizontal where $\\dfrac{dy}{d\\theta}=0$ and $\\dfrac{dx}{d\\theta}\\neq0$."
+      ],
+      "steps": [
+        "$y=r\\sin\\theta=(2\\csc\\theta+3)\\sin\\theta=2+3\\sin\\theta$, so $\\dfrac{dy}{d\\theta}=3\\cos\\theta$.",
+        "$\\dfrac{dy}{d\\theta}=0$ when $\\cos\\theta=0$, which among the choices is $\\theta=\\dfrac\\pi2$.",
+        "$x=2\\cot\\theta+3\\cos\\theta$ gives $\\dfrac{dx}{d\\theta}=-2\\csc^2\\theta-3\\sin\\theta=-5\\neq0$ at $\\theta=\\dfrac\\pi2$, so the tangent is horizontal there."
+      ],
+      "brief": "$y=2+3\\sin\\theta$, $dy/d\\theta=3\\cos\\theta=0$ at $\\theta=\\pi/2$ ($dx/d\\theta=-5$)."
+    },
+    {
+      "sec": "10.5",
+      "q": "The area of two petals (two loops) of the rose curve $r=\\sin(8\\theta)$ is equal to",
+      "opts": [
+        "$\\dfrac{\\pi}{16}$",
+        "$\\dfrac{\\pi}{8}$",
+        "$\\dfrac{3\\pi}{8}$",
+        "$\\dfrac{5\\pi}{16}$",
+        "$\\dfrac{\\pi}{4}$"
+      ],
+      "ans": 0,
+      "hints": [
+        "This is an area in polar coordinates. First find how one petal is traced.",
+        "Find the first two values of $\\theta$ with $r=0$; one petal is traced between them, and all petals are congruent.",
+        "$A=\\dfrac12\\int_\\alpha^\\beta r^2\\,d\\theta$ and $\\sin^2u=\\dfrac{1-\\cos 2u}{2}$."
+      ],
+      "steps": [
+        "$r=0$ when $\\sin8\\theta=0$, so one petal is traced for $0\\le\\theta\\le\\dfrac\\pi8$.",
+        "One petal: $\\dfrac12\\int_0^{\\pi/8}\\sin^2 8\\theta\\,d\\theta=\\dfrac14\\left[\\theta-\\dfrac{\\sin16\\theta}{16}\\right]_0^{\\pi/8}=\\dfrac{\\pi}{32}$.",
+        "Two petals: $2\\cdot\\dfrac{\\pi}{32}=\\dfrac{\\pi}{16}$."
+      ],
+      "brief": "One petal $=\\frac12\\int_0^{\\pi/8}\\sin^28\\theta\\,d\\theta=\\frac{\\pi}{32}$, two petals $=\\frac{\\pi}{16}$."
+    },
+    {
+      "sec": "10.5",
+      "q": "The area of the region outside the circle $r=2$ and inside the circle $r=4\\sin\\theta$ is equal to",
+      "opts": [
+        "$\\dfrac{4\\pi}{3}+2\\sqrt3$",
+        "$\\dfrac{2\\pi}{3}+2\\sqrt3$",
+        "$\\dfrac{2\\pi}{3}+\\sqrt3$",
+        "$\\dfrac{5\\pi}{3}-2\\sqrt3$",
+        "$\\dfrac{4\\pi}{3}+\\sqrt3$"
+      ],
+      "ans": 0,
+      "hints": [
+        "This is an area between two polar curves, so find where they intersect.",
+        "Set the two radii equal to get the limits, and use symmetry about the $y$-axis.",
+        "$A=\\dfrac12\\int_\\alpha^\\beta\\left(r_{\\text{outer}}^2-r_{\\text{inner}}^2\\right)d\\theta$ and $\\sin^2\\theta=\\dfrac{1-\\cos2\\theta}{2}$."
+      ],
+      "steps": [
+        "Intersection: $4\\sin\\theta=2$, so $\\theta=\\dfrac\\pi6$ (and $\\dfrac{5\\pi}{6}$). By symmetry, integrate from $\\dfrac\\pi6$ to $\\dfrac\\pi2$ and double.",
+        "$A=2\\cdot\\dfrac12\\int_{\\pi/6}^{\\pi/2}\\left(16\\sin^2\\theta-4\\right)d\\theta=\\int_{\\pi/6}^{\\pi/2}(4-8\\cos2\\theta)\\,d\\theta$.",
+        "$=\\left[4\\theta-4\\sin2\\theta\\right]_{\\pi/6}^{\\pi/2}=2\\pi-\\left(\\dfrac{2\\pi}{3}-2\\sqrt3\\right)=\\dfrac{4\\pi}{3}+2\\sqrt3$."
+      ],
+      "brief": "Limits $\\pi/6$ to $\\pi/2$ (doubled): $\\int(4-8\\cos2\\theta)d\\theta=\\frac{4\\pi}{3}+2\\sqrt3$."
+    },
+    {
+      "sec": "10.5",
+      "q": "The area of the surface formed by revolving the circle $r=\\cos\\theta$ about the line $\\theta=\\dfrac{\\pi}{2}$ is given by",
+      "opts": [
+        "$\\int_0^{\\pi}2\\pi\\cdot\\cos^2\\theta\\,d\\theta$",
+        "$\\int_0^{2\\pi}2\\pi\\cdot\\cos^2\\theta\\,d\\theta$",
+        "$\\int_0^{\\pi}\\pi\\cdot\\cos^2\\theta\\,d\\theta$",
+        "$\\int_0^{2\\pi}2\\pi\\cdot\\sin\\theta\\cdot\\cos\\theta\\,d\\theta$",
+        "$\\int_0^{\\pi}\\pi\\cdot\\sin\\theta\\cdot\\cos\\theta\\,d\\theta$"
+      ],
+      "ans": 0,
+      "hints": [
+        "This is a surface of revolution for a polar curve; the line $\\theta=\\pi/2$ is the $y$-axis.",
+        "Use the polar surface area formula for revolution about the $y$-axis, find the arc length element, and decide how far $\\theta$ must run to trace the circle once.",
+        "About the line $\\theta=\\frac\\pi2$: $S=2\\pi\\int_\\alpha^\\beta r\\cos\\theta\\sqrt{r^2+\\left(\\frac{dr}{d\\theta}\\right)^2}\\,d\\theta$ (distance to the axis is $|x|=|r\\cos\\theta|$)."
+      ],
+      "steps": [
+        "Here $\\dfrac{dr}{d\\theta}=-\\sin\\theta$, so $\\sqrt{r^2+(r')^2}=\\sqrt{\\cos^2\\theta+\\sin^2\\theta}=1$.",
+        "The circle $r=\\cos\\theta$ is traced once for $0\\le\\theta\\le\\pi$.",
+        "$S=\\int_0^\\pi2\\pi\\,(\\cos\\theta)(\\cos\\theta)\\cdot1\\,d\\theta=\\int_0^\\pi2\\pi\\cos^2\\theta\\,d\\theta$."
+      ],
+      "brief": "$S=\\int_0^\\pi2\\pi\\,r\\cos\\theta\\sqrt{r^2+r'^2}\\,d\\theta=\\int_0^\\pi2\\pi\\cos^2\\theta\\,d\\theta$."
+    },
+    {
+      "sec": "11.2",
+      "q": "If $C(a,b,c)$ is the center of the sphere \\[ 3x^2+3y^2+3z^2-18x+6z+24=0, \\] then $a^2+b^2+c^2=$",
+      "opts": [
+        "$10$",
+        "$11$",
+        "$5$",
+        "$14$",
+        "$3$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Complete the square to put the equation in standard sphere form.",
+        "Divide by the common coefficient of the squared terms first, then complete the square in $x$, $y$ and $z$.",
+        "A sphere with center $(a,b,c)$ and radius $\\rho$ is $(x-a)^2+(y-b)^2+(z-c)^2=\\rho^2$."
+      ],
+      "steps": [
+        "Divide by 3: $x^2+y^2+z^2-6x+2z+8=0$.",
+        "Complete the squares: $(x-3)^2+y^2+(z+1)^2=2$.",
+        "Center $(3,0,-1)$, so $a^2+b^2+c^2=9+0+1=10$."
+      ],
+      "brief": "$(x-3)^2+y^2+(z+1)^2=2$, center $(3,0,-1)$, so $9+0+1=10$."
+    },
+    {
+      "sec": "11.4",
+      "q": "A vector that is orthogonal to both vectors \\[ \\vec u=\\mathbf i+\\mathbf j+\\mathbf k,\\quad \\vec v=2\\mathbf i+\\mathbf j-\\mathbf k \\] is",
+      "opts": [
+        "$-2\\mathbf i+3\\mathbf j-\\mathbf k$",
+        "$3\\mathbf j-\\mathbf k$",
+        "$-2\\mathbf i-3\\mathbf j-\\mathbf k$",
+        "$2\\mathbf i+3\\mathbf j$",
+        "$-2\\mathbf i-\\mathbf j+\\mathbf k$"
+      ],
+      "ans": 0,
+      "hints": [
+        "A vector orthogonal to two vectors can be found with the cross product.",
+        "Compute $\\vec u\\times\\vec v$ using the $3\\times3$ determinant with $\\mathbf i,\\mathbf j,\\mathbf k$ in the first row.",
+        "$\\vec u\\times\\vec v$ is orthogonal to both $\\vec u$ and $\\vec v$; check with the dot product, which must be $0$."
+      ],
+      "steps": [
+        "$\\vec u\\times\\vec v=\\begin{vmatrix}\\mathbf i&\\mathbf j&\\mathbf k\\\\1&1&1\\\\2&1&-1\\end{vmatrix}$.",
+        "$=\\mathbf i(-1-1)-\\mathbf j(-1-2)+\\mathbf k(1-2)=-2\\mathbf i+3\\mathbf j-\\mathbf k$.",
+        "Check: dot with $\\vec u$ is $-2+3-1=0$, dot with $\\vec v$ is $-4+3+1=0$."
+      ],
+      "brief": "$\\vec u\\times\\vec v=-2\\mathbf i+3\\mathbf j-\\mathbf k$."
+    },
+    {
+      "sec": "11.3",
+      "q": "The projection of $\\vec u=\\langle1,-2,3\\rangle$ onto $\\vec v=\\langle-1,1,2\\rangle$ is",
+      "opts": [
+        "$\\left\\langle-\\dfrac12,\\dfrac12,1\\right\\rangle$",
+        "$\\langle-2,2,4\\rangle$",
+        "$\\left\\langle\\dfrac12,-1,\\dfrac32\\right\\rangle$",
+        "$\\langle2,-2,-4\\rangle$",
+        "$\\langle-1,1,2\\rangle$"
+      ],
+      "ans": 0,
+      "hints": [
+        "This is a vector projection.",
+        "Compute $\\vec u\\cdot\\vec v$ and $\\|\\vec v\\|^2$.",
+        "$\\operatorname{proj}_{\\vec v}\\vec u=\\dfrac{\\vec u\\cdot\\vec v}{\\|\\vec v\\|^2}\\,\\vec v$."
+      ],
+      "steps": [
+        "$\\vec u\\cdot\\vec v=-1-2+6=3$.",
+        "$\\|\\vec v\\|^2=1+1+4=6$.",
+        "$\\operatorname{proj}_{\\vec v}\\vec u=\\dfrac36\\langle-1,1,2\\rangle=\\left\\langle-\\dfrac12,\\dfrac12,1\\right\\rangle$."
+      ],
+      "brief": "$\\frac{3}{6}\\langle-1,1,2\\rangle=\\langle-\\frac12,\\frac12,1\\rangle$."
+    },
+    {
+      "sec": "11.4",
+      "q": "The volume of the parallelepiped having adjacent edges \\[ \\vec u=\\langle3,1,1\\rangle,\\quad\\vec v=\\langle2,1,0\\rangle,\\quad\\vec w=\\langle1,-1,-2\\rangle \\] is equal to",
+      "opts": [
+        "$5$",
+        "$6$",
+        "$8$",
+        "$10$",
+        "$2$"
+      ],
+      "ans": 0,
+      "hints": [
+        "The volume of a parallelepiped is given by the scalar triple product.",
+        "Put the three vectors as rows of a $3\\times3$ determinant and evaluate it.",
+        "$V=\\left|\\vec u\\cdot(\\vec v\\times\\vec w)\\right|=\\left|\\det\\right|$ of the matrix with the three edge vectors as rows; the volume is the absolute value."
+      ],
+      "steps": [
+        "$\\det\\begin{bmatrix}3&1&1\\\\2&1&0\\\\1&-1&-2\\end{bmatrix}=3(-2-0)-1(-4-0)+1(-2-1)$.",
+        "$=-6+4-3=-5$.",
+        "$V=|-5|=5$."
+      ],
+      "brief": "$\\det=-5$, so $V=|-5|=5$."
+    },
+    {
+      "sec": "11.2",
+      "q": "The vector of magnitude $\\dfrac32$ that has the same direction as the vector $\\langle2,-2,1\\rangle$ is",
+      "opts": [
+        "$\\left\\langle1,-1,\\dfrac12\\right\\rangle$",
+        "$\\langle2,-1,2\\rangle$",
+        "$\\langle2,-2,1\\rangle$",
+        "$\\left\\langle-3,3,\\dfrac32\\right\\rangle$",
+        "$\\left\\langle-1,\\dfrac12,1\\right\\rangle$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Build a vector with the given direction and the given length from a unit vector.",
+        "Find the length of the given vector, divide to get a unit vector, then scale.",
+        "A vector of magnitude $m$ in the direction of $\\mathbf a$ is $m\\,\\dfrac{\\mathbf a}{\\|\\mathbf a\\|}$."
+      ],
+      "steps": [
+        "$\\|\\langle2,-2,1\\rangle\\|=\\sqrt{4+4+1}=3$.",
+        "Unit vector: $\\dfrac13\\langle2,-2,1\\rangle$.",
+        "Multiply by $\\dfrac32$: $\\dfrac12\\langle2,-2,1\\rangle=\\left\\langle1,-1,\\dfrac12\\right\\rangle$."
+      ],
+      "brief": "$\\frac32\\cdot\\frac13\\langle2,-2,1\\rangle=\\langle1,-1,\\frac12\\rangle$."
+    },
+    {
+      "sec": "11.2",
+      "q": "If $R(a,b,c)$ is the point that lies three-fifths of the way from $P(0,1,2)$ to $Q(2,-1,-3)$, then $a+b+c=$",
+      "opts": [
+        "$0$",
+        "$\\dfrac35$",
+        "$-\\dfrac15$",
+        "$1$",
+        "$-3$"
+      ],
+      "ans": 0,
+      "hints": [
+        "The point is found by moving a fraction of the way along the vector from $P$ to $Q$.",
+        "Compute $\\overrightarrow{PQ}$, take the given fraction of it, and add it to $P$.",
+        "The point a fraction $s$ of the way from $P$ to $Q$ is $R=P+s\\,\\overrightarrow{PQ}$."
+      ],
+      "steps": [
+        "$\\overrightarrow{PQ}=\\langle2,-2,-5\\rangle$.",
+        "$\\overrightarrow{PR}=\\dfrac35\\langle2,-2,-5\\rangle=\\left\\langle\\dfrac65,-\\dfrac65,-3\\right\\rangle$, so $R=\\left(\\dfrac65,-\\dfrac15,-1\\right)$.",
+        "$a+b+c=\\dfrac65-\\dfrac15-1=0$."
+      ],
+      "brief": "$R=P+\\frac35\\overrightarrow{PQ}=(\\frac65,-\\frac15,-1)$, so $a+b+c=0$."
+    }
+  ]
+}

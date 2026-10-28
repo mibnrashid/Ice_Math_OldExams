@@ -1,0 +1,436 @@
+{
+  "course": "math102",
+  "term": "221",
+  "kind": "e1",
+  "date": "",
+  "minutes": 90,
+  "source": "math102-221-e1.pdf",
+  "note": "The cover page is not in the scan (page 1 starts with question 1), so the date is not printed and 90 minutes is assumed as the usual length. All 18 answers were checked with sympy and agree with the master key. Q7: the exact concave-up interval (1/sqrt(3), infinity) is not a choice; the key (1, infinity) is kept as the only choice inside it. Sections for Q1, Q9 and Q10 are assigned by method.",
+  "qs": [
+    {
+      "sec": "5.3",
+      "q": "$\\int_0^{3\\pi/2}|\\sin x|\\,dx=$",
+      "opts": [
+        "$3$",
+        "$1$",
+        "$2$",
+        "$-1$",
+        "$-2$"
+      ],
+      "ans": 0,
+      "hints": [
+        "The absolute value changes the integrand where $\\sin x$ changes sign, so split the interval.",
+        "Find where $\\sin x$ is negative on $[0,3\\pi/2]$ and write $|\\sin x|$ without absolute value on each piece.",
+        "$|f(x)|=f(x)$ where $f\\ge0$ and $|f(x)|=-f(x)$ where $f\\le0$; also $\\int\\sin x\\,dx=-\\cos x+C$."
+      ],
+      "steps": [
+        "$\\sin x\\ge0$ on $[0,\\pi]$ and $\\sin x\\le0$ on $[\\pi,3\\pi/2]$.",
+        "$\\int_0^{\\pi}\\sin x\\,dx=[-\\cos x]_0^{\\pi}=1-(-1)=2$.",
+        "$\\int_{\\pi}^{3\\pi/2}(-\\sin x)\\,dx=[\\cos x]_{\\pi}^{3\\pi/2}=0-(-1)=1$.",
+        "Total: $2+1=3$."
+      ],
+      "brief": "Split at $\\pi$: $\\int_0^\\pi\\sin x\\,dx+\\int_\\pi^{3\\pi/2}(-\\sin x)\\,dx=2+1=3$."
+    },
+    {
+      "sec": "5.4",
+      "q": "$\\int_1^2\\frac{(x-1)^3}{x^2}\\,dx=$",
+      "opts": [
+        "$-2+3\\ln 2$",
+        "$\\ln 9$",
+        "$\\dfrac32+\\ln 2$",
+        "$2\\ln 3-\\sqrt2$",
+        "$1-2\\ln 2$"
+      ],
+      "ans": 0,
+      "hints": [
+        "The numerator is a polynomial and the denominator is a single power of $x$, so the integrand can be split term by term.",
+        "Expand the numerator and divide each term by the denominator.",
+        "$\\int x^n\\,dx=\\dfrac{x^{n+1}}{n+1}$ for $n\\ne-1$, $\\int\\dfrac1x\\,dx=\\ln|x|$, and $\\int_a^b f=F(b)-F(a)$."
+      ],
+      "steps": [
+        "$(x-1)^3=x^3-3x^2+3x-1$, so the integrand is $x-3+\\dfrac3x-\\dfrac1{x^2}$.",
+        "Antiderivative: $\\dfrac{x^2}{2}-3x+3\\ln x+\\dfrac1x$.",
+        "At $x=2$: $2-6+3\\ln2+\\dfrac12$. At $x=1$: $\\dfrac12-3+0+1$.",
+        "Subtract: $-\\dfrac72+3\\ln 2-\\left(-\\dfrac32\\right)=-2+3\\ln2$."
+      ],
+      "brief": "Expand: $x-3+\\frac3x-\\frac1{x^2}$; antiderivative evaluated gives $-2+3\\ln2$."
+    },
+    {
+      "sec": "5.5",
+      "q": "$\\int\\frac{\\cos\\left(\\frac{\\pi}{x}\\right)}{x^2}\\,dx=$",
+      "opts": [
+        "$-\\dfrac1\\pi\\sin\\left(\\dfrac\\pi x\\right)+c$",
+        "$\\sin\\left(\\dfrac\\pi x\\right)+c$",
+        "$-\\dfrac1x\\sin(\\pi x)+c$",
+        "$-\\dfrac1\\pi\\sin(\\pi x)+c$",
+        "$-\\dfrac x\\pi\\sin\\left(\\dfrac\\pi x\\right)+c$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Use substitution on the inner function of the cosine.",
+        "Let $u$ be the expression inside the cosine and compute $du$; it should match the leftover factor $\\dfrac{1}{x^2}\\,dx$ up to a constant.",
+        "If $u=g(x)$ then $du=g'(x)\\,dx$, and $\\int\\cos u\\,du=\\sin u+C$; $\\dfrac{d}{dx}\\left(\\dfrac kx\\right)=-\\dfrac{k}{x^2}$."
+      ],
+      "steps": [
+        "Let $u=\\dfrac\\pi x$, so $du=-\\dfrac{\\pi}{x^2}\\,dx$ and $\\dfrac{dx}{x^2}=-\\dfrac{du}{\\pi}$.",
+        "$\\int\\cos u\\left(-\\dfrac{du}{\\pi}\\right)=-\\dfrac1\\pi\\sin u+c$.",
+        "Substitute back: $-\\dfrac1\\pi\\sin\\left(\\dfrac\\pi x\\right)+c$."
+      ],
+      "brief": "$u=\\pi/x$, $\\frac{dx}{x^2}=-\\frac{du}{\\pi}$: result $-\\frac1\\pi\\sin(\\pi/x)+c$."
+    },
+    {
+      "sec": "5.5",
+      "q": "If $\\int_0^4 e^{(x-2)^4}\\,dx=k$, then the value of $\\int_0^4 x\\,e^{(x-2)^4}\\,dx=$",
+      "opts": [
+        "$2k$",
+        "$k$",
+        "$k^4$",
+        "$k^2$",
+        "$4k^2$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Shift the variable to centre the interval, then use odd and even symmetry.",
+        "Substitute $u=x-2$, change the limits, and write $x=u+2$; split the integral into two.",
+        "For an odd function $\\int_{-a}^{a}f=0$, and for an even function $\\int_{-a}^{a}f=2\\int_0^a f$."
+      ],
+      "steps": [
+        "Let $u=x-2$, $du=dx$, $x=u+2$; the limits $0,4$ become $-2,2$.",
+        "$\\int_0^4xe^{(x-2)^4}dx=\\int_{-2}^{2}ue^{u^4}\\,du+2\\int_{-2}^{2}e^{u^4}\\,du$.",
+        "$ue^{u^4}$ is odd, so the first integral is $0$; $e^{u^4}$ is even.",
+        "$2\\int_{-2}^{2}e^{u^4}du=2\\int_0^4e^{(x-2)^4}dx=2k$."
+      ],
+      "brief": "$u=x-2$: odd part vanishes, $2\\int_{-2}^{2}e^{u^4}du=2k$."
+    },
+    {
+      "sec": "5.4",
+      "q": "If $x\\sin(\\pi x)=\\int_0^{x^2}f(t)\\,dt$, where $f$ is a continuous function, then $f(4)=$",
+      "opts": [
+        "$\\dfrac\\pi2$",
+        "$2$",
+        "$\\dfrac23\\pi$",
+        "$2\\pi$",
+        "$\\dfrac32\\pi$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Differentiate both sides, using the Fundamental Theorem of Calculus on the right.",
+        "Apply the chain rule on the right and the product rule on the left, then pick the $x$ for which the upper limit equals the needed argument.",
+        "$\\dfrac{d}{dx}\\int_a^{g(x)}f(t)\\,dt=f(g(x))\\,g'(x)$."
+      ],
+      "steps": [
+        "Differentiate: $\\sin(\\pi x)+\\pi x\\cos(\\pi x)=2x\\,f(x^2)$.",
+        "Put $x=2$: $\\sin 2\\pi+2\\pi\\cos2\\pi=4f(4)$.",
+        "So $2\\pi=4f(4)$, giving $f(4)=\\dfrac\\pi2$."
+      ],
+      "brief": "Differentiate, set $x=2$: $2\\pi=4f(4)$, so $f(4)=\\pi/2$."
+    },
+    {
+      "sec": "5.5",
+      "q": "$\\int_1^5\\frac{x\\,dx}{\\sqrt{2x-1}}=$",
+      "opts": [
+        "$\\dfrac{16}3$",
+        "$\\dfrac83$",
+        "$\\dfrac{13}3$",
+        "$\\dfrac{14}3$",
+        "$\\dfrac{11}3$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Use substitution for the expression under the square root.",
+        "Let $u$ be the square root, express $x$ and $dx$ in terms of $u$, and convert the limits.",
+        "If $u^2=ax+b$ then $x=\\dfrac{u^2-b}{a}$ and $u\\,du=\\dfrac a2\\,dx$; for a definite integral change the limits to $u$-values."
+      ],
+      "steps": [
+        "$u^2=2x-1$, so $x=\\dfrac{u^2+1}2$ and $dx=u\\,du$; limits $x=1,5$ give $u=1,3$.",
+        "$\\int_1^3\\dfrac{(u^2+1)/2}{u}\\,u\\,du=\\dfrac12\\int_1^3(u^2+1)\\,du$.",
+        "$=\\dfrac12\\left[\\dfrac{u^3}{3}+u\\right]_1^3=\\dfrac12\\left[12-\\dfrac43\\right]=\\dfrac{16}3$."
+      ],
+      "brief": "$u=\\sqrt{2x-1}$: $\\frac12\\int_1^3(u^2+1)du=\\frac{16}{3}$."
+    },
+    {
+      "sec": "5.4",
+      "q": "The curve $y=\\int_1^x\\frac{t^2+1}{\\sqrt t}\\,dt$ is concave up on the interval:",
+      "opts": [
+        "$(1,\\infty)$",
+        "$\\left(\\dfrac12,\\infty\\right)$",
+        "$(0,\\sqrt3)$",
+        "$(-\\infty,\\sqrt3)$",
+        "$(0,1)$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Concavity is determined by the sign of the second derivative.",
+        "Use the Fundamental Theorem to get $y'$, differentiate again, and find where $y''>0$.",
+        "$\\dfrac{d}{dx}\\int_a^xf(t)\\,dt=f(x)$, and $y$ is concave up where $y''>0$."
+      ],
+      "steps": [
+        "$y'=\\dfrac{x^2+1}{\\sqrt x}=x^{3/2}+x^{-1/2}$ (the domain is $x>0$).",
+        "$y''=\\dfrac32x^{1/2}-\\dfrac12x^{-3/2}=\\dfrac{3x^2-1}{2x^{3/2}}$.",
+        "$y''>0$ exactly when $x>\\dfrac1{\\sqrt3}$.",
+        "Of the listed intervals only $(1,\\infty)$ lies entirely inside $\\left(\\frac1{\\sqrt3},\\infty\\right)$, so $y$ is concave up there."
+      ],
+      "brief": "$y''=\\frac{3x^2-1}{2x^{3/2}}>0$ for $x>\\frac1{\\sqrt3}$, which contains $(1,\\infty)$.",
+      "note": "Q7: exact concave-up set is (1/sqrt(3), infinity), which is not a choice; the master key (1,infinity) is the only choice lying inside it. Key kept."
+    },
+    {
+      "sec": "5.4",
+      "q": "$\\dfrac{d}{dx}\\left[\\int_{1-3x}^{1}\\frac{u^3}{1+u^2}\\,du\\right]=$",
+      "opts": [
+        "$\\dfrac{3(1-3x)^3}{1+(1-3x)^2}$",
+        "$\\dfrac{3x^3}{1+x^2}$",
+        "$\\dfrac{-3(1-3x)^3}{1+(1-3x)^2}$",
+        "$\\dfrac{(1-3x)^3}{1+(1-3x)^2}$",
+        "$\\dfrac12$"
+      ],
+      "ans": 0,
+      "hints": [
+        "The variable $x$ appears in the lower limit, so use the Fundamental Theorem with the chain rule.",
+        "Swap the limits to put the variable limit on top, which introduces a minus sign.",
+        "$\\dfrac{d}{dx}\\int_{g(x)}^{b}f(u)\\,du=-f(g(x))\\,g'(x)$."
+      ],
+      "steps": [
+        "Write the integral as $-\\int_1^{1-3x}\\frac{u^3}{1+u^2}\\,du$.",
+        "Differentiate: $-\\dfrac{(1-3x)^3}{1+(1-3x)^2}\\cdot\\dfrac{d}{dx}(1-3x)$.",
+        "With $\\dfrac{d}{dx}(1-3x)=-3$ the result is $\\dfrac{3(1-3x)^3}{1+(1-3x)^2}$."
+      ],
+      "brief": "Lower limit: $-f(1-3x)\\cdot(-3)=\\frac{3(1-3x)^3}{1+(1-3x)^2}$."
+    },
+    {
+      "sec": "5.3",
+      "q": "$\\lim_{n\\to\\infty}\\frac3n\\sum_{i=1}^{n}\\left[\\left(\\frac{3i}{n}\\right)^3-6\\left(\\frac{3i}{n}\\right)\\right]=$",
+      "opts": [
+        "$-\\dfrac{27}4$",
+        "$\\dfrac{27}4$",
+        "$\\dfrac{29}4$",
+        "$-\\dfrac{29}4$",
+        "$-\\dfrac{26}4$"
+      ],
+      "ans": 0,
+      "hints": [
+        "The limit of a sum of this form is a definite integral (a Riemann sum).",
+        "Match $\\Delta x=\\dfrac3n$ and the sample points $x_i=\\dfrac{3i}{n}$ to find the interval and the function.",
+        "$\\lim_{n\\to\\infty}\\sum_{i=1}^nf(x_i)\\Delta x=\\int_a^bf(x)\\,dx$ with $\\Delta x=\\dfrac{b-a}{n}$, $x_i=a+i\\Delta x$."
+      ],
+      "steps": [
+        "$\\Delta x=\\dfrac3n$ and $x_i=\\dfrac{3i}n$ give $a=0$, $b=3$, and $f(x)=x^3-6x$.",
+        "The limit is $\\int_0^3(x^3-6x)\\,dx=\\left[\\dfrac{x^4}4-3x^2\\right]_0^3$.",
+        "$=\\dfrac{81}4-27=-\\dfrac{27}4$."
+      ],
+      "brief": "Riemann sum for $\\int_0^3(x^3-6x)dx=\\frac{81}{4}-27=-\\frac{27}{4}$."
+    },
+    {
+      "sec": "5.3",
+      "q": "$\\int_0^5\\left(x-\\sqrt{25-x^2}\\right)dx=$",
+      "opts": [
+        "$\\dfrac{50-25\\pi}4$",
+        "$\\dfrac{40-25\\pi}4$",
+        "$\\dfrac{25-25\\pi}2$",
+        "$\\dfrac{25-50\\pi}2$",
+        "$\\dfrac{50+\\pi}4$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Split into two integrals and interpret each as an area.",
+        "The first is the area of a triangle, the second is the area of part of a circle.",
+        "$\\int_0^r\\sqrt{r^2-x^2}\\,dx$ is the area of a quarter disk of radius $r$, namely $\\dfrac{\\pi r^2}4$."
+      ],
+      "steps": [
+        "$\\int_0^5x\\,dx=\\dfrac{25}{2}$ (triangle with legs $5$ and $5$).",
+        "$\\int_0^5\\sqrt{25-x^2}\\,dx=\\dfrac14\\pi(5)^2=\\dfrac{25\\pi}4$.",
+        "Difference: $\\dfrac{25}2-\\dfrac{25\\pi}4=\\dfrac{50-25\\pi}4$."
+      ],
+      "brief": "$\\frac{25}{2}-\\frac{25\\pi}{4}=\\frac{50-25\\pi}{4}$ (triangle minus quarter disk)."
+    },
+    {
+      "sec": "5.3",
+      "q": "$\\int_1^3\\sqrt{4+x^2}\\,dx=$",
+      "opts": [
+        "$\\lim_{n\\to\\infty}\\sum_{i=1}^{n}\\left(\\sqrt{4+\\left(1+\\frac{2i}{n}\\right)^2}\\right)\\frac2n$",
+        "$\\lim_{n\\to\\infty}\\sum_{i=1}^{n}\\left(\\sqrt{4+\\frac{4i^2}{n^2}}\\right)\\frac2n$",
+        "$\\lim_{n\\to\\infty}\\sum_{i=1}^{n}\\left(\\sqrt{4+\\left(1+\\frac{i}{n}\\right)^2}\\right)\\frac1n$",
+        "$\\lim_{n\\to\\infty}\\sum_{i=1}^{n}\\left(\\sqrt{4+\\left(1-\\frac{2i}{n}\\right)^2}\\right)\\frac2n$",
+        "$\\lim_{n\\to\\infty}\\sum_{i=1}^{n}\\left(\\sqrt{4+\\left(1+\\frac{2i}{n}\\right)}\\right)\\frac2n$"
+      ],
+      "ans": 0,
+      "hints": [
+        "The question asks for the limit of a Riemann sum that equals the integral.",
+        "Find $\\Delta x$ from the interval and the right-endpoint sample points $x_i$, then evaluate $f(x_i)$.",
+        "$\\int_a^bf(x)\\,dx=\\lim_{n\\to\\infty}\\sum_{i=1}^nf(x_i)\\Delta x$ with $\\Delta x=\\dfrac{b-a}{n}$ and $x_i=a+i\\Delta x$."
+      ],
+      "steps": [
+        "$a=1$, $b=3$, so $\\Delta x=\\dfrac2n$ and $x_i=1+\\dfrac{2i}n$.",
+        "With $f(x)=\\sqrt{4+x^2}$: $f(x_i)=\\sqrt{4+\\left(1+\\frac{2i}n\\right)^2}$.",
+        "So the sum is $\\sum\\sqrt{4+\\left(1+\\frac{2i}n\\right)^2}\\cdot\\dfrac2n$."
+      ],
+      "brief": "$\\Delta x=\\frac2n$, $x_i=1+\\frac{2i}{n}$: $\\sum\\sqrt{4+(1+\\frac{2i}n)^2}\\,\\frac2n$."
+    },
+    {
+      "sec": "5.2",
+      "q": "If $U$ and $L$ are upper and lower sums for $f(x)=x^2$, $0\\le x\\le2$, with $n=4$ then $\\dfrac{U+L}{2}=$",
+      "opts": [
+        "$\\dfrac{11}4$",
+        "$\\dfrac{15}4$",
+        "$\\dfrac74$",
+        "$\\dfrac{13}4$",
+        "$3$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Divide the interval into equal subintervals and use that $f$ is increasing on $[0,2]$.",
+        "For an increasing function the lower sum uses left endpoints and the upper sum uses right endpoints.",
+        "Sum $=\\sum f(x_i^*)\\Delta x$ with $\\Delta x=\\dfrac{b-a}{n}$; for increasing $f$, $L$ uses left endpoints and $U$ uses right endpoints."
+      ],
+      "steps": [
+        "$\\Delta x=\\dfrac12$ with points $0,\\tfrac12,1,\\tfrac32,2$.",
+        "$L=\\dfrac12\\left(0+\\dfrac14+1+\\dfrac94\\right)=\\dfrac74$.",
+        "$U=\\dfrac12\\left(\\dfrac14+1+\\dfrac94+4\\right)=\\dfrac{15}4$.",
+        "$\\dfrac{U+L}2=\\dfrac{11}4$."
+      ],
+      "brief": "$L=\\frac74$, $U=\\frac{15}4$, average $=\\frac{11}4$."
+    },
+    {
+      "sec": "7.1",
+      "q": "Find the number $b$ such that the line $y=b$ divides the region bounded by the curves $y=x^2$ and $y=4$ into two equal halves.",
+      "opts": [
+        "$2\\sqrt[3]{2}$",
+        "$2$",
+        "$2\\sqrt[3]{4}$",
+        "$4$",
+        "$8$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Set the area below the line equal to the area above the line.",
+        "Integrate with respect to $y$, using the right-hand half $x=\\sqrt y$ (the region is symmetric about the $y$-axis).",
+        "Area $=\\int_c^d(\\text{right}-\\text{left})\\,dy$, and $\\int y^{1/2}dy=\\dfrac23y^{3/2}$."
+      ],
+      "steps": [
+        "By symmetry, compare $\\int_0^b\\sqrt y\\,dy$ with $\\int_b^4\\sqrt y\\,dy$.",
+        "$\\dfrac23b^{3/2}=\\dfrac23\\left(4^{3/2}-b^{3/2}\\right)=\\dfrac23\\left(8-b^{3/2}\\right)$.",
+        "So $2b^{3/2}=8$, $b^{3/2}=4$.",
+        "$b=4^{2/3}=2\\sqrt[3]{2}$."
+      ],
+      "brief": "$\\frac23 b^{3/2}=\\frac23(8-b^{3/2})\\Rightarrow b^{3/2}=4$, $b=2\\sqrt[3]2$."
+    },
+    {
+      "sec": "7.1",
+      "q": "Find the area of the region enclosed by the curves $y=x^2$ and $y=2-|x|$.",
+      "opts": [
+        "$7/3$",
+        "$13/3$",
+        "$5/3$",
+        "$7/6$",
+        "$5/6$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Find where the curves meet, then integrate top minus bottom.",
+        "The region is symmetric about the $y$-axis, so double the area for $x\\ge0$, where $|x|=x$.",
+        "Area $=\\int_a^b(f_{\\text{top}}-f_{\\text{bottom}})\\,dx$, and for an even integrand $\\int_{-a}^af=2\\int_0^af$."
+      ],
+      "steps": [
+        "For $x\\ge0$: $x^2=2-x$ gives $x=1$, so the curves meet at $x=\\pm1$.",
+        "Area $=2\\int_0^1(2-x-x^2)\\,dx$.",
+        "$=2\\left[2x-\\dfrac{x^2}2-\\dfrac{x^3}3\\right]_0^1=2\\left(2-\\dfrac12-\\dfrac13\\right)=\\dfrac73$."
+      ],
+      "brief": "Intersections $x=\\pm1$: $2\\int_0^1(2-x-x^2)dx=\\frac73$."
+    },
+    {
+      "sec": "7.2",
+      "q": "Find the volume of the solid obtained by rotating the region bounded by the curves $y=x^2$ and $x=y^2$ about the line $y=1$.",
+      "opts": [
+        "$\\dfrac{11}{30}\\pi$",
+        "$\\dfrac\\pi3$",
+        "$\\dfrac\\pi6$",
+        "$\\dfrac{13}{30}\\pi$",
+        "$\\dfrac\\pi2$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Use the washer method with the axis $y=1$, which is not a coordinate axis.",
+        "Find the intersection points, then measure the distances from the axis to the upper and lower curves.",
+        "$V=\\pi\\int_a^b\\left(R^2-r^2\\right)dx$, where $R$ and $r$ are the outer and inner distances from the axis."
+      ],
+      "steps": [
+        "The curves meet at $(0,0)$ and $(1,1)$; for $0\\le x\\le1$ the upper curve is $y=\\sqrt x$ and the lower is $y=x^2$.",
+        "Distances from $y=1$: outer $R=1-x^2$, inner $r=1-\\sqrt x$.",
+        "$V=\\pi\\int_0^1\\left[(1-x^2)^2-(1-\\sqrt x)^2\\right]dx=\\pi\\int_0^1\\left(x^4-2x^2-x+2\\sqrt x\\right)dx$.",
+        "$=\\pi\\left(\\dfrac15-\\dfrac23-\\dfrac12+\\dfrac43\\right)=\\dfrac{11}{30}\\pi$."
+      ],
+      "brief": "Washers about $y=1$: $\\pi\\int_0^1[(1-x^2)^2-(1-\\sqrt x)^2]dx=\\frac{11\\pi}{30}$."
+    },
+    {
+      "sec": "7.2",
+      "q": "The volume of the solid obtained by rotating the region bounded by the curves $y=\\ln x$, $y=-1$ and $y=1$, about $x=-1$ is given by",
+      "opts": [
+        "$\\pi\\int_{-1}^{1}\\left(e^{2y}+2e^{y}\\right)dy$",
+        "$\\pi\\int_{-1}^{1}\\left[(1+e^{y})^2-e^{2y}\\right]dy$",
+        "$2\\pi\\int_{0}^{1}\\left(e^{2y}+2e^{y}\\right)dy$",
+        "$2\\pi\\int_{0}^{1}\\left[(1+\\ln x)^2-1\\right]dx$",
+        "$\\pi\\int_{-1}^{1}\\left[(1+\\ln x)^2-e^{x}\\right]dx$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Rotate about a vertical line and integrate in $y$, using washers (horizontal slices).",
+        "Write the curve as $x=e^y$ and measure the distances from the axis to the region's right and left boundaries.",
+        "$V=\\pi\\int_c^d\\left(R^2-r^2\\right)dy$, where $R$ and $r$ are the outer and inner distances to the axis of rotation."
+      ],
+      "steps": [
+        "The region lies between $x=0$ and $x=e^y$ for $-1\\le y\\le1$ (the $y$-axis is its left edge).",
+        "Distance from $x=-1$: outer $R=1+e^y$, inner $r=1$.",
+        "$V=\\pi\\int_{-1}^1\\left[(1+e^y)^2-1\\right]dy$.",
+        "Expand: $(1+e^y)^2-1=e^{2y}+2e^y$."
+      ],
+      "brief": "Washers about $x=-1$: $R=1+e^y$, $r=1$, $V=\\pi\\int_{-1}^1(e^{2y}+2e^y)dy$."
+    },
+    {
+      "sec": "7.2",
+      "q": "The volume of the solid obtained by rotating the region bounded by the curves $y=6-x^2$ and $y=2$ about $y=2$ is",
+      "opts": [
+        "$2\\pi\\int_0^2(4-x^2)^2\\,dx$",
+        "$\\pi\\int_{-2}^{2}\\left[(6-x^2)^2-4\\right]dx$",
+        "$2\\pi\\int_0^2\\left[(4-x^2)^2-4\\right]dx$",
+        "$2\\pi\\int_0^2(x^2+4)^2\\,dx$",
+        "$\\pi\\int_{-2}^{2}(x^2-4)\\,dx$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Use the disk method, since the region touches the axis of rotation along its whole lower edge.",
+        "Find where the curves meet, and find the radius of a disk as the distance from the curve to the axis.",
+        "Disk method: $V=\\pi\\int_a^b[R(x)]^2\\,dx$; for an even integrand $\\int_{-a}^a=2\\int_0^a$."
+      ],
+      "steps": [
+        "$6-x^2=2$ gives $x=\\pm2$.",
+        "The radius is $R=(6-x^2)-2=4-x^2$.",
+        "$V=\\pi\\int_{-2}^2(4-x^2)^2\\,dx$.",
+        "The integrand is even, so $V=2\\pi\\int_0^2(4-x^2)^2\\,dx$."
+      ],
+      "brief": "Disks of radius $4-x^2$ on $[-2,2]$; by symmetry $V=2\\pi\\int_0^2(4-x^2)^2dx$."
+    },
+    {
+      "sec": "7.2",
+      "q": "The volume of the solid obtained by rotating the region bounded by the curves $x=\\sqrt y$, $x=0$ and $y=1$ about $y=1$ is",
+      "opts": [
+        "$\\dfrac{8\\pi}{15}$",
+        "$\\dfrac{11\\pi}{15}$",
+        "$\\dfrac{13\\pi}{15}$",
+        "$\\dfrac7{13}\\pi$",
+        "$\\dfrac35\\pi$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Use the disk method; the region has the axis of rotation as one of its boundaries.",
+        "Rewrite the curve as $y=x^2$ and find the radius as the distance from the axis to this curve.",
+        "$V=\\pi\\int_a^b[R(x)]^2\\,dx$, where $R$ is the distance from the curve to the axis."
+      ],
+      "steps": [
+        "The region is $0\\le x\\le1$, between $y=x^2$ and $y=1$.",
+        "Radius $R=1-x^2$.",
+        "$V=\\pi\\int_0^1(1-x^2)^2dx=\\pi\\int_0^1(1-2x^2+x^4)\\,dx$.",
+        "$=\\pi\\left(1-\\dfrac23+\\dfrac15\\right)=\\dfrac{8\\pi}{15}$."
+      ],
+      "brief": "Disks of radius $1-x^2$: $\\pi\\int_0^1(1-x^2)^2dx=\\frac{8\\pi}{15}$."
+    }
+  ]
+}

@@ -1,0 +1,484 @@
+{
+  "course": "stat201",
+  "term": "233",
+  "kind": "fx",
+  "date": "15 August 2024",
+  "minutes": 120,
+  "source": "stat319-233-fx.pdf",
+  "note": "Original course STAT 319 (listed under Stat 201). Date and minutes printed on the cover (August 15, 2024; net time 120 minutes). 20 questions, master version; the key marks the correct choice (a) in every question. Q8-Q9 share the one-sample t output (the printed table with blank cells, stored once as stat201-233-fx-q8.png); Q10-Q14 share the regression summary data (repeated as text in each); Q15-Q20 share the regression/ANOVA output (stat201-233-fx-q15.png). Several keys come from rounded intermediate values (Q1, Q7, Q11, Q12, Q20); Q16 key 10.01 differs slightly from the computed 10.08 but is kept.",
+  "qs": [
+    {
+      "sec": "7.2",
+      "q": "A synthetic fiber used in manufacturing carpet has tensile strength that is normally distributed with mean 75.5 psi and standard deviation 3.5 psi. Find the probability that a random sample of 6 fiber specimens will have a total tensile strength that exceeds 454.5 psi.",
+      "opts": [
+        "$0.43251$",
+        "$0.47210$",
+        "$0.56749$",
+        "$0.52790$",
+        "$0$"
+      ],
+      "ans": 0,
+      "hints": [
+        "A sum of independent normal variables is itself normal.",
+        "Find the mean and standard deviation of the total of the 6 specimens, then standardise 454.5.",
+        "For $T=X_1+\\cdots+X_n$ with i.i.d. $N(\\mu,\\sigma^2)$: $T\\sim N(n\\mu,\\,n\\sigma^2)$, and $P(T>t)=1-\\Phi\\!\\left(\\dfrac{t-n\\mu}{\\sigma\\sqrt n}\\right)$."
+      ],
+      "steps": [
+        "$\\mu_T=6(75.5)=453$ and $\\sigma_T=3.5\\sqrt6=8.573$.",
+        "$z=\\dfrac{454.5-453}{8.573}=0.175\\approx0.17$ (rounded to two decimals for the table).",
+        "$P(T>454.5)=1-\\Phi(0.17)=1-0.5675=0.43251$."
+      ],
+      "brief": "$T\\sim N(453,\\,8.573^2)$; $P(Z>0.17)=0.43251$.",
+      "note": "Key kept. With z rounded to 0.17 the table gives 0.43251; the unrounded z=0.175 gives 0.4306, which is not among the choices, so the key is the intended answer."
+    },
+    {
+      "sec": "2.3",
+      "q": "A sample preparation for a chemical measurement is completed correctly by $25\\%$ of the lab technicians, completed with a minor error by $70\\%$, and completed with a major error by $5\\%$. What is the probability that it is completed with either a minor or a major error?",
+      "opts": [
+        "$0.75$",
+        "$0.70$",
+        "$0.05$",
+        "$0.1875$",
+        "$0.2125$"
+      ],
+      "ans": 0,
+      "hints": [
+        "The two kinds of error cannot happen together, so this is an addition rule problem.",
+        "Check that the events are mutually exclusive, then add their probabilities (or use the complement).",
+        "For mutually exclusive $A,B$: $P(A\\cup B)=P(A)+P(B)$; also $P(A')=1-P(A)$."
+      ],
+      "steps": [
+        "Minor error and major error are mutually exclusive outcomes.",
+        "$P(\\text{minor or major})=0.70+0.05=0.75$.",
+        "Check with the complement: $1-0.25=0.75$."
+      ],
+      "brief": "Mutually exclusive: $0.70+0.05=0.75$."
+    },
+    {
+      "sec": "9.1",
+      "q": "The mean pull-off force of a connector depends on cure time, which of the following is a correctly hypotheses used to demonstrate that the pull-off force is 25 newtons?",
+      "opts": [
+        "$H_0:\\mu=25$ vs. $H_1:\\mu\\neq25$",
+        "$H_0:\\mu\\neq25$ vs. $H_1:\\mu=25$",
+        "$H_0:\\bar x=25$ vs. $H_1:\\bar x\\neq25$",
+        "$H_0:\\hat p=25$ vs. $H_1:\\hat p\\neq25$",
+        "$H_0:p=25$ vs. $H_1:p=0.25$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Recall the rules for how hypotheses must be written.",
+        "Check in each pair what the statement is about (a population parameter or a sample statistic) and which hypothesis holds the equality.",
+        "Hypotheses are statements about population parameters ($\\mu,\\sigma,p$), never sample statistics, and $H_0$ always contains the equality."
+      ],
+      "steps": [
+        "The question is about the mean pull-off force, so the parameter is $\\mu$.",
+        "Hypotheses about $\\bar x$ or $\\hat p$ are about sample statistics, so they are not allowed; $p=25$ is not even a valid proportion.",
+        "$H_0$ must hold the equality, so $H_0:\\mu=25$ vs. $H_1:\\mu\\neq25$ is the correct statement."
+      ],
+      "brief": "Parameter $\\mu$ with equality in $H_0$: $H_0:\\mu=25$ vs. $H_1:\\mu\\neq25$."
+    },
+    {
+      "sec": "9.2",
+      "q": "The heat evolved in calories per gram of a cement mixture is approximately normally distributed. The mean is thought to be 100 and the standard deviation is 2. You wish to test $H_0:\\mu=100$ vs. $H_1:\\mu\\neq100$ with a sample of size 9 specimens. Find the observed level of significance if the observed statistic is 102.",
+      "opts": [
+        "$0.00270$",
+        "$0.00135$",
+        "$0.99865$",
+        "$0.49933$",
+        "$0.05000$"
+      ],
+      "ans": 0,
+      "hints": [
+        "This is a two-sided $z$-test with known $\\sigma$; the observed level of significance is the $p$-value.",
+        "Compute the test statistic from the sample mean, then double the tail area.",
+        "$z_0=\\dfrac{\\bar x-\\mu_0}{\\sigma/\\sqrt n}$ and, for $H_1:\\mu\\neq\\mu_0$, $p=2\\,[1-\\Phi(|z_0|)]$."
+      ],
+      "steps": [
+        "$z_0=\\dfrac{102-100}{2/\\sqrt9}=\\dfrac{2}{0.6667}=3$.",
+        "The alternative is two-sided, so $p=2[1-\\Phi(3)]$.",
+        "$p=2(0.00135)=0.00270$."
+      ],
+      "brief": "$z_0=3$; $p=2(1-\\Phi(3))=0.00270$."
+    },
+    {
+      "sec": "9.2",
+      "q": "A hypothesis will be used to test that a population mean equals 10 against the alternative that the population mean is greater than 10 with known variance. At 0.1 significance level, what is the critical value for the test statistic $Z_0$?",
+      "opts": [
+        "$1.28$",
+        "$-1.28$",
+        "$-2.33$",
+        "$2.33$",
+        "$1.64$"
+      ],
+      "ans": 0,
+      "hints": [
+        "This is a one-sided (upper-tail) $z$-test.",
+        "Find the $z$-value that leaves the whole significance level $\\alpha$ in the upper tail.",
+        "For $H_1:\\mu>\\mu_0$, reject when $Z_0>z_\\alpha$, where $P(Z>z_\\alpha)=\\alpha$."
+      ],
+      "steps": [
+        "The alternative is $\\mu>10$, so the rejection region is in the upper tail: $Z_0>z_{0.1}$.",
+        "All of $\\alpha=0.1$ is in one tail, so we need $\\Phi(z)=0.90$.",
+        "$z_{0.1}=1.28$."
+      ],
+      "brief": "Upper-tail test: $z_{0.10}=1.28$."
+    },
+    {
+      "sec": "9.2",
+      "q": "Air crew escape systems are powered by a solid propellant. The burning rate of this propellant is an important product characteristic. Specifications require that the mean burning rate must be 50 centimeters per second. We know that the burning rate is normally distributed with standard deviation of 2 centimeters per second. The experimenter decides to specify a significance level of 0.05 and selects a random sample of size 25 and obtains a sample average burning rate of 51.3 centimeters per second. Which of the following is true?",
+      "opts": [
+        "Since the test statistics is $3.25$ which is more than the critical value which is $1.96$, we conclude that the mean burning rate differs from 50 centimeters per second.",
+        "Since the test statistics is $3.25$ which is more than the critical value which is $1.96$, we conclude that the mean burning rate is 50 centimeters per second.",
+        "Since the test statistics is $51.3$ which is more than the critical value which is $1.96$, we conclude that the mean burning rate differs from 50 centimeters per second.",
+        "Since the test statistics is $51.3$ which is more than the critical value which is $1.96$, we conclude that the mean burning rate is 50 centimeters per second.",
+        "We cannot tell, we need more information."
+      ],
+      "ans": 0,
+      "hints": [
+        "This is a two-sided $z$-test for a mean with known $\\sigma$.",
+        "Compute the standardised test statistic (not the raw sample mean) and compare it with the two-sided critical value.",
+        "$z_0=\\dfrac{\\bar x-\\mu_0}{\\sigma/\\sqrt n}$; reject $H_0:\\mu=\\mu_0$ when $|z_0|>z_{\\alpha/2}$."
+      ],
+      "steps": [
+        "$H_0:\\mu=50$ vs. $H_1:\\mu\\neq50$ with $\\alpha=0.05$, so the critical value is $z_{0.025}=1.96$.",
+        "$z_0=\\dfrac{51.3-50}{2/\\sqrt{25}}=\\dfrac{1.3}{0.4}=3.25$.",
+        "Since $3.25>1.96$, reject $H_0$: the mean burning rate differs from 50 cm/s."
+      ],
+      "brief": "$z_0=1.3/0.4=3.25>1.96$: reject $H_0$, the mean differs from 50."
+    },
+    {
+      "sec": "9.5",
+      "q": "A random sample of 200 circuits generated 13 defectives. To test that the percentage of defectives is different from $5\\%$, the $p$-value of the test is",
+      "opts": [
+        "$0.33204$",
+        "$0.83398$",
+        "$1.66796$",
+        "$0.16602$",
+        "$0.41699$"
+      ],
+      "ans": 0,
+      "hints": [
+        "This is a large-sample test on a population proportion with a two-sided alternative.",
+        "Compute $\\hat p$, then the $z$ statistic using the hypothesised proportion in the denominator, then double the tail area.",
+        "$z_0=\\dfrac{\\hat p-p_0}{\\sqrt{p_0(1-p_0)/n}}$ and $p=2[1-\\Phi(|z_0|)]$ for $H_1:p\\neq p_0$."
+      ],
+      "steps": [
+        "$\\hat p=13/200=0.065$ and $\\sqrt{0.05(0.95)/200}=0.01541$.",
+        "$z_0=\\dfrac{0.065-0.05}{0.01541}=0.97$.",
+        "$p=2[1-\\Phi(0.97)]=2(0.16602)=0.33204$."
+      ],
+      "brief": "$z_0=0.97$; $p=2(1-\\Phi(0.97))=0.33204$.",
+      "note": "Key kept. Using z rounded to 0.97 gives 0.33204; unrounded z=0.9733 gives 0.3304."
+    },
+    {
+      "sec": "8.2",
+      "q": "Consider the computer output below (One-Sample T, test of mu = 34 vs not = 34). A $95\\%$ confidence interval on the true mean is given by",
+      "opts": [
+        "Between $34.35$ and $36.25$",
+        "Between $34.51$ and $34.52$",
+        "Between $34.43$ and $36.17$",
+        "Between $34.57$ and $36.03$",
+        "Between $33.84$ and $36.76$"
+      ],
+      "ans": 0,
+      "hints": [
+        "The standard deviation is unknown and the sample is small, so use a $t$ interval.",
+        "Read $n$, the mean and the standard deviation from the output, find the standard error, and use $n-1$ degrees of freedom.",
+        "$\\bar x\\pm t_{\\alpha/2,\\,n-1}\\dfrac{s}{\\sqrt n}$."
+      ],
+      "steps": [
+        "$SE=\\dfrac{1.78}{\\sqrt{16}}=0.445$ and $df=15$, so $t_{0.025,15}=2.131$.",
+        "Margin $=2.131(0.445)=0.948$.",
+        "Interval: $35.3\\pm0.948=(34.35,\\ 36.25)$."
+      ],
+      "brief": "$35.3\\pm2.131(1.78/4)=(34.35,\\,36.25)$.",
+      "img": "stat201-233-fx-q8.png"
+    },
+    {
+      "sec": "9.3",
+      "q": "Consider the computer output below (One-Sample T, test of mu = 34 vs not = 34). If you wish to test the claim that the mean is more than 34, the smallest level of significance such that you will reject $H_0$, is equal to",
+      "opts": [
+        "Between $0.005$ and $0.01$",
+        "Between $0.01$ and $0.02$",
+        "Between $0.025$ and $0.05$",
+        "Between $0.0025$ and $0.005$",
+        "$0.02743$"
+      ],
+      "ans": 0,
+      "hints": [
+        "The smallest level at which $H_0$ is rejected is the $p$-value of a one-sided $t$-test.",
+        "Compute $t_0$ from the output, then bracket the upper-tail area using the $t$ table with $n-1$ degrees of freedom.",
+        "$t_0=\\dfrac{\\bar x-\\mu_0}{s/\\sqrt n}$; for $H_1:\\mu>\\mu_0$, $p=P(T_{n-1}>t_0)$."
+      ],
+      "steps": [
+        "$t_0=\\dfrac{35.3-34}{1.78/4}=2.921$ with $df=15$.",
+        "From the $t$ table with 15 df: $t_{0.01}=2.602$ and $t_{0.005}=2.947$.",
+        "Since $2.602<2.921<2.947$, the upper-tail $p$-value is between $0.005$ and $0.01$ (software gives about $0.0053$)."
+      ],
+      "brief": "$t_0=2.921$, $df=15$: one-sided $0.005<p<0.01$.",
+      "img": "stat201-233-fx-q8.png"
+    },
+    {
+      "sec": "11.2",
+      "q": "Regression methods were used to analyze the data from a study investigating the relationship between roadway surface temperature ($x$) and pavement deflection ($y$). Summary quantities were $n=20$, $\\sum x_i=1478$, $\\sum x_i^2=143215.8$, $\\sum y_i=12.75$, $\\sum y_i^2=8.86$, $\\sum x_iy_i=1083.67$, $MSE=0.00796$. What change in mean pavement deflection would be expected for a $1^\\circ F$ change in surface temperature?",
+      "opts": [
+        "$0.00416$",
+        "$0.70449$",
+        "$0.32999$",
+        "$141.445$",
+        "$0.73188$"
+      ],
+      "ans": 0,
+      "hints": [
+        "The change in the mean response per unit change in $x$ is the slope of the fitted line.",
+        "Compute $S_{xy}$ and $S_{xx}$ from the summary sums, then divide.",
+        "$\\hat\\beta_1=\\dfrac{S_{xy}}{S_{xx}}$ with $S_{xy}=\\sum x_iy_i-\\dfrac{\\sum x_i\\sum y_i}{n}$ and $S_{xx}=\\sum x_i^2-\\dfrac{(\\sum x_i)^2}{n}$."
+      ],
+      "steps": [
+        "$S_{xx}=143215.8-\\dfrac{1478^2}{20}=33991.6$.",
+        "$S_{xy}=1083.67-\\dfrac{1478(12.75)}{20}=141.445$.",
+        "$\\hat\\beta_1=\\dfrac{141.445}{33991.6}=0.00416$."
+      ],
+      "brief": "$\\hat\\beta_1=S_{xy}/S_{xx}=141.445/33991.6=0.00416$."
+    },
+    {
+      "sec": "11.2",
+      "q": "Regression methods were used to analyze the data from a study investigating the relationship between roadway surface temperature ($x$) and pavement deflection ($y$). Summary quantities were $n=20$, $\\sum x_i=1478$, $\\sum x_i^2=143215.8$, $\\sum y_i=12.75$, $\\sum y_i^2=8.86$, $\\sum x_iy_i=1083.67$, $MSE=0.00796$. The mean pavement deflection when the surface temperature is $90^\\circ F$ equals to",
+      "opts": [
+        "$0.70448$",
+        "$0.00416$",
+        "$0.32999$",
+        "$141.445$",
+        "$0.73188$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Use the fitted regression line to estimate the mean response at the given $x$.",
+        "First get the slope and the intercept from the summary sums, then substitute the given $x$.",
+        "$\\hat\\beta_1=\\dfrac{S_{xy}}{S_{xx}}$, $\\hat\\beta_0=\\bar y-\\hat\\beta_1\\bar x$, and $\\hat\\mu_{Y|x_0}=\\hat\\beta_0+\\hat\\beta_1x_0$."
+      ],
+      "steps": [
+        "$\\hat\\beta_1=\\dfrac{141.445}{33991.6}=0.0041612$; $\\bar x=73.9$, $\\bar y=0.6375$.",
+        "$\\hat\\beta_0=0.6375-0.0041612(73.9)=0.32999$.",
+        "$\\hat\\mu_{Y|90}=0.32999+0.0041612(90)=0.7045\\approx0.70448$ (the small difference is rounding of the slope)."
+      ],
+      "brief": "$\\hat\\beta_0=0.32999$, $\\hat\\beta_1=0.00416$: $\\hat y(90)\\approx0.70448$.",
+      "note": "Exact computation gives 0.70449; the key 0.70448 comes from rounding intermediate values. Key kept."
+    },
+    {
+      "sec": "11.4",
+      "q": "Regression methods were used to analyze the data from a study investigating the relationship between roadway surface temperature ($x$) and pavement deflection ($y$). Summary quantities were $n=20$, $\\sum x_i=1478$, $\\sum x_i^2=143215.8$, $\\sum y_i=12.75$, $\\sum y_i^2=8.86$, $\\sum x_iy_i=1083.67$, $MSE=0.00796$. To test $H_0:\\beta_1=0$ vs. $H_1:\\beta_1\\neq0$ at $1\\%$ level of significance, the test statistic equals to",
+      "opts": [
+        "Approximately $8.597$",
+        "Approximately $0$",
+        "Approximately $0.1432$",
+        "Approximately $6.599$",
+        "Approximately $1.96$"
+      ],
+      "ans": 0,
+      "hints": [
+        "This is the $t$-test for the slope in simple linear regression.",
+        "Divide the estimated slope by its standard error, which comes from $MSE$ and $S_{xx}$.",
+        "$t_0=\\dfrac{\\hat\\beta_1}{se(\\hat\\beta_1)}$ with $se(\\hat\\beta_1)=\\sqrt{MSE/S_{xx}}$, and $n-2$ degrees of freedom."
+      ],
+      "steps": [
+        "$\\hat\\beta_1=141.445/33991.6=0.0041612$ and $S_{xx}=33991.6$.",
+        "$se(\\hat\\beta_1)=\\sqrt{\\dfrac{0.00796}{33991.6}}=0.00048393$.",
+        "$t_0=\\dfrac{0.0041612}{0.00048393}\\approx8.60$, i.e. about $8.597$ (rounding)."
+      ],
+      "brief": "$t_0=\\hat\\beta_1/\\sqrt{MSE/S_{xx}}\\approx8.60$.",
+      "note": "Exact value 8.599; key 8.597 reflects rounding. Key kept."
+    },
+    {
+      "sec": "11.2",
+      "q": "Regression methods were used to analyze the data from a study investigating the relationship between roadway surface temperature ($x$) and pavement deflection ($y$). Summary quantities were $n=20$, $\\sum x_i=1478$, $\\sum x_i^2=143215.8$, $\\sum y_i=12.75$, $\\sum y_i^2=8.86$, $\\sum x_iy_i=1083.67$, $MSE=0.00796$. The percentage of the variation in the pavement deflection that can be explained by the variation from roadway surface temperature is",
+      "opts": [
+        "$80.4\\%$",
+        "$89.7\\%$",
+        "$33.3\\%$",
+        "$85\\%$",
+        "$15\\%$"
+      ],
+      "ans": 0,
+      "hints": [
+        "The percentage of variation explained is the coefficient of determination $R^2$.",
+        "Compute $S_{yy}$ from the sums, and the regression sum of squares from the slope and $S_{xy}$.",
+        "$R^2=\\dfrac{SSR}{SST}=\\dfrac{\\hat\\beta_1S_{xy}}{S_{yy}}$ with $S_{yy}=\\sum y_i^2-\\dfrac{(\\sum y_i)^2}{n}$."
+      ],
+      "steps": [
+        "$S_{yy}=8.86-\\dfrac{12.75^2}{20}=0.73188$.",
+        "$SSR=\\hat\\beta_1S_{xy}=\\dfrac{141.445^2}{33991.6}=0.58859$.",
+        "$R^2=\\dfrac{0.58859}{0.73188}=0.804$, i.e. $80.4\\%$."
+      ],
+      "brief": "$R^2=SSR/S_{yy}=0.58859/0.73188=80.4\\%$."
+    },
+    {
+      "sec": "11.6",
+      "q": "Regression methods were used to analyze the data from a study investigating the relationship between roadway surface temperature ($x$) and pavement deflection ($y$). Summary quantities were $n=20$, $\\sum x_i=1478$, $\\sum x_i^2=143215.8$, $\\sum y_i=12.75$, $\\sum y_i^2=8.86$, $\\sum x_iy_i=1083.67$, $MSE=0.00796$. The length of a $99\\%$ prediction interval on pavement deflection when the temperature is $90^\\circ F$ is",
+      "opts": [
+        "About $0.5281$",
+        "About $0.2557$",
+        "About $0.3855$",
+        "About $0.1928$",
+        "About $0.1233$"
+      ],
+      "ans": 0,
+      "hints": [
+        "This is a prediction interval for a new observation, so its length is twice the margin.",
+        "Compute the standard error of prediction using $MSE$, $n$, $\\bar x$ and $S_{xx}$, and take the $t$ value with $n-2$ degrees of freedom.",
+        "Length $=2\\,t_{\\alpha/2,\\,n-2}\\sqrt{MSE\\left(1+\\dfrac1n+\\dfrac{(x_0-\\bar x)^2}{S_{xx}}\\right)}$."
+      ],
+      "steps": [
+        "$\\bar x=73.9$, so $(90-73.9)^2/33991.6=0.007626$.",
+        "$\\sqrt{0.00796(1+0.05+0.007626)}=\\sqrt{0.0084186}=0.09175$ and $t_{0.005,18}=2.878$.",
+        "Length $=2(2.878)(0.09175)=0.5281$."
+      ],
+      "brief": "Length $=2(2.878)\\sqrt{0.00796(1.0576)}=0.5281$."
+    },
+    {
+      "sec": "12.1",
+      "q": "The electric power consumed each month by a chemical plant is thought to be related to the average ambient temperature ($x_1$ in $^\\circ$F), the number of days in the month ($x_2$), the average product purity ($x_3$ in $\\%$), and the tons of product produced ($x_4$). We wish to fit the model $Y=\\beta_0+\\beta_1x_1+\\beta_2x_2+\\beta_3x_3+\\beta_4x_4+\\epsilon$. Data are collected and the results of the regression model and the ANOVA table are shown in the figure below (the total degrees of freedom is 11, so $n=12$). The predicted power consumption for a month in which $x_1=75^\\circ F$, $x_2=24$ days, $x_3=90\\%$, and $x_4=98$ tons, is",
+      "opts": [
+        "$290.4487$",
+        "$384.7443$",
+        "$631.0067$",
+        "$536.7111$",
+        "$413.5799$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Use the fitted regression equation from the coefficient table.",
+        "Read the five estimates from the Estimate column and substitute the given values of the regressors.",
+        "$\\hat y=\\hat\\beta_0+\\hat\\beta_1x_1+\\hat\\beta_2x_2+\\hat\\beta_3x_3+\\hat\\beta_4x_4$."
+      ],
+      "steps": [
+        "Fitted model: $\\hat y=-123.1312+0.7573x_1+7.5188x_2+2.4831x_3-0.4811x_4$.",
+        "$0.7573(75)=56.7975$, $7.5188(24)=180.4512$, $2.4831(90)=223.479$, $-0.4811(98)=-47.1478$.",
+        "$\\hat y=-123.1312+56.7975+180.4512+223.479-47.1478=290.4487$."
+      ],
+      "brief": "$\\hat y=-123.1312+56.7975+180.4512+223.479-47.1478=290.4487$.",
+      "img": "stat201-233-fx-q15.png"
+    },
+    {
+      "sec": "12.2",
+      "q": "The electric power consumed each month by a chemical plant is thought to be related to the average ambient temperature ($x_1$ in $^\\circ$F), the number of days in the month ($x_2$), the average product purity ($x_3$ in $\\%$), and the tons of product produced ($x_4$). We wish to fit the model $Y=\\beta_0+\\beta_1x_1+\\beta_2x_2+\\beta_3x_3+\\beta_4x_4+\\epsilon$. Data are collected and the results of the regression model and the ANOVA table are shown in the figure below (the total degrees of freedom is 11, so $n=12$). To test the overall significance of the model, the test statistic is",
+      "opts": [
+        "$10.01$",
+        "$12.34$",
+        "$0.005$",
+        "$0.905$",
+        "$5.10$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Overall significance of the regression is tested with the $F$ statistic from the ANOVA table.",
+        "Use the regression and error mean squares given in the table.",
+        "$F_0=\\dfrac{MSR}{MSE}=\\dfrac{SSR/k}{SSE/(n-k-1)}$."
+      ],
+      "steps": [
+        "$MSR=1400$ (from $SSR=5600$ and $4$ regressors) and $MSE=138.86$ with $11-4=7$ degrees of freedom.",
+        "$F_0=\\dfrac{1400}{138.86}=10.08\\approx10.1$.",
+        "The closest choice is $10.01$; the others are far away."
+      ],
+      "brief": "$F_0=MSR/MSE=1400/138.86\\approx10.1$; closest choice $10.01$.",
+      "img": "stat201-233-fx-q15.png",
+      "note": "Key kept. 1400/138.86 = 10.08 while the key prints 10.01; it is the only choice near the computed value, so it is the intended one (the p-value 0.005 in the output is consistent with F near 10)."
+    },
+    {
+      "sec": "12.2",
+      "q": "The electric power consumed each month by a chemical plant is thought to be related to the average ambient temperature ($x_1$ in $^\\circ$F), the number of days in the month ($x_2$), the average product purity ($x_3$ in $\\%$), and the tons of product produced ($x_4$). We wish to fit the model $Y=\\beta_0+\\beta_1x_1+\\beta_2x_2+\\beta_3x_3+\\beta_4x_4+\\epsilon$. Data are collected and the results of the regression model and the ANOVA table are shown in the figure below (the total degrees of freedom is 11, so $n=12$). The proportion of total variability that is explained by this model taken the sample size and the number of variables into account, is",
+      "opts": [
+        "$76.76\\%$",
+        "$85.21\\%$",
+        "$91.54\\%$",
+        "$92.23\\%$",
+        "$74.11\\%$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Taking $n$ and the number of regressors into account means the adjusted $R^2$.",
+        "Get $SSE$ and the degrees of freedom from the ANOVA table, then compare $MSE$ with the total mean square.",
+        "$R^2_{adj}=1-\\dfrac{SSE/(n-k-1)}{SST/(n-1)}$."
+      ],
+      "steps": [
+        "$SSE=6572-5600=972$ with $n-k-1=11-4=7$ degrees of freedom; $SST/(n-1)=6572/11=597.45$.",
+        "$MSE=972/7=138.86$.",
+        "$R^2_{adj}=1-\\dfrac{138.86}{597.45}=0.7676$, i.e. $76.76\\%$."
+      ],
+      "brief": "$R^2_{adj}=1-138.86/597.45=76.76\\%$.",
+      "img": "stat201-233-fx-q15.png"
+    },
+    {
+      "sec": "12.2",
+      "q": "The electric power consumed each month by a chemical plant is thought to be related to the average ambient temperature ($x_1$ in $^\\circ$F), the number of days in the month ($x_2$), the average product purity ($x_3$ in $\\%$), and the tons of product produced ($x_4$). We wish to fit the model $Y=\\beta_0+\\beta_1x_1+\\beta_2x_2+\\beta_3x_3+\\beta_4x_4+\\epsilon$. Data are collected and the results of the regression model and the ANOVA table are shown in the figure below (the total degrees of freedom is 11, so $n=12$). Using the $t$-test to assess the contribution of each regressor to the model, at 0.05 level of significance, the critical value equals to",
+      "opts": [
+        "$2.365$",
+        "$2.306$",
+        "$2.776$",
+        "$2.201$",
+        "$2.228$"
+      ],
+      "ans": 0,
+      "hints": [
+        "The $t$-test on each coefficient is two-sided, with the error degrees of freedom.",
+        "Find the error degrees of freedom from the ANOVA table and use $\\alpha/2$ in each tail.",
+        "Critical value $t_{\\alpha/2,\\,n-k-1}$, where $n-k-1$ is the error degrees of freedom."
+      ],
+      "steps": [
+        "$n=12$ (total df is $11$) and $k=4$ regressors, so the error df is $12-4-1=7$.",
+        "Two-sided test at $\\alpha=0.05$: tail area $0.025$.",
+        "$t_{0.025,7}=2.365$."
+      ],
+      "brief": "Error df $=7$: $t_{0.025,7}=2.365$.",
+      "img": "stat201-233-fx-q15.png"
+    },
+    {
+      "sec": "12.2",
+      "q": "The electric power consumed each month by a chemical plant is thought to be related to the average ambient temperature ($x_1$ in $^\\circ$F), the number of days in the month ($x_2$), the average product purity ($x_3$ in $\\%$), and the tons of product produced ($x_4$). We wish to fit the model $Y=\\beta_0+\\beta_1x_1+\\beta_2x_2+\\beta_3x_3+\\beta_4x_4+\\epsilon$. Data are collected and the results of the regression model and the ANOVA table are shown in the figure below (the total degrees of freedom is 11, so $n=12$). Using the $t$-test to assess the contribution of each regressor to the model, at 0.05 level of significance, we conclude that",
+      "opts": [
+        "Only one of the regressors makes a significant contribution to the model",
+        "All of regressors make a significant contribution to the model",
+        "Two of the regressors make a significant contribution to the model",
+        "None of the regressors makes a significant contribution to the model",
+        "Three of the regressors make a significant contribution to the model"
+      ],
+      "ans": 0,
+      "hints": [
+        "Each coefficient is tested separately: significant when its $p$-value is below the level.",
+        "Read the $p$-value column of the coefficient table and compare each with the level (equivalently, compare $|t|$ with the critical value).",
+        "Reject $H_0:\\beta_j=0$ when $p\\text{-value}<\\alpha$, or when $|t_0|>t_{\\alpha/2,\\,n-k-1}$."
+      ],
+      "steps": [
+        "The intercept is not a regressor. The regressor $p$-values are $0.030$ ($x_1$), $0.103$ ($x_2$), $0.212$ ($x_3$), $0.415$ ($x_4$).",
+        "Only $0.030<0.05$; equivalently only $|t|=2.713$ exceeds the critical value $2.365$.",
+        "So only one regressor ($x_1$) makes a significant contribution."
+      ],
+      "brief": "Only $x_1$ has $p=0.030<0.05$.",
+      "img": "stat201-233-fx-q15.png"
+    },
+    {
+      "sec": "12.3",
+      "q": "The electric power consumed each month by a chemical plant is thought to be related to the average ambient temperature ($x_1$ in $^\\circ$F), the number of days in the month ($x_2$), the average product purity ($x_3$ in $\\%$), and the tons of product produced ($x_4$). We wish to fit the model $Y=\\beta_0+\\beta_1x_1+\\beta_2x_2+\\beta_3x_3+\\beta_4x_4+\\epsilon$. Data are collected and the results of the regression model and the ANOVA table are shown in the figure below (the total degrees of freedom is 11, so $n=12$). The upper end boundary of the $95\\%$ confidence interval for the increase in the electric power consumed for $1^\\circ F$ increase in the ambient temperature, holding the other regressors constant is",
+      "opts": [
+        "$1.4173$",
+        "$1.4009$",
+        "$1.5321$",
+        "$1.3716$",
+        "$1.3791$"
+      ],
+      "ans": 0,
+      "hints": [
+        "The increase per degree, other regressors fixed, is the coefficient of $x_1$; build a $t$ interval for it.",
+        "Take the estimate and standard error of that coefficient from the output and use the error degrees of freedom.",
+        "$\\hat\\beta_j\\pm t_{\\alpha/2,\\,n-k-1}\\,se(\\hat\\beta_j)$; the upper end uses the plus sign."
+      ],
+      "steps": [
+        "$\\hat\\beta_1=0.7573$, $se=0.2791$, error df $=7$, $t_{0.025,7}=2.365$.",
+        "Margin $=2.365(0.2791)=0.6601$.",
+        "Upper end $=0.7573+0.6601=1.4174\\approx1.4173$ (rounding)."
+      ],
+      "brief": "$0.7573+2.365(0.2791)\\approx1.4173$.",
+      "img": "stat201-233-fx-q15.png"
+    }
+  ]
+}

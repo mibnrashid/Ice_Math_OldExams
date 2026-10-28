@@ -1,0 +1,370 @@
+{
+  "course": "math208",
+  "term": "233",
+  "kind": "e1",
+  "date": "",
+  "minutes": 90,
+  "source": "math208-233-e1.pdf",
+  "note": "No cover page in the source PDF: date not printed; 90 minutes assumed (usual major-exam length). The cover page is not included; date and exam length are not printed. Date (4 July 2024, Term 233 summer) and 90 minutes are assumed from the pattern of other terms. All 15 answers were verified and agree with the master key (marked (correct) as choice (a) throughout).",
+  "qs": [
+    {
+      "sec": "1.1",
+      "q": "The sum of all values of $r$ such that $y=x^r$ is a solution of the differential equation \\[ x^2y''-2xy'-4y=0 \\] is",
+      "opts": [
+        "$3$",
+        "$4$",
+        "$-4$",
+        "$-3$",
+        "$0$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Substituting a trial power function into the equation gives an equation for $r$.",
+        "Compute $y'$ and $y''$ for $y=x^r$, substitute, and factor out the common power of $x$.",
+        "For $y=x^r$: $y'=rx^{r-1}$ and $y''=r(r-1)x^{r-2}$. For a quadratic $r^2+pr+q=0$, the sum of the roots is $-p$."
+      ],
+      "steps": [
+        "$y'=rx^{r-1}$, $y''=r(r-1)x^{r-2}$, so $x^2y''-2xy'-4y=\\left[r(r-1)-2r-4\\right]x^r=0$.",
+        "Since $x^r\\neq0$: $r^2-3r-4=0$.",
+        "$(r-4)(r+1)=0$, so $r=4$ or $r=-1$.",
+        "The sum is $4+(-1)=3$."
+      ],
+      "brief": "$r(r-1)-2r-4=r^2-3r-4=0$, roots $4$ and $-1$, sum $3$."
+    },
+    {
+      "sec": "1.4",
+      "q": "The general solution of the separable differential equation $x^2\\dfrac{dy}{dx}=y-xy$ is given by",
+      "opts": [
+        "$\\ln|yx|+\\dfrac1x=c$",
+        "$2\\ln|yx|+\\dfrac1x=c$",
+        "$\\ln\\left|\\dfrac yx\\right|+\\dfrac1x=c$",
+        "$2\\ln\\left|\\dfrac yx\\right|+\\dfrac1x=c$",
+        "$\\ln\\left|\\dfrac xy\\right|-\\dfrac1x=c$"
+      ],
+      "ans": 0,
+      "hints": [
+        "The right side factors into a function of $x$ times a function of $y$, so the equation is separable.",
+        "Factor $y$ out of the right side, then put all $y$ terms with $dy$ and all $x$ terms with $dx$ before integrating.",
+        "For $\\dfrac{dy}{dx}=g(x)h(y)$: $\\int\\dfrac{dy}{h(y)}=\\int g(x)\\,dx+C$; also $\\int\\dfrac{dy}{y}=\\ln|y|$ and $\\ln|a|+\\ln|b|=\\ln|ab|$."
+      ],
+      "steps": [
+        "Factor: $x^2y'=y(1-x)$, so $\\dfrac{dy}{y}=\\dfrac{1-x}{x^2}\\,dx=\\left(\\dfrac1{x^2}-\\dfrac1x\\right)dx$.",
+        "Integrate: $\\ln|y|=-\\dfrac1x-\\ln|x|+C$.",
+        "Move terms: $\\ln|y|+\\ln|x|+\\dfrac1x=C$.",
+        "Combine logs: $\\ln|yx|+\\dfrac1x=c$."
+      ],
+      "brief": "Separate: $\\frac{dy}{y}=(\\frac1{x^2}-\\frac1x)dx$, so $\\ln|yx|+\\frac1x=c$."
+    },
+    {
+      "sec": "1.5",
+      "q": "The general solution of the linear differential equation $xy'+(3x-4)y=6x^5$ is given by",
+      "opts": [
+        "$y(x)=2x^4+cx^4e^{-3x}$",
+        "$y(x)=2x^3+cx^3e^{-3x}$",
+        "$y(x)=2x^4+cx^2e^{3x}$",
+        "$y(x)=2x^2+cx^2e^{3x}$",
+        "$y(x)=2x^4+cx^3e^{-3x}$"
+      ],
+      "ans": 0,
+      "hints": [
+        "This is a first-order linear equation in $y$.",
+        "Divide by $x$ to get the form $y'+P(x)y=Q(x)$ and compute the integrating factor.",
+        "$\\rho=e^{\\int P\\,dx}$ and $(\\rho y)'=\\rho Q$, so $y=\\dfrac1\\rho\\left(\\int\\rho Q\\,dx+c\\right)$."
+      ],
+      "steps": [
+        "Standard form: $y'+\\left(3-\\dfrac4x\\right)y=6x^4$.",
+        "$\\int P\\,dx=3x-4\\ln x$, so $\\rho=x^{-4}e^{3x}$ (taking $x>0$).",
+        "$(\\rho y)'=\\rho\\cdot6x^4=6e^{3x}$, so $x^{-4}e^{3x}y=2e^{3x}+c$.",
+        "$y=2x^4+cx^4e^{-3x}$."
+      ],
+      "brief": "$\\rho=x^{-4}e^{3x}$, $(\\rho y)'=6e^{3x}$, so $y=2x^4+cx^4e^{-3x}$."
+    },
+    {
+      "sec": "1.6",
+      "q": "A general solution of the exact differential equation \\[ (x-y^3+y^2\\sin x)\\,dx-(3xy^2+2y\\cos x)\\,dy=0 \\] is",
+      "opts": [
+        "$xy^3+y^2\\cos x-\\dfrac12x^2=c$",
+        "$xy^3+y^2\\cos x+\\dfrac12x=c$",
+        "$xy^3+y^2\\sin x-\\dfrac12x^3=c$",
+        "$xy^3+y^2\\sin x-\\dfrac12x^2=c$",
+        "$xy^2+y^3\\cos x-\\dfrac12x^2=c$"
+      ],
+      "ans": 0,
+      "hints": [
+        "The equation is exact, so there is a function $F(x,y)$ whose total differential is the left side.",
+        "Integrate $M$ with respect to $x$ (treating $y$ as constant), add an unknown function $g(y)$, then match $F_y$ with $N$.",
+        "If $M\\,dx+N\\,dy=0$ is exact then $F_x=M$, $F_y=N$, and the solution is $F(x,y)=c$."
+      ],
+      "steps": [
+        "$M=x-y^3+y^2\\sin x$, $N=-(3xy^2+2y\\cos x)$.",
+        "$F=\\int M\\,dx=\\dfrac{x^2}{2}-xy^3-y^2\\cos x+g(y)$.",
+        "$F_y=-3xy^2-2y\\cos x+g'(y)=N$, so $g'(y)=0$.",
+        "$\\dfrac{x^2}{2}-xy^3-y^2\\cos x=C$; multiply by $-1$: $xy^3+y^2\\cos x-\\dfrac12x^2=c$."
+      ],
+      "brief": "$F=\\frac{x^2}{2}-xy^3-y^2\\cos x$, so $xy^3+y^2\\cos x-\\frac12x^2=c$."
+    },
+    {
+      "sec": "1.6",
+      "q": "By making a suitable substitution, the differential equation $x\\dfrac{dy}{dx}+y=y^{-2}$ can be transformed into a linear differential equation",
+      "opts": [
+        "$\\dfrac{du}{dx}+\\dfrac3xu=\\dfrac3x$",
+        "$\\dfrac{du}{dx}-\\dfrac3xu=\\dfrac3x$",
+        "$\\dfrac{du}{dx}-\\dfrac2xu=\\dfrac3x$",
+        "$\\dfrac{du}{dx}+\\dfrac2xu=\\dfrac3x$",
+        "$\\dfrac{du}{dx}-\\dfrac3xu=\\dfrac1x$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Besides the linear terms the equation has a power of $y$ on the right, so it is a Bernoulli equation.",
+        "Divide by $x$ to reach $y'+P(x)y=Q(x)y^n$, identify $n$, and substitute $u=y^{1-n}$.",
+        "For $y'+Py=Qy^n$, let $u=y^{1-n}$; then $u'=(1-n)y^{-n}y'$, and multiplying the equation by $(1-n)y^{-n}$ gives $u'+(1-n)Pu=(1-n)Q$."
+      ],
+      "steps": [
+        "Divide by $x$: $y'+\\dfrac1xy=\\dfrac1xy^{-2}$, so $n=-2$.",
+        "Let $u=y^{3}$, so $u'=3y^2y'$.",
+        "Multiply the equation by $3y^2$: $3y^2y'+\\dfrac3xy^3=\\dfrac3x$.",
+        "So $\\dfrac{du}{dx}+\\dfrac3xu=\\dfrac3x$."
+      ],
+      "brief": "Bernoulli $n=-2$, $u=y^3$: $u'+\\frac3xu=\\frac3x$."
+    },
+    {
+      "sec": "1.6",
+      "q": "By making a suitable substitution, the differential equation $xyy'=x^2+3y^2$ can be transformed into a separable differential equation",
+      "opts": [
+        "$\\dfrac{v}{1+2v^2}\\,dv=\\dfrac1x\\,dx$",
+        "$\\dfrac{2v}{1+2v^2}\\,dv=\\dfrac1x\\,dx$",
+        "$\\dfrac{3v}{1+2v^2}\\,dv=\\dfrac1x\\,dx$",
+        "$\\dfrac{4v}{1+2v^2}\\,dv=\\dfrac1x\\,dx$",
+        "$\\dfrac{v^2}{1+v^2}\\,dv=\\dfrac1x\\,dx$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Every term has the same total degree in $x$ and $y$, so the equation is homogeneous.",
+        "Substitute $y=vx$ and replace $y'$ by the product-rule expression, then simplify.",
+        "With $v=\\dfrac yx$: $y=vx$ and $y'=v+xv'$; after simplifying, the $v$ terms go with $dv$ and the $x$ terms with $dx$."
+      ],
+      "steps": [
+        "Put $y=vx$, $y'=v+xv'$: $x\\cdot vx\\,(v+xv')=x^2+3v^2x^2$.",
+        "Divide by $x^2$: $v^2+xvv'=1+3v^2$, so $xvv'=1+2v^2$.",
+        "Separate: $\\dfrac{v}{1+2v^2}\\,dv=\\dfrac1x\\,dx$."
+      ],
+      "brief": "$y=vx$: $xvv'=1+2v^2$, so $\\frac{v}{1+2v^2}dv=\\frac1xdx$."
+    },
+    {
+      "sec": "1.2",
+      "q": "A particle is moving in a straight line with acceleration $a(t)=\\dfrac{1}{\\sqrt{t+9}}$, and initial position $x(0)=4$, and an initial velocity $v(0)=2$. Then $x(16)$ (the position of the particle at $t=16$) is",
+      "opts": [
+        "$\\dfrac{212}{3}$",
+        "$\\dfrac{214}{3}$",
+        "$\\dfrac{217}{3}$",
+        "$\\dfrac{211}{3}$",
+        "$\\dfrac{209}{3}$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Acceleration is the derivative of velocity, and velocity is the derivative of position, so integrate twice.",
+        "Integrate $a(t)$ once and use $v(0)$ for the constant, then integrate $v(t)$ and use $x(0)$.",
+        "$v=\\int a\\,dt+C_1$, $x=\\int v\\,dt+C_2$, and $\\int(t+b)^{n}\\,dt=\\dfrac{(t+b)^{n+1}}{n+1}$ for $n\\neq-1$."
+      ],
+      "steps": [
+        "$v(t)=\\int(t+9)^{-1/2}dt=2\\sqrt{t+9}+C_1$; $v(0)=6+C_1=2$, so $C_1=-4$.",
+        "$x(t)=\\int\\left(2(t+9)^{1/2}-4\\right)dt=\\dfrac43(t+9)^{3/2}-4t+C_2$.",
+        "$x(0)=\\dfrac43\\cdot27+C_2=36+C_2=4$, so $C_2=-32$.",
+        "$x(16)=\\dfrac43\\cdot125-64-32=\\dfrac{500}{3}-96=\\dfrac{212}{3}$."
+      ],
+      "brief": "$v=2\\sqrt{t+9}-4$, $x=\\frac43(t+9)^{3/2}-4t-32$, so $x(16)=\\frac{212}{3}$."
+    },
+    {
+      "sec": "1.4",
+      "q": "The population of a town grows at a rate proportional to the population present at time $t$. The initial population was 500. After 10 years, the population is 575. The time needed for the population to reach 1000 is",
+      "opts": [
+        "$\\dfrac{10\\ln 2}{\\ln 23-\\ln 20}$",
+        "$\\dfrac{10\\ln 2}{\\ln 23-\\ln 5}$",
+        "$\\dfrac{5\\ln 2}{\\ln 23-\\ln 10}$",
+        "$\\dfrac{20\\ln 2}{\\ln 23-\\ln 5}$",
+        "$\\dfrac{2\\ln 2}{\\ln 23-\\ln 10}$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Growth at a rate proportional to the population is the natural growth model.",
+        "Write $P(t)=P_0e^{kt}$, use the value after 10 years to find $e^{10k}$ and hence $k$, then solve for the time when $P=1000$.",
+        "$\\dfrac{dP}{dt}=kP$ gives $P(t)=P_0e^{kt}$, and $e^{kt}=c$ gives $t=\\dfrac{\\ln c}{k}$."
+      ],
+      "steps": [
+        "$P(t)=500e^{kt}$.",
+        "$P(10)=575$: $e^{10k}=\\dfrac{575}{500}=\\dfrac{23}{20}$, so $k=\\dfrac{\\ln23-\\ln20}{10}$.",
+        "$P(t)=1000$: $e^{kt}=2$, so $t=\\dfrac{\\ln2}{k}$.",
+        "$t=\\dfrac{10\\ln2}{\\ln23-\\ln20}$."
+      ],
+      "brief": "$P=500e^{kt}$, $k=\\frac{\\ln23-\\ln20}{10}$, $t=\\frac{\\ln2}{k}=\\frac{10\\ln2}{\\ln23-\\ln20}$."
+    },
+    {
+      "sec": "1.6",
+      "q": "A general solution of the differential equation $\\dfrac{dy}{dx}=2+\\sqrt{y-2x+3}$ is",
+      "opts": [
+        "$(x+c)^2=4(y-2x+3)$",
+        "$(x+c)=4(y-2x+3)$",
+        "$(x+c)^3=4(y-2x+3)$",
+        "$(x+c)^2=4(y+2x-3)$",
+        "$(x+c)^2=4(y-2x-3)$"
+      ],
+      "ans": 0,
+      "hints": [
+        "The right side depends on $x$ and $y$ only through one linear combination, so use a substitution $v=ax+by+c$.",
+        "Let $v$ be the expression under the square root, differentiate it, and replace $y'$ using the equation.",
+        "With $v=ax+by+c$, $v'=a+by'$; if the equation becomes $v'=f(v)$ it is separable: $\\int\\dfrac{dv}{f(v)}=\\int dx$."
+      ],
+      "steps": [
+        "Let $v=y-2x+3$, so $v'=y'-2=\\sqrt v$.",
+        "Separate: $\\dfrac{dv}{\\sqrt v}=dx$.",
+        "Integrate: $2\\sqrt v=x+c$.",
+        "Square: $4v=(x+c)^2$, that is $(x+c)^2=4(y-2x+3)$."
+      ],
+      "brief": "$v=y-2x+3$: $v'=\\sqrt v$, $2\\sqrt v=x+c$, so $(x+c)^2=4(y-2x+3)$."
+    },
+    {
+      "sec": "1.6",
+      "q": "A general solution of the differential equation $y''=2yy'$ is",
+      "opts": [
+        "$y=A\\tan(Ax+B)$",
+        "$y=A\\tan(Ax^2+B)$",
+        "$y=A\\tan(Ax^3+B)$",
+        "$y=A\\cot(Ax+B)$",
+        "$y=A\\cot(Ax^2+B)$"
+      ],
+      "ans": 0,
+      "hints": [
+        "The variable $x$ does not appear, and $y''=2yy'$ can be integrated directly.",
+        "Notice that $2yy'$ is the derivative of a simple expression in $y$, integrate once, then separate variables.",
+        "$\\dfrac{d}{dx}\\left(f(y)\\right)=f'(y)y'$, and $\\int\\dfrac{dy}{y^2+a^2}=\\dfrac1a\\arctan\\dfrac ya+C$."
+      ],
+      "steps": [
+        "$y''=\\dfrac{d}{dx}\\left(y^2\\right)$, so integrating gives $y'=y^2+C_1$.",
+        "Take $C_1=A^2$ (the case $C_1>0$): $\\dfrac{dy}{y^2+A^2}=dx$.",
+        "Integrate: $\\dfrac1A\\arctan\\dfrac yA=x+B_1$.",
+        "So $y=A\\tan(Ax+B)$ with $B=AB_1$."
+      ],
+      "brief": "$y'=y^2+A^2$, so $\\frac1A\\arctan\\frac yA=x+B_1$: $y=A\\tan(Ax+B)$.",
+      "note": "The general solution has other forms when the first constant is zero or negative; the master key and the form A tan(Ax+B) are kept."
+    },
+    {
+      "sec": "4.3",
+      "q": "Let $\\mathbf{u}=(1,2)$, $\\mathbf{v}=(-1,5)$, $\\mathbf{w}=(8,-5)$ be vectors in $\\mathbb{R}^2$. If $\\mathbf{w}=a\\mathbf{u}+b\\mathbf{v}$, then $a+b=$",
+      "opts": [
+        "$2$",
+        "$3$",
+        "$0$",
+        "$4$",
+        "$5$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Writing a vector as a linear combination gives a linear system for the coefficients.",
+        "Compare the first and second components of $a\\mathbf{u}+b\\mathbf{v}$ with those of $\\mathbf{w}$ to get two equations in $a$ and $b$.",
+        "Two vectors are equal if and only if all their components are equal; solve the resulting $2\\times2$ system by elimination."
+      ],
+      "steps": [
+        "Components: $a-b=8$ and $2a+5b=-5$.",
+        "From the first, $a=8+b$; substitute: $16+2b+5b=-5$, so $7b=-21$ and $b=-3$.",
+        "Then $a=5$.",
+        "$a+b=5+(-3)=2$."
+      ],
+      "brief": "$a-b=8$, $2a+5b=-5$ give $a=5$, $b=-3$, so $a+b=2$."
+    },
+    {
+      "sec": "4.3",
+      "q": "For what values of $k$ are the vectors $\\mathbf{u}=(3,-4,5)$, $\\mathbf{v}=(1,k,3)$, $\\mathbf{w}=(0,1,4)$ of $\\mathbb{R}^3$ linearly independent?",
+      "opts": [
+        "$k\\neq-1$",
+        "$k\\neq-2$",
+        "$k\\neq0$",
+        "$k\\neq3$",
+        "$k\\neq2$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Three vectors in $\\mathbb{R}^3$ are independent exactly when the matrix built from them is invertible.",
+        "Put the vectors as rows of a $3\\times3$ matrix and compute its determinant as a function of $k$.",
+        "$n$ vectors in $\\mathbb{R}^n$ are linearly independent if and only if the determinant of the matrix having them as rows (or columns) is nonzero."
+      ],
+      "steps": [
+        "$\\det\\begin{bmatrix}3&-4&5\\\\1&k&3\\\\0&1&4\\end{bmatrix}$; expand along the first row.",
+        "$=3(4k-3)-(-4)(4-0)+5(1-0)=12k-9+16+5$.",
+        "$=12k+12=12(k+1)$.",
+        "Nonzero exactly when $k\\neq-1$."
+      ],
+      "brief": "$\\det=12(k+1)\\neq0$, so $k\\neq-1$."
+    },
+    {
+      "sec": "1.6",
+      "q": "Find a constant $k$ that makes the differential equation \\[ (y^3+kxy^4-2x)\\,dx+(3xy^2+20x^2y^3)\\,dy=0 \\] exact.",
+      "opts": [
+        "$10$",
+        "$8$",
+        "$6$",
+        "$-10$",
+        "$-8$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Use the test for exactness of $M\\,dx+N\\,dy=0$.",
+        "Compute $\\partial M/\\partial y$ and $\\partial N/\\partial x$ and compare them term by term.",
+        "$M\\,dx+N\\,dy=0$ is exact if and only if $M_y=N_x$."
+      ],
+      "steps": [
+        "$M_y=3y^2+4kxy^3$.",
+        "$N_x=3y^2+40xy^3$.",
+        "Setting $M_y=N_x$ requires $4k=40$.",
+        "So $k=10$."
+      ],
+      "brief": "$M_y=3y^2+4kxy^3$, $N_x=3y^2+40xy^3$, so $k=10$."
+    },
+    {
+      "sec": "4.2",
+      "q": "The solution space of the system \\[\\begin{aligned} x_1-4x_2-3x_3-7x_4&=0\\\\ 2x_1-x_2+x_3+7x_4&=0\\\\ x_1+2x_2+3x_3+11x_4&=0 \\end{aligned}\\] is the set of all linear combinations $s\\mathbf{u}+t\\mathbf{v}$ where",
+      "opts": [
+        "$\\mathbf{u}=(-1,-1,1,0)$, $\\mathbf{v}=(-5,-3,0,1)$",
+        "$\\mathbf{u}=(1,-1,1,0)$, $\\mathbf{v}=(-5,-3,0,1)$",
+        "$\\mathbf{u}=(-1,1,1,0)$, $\\mathbf{v}=(-5,-3,0,1)$",
+        "$\\mathbf{u}=(-1,-1,1,0)$, $\\mathbf{v}=(-5,-3,0,-1)$",
+        "$\\mathbf{u}=(-1,-1,1,0)$, $\\mathbf{v}=(-5,3,0,1)$"
+      ],
+      "ans": 0,
+      "hints": [
+        "This is a homogeneous linear system, so solve it by Gaussian elimination and describe the free variables.",
+        "Row reduce the coefficient matrix, identify the free variables, and write the solution as a sum of parameters times vectors.",
+        "In the reduced system, set each free variable to a parameter, express the leading variables in terms of them, and read off one vector per parameter."
+      ],
+      "steps": [
+        "Subtract $2\\times$ row 1 from row 2 and row 1 from row 3: $7x_2+7x_3+21x_4=0$ and $6x_2+6x_3+18x_4=0$.",
+        "Both give $x_2+x_3+3x_4=0$, so $x_2=-x_3-3x_4$ with $x_3,x_4$ free.",
+        "Then $x_1=4x_2+3x_3+7x_4=-x_3-5x_4$.",
+        "With $x_3=s$, $x_4=t$: $(x_1,x_2,x_3,x_4)=s(-1,-1,1,0)+t(-5,-3,0,1)$."
+      ],
+      "brief": "$x_2=-x_3-3x_4$, $x_1=-x_3-5x_4$: $s(-1,-1,1,0)+t(-5,-3,0,1)$."
+    },
+    {
+      "sec": "4.2",
+      "q": "Which one of the following statements is true about the subset $V$ of $\\mathbb{R}^3$ defined by \\[ V=\\{(x_1,x_2,x_3):\\ x_3\\ge0\\}? \\]",
+      "opts": [
+        "$V$ is closed under addition but not closed under multiplication by scalar",
+        "$V$ is a subspace of $\\mathbb{R}^3$",
+        "$V$ is not closed under addition",
+        "$V$ is closed under multiplication by scalar",
+        "$V$ is not closed under addition and not closed under multiplication by scalar"
+      ],
+      "ans": 0,
+      "hints": [
+        "A subspace must be closed under both addition and scalar multiplication; test each property separately.",
+        "Add two vectors whose third components are nonnegative, then multiply a vector by a negative scalar.",
+        "Sums of nonnegative numbers are nonnegative, but multiplying a positive number by a negative scalar changes its sign."
+      ],
+      "steps": [
+        "Addition: if $x_3\\ge0$ and $y_3\\ge0$, then $x_3+y_3\\ge0$, so $V$ is closed under addition.",
+        "Scalar multiplication: $(0,0,1)\\in V$, but $(-1)(0,0,1)=(0,0,-1)$ has third component $-1<0$.",
+        "So $V$ is closed under addition but not under multiplication by scalars, and is not a subspace."
+      ],
+      "brief": "Sums keep $x_3\\ge0$, but $(-1)(0,0,1)\\notin V$: closed under addition only."
+    }
+  ]
+}

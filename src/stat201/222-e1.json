@@ -1,0 +1,426 @@
+{
+  "course": "stat201",
+  "term": "222",
+  "kind": "e1",
+  "date": "1 March 2023",
+  "minutes": 120,
+  "source": "stat319-222-ex1.pdf",
+  "note": "Original course STAT 319. Date (01-March-2023) and 120 minutes printed on the cover. Key (a) marked in red on all 18 questions. Q1 contingency table typeset as an array. Disagreements/rounding: Q18 exact value is 0.9998 (0.99*0.995/(0.99*0.995+0.01*0.02)); master key 0.9996 kept (it is the closest choice; the key seems to use P(def and non-defective)=0.0004). Q12 exact normal value 0.7645, key 0.7658 matches table-rounded z (-1.91, 0.82). Q15 exact 0.4074, key 0.408 kept (closest). Q13 key 0.8522 matches hypergeometric (binomial gives 0.8507). Out of the term 261 scope (old STAT 319 topics): Q8 geometric (3.7), Q11 continuous uniform (4.5), Q14 normal approximation to Poisson (4.7).",
+  "qs": [
+    {
+      "sec": "2.3",
+      "q": "Strands of copper wire from a manufacturer are analyzed for strength and conductivity. The results from 100 strands are as follows: \\[\\begin{array}{l|cc} & \\text{Strength} & \\\\ & \\text{High} & \\text{Low}\\\\ \\hline \\text{High conductivity} & 74 & 8\\\\ \\text{Low conductivity} & 15 & 3\\end{array}\\] If a strand is randomly selected, what is the probability that its conductivity is low or its strength is low?",
+      "opts": [
+        "0.26",
+        "0.74",
+        "0.27",
+        "0.89",
+        "0.11"
+      ],
+      "ans": 0,
+      "hints": [
+        "This is an addition-rule (union) question on a two-way table.",
+        "Decide which cells of the table belong to the event 'low conductivity or low strength', or find the complement of that event.",
+        "$P(A\\cup B)=P(A)+P(B)-P(A\\cap B)$, and $P(A\\cup B)=1-P(A'\\cap B')$."
+      ],
+      "steps": [
+        "Let $L_c$ be low conductivity and $L_s$ be low strength. $P(L_c)=\\dfrac{15+3}{100}=0.18$ and $P(L_s)=\\dfrac{8+3}{100}=0.11$.",
+        "$P(L_c\\cap L_s)=\\dfrac{3}{100}=0.03$.",
+        "$P(L_c\\cup L_s)=0.18+0.11-0.03=0.26$.",
+        "Check: the cells with 8, 15 and 3 give $\\dfrac{26}{100}=0.26$."
+      ],
+      "brief": "$P=\\frac{8+15+3}{100}=0.26$."
+    },
+    {
+      "sec": "3.6",
+      "q": "A manufacturer produces electrical components of which $3\\%$ are faulty. The components are sold in boxes of 20 and the boxes are sold to wholesalers in batches of 10. A box is rejected if there is more than one faulty component in it and a batch is rejected if more than one box in the batch is rejected. What is the probability that a batch is rejected?",
+      "opts": [
+        "0.341",
+        "0.120",
+        "0.880",
+        "0.657",
+        "0.242"
+      ],
+      "ans": 0,
+      "hints": [
+        "Two binomial stages: first for a box, then for a batch.",
+        "Find the probability that one box is rejected using the number of faulty components in the box, then treat the 10 boxes as new independent trials with that probability.",
+        "For $X\\sim\\text{Bin}(n,p)$, $P(X=x)=\\binom{n}{x}p^x(1-p)^{n-x}$, and $P(X>1)=1-P(X=0)-P(X=1)$."
+      ],
+      "steps": [
+        "Faulty components in a box: $X\\sim\\text{Bin}(20,0.03)$. A box is rejected when $X>1$.",
+        "$P(\\text{box rejected})=1-0.97^{20}-20(0.03)(0.97)^{19}=1-0.5438-0.3364=0.1198$.",
+        "Rejected boxes in a batch: $Y\\sim\\text{Bin}(10,0.1198)$. A batch is rejected when $Y>1$.",
+        "$P(Y>1)=1-0.8802^{10}-10(0.1198)(0.8802)^{9}=1-0.2790-0.3799\\approx0.341$."
+      ],
+      "brief": "Box: $P=0.1198$; batch: $P(Y>1)$ with $Y\\sim\\text{Bin}(10,0.1198)$ is $0.341$."
+    },
+    {
+      "sec": "3.9",
+      "q": "The number of cracks in a section of interstate highway that are significant enough to require repair is assumed to follow a Poisson distribution with a mean of two cracks per mile. What is the probability that at least one crack requires repair in $\\frac{1}{2}$ mile of highway?",
+      "opts": [
+        "0.6321",
+        "0.3679",
+        "0.6572",
+        "0.3428",
+        "0.7397"
+      ],
+      "ans": 0,
+      "hints": [
+        "A Poisson count over a fixed length of highway.",
+        "Scale the mean to the length of highway asked about, then use the complement of 'no cracks'.",
+        "$P(X=x)=\\dfrac{e^{-\\lambda}\\lambda^x}{x!}$, and $P(X\\ge1)=1-P(X=0)=1-e^{-\\lambda}$. The mean is proportional to the length."
+      ],
+      "steps": [
+        "For $\\frac12$ mile the mean is $\\lambda=2\\cdot\\frac12=1$.",
+        "$P(X\\ge1)=1-P(X=0)=1-e^{-1}$.",
+        "$=1-0.3679=0.6321$."
+      ],
+      "brief": "$\\lambda=1$: $P(X\\ge1)=1-e^{-1}=0.6321$."
+    },
+    {
+      "sec": "4.8",
+      "q": "The life of automobile voltage regulators has an exponential distribution with a mean life of five years. You purchase a six-year-old automobile, with a working voltage regulator and plan to own it for five years. What is the probability that the voltage regulator fails during your ownership?",
+      "opts": [
+        "0.6321",
+        "0.3679",
+        "0.1108",
+        "0.8892",
+        "0.5717"
+      ],
+      "ans": 0,
+      "hints": [
+        "Think about the memoryless property of the exponential distribution.",
+        "The regulator is already working at age 6, so the past does not matter. Find the failure probability within the next five years.",
+        "If $X$ is exponential with mean $1/\\lambda$, then $P(X>t+s\\mid X>t)=P(X>s)$ and $P(X\\le s)=1-e^{-\\lambda s}$."
+      ],
+      "steps": [
+        "The rate is $\\lambda=\\frac15$ per year.",
+        "By the memoryless property, $P(X<11\\mid X>6)=P(X<5)$.",
+        "$P(X<5)=1-e^{-5/5}=1-e^{-1}=0.6321$."
+      ],
+      "brief": "Memoryless: $P(X<5)=1-e^{-1}=0.6321$."
+    },
+    {
+      "sec": "4.2",
+      "q": "The operational lifetime $X$, in years, of a battery powered watch has probability density function \\[ f(x)=\\begin{cases} c\\,x(6-x), & 3\\le x\\le 6\\\\ 0, & \\text{otherwise.}\\end{cases} \\] Find the probability that the watch has an operational lifetime in excess of 4 years.",
+      "opts": [
+        "0.519",
+        "0.286",
+        "0.534",
+        "0.056",
+        "0.318"
+      ],
+      "ans": 0,
+      "hints": [
+        "A density must integrate to 1, which determines the constant.",
+        "First find $c$ from the total area, then integrate the density over the interval asked.",
+        "$\\int f(x)\\,dx=1$ over the support and $P(X>a)=\\int_a^{b} f(x)\\,dx$."
+      ],
+      "steps": [
+        "$\\int_3^6 x(6-x)\\,dx=\\left[3x^2-\\frac{x^3}{3}\\right]_3^6=(108-72)-(27-9)=18$, so $c=\\frac1{18}$.",
+        "$P(X>4)=\\frac1{18}\\int_4^6 x(6-x)\\,dx=\\frac1{18}\\left[3x^2-\\frac{x^3}{3}\\right]_4^6$.",
+        "$=\\frac1{18}\\left(36-(48-\\frac{64}{3})\\right)=\\frac1{18}\\cdot\\frac{28}{3}=\\frac{14}{27}=0.519$."
+      ],
+      "brief": "$c=\\frac1{18}$; $P(X>4)=\\frac{1}{18}\\cdot\\frac{28}{3}=0.519$."
+    },
+    {
+      "sec": "3.4",
+      "q": "Let $R$ have probability mass function (pmf) $p(r)=\\frac{1}{8}$ for $r=1,2,\\cdots,8$. Find the variance of $R$, $\\operatorname{var}(R)$.",
+      "opts": [
+        "5.25",
+        "2.67",
+        "4.50",
+        "10.50",
+        "3.70"
+      ],
+      "ans": 0,
+      "hints": [
+        "This is a discrete variance computation.",
+        "Compute $E(R)$ and $E(R^2)$ using the equal probabilities.",
+        "$\\operatorname{var}(R)=E(R^2)-[E(R)]^2$ with $E(g(R))=\\sum g(r)p(r)$."
+      ],
+      "steps": [
+        "$E(R)=\\frac18(1+2+\\cdots+8)=\\frac{36}{8}=4.5$.",
+        "$E(R^2)=\\frac18(1+4+9+\\cdots+64)=\\frac{204}{8}=25.5$.",
+        "$\\operatorname{var}(R)=25.5-4.5^2=25.5-20.25=5.25$."
+      ],
+      "brief": "$E(R)=4.5$, $E(R^2)=25.5$, var $=5.25$."
+    },
+    {
+      "sec": "2.4",
+      "q": "Let $A$ and $B$ be two events such that $P(A/B)=2P(A/\\bar B)$ and $P(B)=0.32$ then $P(B/A)$ is",
+      "opts": [
+        "0.48",
+        "0.68",
+        "0.52",
+        "0.50",
+        "0.00"
+      ],
+      "ans": 0,
+      "hints": [
+        "Use Bayes' theorem with the partition $B,\\bar B$.",
+        "Call $P(A/\\bar B)=a$, so $P(A/B)=2a$. Find $P(A)$ with the total probability rule; the unknown $a$ will cancel.",
+        "$P(A)=P(A\\mid B)P(B)+P(A\\mid B')P(B')$ and $P(B\\mid A)=\\dfrac{P(A\\mid B)P(B)}{P(A)}$."
+      ],
+      "steps": [
+        "Let $P(A\\mid\\bar B)=a$, so $P(A\\mid B)=2a$ and $P(\\bar B)=0.68$.",
+        "$P(A)=2a(0.32)+a(0.68)=1.32a$.",
+        "$P(B\\mid A)=\\dfrac{2a(0.32)}{1.32a}=\\dfrac{0.64}{1.32}=\\dfrac{16}{33}\\approx0.48$."
+      ],
+      "brief": "$P(A)=1.32a$, $P(B\\mid A)=\\frac{0.64}{1.32}=0.48$."
+    },
+    {
+      "sec": "3.7",
+      "q": "Heart failure is due to either natural occurrences ($87\\%$) or foreign objects ($13\\%$). Outside factors are related to induced substances or foreign objects. Natural Occurrences are caused by arterial blockage, disease, and infection. Assume that causes of heart failure for the individuals are independent. What is the probability that the fourth patient with heart failure who enters the emergency room is the first one due to nature occurrences?",
+      "opts": [
+        "0.0019",
+        "0.8700",
+        "0.1300",
+        "0.2568",
+        "0.6126"
+      ],
+      "ans": 0,
+      "hints": [
+        "Count trials until the first 'success': a geometric distribution.",
+        "Define success as 'due to natural occurrences' and write what must happen to the first three patients and to the fourth.",
+        "Geometric: $P(X=x)=(1-p)^{x-1}p$, $x=1,2,\\dots$"
+      ],
+      "steps": [
+        "Success (natural occurrence) has $p=0.87$.",
+        "The first three patients must be due to foreign objects (probability $0.13$ each) and the fourth natural.",
+        "$P(X=4)=(0.13)^3(0.87)=0.002197\\times0.87=0.0019$."
+      ],
+      "brief": "Geometric: $P(X=4)=0.13^3(0.87)=0.0019$."
+    },
+    {
+      "sec": "4.11",
+      "q": "The lifetime (in hours) of a semiconductor laser has a lognormal distribution with $\\theta=4$ and $\\omega=2$. What is the probability that the lifetime exceeds its mean?",
+      "opts": [
+        "0.15866",
+        "0.84134",
+        "0.50000",
+        "0.69146",
+        "0.30854"
+      ],
+      "ans": 0,
+      "hints": [
+        "A lognormal variable is the exponential of a normal variable.",
+        "Compute the mean of the lifetime from the parameters, take the log of it, and standardize.",
+        "If $\\ln X\\sim N(\\theta,\\omega^2)$ then $E(X)=e^{\\theta+\\omega^2/2}$ and $P(X>x)=1-\\Phi\\!\\left(\\dfrac{\\ln x-\\theta}{\\omega}\\right)$."
+      ],
+      "steps": [
+        "$E(X)=e^{\\theta+\\omega^2/2}=e^{4+2}=e^{6}$.",
+        "$P(X>e^6)=P\\!\\left(Z>\\dfrac{6-4}{2}\\right)=P(Z>1)$.",
+        "$=1-0.84134=0.15866$."
+      ],
+      "brief": "$E(X)=e^{6}$: $P(Z>1)=0.15866$."
+    },
+    {
+      "sec": "2.7",
+      "q": "An e-mail filter is planned to separate valid e-mails from spam. The word free occurs in $60\\%$ of the spam messages and only $4\\%$ of the valid messages. Also, $20\\%$ of the messages are spam. Determine the probability that a message is valid given that it does not contain free.",
+      "opts": [
+        "0.9057",
+        "0.0339",
+        "0.9999",
+        "0.9600",
+        "0.3600"
+      ],
+      "ans": 0,
+      "hints": [
+        "Bayes' theorem with the partition spam/valid.",
+        "Find the probability that a message does not contain 'free' within each group, then the overall probability of no 'free'.",
+        "$P(B\\mid A)=\\dfrac{P(A\\mid B)P(B)}{P(A\\mid B)P(B)+P(A\\mid B')P(B')}$."
+      ],
+      "steps": [
+        "$P(\\text{spam})=0.2$, $P(\\text{valid})=0.8$; $P(\\text{no free}\\mid\\text{spam})=0.4$, $P(\\text{no free}\\mid\\text{valid})=0.96$.",
+        "$P(\\text{no free})=0.4(0.2)+0.96(0.8)=0.08+0.768=0.848$.",
+        "$P(\\text{valid}\\mid\\text{no free})=\\dfrac{0.768}{0.848}=0.9057$."
+      ],
+      "brief": "$\\frac{0.96(0.8)}{0.4(0.2)+0.96(0.8)}=0.9057$."
+    },
+    {
+      "sec": "4.5",
+      "q": "An e-mail message will arrive at a time uniformly distributed between 9:00 a.m. and 11:00 a.m. You check e-mail at 9:15 a.m. and every 30 minutes afterward. What is the probability that the message arrives more than 15 minutes before you view it?",
+      "opts": [
+        "0.50",
+        "0.33",
+        "0.99",
+        "0.75",
+        "0.25"
+      ],
+      "ans": 0,
+      "hints": [
+        "Uniform arrival time over 120 minutes; look at the waiting time until the next check.",
+        "List the check times, and for each 30-minute gap find the arrival times that leave a wait of more than 15 minutes.",
+        "For $X$ uniform on $[a,b]$, $P(c<X<d)=\\dfrac{d-c}{b-a}$."
+      ],
+      "steps": [
+        "Checks are at 9:15, 9:45, 10:15, 10:45, 11:15. Arrival is uniform on 120 minutes.",
+        "The wait exceeds 15 minutes only if the message arrives in the first half of a 30-minute gap: 9:15 to 9:30, 9:45 to 10:00, 10:15 to 10:30 and 10:45 to 11:00.",
+        "That is $4\\times15=60$ minutes, so the probability is $\\dfrac{60}{120}=0.50$."
+      ],
+      "brief": "Favourable time $4\\times15=60$ of 120 minutes: $0.50$."
+    },
+    {
+      "sec": "4.6",
+      "q": "The time that it takes a randomly selected sports car from the same brand to accelerate from 0 to 60 miles per hour (mph) is normally distributed with mean 6.2 seconds and standard deviation 0.15 seconds. Suppose 6 cars are selected at random, and let $X_1,\\cdots,X_6$ denote their times to reach 60 mph. What is the probability that the total time $T=\\sum_{i=1}^{6}X_i$ is between 36.5 and 37.5 seconds?",
+      "opts": [
+        "0.7658",
+        "0.6658",
+        "0.9648",
+        "0.1658",
+        "0.0281"
+      ],
+      "ans": 0,
+      "hints": [
+        "A sum of independent normal variables is normal.",
+        "Find the mean and variance of $T$, then standardize both endpoints.",
+        "For independent $X_i\\sim N(\\mu,\\sigma^2)$, $\\sum X_i\\sim N(n\\mu,n\\sigma^2)$, and $Z=\\dfrac{T-E(T)}{\\text{sd}(T)}$."
+      ],
+      "steps": [
+        "$E(T)=6(6.2)=37.2$ and $\\operatorname{var}(T)=6(0.15)^2=0.135$, so $\\text{sd}(T)=0.3674$.",
+        "$z_1=\\dfrac{36.5-37.2}{0.3674}=-1.91$ and $z_2=\\dfrac{37.5-37.2}{0.3674}=0.82$.",
+        "$P=\\Phi(0.82)-\\Phi(-1.91)=0.7939-0.0281=0.7658$."
+      ],
+      "brief": "$T\\sim N(37.2,0.135)$: $\\Phi(0.82)-\\Phi(-1.91)=0.7658$."
+    },
+    {
+      "sec": "3.8",
+      "q": "A research study uses 900 men under the age of 55. Suppose that $30\\%$ carry a marker on the male chromosome that indicates an increased risk for high blood pressure. If 10 men are selected randomly and tested for the marker, what is the probability that more than 1 has the marker?",
+      "opts": [
+        "0.8522",
+        "0.1478",
+        "0.4567",
+        "0.5433",
+        "0.0276"
+      ],
+      "ans": 0,
+      "hints": [
+        "The men are selected without replacement from a finite group with a known number of carriers: hypergeometric.",
+        "Identify $N$, $K$ and $n$ and use the complement of 'at most one carrier'.",
+        "Hypergeometric: $P(X=x)=\\dfrac{\\binom{K}{x}\\binom{N-K}{n-x}}{\\binom{N}{n}}$, and $P(X>1)=1-P(X=0)-P(X=1)$."
+      ],
+      "steps": [
+        "$N=900$, $K=0.3(900)=270$, $n=10$.",
+        "$P(X=0)=\\dfrac{\\binom{630}{10}}{\\binom{900}{10}}=0.0276$ and $P(X=1)=\\dfrac{\\binom{270}{1}\\binom{630}{9}}{\\binom{900}{10}}=0.1202$.",
+        "$P(X>1)=1-0.0276-0.1202=0.8522$."
+      ],
+      "brief": "Hypergeometric $N=900,K=270,n=10$: $P(X>1)=0.8522$."
+    },
+    {
+      "sec": "4.7",
+      "q": "Hits to a high-volume Web site are assumed to follow a Poisson distribution with a mean of 10,000 per day. Approximate the probability of more than 20,000 hits in a day.",
+      "opts": [
+        "0.00",
+        "1.00",
+        "10.00",
+        "0.50",
+        "$\\infty$"
+      ],
+      "ans": 0,
+      "hints": [
+        "With a very large mean, a Poisson variable is approximately normal.",
+        "Use mean and variance both equal to the Poisson mean, then standardize 20,000.",
+        "If $X$ is Poisson with mean $\\lambda$ and $\\lambda$ is large, $X\\approx N(\\lambda,\\lambda)$ and $Z=\\dfrac{X-\\lambda}{\\sqrt{\\lambda}}$."
+      ],
+      "steps": [
+        "$X\\approx N(10000,\\,10000)$, so $\\text{sd}=100$.",
+        "$P(X>20000)\\approx P\\!\\left(Z>\\dfrac{20000-10000}{100}\\right)=P(Z>100)$.",
+        "This is essentially $0.00$."
+      ],
+      "brief": "$X\\approx N(10^4,10^4)$: $P(Z>100)\\approx0.00$."
+    },
+    {
+      "sec": "3.8",
+      "q": "A batch of parts contains 100 from a local supplier of tubing and 200 from a supplier of tubing in the next state. If four parts are selected randomly and without replacement, what is the probability that two or more parts in the sample are from the local supplier?",
+      "opts": [
+        "0.408",
+        "0.592",
+        "0.110",
+        "0.890",
+        "0.396"
+      ],
+      "ans": 0,
+      "hints": [
+        "Sampling without replacement from two groups: hypergeometric.",
+        "Count local parts in the sample and use the complement of 'zero or one local part'.",
+        "Hypergeometric: $P(X=x)=\\dfrac{\\binom{K}{x}\\binom{N-K}{n-x}}{\\binom{N}{n}}$, and $P(X\\ge2)=1-P(X=0)-P(X=1)$."
+      ],
+      "steps": [
+        "$N=300$, $K=100$ local, $n=4$.",
+        "$P(X=0)=\\dfrac{\\binom{200}{4}}{\\binom{300}{4}}=0.1955$ and $P(X=1)=\\dfrac{\\binom{100}{1}\\binom{200}{3}}{\\binom{300}{4}}=0.3970$.",
+        "$P(X\\ge2)=1-0.1955-0.3970=0.4074$, which rounds to the listed value $0.408$ (the closest choice)."
+      ],
+      "brief": "Hypergeometric $N=300,K=100,n=4$: $P(X\\ge2)=0.407\\approx0.408$."
+    },
+    {
+      "sec": "3.3",
+      "q": "Errors in an experimental transmission channel are found when the transmission is checked by a certifier that detects missing pulses. The number of errors found in an eight-bit byte is a random variable with the following distribution: \\[ F(x)=\\begin{cases}0, & x<1\\\\ 0.7, & 1\\le x<4\\\\ 0.9, & 4\\le x<7\\\\ 1, & 7\\le x\\end{cases} \\] $P(X\\le2)$ is equal to",
+      "opts": [
+        "0.70",
+        "0.30",
+        "0.90",
+        "0.10",
+        "0.85"
+      ],
+      "ans": 0,
+      "hints": [
+        "Read the value of the cumulative distribution function directly.",
+        "Find which piece of $F$ contains $x=2$.",
+        "$F(x)=P(X\\le x)$."
+      ],
+      "steps": [
+        "$P(X\\le2)=F(2)$.",
+        "Since $1\\le2<4$, $F(2)=0.7$."
+      ],
+      "brief": "$P(X\\le2)=F(2)=0.70$."
+    },
+    {
+      "sec": "4.10",
+      "q": "Suppose that the lifetime of a component (in hours) modeled with a Weibull distribution with parameters $\\beta=0.5$ and $\\delta=4000$ hours. The median lifetime is equal to",
+      "opts": [
+        "1921.81 hours",
+        "3330.22 hours",
+        "480.453 hours",
+        "832.555 hours",
+        "3843.62 hours"
+      ],
+      "ans": 0,
+      "hints": [
+        "The median is the point where the cdf equals one half.",
+        "Write the Weibull cdf and set it equal to 0.5, then solve for $x$.",
+        "Weibull cdf: $F(x)=1-e^{-(x/\\delta)^{\\beta}}$."
+      ],
+      "steps": [
+        "Solve $1-e^{-(x/4000)^{0.5}}=0.5$, so $(x/4000)^{0.5}=\\ln2$.",
+        "$x=4000(\\ln2)^{2}$.",
+        "$=4000(0.480453)=1921.81$ hours."
+      ],
+      "brief": "$x=\\delta(\\ln2)^{1/\\beta}=4000(\\ln2)^2=1921.81$."
+    },
+    {
+      "sec": "2.7",
+      "q": "An inspector working for a manufacturing company has a $98\\%$ chance of correctly identifying defective items and a $0.5\\%$ chance of incorrectly classifying a good item as defective. The company has evidence that $1\\%$ of the items its line produces are nonconforming. If an item selected at random is classified as non defective, what is the probability that it is indeed good?",
+      "opts": [
+        "0.9996",
+        "0.0141",
+        "0.9821",
+        "0.9052",
+        "0.0041"
+      ],
+      "ans": 0,
+      "hints": [
+        "Bayes' theorem with the partition defective/good.",
+        "Find the probability of being classified non defective within each group, then combine.",
+        "$P(B\\mid A)=\\dfrac{P(A\\mid B)P(B)}{P(A\\mid B)P(B)+P(A\\mid B')P(B')}$."
+      ],
+      "steps": [
+        "$P(\\text{good})=0.99$, $P(\\text{ND}\\mid\\text{good})=0.995$; $P(\\text{def})=0.01$, $P(\\text{ND}\\mid\\text{def})=0.02$.",
+        "$P(\\text{good}\\cap\\text{ND})=0.98505$ and $P(\\text{def}\\cap\\text{ND})=0.0002$.",
+        "$P(\\text{good}\\mid\\text{ND})=\\dfrac{0.98505}{0.98525}\\approx0.9998$, which is essentially 1. Of the listed choices only $0.9996$ is close; the others are far off."
+      ],
+      "brief": "$\\frac{0.99(0.995)}{0.99(0.995)+0.01(0.02)}\\approx0.9998$; closest choice $0.9996$."
+    }
+  ]
+}

@@ -1,0 +1,498 @@
+{
+  "course": "math201",
+  "term": "253",
+  "kind": "fx",
+  "date": "",
+  "minutes": 120,
+  "source": "math201-253-fx.pdf",
+  "note": "Date and exam length are not printed on the scanned master pages (no cover in the scan); minutes=120 is an assumed typical final length. Master key is A for every question and all 21 answers were verified independently with sympy, no disagreements. Section labels follow the handwritten margin notes where present (the equidistant-points question is labelled 11.5 there).",
+  "qs": [
+    {
+      "sec": "10.2",
+      "q": "The parametric curve \\[ x=2\\cos^2 t,\\quad y=1-\\sin t \\] is represented by the rectangular equation",
+      "opts": [
+        "$x=4y-2y^2,\\ 0\\le x\\le 2$",
+        "$x=2y-y^2,\\ 0\\le x\\le 2$",
+        "$x=1-4y+2y^2,\\ 0\\le x\\le 2$",
+        "$2x=y-y^2,\\ x\\ge 0$",
+        "$2x=2y-y^2,\\ x\\ge 2$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Eliminate the parameter using a trigonometric identity, and also track the range of $x$.",
+        "Solve $y=1-\\sin t$ for $\\sin t$, then rewrite $\\cos^2 t$ in terms of $\\sin t$.",
+        "$\\cos^2 t=1-\\sin^2 t$, and $0\\le\\cos^2 t\\le 1$ bounds the values of $x$."
+      ],
+      "steps": [
+        "$\\sin t=1-y$, so $x=2(1-\\sin^2 t)=2\\left(1-(1-y)^2\\right)$.",
+        "$x=2(2y-y^2)=4y-2y^2$.",
+        "Since $0\\le\\cos^2 t\\le1$, we get $0\\le x\\le 2$."
+      ],
+      "brief": "$x=2(1-(1-y)^2)=4y-2y^2$, with $0\\le x\\le2$."
+    },
+    {
+      "sec": "10.4",
+      "q": "The graph of the polar equation $r=3\\cos(6\\theta)$ is",
+      "opts": [
+        "a rose with 12 leaves (petals)",
+        "a rose with 6 leaves (petals)",
+        "a rose with 3 leaves (petals)",
+        "a circle",
+        "a cardioid"
+      ],
+      "ans": 0,
+      "hints": [
+        "This is a rose curve $r=a\\cos n\\theta$.",
+        "Look at whether $n$ is even or odd.",
+        "For $r=a\\cos n\\theta$ the rose has $n$ petals if $n$ is odd and $2n$ petals if $n$ is even."
+      ],
+      "steps": [
+        "The curve is a rose $r=a\\cos(n\\theta)$ with $n=6$.",
+        "Since $n$ is even, the number of petals is $2n=12$."
+      ],
+      "brief": "Rose with $n=6$ even, so $2n=12$ petals."
+    },
+    {
+      "sec": "10.5",
+      "q": "The area of the region bounded by the polar curve $r=\\cos\\theta$ for $\\dfrac{\\pi}{6}\\le\\theta\\le\\dfrac{\\pi}{3}$ is equal to",
+      "opts": [
+        "$\\dfrac{\\pi}{24}$",
+        "$\\dfrac{\\pi}{6}$",
+        "$\\dfrac{\\pi}{12}$",
+        "$\\dfrac{\\pi}{3}$",
+        "$\\dfrac{\\pi}{8}$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Area of a sector region in polar coordinates.",
+        "Set up the integral of $\\tfrac12 r^2$ over the given angle interval and use a double-angle identity.",
+        "$A=\\int_\\alpha^\\beta \\tfrac12 r^2\\,d\\theta$ and $\\cos^2\\theta=\\dfrac{1+\\cos 2\\theta}{2}$."
+      ],
+      "steps": [
+        "$A=\\dfrac12\\int_{\\pi/6}^{\\pi/3}\\cos^2\\theta\\,d\\theta=\\dfrac14\\int_{\\pi/6}^{\\pi/3}(1+\\cos2\\theta)\\,d\\theta$.",
+        "$=\\dfrac14\\left[\\theta+\\dfrac12\\sin2\\theta\\right]_{\\pi/6}^{\\pi/3}$.",
+        "$\\sin\\frac{2\\pi}{3}=\\sin\\frac{\\pi}{3}$, so the sine terms cancel and $A=\\dfrac14\\cdot\\dfrac{\\pi}{6}=\\dfrac{\\pi}{24}$."
+      ],
+      "brief": "$A=\\frac14\\int(1+\\cos2\\theta)\\,d\\theta=\\frac14\\cdot\\frac{\\pi}{6}=\\frac{\\pi}{24}$."
+    },
+    {
+      "sec": "11.3",
+      "q": "If the angle between the two vectors $\\vec u=\\langle 1,1,-1\\rangle$ and $\\vec v=\\langle 2,x,0\\rangle$ is $\\dfrac{\\pi}{3}$, then $x^2+16x=$",
+      "opts": [
+        "$-4$",
+        "$6$",
+        "$8$",
+        "$-2$",
+        "$0$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Use the dot product formula for the angle between two vectors.",
+        "Compute $\\vec u\\cdot\\vec v$ and both lengths, then square the equation to remove the square roots.",
+        "$\\vec u\\cdot\\vec v=\\|\\vec u\\|\\|\\vec v\\|\\cos\\theta$."
+      ],
+      "steps": [
+        "$\\vec u\\cdot\\vec v=2+x$, $\\|\\vec u\\|=\\sqrt3$, $\\|\\vec v\\|=\\sqrt{4+x^2}$, $\\cos\\frac{\\pi}{3}=\\frac12$.",
+        "$2+x=\\dfrac{\\sqrt3\\sqrt{4+x^2}}{2}$, so $4+2x=\\sqrt{3(4+x^2)}$.",
+        "Square: $16+16x+4x^2=12+3x^2$.",
+        "So $x^2+16x=-4$."
+      ],
+      "brief": "$2+x=\\frac12\\sqrt3\\sqrt{4+x^2}$, squaring gives $x^2+16x=-4$."
+    },
+    {
+      "sec": "11.4",
+      "q": "The volume of the parallelepiped with adjacent edges $\\vec a=\\langle1,2,3\\rangle$, $\\vec b=\\langle-1,1,2\\rangle$, $\\vec c=\\langle1,-1,1\\rangle$ is equal to",
+      "opts": [
+        "$9$",
+        "$12$",
+        "$5$",
+        "$10$",
+        "$8$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Use the scalar triple product.",
+        "Put the three vectors as the rows of a $3\\times3$ determinant.",
+        "$V=\\left|\\vec a\\cdot(\\vec b\\times\\vec c)\\right|$, which equals the absolute value of the determinant of the three vectors."
+      ],
+      "steps": [
+        "$\\vec a\\cdot(\\vec b\\times\\vec c)=\\begin{vmatrix}1&2&3\\\\-1&1&2\\\\1&-1&1\\end{vmatrix}$.",
+        "$=1(1+2)-2(-1-2)+3(1-1)=3+6+0=9$.",
+        "$V=|9|=9$."
+      ],
+      "brief": "Triple product determinant $=9$, so $V=9$."
+    },
+    {
+      "sec": "11.5",
+      "q": "A set of parametric equations for the line that passes through the point $(4,3,2)$ and is perpendicular to both vectors $\\vec u=\\langle2,1,1\\rangle$ and $\\vec v=\\langle1,2,1\\rangle$ is given by",
+      "opts": [
+        "$x=4-t,\\ y=3-t,\\ z=2+3t,\\ t\\in(-\\infty,\\infty)$",
+        "$x=4+t,\\ y=3+2t,\\ z=2-2t,\\ t\\in(-\\infty,\\infty)$",
+        "$x=4-2t,\\ y=3-2t,\\ z=2+2t,\\ t\\in(-\\infty,\\infty)$",
+        "$x=4+t,\\ y=3+t,\\ z=2+3t,\\ t\\in(-\\infty,\\infty)$",
+        "$x=4t,\\ y=3t,\\ z=2t,\\ t\\in(-\\infty,\\infty)$"
+      ],
+      "ans": 0,
+      "hints": [
+        "A direction perpendicular to two vectors comes from the cross product.",
+        "Compute $\\vec u\\times\\vec v$ and use it as the direction vector of the line.",
+        "A line through $(x_0,y_0,z_0)$ with direction $\\langle a,b,c\\rangle$ has $x=x_0+at,\\ y=y_0+bt,\\ z=z_0+ct$."
+      ],
+      "steps": [
+        "Direction: $\\vec u\\times\\vec v=\\begin{vmatrix}\\mathbf i&\\mathbf j&\\mathbf k\\\\2&1&1\\\\1&2&1\\end{vmatrix}=\\langle-1,-1,3\\rangle$.",
+        "Use the point $(4,3,2)$: $x=4-t$, $y=3-t$, $z=2+3t$."
+      ],
+      "brief": "Direction $\\vec u\\times\\vec v=\\langle-1,-1,3\\rangle$: $x=4-t,\\ y=3-t,\\ z=2+3t$."
+    },
+    {
+      "sec": "11.5",
+      "q": "The set of all points $(x,y,z)$ that are equidistant from the points $(1,0,2)$ and $(2,0,1)$ represents",
+      "opts": [
+        "a plane",
+        "a line",
+        "a sphere",
+        "an elliptic paraboloid",
+        "an elliptic hyperboloid"
+      ],
+      "ans": 0,
+      "hints": [
+        "Write the condition that the two distances are equal.",
+        "Set $d_1=d_2$, square both sides, and expand.",
+        "The distance between $(x,y,z)$ and $(a,b,c)$ is $\\sqrt{(x-a)^2+(y-b)^2+(z-c)^2}$."
+      ],
+      "steps": [
+        "$(x-1)^2+y^2+(z-2)^2=(x-2)^2+y^2+(z-1)^2$.",
+        "Expand: $-2x-4z+5=-4x-2z+5$.",
+        "So $2x-2z=0$, i.e. $x-z=0$, which is a plane."
+      ],
+      "brief": "Equal distances give $x-z=0$, a plane."
+    },
+    {
+      "sec": "13.2",
+      "q": "The limit $\\lim_{(x,y)\\to(0,0)}\\dfrac{3x^2y}{x^4+2y^2}$",
+      "opts": [
+        "does not exist",
+        "is equal to $0$",
+        "is equal to $1$",
+        "is equal to $\\dfrac32$",
+        "is equal to $3$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Try approaching the origin along different paths.",
+        "Compare the limit along the $x$-axis with the limit along a parabola such as $y=kx^2$.",
+        "If two paths give different limits, the two-variable limit does not exist."
+      ],
+      "steps": [
+        "Along $y=0$: the quotient is $0$, so the limit is $0$.",
+        "Along $y=x^2$: $\\dfrac{3x^4}{x^4+2x^4}=1$.",
+        "The two path limits differ, so the limit does not exist."
+      ],
+      "brief": "Path $y=0$ gives $0$, path $y=x^2$ gives $1$: limit does not exist."
+    },
+    {
+      "sec": "13.5",
+      "q": "Let $w=xyz$, $x=s^2+t^2$, $y=s^2-t^2$, $z=st$. The value of $\\dfrac{\\partial w}{\\partial t}$ when $s=2$ and $t=1$ is equal to",
+      "opts": [
+        "$22$",
+        "$80$",
+        "$-72$",
+        "$63$",
+        "$-42$"
+      ],
+      "ans": 0,
+      "hints": [
+        "This is the chain rule with three intermediate variables.",
+        "Write $\\dfrac{\\partial w}{\\partial t}$ as a sum of three products and evaluate $x,y,z$ at the given $s,t$.",
+        "$\\dfrac{\\partial w}{\\partial t}=w_x x_t+w_y y_t+w_z z_t$."
+      ],
+      "steps": [
+        "At $s=2,t=1$: $x=5$, $y=3$, $z=2$.",
+        "$w_x=yz=6$, $w_y=xz=10$, $w_z=xy=15$; $x_t=2t=2$, $y_t=-2t=-2$, $z_t=s=2$.",
+        "$\\dfrac{\\partial w}{\\partial t}=6(2)+10(-2)+15(2)=12-20+30=22$."
+      ],
+      "brief": "$w_xx_t+w_yy_t+w_zz_t=12-20+30=22$."
+    },
+    {
+      "sec": "13.6",
+      "q": "Let $f(x,y,z)=\\ln(x+2y+3z)$, $P(1,1,1)$, $Q(4,3,2)$. The directional derivative of $f$ at $P$ in the direction of the vector $\\overrightarrow{PQ}$ is equal to",
+      "opts": [
+        "$\\dfrac{5}{3\\sqrt{14}}$",
+        "$\\dfrac{2}{\\sqrt{14}}$",
+        "$\\dfrac{7}{6\\sqrt{14}}$",
+        "$\\dfrac{1}{3\\sqrt{14}}$",
+        "$\\dfrac{13}{4\\sqrt{14}}$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Directional derivative using the gradient and a unit vector.",
+        "Compute $\\nabla f$ at $P$ and the unit vector along $\\overrightarrow{PQ}$.",
+        "$D_{\\mathbf u}f=\\nabla f\\cdot\\mathbf u$ where $\\mathbf u$ is a unit vector."
+      ],
+      "steps": [
+        "$\\overrightarrow{PQ}=\\langle3,2,1\\rangle$, $\\|\\overrightarrow{PQ}\\|=\\sqrt{14}$, so $\\mathbf u=\\dfrac{1}{\\sqrt{14}}\\langle3,2,1\\rangle$.",
+        "$\\nabla f=\\dfrac{1}{x+2y+3z}\\langle1,2,3\\rangle$, so $\\nabla f(P)=\\dfrac16\\langle1,2,3\\rangle$.",
+        "$D_{\\mathbf u}f=\\dfrac{1}{6\\sqrt{14}}(3+4+3)=\\dfrac{10}{6\\sqrt{14}}=\\dfrac{5}{3\\sqrt{14}}$."
+      ],
+      "brief": "$\\nabla f(P)=\\frac16\\langle1,2,3\\rangle$, $\\mathbf u=\\frac{\\langle3,2,1\\rangle}{\\sqrt{14}}$: $\\frac{5}{3\\sqrt{14}}$."
+    },
+    {
+      "sec": "13.7",
+      "q": "If $ax+by+cz+1=0$ is an equation for the tangent plane to the surface $z=(x-y)^2$ at the point $(1,2,1)$, then $a+b+c=$",
+      "opts": [
+        "$1$",
+        "$0$",
+        "$-2$",
+        "$3$",
+        "$-4$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Tangent plane to a graph $z=f(x,y)$.",
+        "Compute $f_x$ and $f_y$ at the point and write the tangent plane, then rearrange so the constant term is $+1$.",
+        "$z-z_0=f_x(x_0,y_0)(x-x_0)+f_y(x_0,y_0)(y-y_0)$."
+      ],
+      "steps": [
+        "$f_x=2(x-y)=-2$ and $f_y=-2(x-y)=2$ at $(1,2)$.",
+        "$z=1-2(x-1)+2(y-2)=-2x+2y-1$.",
+        "So $2x-2y+z+1=0$, giving $a=2,\\ b=-2,\\ c=1$.",
+        "$a+b+c=1$."
+      ],
+      "brief": "Plane $2x-2y+z+1=0$, so $a+b+c=2-2+1=1$."
+    },
+    {
+      "sec": "13.8",
+      "q": "The graph of the function $f(x,y)=4+x-y-x^2y+xy^2$ has",
+      "opts": [
+        "two saddle points",
+        "one saddle point and one local minimum point",
+        "one local maximum point and one local minimum point",
+        "two local maximum points",
+        "one saddle point and one local maximum point"
+      ],
+      "ans": 0,
+      "hints": [
+        "Find critical points, then use the second partials test.",
+        "Solve $f_x=0$, $f_y=0$ (try adding the two equations), then compute $D=f_{xx}f_{yy}-f_{xy}^2$ at each point.",
+        "If $D<0$ the point is a saddle point; if $D>0$ the sign of $f_{xx}$ decides between minimum and maximum."
+      ],
+      "steps": [
+        "$f_x=1-2xy+y^2=0$ and $f_y=-1-x^2+2xy=0$.",
+        "Adding: $y^2-x^2=0$, so $y=\\pm x$. For $y=x$: $1-x^2=0$ gives $(1,1),(-1,-1)$. For $y=-x$: $1+3x^2=0$ has no real solution.",
+        "$f_{xx}=-2y$, $f_{yy}=2x$, $f_{xy}=-2x+2y$, so $D=-4xy-(2y-2x)^2$.",
+        "$D(1,1)=-4<0$ and $D(-1,-1)=-4<0$: two saddle points."
+      ],
+      "brief": "Critical points $(1,1),(-1,-1)$, both with $D=-4<0$: two saddle points."
+    },
+    {
+      "sec": "13.10",
+      "q": "If $M$ and $m$ are respectively the maximum and minimum values of $f(x,y)=xy+x+y+1$ subject to the constraint $xy=4$, then $M+m=$",
+      "opts": [
+        "$10$",
+        "$12$",
+        "$8$",
+        "$14$",
+        "$6$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Constrained extrema: Lagrange multipliers.",
+        "Set $\\nabla f=\\lambda\\nabla g$ with $g=xy-4$ and eliminate $\\lambda$.",
+        "Solve $f_x=\\lambda g_x$, $f_y=\\lambda g_y$, $g=0$, then compare $f$ at the candidate points."
+      ],
+      "steps": [
+        "$y+1=\\lambda y$ and $x+1=\\lambda x$, so $\\dfrac{y+1}{y}=\\dfrac{x+1}{x}$, giving $y=x$.",
+        "$xy=4$ gives $x^2=4$, so the points are $(2,2)$ and $(-2,-2)$.",
+        "$f(2,2)=9$ and $f(-2,-2)=4-4+1=1$.",
+        "$M+m=9+1=10$."
+      ],
+      "brief": "Lagrange: $y=x$, points $(2,2),(-2,-2)$: $M=9,\\ m=1$, so $10$."
+    },
+    {
+      "sec": "14.1",
+      "q": "$\\int_0^1\\int_0^2 (2x-y^2)\\,dy\\,dx=$",
+      "opts": [
+        "$-\\dfrac23$",
+        "$\\dfrac43$",
+        "$\\dfrac83$",
+        "$-\\dfrac13$",
+        "$2$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Iterated integral: work from the inside out.",
+        "Integrate with respect to $y$ first, treating $x$ as a constant.",
+        "$\\int y^n\\,dy=\\dfrac{y^{n+1}}{n+1}$ and $\\int c\\,dy=cy$ for constant $c$."
+      ],
+      "steps": [
+        "Inner: $\\int_0^2(2x-y^2)\\,dy=\\left[2xy-\\dfrac{y^3}{3}\\right]_0^2=4x-\\dfrac83$.",
+        "Outer: $\\int_0^1\\left(4x-\\dfrac83\\right)dx=\\left[2x^2-\\dfrac83x\\right]_0^1=2-\\dfrac83=-\\dfrac23$."
+      ],
+      "brief": "Inner gives $4x-\\frac83$; outer gives $2-\\frac83=-\\frac23$."
+    },
+    {
+      "sec": "14.2",
+      "q": "$\\int_0^2\\int_{y^2}^4 f(x,y)\\,dx\\,dy=$",
+      "opts": [
+        "$\\int_0^4\\int_0^{\\sqrt x} f(x,y)\\,dy\\,dx$",
+        "$\\int_0^2\\int_0^{x^2} f(x,y)\\,dy\\,dx$",
+        "$\\int_0^4\\int_0^{x} f(x,y)\\,dy\\,dx$",
+        "$\\int_0^2\\int_0^{\\sqrt x} f(x,y)\\,dy\\,dx$",
+        "$\\int_{y^2}^4\\int_0^{2} f(x,y)\\,dy\\,dx$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Change the order of integration by sketching the region.",
+        "Write the region as $y^2\\le x\\le4$, $0\\le y\\le2$, sketch it, and slice vertically instead.",
+        "Describe the same region with $x$ as the outer variable: find the range of $x$ and, for each $x$, the range of $y$."
+      ],
+      "steps": [
+        "The region is $0\\le y\\le2$, $y^2\\le x\\le 4$: bounded by $x=y^2$ (that is $y=\\sqrt x$), $x=4$ and $y=0$.",
+        "Slicing vertically, $x$ runs from $0$ to $4$.",
+        "For each $x$, $y$ runs from $0$ to $\\sqrt x$."
+      ],
+      "brief": "Region $0\\le x\\le4$, $0\\le y\\le\\sqrt x$."
+    },
+    {
+      "sec": "14.2",
+      "q": "The average value of $f(x,y)=4e^{y^2}$ over the plane region $R$ bounded by the curves $y=2x$, $y=4$, and $x=0$ is equal to",
+      "opts": [
+        "$\\dfrac{e^{16}-1}{4}$",
+        "$\\dfrac{e^{16}-1}{8}$",
+        "$e^{16}-1$",
+        "$\\dfrac{e^{16}-1}{2}$",
+        "$\\dfrac{e^{16}-1}{16}$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Average value over a region is the double integral divided by the area. Choose the order of integration so that $e^{y^2}$ can be integrated.",
+        "Integrate in $x$ first: $0\\le x\\le y/2$, $0\\le y\\le4$, and find the area of the triangle.",
+        "$f_{ave}=\\dfrac{1}{\\text{Area}(R)}\\iint_R f\\,dA$."
+      ],
+      "steps": [
+        "$R$ is the triangle with vertices $(0,0)$, $(0,4)$, $(2,4)$, area $\\tfrac12\\cdot2\\cdot4=4$.",
+        "$\\iint_R4e^{y^2}dA=\\int_0^4\\int_0^{y/2}4e^{y^2}dx\\,dy=\\int_0^4 2ye^{y^2}dy=\\left[e^{y^2}\\right]_0^4=e^{16}-1$.",
+        "$f_{ave}=\\dfrac{e^{16}-1}{4}$."
+      ],
+      "brief": "$\\iint_R f\\,dA=e^{16}-1$, area $=4$, average $=\\frac{e^{16}-1}{4}$."
+    },
+    {
+      "sec": "14.3",
+      "q": "If $R=\\{(x,y):x^2+y^2\\le4,\\ x\\le0\\}$, then $\\iint_R e^{-(x^2+y^2)/2}\\,dA=$",
+      "opts": [
+        "$(1-e^{-2})\\pi$",
+        "$(1-e^{-2})\\dfrac{\\pi}{2}$",
+        "$(e^{-2}-1)\\dfrac{\\pi}{2}$",
+        "$(2-e^{-2})\\pi$",
+        "$(1-e^{-2})\\dfrac{\\pi}{4}$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Circular region and $x^2+y^2$ in the integrand: use polar coordinates.",
+        "Describe the left half-disk with $r$ and $\\theta$ limits.",
+        "$x^2+y^2=r^2$ and $dA=r\\,dr\\,d\\theta$."
+      ],
+      "steps": [
+        "$R$: $0\\le r\\le2$, $\\dfrac{\\pi}{2}\\le\\theta\\le\\dfrac{3\\pi}{2}$.",
+        "$\\int_0^2 e^{-r^2/2}r\\,dr=\\left[-e^{-r^2/2}\\right]_0^2=1-e^{-2}$.",
+        "$\\int_{\\pi/2}^{3\\pi/2}d\\theta=\\pi$, so the integral is $(1-e^{-2})\\pi$."
+      ],
+      "brief": "Polar: $\\int_{\\pi/2}^{3\\pi/2}\\int_0^2e^{-r^2/2}r\\,dr\\,d\\theta=(1-e^{-2})\\pi$."
+    },
+    {
+      "sec": "14.6",
+      "q": "The volume of the solid in the first octant bounded by the planes $z=1$ and $3x+3y+z=4$ is equal to",
+      "opts": [
+        "$\\dfrac12$",
+        "$\\dfrac13$",
+        "$\\dfrac23$",
+        "$\\dfrac34$",
+        "$1$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Volume as a triple integral over a solid in the first octant.",
+        "Find where the two planes meet to get the base region in the $xy$-plane, and integrate $z$ from the lower plane to the upper plane.",
+        "$V=\\iiint_E dV=\\iint_R\\left(z_{top}-z_{bottom}\\right)dA$."
+      ],
+      "steps": [
+        "Plane intersection: $z=1$ gives $3x+3y=3$, i.e. $x+y=1$. Base $R$: $0\\le x\\le1$, $0\\le y\\le1-x$.",
+        "$z$ runs from $1$ to $4-3x-3y$, so the height is $3-3x-3y=3(1-x-y)$.",
+        "$\\int_0^{1-x}3(1-x-y)\\,dy=\\tfrac32(1-x)^2$.",
+        "$V=\\tfrac32\\int_0^1(1-x)^2dx=\\tfrac32\\cdot\\tfrac13=\\tfrac12$."
+      ],
+      "brief": "Base: triangle $x+y\\le1$, height $3(1-x-y)$: $V=\\frac12$."
+    },
+    {
+      "sec": "14.6",
+      "q": "The volume of the solid bounded above by the parabolic cylinder $z=4-x^2$ and below by the paraboloid $z=x^2+2y^2$ is equal to",
+      "opts": [
+        "$4\\pi$",
+        "$\\dfrac{3\\pi}{2}$",
+        "$2\\sqrt2\\,\\pi$",
+        "$\\dfrac{\\sqrt2\\,\\pi}{4}$",
+        "$2\\pi$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Volume between two surfaces over a base region in the $xy$-plane.",
+        "Set the two surfaces equal to find the projection of their intersection, which is a disk.",
+        "$V=\\iint_R\\left(z_{top}-z_{bottom}\\right)dA$, and for a disk use polar coordinates."
+      ],
+      "steps": [
+        "$4-x^2=x^2+2y^2$ gives $x^2+y^2=2$, so $R$ is the disk of radius $\\sqrt2$.",
+        "Height: $4-2x^2-2y^2=4-2r^2$, so $V=\\int_0^{2\\pi}\\int_0^{\\sqrt2}(4-2r^2)r\\,dr\\,d\\theta$.",
+        "$\\int_0^{\\sqrt2}(4r-2r^3)\\,dr=\\left[2r^2-\\tfrac12r^4\\right]_0^{\\sqrt2}=4-2=2$.",
+        "$V=2\\cdot2\\pi=4\\pi$."
+      ],
+      "brief": "Disk $r\\le\\sqrt2$, height $4-2r^2$: $V=2\\pi\\cdot2=4\\pi$."
+    },
+    {
+      "sec": "14.7",
+      "q": "In cylindrical coordinates, $\\int_0^3\\int_{-\\sqrt{9-x^2}}^{\\sqrt{9-x^2}}\\int_{x^2+y^2}^9 y\\,dz\\,dy\\,dx=$",
+      "opts": [
+        "$\\int_{-\\pi/2}^{\\pi/2}\\int_0^3\\int_{r^2}^9(r^2\\sin\\theta)\\,dz\\,dr\\,d\\theta$",
+        "$\\int_0^{\\pi/2}\\int_0^3\\int_{r^2}^9(r^2\\sin\\theta)\\,dz\\,dr\\,d\\theta$",
+        "$\\int_{-\\pi/2}^{\\pi/2}\\int_{-3}^3\\int_{r^2}^9(r^2\\sin\\theta)\\,dz\\,dr\\,d\\theta$",
+        "$\\int_0^{\\pi/2}\\int_0^3\\int_{r^2}^9(r\\sin\\theta)\\,dz\\,dr\\,d\\theta$",
+        "$\\int_0^{\\pi}\\int_0^3\\int_{r}^3(r\\sin\\theta)\\,dz\\,dr\\,d\\theta$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Convert the base region and the integrand to cylindrical coordinates.",
+        "The base is the right half of the disk $x^2+y^2\\le9$. Find the limits of $r$ and $\\theta$.",
+        "$x=r\\cos\\theta$, $y=r\\sin\\theta$, $x^2+y^2=r^2$, $dV=r\\,dz\\,dr\\,d\\theta$."
+      ],
+      "steps": [
+        "Base: $0\\le x\\le3$, $|y|\\le\\sqrt{9-x^2}$, the right half-disk of radius $3$, so $0\\le r\\le3$, $-\\dfrac{\\pi}{2}\\le\\theta\\le\\dfrac{\\pi}{2}$.",
+        "$z$ runs from $x^2+y^2=r^2$ to $9$.",
+        "Integrand: $y\\,dV=(r\\sin\\theta)\\,r\\,dz\\,dr\\,d\\theta=r^2\\sin\\theta\\,dz\\,dr\\,d\\theta$."
+      ],
+      "brief": "Right half-disk, $z$ from $r^2$ to $9$, integrand $r^2\\sin\\theta$."
+    },
+    {
+      "sec": "14.7",
+      "q": "$\\int_{-1}^1\\int_0^{\\sqrt{1-x^2}}\\int_0^{\\sqrt{1-x^2-y^2}}(8x^2+8y^2+8z^2)^{2/3}\\,dz\\,dy\\,dx=$",
+      "opts": [
+        "$\\dfrac{12\\pi}{13}$",
+        "$\\dfrac{5\\pi}{13}$",
+        "$\\dfrac{\\pi}{6}$",
+        "$\\dfrac{3\\pi}{8}$",
+        "$\\dfrac{\\pi}{13}$"
+      ],
+      "ans": 0,
+      "hints": [
+        "The limits describe part of a ball and the integrand depends on $x^2+y^2+z^2$: use spherical coordinates.",
+        "The region is $y\\ge0$, $z\\ge0$ inside the unit ball. Find the limits for $\\rho,\\phi,\\theta$.",
+        "$x^2+y^2+z^2=\\rho^2$ and $dV=\\rho^2\\sin\\phi\\,d\\rho\\,d\\phi\\,d\\theta$."
+      ],
+      "steps": [
+        "Region: $0\\le\\rho\\le1$, $0\\le\\phi\\le\\dfrac{\\pi}{2}$ ($z\\ge0$), $0\\le\\theta\\le\\pi$ ($y\\ge0$).",
+        "Integrand: $(8\\rho^2)^{2/3}=4\\rho^{4/3}$, so $\\int_0^1 4\\rho^{4/3}\\rho^2\\,d\\rho=4\\cdot\\dfrac{3}{13}=\\dfrac{12}{13}$.",
+        "$\\int_0^{\\pi/2}\\sin\\phi\\,d\\phi=1$ and $\\int_0^\\pi d\\theta=\\pi$.",
+        "Total: $\\dfrac{12\\pi}{13}$."
+      ],
+      "brief": "Spherical: $\\int_0^\\pi\\int_0^{\\pi/2}\\int_0^1 4\\rho^{10/3}\\sin\\phi\\,d\\rho\\,d\\phi\\,d\\theta=\\frac{12\\pi}{13}$."
+    }
+  ]
+}

@@ -1,0 +1,352 @@
+{
+  "course": "math102",
+  "term": "261",
+  "kind": "e1",
+  "date": "",
+  "minutes": 90,
+  "source": "math102-261-ex1.pdf",
+  "note": "Scan has only the master pages (no cover): date and exam length are not printed. Date left blank; 90 minutes assumed as the usual major-exam length. The master key marks (a) correct on every question; all 14 verified by hand and with sympy. Q13 and Q14 have only handwritten sketches, so no image is used for them.",
+  "qs": [
+    {
+      "sec": "5.2",
+      "img": "math102-261-e1-q1.png",
+      "q": "The graph of $y=f(x)$ is shown below. Using rectangles of width 1, the upper sum for the region bounded by the graph of $f$ and the $x$-axis on the interval $[1,5]$ is equal to (Note: $f(4)=2$)",
+      "opts": [
+        "$16$",
+        "$11$",
+        "$15$",
+        "$10$",
+        "$17$"
+      ],
+      "ans": 0,
+      "hints": [
+        "An upper sum uses the largest value of $f$ on each subinterval as the rectangle height.",
+        "Split $[1,5]$ into four subintervals of width 1 and find the maximum height of the graph on each one, noting where $f$ increases and decreases.",
+        "Upper sum $=\\sum_{i=1}^{n} M_i\\,\\Delta x$ where $M_i$ is the maximum of $f$ on the $i$th subinterval."
+      ],
+      "steps": [
+        "The subintervals are $[1,2],[2,3],[3,4],[4,5]$ with $\\Delta x=1$.",
+        "On $[1,2]$ the graph rises to its peak at $x=2$, so the maximum is $f(2)=5$.",
+        "On $[2,3]$ the graph is decreasing from $5$, so the maximum is $f(2)=5$. On $[3,4]$ it is $f(3)=4$, and on $[4,5]$ it is $f(4)=2$.",
+        "Upper sum $=(5+5+4+2)\\cdot1=16$."
+      ],
+      "brief": "Maxima $5,5,4,2$ on the four unit intervals: sum $=16$."
+    },
+    {
+      "sec": "5.2",
+      "q": "Using the Midpoint Rule with $n=3$, the approximate area of the region bounded by the graph of $f(x)=\\ln x$ and the $x$-axis over the interval $[1,7]$ is equal to",
+      "opts": [
+        "$2\\ln(48)$",
+        "$\\ln(48)$",
+        "$2\\ln(105)$",
+        "$2\\ln(15)$",
+        "$\\ln(105)$"
+      ],
+      "ans": 0,
+      "hints": [
+        "This is the Midpoint Rule: evaluate $f$ at the midpoint of each subinterval.",
+        "Find $\\Delta x$, list the three subintervals and their midpoints, then add the function values and multiply by $\\Delta x$.",
+        "$M_n=\\Delta x\\,[f(m_1)+\\cdots+f(m_n)]$ with $\\Delta x=\\dfrac{b-a}{n}$, and $\\ln a+\\ln b=\\ln(ab)$."
+      ],
+      "steps": [
+        "$\\Delta x=\\dfrac{7-1}{3}=2$, so the subintervals are $[1,3],[3,5],[5,7]$.",
+        "The midpoints are $2,4,6$.",
+        "$M_3=2\\,[\\ln2+\\ln4+\\ln6]=2\\ln(2\\cdot4\\cdot6)$.",
+        "So $M_3=2\\ln(48)$."
+      ],
+      "brief": "$\\Delta x=2$, midpoints $2,4,6$: $2(\\ln2+\\ln4+\\ln6)=2\\ln48$."
+    },
+    {
+      "sec": "5.8",
+      "q": "$\\int_0^{\\pi/4}\\frac{1}{\\sin^2x+4\\cos^2x}\\,dx=$",
+      "opts": [
+        "$\\dfrac12\\tan^{-1}\\!\\left(\\dfrac12\\right)$",
+        "$2\\tan^{-1}(2)$",
+        "$\\tan^{-1}(2)$",
+        "$2\\tan^{-1}\\!\\left(\\dfrac12\\right)$",
+        "$\\tan^{-1}\\!\\left(\\dfrac12\\right)$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Rewrite the integrand so that it becomes a standard inverse-tangent form after a substitution.",
+        "Divide the numerator and the denominator by $\\cos^2x$ and use a trigonometric identity, then substitute for the tangent.",
+        "$\\dfrac{1}{\\cos^2x}=\\sec^2x$, $\\dfrac{d}{dx}\\tan x=\\sec^2x$, and $\\int\\frac{du}{u^2+a^2}=\\frac1a\\tan^{-1}\\frac ua+C$."
+      ],
+      "steps": [
+        "Divide top and bottom by $\\cos^2x$: $\\dfrac{\\sec^2x}{\\tan^2x+4}$.",
+        "Let $u=\\tan x$, $du=\\sec^2x\\,dx$. Then $x=0\\to u=0$ and $x=\\pi/4\\to u=1$.",
+        "$\\int_0^1\\frac{du}{u^2+4}=\\left[\\frac12\\tan^{-1}\\frac u2\\right]_0^1$.",
+        "$=\\dfrac12\\tan^{-1}\\!\\left(\\dfrac12\\right)$."
+      ],
+      "brief": "$u=\\tan x$: $\\int_0^1\\frac{du}{u^2+4}=\\frac12\\tan^{-1}\\frac12$."
+    },
+    {
+      "sec": "5.3",
+      "img": "math102-261-e1-q4.png",
+      "q": "If the graph of $y=f(x)$ consists of line segments, as shown below, then $\\int_4^{10}f(x)\\,dx=$",
+      "opts": [
+        "$-2$",
+        "$-6$",
+        "$6$",
+        "$-10$",
+        "$12$"
+      ],
+      "ans": 0,
+      "hints": [
+        "A definite integral of a graph made of line segments is a signed area.",
+        "Find where the graph crosses the $x$-axis between $x=4$ and $x=10$, then compute the area of each triangle formed with the axis.",
+        "$\\int_a^b f\\,dx=$ (area above the axis) $-$ (area below the axis), and a triangle has area $\\tfrac12\\cdot\\text{base}\\cdot\\text{height}$."
+      ],
+      "steps": [
+        "From $(4,2)$ the line goes down to $(8,-2)$ with slope $-1$, so it crosses the axis at $x=6$.",
+        "From $(8,-2)$ the line goes up to $(11,1)$ with slope $1$, so it crosses the axis at $x=10$.",
+        "Above the axis on $[4,6]$: triangle with base 2 and height 2, area $2$.",
+        "Below the axis on $[6,10]$: triangle with base 4 and height 2, area $4$.",
+        "$\\int_4^{10}f\\,dx=2-4=-2$."
+      ],
+      "brief": "Triangle above $=2$, triangle below $=4$: net $2-4=-2$.",
+      "note": "Figure cropped from the scan; the solver's coloured handwriting (A1/A2 labels and a line at x=4) was removed by whitening coloured pixels (tools/decolor.py, threshold 15)."
+    },
+    {
+      "sec": "5.4",
+      "q": "The value of $c$ guaranteed by the Mean Value Theorem for integrals for the function $f(x)=2-e^x$ over the interval $[0,3]$ is",
+      "opts": [
+        "$\\ln\\!\\left(\\dfrac{e^3-1}{3}\\right)$",
+        "$\\dfrac{7-e^3}{3}$",
+        "$\\ln(e^3-5)$",
+        "$\\ln(e^3-4)$",
+        "$3-\\ln(3)$"
+      ],
+      "ans": 0,
+      "hints": [
+        "The Mean Value Theorem for integrals says $f$ takes its average value at some point $c$ of the interval.",
+        "Compute the average value of $f$ on $[0,3]$ and set $f(c)$ equal to it, then solve for $c$.",
+        "There is $c\\in[a,b]$ with $f(c)=\\dfrac{1}{b-a}\\int_a^b f(x)\\,dx$, and $\\ln$ undoes $e^x$."
+      ],
+      "steps": [
+        "Average value: $\\dfrac13\\int_0^3(2-e^x)\\,dx=\\dfrac13\\left[2x-e^x\\right]_0^3=\\dfrac{7-e^3}{3}$.",
+        "Set $2-e^c=\\dfrac{7-e^3}{3}$, so $6-3e^c=7-e^3$.",
+        "Then $e^c=\\dfrac{e^3-1}{3}$.",
+        "$c=\\ln\\!\\left(\\dfrac{e^3-1}{3}\\right)$, which lies in $[0,3]$."
+      ],
+      "brief": "$2-e^c=\\frac{7-e^3}{3}$, so $c=\\ln\\frac{e^3-1}{3}$."
+    },
+    {
+      "sec": "5.4",
+      "q": "If $F(x)=\\int_{2\\sqrt x}^{x}\\sin(t^2)\\,dt$, then $F'(4)=$",
+      "opts": [
+        "$\\dfrac12\\sin(16)$",
+        "$0$",
+        "$\\cos(16)$",
+        "$\\sin(16)$",
+        "$\\dfrac12\\cos(16)$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Both limits of integration depend on $x$, so use the second Fundamental Theorem with the chain rule.",
+        "Apply the rule to the upper limit and to the lower limit separately, and subtract.",
+        "$\\dfrac{d}{dx}\\int_{h(x)}^{g(x)}f(t)\\,dt=f(g(x))\\,g'(x)-f(h(x))\\,h'(x)$."
+      ],
+      "steps": [
+        "$F'(x)=\\sin(x^2)\\cdot1-\\sin\\!\\left((2\\sqrt x)^2\\right)\\cdot\\dfrac{1}{\\sqrt x}$.",
+        "Since $(2\\sqrt x)^2=4x$: $F'(x)=\\sin(x^2)-\\dfrac{\\sin(4x)}{\\sqrt x}$.",
+        "$F'(4)=\\sin16-\\dfrac{\\sin16}{2}=\\dfrac12\\sin(16)$."
+      ],
+      "brief": "$F'(x)=\\sin x^2-\\frac{\\sin 4x}{\\sqrt x}$, so $F'(4)=\\frac12\\sin16$."
+    },
+    {
+      "sec": "5.5",
+      "q": "$\\int 3x^2\\sqrt{3x-1}\\,dx=$",
+      "opts": [
+        "$\\dfrac{2}{63}(3x-1)^{7/2}+\\dfrac{4}{45}(3x-1)^{5/2}+\\dfrac{2}{27}(3x-1)^{3/2}+C$",
+        "$\\dfrac19(3x-1)^{5/2}+\\dfrac29(3x-1)^{3/2}+\\dfrac19(3x-1)^{1/2}+C$",
+        "$\\dfrac27(3x-1)^{7/2}+\\dfrac45(3x-1)^{5/2}+\\dfrac23(3x-1)^{3/2}+C$",
+        "$\\dfrac{2}{63}(3x-1)^{7/2}+\\dfrac45(3x-1)^{5/2}+\\dfrac23(3x-1)^{3/2}+C$",
+        "$\\dfrac19(3x-1)^{7/2}+\\dfrac29(3x-1)^{5/2}+\\dfrac19(3x-1)^{3/2}+C$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Substitute for the expression under the square root, and express the remaining $x$ in terms of the new variable.",
+        "Let $u$ be the expression under the root, solve for $x$ in terms of $u$, expand the square, and integrate term by term.",
+        "If $u=ax+b$ then $x=\\dfrac{u-b}{a}$, $dx=\\dfrac{du}{a}$, and $\\int u^n\\,du=\\dfrac{u^{n+1}}{n+1}+C$."
+      ],
+      "steps": [
+        "Let $u=3x-1$, so $x=\\dfrac{u+1}{3}$ and $dx=\\dfrac{du}{3}$.",
+        "$\\int3\\left(\\frac{u+1}{3}\\right)^2\\sqrt u\\,\\frac{du}{3}=\\frac19\\int(u^2+2u+1)u^{1/2}\\,du$.",
+        "$=\\dfrac19\\int\\left(u^{5/2}+2u^{3/2}+u^{1/2}\\right)du$ and integrating each power gives $\\dfrac19\\left[\\dfrac27u^{7/2}+\\dfrac45u^{5/2}+\\dfrac23u^{3/2}\\right]+C$.",
+        "Therefore $\\dfrac{2}{63}(3x-1)^{7/2}+\\dfrac{4}{45}(3x-1)^{5/2}+\\dfrac{2}{27}(3x-1)^{3/2}+C$."
+      ],
+      "brief": "$u=3x-1$: $\\frac19\\int(u^{5/2}+2u^{3/2}+u^{1/2})du=\\frac{2}{63}u^{7/2}+\\frac4{45}u^{5/2}+\\frac2{27}u^{3/2}$."
+    },
+    {
+      "sec": "5.5",
+      "q": "$\\int_{\\pi/12}^{\\pi/4}\\csc(2x)\\cot(2x)\\,dx=$",
+      "opts": [
+        "$\\dfrac12$",
+        "$\\dfrac12-\\dfrac1{\\sqrt3}$",
+        "$-\\dfrac12$",
+        "$-\\dfrac12+\\dfrac1{\\sqrt3}$",
+        "$-1$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Use a linear substitution, then recognise a standard trigonometric antiderivative.",
+        "Let $u=2x$ and change the limits of integration as well.",
+        "$\\int\\csc u\\cot u\\,du=-\\csc u+C$, and $\\csc\\theta=\\dfrac1{\\sin\\theta}$."
+      ],
+      "steps": [
+        "Let $u=2x$, $dx=\\dfrac{du}2$. The limits become $\\pi/6$ and $\\pi/2$.",
+        "$\\dfrac12\\int_{\\pi/6}^{\\pi/2}\\csc u\\cot u\\,du=-\\dfrac12\\left[\\csc u\\right]_{\\pi/6}^{\\pi/2}$.",
+        "$\\csc(\\pi/2)=1$ and $\\csc(\\pi/6)=2$, so the value is $-\\dfrac12(1-2)=\\dfrac12$."
+      ],
+      "brief": "$u=2x$: $-\\frac12[\\csc u]_{\\pi/6}^{\\pi/2}=-\\frac12(1-2)=\\frac12$."
+    },
+    {
+      "sec": "5.7",
+      "q": "$\\int_0^{\\pi/2}\\tan\\!\\left(\\dfrac x3\\right)dx=$",
+      "opts": [
+        "$3\\ln\\!\\left(\\dfrac{2}{\\sqrt3}\\right)$",
+        "$3\\ln(2)$",
+        "$\\dfrac13\\ln\\!\\left(\\dfrac{2}{\\sqrt3}\\right)$",
+        "$\\dfrac13\\ln(2)$",
+        "$\\ln\\!\\left(\\dfrac{\\sqrt3}{2}\\right)$"
+      ],
+      "ans": 0,
+      "hints": [
+        "This is the integral of the tangent function after a linear substitution.",
+        "Let $u=\\dfrac x3$ and change the limits of integration.",
+        "$\\int\\tan u\\,du=-\\ln|\\cos u|+C=\\ln|\\sec u|+C$."
+      ],
+      "steps": [
+        "Let $u=\\dfrac x3$, so $dx=3\\,du$; the limits become $0$ and $\\pi/6$.",
+        "$3\\int_0^{\\pi/6}\\tan u\\,du=3\\left[\\ln|\\sec u|\\right]_0^{\\pi/6}$.",
+        "$\\sec(\\pi/6)=\\dfrac{2}{\\sqrt3}$ and $\\sec0=1$.",
+        "The value is $3\\ln\\!\\left(\\dfrac2{\\sqrt3}\\right)$."
+      ],
+      "brief": "$u=x/3$: $3[\\ln\\sec u]_0^{\\pi/6}=3\\ln\\frac{2}{\\sqrt3}$."
+    },
+    {
+      "sec": "5.7",
+      "q": "$\\int\\frac{3x^2+x+27}{x^2+9}\\,dx=$",
+      "opts": [
+        "$3x+\\ln\\sqrt{x^2+9}+C$",
+        "$3x+\\ln(x^2+9)+C$",
+        "$3x+\\dfrac13\\tan^{-1}\\!\\left(\\dfrac x3\\right)+C$",
+        "$3x+\\tan^{-1}\\!\\left(\\dfrac x3\\right)+C$",
+        "$\\left(x^3+\\dfrac12x^2+27x\\right)\\ln(x^2+9)+C$"
+      ],
+      "ans": 0,
+      "hints": [
+        "The numerator has the same degree as the denominator, so start with polynomial division.",
+        "Divide, then split the remainder fraction and use a substitution on the part whose numerator is a constant multiple of the derivative of the denominator.",
+        "$\\int\\frac{u'}{u}\\,dx=\\ln|u|+C$, and $\\dfrac12\\ln A=\\ln\\sqrt A$ for $A>0$."
+      ],
+      "steps": [
+        "Divide: $\\dfrac{3x^2+x+27}{x^2+9}=3+\\dfrac{x}{x^2+9}$.",
+        "$\\int3\\,dx=3x$.",
+        "With $u=x^2+9$, $du=2x\\,dx$: $\\int\\frac{x}{x^2+9}dx=\\frac12\\ln(x^2+9)$.",
+        "Total: $3x+\\dfrac12\\ln(x^2+9)+C=3x+\\ln\\sqrt{x^2+9}+C$."
+      ],
+      "brief": "$=3+\\frac{x}{x^2+9}$, so $3x+\\frac12\\ln(x^2+9)+C=3x+\\ln\\sqrt{x^2+9}+C$."
+    },
+    {
+      "sec": "5.8",
+      "q": "$\\int_{5/2}^{15/4}\\frac{1}{\\sqrt{5x-x^2}}\\,dx=$",
+      "opts": [
+        "$\\dfrac\\pi6$",
+        "$\\dfrac\\pi3$",
+        "$\\dfrac{2\\pi}3$",
+        "$\\dfrac\\pi4$",
+        "$\\dfrac\\pi2$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Complete the square under the root to reach an inverse-sine form.",
+        "Write the expression under the root as a constant minus a perfect square, then substitute for the square's base and change the limits.",
+        "$\\int\\frac{du}{\\sqrt{a^2-u^2}}=\\sin^{-1}\\frac ua+C$, and $-x^2+bx=\\dfrac{b^2}4-\\left(x-\\dfrac b2\\right)^2$."
+      ],
+      "steps": [
+        "$5x-x^2=\\dfrac{25}4-\\left(x-\\dfrac52\\right)^2$.",
+        "Let $u=x-\\dfrac52$: the limits become $0$ and $\\dfrac54$.",
+        "$\\int_0^{5/4}\\frac{du}{\\sqrt{(5/2)^2-u^2}}=\\left[\\sin^{-1}\\frac{u}{5/2}\\right]_0^{5/4}$.",
+        "$=\\sin^{-1}\\dfrac12-0=\\dfrac\\pi6$."
+      ],
+      "brief": "Complete the square: $\\left[\\sin^{-1}\\frac{u}{5/2}\\right]_0^{5/4}=\\sin^{-1}\\frac12=\\frac\\pi6$."
+    },
+    {
+      "sec": "5.9",
+      "q": "$\\int_2^{2-\\ln4}\\sinh^2\\!\\left(1-\\dfrac x2\\right)\\cosh\\!\\left(1-\\dfrac x2\\right)dx=$",
+      "opts": [
+        "$-\\dfrac9{32}$",
+        "$-\\dfrac{27}{32}$",
+        "$-\\dfrac{125}{96}$",
+        "$-\\dfrac9{64}$",
+        "$-\\dfrac38$"
+      ],
+      "ans": 0,
+      "hints": [
+        "The integrand is a power of $\\sinh$ times its derivative (up to a constant), so use a substitution.",
+        "Let $u=\\sinh\\!\\left(1-\\dfrac x2\\right)$, find $du$, and convert both limits.",
+        "$\\dfrac{d}{dx}\\sinh x=\\cosh x$, $\\sinh y=\\dfrac{e^y-e^{-y}}2$, and $\\int u^2\\,du=\\dfrac{u^3}3+C$."
+      ],
+      "steps": [
+        "Let $u=\\sinh(1-x/2)$: $du=-\\dfrac12\\cosh(1-x/2)\\,dx$, so $\\cosh(1-x/2)\\,dx=-2\\,du$.",
+        "At $x=2$: $u=\\sinh0=0$. At $x=2-\\ln4$: $u=\\sinh(\\ln2)=\\dfrac{2-1/2}{2}=\\dfrac34$.",
+        "$\\int_0^{3/4}-2u^2\\,du=-\\dfrac23u^3\\Big|_0^{3/4}$.",
+        "$=-\\dfrac23\\cdot\\dfrac{27}{64}=-\\dfrac9{32}$."
+      ],
+      "brief": "$u=\\sinh(1-\\frac x2)$: $-2\\int_0^{3/4}u^2du=-\\frac23\\cdot\\frac{27}{64}=-\\frac9{32}$."
+    },
+    {
+      "sec": "7.1",
+      "q": "The area of the region bounded by the graphs of $f(x)=\\dfrac1{1+x^2}$ and $g(x)=\\dfrac12x^2$ is equal to",
+      "opts": [
+        "$\\dfrac\\pi2-\\dfrac13$",
+        "$\\dfrac\\pi2-\\dfrac16$",
+        "$\\dfrac\\pi4-\\dfrac16$",
+        "$\\dfrac\\pi4-\\dfrac13$",
+        "$\\dfrac\\pi4-\\dfrac23$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Find where the two curves meet, then integrate (top curve minus bottom curve) between those points.",
+        "Set $f(x)=g(x)$, clear denominators, and solve the resulting equation in $x^2$; decide which graph is on top between the intersection points.",
+        "$A=\\int_a^b\\left[f(x)-g(x)\\right]dx$ where $f\\ge g$ on $[a,b]$, and $\\int\\frac{dx}{1+x^2}=\\tan^{-1}x+C$. An even integrand over $[-a,a]$ gives twice the integral over $[0,a]$."
+      ],
+      "steps": [
+        "$\\dfrac1{1+x^2}=\\dfrac{x^2}2\\Rightarrow x^4+x^2-2=0\\Rightarrow(x^2-1)(x^2+2)=0$, so $x=\\pm1$.",
+        "On $[-1,1]$, $f\\ge g$ (at $x=0$: $1>0$).",
+        "$A=\\int_{-1}^1\\left(\\frac1{1+x^2}-\\frac{x^2}2\\right)dx=2\\left[\\tan^{-1}x-\\frac{x^3}6\\right]_0^1$.",
+        "$=2\\left(\\dfrac\\pi4-\\dfrac16\\right)=\\dfrac\\pi2-\\dfrac13$."
+      ],
+      "brief": "Meet at $x=\\pm1$: $2\\int_0^1(\\frac1{1+x^2}-\\frac{x^2}2)dx=\\frac\\pi2-\\frac13$.",
+      "note": "The scan has only a handwritten sketch of the region next to the question; no printed figure, so no image is used. The text fully describes the region."
+    },
+    {
+      "sec": "7.1",
+      "q": "The area of the region bounded by the graphs of $f(x)=\\sin x$, $g(x)=\\cos x$, $x=0$, and $x=\\pi$ is equal to",
+      "opts": [
+        "$2\\sqrt2$",
+        "$2\\sqrt2-2$",
+        "$2$",
+        "$2\\sqrt2-1$",
+        "$2\\sqrt2+2$"
+      ],
+      "ans": 0,
+      "hints": [
+        "The curves cross inside the interval, so the area must be split into pieces.",
+        "Find where $\\sin x=\\cos x$ on $[0,\\pi]$, decide which function is larger on each side, and integrate top minus bottom on each piece.",
+        "$A=\\int_a^b|f(x)-g(x)|\\,dx$, with $\\int\\sin x\\,dx=-\\cos x+C$ and $\\int\\cos x\\,dx=\\sin x+C$."
+      ],
+      "steps": [
+        "$\\sin x=\\cos x\\Rightarrow\\tan x=1\\Rightarrow x=\\dfrac\\pi4$ in $[0,\\pi]$.",
+        "On $[0,\\pi/4]$, $\\cos x\\ge\\sin x$; on $[\\pi/4,\\pi]$, $\\sin x\\ge\\cos x$.",
+        "$\\int_0^{\\pi/4}(\\cos x-\\sin x)dx=\\left[\\sin x+\\cos x\\right]_0^{\\pi/4}=\\sqrt2-1$.",
+        "$\\int_{\\pi/4}^{\\pi}(\\sin x-\\cos x)dx=\\left[-\\cos x-\\sin x\\right]_{\\pi/4}^{\\pi}=1+\\sqrt2$.",
+        "Total area $=(\\sqrt2-1)+(1+\\sqrt2)=2\\sqrt2$."
+      ],
+      "brief": "Split at $\\pi/4$: $(\\sqrt2-1)+(\\sqrt2+1)=2\\sqrt2$.",
+      "note": "The scan has only a handwritten sketch next to the question; no printed figure, so no image is used."
+    }
+  ]
+}

@@ -1,0 +1,487 @@
+{
+  "course": "math208",
+  "term": "231",
+  "kind": "e2",
+  "date": "7 November 2023",
+  "minutes": 120,
+  "source": "math208-231-ex2.pdf",
+  "qs": [
+    {
+      "sec": "4.3",
+      "q": "A value of $k$ for which the following vectors \\[ v_1=(k,0,k),\\quad v_2=(2k,-3,4)\\quad\\text{and}\\quad v_3=(3,5,2) \\] are linearly dependent is",
+      "opts": [
+        "$\\dfrac{17}{10}$",
+        "$\\dfrac{7}{5}$",
+        "$\\dfrac{-8}{5}$",
+        "$\\dfrac{-16}{5}$",
+        "$\\dfrac{10}{5}$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Three vectors in $\\mathbb{R}^3$ are dependent exactly when a certain determinant vanishes.",
+        "Build the $3\\times3$ matrix with the vectors as rows, compute its determinant in terms of $k$, and set it equal to zero.",
+        "$n$ vectors in $\\mathbb{R}^n$ are linearly dependent if and only if the determinant of the matrix having them as rows (or columns) is $0$."
+      ],
+      "steps": [
+        "Set $\\det\\begin{bmatrix}k&0&k\\\\2k&-3&4\\\\3&5&2\\end{bmatrix}=0$.",
+        "Expand along the first row: $k(-6-20)-0+k(10k+9)=10k^2-17k$.",
+        "$k(10k-17)=0$, so $k=0$ or $k=\\dfrac{17}{10}$.",
+        "Only $k=\\dfrac{17}{10}$ appears among the choices."
+      ],
+      "brief": "$\\det=10k^2-17k=k(10k-17)=0$, so $k=\\frac{17}{10}$ (the only listed value).",
+      "note": "k=0 also makes the vectors dependent (v1 = 0) but is not among the choices."
+    },
+    {
+      "sec": "4.3",
+      "q": "Consider the vectors \\[ v_1=(-1,2,3),\\ v_2=(3,1,-2),\\ v_3=(2,3,0)\\ \\text{and}\\ w=(1,5,8). \\] If $w=av_1+bv_2+cv_3$, then $a+b-c=$",
+      "opts": [
+        "$15$",
+        "$17$",
+        "$19$",
+        "$21$",
+        "$13$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Writing $w$ as a linear combination of given vectors leads to a linear system.",
+        "Compare components to get three equations in $a,b,c$ and solve them by elimination.",
+        "$w=av_1+bv_2+cv_3$ means the vector equation holds in each component, giving a $3\\times3$ linear system for the coefficients."
+      ],
+      "steps": [
+        "Components: $-a+3b+2c=1$, $2a+b+3c=5$, $3a-2b=8$.",
+        "From the third equation $a=\\dfrac{2b+8}{3}$. Substituting into the first two gives $7b+6c=11$ and $7b+9c=-1$.",
+        "Subtracting: $3c=-12$, so $c=-4$; then $7b=35$, $b=5$, and $a=6$.",
+        "$a+b-c=6+5+4=15$."
+      ],
+      "brief": "Solve the system: $a=6,\\ b=5,\\ c=-4$, so $a+b-c=15$."
+    },
+    {
+      "sec": "4.4",
+      "q": "Consider the subspace $S$ of $\\mathbb{R}^4$ defined by $S=\\{(a,b,c,d)\\mid a=b+c+d\\}$. A basis of $S$ is consisting of the vectors",
+      "opts": [
+        "$v_1=(1,1,0,0),\\ v_2=(1,0,1,0),\\ v_3=(1,0,0,1)$",
+        "$v_1=(1,1,1,0),\\ v_2=(0,1,1,1),\\ v_3=(0,1,1,0)$",
+        "$v_1=(0,1,0,0),\\ v_2=(0,0,1,0),\\ v_3=(0,0,0,1)$",
+        "$v_1=(1,1,1,1),\\ v_2=(0,0,1,0),\\ v_3=(1,0,0,1)$",
+        "$v_1=(1,1,0,0),\\ v_2=(0,0,1,1),\\ v_3=(0,1,0,1)$"
+      ],
+      "ans": 0,
+      "hints": [
+        "A basis must lie in the subspace, span it, and be independent.",
+        "Find the free variables of the defining condition and write a general element as a combination of vectors.",
+        "A basis of a subspace consists of linearly independent vectors that belong to it and span it; the number of vectors equals the dimension."
+      ],
+      "steps": [
+        "The condition $a=b+c+d$ leaves $b,c,d$ free.",
+        "$(a,b,c,d)=(b+c+d,b,c,d)=b(1,1,0,0)+c(1,0,1,0)+d(1,0,0,1)$.",
+        "These three vectors span $S$, lie in $S$, and are independent (each has a $1$ in a coordinate where the others have $0$).",
+        "So they form a basis of $S$."
+      ],
+      "brief": "Free $b,c,d$: $(b+c+d,b,c,d)=b(1,1,0,0)+c(1,0,1,0)+d(1,0,0,1)$."
+    },
+    {
+      "sec": "4.4",
+      "q": "Let the solution space of the system \\[\\begin{aligned} x_1-2x_2-9x_3+7x_4&=0\\\\ x_1+x_2+3x_3+4x_4&=0\\\\ x_1+4x_2+15x_3+x_4&=0 \\end{aligned}\\] has all linear combinations of the two vectors $u=(1,-4,1,0)$ and $v=(\\alpha,1,\\beta,1)$. Then $\\alpha+\\beta=$",
+      "opts": [
+        "$-5$",
+        "$5$",
+        "$-3$",
+        "$3$",
+        "$0$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Find the general solution of a homogeneous system and read off its basis vectors.",
+        "Row reduce the coefficient matrix, identify the free variables, and write the solution as a combination of vectors.",
+        "For a homogeneous system, set each free variable to $1$ in turn (others $0$) to get basis vectors of the solution space; the last two coordinates of the given vectors show which variables are free."
+      ],
+      "steps": [
+        "Subtract row 1 from rows 2 and 3: $3x_2+12x_3-3x_4=0$ and $6x_2+24x_3-6x_4=0$, the same equation $x_2+4x_3-x_4=0$.",
+        "So $x_2=-4x_3+x_4$ and $x_1=2x_2+9x_3-7x_4=x_3-5x_4$, with $x_3,x_4$ free.",
+        "$(x_1,x_2,x_3,x_4)=x_3(1,-4,1,0)+x_4(-5,1,0,1)$.",
+        "Hence $v=(-5,1,0,1)$, so $\\alpha=-5$, $\\beta=0$ and $\\alpha+\\beta=-5$."
+      ],
+      "brief": "Reduces to $x_2+4x_3-x_4=0$; basis $(1,-4,1,0)$, $(-5,1,0,1)$, so $\\alpha+\\beta=-5$."
+    },
+    {
+      "sec": "4.5",
+      "q": "The rank of the matrix \\[ A=\\begin{bmatrix}1&2&3&-9&9\\\\3&6&2&1&6\\\\2&4&1&2&3\\\\4&8&3&0&9\\end{bmatrix} \\] is",
+      "opts": [
+        "$2$",
+        "$3$",
+        "$1$",
+        "$5$",
+        "$4$"
+      ],
+      "ans": 0,
+      "hints": [
+        "The rank is the number of nonzero rows after row reduction.",
+        "Use row 1 to clear the first column below the pivot and look at what is left.",
+        "The rank of a matrix is the number of nonzero rows in its row echelon form (the number of pivots)."
+      ],
+      "steps": [
+        "$R_2-3R_1=(0,0,-7,28,-21)$, $R_3-2R_1=(0,0,-5,20,-15)$, $R_4-4R_1=(0,0,-9,36,-27)$.",
+        "Each of these is a multiple of $(0,0,1,-4,3)$.",
+        "Clearing the other rows with it leaves zero rows, so only two rows are nonzero.",
+        "The rank is $2$."
+      ],
+      "brief": "After clearing column 1 the other rows are multiples of $(0,0,1,-4,3)$: rank $2$."
+    },
+    {
+      "sec": "5.3",
+      "q": "The solution of the initial-value problem \\[ y''-y=0,\\quad y(0)=0\\ \\text{and}\\ y'(0)=5 \\] is",
+      "opts": [
+        "$y=\\dfrac52e^{x}-\\dfrac52e^{-x}$",
+        "$y=-\\dfrac52e^{x}+\\dfrac52e^{-x}$",
+        "$y=e^{x}-e^{-x}$",
+        "$y=e^{-x}-e^{x}$",
+        "$y=\\dfrac32e^{x}-\\dfrac32e^{-x}$"
+      ],
+      "ans": 0,
+      "hints": [
+        "This is a second-order linear homogeneous equation with constant coefficients.",
+        "Write the characteristic equation, find its roots, form the general solution, then apply both initial conditions.",
+        "For $ay''+by'+cy=0$ solve $ar^2+br+c=0$; distinct real roots $r_1,r_2$ give $y=c_1e^{r_1x}+c_2e^{r_2x}$."
+      ],
+      "steps": [
+        "Characteristic equation $r^2-1=0$, so $r=\\pm1$ and $y=c_1e^x+c_2e^{-x}$.",
+        "$y(0)=c_1+c_2=0$.",
+        "$y'(0)=c_1-c_2=5$.",
+        "So $c_1=\\dfrac52$, $c_2=-\\dfrac52$: $y=\\dfrac52e^x-\\dfrac52e^{-x}$."
+      ],
+      "brief": "$r=\\pm1$; $c_1+c_2=0$, $c_1-c_2=5$ give $y=\\frac52e^x-\\frac52e^{-x}$."
+    },
+    {
+      "sec": "5.2",
+      "q": "The Wronskian of the functions \\[ f(x)=1,\\quad g(x)=x,\\quad h(x)=x^2 \\] is",
+      "opts": [
+        "$2$",
+        "$3$",
+        "$0$",
+        "$4$",
+        "$-4$"
+      ],
+      "ans": 0,
+      "hints": [
+        "The Wronskian is a determinant of the functions and their derivatives.",
+        "Form the $3\\times3$ matrix with the functions in the first row, first derivatives in the second and second derivatives in the third.",
+        "$W(f,g,h)=\\begin{vmatrix}f&g&h\\\\f'&g'&h'\\\\f''&g''&h''\\end{vmatrix}$."
+      ],
+      "steps": [
+        "$W=\\begin{vmatrix}1&x&x^2\\\\0&1&2x\\\\0&0&2\\end{vmatrix}$.",
+        "The matrix is upper triangular, so the determinant is the product of the diagonal entries.",
+        "$W=1\\cdot1\\cdot2=2$."
+      ],
+      "brief": "$W=\\begin{vmatrix}1&x&x^2\\\\0&1&2x\\\\0&0&2\\end{vmatrix}=2$."
+    },
+    {
+      "sec": "5.3",
+      "q": "The general solution of the differential equation \\[ 4y''-12y'+9y=0 \\] is",
+      "opts": [
+        "$y=c_1e^{\\frac32x}+c_2xe^{\\frac32x}$",
+        "$y=c_1e^{x}+c_2xe^{x}$",
+        "$y=c_1e^{\\frac32x}+c_2xe^{-\\frac32x}$",
+        "$y=c_1e^{3x}+c_2xe^{3x}$",
+        "$y=c_1e^{3x}+c_2e^{-3x}$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Constant-coefficient homogeneous equation: use the characteristic equation.",
+        "Write $ar^2+br+c=0$ with the given coefficients and check whether it is a perfect square.",
+        "A repeated root $r$ of the characteristic equation gives the solutions $e^{rx}$ and $xe^{rx}$."
+      ],
+      "steps": [
+        "Characteristic equation: $4r^2-12r+9=0$.",
+        "$(2r-3)^2=0$, so $r=\\dfrac32$ is a double root.",
+        "$y=c_1e^{\\frac32x}+c_2xe^{\\frac32x}$."
+      ],
+      "brief": "$(2r-3)^2=0$, double root $r=\\frac32$: $y=c_1e^{3x/2}+c_2xe^{3x/2}$."
+    },
+    {
+      "sec": "5.3",
+      "q": "The general solution of the differential equation \\[ y^{(3)}+3y''-4y=0 \\] is",
+      "opts": [
+        "$y=c_1e^{x}+c_2e^{-2x}+c_3xe^{-2x}$",
+        "$y=c_1e^{-x}+c_2e^{-2x}+c_3xe^{-2x}$",
+        "$y=c_1e^{x}+c_2e^{2x}+c_3xe^{2x}$",
+        "$y=c_1e^{-x}+c_2e^{2x}+c_3xe^{2x}$",
+        "$y=c_1e^{x}+c_2e^{3x}+c_3xe^{3x}$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Higher-order constant-coefficient equation: use the characteristic equation and factor the cubic.",
+        "Write the characteristic polynomial and look for a small integer root, then divide it out.",
+        "A root $r$ of multiplicity $m$ gives $e^{rx},xe^{rx},\\dots,x^{m-1}e^{rx}$. By the rational root test, try integer divisors of the constant term."
+      ],
+      "steps": [
+        "Characteristic equation: $r^3+3r^2-4=0$.",
+        "$r=1$ is a root; dividing gives $(r-1)(r^2+4r+4)$.",
+        "So $(r-1)(r+2)^2=0$: $r=1$ and $r=-2$ (double).",
+        "$y=c_1e^{x}+c_2e^{-2x}+c_3xe^{-2x}$."
+      ],
+      "brief": "$r^3+3r^2-4=(r-1)(r+2)^2$: $y=c_1e^x+c_2e^{-2x}+c_3xe^{-2x}$."
+    },
+    {
+      "sec": "5.3",
+      "q": "The general solution of the differential equation \\[ y^{(4)}+18y''+81y=0 \\] is",
+      "opts": [
+        "$y=(c_1+c_2x)\\cos(3x)+(c_3+c_4x)\\sin(3x)$",
+        "$y=(c_1+c_2x)\\cos(2x)+(c_3+c_4x)\\sin(2x)$",
+        "$y=(c_1+c_2x)e^{x}\\cos(3x)+(c_3+c_4x)e^{x}\\sin(3x)$",
+        "$y=(c_1+c_2x)e^{x}\\cos(2x)+(c_3+c_4x)e^{x}\\sin(2x)$",
+        "$y=c_1\\cos(3x)+c_2\\sin(3x)+c_3\\cos(2x)+c_4\\sin(2x)$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Constant-coefficient equation of order four: use the characteristic equation.",
+        "The characteristic polynomial is quadratic in $r^2$; look for a perfect square.",
+        "Complex roots $a\\pm bi$ of multiplicity $m$ give $x^je^{ax}\\cos bx$ and $x^je^{ax}\\sin bx$ for $j=0,\\dots,m-1$."
+      ],
+      "steps": [
+        "Characteristic equation: $r^4+18r^2+81=0$.",
+        "$(r^2+9)^2=0$, so $r=\\pm3i$, each a double root.",
+        "Here $a=0$, $b=3$ with multiplicity $2$.",
+        "$y=(c_1+c_2x)\\cos3x+(c_3+c_4x)\\sin3x$."
+      ],
+      "brief": "$(r^2+9)^2=0$: $r=\\pm3i$ double, so $y=(c_1+c_2x)\\cos3x+(c_3+c_4x)\\sin3x$."
+    },
+    {
+      "sec": "5.3",
+      "q": "A linear homogeneous constant-coefficient differential equation which has the general solution \\[ y(x)=e^{-4x}\\left(c_1\\cos(3x)+c_2\\sin(3x)\\right) \\] is",
+      "opts": [
+        "$y''+8y'+25y=0$",
+        "$y''-8y'+25y=0$",
+        "$y''+6y'+25y=0$",
+        "$y''-8y'-25y=0$",
+        "$y''-6y'+25y=0$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Work backwards from the solution to the characteristic equation.",
+        "Read off the complex roots from the exponential and trigonometric factors and build the quadratic with those roots.",
+        "Roots $a\\pm bi$ correspond to $e^{ax}(c_1\\cos bx+c_2\\sin bx)$, and the quadratic with these roots is $(r-a)^2+b^2=0$."
+      ],
+      "steps": [
+        "The solution corresponds to the roots $r=-4\\pm3i$.",
+        "The characteristic equation is $(r+4)^2+9=0$, i.e. $r^2+8r+25=0$.",
+        "So the differential equation is $y''+8y'+25y=0$."
+      ],
+      "brief": "Roots $-4\\pm3i$: $(r+4)^2+9=r^2+8r+25$, so $y''+8y'+25y=0$."
+    },
+    {
+      "sec": "5.5",
+      "q": "If $y_p=A+Bx$ is a particular solution of the differential equation \\[ y''-y'-2y=3x+4, \\] then $4A+4B=$",
+      "opts": [
+        "$-11$",
+        "$-10$",
+        "$12$",
+        "$9$",
+        "$0$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Substitute the trial solution into the equation and compare coefficients.",
+        "Compute $y_p'$ and $y_p''$, plug them in, and match the coefficients of $x$ and the constants on both sides.",
+        "Two polynomials are equal for all $x$ exactly when their coefficients of each power of $x$ agree."
+      ],
+      "steps": [
+        "$y_p'=B$ and $y_p''=0$.",
+        "Substitute: $-B-2(A+Bx)=3x+4$, i.e. $-2Bx+(-B-2A)=3x+4$.",
+        "Coefficient of $x$: $-2B=3$, so $B=-\\dfrac32$.",
+        "Constants: $-B-2A=4$, so $\\dfrac32-2A=4$ and $A=-\\dfrac54$.",
+        "$4A+4B=-5-6=-11$."
+      ],
+      "brief": "$-2B=3$, $-B-2A=4$ give $B=-\\frac32$, $A=-\\frac54$, so $4A+4B=-11$."
+    },
+    {
+      "sec": "5.5",
+      "q": "An appropriate form of a particular solution $y_p$ for the non-homogeneous differential equation $y''+4y=3x\\cos(2x)$ is given by $y_p(x)=$",
+      "opts": [
+        "$(Ax+Bx^2)\\cos(2x)+(Cx+Dx^2)\\sin(2x)$",
+        "$(Ax+Bx)\\cos(2x)+(C+Dx)\\sin(2x)$",
+        "$(Ax+Bx^2)\\cos(2x)+(C+Dx)\\sin(2x)$",
+        "$(A+Bx)\\cos(2x)+(Cx+Dx^2)\\sin(2x)$",
+        "$(Ax^2+Bx^3)\\cos(2x)+(C+Dx)\\sin(2x)$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Use undetermined coefficients and check whether the trial form overlaps the complementary solution.",
+        "Find the complementary solution of the homogeneous equation and compare it with the natural trial form.",
+        "If a term of the trial function solves the homogeneous equation, multiply the whole trial function by $x^s$ with the smallest $s$ that removes the overlap."
+      ],
+      "steps": [
+        "Homogeneous solutions: $r^2+4=0$, $r=\\pm2i$, so $y_c=c_1\\cos2x+c_2\\sin2x$.",
+        "The natural trial form for $3x\\cos2x$ is $(A+Bx)\\cos2x+(C+Dx)\\sin2x$, which overlaps $y_c$.",
+        "Multiply by $x$: $y_p=x\\left[(A+Bx)\\cos2x+(C+Dx)\\sin2x\\right]$.",
+        "Expanded: $(Ax+Bx^2)\\cos2x+(Cx+Dx^2)\\sin2x$."
+      ],
+      "brief": "$y_c$ has $\\cos2x,\\sin2x$, so multiply the trial form by $x$: $(Ax+Bx^2)\\cos2x+(Cx+Dx^2)\\sin2x$."
+    },
+    {
+      "sec": "5.5",
+      "q": "Given that $y_p=u_1(x)\\cos(3x)+u_2(x)\\sin(3x)$ is a particular solution of the differential equation \\[ y''+9y=2\\sec(3x), \\] then $u_1(x)=$",
+      "opts": [
+        "$\\dfrac29\\ln|\\cos(3x)|$",
+        "$\\dfrac19\\ln|\\cos(3x)|$",
+        "$\\dfrac27\\ln|\\cos(3x)|$",
+        "$\\dfrac13\\ln|\\cos(3x)|$",
+        "$\\dfrac17\\ln|\\cos(3x)|$"
+      ],
+      "ans": 0,
+      "hints": [
+        "This is variation of parameters.",
+        "Take $y_1=\\cos3x$, $y_2=\\sin3x$, compute their Wronskian, and then the formula for $u_1'$.",
+        "For $y''+Py'+Qy=f$: $u_1'=-\\dfrac{y_2f}{W}$, $u_2'=\\dfrac{y_1f}{W}$ with $W=y_1y_2'-y_1'y_2$; also $\\int\\tan(kx)\\,dx=-\\dfrac1k\\ln|\\cos kx|$."
+      ],
+      "steps": [
+        "$y_1=\\cos3x$, $y_2=\\sin3x$, $W=3\\cos^23x+3\\sin^23x=3$.",
+        "$u_1'=-\\dfrac{\\sin3x\\cdot2\\sec3x}{3}=-\\dfrac23\\tan3x$.",
+        "$u_1=-\\dfrac23\\int\\tan3x\\,dx=-\\dfrac23\\left(-\\dfrac13\\ln|\\cos3x|\\right)$.",
+        "$u_1=\\dfrac29\\ln|\\cos3x|$."
+      ],
+      "brief": "$W=3$, $u_1'=-\\frac23\\tan3x$, so $u_1=\\frac29\\ln|\\cos3x|$."
+    },
+    {
+      "sec": "6.1",
+      "q": "The characteristic polynomial of the matrix $\\begin{bmatrix}3&5&-2\\\\0&2&0\\\\0&2&1\\end{bmatrix}$ is $p(\\lambda)=$",
+      "opts": [
+        "$-\\lambda^3+6\\lambda^2-11\\lambda+6$",
+        "$\\lambda^3-5\\lambda^2+11\\lambda+6$",
+        "$\\lambda^3-6\\lambda^2+9\\lambda+6$",
+        "$\\lambda^3+4\\lambda^2-2\\lambda+6$",
+        "$\\lambda^3+6\\lambda^2-11\\lambda+4$"
+      ],
+      "ans": 0,
+      "hints": [
+        "The characteristic polynomial comes from a determinant involving $\\lambda$.",
+        "Form $A-\\lambda I$ and expand its determinant along a column with many zeros.",
+        "$p(\\lambda)=\\det(A-\\lambda I)$ (note the sign convention: the leading term is $(-\\lambda)^n$)."
+      ],
+      "steps": [
+        "$A-\\lambda I=\\begin{bmatrix}3-\\lambda&5&-2\\\\0&2-\\lambda&0\\\\0&2&1-\\lambda\\end{bmatrix}$.",
+        "Expand along the first column: $(3-\\lambda)\\left[(2-\\lambda)(1-\\lambda)-0\\right]$.",
+        "$=(3-\\lambda)(2-\\lambda)(1-\\lambda)$.",
+        "Expanding: $-\\lambda^3+6\\lambda^2-11\\lambda+6$."
+      ],
+      "brief": "$\\det(A-\\lambda I)=(3-\\lambda)(2-\\lambda)(1-\\lambda)=-\\lambda^3+6\\lambda^2-11\\lambda+6$."
+    },
+    {
+      "sec": "6.1",
+      "q": "The eigenvector associated with the eigenvalue $\\lambda=-1$ of the matrix $A=\\begin{bmatrix}7&-8\\\\6&-7\\end{bmatrix}$ is $\\begin{bmatrix}a\\\\1\\end{bmatrix}$, where $a=$",
+      "opts": [
+        "$1$",
+        "$-1$",
+        "$2$",
+        "$-2$",
+        "$0$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Eigenvectors for $\\lambda$ are the nonzero solutions of a homogeneous system.",
+        "Form $A-\\lambda I$ for the given eigenvalue and solve $(A-\\lambda I)\\mathbf{v}=\\mathbf{0}$ with $\\mathbf{v}=(a,1)$.",
+        "An eigenvector $\\mathbf{v}\\neq\\mathbf{0}$ of eigenvalue $\\lambda$ satisfies $(A-\\lambda I)\\mathbf{v}=\\mathbf{0}$."
+      ],
+      "steps": [
+        "$A-(-1)I=A+I=\\begin{bmatrix}8&-8\\\\6&-6\\end{bmatrix}$.",
+        "Both rows give $x-y=0$, so $x=y$.",
+        "The eigenvector $\\begin{bmatrix}a\\\\1\\end{bmatrix}$ needs $a=1$."
+      ],
+      "brief": "$A+I$ gives $x=y$, so $\\mathbf{v}=(1,1)$ and $a=1$."
+    },
+    {
+      "sec": "6.1",
+      "q": "If the characteristic polynomial of the matrix $A=\\begin{bmatrix}5&-6&3\\\\6&-7&3\\\\6&-6&2\\end{bmatrix}$ is $p(\\lambda)=-(\\lambda+1)^2(\\lambda-2)$, then a basis for the eigenspace of $\\lambda=-1$ is $v_1=\\begin{bmatrix}m\\\\1\\\\0\\end{bmatrix}$ and $v_2=\\begin{bmatrix}-1\\\\0\\\\n\\end{bmatrix}$, where $m+n=$",
+      "opts": [
+        "$3$",
+        "$4$",
+        "$5$",
+        "$0$",
+        "$1$"
+      ],
+      "ans": 0,
+      "hints": [
+        "The eigenspace is the null space of $A-\\lambda I$.",
+        "Form $A+I$, reduce it, and require each given vector to satisfy the resulting equation.",
+        "The eigenspace of $\\lambda$ is the solution space of $(A-\\lambda I)\\mathbf{v}=\\mathbf{0}$."
+      ],
+      "steps": [
+        "$A+I=\\begin{bmatrix}6&-6&3\\\\6&-6&3\\\\6&-6&3\\end{bmatrix}$, which reduces to the single equation $2x-2y+z=0$.",
+        "$v_1=(m,1,0)$: $2m-2=0$, so $m=1$.",
+        "$v_2=(-1,0,n)$: $-2+n=0$, so $n=2$.",
+        "$m+n=3$."
+      ],
+      "brief": "$A+I$ gives $2x-2y+z=0$; $m=1$, $n=2$, so $m+n=3$."
+    },
+    {
+      "sec": "4.5",
+      "q": "If the rank of the matrix $\\begin{bmatrix}1&2&3\\\\1&5&-9\\\\2&5&m\\end{bmatrix}$ is equal to $2$, then $m=$",
+      "opts": [
+        "$2$",
+        "$5$",
+        "$-5$",
+        "$4$",
+        "$3$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Rank less than $3$ for a square matrix means the matrix is singular.",
+        "Set the determinant of the matrix equal to zero and solve for $m$, then check the rank is exactly $2$.",
+        "A $3\\times3$ matrix has rank less than $3$ if and only if its determinant is $0$."
+      ],
+      "steps": [
+        "Expand the determinant along the first row: $1(5m+45)-2(m+18)+3(5-10)$.",
+        "$=5m+45-2m-36-15=3m-6$.",
+        "$3m-6=0$ gives $m=2$.",
+        "Then the first two rows are independent, so the rank is exactly $2$."
+      ],
+      "brief": "$\\det=3m-6=0$, so $m=2$ (rows 1 and 2 are independent, rank $2$)."
+    },
+    {
+      "sec": "5.2",
+      "q": "Which one of the following set of functions are linearly dependent",
+      "opts": [
+        "$y_1(x)=1,\\ y_2(x)=x,\\ y_3(x)=2x+3$",
+        "$y_1(x)=1,\\ y_2(x)=x,\\ y_3(x)=x^2$",
+        "$y_1(x)=2,\\ y_2(x)=3x,\\ y_3(x)=x^3$",
+        "$y_1(x)=x,\\ y_2(x)=x^2,\\ y_3(x)=x^3$",
+        "$y_1(x)=x,\\ y_2(x)=x^2+x,\\ y_3(x)=x^3-1$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Look for a set where one function is a combination of the others.",
+        "Check each set for a relation, or compute the Wronskian; a nonzero Wronskian at some point proves independence.",
+        "Functions are linearly dependent if some nontrivial combination $c_1y_1+c_2y_2+c_3y_3$ is identically zero; if $W\\neq0$ at some point they are independent."
+      ],
+      "steps": [
+        "In the first set $y_3=2x+3=2y_2+3y_1$, so $3y_1+2y_2-y_3=0$: dependent.",
+        "In each other set the highest powers of $x$ occur in only one function (or the Wronskian is nonzero), so no nontrivial combination vanishes.",
+        "So the first set is the linearly dependent one."
+      ],
+      "brief": "$2x+3=2\\cdot x+3\\cdot1$, so $\\{1,x,2x+3\\}$ is dependent; the others are independent."
+    },
+    {
+      "sec": "6.2",
+      "q": "If the matrix $A=\\begin{bmatrix}5&-3\\\\2&0\\end{bmatrix}$ is diagonalizable with a diagonalizing matrix $P$ and a diagonal matrix $D$ such that $P^{-1}AP=D$, then",
+      "opts": [
+        "$P=\\begin{bmatrix}1&3\\\\1&2\\end{bmatrix},\\ D=\\begin{bmatrix}2&0\\\\0&3\\end{bmatrix}$",
+        "$P=\\begin{bmatrix}3&1\\\\2&1\\end{bmatrix},\\ D=\\begin{bmatrix}2&0\\\\0&3\\end{bmatrix}$",
+        "$P=\\begin{bmatrix}3&1\\\\2&1\\end{bmatrix},\\ D=\\begin{bmatrix}0&2\\\\3&0\\end{bmatrix}$",
+        "$P=\\begin{bmatrix}1&3\\\\2&2\\end{bmatrix},\\ D=\\begin{bmatrix}2&0\\\\0&3\\end{bmatrix}$",
+        "$P=\\begin{bmatrix}1&2\\\\1&4\\end{bmatrix},\\ D=\\begin{bmatrix}2&0\\\\0&3\\end{bmatrix}$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Diagonalization uses eigenvalues and eigenvectors.",
+        "Find the eigenvalues, then an eigenvector for each; make sure the columns of $P$ appear in the same order as the eigenvalues in $D$.",
+        "If $A\\mathbf{v}_i=\\lambda_i\\mathbf{v}_i$, then $P=[\\mathbf{v}_1\\ \\mathbf{v}_2]$ and $D=\\operatorname{diag}(\\lambda_1,\\lambda_2)$ satisfy $P^{-1}AP=D$."
+      ],
+      "steps": [
+        "$\\det(A-\\lambda I)=(5-\\lambda)(-\\lambda)+6=\\lambda^2-5\\lambda+6=(\\lambda-2)(\\lambda-3)$.",
+        "$\\lambda=2$: $A-2I=\\begin{bmatrix}3&-3\\\\2&-2\\end{bmatrix}$, giving $\\mathbf{v}_1=(1,1)$.",
+        "$\\lambda=3$: $A-3I=\\begin{bmatrix}2&-3\\\\2&-3\\end{bmatrix}$, giving $\\mathbf{v}_2=(3,2)$.",
+        "So $P=\\begin{bmatrix}1&3\\\\1&2\\end{bmatrix}$ and $D=\\begin{bmatrix}2&0\\\\0&3\\end{bmatrix}$."
+      ],
+      "brief": "$\\lambda=2,3$ with eigenvectors $(1,1),(3,2)$: $P=\\begin{bmatrix}1&3\\\\1&2\\end{bmatrix}$, $D=\\operatorname{diag}(2,3)$."
+    }
+  ]
+}

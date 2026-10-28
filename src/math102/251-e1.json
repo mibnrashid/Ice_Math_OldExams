@@ -1,0 +1,338 @@
+{
+  "course": "math102",
+  "term": "251",
+  "kind": "e1",
+  "date": "1 October 2025",
+  "minutes": 90,
+  "source": "math102-251-e1.pdf",
+  "qs": [
+    {
+      "sec": "5.3",
+      "q": "$\\int_{-1}^{1}(1-|x|)\\,dx=$",
+      "opts": [
+        "$1$",
+        "$2$",
+        "$3$",
+        "$4$",
+        "$8$"
+      ],
+      "ans": 0,
+      "hints": [
+        "The integrand is the height of a simple geometric shape, so think of the integral as an area.",
+        "Sketch $y=1-|x|$ on $[-1,1]$ and identify the region between it and the $x$-axis (or split the integral at $x=0$).",
+        "$\\int_a^b f\\,dx$ equals the area under $f$ when $f\\ge0$; a triangle has area $\\frac12\\cdot\\text{base}\\cdot\\text{height}$. Also $|x|=-x$ for $x<0$ and $|x|=x$ for $x\\ge0$."
+      ],
+      "steps": [
+        "The graph of $y=1-|x|$ is a triangle with vertices $(-1,0)$, $(1,0)$, $(0,1)$ and lies above the $x$-axis.",
+        "Base $=2$, height $=1$, so the area is $\\frac12\\cdot2\\cdot1=1$.",
+        "Check by splitting: $2\\int_0^1(1-x)\\,dx=2\\left(1-\\frac12\\right)=1$."
+      ],
+      "brief": "Triangle of base 2 and height 1: area $=1$."
+    },
+    {
+      "sec": "5.4",
+      "q": "The value of $c$ guaranteed by the Mean Value Theorem for integrals for the function $f(x)=\\sqrt{x}$ over the interval $[1,4]$ is",
+      "opts": [
+        "$\\dfrac{196}{81}$",
+        "$\\dfrac{144}{81}$",
+        "$\\dfrac{196}{9}$",
+        "$\\dfrac{144}{9}$",
+        "$\\dfrac{49}{9}$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Use the Mean Value Theorem for integrals: some $c$ has $f(c)$ equal to the average value of $f$.",
+        "Compute the definite integral of $f$ over the interval, divide by the interval length, and then solve $f(c)=$ that average.",
+        "$\\int_a^b f(x)\\,dx=f(c)(b-a)$ for some $c$ in $[a,b]$, and $\\int x^{n}dx=\\frac{x^{n+1}}{n+1}+C$ for $n\\neq-1$."
+      ],
+      "steps": [
+        "$\\int_1^4\\sqrt{x}\\,dx=\\left[\\frac23x^{3/2}\\right]_1^4=\\frac23(8-1)=\\frac{14}{3}$.",
+        "Average value $=\\dfrac{14/3}{4-1}=\\dfrac{14}{9}$.",
+        "Solve $\\sqrt{c}=\\dfrac{14}{9}$, so $c=\\dfrac{196}{81}\\approx2.42$, which lies in $[1,4]$."
+      ],
+      "brief": "Average $=\\frac{14}{9}=\\sqrt c$, so $c=\\frac{196}{81}$."
+    },
+    {
+      "sec": "5.4",
+      "q": "If $F(x)=\\int_0^{x^3}\\sin t^2\\,dt$, then $\\sqrt[3]{\\dfrac{6}{\\pi}}\\;F'\\!\\left(\\sqrt[6]{\\dfrac{\\pi}{6}}\\right)=$",
+      "opts": [
+        "$\\dfrac32$",
+        "$\\dfrac12$",
+        "$3$",
+        "$2$",
+        "$1$"
+      ],
+      "ans": 0,
+      "hints": [
+        "This is the Second Fundamental Theorem of Calculus with a variable upper limit that is a function of $x$.",
+        "Differentiate $F$ using the chain rule, then substitute the given value of $x$ and simplify the powers.",
+        "If $F(x)=\\int_a^{g(x)}h(t)\\,dt$ then $F'(x)=h(g(x))\\,g'(x)$."
+      ],
+      "steps": [
+        "$F'(x)=\\sin\\left((x^3)^2\\right)\\cdot3x^2=3x^2\\sin(x^6)$.",
+        "At $x=(\\pi/6)^{1/6}$: $x^6=\\frac{\\pi}{6}$ and $x^2=\\left(\\frac{\\pi}{6}\\right)^{1/3}$.",
+        "$F'=3\\left(\\frac\\pi6\\right)^{1/3}\\sin\\frac\\pi6=\\frac32\\left(\\frac\\pi6\\right)^{1/3}$.",
+        "Multiplying by $\\left(\\frac6\\pi\\right)^{1/3}$ gives $\\frac32$."
+      ],
+      "brief": "$F'(x)=3x^2\\sin x^6$; at the given $x$ the product is $\\frac32$."
+    },
+    {
+      "sec": "5.5",
+      "q": "$\\int\\dfrac{x^3}{\\sqrt{1+x^4}}\\,dx=$",
+      "opts": [
+        "$\\dfrac12\\sqrt{1+x^4}+C$",
+        "$\\sqrt{1+x^4}+C$",
+        "$\\dfrac14\\sqrt{1+x^4}+C$",
+        "$\\dfrac12\\ln(1+x^4)+C$",
+        "$2\\sqrt{1+x^4}+C$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Look for an inner function whose derivative (up to a constant) appears elsewhere in the integrand: substitution.",
+        "Let $u$ be the expression under the square root and compute $du$.",
+        "$\\int u^{-1/2}\\,du=2u^{1/2}+C$."
+      ],
+      "steps": [
+        "Let $u=1+x^4$, so $du=4x^3\\,dx$ and $x^3dx=\\frac14du$.",
+        "$\\int\\frac{x^3}{\\sqrt{1+x^4}}dx=\\frac14\\int u^{-1/2}du$.",
+        "$=\\frac14\\cdot2u^{1/2}+C=\\frac12\\sqrt{1+x^4}+C$."
+      ],
+      "brief": "$u=1+x^4$: $\\frac14\\int u^{-1/2}du=\\frac12\\sqrt{1+x^4}+C$."
+    },
+    {
+      "sec": "5.7",
+      "q": "$\\int\\dfrac{x^3-4x^2-4x+20}{x^2-5}\\,dx=$",
+      "opts": [
+        "$\\dfrac{x^2}{2}-4x+\\dfrac12\\ln|x^2-5|+C$",
+        "$x^2-2x+\\dfrac12\\ln|x^2-5|+C$",
+        "$\\dfrac{x^2}{2}+4x+\\dfrac12\\ln|x^2-5|+C$",
+        "$x^2+2x+\\dfrac12\\ln|x^2-5|+C$",
+        "$\\dfrac{x^2}{2}-4x-\\dfrac12\\ln|x^2-5|+C$"
+      ],
+      "ans": 0,
+      "hints": [
+        "The numerator has higher degree than the denominator, so start with polynomial long division.",
+        "Divide the numerator by the denominator to get a quotient and a remainder, then integrate each piece (the remainder part gives a log).",
+        "$\\int\\frac{u'}{u}dx=\\ln|u|+C$."
+      ],
+      "steps": [
+        "Long division: $x^3-4x^2-4x+20=(x^2-5)(x-4)+x$.",
+        "So the integrand is $x-4+\\dfrac{x}{x^2-5}$.",
+        "$\\int\\frac{x}{x^2-5}dx=\\frac12\\ln|x^2-5|$ (with $u=x^2-5$).",
+        "Total: $\\frac{x^2}{2}-4x+\\frac12\\ln|x^2-5|+C$."
+      ],
+      "brief": "Divide: $x-4+\\frac{x}{x^2-5}$, giving $\\frac{x^2}{2}-4x+\\frac12\\ln|x^2-5|+C$."
+    },
+    {
+      "sec": "5.8",
+      "q": "$\\int\\dfrac{dx}{\\sqrt{-2x^2+8x+4}}=$",
+      "opts": [
+        "$\\dfrac{\\sqrt2}{2}\\arcsin\\left[\\dfrac{\\sqrt6}{6}(x-2)\\right]+C$",
+        "$\\sqrt2\\arcsin\\left[\\dfrac{\\sqrt6}{6}(x-2)\\right]+C$",
+        "$\\dfrac{\\sqrt2}{2}\\arcsin\\left[\\dfrac{\\sqrt6}{6}(x+2)\\right]+C$",
+        "$\\sqrt2\\arcsin\\left[\\dfrac{\\sqrt6}{6}(x+2)\\right]+C$",
+        "$\\dfrac{\\sqrt2}{2}\\arcsin(x-2)+C$"
+      ],
+      "ans": 0,
+      "hints": [
+        "This is an inverse sine integral after completing the square under the root.",
+        "Factor out $-2$ and complete the square in $x$ so the radicand looks like a constant minus a squared linear term.",
+        "$\\int\\frac{du}{\\sqrt{a^2-u^2}}=\\arcsin\\frac ua+C$."
+      ],
+      "steps": [
+        "$-2x^2+8x+4=-2(x^2-4x)+4=-2(x-2)^2+12=2\\left[6-(x-2)^2\\right]$.",
+        "So the integral is $\\frac{1}{\\sqrt2}\\int\\frac{dx}{\\sqrt{6-(x-2)^2}}$.",
+        "With $u=x-2$, $a=\\sqrt6$: $\\frac1{\\sqrt2}\\arcsin\\frac{x-2}{\\sqrt6}+C$.",
+        "Since $\\frac1{\\sqrt2}=\\frac{\\sqrt2}2$ and $\\frac1{\\sqrt6}=\\frac{\\sqrt6}6$, this is the stated form."
+      ],
+      "brief": "$-2x^2+8x+4=2[6-(x-2)^2]$, so $\\frac{\\sqrt2}{2}\\arcsin\\frac{\\sqrt6}{6}(x-2)+C$."
+    },
+    {
+      "sec": "5.9",
+      "q": "$\\int_0^{\\ln2}2e^{-x}\\cosh x\\,dx=$",
+      "opts": [
+        "$\\dfrac38+\\ln2$",
+        "$\\dfrac14+\\ln2$",
+        "$\\dfrac18+\\ln2$",
+        "$\\dfrac38+\\ln3$",
+        "$\\dfrac18+\\ln3$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Write $\\cosh x$ in terms of exponentials so the integrand simplifies.",
+        "Replace $\\cosh x$ by its exponential form and multiply by $2e^{-x}$ before integrating.",
+        "$\\cosh x=\\dfrac{e^x+e^{-x}}{2}$ and $\\int e^{kx}dx=\\frac1ke^{kx}+C$."
+      ],
+      "steps": [
+        "$2e^{-x}\\cosh x=e^{-x}(e^x+e^{-x})=1+e^{-2x}$.",
+        "$\\int_0^{\\ln2}(1+e^{-2x})dx=\\left[x-\\frac12e^{-2x}\\right]_0^{\\ln2}$.",
+        "$=\\left(\\ln2-\\frac12\\cdot\\frac14\\right)-\\left(0-\\frac12\\right)=\\ln2+\\frac38$."
+      ],
+      "brief": "Integrand $=1+e^{-2x}$; value $=\\ln2+\\frac38$."
+    },
+    {
+      "sec": "7.1",
+      "q": "The area of the region bounded by the graphs of the equations $f(x)=\\dfrac{1}{9x^2}$, $y=1$, $x=1$ and $x=2$ is",
+      "opts": [
+        "$\\dfrac{17}{18}$",
+        "$\\dfrac{15}{16}$",
+        "$\\dfrac{18}{17}$",
+        "$\\dfrac{16}{15}$",
+        "$1$"
+      ],
+      "ans": 0,
+      "hints": [
+        "This is the area between two curves over a given $x$-interval.",
+        "Decide which graph is on top on the interval (compare the two functions at a test point), then integrate top minus bottom.",
+        "$A=\\int_a^b\\left[f_{\\text{top}}(x)-f_{\\text{bottom}}(x)\\right]dx$ and $\\int x^{-2}dx=-x^{-1}+C$."
+      ],
+      "steps": [
+        "On $[1,2]$, $\\frac1{9x^2}\\le\\frac19<1$, so $y=1$ is on top.",
+        "$A=\\int_1^2\\left(1-\\frac{1}{9x^2}\\right)dx=\\left[x+\\frac{1}{9x}\\right]_1^2$.",
+        "$=\\left(2+\\frac1{18}\\right)-\\left(1+\\frac19\\right)=1-\\frac1{18}=\\frac{17}{18}$."
+      ],
+      "brief": "$\\int_1^2\\left(1-\\frac1{9x^2}\\right)dx=\\frac{17}{18}$."
+    },
+    {
+      "sec": "7.1",
+      "q": "The area of the region bounded by the graphs of the functions $f(x)=x^3+2$ and $g(x)=x+2$ is",
+      "opts": [
+        "$\\dfrac12$",
+        "$\\dfrac14$",
+        "$1$",
+        "$2$",
+        "$4$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Area between two curves that cross: find the intersection points first.",
+        "Set the two functions equal and solve; then check which graph is on top on each piece between the intersections.",
+        "$A=\\int|f-g|\\,dx$, split at each point where the curves cross."
+      ],
+      "steps": [
+        "$x^3+2=x+2\\Rightarrow x^3-x=0\\Rightarrow x=-1,0,1$.",
+        "On $[-1,0]$, $x^3\\ge x$ so $f\\ge g$; on $[0,1]$, $x\\ge x^3$ so $g\\ge f$.",
+        "$A=\\int_{-1}^0(x^3-x)dx+\\int_0^1(x-x^3)dx=\\frac14+\\frac14=\\frac12$."
+      ],
+      "brief": "Intersections $-1,0,1$; $A=\\frac14+\\frac14=\\frac12$."
+    },
+    {
+      "sec": "5.3",
+      "q": "If $\\int_{-3}^{3}f(x)\\,dx+\\int_{3}^{6}f(x)\\,dx-\\int_{a}^{b}f(x)\\,dx=\\int_{-1}^{6}f(x)\\,dx$, for any integrable function $f(x)$, then $b-a=$",
+      "opts": [
+        "$2$",
+        "$-2$",
+        "$-1$",
+        "$1$",
+        "$0$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Use the additivity property of definite integrals over adjacent intervals.",
+        "Combine the first two integrals into one, then isolate $\\int_a^b f$ and compare with integrals of $f$ over adjacent pieces.",
+        "$\\int_a^b f+\\int_b^c f=\\int_a^c f$, and $\\int_a^b f=-\\int_b^a f$."
+      ],
+      "steps": [
+        "$\\int_{-3}^{3}f+\\int_3^6f=\\int_{-3}^6f$.",
+        "So $\\int_a^bf=\\int_{-3}^6f-\\int_{-1}^6f=\\int_{-3}^{-1}f$.",
+        "Since this holds for any $f$, $a=-3$ and $b=-1$.",
+        "$b-a=-1-(-3)=2$."
+      ],
+      "brief": "Additivity gives $\\int_a^bf=\\int_{-3}^{-1}f$, so $a=-3,\\ b=-1$, $b-a=2$."
+    },
+    {
+      "sec": "5.2",
+      "q": "The upper sum (in terms of $n$, the number of subintervals) for the region bounded by the graph of function $f(x)=5x^2$ and the $x$-axis on the interval $[0,1]$ is",
+      "opts": [
+        "$\\dfrac53+\\dfrac{5}{2n}+\\dfrac{5}{6n^2}$",
+        "$\\dfrac56+\\dfrac{5}{2n}+\\dfrac{5}{6n^2}$",
+        "$\\dfrac53+\\dfrac{5}{3n}+\\dfrac{5}{6n^2}$",
+        "$\\dfrac53+\\dfrac{5}{2n}+\\dfrac{5}{3n^2}$",
+        "$\\dfrac53+\\dfrac{5}{2n}+\\dfrac{5}{2n^2}$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Upper sum means each rectangle uses the maximum of $f$ on its subinterval; use sigma notation.",
+        "Decide whether $f$ is increasing on the interval to see which endpoint gives the maximum, then write $\\sum f(x_i)\\,\\Delta x$ with $\\Delta x=\\frac{b-a}{n}$.",
+        "$\\sum_{i=1}^n i^2=\\dfrac{n(n+1)(2n+1)}{6}$."
+      ],
+      "steps": [
+        "$\\Delta x=\\frac1n$ and $f$ is increasing on $[0,1]$, so the maximum is at the right endpoint $x_i=\\frac in$.",
+        "$S(n)=\\sum_{i=1}^n5\\left(\\frac in\\right)^2\\frac1n=\\frac5{n^3}\\sum_{i=1}^n i^2=\\dfrac5{n^3}\\cdot\\dfrac{n(n+1)(2n+1)}6$.",
+        "$=\\dfrac{5(2n^2+3n+1)}{6n^2}=\\dfrac53+\\dfrac5{2n}+\\dfrac5{6n^2}$."
+      ],
+      "brief": "Right endpoints: $\\frac5{n^3}\\cdot\\frac{n(n+1)(2n+1)}6=\\frac53+\\frac5{2n}+\\frac5{6n^2}$."
+    },
+    {
+      "sec": "5.2",
+      "q": "Use the midpoint rule and 4 rectangles to find an approximation of the area of the region bounded by the graph of the function $f(x)=x^2+4x$ and the $x$-axis over the interval $[0,4]$. The approximated area is",
+      "opts": [
+        "$53$",
+        "$54$",
+        "$55$",
+        "$56$",
+        "$57$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Midpoint rule: each rectangle's height is $f$ at the midpoint of its subinterval.",
+        "Find the width of each of the 4 subintervals, list the midpoints, and evaluate $f$ at each.",
+        "$M=\\sum_{i=1}^{n}f(m_i)\\Delta x$ with $\\Delta x=\\frac{b-a}{n}$ and $m_i$ the midpoint of the $i$-th subinterval."
+      ],
+      "steps": [
+        "$\\Delta x=\\frac{4-0}{4}=1$; the midpoints are $0.5,\\ 1.5,\\ 2.5,\\ 3.5$.",
+        "$f(0.5)=2.25$, $f(1.5)=8.25$, $f(2.5)=16.25$, $f(3.5)=26.25$.",
+        "Sum $\\times1=2.25+8.25+16.25+26.25=53$."
+      ],
+      "brief": "Midpoints $0.5,1.5,2.5,3.5$: $2.25+8.25+16.25+26.25=53$."
+    },
+    {
+      "sec": "5.4",
+      "q": "Let the velocity function $v(t)=t^2-t-12$ in feet per second, be given for a particle moving along a straight line, where $t$ is the time in seconds. The total distance (in feet) that the particle travels over the interval $[0,5]$ is equal to",
+      "opts": [
+        "$\\dfrac{77}{2}$",
+        "$\\dfrac{75}{2}$",
+        "$\\dfrac{73}{2}$",
+        "$\\dfrac{79}{2}$",
+        "$\\dfrac{71}{2}$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Total distance is the integral of speed $|v(t)|$, not of $v(t)$.",
+        "Find where $v(t)=0$ in $[0,5]$ to see where $v$ changes sign, then split the integral there.",
+        "Total distance $=\\int_a^b|v(t)|\\,dt$; on intervals where $v<0$ use $-v$."
+      ],
+      "steps": [
+        "$v(t)=(t-4)(t+3)$, so $v<0$ on $[0,4)$ and $v>0$ on $(4,5]$.",
+        "With $V(t)=\\frac{t^3}3-\\frac{t^2}2-12t$: $V(0)=0$, $V(4)=-\\frac{104}{3}$, $V(5)=-\\frac{185}{6}$.",
+        "Distance $=-(V(4)-V(0))+(V(5)-V(4))=\\frac{104}{3}+\\left(-\\frac{185}{6}+\\frac{208}{6}\\right)=\\frac{104}3+\\frac{23}6$.",
+        "$=\\frac{208+23}{6}=\\frac{231}{6}=\\frac{77}{2}$."
+      ],
+      "brief": "$|v|$ split at $t=4$: $\\frac{104}{3}+\\frac{23}{6}=\\frac{77}{2}$."
+    },
+    {
+      "sec": "5.7",
+      "q": "$\\int\\dfrac{\\sec(2\\ln t)+\\tan(2\\ln t)}{t}\\,dt=$",
+      "opts": [
+        "$-\\dfrac12\\ln|1-\\sin(2\\ln t)|+C$",
+        "$\\ln|1-\\sin(2\\ln t)|+C$",
+        "$\\dfrac12\\ln|1-\\sin(2\\ln t)|+C$",
+        "$-\\ln|1-\\sin(2\\ln t)|+C$",
+        "$\\dfrac14\\ln|1-\\sin(2\\ln t)|+C$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Substitute for the inner logarithm, then use the trig integrals of secant and tangent.",
+        "Let $u$ be twice the logarithm so that $\\frac{dt}{t}$ becomes a multiple of $du$, then combine the secant and tangent over a common denominator.",
+        "$\\sec u+\\tan u=\\dfrac{1+\\sin u}{\\cos u}=\\dfrac{\\cos u}{1-\\sin u}$ and $\\int\\frac{w'}{w}=\\ln|w|+C$."
+      ],
+      "steps": [
+        "Let $u=2\\ln t$, $du=\\frac2t\\,dt$, so $\\frac{dt}t=\\frac12du$.",
+        "Integral $=\\frac12\\int(\\sec u+\\tan u)\\,du=\\frac12\\int\\frac{\\cos u}{1-\\sin u}du$, using $\\frac{1+\\sin u}{\\cos u}=\\frac{\\cos u}{1-\\sin u}$.",
+        "With $w=1-\\sin u$, $dw=-\\cos u\\,du$: $=-\\frac12\\ln|1-\\sin u|+C$.",
+        "So the result is $-\\frac12\\ln|1-\\sin(2\\ln t)|+C$."
+      ],
+      "brief": "$u=2\\ln t$, $\\sec u+\\tan u=\\frac{\\cos u}{1-\\sin u}$: $-\\frac12\\ln|1-\\sin(2\\ln t)|+C$."
+    }
+  ]
+}

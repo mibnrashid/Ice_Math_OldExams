@@ -1,0 +1,343 @@
+{
+  "course": "math101",
+  "term": "243",
+  "kind": "e2",
+  "date": "",
+  "minutes": 90,
+  "source": "math101-243-e2.pdf",
+  "note": "Date and exam length are not printed on any page of the scan (no cover page); date left blank and 90 minutes assumed. Master key is A for all 14 questions and agrees with my own work (checked with sympy). Page margin annotations (section numbers, handwritten solutions) were ignored.",
+  "qs": [
+    {
+      "sec": "3.3",
+      "q": "If $y=Ax+B$ is an equation of the tangent line to the graph of $f(x)=2+e^x\\tan x$ at the point $(0,2)$, then $A^2+B^2=$",
+      "opts": [
+        "$5$",
+        "$4$",
+        "$1$",
+        "$8$",
+        "$2$"
+      ],
+      "ans": 0,
+      "hints": [
+        "The slope of a tangent line is the derivative at the point.",
+        "Differentiate $f$ with the product rule, evaluate at $x=0$ for $A$, then use the point $(0,2)$ for $B$.",
+        "Product rule: $(uv)'=u'v+uv'$; the tangent line at $(x_0,f(x_0))$ is $y=f(x_0)+f'(x_0)(x-x_0)$."
+      ],
+      "steps": [
+        "$f'(x)=e^x\\tan x+e^x\\sec^2x$.",
+        "$A=f'(0)=0+1\\cdot1=1$.",
+        "The line passes through $(0,2)$, so $B=2$ and $y=x+2$.",
+        "$A^2+B^2=1+4=5$."
+      ],
+      "brief": "$f'(0)=1$, line $y=x+2$, so $A^2+B^2=5$."
+    },
+    {
+      "sec": "3.3",
+      "q": "If $y=\\dfrac{x^3+3}{x^2+2}$, then $\\dfrac{dy}{dx}=$",
+      "opts": [
+        "$\\dfrac{x^4+6x^2-6x}{(x^2+2)^2}$",
+        "$\\dfrac{x^4+3x^2-2x}{(x^2+2)^2}$",
+        "$\\dfrac{-x^3+x^2-1}{(x^2+2)^2}$",
+        "$\\dfrac{3x^2-2x}{(x^2+2)^2}$",
+        "$\\dfrac{x^3-x^2+1}{x^2+2}$"
+      ],
+      "ans": 0,
+      "hints": [
+        "This is a quotient of two functions.",
+        "Apply the quotient rule and then expand and simplify the numerator.",
+        "$\\left(\\dfrac uv\\right)'=\\dfrac{u'v-uv'}{v^2}$."
+      ],
+      "steps": [
+        "$u=x^3+3$, $v=x^2+2$, so $u'=3x^2$ and $v'=2x$.",
+        "$y'=\\dfrac{3x^2(x^2+2)-(x^3+3)(2x)}{(x^2+2)^2}$.",
+        "Numerator: $3x^4+6x^2-2x^4-6x=x^4+6x^2-6x$."
+      ],
+      "brief": "Quotient rule: numerator $3x^2(x^2+2)-2x(x^3+3)=x^4+6x^2-6x$."
+    },
+    {
+      "sec": "3.7",
+      "q": "All edges of a cube are expanding at a rate of $3$ cm/s. How fast is the volume changing when each edge is $2$ cm?",
+      "opts": [
+        "$36\\ \\text{cm}^3/\\text{s}$",
+        "$12\\ \\text{cm}^3/\\text{s}$",
+        "$18\\ \\text{cm}^3/\\text{s}$",
+        "$27\\ \\text{cm}^3/\\text{s}$",
+        "$9\\ \\text{cm}^3/\\text{s}$"
+      ],
+      "ans": 0,
+      "hints": [
+        "This is a related rates problem.",
+        "Write the volume in terms of the edge length, then differentiate both sides with respect to time.",
+        "For a cube of edge $s$, $V=s^3$, and by the chain rule $\\dfrac{dV}{dt}=\\dfrac{dV}{ds}\\dfrac{ds}{dt}$."
+      ],
+      "steps": [
+        "Let $s$ be the edge: $V=s^3$.",
+        "$\\dfrac{dV}{dt}=3s^2\\dfrac{ds}{dt}$.",
+        "With $s=2$ and $\\dfrac{ds}{dt}=3$: $\\dfrac{dV}{dt}=3(4)(3)=36$ cm$^3$/s."
+      ],
+      "brief": "$V=s^3$, $V'=3s^2s'=3(4)(3)=36$ cm$^3$/s."
+    },
+    {
+      "sec": "3.6",
+      "q": "Let $f$ be a differentiable function and have an inverse on $(-\\infty,\\infty)$. Assume that $f(2)=6$, $f'(2)=4$, $f(6)=1$, and $f'(6)=2$. Then $(f^{-1})'(6)=$",
+      "opts": [
+        "$\\dfrac14$",
+        "$\\dfrac12$",
+        "$1$",
+        "$\\dfrac16$",
+        "$\\dfrac23$"
+      ],
+      "ans": 0,
+      "hints": [
+        "This uses the derivative of an inverse function.",
+        "Find which input $a$ satisfies $f(a)=6$, then use the derivative of $f$ at that input.",
+        "If $f(a)=b$ and $f'(a)\\neq0$, then $(f^{-1})'(b)=\\dfrac{1}{f'(a)}$."
+      ],
+      "steps": [
+        "$(f^{-1})'(6)=\\dfrac{1}{f'(f^{-1}(6))}$.",
+        "Since $f(2)=6$, $f^{-1}(6)=2$.",
+        "So $(f^{-1})'(6)=\\dfrac1{f'(2)}=\\dfrac14$."
+      ],
+      "brief": "$f^{-1}(6)=2$, so $(f^{-1})'(6)=1/f'(2)=1/4$."
+    },
+    {
+      "sec": "3.8",
+      "q": "Using Newton's Method to approximate the zero(s) of the function $f(x)=x-3+\\ln x$, we get the iterative formula",
+      "opts": [
+        "$x_{n+1}=\\dfrac{4x_n-x_n\\ln x_n}{x_n+1}$",
+        "$x_{n+1}=\\dfrac{2x_n^2-2x_n+x_n\\ln x_n}{x_n+1}$",
+        "$x_{n+1}=\\dfrac{x_n^2-x_n+x_n\\ln x_n}{x_n+1}$",
+        "$x_{n+1}=\\dfrac{-2x_n-x_n\\ln x_n}{x_n+1}$",
+        "$x_{n+1}=\\dfrac{4x_n+2x_n\\ln x_n}{x_n+1}$"
+      ],
+      "ans": 0,
+      "hints": [
+        "This is Newton's method.",
+        "Compute $f'(x)$, form $x_n-f(x_n)/f'(x_n)$, and put everything over a common denominator.",
+        "Newton's method: $x_{n+1}=x_n-\\dfrac{f(x_n)}{f'(x_n)}$."
+      ],
+      "steps": [
+        "$f'(x)=1+\\dfrac1x=\\dfrac{x+1}{x}$.",
+        "$x_{n+1}=x_n-\\dfrac{(x_n-3+\\ln x_n)\\,x_n}{x_n+1}$.",
+        "Common denominator: $\\dfrac{x_n^2+x_n-x_n^2+3x_n-x_n\\ln x_n}{x_n+1}$.",
+        "$=\\dfrac{4x_n-x_n\\ln x_n}{x_n+1}$."
+      ],
+      "brief": "$f'=\\frac{x+1}{x}$, so $x_{n+1}=x_n-\\frac{x_n(x_n-3+\\ln x_n)}{x_n+1}=\\frac{4x_n-x_n\\ln x_n}{x_n+1}$."
+    },
+    {
+      "sec": "3.3",
+      "q": "If $f(x)=\\dfrac{6}{4x+2}$, then $f^{(100)}(1)=$",
+      "opts": [
+        "$\\left(\\dfrac23\\right)^{100}\\cdot100!$",
+        "$-\\left(\\dfrac23\\right)^{100}\\cdot100!$",
+        "$6\\cdot\\left(\\dfrac23\\right)^{100}\\cdot100!$",
+        "$\\dfrac{2^{100}}{3^{101}}\\cdot100!$",
+        "$-\\dfrac{2^{100}}{3^{99}}\\cdot99!$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Write $f$ as a power and differentiate several times to find the pattern.",
+        "Write $f(x)=6(4x+2)^{-1}$ and differentiate a few times with the chain rule, tracking the factor from each step.",
+        "For $(ax+b)^{-1}$: the $n$th derivative is $(-1)^n\\,n!\\,a^n(ax+b)^{-(n+1)}$."
+      ],
+      "steps": [
+        "$f=6(4x+2)^{-1}$, $f'=6(-1)(4x+2)^{-2}\\cdot4$, $f''=6(-1)(-2)(4x+2)^{-3}\\cdot4^2$.",
+        "Pattern: $f^{(n)}(x)=6(-1)^n\\,n!\\,4^n(4x+2)^{-(n+1)}$.",
+        "For $n=100$ at $x=1$: $f^{(100)}(1)=6\\cdot100!\\cdot4^{100}\\cdot6^{-101}$.",
+        "$=100!\\cdot\\dfrac{4^{100}}{6^{100}}=\\left(\\dfrac23\\right)^{100}\\cdot100!$."
+      ],
+      "brief": "$f^{(n)}=6(-1)^n n!\\,4^n(4x+2)^{-(n+1)}$; at $x=1$, $n=100$: $(2/3)^{100}\\cdot100!$."
+    },
+    {
+      "sec": "3.4",
+      "q": "Let $f(1)=-3$, $f'(1)=6$, $g(2)=2$, and $g'(2)=4$. If $h(x)=f\\left(\\dfrac{x}{g(x)}\\right)$, then $h'(2)=$",
+      "opts": [
+        "$-9$",
+        "$27$",
+        "$-\\dfrac32$",
+        "$\\dfrac92$",
+        "$-3$"
+      ],
+      "ans": 0,
+      "hints": [
+        "This combines the chain rule with the quotient rule.",
+        "Differentiate the outer function $f$ first, then the inner quotient $x/g(x)$, and evaluate at $x=2$.",
+        "Chain rule: $\\dfrac{d}{dx}f(u(x))=f'(u)\\,u'$; quotient rule: $\\left(\\dfrac uv\\right)'=\\dfrac{u'v-uv'}{v^2}$."
+      ],
+      "steps": [
+        "$h'(x)=f'\\!\\left(\\dfrac{x}{g(x)}\\right)\\cdot\\dfrac{g(x)-x\\,g'(x)}{g(x)^2}$.",
+        "At $x=2$: $\\dfrac{2}{g(2)}=1$, so the outer factor is $f'(1)=6$.",
+        "Inner factor: $\\dfrac{2-2\\cdot4}{4}=-\\dfrac32$.",
+        "$h'(2)=6\\cdot\\left(-\\dfrac32\\right)=-9$."
+      ],
+      "brief": "$h'(2)=f'(1)\\cdot\\frac{g(2)-2g'(2)}{g(2)^2}=6\\cdot(-\\frac32)=-9$."
+    },
+    {
+      "sec": "3.5",
+      "q": "The slope of the tangent line to the curve \\[ 2+\\tan(xy)=x^2+y^2+\\tan(1) \\] at the point $(1,1)$ is equal to",
+      "opts": [
+        "$-1$",
+        "$\\dfrac{2-\\sec^21}{1-\\sec^21}$",
+        "$2$",
+        "$\\dfrac{\\sec^21}{2-\\sec^21}$",
+        "$0$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Use implicit differentiation.",
+        "Differentiate both sides with respect to $x$ (using the product rule on $xy$), then substitute $(1,1)$ and solve for $y'$.",
+        "$\\dfrac{d}{dx}\\tan u=\\sec^2u\\cdot u'$, and $\\dfrac{d}{dx}(xy)=y+xy'$."
+      ],
+      "steps": [
+        "Differentiate: $\\sec^2(xy)\\,(y+xy')=2x+2yy'$.",
+        "At $(1,1)$: $\\sec^21\\,(1+y')=2+2y'$.",
+        "Collect: $y'(\\sec^21-2)=2-\\sec^21$.",
+        "So $y'=\\dfrac{2-\\sec^21}{\\sec^21-2}=-1$ (since $\\sec^21\\neq2$)."
+      ],
+      "brief": "$\\sec^2 1(1+y')=2+2y'$ gives $y'(\\sec^21-2)=-(\\sec^21-2)$, so $y'=-1$."
+    },
+    {
+      "sec": "3.5",
+      "q": "If $y=\\dfrac{(2+\\sqrt x)(3+\\sqrt[3]{x})}{(4+\\sqrt[4]{x})(5+\\sqrt[5]{x})}$, then the value of $\\dfrac{dy}{dx}$ at $x=1$ is equal to",
+      "opts": [
+        "$\\dfrac1{15}$",
+        "$\\dfrac25$",
+        "$\\dfrac53$",
+        "$\\dfrac2{15}$",
+        "$\\dfrac7{30}$"
+      ],
+      "ans": 0,
+      "hints": [
+        "A long product and quotient is easiest with logarithmic differentiation.",
+        "Take $\\ln$ of both sides, split into a sum and difference of logs, differentiate, then evaluate at $x=1$ (find $y(1)$ too).",
+        "$\\dfrac{y'}{y}=(\\ln y)'$, so $y'=y\\,(\\ln y)'$; also $\\dfrac{d}{dx}\\ln u=\\dfrac{u'}{u}$."
+      ],
+      "steps": [
+        "$\\ln y=\\ln(2+x^{1/2})+\\ln(3+x^{1/3})-\\ln(4+x^{1/4})-\\ln(5+x^{1/5})$.",
+        "$\\dfrac{y'}{y}=\\dfrac{\\frac12x^{-1/2}}{2+x^{1/2}}+\\dfrac{\\frac13x^{-2/3}}{3+x^{1/3}}-\\dfrac{\\frac14x^{-3/4}}{4+x^{1/4}}-\\dfrac{\\frac15x^{-4/5}}{5+x^{1/5}}$.",
+        "At $x=1$: $\\dfrac{y'}{y}=\\dfrac16+\\dfrac1{12}-\\dfrac1{20}-\\dfrac1{30}=\\dfrac16$, and $y(1)=\\dfrac{3\\cdot4}{5\\cdot6}=\\dfrac25$.",
+        "$y'(1)=\\dfrac25\\cdot\\dfrac16=\\dfrac1{15}$."
+      ],
+      "brief": "Log differentiation: $y(1)=\\frac25$, $(\\ln y)'(1)=\\frac16$, so $y'(1)=\\frac1{15}$."
+    },
+    {
+      "sec": "3.5",
+      "q": "If $f(x)=\\left(1+\\dfrac1x\\right)^x$, then $f'(1)=$",
+      "opts": [
+        "$-1+2\\ln2$",
+        "$-\\dfrac14+\\dfrac12\\ln2$",
+        "$1+2\\ln2$",
+        "$2-\\ln2$",
+        "$2+2\\ln2$"
+      ],
+      "ans": 0,
+      "hints": [
+        "The variable is in both the base and the exponent, so use logarithmic differentiation.",
+        "Take $\\ln$ of both sides, differentiate with the product rule, and then evaluate at $x=1$ (find $f(1)$ too).",
+        "$\\ln(u^v)=v\\ln u$ and $f'=f\\cdot(\\ln f)'$."
+      ],
+      "steps": [
+        "$\\ln f=x\\ln\\left(1+\\dfrac1x\\right)$.",
+        "$\\dfrac{f'}{f}=\\ln\\left(1+\\dfrac1x\\right)+x\\cdot\\dfrac{-1/x^2}{1+1/x}$.",
+        "At $x=1$: $\\dfrac{f'(1)}{2}=\\ln2+\\dfrac{-1}{2}$, since $f(1)=2$.",
+        "$f'(1)=2\\ln2-1$."
+      ],
+      "brief": "$(\\ln f)'=\\ln(1+\\frac1x)-\\frac{1}{x+1}$; at $1$: $\\ln2-\\frac12$, times $f(1)=2$."
+    },
+    {
+      "sec": "3.6",
+      "q": "If $f(x)=x\\tan^{-1}\\left(\\dfrac x2\\right)-\\ln(4+x^2)$, then $f'(x)=$",
+      "opts": [
+        "$\\tan^{-1}\\left(\\dfrac x2\\right)$",
+        "$\\tan^{-1}\\left(\\dfrac x2\\right)-\\dfrac{x}{4+x^2}$",
+        "$x\\tan^{-1}\\left(\\dfrac x2\\right)+\\dfrac{1}{4+x^2}$",
+        "$x\\tan^{-1}\\left(\\dfrac x2\\right)+\\dfrac{4x}{4+x^2}$",
+        "$\\tan^{-1}\\left(\\dfrac x2\\right)+\\dfrac{4x}{4+x^2}$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Use the product rule for the first term and the chain rule for the inverse tangent and the logarithm.",
+        "Differentiate $x\\tan^{-1}(x/2)$ with the product rule, then $\\ln(4+x^2)$ with the chain rule, and simplify.",
+        "$\\dfrac{d}{dx}\\tan^{-1}u=\\dfrac{u'}{1+u^2}$ and $\\dfrac{d}{dx}\\ln u=\\dfrac{u'}{u}$."
+      ],
+      "steps": [
+        "$\\dfrac{d}{dx}\\left[x\\tan^{-1}\\frac x2\\right]=\\tan^{-1}\\frac x2+x\\cdot\\dfrac{1/2}{1+x^2/4}=\\tan^{-1}\\frac x2+\\dfrac{2x}{4+x^2}$.",
+        "$\\dfrac{d}{dx}\\ln(4+x^2)=\\dfrac{2x}{4+x^2}$.",
+        "Subtracting, the fractions cancel: $f'(x)=\\tan^{-1}\\left(\\dfrac x2\\right)$."
+      ],
+      "brief": "The $\\frac{2x}{4+x^2}$ terms cancel, leaving $f'(x)=\\tan^{-1}(x/2)$."
+    },
+    {
+      "sec": "4.1",
+      "q": "The maximum value of $f(x)=\\dfrac{x}{(x^2+1)^2}$ on $[-1,1]$ is equal to",
+      "opts": [
+        "$\\dfrac{3\\sqrt3}{16}$",
+        "$\\dfrac14$",
+        "$0$",
+        "$\\dfrac{\\sqrt3}{4}$",
+        "$\\dfrac{3\\sqrt3}{8}$"
+      ],
+      "ans": 0,
+      "hints": [
+        "This is an extreme value problem on a closed interval.",
+        "Find the critical points inside the interval, then compare $f$ there with the values at the endpoints.",
+        "On $[a,b]$ the absolute maximum is the largest of $f$ at the endpoints and at the critical points where $f'=0$ or is undefined."
+      ],
+      "steps": [
+        "$f'(x)=\\dfrac{(x^2+1)-4x^2}{(x^2+1)^3}=\\dfrac{1-3x^2}{(x^2+1)^3}$.",
+        "$f'=0$ gives $x=\\pm\\dfrac1{\\sqrt3}$, both in $[-1,1]$.",
+        "$f\\left(\\pm\\dfrac1{\\sqrt3}\\right)=\\pm\\dfrac{3\\sqrt3}{16}$ and $f(\\pm1)=\\pm\\dfrac14$.",
+        "Since $\\dfrac{3\\sqrt3}{16}\\approx0.325>\\dfrac14$, the maximum is $\\dfrac{3\\sqrt3}{16}$."
+      ],
+      "brief": "Critical points $x=\\pm\\frac1{\\sqrt3}$; $f(\\frac1{\\sqrt3})=\\frac{3\\sqrt3}{16}>f(1)=\\frac14$."
+    },
+    {
+      "sec": "4.2",
+      "q": "The value(s) of $c$ satisfying the conclusion of the Mean Value Theorem when applied to $f(x)=\\sqrt{2-x}$ on the interval $[-7,2]$ is (are)",
+      "opts": [
+        "$-\\dfrac14$",
+        "$-\\dfrac14$ and $\\dfrac14$",
+        "$-\\dfrac12$",
+        "$-2$ and $-4$",
+        "$-\\dfrac23$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Apply the Mean Value Theorem: set $f'(c)$ equal to the average slope.",
+        "Compute the average rate of change over $[-7,2]$ and solve $f'(c)=$ that value, keeping only $c$ in the open interval.",
+        "MVT: $f'(c)=\\dfrac{f(b)-f(a)}{b-a}$ for some $c\\in(a,b)$."
+      ],
+      "steps": [
+        "$\\dfrac{f(2)-f(-7)}{2-(-7)}=\\dfrac{0-3}{9}=-\\dfrac13$.",
+        "$f'(x)=\\dfrac{-1}{2\\sqrt{2-x}}$, so $\\dfrac{-1}{2\\sqrt{2-c}}=-\\dfrac13$.",
+        "$\\sqrt{2-c}=\\dfrac32$, so $2-c=\\dfrac94$.",
+        "$c=-\\dfrac14$, which lies in $(-7,2)$."
+      ],
+      "brief": "Average slope $-\\frac13$; $\\frac{-1}{2\\sqrt{2-c}}=-\\frac13$ gives $c=-\\frac14$."
+    },
+    {
+      "sec": "3.3",
+      "q": "If $(a,b)$, where $a>1$, is the point on the graph of $f(x)=\\dfrac{x+2}{x-2}$ at which the tangent line is parallel to the line $4x+y=1$, then $4a+b=$",
+      "opts": [
+        "$17$",
+        "$7$",
+        "$-8$",
+        "$-2$",
+        "$1$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Parallel lines have equal slopes, so the tangent slope must match the given line's slope.",
+        "Find the slope of $4x+y=1$, differentiate $f$ with the quotient rule, and solve $f'(x)=$ that slope; use $a>1$ to pick the right solution.",
+        "Quotient rule: $\\left(\\dfrac uv\\right)'=\\dfrac{u'v-uv'}{v^2}$; the line $y=mx+k$ has slope $m$."
+      ],
+      "steps": [
+        "$4x+y=1$ gives $y=-4x+1$, slope $-4$.",
+        "$f'(x)=\\dfrac{(x-2)-(x+2)}{(x-2)^2}=\\dfrac{-4}{(x-2)^2}$.",
+        "$\\dfrac{-4}{(x-2)^2}=-4$ gives $(x-2)^2=1$, so $x=1$ or $x=3$; with $a>1$, $a=3$.",
+        "$b=f(3)=\\dfrac{5}{1}=5$, so $4a+b=12+5=17$."
+      ],
+      "brief": "Slope $-4$: $(x-2)^2=1$, $a=3$, $b=5$, so $4a+b=17$."
+    }
+  ]
+}

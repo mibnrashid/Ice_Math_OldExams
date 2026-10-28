@@ -1,0 +1,425 @@
+{
+  "course": "math101",
+  "term": "231",
+  "kind": "e1",
+  "date": "",
+  "minutes": 90,
+  "source": "math101-231-ex1.pdf",
+  "note": "The scan has no cover page, so the date is not printed (left empty) and 90 minutes is the usual length of a major exam. The master key is A for every question and matches my own verification (sympy). In Q11 the factor x-2 cancels, so there are only 2 vertical asymptotes (x=0, x=-2).",
+  "qs": [
+    {
+      "sec": "2.3",
+      "q": "$\\lim_{x\\to2}\\dfrac{x^2+2x-8}{x^2-x-2}=$",
+      "opts": [
+        "$2$",
+        "$1$",
+        "$0$",
+        "$4$",
+        "$-3$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Direct substitution gives a $0/0$ form, so the expression must be simplified first.",
+        "Factor the numerator and the denominator and cancel the common factor.",
+        "If $\\lim_{x\\to a}\\dfrac{p(x)}{q(x)}$ gives $\\dfrac00$, then $(x-a)$ is a common factor; cancel it and substitute again."
+      ],
+      "steps": [
+        "Direct substitution gives $\\frac{4+4-8}{4-2-2}=\\frac00$.",
+        "Factor: $\\dfrac{(x+4)(x-2)}{(x+1)(x-2)}$.",
+        "Cancel $x-2$: the limit is $\\lim_{x\\to2}\\dfrac{x+4}{x+1}=\\dfrac{6}{3}=2$."
+      ],
+      "brief": "Factor and cancel $(x-2)$: $\\frac{x+4}{x+1}\\to\\frac63=2$."
+    },
+    {
+      "sec": "2.2",
+      "q": "If $f(x)=\\begin{cases}x^2, & x\\le2\\\\ 8-2x, & 2<x<4\\\\ 4, & x\\ge4\\end{cases}$ then $\\lim_{x\\to2}f(x)$",
+      "opts": [
+        "is equal to $4$",
+        "is equal to $2$",
+        "is equal to $6$",
+        "is equal to $1$",
+        "does not exist"
+      ],
+      "ans": 0,
+      "hints": [
+        "The function changes formula at the point, so look at one-sided limits.",
+        "Compute the limit from the left using the formula valid for $x<2$ and from the right using the formula valid for $x>2$.",
+        "A two-sided limit exists if and only if the left-hand and right-hand limits both exist and are equal."
+      ],
+      "steps": [
+        "From the left ($x\\le2$ branch): $\\lim_{x\\to2^-}x^2=4$.",
+        "From the right ($2<x<4$ branch): $\\lim_{x\\to2^+}(8-2x)=4$.",
+        "The one-sided limits agree, so $\\lim_{x\\to2}f(x)=4$."
+      ],
+      "brief": "Left limit $=4$, right limit $=8-4=4$, so the limit is $4$."
+    },
+    {
+      "sec": "2.3",
+      "q": "$\\lim_{x\\to3}\\dfrac{\\sqrt{x+1}-2}{x-3}=$",
+      "opts": [
+        "$\\dfrac14$",
+        "$0$",
+        "$\\dfrac23$",
+        "$\\dfrac{-1}{3}$",
+        "$\\dfrac12$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Substitution gives $0/0$ and the numerator contains a square root, so rationalize.",
+        "Multiply the numerator and denominator by the conjugate of the numerator.",
+        "$(a-b)(a+b)=a^2-b^2$, so $(\\sqrt{u}-b)(\\sqrt{u}+b)=u-b^2$."
+      ],
+      "steps": [
+        "Multiply by $\\dfrac{\\sqrt{x+1}+2}{\\sqrt{x+1}+2}$.",
+        "The numerator becomes $(x+1)-4=x-3$.",
+        "Cancel $x-3$: $\\lim_{x\\to3}\\dfrac{1}{\\sqrt{x+1}+2}=\\dfrac{1}{2+2}=\\dfrac14$."
+      ],
+      "brief": "Rationalize: $\\frac{x-3}{(x-3)(\\sqrt{x+1}+2)}\\to\\frac14$."
+    },
+    {
+      "sec": "4.5",
+      "q": "$\\lim_{x\\to-\\infty}\\dfrac{5x^3+1}{10x^3-3x^2+7}=$",
+      "opts": [
+        "$\\dfrac12$",
+        "$0$",
+        "$-\\infty$",
+        "$5$",
+        "$-\\dfrac12$"
+      ],
+      "ans": 0,
+      "hints": [
+        "This is a limit at infinity of a rational function.",
+        "Divide the numerator and the denominator by the highest power of $x$ that appears.",
+        "$\\lim_{x\\to\\pm\\infty}\\dfrac{c}{x^n}=0$ for $n>0$; if numerator and denominator have the same degree, the limit is the ratio of the leading coefficients."
+      ],
+      "steps": [
+        "Divide the top and bottom by $x^3$: $\\dfrac{5+1/x^3}{10-3/x+7/x^3}$.",
+        "As $x\\to-\\infty$, the terms $1/x^3$, $3/x$, $7/x^3$ tend to $0$.",
+        "The limit is $\\dfrac{5}{10}=\\dfrac12$."
+      ],
+      "brief": "Divide by $x^3$: limit is $\\frac{5}{10}=\\frac12$."
+    },
+    {
+      "sec": "2.3",
+      "q": "$\\lim_{t\\to0}\\dfrac{\\sin(6t)}{2t}=$",
+      "opts": [
+        "$3$",
+        "$6$",
+        "$\\dfrac12$",
+        "$1$",
+        "$\\infty$"
+      ],
+      "ans": 0,
+      "hints": [
+        "This is a trigonometric limit related to the basic sine limit.",
+        "Rewrite the expression so that the denominator matches the argument of the sine.",
+        "$\\lim_{u\\to0}\\dfrac{\\sin u}{u}=1$."
+      ],
+      "steps": [
+        "Write $\\dfrac{\\sin 6t}{2t}=\\dfrac{6}{2}\\cdot\\dfrac{\\sin 6t}{6t}$.",
+        "As $t\\to0$, $6t\\to0$, so $\\dfrac{\\sin 6t}{6t}\\to1$.",
+        "The limit is $\\dfrac62\\cdot1=3$."
+      ],
+      "brief": "$\\frac62\\cdot\\frac{\\sin6t}{6t}\\to3\\cdot1=3$."
+    },
+    {
+      "sec": "2.4",
+      "q": "The Intermediate Value Theorem guarantees that the function $f(x)=x^3-x^2+2x-3$ has a zero in the interval",
+      "opts": [
+        "$[0,2]$",
+        "$[0,1]$",
+        "$[-1,1]$",
+        "$[2,3]$",
+        "$[-1,0]$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Use the Intermediate Value Theorem for a continuous function.",
+        "Evaluate $f$ at the endpoints of each interval and compare the signs.",
+        "If $f$ is continuous on $[a,b]$ and $f(a)$, $f(b)$ have opposite signs, then $f(c)=0$ for some $c$ in $(a,b)$."
+      ],
+      "steps": [
+        "$f$ is a polynomial, so it is continuous everywhere.",
+        "$f(0)=-3$, $f(1)=-1$, $f(2)=5$, $f(3)=21$, $f(-1)=-7$.",
+        "Only $[0,2]$ has endpoint values of opposite signs ($-3<0<5$), so a zero is guaranteed there."
+      ],
+      "brief": "Only $f(0)=-3<0<5=f(2)$ changes sign."
+    },
+    {
+      "sec": "2.5",
+      "q": "$\\lim_{x\\to-5^-}\\dfrac{x+3}{x^2+8x+15}=$",
+      "opts": [
+        "$-\\infty$",
+        "$\\infty$",
+        "$0$",
+        "$1$",
+        "$3$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Factor the denominator and simplify, then study the sign near the problem point.",
+        "After cancelling, check whether the denominator goes to $0$ from the positive or negative side as $x\\to-5^-$.",
+        "If the numerator tends to a positive constant and the denominator tends to $0^-$, the quotient tends to $-\\infty$ (and to $+\\infty$ for a negative constant)."
+      ],
+      "steps": [
+        "Factor: $x^2+8x+15=(x+3)(x+5)$, so the expression is $\\dfrac{1}{x+5}$ for $x\\ne-3$.",
+        "As $x\\to-5^-$, $x+5\\to0$ through negative values.",
+        "So $\\dfrac1{x+5}\\to-\\infty$."
+      ],
+      "brief": "Simplifies to $\\frac1{x+5}$, and $x+5\\to0^-$: limit $-\\infty$."
+    },
+    {
+      "sec": "2.3",
+      "q": "$\\lim_{x\\to0}\\dfrac{2-3\\tan(3x)-2\\cos x}{2x}=$",
+      "opts": [
+        "$-\\dfrac92$",
+        "$-3$",
+        "$\\dfrac32$",
+        "$-1$",
+        "$3$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Split the fraction into pieces that match standard trigonometric limits.",
+        "Group the terms $2-2\\cos x$ together and keep the tangent term separate.",
+        "$\\lim_{u\\to0}\\dfrac{1-\\cos u}{u}=0$ and $\\lim_{u\\to0}\\dfrac{\\tan u}{u}=1$."
+      ],
+      "steps": [
+        "Write the expression as $\\dfrac{2-2\\cos x}{2x}-\\dfrac{3\\tan 3x}{2x}=\\dfrac{1-\\cos x}{x}-\\dfrac32\\cdot\\dfrac{\\tan3x}{3x}\\cdot3$.",
+        "The first part tends to $0$.",
+        "The second part tends to $\\dfrac32\\cdot1\\cdot3=\\dfrac92$, so the limit is $0-\\dfrac92=-\\dfrac92$."
+      ],
+      "brief": "$\\frac{1-\\cos x}{x}\\to0$ and $\\frac{3\\tan3x}{2x}\\to\\frac92$, so $-\\frac92$."
+    },
+    {
+      "sec": "2.4",
+      "q": "$\\lim_{x\\to-1^-}\\left(\\left\\lfloor\\dfrac x3\\right\\rfloor-\\lfloor x\\rfloor\\right)=$ ($\\lfloor\\cdot\\rfloor$ is the greatest integer function).",
+      "opts": [
+        "$1$",
+        "$0$",
+        "$2$",
+        "$-1$",
+        "$\\dfrac23$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Evaluate each greatest integer term separately as $x$ approaches from the left.",
+        "For $x$ slightly less than $-1$, find which integer interval $x$ and $x/3$ lie in.",
+        "$\\lfloor u\\rfloor=n$ when $n\\le u<n+1$."
+      ],
+      "steps": [
+        "For $x$ slightly less than $-1$, $x\\in[-2,-1)$, so $\\lfloor x\\rfloor=-2$.",
+        "Then $x/3$ is slightly less than $-\\frac13$, so $x/3\\in[-1,0)$ and $\\lfloor x/3\\rfloor=-1$.",
+        "The limit is $-1-(-2)=1$."
+      ],
+      "brief": "$\\lfloor x/3\\rfloor\\to-1$, $\\lfloor x\\rfloor\\to-2$, so $-1+2=1$."
+    },
+    {
+      "sec": "4.5",
+      "q": "$\\lim_{x\\to\\infty}\\left(x-\\sqrt{x^2+x}\\right)=$",
+      "opts": [
+        "$-\\dfrac12$",
+        "$0$",
+        "$-1$",
+        "$-\\infty$",
+        "$\\dfrac12$"
+      ],
+      "ans": 0,
+      "hints": [
+        "This is an $\\infty-\\infty$ form with a square root, so use the conjugate.",
+        "Multiply and divide by the conjugate of the expression, then divide the numerator and denominator by $x$.",
+        "$(a-b)(a+b)=a^2-b^2$, and for $x>0$, $\\sqrt{x^2+\\dots}=x\\sqrt{1+\\dots/x^2}$."
+      ],
+      "steps": [
+        "Multiply by $\\dfrac{x+\\sqrt{x^2+x}}{x+\\sqrt{x^2+x}}$: numerator $x^2-(x^2+x)=-x$.",
+        "So the expression is $\\dfrac{-x}{x+\\sqrt{x^2+x}}$. For $x>0$, divide by $x$: $\\dfrac{-1}{1+\\sqrt{1+1/x}}$.",
+        "As $x\\to\\infty$ this tends to $\\dfrac{-1}{1+1}=-\\dfrac12$."
+      ],
+      "brief": "Conjugate: $\\frac{-x}{x+\\sqrt{x^2+x}}=\\frac{-1}{1+\\sqrt{1+1/x}}\\to-\\frac12$."
+    },
+    {
+      "sec": "2.5",
+      "q": "The graph of $f(x)=\\dfrac{x^2+2x-8}{x^3-4x}$ has (V. A.: vertical asymptote; H. A.: horizontal asymptote)",
+      "opts": [
+        "2 V.A and 1 H. A.",
+        "3 V.A and 1 H. A.",
+        "1 V.A and 2 H. A.",
+        "no V.A and 1 H. A.",
+        "no V.A and 2 H. A."
+      ],
+      "ans": 0,
+      "hints": [
+        "Factor the numerator and the denominator and cancel common factors first.",
+        "A zero of the denominator that is cancelled gives a hole, not a vertical asymptote. Then compare degrees for horizontal asymptotes.",
+        "A vertical asymptote occurs where the simplified denominator is $0$ (and the numerator is not). If the denominator has greater degree than the numerator, $y=0$ is the horizontal asymptote."
+      ],
+      "steps": [
+        "Factor: $f(x)=\\dfrac{(x-2)(x+4)}{x(x-2)(x+2)}=\\dfrac{x+4}{x(x+2)}$ for $x\\ne2$.",
+        "Vertical asymptotes: $x=0$ and $x=-2$ (at $x=2$ there is only a hole).",
+        "The denominator has higher degree, so $f(x)\\to0$ as $x\\to\\pm\\infty$: one horizontal asymptote $y=0$."
+      ],
+      "brief": "Simplified $\\frac{x+4}{x(x+2)}$: V.A. $x=0,-2$; H.A. $y=0$ only."
+    },
+    {
+      "sec": "2.4",
+      "q": "If $f(x)=\\begin{cases}1-x^2, & x\\le c\\\\ x, & x>c\\end{cases}$ is continuous at $x=c$, then $(2c+1)^2=$",
+      "opts": [
+        "$5$",
+        "$9$",
+        "$7$",
+        "$3$",
+        "$1$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Continuity at a point requires the left and right limits to equal the function value.",
+        "Set the two formulas equal at $x=c$ and get an equation for $c$.",
+        "$f$ is continuous at $c$ iff $\\lim_{x\\to c^-}f(x)=\\lim_{x\\to c^+}f(x)=f(c)$. Note $(2c+1)^2=4c^2+4c+1$."
+      ],
+      "steps": [
+        "Continuity gives $1-c^2=c$, so $c^2+c-1=0$.",
+        "Then $c^2+c=1$.",
+        "$(2c+1)^2=4(c^2+c)+1=4+1=5$."
+      ],
+      "brief": "$1-c^2=c\\Rightarrow c^2+c=1$, so $(2c+1)^2=4(1)+1=5$."
+    },
+    {
+      "sec": "2.4",
+      "q": "The function $f(x)=\\dfrac{\\sqrt{x+3}}{x}$ is continuous on",
+      "opts": [
+        "$[-3,0)\\cup(0,\\infty)$",
+        "$[-3,\\infty)$",
+        "$(-\\infty,0)\\cup(0,\\infty)$",
+        "$(-\\infty,-3]$",
+        "$(-\\infty,\\infty)$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Find the domain: a quotient of continuous functions is continuous wherever it is defined.",
+        "Require the expression under the root to be nonnegative and the denominator to be nonzero.",
+        "A root $\\sqrt{u}$ needs $u\\ge0$, and a quotient needs a nonzero denominator; such a function is continuous on its domain."
+      ],
+      "steps": [
+        "Square root: $x+3\\ge0$, so $x\\ge-3$.",
+        "Denominator: $x\\ne0$.",
+        "Hence $f$ is continuous on $[-3,0)\\cup(0,\\infty)$."
+      ],
+      "brief": "Need $x\\ge-3$ and $x\\ne0$: $[-3,0)\\cup(0,\\infty)$."
+    },
+    {
+      "sec": "2.4",
+      "q": "Which one of the following statements is TRUE about $f(x)=\\dfrac{x}{x^2-x}$?",
+      "opts": [
+        "$f$ has a removable discontinuity at $x=0$.",
+        "$f$ has a nonremovable discontinuity at $x=0$.",
+        "$f$ has a removable discontinuity at $x=1$.",
+        "$f$ has a removable discontinuity at $x=-1$.",
+        "$f$ has a nonremovable discontinuity at $x=2$."
+      ],
+      "ans": 0,
+      "hints": [
+        "Find where $f$ is undefined, then classify each such point by looking at the limit.",
+        "Factor and cancel to see which discontinuities have a finite limit.",
+        "A discontinuity is removable if $\\lim_{x\\to a}f(x)$ exists (finite); it is nonremovable if the limit does not exist or is infinite. A function is continuous where it is defined."
+      ],
+      "steps": [
+        "Factor: $f(x)=\\dfrac{x}{x(x-1)}$, undefined at $x=0$ and $x=1$ only.",
+        "For $x\\ne0$, $f(x)=\\dfrac1{x-1}$, so $\\lim_{x\\to0}f(x)=-1$: removable at $x=0$.",
+        "At $x=1$ the limits are infinite (nonremovable), and $f$ is continuous at $x=-1$ and $x=2$."
+      ],
+      "brief": "$f=\\frac1{x-1}$ for $x\\ne0$: limit $-1$ at $0$ (removable); $x=1$ is infinite."
+    },
+    {
+      "sec": "3.2",
+      "q": "If $f(x)=6\\sqrt{x}+5\\cos x+11$, then",
+      "opts": [
+        "$f'(x)=\\dfrac{3}{\\sqrt x}-5\\sin x$",
+        "$f'(x)=\\dfrac{3}{\\sqrt x}+5\\sin x$",
+        "$f'(x)=\\dfrac{6}{\\sqrt x}-5\\cos x$",
+        "$f'(x)=\\dfrac{-3}{\\sqrt x}-5\\sin x$",
+        "$f'(x)=2\\sqrt x+5\\sin x$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Differentiate term by term using the basic differentiation rules.",
+        "Rewrite $\\sqrt x$ as $x^{1/2}$ and use the power rule; recall the derivative of cosine; the derivative of a constant is $0$.",
+        "$\\dfrac{d}{dx}x^n=nx^{n-1}$, $\\dfrac{d}{dx}\\cos x=-\\sin x$, $\\dfrac{d}{dx}(\\text{constant})=0$."
+      ],
+      "steps": [
+        "$\\dfrac{d}{dx}\\left(6x^{1/2}\\right)=3x^{-1/2}=\\dfrac3{\\sqrt x}$.",
+        "$\\dfrac{d}{dx}(5\\cos x)=-5\\sin x$ and the derivative of $11$ is $0$.",
+        "So $f'(x)=\\dfrac{3}{\\sqrt x}-5\\sin x$."
+      ],
+      "brief": "Power rule and $(\\cos x)'=-\\sin x$: $f'=\\frac3{\\sqrt x}-5\\sin x$."
+    },
+    {
+      "sec": "3.1",
+      "q": "Find the derivative from the left of $f(x)=|x-1|$ at $x=1$.",
+      "opts": [
+        "$-1$",
+        "$1$",
+        "$0$",
+        "$-\\infty$",
+        "$\\infty$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Use the limit definition of the derivative, taking only $x<1$.",
+        "Write $|x-1|$ without absolute value for $x<1$, and form the difference quotient at $x=1$.",
+        "$f'_-(a)=\\lim_{x\\to a^-}\\dfrac{f(x)-f(a)}{x-a}$, and $|u|=-u$ when $u<0$."
+      ],
+      "steps": [
+        "$f(1)=0$, and for $x<1$, $|x-1|=-(x-1)$.",
+        "The difference quotient is $\\dfrac{-(x-1)-0}{x-1}=-1$.",
+        "So the derivative from the left is $-1$."
+      ],
+      "brief": "For $x<1$: $\\frac{-(x-1)}{x-1}=-1$, so $f'_-(1)=-1$."
+    },
+    {
+      "sec": "3.2",
+      "q": "If $y=Ax+B$ is an equation of the tangent line to the graph of $f(x)=\\dfrac{2}{\\sqrt[4]{x^3}}$ at the point $(1,2)$, then $B-A=$",
+      "opts": [
+        "$5$",
+        "$4$",
+        "$-3$",
+        "$-\\dfrac52$",
+        "$-2$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Find the tangent line at the given point: you need the slope from the derivative.",
+        "Rewrite $f$ as a power of $x$, differentiate, and evaluate at $x=1$ to get $A$; then use the point to find $B$.",
+        "Tangent line at $(a,f(a))$: $y-f(a)=f'(a)(x-a)$; also $\\dfrac{d}{dx}x^n=nx^{n-1}$ and $\\dfrac{1}{\\sqrt[m]{x^n}}=x^{-n/m}$."
+      ],
+      "steps": [
+        "$f(x)=2x^{-3/4}$, so $f'(x)=-\\dfrac32x^{-7/4}$ and $A=f'(1)=-\\dfrac32$.",
+        "The line through $(1,2)$: $y-2=-\\dfrac32(x-1)$, so $y=-\\dfrac32x+\\dfrac72$ and $B=\\dfrac72$.",
+        "$B-A=\\dfrac72+\\dfrac32=5$."
+      ],
+      "brief": "$A=f'(1)=-\\frac32$, $B=2+\\frac32=\\frac72$, so $B-A=5$."
+    },
+    {
+      "sec": "3.2",
+      "q": "If the line $y=-\\dfrac34x+3$ is tangent to the graph of $f(x)=\\dfrac kx$, then",
+      "opts": [
+        "$k=3$",
+        "$k=-\\dfrac13$",
+        "$k=-\\dfrac34$",
+        "$k=1$",
+        "$k=-\\dfrac23$"
+      ],
+      "ans": 0,
+      "hints": [
+        "At the point of tangency the line and the curve share both a point and a slope.",
+        "Let the point of tangency have $x$-coordinate $a$, and set the heights equal and the slopes equal.",
+        "$\\dfrac{d}{dx}\\left(\\dfrac kx\\right)=-\\dfrac{k}{x^2}$; tangency at $x=a$ means $f(a)=$ line value and $f'(a)=$ line slope."
+      ],
+      "steps": [
+        "Slope condition: $-\\dfrac{k}{a^2}=-\\dfrac34$, so $k=\\dfrac34a^2$.",
+        "Height condition: $\\dfrac ka=-\\dfrac34a+3$, so $k=-\\dfrac34a^2+3a$.",
+        "Equate: $\\dfrac32a^2-3a=0$, so $a=0$ (not in the domain) or $a=2$; then $k=\\dfrac34\\cdot4=3$."
+      ],
+      "brief": "Slope and height conditions give $a=2$, so $k=\\frac34a^2=3$."
+    }
+  ]
+}

@@ -1,0 +1,336 @@
+{
+  "course": "math101",
+  "term": "233",
+  "kind": "e1",
+  "date": "10 July 2024",
+  "minutes": 90,
+  "source": "math101-233-e1.pdf",
+  "note": "Date (July 10, 2024) and 90 minutes are printed on the cover. All 14 master keys were verified independently and agree.",
+  "qs": [
+    {
+      "sec": "4.5",
+      "q": "If $y=k$ is a horizontal asymptote for the function $f(x)=\\dfrac{\\sqrt{9x^2-2}}{2x+1}$, then the product of all possible values of $k$ is",
+      "opts": [
+        "$\\dfrac{-9}{4}$",
+        "$\\dfrac{-3}{4}$",
+        "$\\dfrac{-9}{2}$",
+        "$\\dfrac{3}{4}$",
+        "$\\dfrac{9}{2}$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Horizontal asymptotes come from the limits at $+\\infty$ and at $-\\infty$, which may differ.",
+        "Divide the numerator and the denominator by the highest power of $x$, taking care of the sign of $x$ inside the root.",
+        "$\\sqrt{x^2}=|x|$, so $\\sqrt{x^2}=x$ for $x>0$ and $\\sqrt{x^2}=-x$ for $x<0$; and $\\lim_{x\\to\\pm\\infty}\\dfrac1x=0$."
+      ],
+      "steps": [
+        "As $x\\to\\infty$: $f(x)=\\dfrac{\\sqrt{9-2/x^2}}{2+1/x}\\to\\dfrac32$.",
+        "As $x\\to-\\infty$, $\\sqrt{9x^2-2}=|x|\\sqrt{9-2/x^2}=-x\\sqrt{9-2/x^2}$.",
+        "So $f(x)=\\dfrac{-\\sqrt{9-2/x^2}}{2+1/x}\\to-\\dfrac32$.",
+        "The asymptotes are $y=\\frac32$ and $y=-\\frac32$, with product $-\\dfrac94$."
+      ],
+      "brief": "Limits at $\\pm\\infty$ are $\\pm\\frac32$, so the product is $-\\frac94$."
+    },
+    {
+      "sec": "4.5",
+      "q": "$\\lim_{x\\to\\infty} x\\tan\\dfrac1x$",
+      "opts": [
+        "equals $1$",
+        "equals $0$",
+        "equals $\\pi$",
+        "does not exist",
+        "equals $-1$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Rewrite the product so that it becomes a known special limit.",
+        "Substitute $t=\\dfrac1x$, so that $t\\to0^+$ as $x\\to\\infty$.",
+        "$\\lim_{t\\to0}\\dfrac{\\sin t}{t}=1$ and $\\tan t=\\dfrac{\\sin t}{\\cos t}$ with $\\cos t\\to1$ as $t\\to0$."
+      ],
+      "steps": [
+        "Let $t=1/x$; then $t\\to0^+$ and $x\\tan\\frac1x=\\dfrac{\\tan t}{t}$.",
+        "$\\dfrac{\\tan t}{t}=\\dfrac{\\sin t}{t}\\cdot\\dfrac1{\\cos t}$.",
+        "As $t\\to0^+$ this tends to $1\\cdot1=1$."
+      ],
+      "brief": "$t=1/x$: $\\frac{\\tan t}{t}=\\frac{\\sin t}{t}\\cdot\\frac1{\\cos t}\\to1$."
+    },
+    {
+      "sec": "3.3",
+      "q": "If $f(x)=(x^3-x)(x^2+2)(x^2+x-1)$, then $f'(1)=$",
+      "opts": [
+        "$6$",
+        "$8$",
+        "$4$",
+        "$2$",
+        "$10$"
+      ],
+      "ans": 0,
+      "hints": [
+        "This is a product of three functions, so use the product rule.",
+        "Note that one factor is zero at the given point, which removes most terms when you evaluate.",
+        "For three factors, $(uvw)'=u'vw+uv'w+uvw'$."
+      ],
+      "steps": [
+        "Let $u=x^3-x$, $v=x^2+2$, $w=x^2+x-1$. Then $u(1)=0$, $v(1)=3$, $w(1)=1$.",
+        "$u'=3x^2-1$, so $u'(1)=2$.",
+        "$f'(1)=u'vw+uv'w+uvw'=2\\cdot3\\cdot1+0+0=6$."
+      ],
+      "brief": "$u=x^3-x$ vanishes at $1$: $f'(1)=u'(1)v(1)w(1)=2\\cdot3\\cdot1=6$."
+    },
+    {
+      "sec": "3.3",
+      "q": "If the function $f(x)=\\dfrac{8(x-2)}{e^x}$ has a horizontal tangent line at $x=a$, then $a=$",
+      "opts": [
+        "$3$",
+        "$4$",
+        "$2$",
+        "$5$",
+        "$1$"
+      ],
+      "ans": 0,
+      "hints": [
+        "A horizontal tangent line means the derivative is zero.",
+        "Differentiate with the quotient rule (or write $f=8(x-2)e^{-x}$ and use the product rule), then solve $f'(x)=0$.",
+        "$\\left(\\dfrac{u}{v}\\right)'=\\dfrac{u'v-uv'}{v^2}$ and $\\dfrac{d}{dx}e^x=e^x$; a quotient with nonzero denominator is zero only when its numerator is zero."
+      ],
+      "steps": [
+        "$f'(x)=\\dfrac{8e^x-8(x-2)e^x}{e^{2x}}=\\dfrac{8(3-x)}{e^x}$.",
+        "Set $f'(x)=0$: since $e^x\\neq0$, $3-x=0$.",
+        "So $a=3$."
+      ],
+      "brief": "$f'(x)=\\frac{8(3-x)}{e^x}=0\\Rightarrow a=3$."
+    },
+    {
+      "sec": "3.3",
+      "q": "If $y=ax+b$ is the equation of the tangent line to the graph of the function $f(x)=\\dfrac{1+\\cos x}{1-\\cos x}$ at the point $\\left(\\dfrac{\\pi}{2},1\\right)$, then $a+b=$",
+      "opts": [
+        "$\\pi-1$",
+        "$\\pi+1$",
+        "$\\pi$",
+        "$\\pi-2$",
+        "$\\pi+2$"
+      ],
+      "ans": 0,
+      "hints": [
+        "The slope $a$ of the tangent line is $f'$ at the given point.",
+        "Find $f'(x)$ by the quotient rule, evaluate at the given $x$, then use the point-slope form to get $b$.",
+        "$\\left(\\dfrac{u}{v}\\right)'=\\dfrac{u'v-uv'}{v^2}$, $(\\cos x)'=-\\sin x$, and the tangent line at $(x_0,f(x_0))$ is $y-f(x_0)=f'(x_0)(x-x_0)$."
+      ],
+      "steps": [
+        "$f'(x)=\\dfrac{(-\\sin x)(1-\\cos x)-(1+\\cos x)(\\sin x)}{(1-\\cos x)^2}=\\dfrac{-2\\sin x}{(1-\\cos x)^2}$.",
+        "At $x=\\frac\\pi2$: $f'=\\dfrac{-2}{1}=-2$, so $a=-2$.",
+        "$y-1=-2\\left(x-\\frac\\pi2\\right)$, so $y=-2x+\\pi+1$ and $b=\\pi+1$.",
+        "$a+b=-2+\\pi+1=\\pi-1$."
+      ],
+      "brief": "$f'(\\frac\\pi2)=-2$, tangent $y=-2x+\\pi+1$, so $a+b=\\pi-1$."
+    },
+    {
+      "sec": "3.2",
+      "q": "If $y=\\dfrac{3}{(2x)^3}+2\\sin x$, then $\\dfrac{dy}{dx}$ at $x=\\dfrac{\\pi}{2}$ is equal to",
+      "opts": [
+        "$\\dfrac{-18}{\\pi^4}$",
+        "$\\dfrac{18}{\\pi^4}$",
+        "$\\dfrac{-9}{\\pi^4}$",
+        "$\\dfrac{9}{\\pi^4}$",
+        "$\\dfrac{1}{\\pi^4}$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Rewrite the fraction as a constant times a power of $x$ and use the power rule.",
+        "Simplify $\\dfrac{3}{(2x)^3}$ to the form $c\\,x^{-3}$, differentiate each term, then substitute the value of $x$.",
+        "$\\dfrac{d}{dx}x^n=nx^{n-1}$ and $\\dfrac{d}{dx}\\sin x=\\cos x$."
+      ],
+      "steps": [
+        "$y=\\dfrac38x^{-3}+2\\sin x$.",
+        "$y'=-\\dfrac98x^{-4}+2\\cos x$.",
+        "At $x=\\frac\\pi2$: $\\cos\\frac\\pi2=0$ and $x^{-4}=\\dfrac{16}{\\pi^4}$, so $y'=-\\dfrac98\\cdot\\dfrac{16}{\\pi^4}=-\\dfrac{18}{\\pi^4}$."
+      ],
+      "brief": "$y=\\frac38x^{-3}+2\\sin x$, $y'=-\\frac98x^{-4}+2\\cos x$, giving $-\\frac{18}{\\pi^4}$."
+    },
+    {
+      "sec": "3.1",
+      "q": "If the tangent line to the graph of $y=h(x)$ at the point $(-1,4)$ passes through the point $(3,6)$, then $h(-1)+2h'(-1)=$",
+      "opts": [
+        "$5$",
+        "$6$",
+        "$7$",
+        "$4$",
+        "$3$"
+      ],
+      "ans": 0,
+      "hints": [
+        "The slope of the tangent line at a point is the derivative there.",
+        "The tangent line passes through two known points, so compute its slope from them.",
+        "The slope through $(x_1,y_1)$ and $(x_2,y_2)$ is $\\dfrac{y_2-y_1}{x_2-x_1}$, and the tangent slope at $x_0$ equals $h'(x_0)$."
+      ],
+      "steps": [
+        "$h(-1)=4$ since the point $(-1,4)$ is on the graph.",
+        "$h'(-1)=\\dfrac{6-4}{3-(-1)}=\\dfrac12$.",
+        "$h(-1)+2h'(-1)=4+2\\cdot\\dfrac12=5$."
+      ],
+      "brief": "$h(-1)=4$, $h'(-1)=\\frac{6-4}{3+1}=\\frac12$, so the value is $5$."
+    },
+    {
+      "sec": "3.2",
+      "q": "If $h(x)=\\dfrac{x^5+2x+6}{x^{1/3}}$, then $h'(1)=$",
+      "opts": [
+        "$4$",
+        "$3$",
+        "$2$",
+        "$5$",
+        "$6$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Split the fraction into separate power terms so that only the power rule is needed.",
+        "Divide each term of the numerator by $x^{1/3}$ and combine the exponents.",
+        "$\\dfrac{x^a}{x^b}=x^{a-b}$ and $\\dfrac{d}{dx}x^n=nx^{n-1}$ for any real $n$."
+      ],
+      "steps": [
+        "$h(x)=x^{14/3}+2x^{2/3}+6x^{-1/3}$.",
+        "$h'(x)=\\dfrac{14}{3}x^{11/3}+\\dfrac43x^{-1/3}-2x^{-4/3}$.",
+        "$h'(1)=\\dfrac{14}{3}+\\dfrac43-2=6-2=4$."
+      ],
+      "brief": "$h=x^{14/3}+2x^{2/3}+6x^{-1/3}$; $h'(1)=\\frac{14}3+\\frac43-2=4$."
+    },
+    {
+      "sec": "2.5",
+      "q": "The number of vertical asymptotes of the graph of the function $f(x)=\\dfrac{4x^2+4x-24}{x^4-2x^3-9x^2+18x}$ is",
+      "opts": [
+        "$2$",
+        "$3$",
+        "$4$",
+        "$1$",
+        "$0$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Vertical asymptotes occur where the denominator is zero but the factor does not cancel with the numerator.",
+        "Factor the numerator and the denominator completely and cancel common factors.",
+        "If $x=c$ makes the denominator zero and the reduced fraction still has a zero denominator at $c$, then $x=c$ is a vertical asymptote; a cancelled factor gives only a hole."
+      ],
+      "steps": [
+        "Numerator: $4(x^2+x-6)=4(x-2)(x+3)$.",
+        "Denominator: $x(x^3-2x^2-9x+18)=x(x-2)(x^2-9)=x(x-2)(x-3)(x+3)$.",
+        "Cancel $(x-2)(x+3)$: $f(x)=\\dfrac{4}{x(x-3)}$ for $x\\neq2,-3$.",
+        "The remaining zeros of the denominator are $x=0$ and $x=3$, so there are $2$ vertical asymptotes."
+      ],
+      "brief": "$f=\\frac{4}{x(x-3)}$ after cancelling; asymptotes at $x=0$ and $x=3$: $2$."
+    },
+    {
+      "sec": "2.5",
+      "q": "Which one of the following statements is False?",
+      "opts": [
+        "The graph of every rational function has a vertical asymptote",
+        "The graphs of polynomial functions have no vertical asymptotes",
+        "The graphs of trigonometric functions may have vertical asymptotes",
+        "The graph of a function cannot cross a vertical asymptote",
+        "The graph of a rational function may have several vertical asymptotes"
+      ],
+      "ans": 0,
+      "hints": [
+        "Test each statement by looking for a counterexample.",
+        "Think of simple rational functions, such as a polynomial or a function whose denominator never vanishes.",
+        "A rational function $\\dfrac{p(x)}{q(x)}$ has a vertical asymptote at $x=c$ only when $q(c)=0$ and the factor $(x-c)$ does not cancel completely."
+      ],
+      "steps": [
+        "A polynomial is a rational function with denominator $1$, and it has no vertical asymptote.",
+        "So the statement that every rational function has a vertical asymptote is false.",
+        "The other statements are true: polynomials are defined everywhere; $\\tan x$ has vertical asymptotes; the function is undefined at the asymptote, so it cannot cross it; and $\\dfrac{1}{x(x-1)}$ has two."
+      ],
+      "brief": "A polynomial (or $\\frac{1}{x^2+1}$) is rational with no vertical asymptote, so the first statement is false."
+    },
+    {
+      "sec": "2.4",
+      "q": "If the function $g(x)=\\begin{cases}\\dfrac{4\\sin x}{x}, & x<0\\\\ a-2x, & x\\ge0\\end{cases}$ is continuous at $x=0$, then $a=$",
+      "opts": [
+        "$4$",
+        "$2$",
+        "$-2$",
+        "$-4$",
+        "$0$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Continuity at $x=0$ requires the left limit, the right limit and the value $g(0)$ to agree.",
+        "Compute the limit from the left using the first piece and the value from the second piece, then equate.",
+        "$\\lim_{x\\to0}\\dfrac{\\sin x}{x}=1$, and $g$ is continuous at $c$ if $\\lim_{x\\to c^-}g=\\lim_{x\\to c^+}g=g(c)$."
+      ],
+      "steps": [
+        "Left limit: $\\lim_{x\\to0^-}\\dfrac{4\\sin x}{x}=4$.",
+        "Right side: $g(0)=\\lim_{x\\to0^+}(a-2x)=a$.",
+        "Continuity needs $a=4$."
+      ],
+      "brief": "$\\lim_{x\\to0^-}\\frac{4\\sin x}{x}=4$ and $g(0)=a$, so $a=4$."
+    },
+    {
+      "sec": "2.4",
+      "q": "$\\lim_{x\\to-1}\\left(\\left\\lfloor\\dfrac{x}{3}\\right\\rfloor+3\\right)$, where $\\lfloor t\\rfloor$ denotes the greatest integer function (printed as double brackets in the exam)",
+      "opts": [
+        "equals $2$",
+        "does not exist",
+        "equals $3$",
+        "equals $0$",
+        "equals $-2$"
+      ],
+      "ans": 0,
+      "hints": [
+        "The bracket is the greatest integer function, which is constant on intervals between jumps.",
+        "Check whether $-1$ is a jump point of $\\lfloor x/3\\rfloor$; look at the value of $x/3$ near $x=-1$.",
+        "$\\lfloor t\\rfloor$ is the greatest integer less than or equal to $t$; it is constant near any $t$ that is not an integer."
+      ],
+      "steps": [
+        "Near $x=-1$, $\\dfrac x3$ is near $-\\dfrac13$, which lies strictly between $-1$ and $0$.",
+        "So $\\left\\lfloor\\dfrac x3\\right\\rfloor=-1$ for $x$ close to $-1$ on both sides.",
+        "The limit is $-1+3=2$."
+      ],
+      "brief": "Near $x=-1$, $\\lfloor x/3\\rfloor=-1$ (since $x/3\\approx-\\frac13$); limit $=-1+3=2$."
+    },
+    {
+      "sec": "2.3",
+      "q": "$\\lim_{x\\to16}\\dfrac{4-\\sqrt{x}}{x-16}=$",
+      "opts": [
+        "$\\dfrac{-1}{8}$",
+        "$\\dfrac{-1}{4}$",
+        "$\\dfrac18$",
+        "$\\dfrac14$",
+        "$\\dfrac12$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Direct substitution gives $\\frac00$, so rewrite the expression to cancel the zero factor.",
+        "Multiply the numerator and the denominator by the conjugate of the numerator.",
+        "$(a-b)(a+b)=a^2-b^2$, so $(4-\\sqrt x)(4+\\sqrt x)=16-x$."
+      ],
+      "steps": [
+        "Multiply by $\\dfrac{4+\\sqrt x}{4+\\sqrt x}$: numerator becomes $16-x$.",
+        "$\\dfrac{16-x}{(x-16)(4+\\sqrt x)}=\\dfrac{-1}{4+\\sqrt x}$ for $x\\neq16$.",
+        "As $x\\to16$ this tends to $\\dfrac{-1}{4+4}=-\\dfrac18$."
+      ],
+      "brief": "Conjugate: $\\frac{-1}{4+\\sqrt x}\\to-\\frac18$."
+    },
+    {
+      "sec": "2.3",
+      "q": "$\\lim_{x\\to2}\\dfrac{x^3-8}{x-2}=$",
+      "opts": [
+        "$12$",
+        "$14$",
+        "$10$",
+        "$16$",
+        "$8$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Direct substitution gives $\\frac00$, so factor the numerator.",
+        "Factor $x^3-8$ as a difference of cubes and cancel the common factor.",
+        "$a^3-b^3=(a-b)(a^2+ab+b^2)$."
+      ],
+      "steps": [
+        "$x^3-8=(x-2)(x^2+2x+4)$.",
+        "Cancel $x-2$ for $x\\neq2$: the expression equals $x^2+2x+4$.",
+        "At $x=2$: $4+4+4=12$."
+      ],
+      "brief": "$x^3-8=(x-2)(x^2+2x+4)$, limit $=12$."
+    }
+  ]
+}

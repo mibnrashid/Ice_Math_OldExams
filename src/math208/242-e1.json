@@ -1,0 +1,366 @@
+{
+  "course": "math208",
+  "term": "242",
+  "kind": "e1",
+  "date": "18 February 2025",
+  "minutes": 90,
+  "source": "math208-242-e1.pdf",
+  "qs": [
+    {
+      "sec": "4.2",
+      "q": "Which one of the following subsets is a subspace of $\\mathbb{R}^4$?",
+      "opts": [
+        "The set of all vectors $(x_1,x_2,x_3,x_4)$ such that $x_1=3x_3$ and $x_2=4x_4$",
+        "The set of all vectors $(x_1,x_2,x_3,x_4)$ such that $x_1+x_2+x_3+x_4=5$",
+        "The set of all vectors $(x_1,x_2,x_3,x_4)$ such that $x_1x_2=x_3x_4$",
+        "The set of all vectors $(x_1,x_2,x_3,x_4)$ such that $x_1x_2x_3x_4=0$",
+        "The set of all vectors $(x_1,x_2,x_3,x_4)$ such that all $x_i$'s are nonzero"
+      ],
+      "ans": 0,
+      "hints": [
+        "A subset is a subspace when it contains $\\mathbf{0}$ and is closed under addition and scalar multiplication.",
+        "Check each set for the zero vector first, then look for two vectors in the set whose sum leaves the set.",
+        "The solution set of a homogeneous linear system $A\\mathbf{x}=\\mathbf{0}$ is always a subspace of $\\mathbb{R}^n$; a set that misses $\\mathbf{0}$ is never a subspace."
+      ],
+      "steps": [
+        "$x_1=3x_3,\\ x_2=4x_4$ is the homogeneous linear system $x_1-3x_3=0,\\ x_2-4x_4=0$, so its solution set contains $\\mathbf{0}$ and is closed under sums and scalar multiples: a subspace.",
+        "$x_1+x_2+x_3+x_4=5$: the zero vector gives $0\\neq5$. All $x_i$ nonzero: $\\mathbf{0}$ is not in the set. Neither is a subspace.",
+        "$x_1x_2=x_3x_4$: $(1,1,1,1)$ and $(1,0,0,0)$ are in it, but their sum $(2,1,1,1)$ gives $2\\neq1$.",
+        "$x_1x_2x_3x_4=0$: $(1,0,1,1)$ and $(0,1,1,1)$ are in it, but their sum $(1,1,2,2)$ has product $4\\neq0$."
+      ],
+      "brief": "Only the homogeneous linear system $x_1=3x_3,\\ x_2=4x_4$ gives a subspace."
+    },
+    {
+      "sec": "4.2",
+      "q": "The solution space of the system \\[\\begin{aligned} x_1-3x_2-7x_3-10x_4&=0\\\\ x_1+x_2+9x_3+2x_4&=0\\\\ x_1-2x_2-3x_3-7x_4&=0 \\end{aligned}\\] is the set of all linear combinations of the form $s\\mathbf{u}+t\\mathbf{v}$, where $s$ and $t$ are real numbers and",
+      "opts": [
+        "$\\mathbf{u}=(-5,-4,1,0),\\ \\mathbf{v}=(1,-3,0,1)$",
+        "$\\mathbf{u}=(5,-4,1,0),\\ \\mathbf{v}=(1,-3,0,1)$",
+        "$\\mathbf{u}=(-5,-4,1,0),\\ \\mathbf{v}=(1,3,0,1)$",
+        "$\\mathbf{u}=(-5,4,1,0),\\ \\mathbf{v}=(1,-3,0,1)$",
+        "$\\mathbf{u}=(-5,-4,1,0),\\ \\mathbf{v}=(1,-3,0,-1)$"
+      ],
+      "ans": 0,
+      "hints": [
+        "The solution space of a homogeneous system is found by row reducing its coefficient matrix and writing the solution in terms of the free variables.",
+        "Subtract the first row from the other two rows of the coefficient matrix and continue to echelon form.",
+        "In echelon form, the variables without a pivot are free; set them equal to parameters, back-substitute for the pivot variables, and split the solution vector into one vector per parameter."
+      ],
+      "steps": [
+        "$R_2-R_1$ and $R_3-R_1$: \\[\\begin{bmatrix}1&-3&-7&-10\\\\0&4&16&12\\\\0&1&4&3\\end{bmatrix}\\to\\begin{bmatrix}1&-3&-7&-10\\\\0&1&4&3\\\\0&0&0&0\\end{bmatrix}\\]",
+        "So $x_3=s$ and $x_4=t$ are free, and $x_2=-4s-3t$.",
+        "From row 1: $x_1=3x_2+7x_3+10x_4=-12s-9t+7s+10t=-5s+t$.",
+        "$(x_1,x_2,x_3,x_4)=s(-5,-4,1,0)+t(1,-3,0,1)$, so $\\mathbf{u}=(-5,-4,1,0)$ and $\\mathbf{v}=(1,-3,0,1)$."
+      ],
+      "brief": "Row reduce: $x_2=-4s-3t$, $x_1=-5s+t$, so $\\mathbf{u}=(-5,-4,1,0)$, $\\mathbf{v}=(1,-3,0,1)$."
+    },
+    {
+      "sec": "4.1",
+      "q": "If the vectors $u=(3,-4,5)$, $v=(1,-2,3)$, and $w=(6,-8,a)$ are linearly dependent, then $a=$",
+      "opts": [
+        "$10$",
+        "$9$",
+        "$8$",
+        "$11$",
+        "$7$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Three vectors in $\\mathbb{R}^3$ are dependent exactly when the matrix built from them is not invertible.",
+        "Put $u$, $v$, $w$ as the rows of a $3\\times3$ matrix and compute its determinant as a function of $a$.",
+        "$n$ vectors in $\\mathbb{R}^n$ are linearly dependent if and only if the matrix having them as rows (or columns) has determinant $0$."
+      ],
+      "steps": [
+        "Take $\\det\\begin{bmatrix}3&-4&5\\\\1&-2&3\\\\6&-8&a\\end{bmatrix}$ and expand along the first row.",
+        "$=3(-2a+24)+4(a-18)+5(-8+12)$.",
+        "$=-6a+72+4a-72+20=20-2a$.",
+        "Dependent means the determinant is $0$: $20-2a=0$, so $a=10$."
+      ],
+      "brief": "$\\det=20-2a=0$, so $a=10$ (then $w=2u$)."
+    },
+    {
+      "sec": "4.1",
+      "q": "Let $u=(2,7)$, $v=(3,8)$ and $t=(0,5)$. If $t=au+bv$, then $a+b=$",
+      "opts": [
+        "$1$",
+        "$0$",
+        "$-1$",
+        "$2$",
+        "$-2$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Writing one vector as a linear combination of others is the same as solving a linear system.",
+        "Compare the first components and the second components of $au+bv$ and $t$ to get two equations in $a$ and $b$.",
+        "$a\\mathbf{u}+b\\mathbf{v}=\\mathbf{t}$ holds componentwise, giving the system with coefficient columns $\\mathbf{u}$, $\\mathbf{v}$ and right side $\\mathbf{t}$; solve it by elimination."
+      ],
+      "steps": [
+        "Components: $2a+3b=0$ and $7a+8b=5$.",
+        "Multiply the first by $7$ and the second by $2$: $14a+21b=0$ and $14a+16b=10$.",
+        "Subtract: $5b=-10$, so $b=-2$, and then $2a=6$, so $a=3$.",
+        "$a+b=3-2=1$."
+      ],
+      "brief": "$2a+3b=0$, $7a+8b=5$: $a=3$, $b=-2$, so $a+b=1$."
+    },
+    {
+      "sec": "1.6",
+      "q": "The general solution of the differential equation \\[ x^2y''+2xy'=12x^3 \\] is $y=$ ($A$ and $B$ are real numbers)",
+      "opts": [
+        "$x^3-\\dfrac{A}{x}+B$",
+        "$x^2-\\dfrac{A}{x^2}+B$",
+        "$x^2+\\dfrac{A}{x}+B$",
+        "$x^3-\\dfrac{A}{x^2}+B$",
+        "$x^3-\\dfrac{A}{x}+Bx$"
+      ],
+      "ans": 0,
+      "hints": [
+        "The dependent variable $y$ itself does not appear, so this is a reducible second-order equation with $y$ missing.",
+        "Set $p=y'$, so $y''=p'$, and solve the resulting first-order equation for $p$.",
+        "With $y$ missing, $p=y'$ turns the equation into a first-order linear one; solve it with $\\rho=e^{\\int P\\,dx}$ and $(\\rho p)'=\\rho Q$, then $y=\\int p\\,dx$."
+      ],
+      "steps": [
+        "Let $p=y'$: $x^2p'+2xp=12x^3$, i.e. $p'+\\dfrac2x\\,p=12x$.",
+        "$\\rho=e^{\\int 2/x\\,dx}=x^2$, so $(x^2p)'=12x^3$ and $x^2p=3x^4+A$.",
+        "$p=y'=3x^2+\\dfrac{A}{x^2}$.",
+        "Integrate: $y=x^3-\\dfrac{A}{x}+B$."
+      ],
+      "brief": "$p=y'$: $(x^2p)'=12x^3$, $p=3x^2+\\frac{A}{x^2}$, so $y=x^3-\\frac{A}{x}+B$."
+    },
+    {
+      "sec": "1.6",
+      "q": "By using a suitable substitution, we can transform the differential equation \\[ 3xy^2y'=3x^4+y^3 \\] into the linear differential equation",
+      "opts": [
+        "$v'-\\dfrac1x\\,v=3x^3$",
+        "$v'+\\dfrac1x\\,v=3x^3$",
+        "$v'-\\dfrac1x\\,v=x^3$",
+        "$v'+\\dfrac1x\\,v=3x^2$",
+        "$v'+\\dfrac1x\\,v=x^2$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Write the equation in the Bernoulli form $y'+P(x)y=Q(x)y^n$ and identify $n$.",
+        "Divide by the coefficient of $y'$ and move the $y$ term to the left, then substitute $v=y^{1-n}$.",
+        "For $y'+Py=Qy^n$, the substitution $v=y^{1-n}$ gives $v'=(1-n)y^{-n}y'$, which turns the equation into a linear one in $v$."
+      ],
+      "steps": [
+        "Divide by $3xy^2$: $y'-\\dfrac{1}{3x}\\,y=x^3y^{-2}$, so $n=-2$.",
+        "Let $v=y^{1-n}=y^3$, so $v'=3y^2y'$.",
+        "Multiply the equation by $3y^2$: $v'-\\dfrac1x\\,v=3x^3$."
+      ],
+      "brief": "Bernoulli $n=-2$, $v=y^3$: $v'-\\frac1x v=3x^3$."
+    },
+    {
+      "sec": "1.6",
+      "q": "A general solution of the homogeneous differential equation \\[ 2xy\\frac{dy}{dx}=4x^2+3y^2 \\] is (where $c$ is a constant)",
+      "opts": [
+        "$y^2+4x^2=cx^3$",
+        "$y^2-4x^2=cx^3$",
+        "$y^2+2x^2=cx^3$",
+        "$y^2-2x^2=cx^3$",
+        "$y^2+4x^2=cx$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Every term has the same total degree in $x$ and $y$, so the equation is homogeneous.",
+        "Divide by $2xy$ to write $y'$ as a function of $y/x$, then substitute $v=y/x$.",
+        "With $v=\\dfrac yx$: $y=vx$ and $y'=v+xv'$; the resulting equation in $v$ and $x$ is separable."
+      ],
+      "steps": [
+        "Divide by $2xy$: $y'=\\dfrac{2x}{y}+\\dfrac{3y}{2x}=\\dfrac2v+\\dfrac{3v}{2}$ with $v=\\dfrac yx$.",
+        "Put $y'=v+xv'$: $xv'=\\dfrac2v+\\dfrac v2=\\dfrac{4+v^2}{2v}$.",
+        "Separate: $\\dfrac{2v\\,dv}{4+v^2}=\\dfrac{dx}{x}$, so $\\ln(4+v^2)=\\ln|x|+C$ and $4+v^2=cx$.",
+        "With $v=\\dfrac yx$: $4+\\dfrac{y^2}{x^2}=cx$, so $y^2+4x^2=cx^3$."
+      ],
+      "brief": "$v=y/x$: $xv'=\\frac{4+v^2}{2v}$, $4+v^2=cx$, so $y^2+4x^2=cx^3$."
+    },
+    {
+      "sec": "1.6",
+      "q": "A general solution of the exact differential equation \\[ \\left(1+ye^{xy}\\right)dx+\\left(2y+xe^{xy}\\right)dy=0 \\] (where $c$ is constant) is",
+      "opts": [
+        "$x+e^{xy}+y^2=c$",
+        "$x^2+e^{xy}+y^2=c$",
+        "$x+e^{xy}+y=c$",
+        "$x+e^{xy}=c$",
+        "$e^{xy}+y=c$"
+      ],
+      "ans": 0,
+      "hints": [
+        "The equation is exact, so it comes from a potential function $F(x,y)$.",
+        "Integrate $M$ with respect to $x$ to start building $F(x,y)$, then differentiate with respect to $y$ and compare with $N$.",
+        "If $M_y=N_x$, then $F=\\int M\\,dx+g(y)$ with $F_y=N$, and the solution is $F(x,y)=C$."
+      ],
+      "steps": [
+        "$M_y=e^{xy}+xye^{xy}=N_x$, so the equation is exact.",
+        "$F=\\int\\left(1+ye^{xy}\\right)dx=x+e^{xy}+g(y)$.",
+        "$F_y=xe^{xy}+g'(y)=2y+xe^{xy}$, so $g'(y)=2y$ and $g(y)=y^2$.",
+        "The solution is $x+e^{xy}+y^2=c$."
+      ],
+      "brief": "Exact: $F=x+e^{xy}+g(y)$, $g'=2y$, so $x+e^{xy}+y^2=c$."
+    },
+    {
+      "sec": "1.5",
+      "q": "The general solution of the differential equation \\[ 2xy'-3y=9x^3 \\] is (where $c$ is a constant)",
+      "opts": [
+        "$y=3x^3+cx^{3/2}$",
+        "$y=x^3+cx^{3/2}$",
+        "$y=3x^3+cx^{2/3}$",
+        "$y=2x^3+cx^{3/2}$",
+        "$y=2x^3+cx^{2/3}$"
+      ],
+      "ans": 0,
+      "hints": [
+        "This is a first-order linear equation in $y$.",
+        "Divide by $2x$ to get the form $y'+P(x)y=Q(x)$ and find the integrating factor.",
+        "$\\rho=e^{\\int P\\,dx}$ and $(\\rho y)'=\\rho Q$; also $e^{k\\ln x}=x^k$ for $x>0$."
+      ],
+      "steps": [
+        "Standard form: $y'-\\dfrac{3}{2x}\\,y=\\dfrac92x^2$.",
+        "$\\rho=e^{-\\frac32\\ln x}=x^{-3/2}$, so $\\left(x^{-3/2}y\\right)'=\\dfrac92x^{1/2}$.",
+        "Integrate: $x^{-3/2}y=3x^{3/2}+c$.",
+        "So $y=3x^3+cx^{3/2}$."
+      ],
+      "brief": "$\\rho=x^{-3/2}$: $(x^{-3/2}y)'=\\frac92x^{1/2}$, so $y=3x^3+cx^{3/2}$."
+    },
+    {
+      "sec": "1.4",
+      "q": "The solution of the initial-value problem \\[ \\frac{dy}{dx}=y^2\\sin x-y^2\\cos x, \\qquad y\\left(\\frac{\\pi}{2}\\right)=\\frac13 \\] is",
+      "opts": [
+        "$y=\\dfrac{1}{\\sin x+\\cos x+2}$",
+        "$y=\\dfrac{1}{-\\sin x+\\cos x+4}$",
+        "$y=\\dfrac{1}{\\sin x+\\cos x}$",
+        "$y=\\dfrac{1}{\\sin x+\\cos x-1}$",
+        "$y=\\dfrac{1}{\\sin x-\\cos x+2}$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Factor the right side into a function of $y$ times a function of $x$: the equation is separable.",
+        "Divide by $y^2$, multiply by $dx$, and integrate both sides.",
+        "For $\\dfrac{dy}{dx}=g(x)h(y)$: $\\int\\dfrac{dy}{h(y)}=\\int g(x)\\,dx+C$, and $\\int y^{-2}\\,dy=-\\dfrac1y$. Use the initial condition for $C$."
+      ],
+      "steps": [
+        "Separate: $\\dfrac{dy}{y^2}=(\\sin x-\\cos x)\\,dx$.",
+        "Integrate: $-\\dfrac1y=-\\cos x-\\sin x+C$.",
+        "At $x=\\dfrac{\\pi}{2}$, $y=\\dfrac13$: $-3=0-1+C$, so $C=-2$.",
+        "$\\dfrac1y=\\sin x+\\cos x+2$, so $y=\\dfrac{1}{\\sin x+\\cos x+2}$."
+      ],
+      "brief": "Separable: $-\\frac1y=-\\cos x-\\sin x-2$, so $y=\\frac{1}{\\sin x+\\cos x+2}$."
+    },
+    {
+      "sec": "1.4",
+      "q": "When sugar is dissolved in water, the amount $A$ that remains undissolved after $t$ minutes satisfies the differential equation $\\dfrac{dA}{dt}=-kA$ $(k>0)$. If $25\\%$ of the sugar dissolves after 1 minute, how long does it take for half of the sugar to dissolve (in minutes)?",
+      "opts": [
+        "$\\dfrac{\\ln 2}{\\ln (4/3)}$",
+        "$\\dfrac{\\ln 2}{\\ln (7/4)}$",
+        "$\\dfrac{-1}{\\ln (3/4)}$",
+        "$\\dfrac{1}{\\ln (7/3)}$",
+        "$\\ln (4/3)$"
+      ],
+      "ans": 0,
+      "hints": [
+        "This is natural decay: the undissolved amount decreases exponentially.",
+        "Write $A(t)$ with the initial amount $A_0$, and use the fraction still undissolved after 1 minute to find $k$.",
+        "$\\dfrac{dA}{dt}=-kA$ gives $A(t)=A_0e^{-kt}$; the time to fall to half is found from $e^{-kt}=\\dfrac12$, i.e. $t=\\dfrac{\\ln 2}{k}$."
+      ],
+      "steps": [
+        "$A(t)=A_0e^{-kt}$.",
+        "After 1 minute, $25\\%$ has dissolved, so $A(1)=\\dfrac34A_0$: $e^{-k}=\\dfrac34$ and $k=\\ln\\dfrac43$.",
+        "Half dissolved means $A=\\dfrac12A_0$: $e^{-kt}=\\dfrac12$, so $kt=\\ln 2$.",
+        "$t=\\dfrac{\\ln 2}{\\ln(4/3)}$ minutes."
+      ],
+      "brief": "$A=A_0e^{-kt}$, $e^{-k}=\\frac34$ so $k=\\ln\\frac43$; $t=\\frac{\\ln2}{\\ln(4/3)}$."
+    },
+    {
+      "sec": "1.2",
+      "q": "If the acceleration of a particle is $a(t)=\\dfrac{1}{(t+1)^3}$, the initial velocity is $v_0=0$, and the initial position is $x_0=0$, then $x(1)=$",
+      "opts": [
+        "$\\dfrac14$",
+        "$\\dfrac12$",
+        "$\\dfrac18$",
+        "$\\dfrac{1}{16}$",
+        "$1$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Acceleration is the derivative of velocity, and velocity is the derivative of position, so integrate twice.",
+        "Integrate $a(t)$ once to get $v(t)$ and use $v(0)=0$ to find the first constant.",
+        "$v(t)=\\int a(t)\\,dt+C_1$ and $x(t)=\\int v(t)\\,dt+C_2$, using $\\int (t+c)^n\\,dt=\\dfrac{(t+c)^{n+1}}{n+1}$ for $n\\neq-1$."
+      ],
+      "steps": [
+        "$v(t)=\\int (t+1)^{-3}\\,dt=-\\dfrac{1}{2(t+1)^2}+C_1$, and $v(0)=-\\dfrac12+C_1=0$ gives $C_1=\\dfrac12$.",
+        "$x(t)=\\int\\left(\\dfrac12-\\dfrac{1}{2(t+1)^2}\\right)dt=\\dfrac t2+\\dfrac{1}{2(t+1)}+C_2$.",
+        "$x(0)=\\dfrac12+C_2=0$, so $C_2=-\\dfrac12$.",
+        "$x(1)=\\dfrac12+\\dfrac14-\\dfrac12=\\dfrac14$."
+      ],
+      "brief": "$v=\\frac12-\\frac{1}{2(t+1)^2}$, $x=\\frac t2+\\frac{1}{2(t+1)}-\\frac12$, so $x(1)=\\frac14$."
+    },
+    {
+      "sec": "1.1",
+      "q": "Given that $y=\\dfrac{1}{c-x}$ is a family of solutions of the differential equation $\\dfrac{dy}{dx}=y^2$. The largest interval of existence of the solution for the initial-value problem \\[ \\begin{cases} \\dfrac{dy}{dx}=y^2\\\\ y(1)=2 \\end{cases} \\] is",
+      "opts": [
+        "$\\left(-\\infty,\\dfrac32\\right)$",
+        "$\\left(\\dfrac32,\\infty\\right)$",
+        "$(-\\infty,2)$",
+        "$\\left(-\\dfrac32,\\infty\\right)$",
+        "$(-\\infty,3)$"
+      ],
+      "ans": 0,
+      "hints": [
+        "First find the particular solution in the family that satisfies the initial condition, then see where it is defined.",
+        "Substitute $x=1$, $y=2$ into $y=\\dfrac{1}{c-x}$ and solve for $c$.",
+        "A solution of an initial-value problem lives on the largest interval that contains the initial point $x_0$ and on which the solution formula is defined; a fraction is undefined where its denominator is $0$."
+      ],
+      "steps": [
+        "$y(1)=2$: $\\dfrac{1}{c-1}=2$, so $c-1=\\dfrac12$ and $c=\\dfrac32$.",
+        "The solution is $y=\\dfrac{1}{\\frac32-x}$, which is undefined at $x=\\dfrac32$.",
+        "The initial point $x=1$ lies to the left of $\\dfrac32$, so the largest interval is $\\left(-\\infty,\\dfrac32\\right)$."
+      ],
+      "brief": "$c=\\frac32$, $y=\\frac{1}{3/2-x}$ blows up at $x=\\frac32$; interval containing 1: $(-\\infty,\\frac32)$."
+    },
+    {
+      "sec": "1.1",
+      "q": "If we substitute $y=e^{rx}$ into the differential equation \\[ 5y''-6y'-y=0, \\] then the product of all values of $r$ is",
+      "opts": [
+        "$\\dfrac{-1}{5}$",
+        "$\\dfrac15$",
+        "$\\dfrac{-1}{6}$",
+        "$\\dfrac16$",
+        "$0$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Substituting an exponential $y=e^{rx}$ into the equation gives an equation for $r$.",
+        "Compute $y'$ and $y''$ for $y=e^{rx}$, substitute, and divide by $e^{rx}$.",
+        "Substituting $y=e^{rx}$ into $ay''+by'+cy=0$ gives $ar^2+br+c=0$, with roots $r=\\dfrac{-b\\pm\\sqrt{b^2-4ac}}{2a}$."
+      ],
+      "steps": [
+        "$y'=re^{rx}$ and $y''=r^2e^{rx}$, so $(5r^2-6r-1)e^{rx}=0$ and $5r^2-6r-1=0$.",
+        "$r=\\dfrac{6\\pm\\sqrt{36+20}}{10}=\\dfrac{3\\pm\\sqrt{14}}{5}$.",
+        "Product: $\\dfrac{(3+\\sqrt{14})(3-\\sqrt{14})}{25}=\\dfrac{9-14}{25}=-\\dfrac15$."
+      ],
+      "brief": "$5r^2-6r-1=0$, $r=\\frac{3\\pm\\sqrt{14}}{5}$, product $\\frac{9-14}{25}=-\\frac15$."
+    },
+    {
+      "sec": "1.6",
+      "q": "If the differential equation \\[ \\left(6x^2+kxy\\right)dx+\\left(x^2-6y\\right)dy=0 \\] is an exact differential equation, then $k=$",
+      "opts": [
+        "$2$",
+        "$-2$",
+        "$0$",
+        "$1$",
+        "$-1$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Use the test for exactness of $M\\,dx+N\\,dy=0$.",
+        "Compute $\\partial M/\\partial y$ and $\\partial N/\\partial x$ and set them equal.",
+        "$M\\,dx+N\\,dy=0$ is exact if and only if $M_y=N_x$ (for all $x$ and $y$)."
+      ],
+      "steps": [
+        "$M=6x^2+kxy$, so $M_y=kx$.",
+        "$N=x^2-6y$, so $N_x=2x$.",
+        "Exactness $M_y=N_x$ gives $kx=2x$ for all $x$, so $k=2$."
+      ],
+      "brief": "$M_y=kx$, $N_x=2x$, so exact when $k=2$."
+    }
+  ]
+}

@@ -1,0 +1,488 @@
+{
+  "course": "math102",
+  "term": "233",
+  "kind": "fx",
+  "date": "",
+  "minutes": 120,
+  "source": "math102-233-fx.pdf",
+  "note": "Date and exam length are not printed on the scanned master (no cover page); date left empty and 120 minutes assumed. Master key is A for every question and all 20 answers were verified with sympy; no disagreements. Q13 choice (b) is printed with a typo (n't h-Term Test); written as n-th-Term Test.",
+  "qs": [
+    {
+      "sec": "5.2",
+      "q": "Using the Midpoint Rule with $n=3$, the approximation of the area of the region bounded by the graph of $f(x)=\\sin x$ and the $x$-axis for $0\\le x\\le\\pi$ is equal to",
+      "opts": [
+        "$\\dfrac{2\\pi}{3}$",
+        "$\\dfrac{3\\pi}{4}$",
+        "$\\dfrac{3\\pi}{5}$",
+        "$\\left(\\dfrac{\\sqrt3+1}{2}\\right)\\pi$",
+        "$(\\sqrt3+1)\\pi$"
+      ],
+      "ans": 0,
+      "hints": [
+        "This is a Riemann sum with the midpoint of each subinterval as the sample point.",
+        "Find the width of each subinterval, list the three midpoints, and evaluate the function there.",
+        "Midpoint Rule: $\\int_a^b f\\,dx\\approx\\Delta x\\sum_{i=1}^n f(m_i)$ with $\\Delta x=\\dfrac{b-a}{n}$ and $m_i$ the midpoint of the $i$th subinterval."
+      ],
+      "steps": [
+        "$\\Delta x=\\dfrac{\\pi-0}{3}=\\dfrac{\\pi}{3}$, with subintervals $[0,\\tfrac\\pi3],[\\tfrac\\pi3,\\tfrac{2\\pi}3],[\\tfrac{2\\pi}3,\\pi]$.",
+        "Midpoints: $\\dfrac\\pi6,\\ \\dfrac\\pi2,\\ \\dfrac{5\\pi}6$.",
+        "$\\sin\\dfrac\\pi6+\\sin\\dfrac\\pi2+\\sin\\dfrac{5\\pi}6=\\dfrac12+1+\\dfrac12=2$.",
+        "Area $\\approx\\dfrac\\pi3\\cdot2=\\dfrac{2\\pi}{3}$."
+      ],
+      "brief": "$\\Delta x=\\frac\\pi3$, midpoints $\\frac\\pi6,\\frac\\pi2,\\frac{5\\pi}6$: $\\frac\\pi3(\\frac12+1+\\frac12)=\\frac{2\\pi}3$."
+    },
+    {
+      "sec": "5.3",
+      "q": "On the interval $[0,2\\sqrt3]$, $\\lim_{\\|\\Delta\\|\\to0}\\sum_{i=1}^{n}c_i\\sqrt{c_i^2+4}\\,\\Delta x_i=$",
+      "opts": [
+        "$\\dfrac{56}{3}$",
+        "$20\\sqrt3$",
+        "$24$",
+        "$20$",
+        "$24\\sqrt3$"
+      ],
+      "ans": 0,
+      "hints": [
+        "A limit of Riemann sums over an interval is a definite integral.",
+        "Identify the function $f(c_i)$ in the sum and write the limit as $\\int_0^{2\\sqrt3}f(x)\\,dx$, then use a substitution.",
+        "$\\lim_{\\|\\Delta\\|\\to0}\\sum f(c_i)\\Delta x_i=\\int_a^b f(x)\\,dx$, and $\\int u^{1/2}\\,du=\\tfrac23u^{3/2}+C$."
+      ],
+      "steps": [
+        "The sum is a Riemann sum for $f(x)=x\\sqrt{x^2+4}$, so the limit is $\\int_0^{2\\sqrt3}x\\sqrt{x^2+4}\\,dx$.",
+        "Let $u=x^2+4$, $du=2x\\,dx$; the limits become $u=4$ and $u=16$.",
+        "$\\dfrac12\\int_4^{16}u^{1/2}\\,du=\\dfrac13\\left[u^{3/2}\\right]_4^{16}$.",
+        "$=\\dfrac13(64-8)=\\dfrac{56}{3}$."
+      ],
+      "brief": "Limit $=\\int_0^{2\\sqrt3}x\\sqrt{x^2+4}\\,dx$, $u=x^2+4$: $\\frac13(64-8)=\\frac{56}3$."
+    },
+    {
+      "sec": "5.4",
+      "q": "$\\int_{-1}^{6}|5-2x|\\,dx=$",
+      "opts": [
+        "$\\dfrac{49}{2}$",
+        "$\\dfrac{39}{2}$",
+        "$\\dfrac{45}{2}$",
+        "$\\dfrac{65}{4}$",
+        "$\\dfrac{73}{4}$"
+      ],
+      "ans": 0,
+      "hints": [
+        "The integrand has an absolute value, so the interval must be split where the inside changes sign.",
+        "Find where $5-2x=0$ and write the integral as two integrals without absolute values.",
+        "$|g(x)|=g(x)$ where $g\\ge0$ and $|g(x)|=-g(x)$ where $g<0$; use $\\int_a^b f=\\int_a^c f+\\int_c^b f$."
+      ],
+      "steps": [
+        "$5-2x=0$ at $x=\\dfrac52$; $5-2x\\ge0$ for $x\\le\\dfrac52$ and $<0$ after.",
+        "$\\int_{-1}^{5/2}(5-2x)\\,dx=\\left[5x-x^2\\right]_{-1}^{5/2}=\\dfrac{25}{4}-(-6)=\\dfrac{49}{4}$.",
+        "$\\int_{5/2}^{6}(2x-5)\\,dx=\\left[x^2-5x\\right]_{5/2}^{6}=6-\\left(-\\dfrac{25}{4}\\right)=\\dfrac{49}{4}$.",
+        "Total $=\\dfrac{49}{4}+\\dfrac{49}{4}=\\dfrac{49}{2}$."
+      ],
+      "brief": "Split at $x=\\frac52$: $\\frac{49}4+\\frac{49}4=\\frac{49}2$."
+    },
+    {
+      "sec": "5.5",
+      "q": "$\\int_{-\\pi/3}^{\\pi/3}\\left(\\sin^3x\\cos x+\\sec^2x\\tan^2x\\right)dx=$",
+      "opts": [
+        "$2\\sqrt3$",
+        "$0$",
+        "$\\sqrt3$",
+        "$\\dfrac{\\sqrt3}{2}$",
+        "$\\dfrac{2\\sqrt3}{3}$"
+      ],
+      "ans": 0,
+      "hints": [
+        "The interval is symmetric about $0$, so look at whether each term is even or odd.",
+        "Treat the two terms separately: one is odd, the other can be integrated by substitution.",
+        "If $f$ is odd, $\\int_{-a}^{a}f=0$; if $f$ is even, $\\int_{-a}^{a}f=2\\int_0^a f$. Also $\\int u^2\\,du=\\tfrac{u^3}{3}+C$ with $u=\\tan x$, $du=\\sec^2x\\,dx$."
+      ],
+      "steps": [
+        "$\\sin^3x\\cos x$ is odd (odd times even), so its integral over $[-\\tfrac\\pi3,\\tfrac\\pi3]$ is $0$.",
+        "$\\sec^2x\\tan^2x$ is even, so the integral is $2\\int_0^{\\pi/3}\\tan^2x\\sec^2x\\,dx$.",
+        "With $u=\\tan x$: $2\\left[\\dfrac{\\tan^3x}{3}\\right]_0^{\\pi/3}$.",
+        "$=2\\cdot\\dfrac{(\\sqrt3)^3}{3}=2\\cdot\\dfrac{3\\sqrt3}{3}=2\\sqrt3$."
+      ],
+      "brief": "First term is odd (integral $0$); $2\\left[\\frac{\\tan^3x}3\\right]_0^{\\pi/3}=2\\sqrt3$."
+    },
+    {
+      "sec": "7.4",
+      "q": "The area of the surface formed by revolving the graph of $y=\\sqrt{25-x^2}$, $-1\\le x\\le4$ about the $x$-axis is equal to",
+      "opts": [
+        "$50\\pi$",
+        "$60\\pi$",
+        "$55\\pi$",
+        "$65\\pi$",
+        "$45\\pi$"
+      ],
+      "ans": 0,
+      "hints": [
+        "This is a surface of revolution about the $x$-axis.",
+        "Compute $y'$, simplify $y\\sqrt{1+(y')^2}$, and integrate over the given $x$-interval.",
+        "Surface area about the $x$-axis: $S=2\\pi\\int_a^b f(x)\\sqrt{1+\\left(f'(x)\\right)^2}\\,dx$."
+      ],
+      "steps": [
+        "$y'=\\dfrac{-x}{\\sqrt{25-x^2}}$, so $1+(y')^2=\\dfrac{25}{25-x^2}$ and $\\sqrt{1+(y')^2}=\\dfrac{5}{\\sqrt{25-x^2}}$.",
+        "Then $y\\sqrt{1+(y')^2}=\\sqrt{25-x^2}\\cdot\\dfrac{5}{\\sqrt{25-x^2}}=5$.",
+        "$S=2\\pi\\int_{-1}^{4}5\\,dx=2\\pi\\cdot5\\cdot5$.",
+        "$S=50\\pi$."
+      ],
+      "brief": "$y\\sqrt{1+y'^2}=5$, so $S=2\\pi\\int_{-1}^4 5\\,dx=50\\pi$."
+    },
+    {
+      "sec": "8.3",
+      "q": "$\\int\\cos^3(x)\\sin^4(x)\\,dx=$",
+      "opts": [
+        "$\\dfrac{\\sin^5(x)}{5}-\\dfrac{\\sin^7(x)}{7}+C$",
+        "$-\\dfrac{\\sin^5(x)}{5}+\\dfrac{\\sin^7(x)}{7}+C$",
+        "$\\dfrac{\\sin^5(x)}{5}-\\dfrac{\\sin^3(x)}{3}+C$",
+        "$-\\dfrac{\\sin^5(x)}{5}+\\dfrac{\\sin^3(x)}{3}+C$",
+        "$\\dfrac{\\sin^9(x)}{5}-\\dfrac{\\sin^8(x)}{7}+C$"
+      ],
+      "ans": 0,
+      "hints": [
+        "This is a product of powers of sine and cosine where one power is odd.",
+        "Save one factor of the odd-power function for $du$, and convert the rest using a Pythagorean identity.",
+        "If the power of $\\cos x$ is odd, split off one $\\cos x$, use $\\cos^2x=1-\\sin^2x$ and let $u=\\sin x$, $du=\\cos x\\,dx$."
+      ],
+      "steps": [
+        "Write $\\cos^3x\\sin^4x=\\cos^2x\\sin^4x\\cos x=(1-\\sin^2x)\\sin^4x\\cos x$.",
+        "Let $u=\\sin x$, $du=\\cos x\\,dx$: $\\int(1-u^2)u^4\\,du=\\int(u^4-u^6)\\,du$.",
+        "$=\\dfrac{u^5}{5}-\\dfrac{u^7}{7}+C$.",
+        "Back-substitute: $\\dfrac{\\sin^5x}{5}-\\dfrac{\\sin^7x}{7}+C$."
+      ],
+      "brief": "$u=\\sin x$: $\\int(u^4-u^6)\\,du=\\frac{\\sin^5x}5-\\frac{\\sin^7x}7+C$."
+    },
+    {
+      "sec": "8.8",
+      "q": "The improper integral $\\int_0^5\\frac{10}{x}\\,dx$",
+      "opts": [
+        "diverges",
+        "converges to $\\ln5$",
+        "converges to $2\\ln5$",
+        "converges to $10\\ln5$",
+        "converges to $5\\ln5$"
+      ],
+      "ans": 0,
+      "hints": [
+        "The integrand is unbounded at an endpoint, so this is an improper integral of the second type.",
+        "Replace the bad endpoint by a limit, $\\int_t^5$ with $t\\to0^+$, and evaluate.",
+        "$\\int_0^b f\\,dx=\\lim_{t\\to0^+}\\int_t^b f\\,dx$, and $\\int\\dfrac{dx}{x}=\\ln|x|+C$; the integral converges only if this limit is finite."
+      ],
+      "steps": [
+        "The integrand $\\dfrac{10}{x}$ is not defined at $x=0$, so write $\\lim_{t\\to0^+}\\int_t^5\\dfrac{10}{x}\\,dx$.",
+        "$=\\lim_{t\\to0^+}10\\left[\\ln x\\right]_t^5=\\lim_{t\\to0^+}10(\\ln5-\\ln t)$.",
+        "As $t\\to0^+$, $\\ln t\\to-\\infty$, so the limit is $+\\infty$.",
+        "The integral diverges."
+      ],
+      "brief": "$\\lim_{t\\to0^+}10(\\ln5-\\ln t)=\\infty$, so it diverges."
+    },
+    {
+      "sec": "9.1",
+      "q": "The sequence $\\left\\{\\dfrac{n^3+1}{n^2+1}\\right\\}_{n=1}^{\\infty}$ is",
+      "opts": [
+        "monotonic but not bounded",
+        "bounded but not monotonic",
+        "monotonic and bounded",
+        "neither monotonic nor bounded",
+        "convergent"
+      ],
+      "ans": 0,
+      "hints": [
+        "Check three things: whether the terms keep increasing or decreasing, whether they stay below some number, and what the limit is.",
+        "Compare the growth of numerator and denominator for large $n$, and compare $a_{n+1}$ with $a_n$.",
+        "A sequence is monotonic if $a_{n+1}\\ge a_n$ for all $n$ (or $\\le$ for all $n$). A convergent sequence is bounded, so an unbounded sequence cannot converge."
+      ],
+      "steps": [
+        "For large $n$, $a_n\\approx\\dfrac{n^3}{n^2}=n$, so $a_n\\to\\infty$: the sequence is unbounded and divergent.",
+        "Treat $f(x)=\\dfrac{x^3+1}{x^2+1}$: $f'(x)=\\dfrac{3x^2(x^2+1)-2x(x^3+1)}{(x^2+1)^2}=\\dfrac{x^4+3x^2-2x}{(x^2+1)^2}$.",
+        "For $x\\ge1$, $x^4+3x^2-2x=x(x^3+3x-2)>0$, so $f$ is increasing and the sequence is increasing (e.g. $1,\\ \\tfrac95,\\ \\tfrac{14}{5},\\dots$).",
+        "So the sequence is monotonic but not bounded."
+      ],
+      "brief": "$a_n\\sim n\\to\\infty$ and $a_n$ is increasing: monotonic, not bounded."
+    },
+    {
+      "sec": "9.1",
+      "q": "The sequence $\\left\\{\\dfrac{1+(-1)^n}{n^3}\\right\\}_{n=1}^{\\infty}$",
+      "opts": [
+        "converges to $0$",
+        "converges to $1$",
+        "converges to $-1$",
+        "diverges",
+        "is not bounded"
+      ],
+      "ans": 0,
+      "hints": [
+        "Bound the numerator and see what happens to the terms as $n$ grows.",
+        "Estimate $0\\le a_n$ by a simple expression and use the Squeeze Theorem.",
+        "Squeeze Theorem: if $b_n\\le a_n\\le c_n$ and $b_n,c_n\\to L$, then $a_n\\to L$."
+      ],
+      "steps": [
+        "$0\\le 1+(-1)^n\\le2$, so $0\\le a_n\\le\\dfrac{2}{n^3}$.",
+        "$\\dfrac{2}{n^3}\\to0$ as $n\\to\\infty$.",
+        "By the Squeeze Theorem, $a_n\\to0$."
+      ],
+      "brief": "$0\\le a_n\\le\\frac2{n^3}\\to0$, so by squeeze the limit is $0$."
+    },
+    {
+      "sec": "9.2",
+      "q": "Which of the following statements is true about the two series \\[ \\text{(I)}\\ \\sum_{n=1}^{\\infty}\\ln\\left(\\frac{n+1}{n}\\right),\\qquad \\text{(II)}\\ \\sum_{n=1}^{\\infty}(\\sin 2)^n \\]",
+      "opts": [
+        "(I) is a divergent series but (II) is a convergent series",
+        "(I) is a convergent series but (II) is a divergent series",
+        "Both series are convergent",
+        "Both series are divergent",
+        "The sequence of partial sums of (I) is decreasing"
+      ],
+      "ans": 0,
+      "hints": [
+        "Series (I) can be rewritten so that terms cancel, and series (II) has a special form.",
+        "For (I), use a log property to split each term and find a formula for the partial sums. For (II), identify the ratio.",
+        "$\\ln\\dfrac ab=\\ln a-\\ln b$ gives telescoping sums. A geometric series $\\sum r^n$ converges iff $|r|<1$."
+      ],
+      "steps": [
+        "$\\ln\\dfrac{n+1}{n}=\\ln(n+1)-\\ln n$, so the partial sum is $S_N=\\ln(N+1)-\\ln1=\\ln(N+1)$.",
+        "$\\ln(N+1)\\to\\infty$, so (I) diverges (and its partial sums increase).",
+        "(II) is geometric with $r=\\sin2\\approx0.909$, so $|r|<1$ and it converges.",
+        "So (I) diverges and (II) converges."
+      ],
+      "brief": "(I) telescopes to $\\ln(N+1)\\to\\infty$; (II) is geometric with $|\\sin2|<1$."
+    },
+    {
+      "sec": "9.10",
+      "q": "The first three terms of the Taylor series generated by the function $f(x)=\\dfrac{1}{4-x}$ centered at $c=2$ are",
+      "opts": [
+        "$\\dfrac12+\\dfrac14(x-2)+\\dfrac18(x-2)^2$",
+        "$\\dfrac12+\\dfrac18(x-2)+\\dfrac1{16}(x-2)^2$",
+        "$\\dfrac12+\\dfrac14(x-2)-\\dfrac14(x-2)^2$",
+        "$2+2(x-4)-4(x-4)^2$",
+        "$\\dfrac12-\\dfrac14(x-2)+\\dfrac1{16}(x-2)^2$"
+      ],
+      "ans": 0,
+      "hints": [
+        "You can compute derivatives at the center, or rewrite $f$ as a geometric series in $x-2$.",
+        "Compute $f$, $f'$ and $f''$ and evaluate them at the center.",
+        "Taylor series: $\\sum\\dfrac{f^{(k)}(c)}{k!}(x-c)^k$; geometric series: $\\dfrac1{1-r}=\\sum r^k$ for $|r|<1$."
+      ],
+      "steps": [
+        "$f(x)=(4-x)^{-1}$: $f'=(4-x)^{-2}$, $f''=2(4-x)^{-3}$.",
+        "At $c=2$: $f(2)=\\dfrac12$, $f'(2)=\\dfrac14$, $f''(2)=\\dfrac{2}{8}=\\dfrac14$.",
+        "Coefficients: $\\dfrac12$, $\\dfrac14$, $\\dfrac{f''(2)}{2!}=\\dfrac18$.",
+        "So the terms are $\\dfrac12+\\dfrac14(x-2)+\\dfrac18(x-2)^2$."
+      ],
+      "brief": "$f(2)=\\frac12,\\ f'(2)=\\frac14,\\ f''(2)/2!=\\frac18$."
+    },
+    {
+      "sec": "9.2",
+      "q": "The geometric series $6-3+\\dfrac32-\\dfrac34+\\cdots$",
+      "opts": [
+        "is convergent and its sum is $4$",
+        "is convergent and its sum is $5$",
+        "is convergent and its sum is $\\dfrac72$",
+        "is convergent and its sum is $\\dfrac92$",
+        "is divergent"
+      ],
+      "ans": 0,
+      "hints": [
+        "Find the first term and the common ratio.",
+        "Divide each term by the one before it to get $r$, then check whether $|r|<1$.",
+        "A geometric series $\\sum_{n=0}^\\infty ar^n$ converges iff $|r|<1$, and then its sum is $\\dfrac{a}{1-r}$."
+      ],
+      "steps": [
+        "First term $a=6$; ratio $r=\\dfrac{-3}{6}=-\\dfrac12$.",
+        "$|r|=\\dfrac12<1$, so the series converges.",
+        "Sum $=\\dfrac{a}{1-r}=\\dfrac{6}{1+\\frac12}=\\dfrac{6}{3/2}=4$."
+      ],
+      "brief": "$a=6$, $r=-\\frac12$: sum $=\\frac{6}{1+1/2}=4$."
+    },
+    {
+      "sec": "9.3",
+      "q": "The series $\\sum_{n=2}^{\\infty}\\frac{n^2}{n^3+1}$ is",
+      "opts": [
+        "divergent by the Integral Test",
+        "divergent by the $n$th-Term Test",
+        "convergent by the Integral Test",
+        "convergent by the Comparison Test",
+        "convergent by the Limit Comparison Test"
+      ],
+      "ans": 0,
+      "hints": [
+        "For large $n$ the terms behave like a simple $p$-series term.",
+        "The terms are positive and decreasing for $n\\ge2$, so try the Integral Test with $\\int_2^\\infty\\dfrac{x^2}{x^3+1}\\,dx$.",
+        "Integral Test: for positive, decreasing $f$, $\\sum f(n)$ and $\\int^\\infty f(x)\\,dx$ both converge or both diverge. Also $\\int\\dfrac{u'}{u}\\,dx=\\ln|u|+C$."
+      ],
+      "steps": [
+        "The terms $\\dfrac{n^2}{n^3+1}\\to0$, so the $n$th-Term Test is inconclusive. The terms behave like $\\dfrac1n$.",
+        "$f(x)=\\dfrac{x^2}{x^3+1}$ is positive, and $f'(x)=\\dfrac{2x(x^3+1)-3x^4}{(x^3+1)^2}=\\dfrac{x(2-x^3)}{(x^3+1)^2}<0$ for $x\\ge2$.",
+        "$\\int_2^\\infty\\dfrac{x^2}{x^3+1}\\,dx=\\lim_{b\\to\\infty}\\dfrac13\\ln(x^3+1)\\Big|_2^b=\\infty$.",
+        "The integral diverges, so the series is divergent by the Integral Test."
+      ],
+      "brief": "$f$ positive and decreasing; $\\int_2^\\infty\\frac{x^2}{x^3+1}dx=\\infty$, so diverges by Integral Test."
+    },
+    {
+      "sec": "9.4",
+      "q": "The series $\\sum_{n=1}^{\\infty}\\frac{1}{1+2+3+4+\\cdots+n}$",
+      "opts": [
+        "converges by the limit comparison test",
+        "diverges by the integral test",
+        "converges by the ratio test",
+        "diverges by the $n$th term test for divergence",
+        "diverges by the comparison test"
+      ],
+      "ans": 0,
+      "hints": [
+        "First replace the sum in the denominator by a closed formula.",
+        "Use the formula for $1+2+\\cdots+n$ and compare the resulting terms with a $p$-series.",
+        "$1+2+\\cdots+n=\\dfrac{n(n+1)}{2}$. Limit Comparison Test: if $a_n,b_n>0$ and $\\lim\\dfrac{a_n}{b_n}=L$ with $0<L<\\infty$, then $\\sum a_n$ and $\\sum b_n$ converge or diverge together; $\\sum\\dfrac1{n^p}$ converges iff $p>1$."
+      ],
+      "steps": [
+        "$1+2+\\cdots+n=\\dfrac{n(n+1)}{2}$, so $a_n=\\dfrac{2}{n(n+1)}$.",
+        "Compare with $b_n=\\dfrac1{n^2}$: $\\dfrac{a_n}{b_n}=\\dfrac{2n^2}{n(n+1)}\\to2$.",
+        "$\\sum\\dfrac1{n^2}$ is a convergent $p$-series ($p=2$).",
+        "By the Limit Comparison Test, the series converges."
+      ],
+      "brief": "$a_n=\\frac{2}{n(n+1)}$; limit comparison with $\\sum\\frac1{n^2}$ (ratio $\\to2$): converges."
+    },
+    {
+      "sec": "9.5",
+      "q": "The series $\\sum_{n=1}^{\\infty}\\frac{(-1)^n\\sqrt[3]{n}}{n+1}$",
+      "opts": [
+        "converges conditionally",
+        "converges absolutely",
+        "diverges",
+        "is not bounded",
+        "is monotonic"
+      ],
+      "ans": 0,
+      "hints": [
+        "The series alternates, so test it for convergence and then test the absolute series.",
+        "Check the Alternating Series Test conditions, then use the Limit Comparison Test on $\\sum\\left|a_n\\right|$ with a $p$-series.",
+        "Alternating Series Test: $\\sum(-1)^nb_n$ converges if $b_n\\to0$ and $b_n$ is eventually decreasing. $\\sum\\frac1{n^p}$ converges iff $p>1$. A series that converges but not absolutely is conditionally convergent."
+      ],
+      "steps": [
+        "Let $b_n=\\dfrac{n^{1/3}}{n+1}$. Then $b_n\\to0$ since the degree of the denominator is larger.",
+        "$f(x)=\\dfrac{x^{1/3}}{x+1}$: $f'(x)=\\dfrac{\\frac13x^{-2/3}(x+1)-x^{1/3}}{(x+1)^2}=\\dfrac{\\frac13x^{-2/3}(1-2x)}{(x+1)^2}<0$ for $x\\ge1$, so $b_n$ is decreasing and the series converges.",
+        "For $\\sum b_n$: $\\dfrac{b_n}{1/n^{2/3}}=\\dfrac{n}{n+1}\\to1$, and $\\sum n^{-2/3}$ diverges ($p=\\tfrac23\\le1$).",
+        "So $\\sum|a_n|$ diverges while $\\sum a_n$ converges: conditional convergence."
+      ],
+      "brief": "AST holds ($b_n\\downarrow0$); $\\sum|a_n|\\sim\\sum n^{-2/3}$ diverges: conditionally convergent."
+    },
+    {
+      "sec": "9.6",
+      "q": "Which of the following statements is true about the two series \\[ \\text{(I)}\\ \\sum_{n=0}^{\\infty}\\frac{(n!)^3}{(3n)!},\\qquad \\text{(II)}\\ \\sum_{n=1}^{\\infty}\\left(\\frac{\\ln n}{n}\\right)^n \\]",
+      "opts": [
+        "Both series converge",
+        "The series (I) converges but the series (II) diverges",
+        "The series (I) diverges but the series (II) converges",
+        "Both series diverge",
+        "The sequence of partial sums of (II) is not monotonic"
+      ],
+      "ans": 0,
+      "hints": [
+        "Factorials suggest the Ratio Test; an expression raised to the power $n$ suggests the Root Test.",
+        "Apply the Ratio Test to (I) and the Root Test to (II), and compute the limits.",
+        "Ratio Test: $L=\\lim\\left|\\dfrac{a_{n+1}}{a_n}\\right|$; Root Test: $L=\\lim\\sqrt[n]{|a_n|}$. If $L<1$ the series converges absolutely, if $L>1$ it diverges."
+      ],
+      "steps": [
+        "(I): $\\dfrac{a_{n+1}}{a_n}=\\dfrac{(n+1)^3}{(3n+3)(3n+2)(3n+1)}\\to\\dfrac{1}{27}<1$, so (I) converges.",
+        "(II): $\\sqrt[n]{a_n}=\\dfrac{\\ln n}{n}\\to0<1$, so (II) converges.",
+        "Both series converge. (Terms of (II) are positive, so its partial sums are increasing.)"
+      ],
+      "brief": "(I) ratio test: $L=\\frac1{27}$; (II) root test: $L=0$. Both converge."
+    },
+    {
+      "sec": "9.7",
+      "q": "Using a fourth Maclaurin polynomial of the function $f(x)=e^{4x}$, the approximation of the value of $e$ is equal to",
+      "opts": [
+        "$\\dfrac{65}{24}$",
+        "$\\dfrac{67}{24}$",
+        "$\\dfrac{63}{24}$",
+        "$\\dfrac{61}{24}$",
+        "$\\dfrac{69}{24}$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Write the Maclaurin polynomial of degree 4 for $e^{4x}$, then pick the $x$ that makes $e^{4x}$ equal to $e$.",
+        "Solve $4x=1$ for $x$ and substitute it into the polynomial.",
+        "Maclaurin polynomial: $P_4(x)=\\sum_{k=0}^4\\dfrac{f^{(k)}(0)}{k!}x^k$; for $e^{u}$ this is $1+u+\\dfrac{u^2}{2!}+\\dfrac{u^3}{3!}+\\dfrac{u^4}{4!}$."
+      ],
+      "steps": [
+        "$e^{4x}\\approx P_4(x)=1+4x+\\dfrac{(4x)^2}{2!}+\\dfrac{(4x)^3}{3!}+\\dfrac{(4x)^4}{4!}$.",
+        "$e=e^{4x}$ when $4x=1$, i.e. $x=\\dfrac14$.",
+        "$e\\approx1+1+\\dfrac12+\\dfrac16+\\dfrac1{24}=\\dfrac{24+24+12+4+1}{24}$.",
+        "$=\\dfrac{65}{24}$."
+      ],
+      "brief": "$4x=1$: $e\\approx1+1+\\frac12+\\frac16+\\frac1{24}=\\frac{65}{24}$."
+    },
+    {
+      "sec": "9.8",
+      "q": "The interval of convergence of the power series $\\sum_{n=0}^{\\infty}\\frac{(-1)^nx^{2n+1}}{2n+1}$ is",
+      "opts": [
+        "$[-1,1]$",
+        "$(-1,1]$",
+        "$[-1,1)$",
+        "$(-1,1)$",
+        "$(-\\infty,\\infty)$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Find the radius of convergence with the Ratio Test, then test both endpoints separately.",
+        "Compute $\\lim\\left|\\dfrac{a_{n+1}}{a_n}\\right|$ and solve $L<1$ for $x$; then substitute $x=\\pm R$ into the series.",
+        "Ratio Test gives convergence when $L<1$. At an endpoint check with the Alternating Series Test: $\\sum(-1)^nb_n$ converges if $b_n\\to0$ and $b_n$ is decreasing."
+      ],
+      "steps": [
+        "$\\left|\\dfrac{a_{n+1}}{a_n}\\right|=\\dfrac{|x|^{2n+3}}{2n+3}\\cdot\\dfrac{2n+1}{|x|^{2n+1}}\\to x^2$.",
+        "$x^2<1$ gives $|x|<1$, so $R=1$.",
+        "At $x=1$: $\\sum\\dfrac{(-1)^n}{2n+1}$ converges by the Alternating Series Test.",
+        "At $x=-1$: $\\sum\\dfrac{(-1)^n(-1)^{2n+1}}{2n+1}=-\\sum\\dfrac{(-1)^n}{2n+1}$ also converges.",
+        "The interval of convergence is $[-1,1]$."
+      ],
+      "brief": "$R=1$; both endpoints give $\\pm\\sum\\frac{(-1)^n}{2n+1}$ (AST): $[-1,1]$."
+    },
+    {
+      "sec": "9.9",
+      "q": "A power series centered at $0$ for $f(x)=\\dfrac{2x+1}{x^2-1}$ is",
+      "opts": [
+        "$-\\sum_{n=0}^{\\infty}\\left(x^{2n}+2x^{(2n+1)}\\right)$",
+        "$\\sum_{n=0}^{\\infty}\\left(x^{2n}-2x^{(2n+1)}\\right)$",
+        "$\\sum_{n=0}^{\\infty}\\left(2x^{2n}-x^{(2n+1)}\\right)$",
+        "$\\sum_{n=0}^{\\infty}\\left(-2x^{2n}+x^{(2n+1)}\\right)$",
+        "$\\sum_{n=0}^{\\infty}\\left(x^{2n}+2x^{(2n+1)}\\right)$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Rewrite $\\dfrac{1}{x^2-1}$ so that it looks like a geometric series.",
+        "Factor out $-1$ from the denominator to get $\\dfrac{1}{1-r}$ with $r$ a function of $x$, expand, then multiply by $2x+1$.",
+        "$\\dfrac1{1-r}=\\sum_{n=0}^\\infty r^n$ for $|r|<1$; here $r$ is a power of $x$."
+      ],
+      "steps": [
+        "$f(x)=-(2x+1)\\cdot\\dfrac{1}{1-x^2}$.",
+        "$\\dfrac1{1-x^2}=\\sum_{n=0}^\\infty x^{2n}$ for $|x|<1$.",
+        "$f(x)=-(2x+1)\\sum_{n=0}^\\infty x^{2n}=-\\sum_{n=0}^\\infty\\left(2x^{2n+1}+x^{2n}\\right)$.",
+        "Check: $-(1+2x+x^2+2x^3+\\cdots)$, matching the expansion of $\\dfrac{2x+1}{x^2-1}$."
+      ],
+      "brief": "$f=-(2x+1)\\frac1{1-x^2}=-\\sum(x^{2n}+2x^{2n+1})$."
+    },
+    {
+      "sec": "9.10",
+      "q": "The Maclaurin Series for the function $f(x)=e^{\\frac{x^2}{2}}$ is",
+      "opts": [
+        "$\\sum_{n=0}^{\\infty}\\frac{x^{2n}}{2^n\\,n!}$",
+        "$\\sum_{n=0}^{\\infty}\\frac{x^{n^2}}{2^n\\,n!}$",
+        "$\\sum_{n=0}^{\\infty}\\frac{x^{2n}}{2^{n+1}\\,n!}$",
+        "$\\sum_{n=0}^{\\infty}\\frac{x^{2n}}{n!}$",
+        "$\\sum_{n=0}^{\\infty}\\frac{(-1)^nx^{2n}}{2^n\\,n!}$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Use the known Maclaurin series of $e^u$ and substitute.",
+        "Replace $u$ by the exponent of $e$ in the function and simplify the powers.",
+        "$e^u=\\sum_{n=0}^\\infty\\frac{u^n}{n!}$ for all $u$."
+      ],
+      "steps": [
+        "$e^u=\\sum_{n=0}^\\infty\\dfrac{u^n}{n!}$; put $u=\\dfrac{x^2}{2}$.",
+        "$\\dfrac{u^n}{n!}=\\dfrac{(x^2/2)^n}{n!}=\\dfrac{x^{2n}}{2^n\\,n!}$.",
+        "So $e^{x^2/2}=\\sum_{n=0}^\\infty\\dfrac{x^{2n}}{2^n\\,n!}$."
+      ],
+      "brief": "$e^u$ with $u=\\frac{x^2}2$: $\\sum\\frac{x^{2n}}{2^nn!}$."
+    }
+  ]
+}

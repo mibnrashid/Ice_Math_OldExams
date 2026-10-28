@@ -1,0 +1,678 @@
+{
+  "course": "math102",
+  "term": "221",
+  "kind": "fx",
+  "date": "",
+  "minutes": 120,
+  "source": "math102-221-fx.pdf",
+  "note": "Scanned master with no cover page: exam date and duration are not printed, so date is left empty and minutes set to 120 by default. All 28 master keys (marked correct) were checked by hand and with sympy and agree. Q1 choice (b) is printed with a final term x^4/(7!)^2; transcribed as printed. Q19 exponent read as p/2 (zoomed). Q21 exponents 2.1 and 0.1 were printed with a raised dot as decimal points. Q20 sum index is printed as i=1 while the term uses n; kept as printed. Q23: series is also absolutely convergent, key kept.",
+  "qs": [
+    {
+      "sec": "9.10",
+      "q": "$\\sin^2 x=$",
+      "opts": [
+        "$\\dfrac{2}{2!}x^2-\\dfrac{2^3}{4!}x^4+\\dfrac{2^5}{6!}x^6-\\dfrac{2^7}{8!}x^8+\\cdots$",
+        "$x^2+\\dfrac{x^6}{(3!)^2}+\\dfrac{x^{10}}{(5!)^2}+\\dfrac{x^4}{(7!)^2}+\\cdots$",
+        "$\\dfrac12-\\dfrac{2}{2!}x^2+\\dfrac{2^3}{4!}x^4-\\dfrac{2^5}{6!}x^6+\\cdots$",
+        "$1-\\dfrac{x^2}{2!}+\\dfrac{x^4}{4!}-\\dfrac{x^6}{6!}+\\dfrac{x^8}{8!}-\\cdots$",
+        "$1-\\left(\\sum_{n=0}^{\\infty}\\dfrac{(-1)^nx^{2n+1}}{(2n+1)!}\\right)^2$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Rewrite $\\sin^2x$ with a double-angle identity so that a known Maclaurin series can be used.",
+        "Express $\\sin^2x$ using $\\cos 2x$, then substitute $2x$ into the series of cosine.",
+        "$\\sin^2\\theta=\\dfrac{1-\\cos2\\theta}{2}$ and $\\cos t=\\sum_{n=0}^{\\infty}\\dfrac{(-1)^nt^{2n}}{(2n)!}$."
+      ],
+      "steps": [
+        "$\\sin^2x=\\dfrac{1-\\cos 2x}{2}$.",
+        "$\\cos2x=1-\\dfrac{(2x)^2}{2!}+\\dfrac{(2x)^4}{4!}-\\dfrac{(2x)^6}{6!}+\\cdots$.",
+        "So $1-\\cos2x=\\dfrac{2^2x^2}{2!}-\\dfrac{2^4x^4}{4!}+\\dfrac{2^6x^6}{6!}-\\cdots$.",
+        "Divide by 2: $\\sin^2x=\\dfrac{2}{2!}x^2-\\dfrac{2^3}{4!}x^4+\\dfrac{2^5}{6!}x^6-\\cdots$."
+      ],
+      "brief": "$\\sin^2x=\\frac{1-\\cos2x}{2}$, expand $\\cos2x$: $\\frac{2}{2!}x^2-\\frac{2^3}{4!}x^4+\\cdots$."
+    },
+    {
+      "sec": "5.4",
+      "q": "$\\lim_{h\\to0}\\frac1h\\int_2^{2+h}\\sqrt{1+t^3}\\,dt=$",
+      "opts": [
+        "$3$",
+        "$0$",
+        "$\\sqrt2$",
+        "$\\sqrt3$",
+        "$4$"
+      ],
+      "ans": 0,
+      "hints": [
+        "The expression is a difference quotient of an integral function.",
+        "Define $F(x)=\\int_2^x\\sqrt{1+t^3}\\,dt$ and recognise the limit as a derivative of $F$ at a point.",
+        "If $F(x)=\\int_a^x f(t)\\,dt$ with $f$ continuous, then $F'(x)=f(x)$, and $F'(c)=\\lim_{h\\to0}\\dfrac{F(c+h)-F(c)}{h}$."
+      ],
+      "steps": [
+        "Let $F(x)=\\int_2^x\\sqrt{1+t^3}\\,dt$, so $F(2)=0$.",
+        "Then $\\dfrac1h\\int_2^{2+h}\\sqrt{1+t^3}\\,dt=\\dfrac{F(2+h)-F(2)}{h}$.",
+        "The limit is $F'(2)=\\sqrt{1+2^3}=\\sqrt9=3$."
+      ],
+      "brief": "Limit equals $F'(2)$ with $F'(x)=\\sqrt{1+x^3}$, so the value is $3$."
+    },
+    {
+      "sec": "5.4",
+      "q": "$\\int_0^3|x^2-4|\\,dx=$",
+      "opts": [
+        "$\\dfrac{23}{3}$",
+        "$\\dfrac{29}{3}$",
+        "$21$",
+        "$\\dfrac{17}{2}$",
+        "$\\dfrac{16}{3}$"
+      ],
+      "ans": 0,
+      "hints": [
+        "An absolute value in the integrand means the integral must be split where the inside changes sign.",
+        "Find where $x^2-4=0$ on $[0,3]$ and decide the sign of $x^2-4$ on each piece.",
+        "$|g(x)|=g(x)$ where $g\\ge0$ and $-g(x)$ where $g\\le0$; split the integral at the point where $g$ changes sign."
+      ],
+      "steps": [
+        "$x^2-4<0$ on $[0,2)$ and $x^2-4\\ge0$ on $[2,3]$.",
+        "$\\int_0^2(4-x^2)\\,dx=\\left[4x-\\tfrac{x^3}{3}\\right]_0^2=8-\\tfrac83=\\tfrac{16}{3}$.",
+        "$\\int_2^3(x^2-4)\\,dx=\\left[\\tfrac{x^3}{3}-4x\\right]_2^3=(9-12)-\\left(\\tfrac83-8\\right)=\\tfrac73$.",
+        "Total: $\\dfrac{16}{3}+\\dfrac73=\\dfrac{23}{3}$."
+      ],
+      "brief": "Split at $x=2$: $\\frac{16}{3}+\\frac73=\\frac{23}{3}$."
+    },
+    {
+      "sec": "5.5",
+      "q": "$\\int_0^1\\frac{dx}{(1+\\sqrt x)^4}=$",
+      "opts": [
+        "$\\dfrac16$",
+        "$\\dfrac26$",
+        "$\\dfrac1{16}$",
+        "$\\dfrac38$",
+        "$\\dfrac3{16}$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Substitution removes the square root.",
+        "Let $u=\\sqrt x$, so $x=u^2$ and $dx=2u\\,du$; change the limits, then shift again with $w=1+u$.",
+        "Substitution for definite integrals: $\\int_a^b f(g(x))g'(x)\\,dx=\\int_{g(a)}^{g(b)}f(u)\\,du$, and $\\int w^n\\,dw=\\dfrac{w^{n+1}}{n+1}$ for $n\\ne-1$."
+      ],
+      "steps": [
+        "With $u=\\sqrt x$: $\\int_0^1\\frac{2u}{(1+u)^4}\\,du$.",
+        "Let $w=1+u$: $2\\int_1^2\\frac{w-1}{w^4}\\,dw=2\\int_1^2\\left(w^{-3}-w^{-4}\\right)dw$.",
+        "$=2\\left[-\\dfrac1{2w^2}+\\dfrac1{3w^3}\\right]_1^2=2\\left[\\left(-\\tfrac18+\\tfrac1{24}\\right)-\\left(-\\tfrac12+\\tfrac13\\right)\\right]$.",
+        "$=2\\left[-\\tfrac1{12}+\\tfrac16\\right]=\\dfrac16$."
+      ],
+      "brief": "$u=\\sqrt x$, $w=1+u$: $2\\int_1^2(w^{-3}-w^{-4})dw=\\frac16$."
+    },
+    {
+      "sec": "7.1",
+      "q": "The area of the region bounded by $y=x^2\\ln x$ and $y=4\\ln x$ is equal to:",
+      "opts": [
+        "$\\dfrac{16}{3}\\ln2-\\dfrac{29}{9}$",
+        "$\\dfrac{16\\ln2-3}{9}$",
+        "$2\\ln2-1$",
+        "$\\dfrac83e-\\dfrac12e$",
+        "$\\dfrac{e^2}{2}-e\\ln2$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Area between two curves: find the intersection points first, then integrate the top minus the bottom.",
+        "Set $x^2\\ln x=4\\ln x$ with $x>0$ to find the limits, and check which curve is on top between them. Integrating $\\ln x$ times a power needs integration by parts.",
+        "Area $=\\int_a^b\\left(f_{\\text{top}}-f_{\\text{bottom}}\\right)dx$; $\\int\\ln x\\,dx=x\\ln x-x$ and $\\int x^n\\ln x\\,dx=\\dfrac{x^{n+1}}{n+1}\\ln x-\\dfrac{x^{n+1}}{(n+1)^2}$ for $n\\ne-1$."
+      ],
+      "steps": [
+        "$(x^2-4)\\ln x=0$ gives $x=1$ or $x=2$ (domain $x>0$).",
+        "On $(1,2)$: $\\ln x>0$ and $x^2<4$, so $4\\ln x$ is on top. Area $=\\int_1^2(4-x^2)\\ln x\\,dx$.",
+        "$\\int_1^2 4\\ln x\\,dx=4[x\\ln x-x]_1^2=8\\ln2-4$.",
+        "$\\int_1^2x^2\\ln x\\,dx=\\left[\\tfrac{x^3}{3}\\ln x-\\tfrac{x^3}{9}\\right]_1^2=\\tfrac83\\ln2-\\tfrac79$.",
+        "Area $=8\\ln2-4-\\tfrac83\\ln2+\\tfrac79=\\dfrac{16}{3}\\ln2-\\dfrac{29}{9}$."
+      ],
+      "brief": "Limits $x=1,2$; $\\int_1^2(4-x^2)\\ln x\\,dx=\\frac{16}{3}\\ln2-\\frac{29}{9}$."
+    },
+    {
+      "sec": "5.4",
+      "q": "$\\int_1^9\\frac{2x^2+x^2\\sqrt x-1}{x^2}\\,dx$",
+      "opts": [
+        "$32\\dfrac49$",
+        "$29\\dfrac14$",
+        "$34\\dfrac12$",
+        "$36\\dfrac14$",
+        "$33\\dfrac34$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Split the fraction term by term before integrating.",
+        "Divide each term of the numerator by $x^2$ and write everything as powers of $x$.",
+        "Power rule: $\\int x^n\\,dx=\\dfrac{x^{n+1}}{n+1}$ for $n\\ne-1$, and $\\sqrt x=x^{1/2}$."
+      ],
+      "steps": [
+        "The integrand is $2+x^{1/2}-x^{-2}$.",
+        "Antiderivative: $2x+\\tfrac23x^{3/2}+\\tfrac1x$.",
+        "At $9$: $18+18+\\tfrac19$. At $1$: $2+\\tfrac23+1=\\tfrac{11}{3}$.",
+        "Difference: $36+\\tfrac19-\\tfrac{11}{3}=\\tfrac{324+1-33}{9}=\\tfrac{292}{9}=32\\tfrac49$."
+      ],
+      "brief": "Integrand $2+x^{1/2}-x^{-2}$; value $\\frac{292}{9}=32\\frac49$."
+    },
+    {
+      "sec": "7.2",
+      "q": "Given that the base of a solid is the region bounded by the parabolas $y=x^2$ and $y=2-x^2$. The volume of the solid if the cross-sections perpendicular to the $x$-axis are squares with one side lying along the base is:",
+      "opts": [
+        "$\\dfrac{64}{15}$",
+        "$\\dfrac{8}{15}$",
+        "$\\dfrac{32}{15}$",
+        "$\\dfrac{28}{15}$",
+        "$\\dfrac{16}{15}$"
+      ],
+      "ans": 0,
+      "hints": [
+        "This is a volume by cross-sections of known shape.",
+        "Find where the parabolas meet, then write the side length of the square at a given $x$ as the distance between the curves.",
+        "$V=\\int_a^bA(x)\\,dx$, where for a square cross-section $A=(\\text{side})^2$."
+      ],
+      "steps": [
+        "$x^2=2-x^2$ gives $x=\\pm1$.",
+        "Side $=(2-x^2)-x^2=2-2x^2$, so $A(x)=4(1-x^2)^2$.",
+        "$V=4\\int_{-1}^{1}(1-2x^2+x^4)\\,dx=8\\left[x-\\tfrac{2x^3}{3}+\\tfrac{x^5}{5}\\right]_0^1$.",
+        "$=8\\left(1-\\tfrac23+\\tfrac15\\right)=8\\cdot\\tfrac{8}{15}=\\dfrac{64}{15}$."
+      ],
+      "brief": "Side $2-2x^2$ on $[-1,1]$: $V=4\\int_{-1}^1(1-x^2)^2dx=\\frac{64}{15}$."
+    },
+    {
+      "sec": "7.3",
+      "q": "Using the method of cylindrical shell, the volume generated by rotating the region bounded by $y=x^3$, $y=0$, $x=1$ about $y=1$ is equal to:",
+      "opts": [
+        "$\\dfrac{5\\pi}{14}$",
+        "$\\dfrac{10\\pi}{14}$",
+        "$\\dfrac{13}{14}\\pi$",
+        "$\\dfrac{16}{14}\\pi$",
+        "$\\dfrac{3}{14}\\pi$"
+      ],
+      "ans": 0,
+      "hints": [
+        "The axis of revolution is horizontal, so the shells are horizontal and the integration variable is $y$.",
+        "Write the region as $y^{1/3}\\le x\\le1$ for $0\\le y\\le1$; find the shell radius (distance from $y$ to the axis) and the shell height.",
+        "Shell method: $V=2\\pi\\int_c^d(\\text{radius})(\\text{height})\\,dy$."
+      ],
+      "steps": [
+        "For $0\\le y\\le1$ the region runs from $x=y^{1/3}$ to $x=1$, so height $=1-y^{1/3}$.",
+        "Radius (distance to $y=1$) $=1-y$.",
+        "$V=2\\pi\\int_0^1(1-y)(1-y^{1/3})\\,dy=2\\pi\\int_0^1\\left(1-y^{1/3}-y+y^{4/3}\\right)dy$.",
+        "$=2\\pi\\left(1-\\tfrac34-\\tfrac12+\\tfrac37\\right)=2\\pi\\cdot\\tfrac{5}{28}=\\dfrac{5\\pi}{14}$."
+      ],
+      "brief": "Radius $1-y$, height $1-y^{1/3}$: $V=2\\pi\\int_0^1(1-y)(1-y^{1/3})dy=\\frac{5\\pi}{14}$."
+    },
+    {
+      "sec": "5.4",
+      "q": "The average value of $f(x)=\\sin^2x\\cos^3x$ over $[-\\pi,\\pi]$ is equal to:",
+      "opts": [
+        "$0$",
+        "$\\dfrac{1}{2\\pi}$",
+        "$\\dfrac{1}{15\\pi}$",
+        "$\\dfrac{1}{15}\\left(\\pi^3-\\pi^5\\right)$",
+        "$\\dfrac{\\pi}{15}\\left(\\pi^5-\\pi^3\\right)$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Use the formula for the average value of a function, then evaluate the integral of a trigonometric product.",
+        "The power of cosine is odd: save one factor of $\\cos x$, convert the rest with $\\cos^2x=1-\\sin^2x$, and substitute $u=\\sin x$.",
+        "Average value $=\\dfrac{1}{b-a}\\int_a^bf(x)\\,dx$, and $\\int_a^af(x)\\,dx=0$."
+      ],
+      "steps": [
+        "Average $=\\dfrac1{2\\pi}\\int_{-\\pi}^{\\pi}\\sin^2x\\cos^3x\\,dx$.",
+        "Write $\\cos^3x=(1-\\sin^2x)\\cos x$ and let $u=\\sin x$, $du=\\cos x\\,dx$.",
+        "The integral becomes $\\int_{u(-\\pi)}^{u(\\pi)}u^2(1-u^2)\\,du$ with $u(-\\pi)=u(\\pi)=0$.",
+        "The limits are equal, so the integral is $0$ and the average value is $0$."
+      ],
+      "brief": "$u=\\sin x$ gives equal limits $0,0$, so the integral and the average are $0$."
+    },
+    {
+      "sec": "5.5",
+      "q": "$\\int\\frac{1}{\\sqrt x-\\sqrt[3]{x}}\\,dx=$  (Hint: Substitute $u=\\sqrt[6]{x}$)",
+      "opts": [
+        "$2\\sqrt x+3\\sqrt[3]{x}+6\\sqrt[6]{x}+6\\ln\\left|\\sqrt[6]{x}-1\\right|+c$",
+        "$\\sqrt x-\\dfrac32\\sqrt[4]{x}+3\\ln\\left|\\sqrt[6]{x-1}\\right|+c$",
+        "$\\sqrt x\\sqrt[6]{x-1}+3\\sqrt[4]{x}+\\dfrac16\\ln\\left|\\sqrt[3]{x-1}\\right|+c$",
+        "$6\\sqrt[3]{x}+6\\ln\\left|1-\\sqrt[4]{x}\\right|+c$",
+        "$\\sqrt[4]{x}-\\dfrac32\\sqrt[3]{x}+6\\ln\\left|\\sqrt[3]{x}-\\dfrac12\\right|+c$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Roots of different orders appear, so use a substitution that makes all of them powers of one variable.",
+        "Put $u=\\sqrt[6]{x}$, so $x=u^6$ and $dx=6u^5\\,du$; write $\\sqrt x$ and $\\sqrt[3]{x}$ in terms of $u$, then simplify the resulting rational function.",
+        "When the degree of the numerator is at least the degree of the denominator, divide first (polynomial long division), and $\\int\\dfrac{du}{u-a}=\\ln|u-a|$."
+      ],
+      "steps": [
+        "$\\sqrt x=u^3$, $\\sqrt[3]{x}=u^2$, $dx=6u^5du$.",
+        "The integral becomes $\\int\\frac{6u^5}{u^3-u^2}\\,du=\\int\\frac{6u^3}{u-1}\\,du$.",
+        "Long division: $\\dfrac{u^3}{u-1}=u^2+u+1+\\dfrac1{u-1}$.",
+        "$6\\left(\\tfrac{u^3}{3}+\\tfrac{u^2}{2}+u+\\ln|u-1|\\right)+c=2u^3+3u^2+6u+6\\ln|u-1|+c$.",
+        "Back-substitute: $2\\sqrt x+3\\sqrt[3]{x}+6\\sqrt[6]{x}+6\\ln\\left|\\sqrt[6]{x}-1\\right|+c$."
+      ],
+      "brief": "$u=\\sqrt[6]{x}$: $\\int\\frac{6u^3}{u-1}du=2u^3+3u^2+6u+6\\ln|u-1|+c$."
+    },
+    {
+      "sec": "7.4",
+      "q": "The length of $y=\\ln(1-x^2)$ over $\\left[0,\\dfrac12\\right]$ is",
+      "opts": [
+        "$\\ln3-\\dfrac12$",
+        "$2\\ln3$",
+        "$\\ln3-\\ln2$",
+        "$\\dfrac12\\ln(1+e)$",
+        "$\\ln(e-1)$"
+      ],
+      "ans": 0,
+      "hints": [
+        "This is an arc length problem.",
+        "Compute $y'$, then simplify $1+(y')^2$ to a perfect square.",
+        "$L=\\int_a^b\\sqrt{1+\\left(y'\\right)^2}\\,dx$, and $\\int\\frac{dx}{1-x^2}=\\frac12\\ln\\left|\\frac{1+x}{1-x}\\right|$."
+      ],
+      "steps": [
+        "$y'=\\dfrac{-2x}{1-x^2}$, so $1+(y')^2=\\dfrac{(1-x^2)^2+4x^2}{(1-x^2)^2}=\\dfrac{(1+x^2)^2}{(1-x^2)^2}$.",
+        "$\\sqrt{1+(y')^2}=\\dfrac{1+x^2}{1-x^2}=-1+\\dfrac{2}{1-x^2}$ on $[0,\\tfrac12]$.",
+        "$L=\\left[-x+\\ln\\dfrac{1+x}{1-x}\\right]_0^{1/2}$.",
+        "$=-\\tfrac12+\\ln\\dfrac{3/2}{1/2}=\\ln3-\\tfrac12$."
+      ],
+      "brief": "$\\sqrt{1+y'^2}=\\frac{1+x^2}{1-x^2}=-1+\\frac{2}{1-x^2}$, so $L=\\ln3-\\frac12$."
+    },
+    {
+      "sec": "7.4",
+      "q": "The surface area that obtained when the curve $y=\\sin(\\pi x)$, $0\\le x\\le1$ is revolved about the $x$-axis is equal to:",
+      "opts": [
+        "$2\\sqrt{1+\\pi^2}+\\dfrac2\\pi\\ln\\left(\\pi+\\sqrt{1+\\pi^2}\\right)$",
+        "$\\dfrac4\\pi\\sqrt{1+\\pi^2}+\\ln\\left(\\sqrt{1+\\pi^2}\\right)$",
+        "$\\dfrac2\\pi\\ln\\left(\\sqrt{\\pi+\\sqrt{1+\\pi^2}}\\right)$",
+        "$\\dfrac2\\pi\\ln\\left(\\pi^2+\\sqrt{1+\\pi}\\right)$",
+        "$\\dfrac1\\pi\\ln\\left(\\pi+\\sqrt{\\pi^2+\\pi}\\right)$"
+      ],
+      "ans": 0,
+      "hints": [
+        "This is a surface of revolution about the $x$-axis.",
+        "Write $S=2\\pi\\int y\\sqrt{1+(y')^2}\\,dx$ and substitute $u=\\pi\\cos(\\pi x)$ (so that $y'$ appears as $u$ and $\\sin\\pi x\\,dx$ becomes a multiple of $du$).",
+        "$S=2\\pi\\int_a^b y\\sqrt{1+(y')^2}\\,dx$, and $\\int\\sqrt{1+u^2}\\,du=\\tfrac12\\left(u\\sqrt{1+u^2}+\\ln\\left(u+\\sqrt{1+u^2}\\right)\\right)+C$."
+      ],
+      "steps": [
+        "$y'=\\pi\\cos\\pi x$, so $S=2\\pi\\int_0^1\\sin(\\pi x)\\sqrt{1+\\pi^2\\cos^2\\pi x}\\,dx$.",
+        "Let $u=\\pi\\cos\\pi x$, $du=-\\pi^2\\sin\\pi x\\,dx$; $x=0\\to u=\\pi$, $x=1\\to u=-\\pi$.",
+        "$S=\\dfrac{2\\pi}{\\pi^2}\\int_{-\\pi}^{\\pi}\\sqrt{1+u^2}\\,du=\\dfrac4\\pi\\int_0^{\\pi}\\sqrt{1+u^2}\\,du$ (even integrand).",
+        "$=\\dfrac4\\pi\\cdot\\dfrac12\\left[\\pi\\sqrt{1+\\pi^2}+\\ln\\left(\\pi+\\sqrt{1+\\pi^2}\\right)\\right]$.",
+        "$=2\\sqrt{1+\\pi^2}+\\dfrac2\\pi\\ln\\left(\\pi+\\sqrt{1+\\pi^2}\\right)$."
+      ],
+      "brief": "$u=\\pi\\cos\\pi x$: $S=\\frac4\\pi\\int_0^\\pi\\sqrt{1+u^2}du=2\\sqrt{1+\\pi^2}+\\frac2\\pi\\ln(\\pi+\\sqrt{1+\\pi^2})$."
+    },
+    {
+      "sec": "5.8",
+      "q": "$\\int\\frac{dx}{\\sqrt{e^x-1}}=$",
+      "opts": [
+        "$2\\tan^{-1}\\left(\\sqrt{e^x-1}\\right)+c$",
+        "$\\dfrac12\\tan^{-1}\\left(\\dfrac12x\\right)+c$",
+        "$\\dfrac e2\\tan^{-1}\\left(\\sqrt{e^x-1}\\right)+c$",
+        "$\\dfrac2e\\tan^{-1}\\left(\\dfrac x2\\right)+c$",
+        "$\\dfrac2e\\tan^{-1}\\left(\\sqrt{e^x-1}\\right)+c$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Substitute for the whole square root so that the integrand becomes a standard inverse trigonometric form.",
+        "Let $u=\\sqrt{e^x-1}$, so $u^2+1=e^x$; differentiate to express $dx$ in terms of $u$ and $du$.",
+        "$\\int\\frac{du}{1+u^2}=\\tan^{-1}u+C$."
+      ],
+      "steps": [
+        "$u^2=e^x-1$, so $2u\\,du=e^x\\,dx=(u^2+1)\\,dx$ and $dx=\\dfrac{2u}{u^2+1}\\,du$.",
+        "The integral becomes $\\int\\frac1u\\cdot\\frac{2u}{u^2+1}\\,du=2\\int\\frac{du}{1+u^2}$.",
+        "$=2\\tan^{-1}u+c=2\\tan^{-1}\\left(\\sqrt{e^x-1}\\right)+c$."
+      ],
+      "brief": "$u=\\sqrt{e^x-1}$: $dx=\\frac{2u\\,du}{1+u^2}$, so the integral is $2\\tan^{-1}u+c$."
+    },
+    {
+      "sec": "8.8",
+      "q": "$\\int_0^\\infty x^2e^{-x^2}\\,dx=$",
+      "opts": [
+        "$\\dfrac12\\int_0^\\infty e^{-x^2}\\,dx$",
+        "$2\\int_0^\\infty xe^{-x^2}\\,dx$",
+        "$0$",
+        "$\\int_{-\\infty}^\\infty xe^{-x^2}\\,dx$",
+        "$\\dfrac12\\int_0^\\infty xe^{-x}\\,dx$"
+      ],
+      "ans": 0,
+      "hints": [
+        "The antiderivative of $e^{-x^2}$ is not elementary, so use integration by parts to relate this integral to a simpler one.",
+        "Write $x^2e^{-x^2}=x\\cdot\\left(xe^{-x^2}\\right)$ and take $u=x$, $dv=xe^{-x^2}dx$.",
+        "$\\int u\\,dv=uv-\\int v\\,du$, and improper integrals are evaluated with $\\int_0^\\infty=\\lim_{b\\to\\infty}\\int_0^b$."
+      ],
+      "steps": [
+        "Let $u=x$, $dv=xe^{-x^2}dx$, so $du=dx$ and $v=-\\tfrac12e^{-x^2}$.",
+        "$\\int_0^bx^2e^{-x^2}dx=\\left[-\\tfrac x2e^{-x^2}\\right]_0^b+\\tfrac12\\int_0^be^{-x^2}dx$.",
+        "As $b\\to\\infty$, $-\\tfrac b2e^{-b^2}\\to0$.",
+        "Hence $\\int_0^\\infty x^2e^{-x^2}dx=\\tfrac12\\int_0^\\infty e^{-x^2}dx$."
+      ],
+      "brief": "By parts ($u=x$, $dv=xe^{-x^2}dx$): the boundary term vanishes, leaving $\\frac12\\int_0^\\infty e^{-x^2}dx$."
+    },
+    {
+      "sec": "9.1",
+      "q": "A formula for the general term $a_n$ of the sequence $\\left\\{\\dfrac35,\\dfrac{-4}{25},\\dfrac{5}{125},-\\dfrac{6}{625},\\dfrac{7}{3125},\\ldots\\right\\}$ is",
+      "opts": [
+        "$(-1)^{n-1}\\dfrac{n+2}{5^n}$, $n\\ge1$",
+        "$(-1)^{n-1}\\dfrac{n+2}{5^n}$, $n\\ge0$",
+        "$(-1)^{n}\\dfrac{n+2}{5^n}$, $n>1$",
+        "$(-1)^{n-1}\\dfrac{n+3}{5^{n+1}}$, $n\\ge0$",
+        "$(-1)^{n}\\dfrac{n+3}{5^n}$, $n\\ge0$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Look separately at the sign pattern, the numerators and the denominators.",
+        "The denominators are powers of 5, the numerators increase by 1, and the signs alternate starting with plus; match this to the starting index.",
+        "An alternating sign that starts with $+$ at the first index $n_0$ is $(-1)^{n-n_0}$; the formula must reproduce the first listed term at $n=n_0$."
+      ],
+      "steps": [
+        "Denominators: $5,25,125,\\ldots$ equal $5^n$ for $n=1,2,3,\\ldots$.",
+        "Numerators: $3,4,5,6,7,\\ldots$ equal $n+2$ for $n=1,2,3,\\ldots$.",
+        "Signs: $+,-,+,-,\\ldots$ equal $(-1)^{n-1}$ for $n=1,2,\\ldots$.",
+        "So $a_n=(-1)^{n-1}\\dfrac{n+2}{5^n}$ for $n\\ge1$ (with $n\\ge0$ the first term would be $2$, not $\\frac35$)."
+      ],
+      "brief": "$a_n=(-1)^{n-1}\\frac{n+2}{5^n}$ starting at $n=1$ ($a_1=\\frac35$)."
+    },
+    {
+      "sec": "9.1",
+      "q": "The sequence $a_n=\\dfrac{\\sin2n}{1+\\sqrt n}$",
+      "opts": [
+        "converges to $0$",
+        "converges to $1$",
+        "converges to $2$",
+        "diverges",
+        "converges to $-1$"
+      ],
+      "ans": 0,
+      "hints": [
+        "The numerator oscillates but stays bounded while the denominator grows.",
+        "Bound $|a_n|$ above using $|\\sin2n|\\le1$ and use the squeeze theorem.",
+        "Squeeze theorem: if $|a_n|\\le b_n$ and $b_n\\to0$, then $a_n\\to0$."
+      ],
+      "steps": [
+        "$|\\sin2n|\\le1$, so $0\\le|a_n|\\le\\dfrac{1}{1+\\sqrt n}$.",
+        "$\\dfrac1{1+\\sqrt n}\\to0$ as $n\\to\\infty$.",
+        "By the squeeze theorem $|a_n|\\to0$, so $a_n\\to0$."
+      ],
+      "brief": "$|a_n|\\le\\frac{1}{1+\\sqrt n}\\to0$, so $a_n\\to0$ by squeeze."
+    },
+    {
+      "sec": "9.2",
+      "q": "The series $\\sum_{n=1}^{\\infty}\\left(\\frac{2}{e^n}+\\frac{1}{2n(n+1)}\\right)$",
+      "opts": [
+        "converges and the sum is $\\dfrac{3+e}{2e-2}$",
+        "converges and the sum is $\\dfrac{e}{e-1}$",
+        "converges and the sum is $\\dfrac{1}{e-1}$",
+        "converges and the sum is $\\dfrac{2}{e-1}$",
+        "converges and the sum is $\\dfrac{e+1}{e-1}$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Split into two series: one geometric and one telescoping.",
+        "Sum $\\sum 2e^{-n}$ as a geometric series, and use partial fractions on $\\dfrac{1}{n(n+1)}$.",
+        "Geometric series: $\\sum_{n=1}^\\infty ar^{n-1}=\\dfrac{a}{1-r}$ for $|r|<1$; telescoping: $\\dfrac1{n(n+1)}=\\dfrac1n-\\dfrac1{n+1}$."
+      ],
+      "steps": [
+        "$\\sum_{n=1}^\\infty2e^{-n}$ is geometric with first term $\\dfrac2e$ and ratio $\\dfrac1e$: sum $=\\dfrac{2/e}{1-1/e}=\\dfrac2{e-1}$.",
+        "$\\dfrac1{2n(n+1)}=\\dfrac12\\left(\\dfrac1n-\\dfrac1{n+1}\\right)$, so the partial sums are $\\dfrac12\\left(1-\\dfrac1{N+1}\\right)\\to\\dfrac12$.",
+        "Total: $\\dfrac2{e-1}+\\dfrac12=\\dfrac{4+e-1}{2(e-1)}=\\dfrac{3+e}{2e-2}$."
+      ],
+      "brief": "Geometric $\\frac{2}{e-1}$ plus telescoping $\\frac12$ gives $\\frac{3+e}{2e-2}$."
+    },
+    {
+      "sec": "9.2",
+      "q": "The series $\\sum_{n=1}^{\\infty}\\ln\\left(1+\\frac1n\\right)$ is",
+      "opts": [
+        "diverges",
+        "converges to $0$",
+        "converges to $\\dfrac12$",
+        "converges to $2$",
+        "converges to $3$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Rewrite the logarithm so that the series telescopes.",
+        "Combine $1+\\frac1n$ into a single fraction and split the logarithm of a quotient into a difference; then look at the partial sums.",
+        "$\\ln\\dfrac ab=\\ln a-\\ln b$; a series converges only if its sequence of partial sums $S_N$ has a finite limit."
+      ],
+      "steps": [
+        "$\\ln\\left(1+\\tfrac1n\\right)=\\ln(n+1)-\\ln n$.",
+        "Partial sum: $S_N=\\ln(N+1)-\\ln1=\\ln(N+1)$.",
+        "$\\ln(N+1)\\to\\infty$ as $N\\to\\infty$, so the series diverges."
+      ],
+      "brief": "Telescopes to $S_N=\\ln(N+1)\\to\\infty$, so it diverges."
+    },
+    {
+      "sec": "9.3",
+      "q": "The values of $p$ for which the series $\\sum_{n=1}^{\\infty}n\\left(\\left(1+(2n)^2\\right)^{\\frac p2}\\right)$ is convergent.",
+      "opts": [
+        "$p<-2$",
+        "$p<1$",
+        "$p<0$",
+        "$p<-1$",
+        "$p>-2$"
+      ],
+      "ans": 0,
+      "hints": [
+        "For large $n$ the term behaves like a pure power of $n$, so compare with a $p$-series.",
+        "Since $1+(2n)^2$ is comparable to $4n^2$, estimate the size of the term as a constant times a power of $n$ and use the limit comparison test.",
+        "The $p$-series $\\sum\\frac1{n^s}$ converges if and only if $s>1$; $(cn^k)^{m}=c^mn^{km}$ for $n>0$."
+      ],
+      "steps": [
+        "For large $n$, $\\left(1+4n^2\\right)^{p/2}\\sim(4n^2)^{p/2}=2^pn^p$.",
+        "So $a_n=n\\left(1+4n^2\\right)^{p/2}\\sim2^p\\,n^{p+1}=\\dfrac{2^p}{n^{-p-1}}$.",
+        "Limit comparison with $\\sum\\frac1{n^{-p-1}}$ gives a finite positive limit, so both behave alike.",
+        "It converges when $-p-1>1$, that is $p<-2$."
+      ],
+      "brief": "Term $\\sim2^pn^{p+1}$; a $p$-series with exponent $-p-1>1$ converges, so $p<-2$."
+    },
+    {
+      "sec": "9.3",
+      "q": "The series $\\sum_{i=1}^{\\infty}\\frac{\\ln n}{n^2}$",
+      "opts": [
+        "converges by integral test $\\int_1^\\infty\\frac{\\ln x}{x^2}\\,dx=1$",
+        "converges by integral test $\\int_1^\\infty\\frac{\\ln x}{x^2}\\,dx=\\dfrac12$",
+        "converges by integral test $\\int_1^\\infty\\frac{\\ln x}{x^2}\\,dx=\\dfrac18$",
+        "diverges by integral test $\\int_1^\\infty\\frac{\\ln x}{x^2}\\,dx=\\infty$",
+        "diverges by integral test $\\int_1^\\infty\\frac{\\ln x}{x^2}\\,dx=-\\infty$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Use the integral test: the terms are values of a function of $x$ that is eventually positive and decreasing.",
+        "Evaluate the improper integral $\\int_1^\\infty\\frac{\\ln x}{x^2}dx$ as a limit, using integration by parts.",
+        "Integral test: for $f$ positive, continuous and decreasing, $\\sum f(n)$ and $\\int_1^\\infty f(x)\\,dx$ both converge or both diverge; by parts, $\\int u\\,dv=uv-\\int v\\,du$."
+      ],
+      "steps": [
+        "$f(x)=\\dfrac{\\ln x}{x^2}$ is positive for $x>1$, and decreasing for $x\\ge\\sqrt e$ (since $f'=\\frac{1-2\\ln x}{x^3}<0$), which is enough for the test.",
+        "By parts with $u=\\ln x$, $dv=x^{-2}dx$: $\\int\\frac{\\ln x}{x^2}dx=-\\frac{\\ln x}{x}-\\frac1x$.",
+        "$\\int_1^b\\frac{\\ln x}{x^2}dx=1-\\frac{\\ln b}{b}-\\frac1b\\to1$ as $b\\to\\infty$.",
+        "The integral converges to $1$, so the series converges."
+      ],
+      "brief": "By parts $\\int_1^\\infty\\frac{\\ln x}{x^2}dx=1$ (finite), so the series converges."
+    },
+    {
+      "sec": "9.4",
+      "q": "The series $\\sum_{n=1}^{\\infty}\\frac{\\operatorname{arc\\,cot}\\,n}{n^{2.1}}$",
+      "opts": [
+        "converges by comparing with $\\pi\\sum_{n=1}^{\\infty}\\frac1{n^{2.1}}$",
+        "converges by comparing with $\\pi\\sum_{n=1}^{\\infty}\\frac1{n^{0.1}}$",
+        "diverges by comparing with $\\pi\\sum_{n=1}^{\\infty}\\frac1{n^{2.1}}$",
+        "diverges by comparing with $\\pi\\sum_{n=1}^{\\infty}\\frac1{n^{0.1}}$",
+        "diverges by limit comparison test"
+      ],
+      "ans": 0,
+      "hints": [
+        "Bound the numerator by a constant and compare with a $p$-series.",
+        "Find the range of $\\operatorname{arc\\,cot}\\,n$ for $n\\ge1$ and use it in the direct comparison test.",
+        "Direct comparison: if $0\\le a_n\\le b_n$ and $\\sum b_n$ converges, then $\\sum a_n$ converges; $\\sum\\frac1{n^p}$ converges iff $p>1$."
+      ],
+      "steps": [
+        "For $n\\ge1$, $0<\\operatorname{arc\\,cot}\\,n\\le\\dfrac\\pi2<\\pi$.",
+        "So $0<\\dfrac{\\operatorname{arc\\,cot}\\,n}{n^{2.1}}\\le\\dfrac{\\pi}{n^{2.1}}$.",
+        "$\\pi\\sum\\frac1{n^{2.1}}$ is a convergent $p$-series ($p=2.1>1$).",
+        "By direct comparison the given series converges."
+      ],
+      "brief": "$0<\\operatorname{arc\\,cot}\\,n<\\pi$, compare with convergent $p$-series ($p=2.1$): converges."
+    },
+    {
+      "sec": "9.4",
+      "q": "The series $\\sum_{n=1}^{\\infty}a_n$ where $a_n=\\dfrac{3n^3+n}{\\sqrt{4+n^7}}$",
+      "opts": [
+        "diverges by limit comparison test with $\\left(b_n=\\dfrac{3}{n^{\\frac12}}\\right)$",
+        "diverges by limit comparison test with $\\left(b_n=\\dfrac{3}{n^{\\frac72}}\\right)$",
+        "converges by limit comparison test with $\\left(b_n=\\dfrac{3}{n^{\\frac12}}\\right)$",
+        "converges by limit comparison test with $\\left(b_n=\\dfrac{3}{n}\\right)$",
+        "converges by limit comparison test with $\\left(b_n=\\dfrac{3}{n^{\\frac32}}\\right)$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Find the dominant behaviour of the numerator and denominator for large $n$, then use the limit comparison test.",
+        "Keep the highest power of $n$ in the numerator and in the denominator, and simplify the power of $n$.",
+        "Limit comparison: if $\\lim\\dfrac{a_n}{b_n}=L$ with $0<L<\\infty$, then $\\sum a_n$ and $\\sum b_n$ behave alike; $\\sum\\frac1{n^p}$ converges iff $p>1$."
+      ],
+      "steps": [
+        "For large $n$, $a_n\\approx\\dfrac{3n^3}{\\sqrt{n^7}}=\\dfrac{3n^3}{n^{7/2}}=\\dfrac{3}{n^{1/2}}$.",
+        "Take $b_n=\\dfrac{3}{n^{1/2}}$: $\\dfrac{a_n}{b_n}=\\dfrac{(3n^3+n)\\,n^{1/2}}{3\\sqrt{4+n^7}}\\to1$.",
+        "$\\sum\\frac{3}{n^{1/2}}$ is a $p$-series with $p=\\frac12\\le1$, so it diverges.",
+        "Therefore $\\sum a_n$ diverges."
+      ],
+      "brief": "$a_n\\sim\\frac{3}{n^{1/2}}$, a divergent $p$-series ($p=\\frac12$), so it diverges."
+    },
+    {
+      "sec": "9.5",
+      "q": "The series $\\sum_{n=1}^{\\infty}\\frac{n\\cos n\\pi}{3^n}$ is",
+      "opts": [
+        "a convergent alternating series",
+        "a convergent geometric series",
+        "a divergent $p$-series",
+        "a divergent geometric series",
+        "a divergent alternating series"
+      ],
+      "ans": 0,
+      "hints": [
+        "Simplify $\\cos n\\pi$ first to see the structure of the terms.",
+        "Replace $\\cos n\\pi$ by its value for integer $n$ and test the resulting alternating series.",
+        "Alternating series test: if $b_n>0$ is decreasing and $b_n\\to0$, then $\\sum(-1)^nb_n$ converges."
+      ],
+      "steps": [
+        "$\\cos n\\pi=(-1)^n$, so the series is $\\sum(-1)^n\\frac{n}{3^n}$.",
+        "$b_n=\\dfrac n{3^n}\\to0$.",
+        "$\\dfrac{b_{n+1}}{b_n}=\\dfrac{n+1}{3n}<1$ for $n\\ge1$, so $b_n$ is decreasing.",
+        "By the alternating series test the series converges."
+      ],
+      "brief": "$\\cos n\\pi=(-1)^n$; $b_n=n/3^n$ decreases to $0$: convergent alternating series."
+    },
+    {
+      "sec": "9.6",
+      "q": "The series $\\sum_{n=1}^{\\infty}\\frac{10^n}{(n+1)3^{2n+1}}$",
+      "opts": [
+        "diverges by the ratio test",
+        "converges by the ratio test",
+        "converge by the root test",
+        "converge by integral test",
+        "converge conditionally"
+      ],
+      "ans": 0,
+      "hints": [
+        "The terms involve exponentials in $n$, so use the ratio test.",
+        "Compute $\\lim\\left|\\dfrac{a_{n+1}}{a_n}\\right|$, simplifying the powers of $10$, of $3$ and the factor $n+1$.",
+        "Ratio test: $L=\\lim\\left|\\dfrac{a_{n+1}}{a_n}\\right|$; the series converges if $L<1$, diverges if $L>1$, and the test is inconclusive if $L=1$."
+      ],
+      "steps": [
+        "$a_n=\\dfrac{10^n}{(n+1)3^{2n+1}}$, so $\\dfrac{a_{n+1}}{a_n}=\\dfrac{10}{3^2}\\cdot\\dfrac{n+1}{n+2}=\\dfrac{10}{9}\\cdot\\dfrac{n+1}{n+2}$.",
+        "$L=\\dfrac{10}{9}>1$.",
+        "By the ratio test the series diverges."
+      ],
+      "brief": "Ratio $\\to\\frac{10}{9}>1$, so it diverges by the ratio test."
+    },
+    {
+      "sec": "9.8",
+      "q": "The series $\\sum_{n=0}^{\\infty}\\frac{(x-2)^n}{n^2+1}$ converges for",
+      "opts": [
+        "$x\\in[1,3]$",
+        "$x\\in[1,3)$ only",
+        "$x\\in(1,3]$ only",
+        "all values of $x$",
+        "$x\\in[1,4]$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Find the radius of convergence with the ratio test, then test the endpoints separately.",
+        "Compute $\\lim\\left|\\dfrac{a_{n+1}}{a_n}\\right|$ to get the condition on $|x-2|$, then substitute each endpoint into the series.",
+        "For $\\sum c_n(x-a)^n$ with $\\lim|c_{n+1}/c_n|=1/R$, convergence holds for $|x-a|<R$; endpoints must be checked separately (a $p$-series converges iff $p>1$)."
+      ],
+      "steps": [
+        "$\\left|\\dfrac{a_{n+1}}{a_n}\\right|=|x-2|\\dfrac{n^2+1}{(n+1)^2+1}\\to|x-2|$, so $R=1$ and convergence holds for $1<x<3$.",
+        "At $x=3$: $\\sum\\dfrac1{n^2+1}$ converges by comparison with $\\sum\\frac1{n^2}$.",
+        "At $x=1$: $\\sum\\dfrac{(-1)^n}{n^2+1}$ converges absolutely by the same comparison.",
+        "So the interval of convergence is $[1,3]$."
+      ],
+      "brief": "$R=1$ centered at $2$; both endpoints converge (compare with $\\sum 1/n^2$): $[1,3]$."
+    },
+    {
+      "sec": "9.8",
+      "q": "The series $\\sum_{n=0}^{\\infty}\\frac{(-1)^nx^{2n+1}}{n!(n+1)!\\,2^{2n+1}}$ converges for",
+      "opts": [
+        "all values of $x$",
+        "$(0,\\infty)$ only",
+        "$(-\\infty,0)$ only",
+        "$(1,3]$ only",
+        "$[1,3]$ only"
+      ],
+      "ans": 0,
+      "hints": [
+        "Factorials in the denominator suggest the ratio test.",
+        "Form $\\left|\\dfrac{a_{n+1}}{a_n}\\right|$ and simplify the factorials and the powers of $2$ and $x$.",
+        "Ratio test: if $\\lim\\left|\\dfrac{a_{n+1}}{a_n}\\right|=0<1$ for every $x$, the series converges for all $x$; also $(n+1)!=(n+1)\\,n!$."
+      ],
+      "steps": [
+        "$\\left|\\dfrac{a_{n+1}}{a_n}\\right|=\\dfrac{|x|^{2n+3}}{(n+1)!\\,(n+2)!\\,2^{2n+3}}\\cdot\\dfrac{n!\\,(n+1)!\\,2^{2n+1}}{|x|^{2n+1}}$.",
+        "Using $(n+1)!=(n+1)n!$ and $(n+2)!=(n+2)(n+1)!$, this equals $\\dfrac{x^2}{4(n+1)(n+2)}$.",
+        "This tends to $0<1$ for every $x$.",
+        "So the series converges for all $x$."
+      ],
+      "brief": "Ratio $=\\frac{x^2}{4(n+1)(n+2)}\\to0$ for every $x$, so it converges for all $x$."
+    },
+    {
+      "sec": "9.9",
+      "q": "The power series representation for the function $\\dfrac{x}{9+x^2}$ is",
+      "opts": [
+        "$\\sum_{n=0}^{\\infty}(-1)^n\\frac{x^{2n+1}}{9^{n+1}}$",
+        "$\\sum_{n=0}^{\\infty}\\frac{(-1)^nx^{2n}}{9^n}$",
+        "$\\sum_{n=0}^{\\infty}(-1)^n\\frac{x^{2n+1}}{9^n}$",
+        "$\\sum_{n=0}^{\\infty}\\frac{x^{2n+1}}{9^{n+1}}$",
+        "$\\sum_{n=0}^{\\infty}(-1)^n\\frac{x^{2n+1}}{3^{n+1}}$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Write the function in the form of a geometric series.",
+        "Factor $9$ out of the denominator to get $\\dfrac{1}{1+(\\cdot)}$ and use the geometric series with ratio $-(\\cdot)$.",
+        "$\\dfrac1{1+t}=\\sum_{n=0}^\\infty(-1)^nt^n$ for $|t|<1$."
+      ],
+      "steps": [
+        "$\\dfrac{x}{9+x^2}=\\dfrac x9\\cdot\\dfrac1{1+\\frac{x^2}{9}}$.",
+        "With $t=\\dfrac{x^2}{9}$: $\\dfrac1{1+t}=\\sum_{n=0}^\\infty(-1)^n\\dfrac{x^{2n}}{9^n}$.",
+        "Multiply by $\\dfrac x9$: $\\sum_{n=0}^\\infty(-1)^n\\dfrac{x^{2n+1}}{9^{n+1}}$."
+      ],
+      "brief": "$\\frac x9\\cdot\\frac1{1+x^2/9}$ gives $\\sum(-1)^n\\frac{x^{2n+1}}{9^{n+1}}$."
+    },
+    {
+      "sec": "9.10",
+      "q": "The Maclaurin Series for $f(x)=\\sinh x$ is",
+      "opts": [
+        "$\\sum_{n=0}^{\\infty}\\frac{x^{2n+1}}{(2n+1)!}$",
+        "$\\sum_{n=0}^{\\infty}(-1)^n\\frac{x^{2n+1}}{(2n+1)!}$",
+        "$\\sum_{n=0}^{\\infty}(-1)^n\\frac{x^{2n}}{(2n)!}$",
+        "$\\sum_{n=0}^{\\infty}\\frac{x^{2n}}{(2n)!}$",
+        "$\\sum_{n=0}^{\\infty}\\frac{x^{2n+1}}{(2n)!}$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Use the definition of $\\sinh$ in terms of exponentials, or compute its derivatives at $0$.",
+        "Write $\\sinh x=\\dfrac{e^x-e^{-x}}{2}$ and subtract the two exponential series.",
+        "$e^t=\\sum_{n=0}^\\infty\\dfrac{t^n}{n!}$ and $\\sinh x=\\dfrac{e^x-e^{-x}}{2}$."
+      ],
+      "steps": [
+        "$e^x-e^{-x}=\\sum_{n=0}^\\infty\\dfrac{x^n-(-x)^n}{n!}=\\sum_{n=0}^\\infty\\dfrac{\\left(1-(-1)^n\\right)x^n}{n!}$.",
+        "Even $n$ cancel; odd $n=2k+1$ give $2x^{2k+1}/(2k+1)!$.",
+        "Divide by $2$: $\\sinh x=\\sum_{n=0}^\\infty\\dfrac{x^{2n+1}}{(2n+1)!}$."
+      ],
+      "brief": "$\\sinh x=\\frac{e^x-e^{-x}}{2}$ keeps odd powers: $\\sum\\frac{x^{2n+1}}{(2n+1)!}$."
+    }
+  ]
+}

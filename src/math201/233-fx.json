@@ -1,0 +1,477 @@
+{
+  "course": "math201",
+  "term": "233",
+  "kind": "fx",
+  "date": "",
+  "minutes": 120,
+  "source": "math201-233-fx.pdf",
+  "note": "Date and exam length are not printed on the master (no cover page). Minutes (120) is an assumed typical final-exam length. The master key (all A) was confirmed by independent computation for all 20 questions; no disagreements. Handwritten solutions on the scan were ignored.",
+  "qs": [
+    {
+      "sec": "10.3",
+      "q": "An equation for the tangent line to the parametric curve \\[ x=1+2\\sin t,\\quad y=t-\\cos^2 t \\] at the point corresponding to $t=0$ is",
+      "opts": [
+        "$y=\\dfrac12x-\\dfrac32$",
+        "$y=2x-3$",
+        "$y=-\\dfrac12x-\\dfrac12$",
+        "$y=-2x+1$",
+        "$y=\\dfrac12x+\\dfrac32$"
+      ],
+      "ans": 0,
+      "hints": [
+        "This is a tangent line to a parametric curve, so you need the slope $dy/dx$ from the parameter.",
+        "Find the point at $t=0$, then compute $dy/dt$ and $dx/dt$ and evaluate the slope at $t=0$.",
+        "For $x=x(t),\\ y=y(t)$: $\\dfrac{dy}{dx}=\\dfrac{dy/dt}{dx/dt}$ (when $dx/dt\\neq0$), and the tangent line is $y-y_0=m(x-x_0)$."
+      ],
+      "steps": [
+        "At $t=0$: $x=1$, $y=-1$.",
+        "$\\dfrac{dy}{dt}=1+2\\cos t\\sin t$ and $\\dfrac{dx}{dt}=2\\cos t$.",
+        "At $t=0$: $m=\\dfrac{1}{2}$.",
+        "$y+1=\\dfrac12(x-1)$, so $y=\\dfrac12x-\\dfrac32$."
+      ],
+      "brief": "$(1,-1)$, $m=\\frac{1}{2}$: $y=\\frac12x-\\frac32$."
+    },
+    {
+      "sec": "10.5",
+      "q": "The area of the region inside the circle $r=3\\sin\\theta$ for $\\dfrac{\\pi}{6}\\le\\theta\\le\\dfrac{\\pi}{3}$ is equal to",
+      "opts": [
+        "$\\dfrac{3\\pi}{8}$",
+        "$\\dfrac{\\pi}{6}$",
+        "$\\dfrac{5\\pi}{4}$",
+        "$\\dfrac{2\\pi}{5}$",
+        "$\\dfrac{5\\pi}{8}$"
+      ],
+      "ans": 0,
+      "hints": [
+        "This is an area in polar coordinates.",
+        "Set up the sector-area integral over the given angle range and use a half-angle identity.",
+        "$A=\\int_\\alpha^\\beta \\tfrac12 r^2\\,d\\theta$ and $\\sin^2\\theta=\\dfrac{1-\\cos2\\theta}{2}$."
+      ],
+      "steps": [
+        "$A=\\dfrac12\\int_{\\pi/6}^{\\pi/3}9\\sin^2\\theta\\,d\\theta=\\dfrac94\\int_{\\pi/6}^{\\pi/3}(1-\\cos2\\theta)\\,d\\theta$.",
+        "$=\\dfrac94\\left[\\theta-\\tfrac12\\sin2\\theta\\right]_{\\pi/6}^{\\pi/3}$.",
+        "The sine terms are equal at both limits ($\\tfrac{\\sqrt3}{4}$ each), so they cancel.",
+        "$A=\\dfrac94\\left(\\dfrac\\pi3-\\dfrac\\pi6\\right)=\\dfrac{3\\pi}{8}$."
+      ],
+      "brief": "$\\frac12\\int 9\\sin^2\\theta\\,d\\theta=\\frac94\\cdot\\frac{\\pi}{6}=\\frac{3\\pi}{8}$."
+    },
+    {
+      "sec": "11.4",
+      "q": "The area of the parallelogram that has the vectors \\[ \\vec u=\\langle1,-2,3\\rangle,\\quad \\vec v=\\langle2,-1,0\\rangle \\] as adjacent sides is equal to",
+      "opts": [
+        "$3\\sqrt6$",
+        "$4\\sqrt6$",
+        "$5\\sqrt6$",
+        "$2\\sqrt6$",
+        "$6\\sqrt6$"
+      ],
+      "ans": 0,
+      "hints": [
+        "The area of a parallelogram is tied to the cross product.",
+        "Compute $\\vec u\\times\\vec v$ with a determinant and find its length.",
+        "Area $=\\|\\vec u\\times\\vec v\\|$."
+      ],
+      "steps": [
+        "$\\vec u\\times\\vec v=\\begin{vmatrix}\\mathbf i&\\mathbf j&\\mathbf k\\\\1&-2&3\\\\2&-1&0\\end{vmatrix}=\\langle3,6,3\\rangle$.",
+        "$\\|\\vec u\\times\\vec v\\|=\\sqrt{9+36+9}=\\sqrt{54}=3\\sqrt6$."
+      ],
+      "brief": "$\\vec u\\times\\vec v=\\langle3,6,3\\rangle$, length $3\\sqrt6$."
+    },
+    {
+      "sec": "11.5",
+      "q": "An equation for the plane that passes through the point $(1,2,3)$ and is parallel to the $yz$-plane is",
+      "opts": [
+        "$x=1$",
+        "$y=2$",
+        "$z=3$",
+        "$y+z=5$",
+        "$x+y=3$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Think about which direction is perpendicular to the $yz$-plane.",
+        "A plane parallel to the $yz$-plane has the same normal vector as the $yz$-plane.",
+        "A plane with normal $\\langle a,b,c\\rangle$ through $(x_0,y_0,z_0)$ is $a(x-x_0)+b(y-y_0)+c(z-z_0)=0$."
+      ],
+      "steps": [
+        "The $yz$-plane has normal $\\langle1,0,0\\rangle$.",
+        "So the plane is $1(x-1)+0(y-2)+0(z-3)=0$.",
+        "That gives $x=1$."
+      ],
+      "brief": "Normal $\\langle1,0,0\\rangle$ through $(1,2,3)$: $x=1$."
+    },
+    {
+      "sec": "13.2",
+      "q": "$\\lim_{(x,y)\\to(0,0)}\\dfrac{1-\\sqrt{1-x^2-y^2}}{x^2+y^2}=$",
+      "opts": [
+        "$\\dfrac12$",
+        "$0$",
+        "$-\\dfrac14$",
+        "$-2$",
+        "does not exist"
+      ],
+      "ans": 0,
+      "hints": [
+        "The expression depends on $x$ and $y$ only through $x^2+y^2$.",
+        "Multiply by the conjugate of the numerator (or switch to polar coordinates) to reduce to a simple limit.",
+        "$(a-b)(a+b)=a^2-b^2$, and $x^2+y^2=r^2$ in polar coordinates."
+      ],
+      "steps": [
+        "Multiply by the conjugate $1+\\sqrt{1-x^2-y^2}$: the numerator becomes $x^2+y^2$.",
+        "The fraction simplifies to $\\dfrac{1}{1+\\sqrt{1-x^2-y^2}}$.",
+        "As $(x,y)\\to(0,0)$ this tends to $\\dfrac{1}{1+1}=\\dfrac12$."
+      ],
+      "brief": "Conjugate gives $\\frac{1}{1+\\sqrt{1-x^2-y^2}}\\to\\frac12$."
+    },
+    {
+      "sec": "13.2",
+      "q": "The function $f(x,y,z)=\\dfrac{\\ln(1-z)}{e^x-e^y}$ is continuous on",
+      "opts": [
+        "$\\{(x,y,z):x\\neq y,\\ z<1\\}$",
+        "$\\{(x,y,z):x\\neq y,\\ z\\le1\\}$",
+        "$\\{(x,y,z):x<y,\\ z<1\\}$",
+        "$\\{(x,y,z):x>y,\\ z>1\\}$",
+        "$\\{(x,y,z):x\\neq y,\\ z>1\\}$"
+      ],
+      "ans": 0,
+      "hints": [
+        "A quotient of continuous functions is continuous wherever it is defined.",
+        "Find where the logarithm is defined and where the denominator is nonzero.",
+        "$\\ln u$ requires $u>0$, a quotient requires a nonzero denominator, and $e^u$ is one-to-one."
+      ],
+      "steps": [
+        "$\\ln(1-z)$ needs $1-z>0$, so $z<1$.",
+        "$e^x-e^y\\neq0$ means $e^x\\neq e^y$, so $x\\neq y$.",
+        "Continuity holds exactly on $\\{x\\neq y,\\ z<1\\}$."
+      ],
+      "brief": "Need $1-z>0$ and $e^x\\neq e^y$: $x\\neq y$, $z<1$."
+    },
+    {
+      "sec": "13.6",
+      "q": "If $f(x,y)=\\dfrac{y+x}{y+1}$, then $\\nabla f(0,1)=$",
+      "opts": [
+        "$\\dfrac12\\vec i+\\dfrac14\\vec j$",
+        "$\\dfrac12\\vec i$",
+        "$\\vec i-\\dfrac14\\vec j$",
+        "$2\\vec i+4\\vec j$",
+        "$-\\dfrac12\\vec j$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Compute the gradient from the partial derivatives.",
+        "Differentiate with respect to $x$, then use the quotient rule for $y$, and evaluate at the point.",
+        "$\\nabla f=\\langle f_x,f_y\\rangle$ and $\\left(\\dfrac uv\\right)'=\\dfrac{u'v-uv'}{v^2}$."
+      ],
+      "steps": [
+        "$f_x=\\dfrac1{y+1}$.",
+        "$f_y=\\dfrac{(y+1)-(y+x)}{(y+1)^2}=\\dfrac{1-x}{(y+1)^2}$.",
+        "At $(0,1)$: $f_x=\\dfrac12$, $f_y=\\dfrac14$."
+      ],
+      "brief": "$\\nabla f=\\langle\\frac1{y+1},\\frac{1-x}{(y+1)^2}\\rangle$, at $(0,1)$: $\\langle\\frac12,\\frac14\\rangle$."
+    },
+    {
+      "sec": "13.6",
+      "q": "The directional derivative of $f(x,y)=xy$ at $P(2,-1)$ in the direction of the vector $\\vec v=\\langle1,1\\rangle$ is equal to",
+      "opts": [
+        "$\\dfrac{\\sqrt2}{2}$",
+        "$\\sqrt2$",
+        "$2\\sqrt2$",
+        "$\\dfrac{\\sqrt2}{3}$",
+        "$2$"
+      ],
+      "ans": 0,
+      "hints": [
+        "This is a directional derivative, so use the gradient and a unit vector.",
+        "Compute $\\nabla f$ at $P$ and normalize $\\vec v$.",
+        "$D_{\\vec u}f=\\nabla f\\cdot\\vec u$ with $\\vec u=\\dfrac{\\vec v}{\\|\\vec v\\|}$."
+      ],
+      "steps": [
+        "$\\nabla f=\\langle y,x\\rangle$, so $\\nabla f(2,-1)=\\langle-1,2\\rangle$.",
+        "$\\vec u=\\dfrac1{\\sqrt2}\\langle1,1\\rangle$.",
+        "$D_{\\vec u}f=\\dfrac{-1+2}{\\sqrt2}=\\dfrac{1}{\\sqrt2}=\\dfrac{\\sqrt2}{2}$."
+      ],
+      "brief": "$\\nabla f=\\langle-1,2\\rangle$, $\\vec u=\\frac{1}{\\sqrt2}\\langle1,1\\rangle$: $\\frac{\\sqrt2}{2}$."
+    },
+    {
+      "sec": "13.7",
+      "q": "If $ax+by-z=d$ is an equation of the tangent plane to the paraboloid $z=x^2+2y^2+1$ at the point $(2,1,7)$, then $a+b+d=$",
+      "opts": [
+        "$13$",
+        "$8$",
+        "$10$",
+        "$-7$",
+        "$-6$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Write the surface as a level surface and use its gradient as the normal.",
+        "Let $F(x,y,z)=x^2+2y^2+1-z$, find $\\nabla F$ at the point, and write the plane.",
+        "The tangent plane at $P_0$ is $F_x(P_0)(x-x_0)+F_y(P_0)(y-y_0)+F_z(P_0)(z-z_0)=0$."
+      ],
+      "steps": [
+        "$\\nabla F=\\langle2x,4y,-1\\rangle$, so $\\nabla F(2,1,7)=\\langle4,4,-1\\rangle$.",
+        "$4(x-2)+4(y-1)-(z-7)=0$, so $4x+4y-z=5$.",
+        "$a=4,\\ b=4,\\ d=5$, so $a+b+d=13$."
+      ],
+      "brief": "Plane $4x+4y-z=5$, so $a+b+d=13$."
+    },
+    {
+      "sec": "13.8",
+      "q": "If $(a,b)$ is the only critical point of $f(x,y)=x^2-xy-y^2-3x-y$, then",
+      "opts": [
+        "$f$ has a saddle point at $(a,b)$",
+        "$f$ has a relative minimum at $(a,b)$",
+        "$f$ has a relative maximum at $(a,b)$",
+        "$a+b=3$",
+        "$ab=-2$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Find the critical point and classify it with the second partials test.",
+        "Solve $f_x=0$, $f_y=0$, then compute $f_{xx}f_{yy}-f_{xy}^2$.",
+        "With $D=f_{xx}f_{yy}-f_{xy}^2$: $D<0$ gives a saddle point; $D>0$ and $f_{xx}>0$ a minimum; $D>0$ and $f_{xx}<0$ a maximum."
+      ],
+      "steps": [
+        "$f_x=2x-y-3=0$ and $f_y=-x-2y-1=0$ give $(a,b)=(1,-1)$.",
+        "$f_{xx}=2$, $f_{yy}=-2$, $f_{xy}=-1$.",
+        "$D=2(-2)-1=-5<0$, so the point is a saddle point.",
+        "Also $a+b=0$ and $ab=-1$, so the last two statements are false."
+      ],
+      "brief": "Critical point $(1,-1)$, $D=-5<0$: saddle point."
+    },
+    {
+      "sec": "13.9",
+      "q": "The minimum distance from the point $(-1,-2,0)$ to the surface $z=\\sqrt{1-2x-2y}$ is equal to (Hint: to simplify the computations, minimize the square of the distance)",
+      "opts": [
+        "$\\sqrt5$",
+        "$2\\sqrt5$",
+        "$\\dfrac{\\sqrt5}{2}$",
+        "$\\sqrt7$",
+        "$2\\sqrt7$"
+      ],
+      "ans": 0,
+      "hints": [
+        "This is an optimization problem: minimize a squared distance over the surface.",
+        "Substitute $z^2=1-2x-2y$ into the squared distance to get a function of $x,y$ and find its critical point.",
+        "The squared distance from $(x_0,y_0,z_0)$ to $(x,y,z)$ is $(x-x_0)^2+(y-y_0)^2+(z-z_0)^2$; use the second partials test."
+      ],
+      "steps": [
+        "$d^2=(x+1)^2+(y+2)^2+1-2x-2y$.",
+        "$f_x=2(x+1)-2=0$ and $f_y=2(y+2)-2=0$ give $(x,y)=(0,-1)$.",
+        "$f_{xx}=2>0$, $D=4>0$, so this is a minimum; $z=\\sqrt{1+2}=\\sqrt3$.",
+        "$d^2=1+1+3=5$, so $d=\\sqrt5$."
+      ],
+      "brief": "Minimize $(x+1)^2+(y+2)^2+1-2x-2y$: at $(0,-1)$, $d^2=5$."
+    },
+    {
+      "sec": "13.10",
+      "q": "The maximum value of $f(x,y)=2x+2xy+y$ subject to the constraint $2x+y=20$ is",
+      "opts": [
+        "$120$",
+        "$100$",
+        "$80$",
+        "$140$",
+        "$60$"
+      ],
+      "ans": 0,
+      "hints": [
+        "This is a constrained optimization problem, so use Lagrange multipliers.",
+        "Set $\\nabla f=\\lambda\\nabla g$ with $g=2x+y$, and combine with the constraint.",
+        "Lagrange: $f_x=\\lambda g_x$, $f_y=\\lambda g_y$, $g=k$; compare the values of $f$ at the solutions."
+      ],
+      "steps": [
+        "$2+2y=2\\lambda$ and $2x+1=\\lambda$, so $2+2y=2(2x+1)$, giving $y=2x$.",
+        "The constraint $2x+2x=20$ gives $x=5$, $y=10$.",
+        "$f(5,10)=10+100+10=120$.",
+        "Compare with another point on the line, such as $(0,20)$: $f=20<120$, so $120$ is the maximum."
+      ],
+      "brief": "$y=2x$, $x=5,y=10$: $f=120$ (bigger than $f(0,20)=20$)."
+    },
+    {
+      "sec": "14.1",
+      "q": "$\\int_0^{\\pi/2}\\int_0^{\\cos x}(1+\\sin x)\\,dy\\,dx=$",
+      "opts": [
+        "$\\dfrac32$",
+        "$\\dfrac12$",
+        "$2$",
+        "$\\dfrac52$",
+        "$1$"
+      ],
+      "ans": 0,
+      "hints": [
+        "This is an iterated integral; do the inner integral first.",
+        "Integrate in $y$ (the factor $1+\\sin x$ is constant in $y$), then use a substitution in $x$.",
+        "Substitution: $u=g(x)$, $du=g'(x)\\,dx$, and change the limits."
+      ],
+      "steps": [
+        "Inner integral: $(1+\\sin x)\\cos x$.",
+        "Let $u=1+\\sin x$, $du=\\cos x\\,dx$; limits $x=0\\to u=1$, $x=\\pi/2\\to u=2$.",
+        "$\\int_1^2u\\,du=\\dfrac12(4-1)=\\dfrac32$."
+      ],
+      "brief": "Inner gives $(1+\\sin x)\\cos x$; $u=1+\\sin x$: $\\int_1^2u\\,du=\\frac32$."
+    },
+    {
+      "sec": "14.1",
+      "q": "$\\int_0^4\\int_{\\sqrt y}^2 f(x,y)\\,dx\\,dy=$",
+      "opts": [
+        "$\\int_0^2\\int_0^{x^2}f(x,y)\\,dy\\,dx$",
+        "$\\int_0^2\\int_0^{\\sqrt x}f(x,y)\\,dy\\,dx$",
+        "$\\int_0^4\\int_{\\sqrt x}^2f(x,y)\\,dy\\,dx$",
+        "$\\int_0^2\\int_{x^2}^0f(x,y)\\,dy\\,dx$",
+        "$\\int_{\\sqrt y}^2\\int_0^4f(x,y)\\,dy\\,dx$"
+      ],
+      "ans": 0,
+      "hints": [
+        "The task is to reverse the order of integration.",
+        "Sketch the region from the given limits, then describe it with $x$ outside and $y$ inside.",
+        "The region is $0\\le y\\le4$, $\\sqrt y\\le x\\le2$; the curve $x=\\sqrt y$ is the same as $y=x^2$ for $x\\ge0$."
+      ],
+      "steps": [
+        "The region is bounded by $x=\\sqrt y$ (that is, $y=x^2$), $x=2$ and $y=0$.",
+        "For a fixed $x$ between $0$ and $2$, $y$ runs from $0$ up to $x^2$.",
+        "So the integral is $\\int_0^2\\int_0^{x^2}f\\,dy\\,dx$."
+      ],
+      "brief": "Region $0\\le x\\le2$, $0\\le y\\le x^2$."
+    },
+    {
+      "sec": "14.2",
+      "q": "The average value of $f(x,y)=x^2+y^2$ over the square region with vertices $(0,0)$, $(0,2)$, $(2,0)$, $(2,2)$ is equal to",
+      "opts": [
+        "$\\dfrac83$",
+        "$\\dfrac{16}{3}$",
+        "$5$",
+        "$\\dfrac{10}{3}$",
+        "$\\dfrac{20}{3}$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Use the formula for the average value of a function over a region.",
+        "Compute the area, then the double integral over the square.",
+        "$f_{ave}=\\dfrac{1}{A(R)}\\iint_R f\\,dA$."
+      ],
+      "steps": [
+        "Area $=4$.",
+        "$\\int_0^2\\int_0^2(x^2+y^2)\\,dy\\,dx=\\int_0^2\\left(2x^2+\\dfrac83\\right)dx=\\dfrac{16}{3}+\\dfrac{16}{3}=\\dfrac{32}{3}$.",
+        "$f_{ave}=\\dfrac14\\cdot\\dfrac{32}{3}=\\dfrac83$."
+      ],
+      "brief": "Integral $=\\frac{32}{3}$, area $4$: average $\\frac83$."
+    },
+    {
+      "sec": "14.3",
+      "q": "$\\int_0^1\\int_0^{\\sqrt{1-x^2}}(x^2+y^2)^{3/2}\\,dy\\,dx=$",
+      "opts": [
+        "$\\dfrac{\\pi}{10}$",
+        "$\\dfrac{2\\pi}{5}$",
+        "$\\dfrac{\\pi}{5}$",
+        "$\\dfrac{3\\pi}{10}$",
+        "$\\pi$"
+      ],
+      "ans": 0,
+      "hints": [
+        "The region is part of a disk and the integrand involves $x^2+y^2$, so use polar coordinates.",
+        "Describe the region in polar form and replace $dy\\,dx$ by $r\\,dr\\,d\\theta$.",
+        "$x^2+y^2=r^2$ and $dA=r\\,dr\\,d\\theta$."
+      ],
+      "steps": [
+        "The region is the quarter disk: $0\\le r\\le1$, $0\\le\\theta\\le\\pi/2$.",
+        "$\\int_0^{\\pi/2}\\int_0^1 r^3\\cdot r\\,dr\\,d\\theta=\\int_0^{\\pi/2}\\int_0^1r^4\\,dr\\,d\\theta$.",
+        "$=\\dfrac15\\cdot\\dfrac\\pi2=\\dfrac{\\pi}{10}$."
+      ],
+      "brief": "Polar: $\\int_0^{\\pi/2}\\int_0^1r^4\\,dr\\,d\\theta=\\frac{\\pi}{10}$."
+    },
+    {
+      "sec": "14.6",
+      "q": "Let $d>0$. If the volume of the solid bounded by the planes \\[ x+2y+z=d,\\quad x=0,\\quad y=0,\\quad z=0 \\] is equal to $\\dfrac{16}{3}$, then $d=$",
+      "opts": [
+        "$4$",
+        "$3$",
+        "$5$",
+        "$2$",
+        "$6$"
+      ],
+      "ans": 0,
+      "hints": [
+        "The solid is a tetrahedron; set up its volume as a function of $d$.",
+        "Use $z$ from $0$ to the slanted plane over the triangle in the $xy$-plane, whose intercepts you can find by setting $z=0$.",
+        "$V=\\iint_R(\\text{top}-\\text{bottom})\\,dA$."
+      ],
+      "steps": [
+        "The base in the $xy$-plane is $0\\le x\\le d$, $0\\le y\\le\\dfrac{d-x}{2}$.",
+        "$V=\\int_0^d\\int_0^{(d-x)/2}(d-x-2y)\\,dy\\,dx=\\int_0^d\\dfrac{(d-x)^2}{4}\\,dx=\\dfrac{d^3}{12}$.",
+        "$\\dfrac{d^3}{12}=\\dfrac{16}{3}$ gives $d^3=64$, so $d=4$."
+      ],
+      "brief": "$V=\\frac{d^3}{12}=\\frac{16}{3}\\Rightarrow d=4$."
+    },
+    {
+      "sec": "11.7",
+      "q": "The point with spherical coordinates $(\\rho,\\theta,\\phi)=\\left(4,\\dfrac\\pi6,\\dfrac\\pi4\\right)$ is represented in rectangular coordinates by",
+      "opts": [
+        "$(x,y,z)=(\\sqrt6,\\sqrt2,2\\sqrt2)$",
+        "$(x,y,z)=(2\\sqrt6,\\sqrt2,\\sqrt2)$",
+        "$(x,y,z)=(\\sqrt6,2\\sqrt2,1)$",
+        "$(x,y,z)=(\\sqrt6,\\sqrt2,\\sqrt2)$",
+        "$(x,y,z)=(2\\sqrt6,2\\sqrt2,2\\sqrt2)$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Convert from spherical to rectangular coordinates.",
+        "Note the order given is $(\\rho,\\theta,\\phi)$, with $\\phi$ measured from the positive $z$-axis.",
+        "$x=\\rho\\sin\\phi\\cos\\theta$, $y=\\rho\\sin\\phi\\sin\\theta$, $z=\\rho\\cos\\phi$."
+      ],
+      "steps": [
+        "$x=4\\cdot\\dfrac{\\sqrt2}{2}\\cdot\\dfrac{\\sqrt3}{2}=\\sqrt6$.",
+        "$y=4\\cdot\\dfrac{\\sqrt2}{2}\\cdot\\dfrac12=\\sqrt2$.",
+        "$z=4\\cdot\\dfrac{\\sqrt2}{2}=2\\sqrt2$."
+      ],
+      "brief": "$(\\sqrt6,\\sqrt2,2\\sqrt2)$."
+    },
+    {
+      "sec": "14.7",
+      "q": "The volume of the solid bounded by the paraboloids $z=x^2+y^2+2$ and $z=8-x^2-y^2$ is equal to",
+      "opts": [
+        "$9\\pi$",
+        "$4\\pi\\sqrt3$",
+        "$2\\pi\\sqrt3$",
+        "$6\\pi$",
+        "$\\dfrac{5\\pi}{2}$"
+      ],
+      "ans": 0,
+      "hints": [
+        "The solid has circular symmetry about the $z$-axis, so use cylindrical coordinates.",
+        "Equate the two surfaces to find the radius of the region, then integrate $z$ between them.",
+        "Cylindrical: $x^2+y^2=r^2$, $dV=r\\,dz\\,dr\\,d\\theta$."
+      ],
+      "steps": [
+        "Intersection: $r^2+2=8-r^2$, so $r^2=3$, $r=\\sqrt3$.",
+        "$V=\\int_0^{2\\pi}\\int_0^{\\sqrt3}(6-2r^2)\\,r\\,dr\\,d\\theta$.",
+        "$\\int_0^{\\sqrt3}(6r-2r^3)\\,dr=9-\\dfrac92=\\dfrac92$.",
+        "$V=2\\pi\\cdot\\dfrac92=9\\pi$."
+      ],
+      "brief": "$r=\\sqrt3$: $V=\\int_0^{2\\pi}\\int_0^{\\sqrt3}(6-2r^2)r\\,dr\\,d\\theta=9\\pi$."
+    },
+    {
+      "sec": "14.7",
+      "q": "The volume of the solid bounded above by the sphere $x^2+y^2+z^2=4$ and below by the cone $z^2=3x^2+3y^2$ is equal to",
+      "opts": [
+        "$\\dfrac{8\\pi}{3}(2-\\sqrt3)$",
+        "$\\dfrac{8\\pi}{3}\\left(1-\\dfrac{\\sqrt3}{2}\\right)$",
+        "$\\dfrac{4\\pi}{3}(3-\\sqrt3)$",
+        "$\\dfrac{16\\pi}{3}(\\sqrt3-1)$",
+        "$\\dfrac{8\\pi}{3}$"
+      ],
+      "ans": 0,
+      "hints": [
+        "A sphere and a cone suggest spherical coordinates.",
+        "Find the cone's angle $\\phi$ from $\\tan\\phi$, with $0\\le\\rho\\le2$.",
+        "Spherical: $dV=\\rho^2\\sin\\phi\\,d\\rho\\,d\\phi\\,d\\theta$; for the upper cone $z=k\\sqrt{x^2+y^2}$, $\\tan\\phi=1/k$."
+      ],
+      "steps": [
+        "Above the cone $z=\\sqrt3\\,r$: $\\tan\\phi=\\dfrac1{\\sqrt3}$, so $\\phi=\\dfrac\\pi6$.",
+        "$V=\\int_0^{2\\pi}\\int_0^{\\pi/6}\\int_0^2\\rho^2\\sin\\phi\\,d\\rho\\,d\\phi\\,d\\theta$.",
+        "Inner: $\\dfrac83\\sin\\phi$; then $\\dfrac83\\left(1-\\dfrac{\\sqrt3}{2}\\right)$.",
+        "$V=2\\pi\\cdot\\dfrac83\\left(1-\\dfrac{\\sqrt3}2\\right)=\\dfrac{8\\pi}{3}(2-\\sqrt3)$."
+      ],
+      "brief": "$\\phi\\le\\frac\\pi6$: $V=2\\pi\\cdot\\frac83(1-\\frac{\\sqrt3}{2})=\\frac{8\\pi}{3}(2-\\sqrt3)$."
+    }
+  ]
+}

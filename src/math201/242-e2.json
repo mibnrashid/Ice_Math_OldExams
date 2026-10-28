@@ -1,0 +1,368 @@
+{
+  "course": "math201",
+  "term": "242",
+  "kind": "e2",
+  "date": "14 April 2025",
+  "minutes": 120,
+  "source": "math201-242-e2.pdf",
+  "note": "Master version, 15 questions; all keys marked (correct) agree with independent verification (sympy). Scan has handwritten annotations, ignored. Q15 (section 13.7) lies outside the usual Exam II coverage in the syllabus but is kept.",
+  "qs": [
+    {
+      "sec": "11.5",
+      "q": "Which one of the following statements is FALSE about the plane $2x-y+z=4$?",
+      "opts": [
+        "It is parallel to the plane $x-2y+2z=2$",
+        "It has a normal vector $\\vec n=\\langle 2,-1,1\\rangle$",
+        "It passes through the point $(2,1,1)$",
+        "It intersects the $x$-axis at $(2,0,0)$",
+        "The point $(0,-4,0)$ lies in the plane"
+      ],
+      "ans": 0,
+      "hints": [
+        "Compare normal vectors for parallelism, and test points by substituting into the equation.",
+        "Read the normal vector from the coefficients, then substitute each point into the plane equation.",
+        "Planes $a_1x+b_1y+c_1z=d_1$ and $a_2x+b_2y+c_2z=d_2$ are parallel iff their normals $\\langle a_1,b_1,c_1\\rangle$ and $\\langle a_2,b_2,c_2\\rangle$ are scalar multiples of each other."
+      ],
+      "steps": [
+        "Normal vector: $\\langle 2,-1,1\\rangle$, so that statement is true.",
+        "$(2,1,1)$: $4-1+1=4$, true.",
+        "$x$-axis ($y=z=0$): $2x=4$, so $(2,0,0)$, true.",
+        "$(0,-4,0)$: $0+4+0=4$, true.",
+        "The normals $\\langle2,-1,1\\rangle$ and $\\langle1,-2,2\\rangle$ are not scalar multiples, so the planes are not parallel: this statement is false."
+      ],
+      "brief": "Normals $\\langle2,-1,1\\rangle$ and $\\langle1,-2,2\\rangle$ are not parallel, so the planes are not parallel."
+    },
+    {
+      "sec": "11.5",
+      "q": "If $(a,b,c)$ is the point of intersection between the lines \\[ L_1: x=1+2t,\\ y=1-t,\\ z=2-3t \\] \\[ L_2: x=4-s,\\ y=-1+2s,\\ z=-4+6s \\] then $abc=$",
+      "opts": [
+        "$\\dfrac{22}{9}$",
+        "$-\\dfrac{20}{9}$",
+        "$\\dfrac{22}{3}$",
+        "$-7$",
+        "$\\dfrac{11}{9}$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Two lines intersect where all three coordinates agree for some pair of parameter values.",
+        "Set $x$, $y$, $z$ of the two lines equal, giving three equations in $t$ and $s$; solve two and check the third.",
+        "Use different parameters for each line, solve the equations for $t$ and $s$, check consistency with the remaining equation, then substitute into either line."
+      ],
+      "steps": [
+        "Equations: $2t+s=3$, $-t-2s=-2$, $-3t-6s=-6$.",
+        "Doubling the first and adding the second: $3t=4$, so $t=\\frac43$ and $s=3-\\frac83=\\frac13$.",
+        "Check the third: $-4-2=-6$. Consistent.",
+        "Point: $x=1+\\frac83=\\frac{11}{3}$, $y=1-\\frac43=-\\frac13$, $z=2-4=-2$.",
+        "$abc=\\frac{11}{3}\\cdot\\left(-\\frac13\\right)\\cdot(-2)=\\frac{22}{9}$."
+      ],
+      "brief": "$t=\\frac43$, $s=\\frac13$, point $\\left(\\frac{11}{3},-\\frac13,-2\\right)$, $abc=\\frac{22}{9}$."
+    },
+    {
+      "sec": "11.5",
+      "q": "If $ax+by+cz=5$ is an equation for the plane through the points $P(2,2,1)$ and $Q(-1,1,-1)$ and is perpendicular to the plane $2x-3y+z=3$, then $a+b+c=$",
+      "opts": [
+        "$-3$",
+        "$4$",
+        "$-2$",
+        "$1$",
+        "$0$"
+      ],
+      "ans": 0,
+      "hints": [
+        "The normal of the required plane is perpendicular to two known vectors in the plane.",
+        "Find $\\overrightarrow{PQ}$ and the normal of the given plane; both lie in (are parallel to) the required plane.",
+        "A normal to a plane containing vectors $\\mathbf u$ and $\\mathbf w$ is $\\mathbf u\\times\\mathbf w$; a plane perpendicular to another plane has the other normal as a direction in it."
+      ],
+      "steps": [
+        "$\\overrightarrow{PQ}=\\langle-3,-1,-2\\rangle$ and the given normal is $\\langle2,-3,1\\rangle$.",
+        "$\\mathbf n=\\overrightarrow{PQ}\\times\\langle2,-3,1\\rangle=\\langle-7,-1,11\\rangle$.",
+        "Plane through $P$: $-7(x-2)-(y-2)+11(z-1)=0$, i.e. $-7x-y+11z=-5$.",
+        "Multiply by $-1$: $7x+y-11z=5$, so $a=7$, $b=1$, $c=-11$.",
+        "$a+b+c=-3$."
+      ],
+      "brief": "$\\mathbf n=\\overrightarrow{PQ}\\times\\langle2,-3,1\\rangle=\\langle-7,-1,11\\rangle$; plane $7x+y-11z=5$, sum $-3$."
+    },
+    {
+      "sec": "11.6",
+      "q": "The set of all points equidistant from the point $(0,1,0)$ and the $xz$-plane is",
+      "opts": [
+        "an elliptic paraboloid",
+        "an elliptic hyperbola",
+        "an ellipsoid",
+        "a plane",
+        "a hyperboloid of one sheet"
+      ],
+      "ans": 0,
+      "hints": [
+        "Write the distance condition for a general point $(x,y,z)$ and simplify to a quadric equation.",
+        "Distance to the $xz$-plane is $|y|$; set it equal to the distance to the point and square.",
+        "The distance from $(x,y,z)$ to $(x_0,y_0,z_0)$ is $\\sqrt{(x-x_0)^2+(y-y_0)^2+(z-z_0)^2}$; an equation $y=ax^2+bz^2+c$ with $a,b>0$ is an elliptic paraboloid."
+      ],
+      "steps": [
+        "$\\sqrt{x^2+(y-1)^2+z^2}=|y|$.",
+        "Square: $x^2+y^2-2y+1+z^2=y^2$.",
+        "So $2y=x^2+z^2+1$.",
+        "This has the form $y=\\frac12x^2+\\frac12z^2+\\frac12$, an elliptic paraboloid (a circular one is a special case)."
+      ],
+      "brief": "$x^2+(y-1)^2+z^2=y^2\\Rightarrow 2y=x^2+z^2+1$: elliptic paraboloid."
+    },
+    {
+      "sec": "11.6",
+      "q": "The graph of the equation $z^2=1-2x^2-3y^2$ is",
+      "opts": [
+        "an ellipsoid",
+        "an elliptic cone",
+        "an elliptic paraboloid",
+        "a hyperboloid of one sheet",
+        "a hyperboloid of two sheets"
+      ],
+      "ans": 0,
+      "hints": [
+        "Move all the squared terms to one side and compare with the standard quadric forms.",
+        "Rewrite the equation with all the variables on the left and a constant on the right.",
+        "$\\frac{x^2}{a^2}+\\frac{y^2}{b^2}+\\frac{z^2}{c^2}=1$ is an ellipsoid; one minus sign gives a hyperboloid of one sheet, two minus signs a hyperboloid of two sheets."
+      ],
+      "steps": [
+        "Rearrange: $2x^2+3y^2+z^2=1$.",
+        "All three squared terms are positive and the right side is $1$.",
+        "So the surface is an ellipsoid."
+      ],
+      "brief": "$2x^2+3y^2+z^2=1$: ellipsoid."
+    },
+    {
+      "sec": "13.1",
+      "q": "The domain of the function $f(x,y)=\\dfrac{y-1}{\\sqrt{x+1}}$ is",
+      "opts": [
+        "$\\{(x,y):x\\in(-1,\\infty),\\ y\\in(-\\infty,\\infty)\\}$",
+        "$\\{(x,y):x\\in[-1,\\infty),\\ y\\in(-\\infty,\\infty)\\}$",
+        "$\\{(x,y):x\\in(-1,\\infty),\\ y\\in[1,\\infty)\\}$",
+        "$\\{(x,y):x\\in(-\\infty,\\infty),\\ y\\in(-\\infty,\\infty)\\}$",
+        "$\\{(x,y):x\\in(1,\\infty),\\ y\\in(-1,\\infty)\\}$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Look for restrictions: a square root and a denominator.",
+        "Decide what $x+1$ must satisfy for the root to be defined and the denominator nonzero.",
+        "$\\sqrt{u}$ needs $u\\ge0$ and $\\dfrac1{\\sqrt u}$ additionally needs $u\\neq0$, so $u>0$."
+      ],
+      "steps": [
+        "The numerator $y-1$ has no restriction, so $y$ is any real number.",
+        "We need $x+1\\ge0$ for the root and $\\sqrt{x+1}\\neq0$ in the denominator, so $x+1>0$.",
+        "Hence $x>-1$ and $y\\in(-\\infty,\\infty)$."
+      ],
+      "brief": "Need $x+1>0$; $y$ unrestricted."
+    },
+    {
+      "sec": "13.1",
+      "q": "An equation for the level curve of $f(x,y)=\\ln(x-y)$ that passes through the point $(e^2,0)$ is given by",
+      "opts": [
+        "$y=x-e^2$",
+        "$y=x-2$",
+        "$y=ex-e^3$",
+        "$y=x^2$",
+        "$y=2x-2e^2$"
+      ],
+      "ans": 0,
+      "hints": [
+        "A level curve is the set where $f(x,y)=c$ for a constant $c$.",
+        "Evaluate $f$ at the given point to find $c$, then solve $f(x,y)=c$ for $y$.",
+        "Level curve: $f(x,y)=c$ with $c=f(x_0,y_0)$; and $\\ln u=c\\iff u=e^c$."
+      ],
+      "steps": [
+        "$c=f(e^2,0)=\\ln(e^2)=2$.",
+        "$\\ln(x-y)=2$, so $x-y=e^2$.",
+        "Therefore $y=x-e^2$."
+      ],
+      "brief": "$c=\\ln e^2=2$, so $x-y=e^2$, $y=x-e^2$."
+    },
+    {
+      "sec": "13.2",
+      "q": "$\\lim_{(x,y)\\to(0,0)}\\dfrac{y^3}{x^2+y^2}=$",
+      "opts": [
+        "$0$",
+        "$1$",
+        "$\\dfrac12$",
+        "DNE",
+        "$2$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Try polar coordinates, since the denominator is $x^2+y^2$.",
+        "Put $x=r\\cos\\theta$, $y=r\\sin\\theta$ and let $r\\to0^+$; bound the result.",
+        "$(x,y)\\to(0,0)$ iff $r\\to0^+$; if $|g(\\theta)|\\le M$ then $|r\\,g(\\theta)|\\le Mr\\to0$ (squeeze theorem)."
+      ],
+      "steps": [
+        "In polar form: $\\dfrac{r^3\\sin^3\\theta}{r^2}=r\\sin^3\\theta$.",
+        "Since $-1\\le\\sin^3\\theta\\le1$: $-r\\le r\\sin^3\\theta\\le r$.",
+        "Both bounds go to $0$ as $r\\to0^+$, so the limit is $0$."
+      ],
+      "brief": "Polar: $r\\sin^3\\theta$, squeezed between $\\pm r$, limit $0$."
+    },
+    {
+      "sec": "13.3",
+      "q": "If $z=\\ln\\sqrt{x^2+y^2}$, then $x\\dfrac{\\partial z}{\\partial x}+y\\dfrac{\\partial z}{\\partial y}=$",
+      "opts": [
+        "$1$",
+        "$z$",
+        "$0$",
+        "$-z$",
+        "$\\dfrac z2$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Simplify $z$ with a logarithm law before differentiating.",
+        "Write $z=\\frac12\\ln(x^2+y^2)$ and find both partial derivatives.",
+        "$\\dfrac{d}{du}\\ln u=\\dfrac1u$ and the chain rule: $\\dfrac{\\partial}{\\partial x}\\ln g=\\dfrac{g_x}{g}$."
+      ],
+      "steps": [
+        "$z=\\frac12\\ln(x^2+y^2)$.",
+        "$z_x=\\dfrac{x}{x^2+y^2}$ and $z_y=\\dfrac{y}{x^2+y^2}$.",
+        "$xz_x+yz_y=\\dfrac{x^2+y^2}{x^2+y^2}=1$."
+      ],
+      "brief": "$z_x=\\frac{x}{x^2+y^2}$, $z_y=\\frac{y}{x^2+y^2}$, so the sum is $1$."
+    },
+    {
+      "sec": "13.3",
+      "q": "If $f(x,y,z)=x^4-2xy+3y^3+xy^2z^4$, then $f_{xyzz}(x,y,z)=$",
+      "opts": [
+        "$24yz^2$",
+        "$12yz^2$",
+        "$6xyz^2$",
+        "$24xyz^2$",
+        "$12xz^2$"
+      ],
+      "ans": 0,
+      "hints": [
+        "This is a mixed higher-order partial derivative.",
+        "Read the subscripts left to right: differentiate with respect to $x$, then $y$, then $z$, then $z$ again.",
+        "For a function with continuous partials, the order of differentiation does not matter (Clairaut), so differentiate in whichever order is easiest."
+      ],
+      "steps": [
+        "Using the order $z,z,x,y$ (allowed since the partials are continuous): $f_z=4xy^2z^3$.",
+        "$f_{zz}=12xy^2z^2$.",
+        "$f_{zzx}=12y^2z^2$.",
+        "$f_{zzxy}=24yz^2$, which equals $f_{xyzz}$."
+      ],
+      "brief": "Reorder: $f_z=4xy^2z^3$, $f_{zz}=12xy^2z^2$, then $\\partial_x$, $\\partial_y$: $24yz^2$."
+    },
+    {
+      "sec": "13.4",
+      "q": "Let $z=x^2+y^2$. If $(x,y)$ changes from $(2,1)$ to $(2.1,1.05)$, then using differentials, the change in $z$ is approximately equal to",
+      "opts": [
+        "$0.5$",
+        "$0.03$",
+        "$-0.2$",
+        "$0.1$",
+        "$0.25$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Use the total differential to approximate the change.",
+        "Compute $dz=f_x\\,dx+f_y\\,dy$ at the starting point with $dx$ and $dy$ the changes in $x$ and $y$.",
+        "$\\Delta z\\approx dz=f_x(x_0,y_0)\\,dx+f_y(x_0,y_0)\\,dy$."
+      ],
+      "steps": [
+        "$dx=0.1$, $dy=0.05$.",
+        "$f_x=2x=4$ and $f_y=2y=2$ at $(2,1)$.",
+        "$dz=4(0.1)+2(0.05)=0.4+0.1=0.5$."
+      ],
+      "brief": "$dz=4(0.1)+2(0.05)=0.5$."
+    },
+    {
+      "sec": "13.5",
+      "q": "If $z=\\sin(x^2y)$, $x=s^2t$, $y=s+\\dfrac{1}{t^2}$, then $\\dfrac{\\partial z}{\\partial t}=$",
+      "opts": [
+        "$2s^5t\\cos(x^2y)$",
+        "$\\left(2s^5t-\\dfrac{s^5}{t}\\right)\\cos(x^2y)$",
+        "$3s^4t^2\\cos(x^2y)$",
+        "$\\left(s^3-\\dfrac{s^2}{t}\\right)\\cos(x^2y)$",
+        "$2st^2\\cos(x^2y)$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Use the chain rule with $x$ and $y$ as intermediate variables.",
+        "Write $\\dfrac{\\partial z}{\\partial t}$ as a sum of two products and compute each derivative.",
+        "$\\dfrac{\\partial z}{\\partial t}=\\dfrac{\\partial z}{\\partial x}\\dfrac{\\partial x}{\\partial t}+\\dfrac{\\partial z}{\\partial y}\\dfrac{\\partial y}{\\partial t}$."
+      ],
+      "steps": [
+        "$z_x=2xy\\cos(x^2y)$, $z_y=x^2\\cos(x^2y)$, $x_t=s^2$, $y_t=-2t^{-3}$.",
+        "$z_t=\\left[2xy\\,s^2-2x^2t^{-3}\\right]\\cos(x^2y)$.",
+        "Substitute $x=s^2t$, $y=s+t^{-2}$: $2s^2t\\left(s+t^{-2}\\right)s^2=2s^5t+2s^4t^{-1}$.",
+        "And $2x^2t^{-3}=2s^4t^2t^{-3}=2s^4t^{-1}$.",
+        "Difference: $2s^5t$, so $z_t=2s^5t\\cos(x^2y)$."
+      ],
+      "brief": "$z_t=(2xys^2-2x^2t^{-3})\\cos(x^2y)=2s^5t\\cos(x^2y)$."
+    },
+    {
+      "sec": "13.5",
+      "q": "If $z$ is defined implicitly as a differentiable function of $x$ and $y$ by the equation $\\sin(2x+y)-2x\\cos(z^2)=1$, then $\\dfrac{\\partial z}{\\partial x}=$",
+      "opts": [
+        "$\\dfrac{\\cos(z^2)-\\cos(2x+y)}{2xz\\sin(z^2)}$",
+        "$\\dfrac{\\cos(z^2)+\\cos(2x+y)}{xz\\sin(z^2)}$",
+        "$\\dfrac{\\cos(2x+y)-\\cos(z^2)}{2xz\\cos(z^2)}$",
+        "$\\dfrac{\\cos(2x+y)-\\cos(z^2)}{2z\\sin(z^2)}$",
+        "$\\dfrac{\\cos(2x+y)-2\\cos(z^2)}{xz\\sin(z^2)}$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Use implicit differentiation with $F(x,y,z)=0$.",
+        "Set $F=\\sin(2x+y)-2x\\cos(z^2)-1$ and find $F_x$ and $F_z$.",
+        "If $F(x,y,z)=0$ defines $z$, then $\\dfrac{\\partial z}{\\partial x}=-\\dfrac{F_x}{F_z}$."
+      ],
+      "steps": [
+        "$F_x=2\\cos(2x+y)-2\\cos(z^2)$.",
+        "$F_z=-2x\\cdot(-\\sin(z^2))\\cdot2z=4xz\\sin(z^2)$.",
+        "$z_x=-\\dfrac{2\\cos(2x+y)-2\\cos(z^2)}{4xz\\sin(z^2)}$.",
+        "Simplify: $z_x=\\dfrac{\\cos(z^2)-\\cos(2x+y)}{2xz\\sin(z^2)}$."
+      ],
+      "brief": "$-F_x/F_z=-\\frac{2\\cos(2x+y)-2\\cos z^2}{4xz\\sin z^2}=\\frac{\\cos z^2-\\cos(2x+y)}{2xz\\sin z^2}$."
+    },
+    {
+      "sec": "13.6",
+      "q": "The maximum value of the directional derivative of $f(x,y)=xe^{y/x}$ at the point $(1,2)$ is equal to",
+      "opts": [
+        "$e^2\\sqrt2$",
+        "$e^2$",
+        "$2e^2$",
+        "$e^4$",
+        "$e^2+1$"
+      ],
+      "ans": 0,
+      "hints": [
+        "The largest directional derivative equals the length of the gradient.",
+        "Compute $\\nabla f$ with the product and chain rules, evaluate at $(1,2)$, and take its magnitude.",
+        "The maximum of $D_{\\mathbf u}f$ over unit vectors $\\mathbf u$ is $\\|\\nabla f\\|$."
+      ],
+      "steps": [
+        "$f_x=e^{y/x}-\\dfrac yx e^{y/x}$ and $f_y=e^{y/x}$.",
+        "At $(1,2)$: $f_x=e^2-2e^2=-e^2$, $f_y=e^2$.",
+        "$\\|\\nabla f\\|=\\sqrt{e^4+e^4}=e^2\\sqrt2$."
+      ],
+      "brief": "$\\nabla f(1,2)=\\langle-e^2,e^2\\rangle$, magnitude $e^2\\sqrt2$."
+    },
+    {
+      "sec": "13.7",
+      "q": "If $ax+by+cz=10$ is an equation for the tangent plane to the surface $x^2+y^2+z^2-8x-12y+4z+42=0$ at the point $(2,3,-3)$, then $a+b+c=$",
+      "opts": [
+        "$6$",
+        "$5$",
+        "$4$",
+        "$3$",
+        "$2$"
+      ],
+      "ans": 0,
+      "hints": [
+        "The gradient of a level surface gives the normal vector of its tangent plane.",
+        "Set $F=x^2+y^2+z^2-8x-12y+4z+42$, compute $\\nabla F$ at the point, and write the plane through the point.",
+        "Tangent plane: $F_x(x-x_0)+F_y(y-y_0)+F_z(z-z_0)=0$."
+      ],
+      "steps": [
+        "$\\nabla F=\\langle2x-8,\\,2y-12,\\,2z+4\\rangle$, so $\\nabla F(2,3,-3)=\\langle-4,-6,-2\\rangle$.",
+        "Plane: $-4(x-2)-6(y-3)-2(z+3)=0$; divide by $-2$: $2(x-2)+3(y-3)+(z+3)=0$.",
+        "So $2x+3y+z=10$.",
+        "$a=2$, $b=3$, $c=1$, giving $a+b+c=6$."
+      ],
+      "brief": "$\\nabla F=\\langle-4,-6,-2\\rangle$, plane $2x+3y+z=10$, sum $6$."
+    }
+  ]
+}

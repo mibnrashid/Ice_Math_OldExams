@@ -1,0 +1,409 @@
+{
+  "course": "math201",
+  "term": "243",
+  "kind": "fx",
+  "date": "",
+  "minutes": 120,
+  "source": "math201-243-fx.pdf",
+  "note": "Date and exam length are not printed on the master (the PDF has no cover page). The 120 minutes is an assumed usual length for a Math 201 final. Q10 asks for the minimum subject to x^2 y = 6; on the branch x<0 the function is unbounded below, so the key value 11/2 is the local minimum for x>0 (kept as the official key). All 20 keys were verified and agree.",
+  "qs": [
+    {
+      "sec": "14.1",
+      "q": "\\[ \\int_{1}^{e}\\int_{0}^{y}\\frac{4}{x^2+y^2}\\,dx\\,dy= \\]",
+      "opts": ["$\\pi$", "$\\dfrac{\\pi}{2}$", "$2\\pi$", "$3\\pi$", "$4\\pi$"],
+      "ans": 0,
+      "hints": [
+        "This is an iterated integral. Do the inner integral first, treating the other variable as a constant.",
+        "In the inner integral $y$ is a constant, so the integrand looks like $\\dfrac{1}{x^2+a^2}$ with $a=y$.",
+        "$\\int\\frac{dx}{x^2+a^2}=\\frac1a\\arctan\\frac xa+C$ and $\\int\\frac{dy}{y}=\\ln|y|+C$."
+      ],
+      "steps": [
+        "Inner integral: $\\int_0^y\\frac{4}{x^2+y^2}dx=\\frac4y\\arctan\\frac xy\\Big|_0^y=\\frac4y\\cdot\\frac\\pi4=\\frac\\pi y$.",
+        "Outer integral: $\\int_1^e\\frac{\\pi}{y}dy=\\pi\\ln y\\Big|_1^e$.",
+        "$=\\pi(1-0)=\\pi$."
+      ],
+      "brief": "Inner: $\\frac4y\\arctan\\frac xy\\big|_0^y=\\frac{\\pi}{y}$; then $\\int_1^e\\frac{\\pi}{y}dy=\\pi$."
+    },
+    {
+      "sec": "14.1",
+      "q": "\\[ \\int_{0}^{1}\\int_{2x}^{2}4e^{y^2}\\,dy\\,dx= \\]",
+      "opts": ["$e^4-1$", "$e^3-1$", "$e^2-1$", "$e^4$", "$e^4+1$"],
+      "ans": 0,
+      "hints": [
+        "The inner integral of $e^{y^2}$ in $y$ has no elementary antiderivative, so change the order of integration.",
+        "Sketch the region bounded by the three lines in the limits, then describe it with $y$ as the outer variable.",
+        "After swapping the order, integrate in the new inner variable first; then use $\\int f'(y)e^{f(y)}dy=e^{f(y)}+C$."
+      ],
+      "steps": [
+        "The region is $0\\le x\\le1$, $2x\\le y\\le2$, which is the triangle $0\\le y\\le2$, $0\\le x\\le y/2$.",
+        "$\\int_0^2\\int_0^{y/2}4e^{y^2}dx\\,dy=\\int_0^2 2y\\,e^{y^2}dy$.",
+        "$=e^{y^2}\\Big|_0^2=e^4-1$."
+      ],
+      "brief": "Swap order: $\\int_0^2\\int_0^{y/2}4e^{y^2}dx\\,dy=\\int_0^2 2ye^{y^2}dy=e^4-1$."
+    },
+    {
+      "sec": "14.2",
+      "q": "The average value of $f(x,y)=\\sin(x+y)$ over the rectangular region with vertices $(0,0)$, $(\\pi,0)$, $(\\pi,\\pi)$ and $(0,\\pi)$ is equal to",
+      "opts": ["$0$", "$\\pi$", "$2\\pi$", "$3\\pi$", "$1$"],
+      "ans": 0,
+      "hints": [
+        "Use the average value of a function over a region.",
+        "Set up the double integral of $f$ over the rectangle and divide by its area.",
+        "The average value is $\\dfrac{1}{A(R)}\\iint_R f\\,dA$, and $\\int\\sin(x+y)\\,dx=-\\cos(x+y)+C$."
+      ],
+      "steps": [
+        "Area of the square is $\\pi^2$.",
+        "$\\int_0^\\pi\\sin(x+y)dx=-\\cos(\\pi+y)+\\cos y=2\\cos y$.",
+        "$\\int_0^\\pi 2\\cos y\\,dy=2\\sin y\\Big|_0^\\pi=0$.",
+        "Average value $=\\dfrac{0}{\\pi^2}=0$."
+      ],
+      "brief": "$\\iint\\sin(x+y)\\,dA=\\int_0^\\pi2\\cos y\\,dy=0$, so the average is $0$."
+    },
+    {
+      "sec": "14.2",
+      "q": "The volume of the solid bounded by $z=8(1-xy)$, $z=0$, $y=x$, $y=1$ and $x=0$ is equal to",
+      "opts": ["$3$", "$1$", "$5$", "$2$", "$7$"],
+      "ans": 0,
+      "hints": [
+        "The volume is a double integral of the height function over the base region in the $xy$-plane.",
+        "Sketch the base bounded by the three vertical planes and choose limits for it.",
+        "$V=\\iint_R f(x,y)\\,dA$ where $f\\ge0$ is the top surface and $R$ is the region below it."
+      ],
+      "steps": [
+        "The base is the triangle $0\\le y\\le1$, $0\\le x\\le y$ (height is nonnegative there).",
+        "$V=\\int_0^1\\int_0^y8(1-xy)dx\\,dy=\\int_0^1 8\\left(y-\\frac{y^3}{2}\\right)dy$.",
+        "$=8\\left(\\dfrac12-\\dfrac18\\right)=3$."
+      ],
+      "brief": "$V=\\int_0^1\\int_0^y8(1-xy)\\,dx\\,dy=8\\left(\\frac12-\\frac18\\right)=3$."
+    },
+    {
+      "sec": "14.2",
+      "q": "The volume of the solid region bounded above by the paraboloid $z=4-x^2-y^2$ and the plane $z=4-2x$ is equal to",
+      "opts": [
+        "$\\int_{0}^{2}\\int_{-\\sqrt{2x-x^2}}^{\\sqrt{2x-x^2}}(2x-x^2-y^2)\\,dy\\,dx$",
+        "$\\int_{-2}^{2}\\int_{0}^{\\sqrt{2x-x^2}}(2x-x^2-y^2)\\,dy\\,dx$",
+        "$\\int_{0}^{4}\\int_{-\\sqrt{2x-x^2}}^{\\sqrt{2x-x^2}}(4-x^2-y^2)\\,dy\\,dx$",
+        "$\\int_{-4}^{4}\\int_{-\\sqrt{2x-x^2}}^{\\sqrt{2x-x^2}}(2x-x^2+y^2)\\,dy\\,dx$",
+        "$\\int_{0}^{\\sqrt2}\\int_{-\\sqrt2}^{\\sqrt2}(2x-x^2-y^2)\\,dy\\,dx$"
+      ],
+      "ans": 0,
+      "hints": [
+        "The volume is the integral of (top surface minus bottom surface) over the region where the two surfaces enclose a solid.",
+        "Set the two $z$-values equal to find the curve of intersection and project it onto the $xy$-plane; complete the square to identify the base region.",
+        "$V=\\iint_R\\big(z_{\\text{top}}-z_{\\text{bottom}}\\big)\\,dA$, and $x^2+y^2=2ax$ is the circle $(x-a)^2+y^2=a^2$."
+      ],
+      "steps": [
+        "Intersection: $4-x^2-y^2=4-2x$, so $x^2-2x+y^2=0$, i.e. $(x-1)^2+y^2=1$.",
+        "Inside this disc the paraboloid is above the plane. The height is $(4-x^2-y^2)-(4-2x)=2x-x^2-y^2$.",
+        "The disc has $0\\le x\\le2$ and $-\\sqrt{2x-x^2}\\le y\\le\\sqrt{2x-x^2}$.",
+        "So $V=\\int_0^2\\int_{-\\sqrt{2x-x^2}}^{\\sqrt{2x-x^2}}(2x-x^2-y^2)\\,dy\\,dx$."
+      ],
+      "brief": "Base disc $(x-1)^2+y^2\\le1$, height $2x-x^2-y^2$, $x\\in[0,2]$."
+    },
+    {
+      "sec": "14.3",
+      "q": "\\[ \\int_{0}^{2}\\int_{0}^{x}\\sqrt{x^2+y^2}\\,dy\\,dx+\\int_{2}^{2\\sqrt2}\\int_{0}^{\\sqrt{8-x^2}}\\sqrt{x^2+y^2}\\,dy\\,dx= \\]",
+      "opts": [
+        "$\\dfrac{4\\sqrt2\\,\\pi}{3}$",
+        "$\\dfrac{8\\sqrt2\\,\\pi}{3}$",
+        "$4\\sqrt2\\,\\pi$",
+        "$\\dfrac{2\\sqrt2\\,\\pi}{3}$",
+        "$\\dfrac{\\sqrt2\\,\\pi}{3}$"
+      ],
+      "ans": 0,
+      "hints": [
+        "The integrand $\\sqrt{x^2+y^2}$ and the circular boundary suggest polar coordinates.",
+        "Sketch the two regions together: a triangle and a piece of a disc. Find the angles and the radius of the combined region.",
+        "In polar form $x=r\\cos\\theta$, $y=r\\sin\\theta$, $dA=r\\,dr\\,d\\theta$ and $\\sqrt{x^2+y^2}=r$."
+      ],
+      "steps": [
+        "First region: $0\\le y\\le x\\le2$. Second: $2\\le x\\le2\\sqrt2$, $0\\le y\\le\\sqrt{8-x^2}$ (inside the circle of radius $2\\sqrt2$).",
+        "Together they form the sector $0\\le\\theta\\le\\dfrac\\pi4$, $0\\le r\\le2\\sqrt2$ (the line $y=x$ meets the circle at $x=2$).",
+        "$\\int_0^{\\pi/4}\\int_0^{2\\sqrt2}r\\cdot r\\,dr\\,d\\theta=\\dfrac\\pi4\\cdot\\dfrac{(2\\sqrt2)^3}{3}$.",
+        "$=\\dfrac\\pi4\\cdot\\dfrac{16\\sqrt2}{3}=\\dfrac{4\\sqrt2\\,\\pi}{3}$."
+      ],
+      "brief": "Union is the sector $0\\le\\theta\\le\\frac\\pi4$, $r\\le2\\sqrt2$: $\\frac\\pi4\\cdot\\frac{(2\\sqrt2)^3}{3}=\\frac{4\\sqrt2\\pi}{3}$."
+    },
+    {
+      "sec": "14.7",
+      "q": "The volume of the solid inside the sphere $x^2+y^2+z^2=4$, outside the cone $z=\\sqrt{x^2+y^2}$, and above the $xy$-plane is",
+      "opts": [
+        "$\\dfrac{8\\sqrt2\\,\\pi}{3}$",
+        "$\\dfrac{16\\sqrt2\\,\\pi}{3}$",
+        "$\\dfrac{8\\pi}{3}$",
+        "$\\dfrac{4\\sqrt2\\,\\pi}{3}$",
+        "$8\\sqrt2\\,\\pi$"
+      ],
+      "ans": 0,
+      "hints": [
+        "A sphere and a cone centred on the $z$-axis suggest spherical coordinates.",
+        "Find the angle $\\varphi$ of the cone, then decide which range of $\\varphi$ is outside the cone and above the $xy$-plane.",
+        "In spherical coordinates $dV=\\rho^2\\sin\\varphi\\,d\\rho\\,d\\varphi\\,d\\theta$, and a cone $z=c\\sqrt{x^2+y^2}$ is $\\varphi=\\arctan(1/c)$."
+      ],
+      "steps": [
+        "The sphere is $\\rho=2$. The cone $z=\\sqrt{x^2+y^2}$ is $\\varphi=\\pi/4$.",
+        "Outside the cone and above the plane: $\\dfrac\\pi4\\le\\varphi\\le\\dfrac\\pi2$, $0\\le\\rho\\le2$, $0\\le\\theta\\le2\\pi$.",
+        "$V=\\int_0^{2\\pi}\\int_{\\pi/4}^{\\pi/2}\\int_0^2\\rho^2\\sin\\varphi\\,d\\rho\\,d\\varphi\\,d\\theta=2\\pi\\cdot\\frac83\\cdot\\Big[-\\cos\\varphi\\Big]_{\\pi/4}^{\\pi/2}$.",
+        "$=\\dfrac{16\\pi}{3}\\cdot\\dfrac{\\sqrt2}{2}=\\dfrac{8\\sqrt2\\,\\pi}{3}$."
+      ],
+      "brief": "Spherical: $\\rho\\le2$, $\\frac\\pi4\\le\\varphi\\le\\frac\\pi2$: $2\\pi\\cdot\\frac83\\cdot\\frac{\\sqrt2}{2}=\\frac{8\\sqrt2\\pi}{3}$."
+    },
+    {
+      "sec": "14.7",
+      "q": "The volume of the solid inside both $x^2+y^2+z^2=4$ and $(x-1)^2+y^2=1$ is equal to",
+      "opts": [
+        "$\\dfrac{16}{9}(3\\pi-4)$",
+        "$\\dfrac{4}{9}(3\\pi-4)$",
+        "$\\dfrac{16}{3}(\\pi-2)$",
+        "$\\dfrac{32}{9}(\\pi-1)$",
+        "$\\dfrac{16}{9}(\\pi-4)$"
+      ],
+      "ans": 0,
+      "hints": [
+        "The solid is the part of the ball lying inside a cylinder; use symmetry about the $xy$-plane and cylindrical coordinates.",
+        "Write the cylinder in polar form, which gives the range of $r$ and $\\theta$, and use the sphere for the height $z$.",
+        "In cylindrical coordinates $dV=r\\,dz\\,dr\\,d\\theta$, the circle $(x-a)^2+y^2=a^2$ is $r=2a\\cos\\theta$, and $\\int_0^{\\pi/2}\\sin^3\\theta\\,d\\theta=\\dfrac23$."
+      ],
+      "steps": [
+        "Cylinder: $r=2\\cos\\theta$, $-\\dfrac\\pi2\\le\\theta\\le\\dfrac\\pi2$. Sphere: $-\\sqrt{4-r^2}\\le z\\le\\sqrt{4-r^2}$.",
+        "$V=2\\int_{-\\pi/2}^{\\pi/2}\\int_0^{2\\cos\\theta}\\sqrt{4-r^2}\\,r\\,dr\\,d\\theta=4\\int_0^{\\pi/2}\\int_0^{2\\cos\\theta}\\sqrt{4-r^2}\\,r\\,dr\\,d\\theta$.",
+        "Inner: $-\\dfrac13(4-r^2)^{3/2}\\Big|_0^{2\\cos\\theta}=\\dfrac13\\left(8-8\\sin^3\\theta\\right)$.",
+        "$V=\\dfrac{32}{3}\\int_0^{\\pi/2}(1-\\sin^3\\theta)\\,d\\theta=\\dfrac{32}{3}\\left(\\dfrac\\pi2-\\dfrac23\\right)=\\dfrac{16}{9}(3\\pi-4)$."
+      ],
+      "brief": "Cylindrical: $V=4\\int_0^{\\pi/2}\\int_0^{2\\cos\\theta}r\\sqrt{4-r^2}\\,dr\\,d\\theta=\\frac{16}{9}(3\\pi-4)$."
+    },
+    {
+      "sec": "14.6",
+      "q": "\\[ \\int_{1}^{4}\\int_{0}^{1}\\int_{0}^{x}2z\\,e^{-x^2}\\,dy\\,dx\\,dz= \\]",
+      "opts": [
+        "$\\dfrac{15}{2}\\left(1-e^{-1}\\right)$",
+        "$15\\left(e^{-1}-1\\right)$",
+        "$\\dfrac{7}{2}\\left(1-e^{-1}\\right)$",
+        "$\\dfrac{15}{2}\\left(1+e^{-1}\\right)$",
+        "$8\\left(1-e^{-1}\\right)$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Work from the inside out; the innermost variable does not appear in the integrand.",
+        "Integrate in $y$ first, which produces a factor of $x$ that makes the $x$-integral doable by substitution.",
+        "$\\int x\\,e^{-x^2}dx=-\\tfrac12e^{-x^2}+C$ (substitution $u=-x^2$) and $\\int z\\,dz=\\tfrac{z^2}{2}$."
+      ],
+      "steps": [
+        "$\\int_0^x2ze^{-x^2}dy=2zxe^{-x^2}$.",
+        "$\\int_0^1 2zxe^{-x^2}dx=z\\left[-e^{-x^2}\\right]_0^1=z\\left(1-e^{-1}\\right)$.",
+        "$\\int_1^4z\\left(1-e^{-1}\\right)dz=\\left(1-e^{-1}\\right)\\dfrac{16-1}{2}=\\dfrac{15}{2}\\left(1-e^{-1}\\right)$."
+      ],
+      "brief": "$\\int_0^x\\to 2zxe^{-x^2}$, $\\int_0^1\\to z(1-e^{-1})$, $\\int_1^4z\\,dz=\\frac{15}{2}$."
+    },
+    {
+      "sec": "13.10",
+      "q": "The minimum value of $f(x,y)=\\dfrac32x+y+1$ subject to the constraint $x^2y=6$ is equal to",
+      "opts": ["$\\dfrac{11}{2}$", "$9$", "$\\dfrac{17}{2}$", "$14$", "$\\dfrac{15}{2}$"],
+      "ans": 0,
+      "hints": [
+        "This is an optimization problem with a constraint, so use Lagrange multipliers.",
+        "Set $\\nabla f=\\lambda\\nabla g$ with $g$ the constraint function, divide the two component equations to eliminate $\\lambda$, then use the constraint.",
+        "At an extremum of $f$ subject to $g=k$: $\\nabla f=\\lambda\\nabla g$ and $g=k$."
+      ],
+      "steps": [
+        "$\\nabla f=\\left\\langle\\dfrac32,1\\right\\rangle=\\lambda\\langle2xy,\\,x^2\\rangle$.",
+        "Dividing: $\\dfrac{3}{2}=\\dfrac{2xy}{x^2}=\\dfrac{2y}{x}$, so $y=\\dfrac{3x}{4}$.",
+        "Constraint: $x^2\\cdot\\dfrac{3x}{4}=6$, so $x^3=8$, $x=2$, $y=\\dfrac32$.",
+        "$f=3+\\dfrac32+1=\\dfrac{11}{2}$."
+      ],
+      "brief": "Lagrange: $y=\\frac{3x}{4}$, $x^3=8$, $(2,\\frac32)$, $f=\\frac{11}{2}$."
+    },
+    {
+      "sec": "13.9",
+      "q": "A rectangular box is resting on the $xy$-plane with one vertex at the origin and its opposite vertex lying in the plane $5x+3y+2z=30$. The maximum possible volume of the box is equal to",
+      "opts": ["$\\dfrac{100}{3}$", "$50$", "$90$", "$\\dfrac{200}{3}$", "$\\dfrac{125}{3}$"],
+      "ans": 0,
+      "hints": [
+        "This is an optimization problem: maximize the volume of the box with the vertex on the plane.",
+        "Take the opposite vertex $(x,y,z)$ so the volume is $xyz$, and eliminate $z$ using the plane to get a function of two variables.",
+        "Set both partial derivatives of $V(x,y)$ to zero to find critical points (with $x,y,z>0$)."
+      ],
+      "steps": [
+        "$z=\\dfrac{30-5x-3y}{2}$, so $V=\\dfrac12xy(30-5x-3y)=\\dfrac12\\left(30xy-5x^2y-3xy^2\\right)$.",
+        "$V_x=\\dfrac12y(30-10x-3y)=0$ and $V_y=\\dfrac12x(30-5x-6y)=0$.",
+        "Solving $10x+3y=30$ and $5x+6y=30$: $x=2$, $y=\\dfrac{10}{3}$, so $z=5$.",
+        "$V=2\\cdot\\dfrac{10}{3}\\cdot5=\\dfrac{100}{3}$."
+      ],
+      "brief": "$V=xy\\frac{30-5x-3y}{2}$; critical point $(2,\\frac{10}{3},5)$ gives $V=\\frac{100}{3}$."
+    },
+    {
+      "sec": "13.8",
+      "q": "Let $f(x,y)=x^2+xy$, and $R=\\{(x,y):|x|\\le2,\\ |y|\\le1\\}$. If $M$ and $m$ represent respectively the absolute maximum and absolute minimum of $f$ over $R$, then $m+M=$",
+      "opts": ["$\\dfrac{23}{4}$", "$\\dfrac{21}{4}$", "$\\dfrac{11}{2}$", "$\\dfrac{25}{4}$", "$6$"],
+      "ans": 0,
+      "hints": [
+        "This is an absolute extrema problem on a closed rectangle.",
+        "Find the critical points inside $R$, then study $f$ on each of the four edges as a one-variable function.",
+        "Compare the values of $f$ at interior critical points, at critical points on the edges, and at the corners; the largest and smallest are $M$ and $m$."
+      ],
+      "steps": [
+        "$f_x=2x+y=0$ and $f_y=x=0$ give $(0,0)$ with $f=0$.",
+        "Edges $y=\\pm1$: $f=x^2\\pm x$ on $[-2,2]$ has minimum $-\\dfrac14$ (at $x=\\mp\\dfrac12$) and maximum $6$ at the corners.",
+        "Edges $x=\\pm2$: $f=4\\pm2y$ on $[-1,1]$ ranges over $[2,6]$.",
+        "So $M=6$ and $m=-\\dfrac14$, giving $m+M=\\dfrac{23}{4}$."
+      ],
+      "brief": "Interior value $0$; edges give max $6$ at $(\\pm2,\\pm1)$, min $-\\frac14$: $m+M=\\frac{23}{4}$."
+    },
+    {
+      "sec": "13.8",
+      "q": "The graph of the function \\[ f(x,y)=xy+\\frac1x+\\frac1y \\] has",
+      "opts": [
+        "a relative minimum at $(1,1)$",
+        "a relative maximum at $(1,1)$",
+        "a saddle point at $(1,1)$",
+        "no relative extreme values",
+        "a relative maximum at $(1,1)$ and a relative minimum at $(-1,-1)$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Find the critical points and classify them with the second partials test.",
+        "Set $f_x=0$ and $f_y=0$ and solve the system for $(x,y)$, then compute $f_{xx}$, $f_{yy}$ and $f_{xy}$.",
+        "With $d=f_{xx}f_{yy}-(f_{xy})^2$: $d>0$ and $f_{xx}>0$ gives a relative minimum, $d>0$ and $f_{xx}<0$ a relative maximum, $d<0$ a saddle point."
+      ],
+      "steps": [
+        "$f_x=y-\\dfrac1{x^2}=0$ and $f_y=x-\\dfrac1{y^2}=0$, so $y=x^{-2}$ and $x=y^{-2}=x^4$.",
+        "Hence $x=1$ (since $x\\ne0$ and $x=1/y^2>0$), $y=1$: the only critical point is $(1,1)$.",
+        "$f_{xx}=\\dfrac2{x^3}=2$, $f_{yy}=\\dfrac2{y^3}=2$, $f_{xy}=1$.",
+        "$d=4-1=3>0$ and $f_{xx}>0$, so $(1,1)$ is a relative minimum."
+      ],
+      "brief": "Only critical point $(1,1)$; $d=2\\cdot2-1=3>0$, $f_{xx}=2>0$: relative minimum."
+    },
+    {
+      "sec": "13.7",
+      "q": "Let $P(a,b,c)$, with $a>0$, be the point on the ellipsoid $x^2+4y^2+z^2=9$ where the tangent plane is perpendicular to the line \\[ L:\\ x=2-4t,\\quad y=1+8t,\\quad z=3-2t. \\] Then $a+b+c=$",
+      "opts": ["$2$", "$0$", "$1$", "$5$", "$6$"],
+      "ans": 0,
+      "hints": [
+        "The tangent plane to a level surface has the gradient as its normal vector.",
+        "A plane perpendicular to a line has the line's direction vector as its normal, so the gradient must be parallel to the direction vector.",
+        "For $F(x,y,z)=k$ the normal at a point is $\\nabla F$; two vectors are parallel when one is a scalar multiple of the other. The point must also satisfy the surface equation."
+      ],
+      "steps": [
+        "$\\nabla F=\\langle2x,8y,2z\\rangle$ and the direction of $L$ is $\\langle-4,8,-2\\rangle$.",
+        "Parallel: $\\langle2a,8b,2c\\rangle=k\\langle-4,8,-2\\rangle$, so $a=-2k$, $b=k$, $c=-k$.",
+        "On the ellipsoid: $4k^2+4k^2+k^2=9k^2=9$, so $k=\\pm1$. Since $a>0$, $k=-1$.",
+        "$P=(2,-1,1)$, so $a+b+c=2$."
+      ],
+      "brief": "$\\nabla F\\parallel\\langle-4,8,-2\\rangle$: $(a,b,c)=(-2k,k,-k)$, $k=-1$: $P=(2,-1,1)$, sum $2$."
+    },
+    {
+      "sec": "13.6",
+      "q": "The maximum value of the directional derivative of $f(x,y,z)=\\sqrt{x^2+y^2+z^2}$ at the point $P(1,4,2)$ is",
+      "opts": ["$1$", "$0$", "$\\dfrac{1}{\\sqrt{21}}$", "$\\sqrt{21}$", "$2$"],
+      "ans": 0,
+      "hints": [
+        "The directional derivative is largest in the direction of the gradient.",
+        "Compute $\\nabla f$ at $P$ and find its length.",
+        "$D_{\\mathbf u}f=\\nabla f\\cdot\\mathbf u$ has maximum value $\\|\\nabla f\\|$, attained when $\\mathbf u$ points along $\\nabla f$."
+      ],
+      "steps": [
+        "$\\nabla f=\\left\\langle\\dfrac{x}{\\sqrt{x^2+y^2+z^2}},\\dfrac{y}{\\sqrt{x^2+y^2+z^2}},\\dfrac{z}{\\sqrt{x^2+y^2+z^2}}\\right\\rangle$.",
+        "At $P(1,4,2)$: $\\sqrt{1+16+4}=\\sqrt{21}$, so $\\nabla f=\\dfrac{1}{\\sqrt{21}}\\langle1,4,2\\rangle$.",
+        "$\\|\\nabla f\\|=\\dfrac{\\sqrt{21}}{\\sqrt{21}}=1$."
+      ],
+      "brief": "$\\nabla f=\\frac{1}{\\sqrt{21}}\\langle1,4,2\\rangle$ has length $1$, so the maximum is $1$."
+    },
+    {
+      "sec": "13.2",
+      "q": "\\[ \\lim_{(x,y)\\to(0,0)}\\frac{\\sin(x^2+y^2)}{x^2+y^2}= \\]",
+      "opts": ["$1$", "$0$", "$-1$", "$\\pi$", "$-\\pi$"],
+      "ans": 0,
+      "hints": [
+        "The expression depends only on $x^2+y^2$, so reduce it to a one-variable limit.",
+        "Substitute a single new variable for $x^2+y^2$ and decide which way it tends as $(x,y)\\to(0,0)$.",
+        "A standard one-variable limit: $\\lim_{u\\to0}\\dfrac{\\sin u}{u}$ is a well-known value."
+      ],
+      "steps": [
+        "Put $u=x^2+y^2$. Then $u\\to0^+$ as $(x,y)\\to(0,0)$.",
+        "The limit becomes $\\lim_{u\\to0^+}\\dfrac{\\sin u}{u}$.",
+        "This equals $1$."
+      ],
+      "brief": "With $u=x^2+y^2\\to0$: $\\lim\\frac{\\sin u}{u}=1$."
+    },
+    {
+      "sec": "13.1",
+      "q": "The domain of the function $f(x,y)=\\dfrac{\\sqrt{x^2+y^2-9}}{e^{x+y}}$ is",
+      "opts": [
+        "$\\{(x,y):\\ x^2+y^2\\ge9\\}$",
+        "$\\{(x,y):\\ x^2+y^2\\ge9,\\ x+y\\ne0\\}$",
+        "$\\{(x,y):\\ x^2+y^2\\ge9,\\ x=0\\}$",
+        "$\\{(x,y):\\ x^2+y^2>9,\\ y=0\\}$",
+        "$\\{(x,y):\\ x^2+y^2\\le9\\}$"
+      ],
+      "ans": 0,
+      "hints": [
+        "The domain is where every part of the formula is defined: check the square root and the denominator separately.",
+        "The square root needs a nonnegative radicand. Ask whether the denominator can ever be zero.",
+        "$\\sqrt{u}$ is defined only for $u\\ge0$, and an exponential $e^{w}$ is never zero."
+      ],
+      "steps": [
+        "The square root requires $x^2+y^2-9\\ge0$, i.e. $x^2+y^2\\ge9$.",
+        "The denominator $e^{x+y}>0$ for all $x,y$, so it gives no restriction.",
+        "Domain: $\\{(x,y):x^2+y^2\\ge9\\}$."
+      ],
+      "brief": "Only the root restricts: $x^2+y^2\\ge9$; $e^{x+y}$ is never $0$."
+    },
+    {
+      "sec": "11.3",
+      "q": "The vector component of $\\vec u=\\langle8,2,0\\rangle$ orthogonal to $\\vec v=\\langle2,1,-1\\rangle$ is",
+      "opts": [
+        "$\\langle2,-1,3\\rangle$",
+        "$\\langle6,3,-3\\rangle$",
+        "$\\langle8,2,0\\rangle$",
+        "$\\langle-2,1,-3\\rangle$",
+        "$\\langle4,1,1\\rangle$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Split $\\vec u$ into a part along $\\vec v$ and a part perpendicular to $\\vec v$.",
+        "First compute the projection of $\\vec u$ onto $\\vec v$, then subtract it from $\\vec u$.",
+        "$\\operatorname{proj}_{\\vec v}\\vec u=\\dfrac{\\vec u\\cdot\\vec v}{\\|\\vec v\\|^2}\\vec v$ and the orthogonal component is $\\vec u-\\operatorname{proj}_{\\vec v}\\vec u$."
+      ],
+      "steps": [
+        "$\\vec u\\cdot\\vec v=16+2+0=18$ and $\\|\\vec v\\|^2=4+1+1=6$.",
+        "$\\operatorname{proj}_{\\vec v}\\vec u=\\dfrac{18}{6}\\langle2,1,-1\\rangle=\\langle6,3,-3\\rangle$.",
+        "Orthogonal component: $\\langle8,2,0\\rangle-\\langle6,3,-3\\rangle=\\langle2,-1,3\\rangle$."
+      ],
+      "brief": "$\\text{proj}=3\\langle2,1,-1\\rangle=\\langle6,3,-3\\rangle$; $\\vec u-\\text{proj}=\\langle2,-1,3\\rangle$."
+    },
+    {
+      "sec": "11.4",
+      "q": "The area of the parallelogram that has the vectors $\\vec u=\\langle1,2,2\\rangle$ and $\\vec v=\\langle2,1,-2\\rangle$ as adjacent sides is equal to",
+      "opts": ["$9$", "$4$", "$6$", "$8$", "$10$"],
+      "ans": 0,
+      "hints": [
+        "The area of a parallelogram spanned by two vectors in space comes from the cross product.",
+        "Compute $\\vec u\\times\\vec v$ with the determinant formula, then take its length.",
+        "Area $=\\|\\vec u\\times\\vec v\\|$, where $\\vec u\\times\\vec v=\\begin{vmatrix}\\mathbf i&\\mathbf j&\\mathbf k\\\\u_1&u_2&u_3\\\\v_1&v_2&v_3\\end{vmatrix}$."
+      ],
+      "steps": [
+        "$\\vec u\\times\\vec v=\\begin{vmatrix}\\mathbf i&\\mathbf j&\\mathbf k\\\\1&2&2\\\\2&1&-2\\end{vmatrix}=\\langle-4-2,\\ -(-2-4),\\ 1-4\\rangle=\\langle-6,6,-3\\rangle$.",
+        "$\\|\\vec u\\times\\vec v\\|=\\sqrt{36+36+9}=\\sqrt{81}=9$."
+      ],
+      "brief": "$\\vec u\\times\\vec v=\\langle-6,6,-3\\rangle$, length $\\sqrt{81}=9$."
+    },
+    {
+      "sec": "10.3",
+      "q": "The slope of the parametric curve $x=2(\\theta-\\sin\\theta)$, $y=2(1-\\cos\\theta)$ at the point corresponding to $\\theta=\\dfrac\\pi6$ is equal to",
+      "opts": ["$2+\\sqrt3$", "$1+\\sqrt3$", "$\\sqrt3$", "$2-\\sqrt3$", "$10$"],
+      "ans": 0,
+      "hints": [
+        "For a parametric curve the slope is a ratio of derivatives with respect to the parameter.",
+        "Differentiate $x$ and $y$ with respect to $\\theta$, divide, and evaluate at the given $\\theta$.",
+        "$\\dfrac{dy}{dx}=\\dfrac{dy/d\\theta}{dx/d\\theta}$ (when $dx/d\\theta\\ne0$); rationalise any denominator of the form $a-\\sqrt b$ by multiplying by its conjugate."
+      ],
+      "steps": [
+        "$\\dfrac{dx}{d\\theta}=2(1-\\cos\\theta)$ and $\\dfrac{dy}{d\\theta}=2\\sin\\theta$.",
+        "$\\dfrac{dy}{dx}=\\dfrac{\\sin\\theta}{1-\\cos\\theta}$.",
+        "At $\\theta=\\dfrac\\pi6$: $\\dfrac{1/2}{1-\\sqrt3/2}=\\dfrac{1}{2-\\sqrt3}$.",
+        "Rationalise: $\\dfrac{1}{2-\\sqrt3}\\cdot\\dfrac{2+\\sqrt3}{2+\\sqrt3}=2+\\sqrt3$."
+      ],
+      "brief": "$\\frac{dy}{dx}=\\frac{\\sin\\theta}{1-\\cos\\theta}$; at $\\frac\\pi6$: $\\frac{1}{2-\\sqrt3}=2+\\sqrt3$."
+    }
+  ]
+}

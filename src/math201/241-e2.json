@@ -1,0 +1,274 @@
+{
+  "course": "math201",
+  "term": "241",
+  "kind": "e2",
+  "date": "",
+  "minutes": 90,
+  "source": "math201-241-e2.pdf",
+  "note": "No cover page in the source PDF (page 1 starts with Q1), so date and exam length are not printed. Date left empty; 90 minutes is assumed as the usual length of a major exam. All 15 master keys were verified and agree. Questions 13 and 14 are on 13.7 (tangent planes), which is normally Final-only in the term 261 schedule, but they appeared on this term 241 Exam II.",
+  "qs": [
+    {
+      "sec": "11.5",
+      "q": "Consider a line that passes through the point $(5,-3,-4)$ and is parallel to the vector $\\vec u=\\langle 2,-1,3\\rangle$. If this line also passes through the point $(7,-4,a)$, then $a$ is equal to",
+      "opts": ["$-1$", "$4$", "$0$", "$-2$", "$-3$"],
+      "ans": 0,
+      "hints": [
+        "Write the line in parametric form and ask what parameter value puts you at the second point.",
+        "Use the $x$ or $y$ coordinate of the second point to find the parameter value, then use it in the $z$ equation.",
+        "A line through $(x_0,y_0,z_0)$ with direction $\\langle a,b,c\\rangle$ is $x=x_0+at$, $y=y_0+bt$, $z=z_0+ct$."
+      ],
+      "steps": [
+        "The line is $x=5+2t$, $y=-3-t$, $z=-4+3t$.",
+        "From $x=7$: $5+2t=7$, so $t=1$. Check $y=-3-1=-4$, which matches.",
+        "Then $a=z=-4+3(1)=-1$."
+      ],
+      "brief": "$x=5+2t=7\\Rightarrow t=1$ (and $y=-4$ checks), so $a=-4+3=-1$."
+    },
+    {
+      "sec": "11.5",
+      "q": "An equation of the plane passing through the point $(1,2,3)$ and parallel to the $xy$-plane is",
+      "opts": ["$z=3$", "$x=1$", "$y=2$", "$x+y+z-6=0$", "$x+y-3=0$"],
+      "ans": 0,
+      "hints": [
+        "Parallel planes have parallel normal vectors.",
+        "Find a normal vector to the $xy$-plane and use it with the given point.",
+        "The plane through $(x_0,y_0,z_0)$ with normal $\\langle a,b,c\\rangle$ is $a(x-x_0)+b(y-y_0)+c(z-z_0)=0$."
+      ],
+      "steps": [
+        "The $xy$-plane has normal vector $\\langle 0,0,1\\rangle$, so the required plane has the same normal.",
+        "$0(x-1)+0(y-2)+1(z-3)=0$.",
+        "So the plane is $z=3$."
+      ],
+      "brief": "Normal $\\langle0,0,1\\rangle$ through $(1,2,3)$: $z=3$."
+    },
+    {
+      "sec": "11.6",
+      "q": "The surface given by the equation $x-y^2-4z^2=2$ is:",
+      "opts": ["Elliptic paraboloid", "Ellipsoid", "Hyperboloid of one sheet", "Hyperboloid of two sheets", "Elliptic cone"],
+      "ans": 0,
+      "hints": [
+        "Classify a quadric surface by which variables are squared and by the signs.",
+        "Solve the equation for the variable that appears to the first power.",
+        "An elliptic paraboloid has the form $x=\\dfrac{y^2}{a^2}+\\dfrac{z^2}{b^2}$ (one variable linear, the other two squared with the same sign)."
+      ],
+      "steps": [
+        "Only $x$ appears to the first power, while $y$ and $z$ are squared.",
+        "Solve: $x=2+y^2+4z^2$.",
+        "Slices $x=\\text{const}>2$ are ellipses and slices through the $x$-axis are parabolas, so it is an elliptic paraboloid."
+      ],
+      "brief": "$x=2+y^2+4z^2$: one linear variable, two squares of the same sign, so elliptic paraboloid."
+    },
+    {
+      "sec": "13.1",
+      "q": "The range of $f(x,y)=\\sqrt{4-x^2-y^2}$ is",
+      "opts": ["$[0,2]$", "$[0,\\infty)$", "$[2,\\infty)$", "$(-\\infty,\\infty)$", "$(0,4)$"],
+      "ans": 0,
+      "hints": [
+        "First find the domain, then see which output values the expression can reach.",
+        "The quantity under the root must be nonnegative; find its smallest and largest possible values on the domain.",
+        "A square root is always $\\ge0$, and $\\sqrt{u}$ is increasing in $u$, so the range runs from $\\sqrt{u_{\\min}}$ to $\\sqrt{u_{\\max}}$ (all values in between are attained by continuity)."
+      ],
+      "steps": [
+        "The domain is $x^2+y^2\\le4$.",
+        "On it, $0\\le x^2+y^2\\le4$, so $u=4-x^2-y^2$ takes every value in $[0,4]$.",
+        "Hence $f=\\sqrt u$ takes every value in $[0,2]$."
+      ],
+      "brief": "$4-x^2-y^2\\in[0,4]$ on the domain, so $f\\in[0,2]$."
+    },
+    {
+      "sec": "13.2",
+      "q": "$\\lim_{(x,y)\\to(0,0)}(x^2+y^2)\\ln(x^2+y^2)=$",
+      "opts": ["$0$", "$\\ln 2$", "$2$", "$1$", "$\\infty$"],
+      "ans": 0,
+      "hints": [
+        "The expression depends only on $x^2+y^2$, so reduce it to a one-variable limit.",
+        "Let $u=x^2+y^2$, so $u\\to0^+$, and the limit has the form $0\\cdot(-\\infty)$; rewrite it as a quotient.",
+        "$\\lim_{u\\to0^+}u\\ln u=\\lim_{u\\to0^+}\\dfrac{\\ln u}{1/u}$, which can be evaluated by L'Hopital's rule."
+      ],
+      "steps": [
+        "Put $u=x^2+y^2$; as $(x,y)\\to(0,0)$, $u\\to0^+$.",
+        "Then the limit is $\\lim_{u\\to0^+}u\\ln u=\\lim_{u\\to0^+}\\dfrac{\\ln u}{1/u}$.",
+        "L'Hopital: $\\dfrac{1/u}{-1/u^2}=-u\\to0$."
+      ],
+      "brief": "$u=x^2+y^2\\to0^+$: $u\\ln u=\\frac{\\ln u}{1/u}\\to 0$ by L'Hopital."
+    },
+    {
+      "sec": "13.1",
+      "q": "The level curve of the function $f(x,y)=\\sqrt{9-x^2-y^2}$ passing through the point $(2,\\sqrt5,f(2,\\sqrt5))$ is a circle of radius:",
+      "opts": ["$3$", "$1$", "$2$", "$\\sqrt5$", "$9$"],
+      "ans": 0,
+      "hints": [
+        "A level curve is the set where $f$ equals a constant.",
+        "Compute the value of $f$ at the given point to get the constant.",
+        "The level curve $f(x,y)=c$ is found by setting the function equal to $c$; a circle $x^2+y^2=r^2$ has radius $r$."
+      ],
+      "steps": [
+        "$f(2,\\sqrt5)=\\sqrt{9-4-5}=0$.",
+        "The level curve is $\\sqrt{9-x^2-y^2}=0$, i.e. $x^2+y^2=9$.",
+        "This is a circle of radius $3$."
+      ],
+      "brief": "$f(2,\\sqrt5)=0$, so the level curve is $x^2+y^2=9$, radius $3$."
+    },
+    {
+      "sec": "13.2",
+      "q": "Consider the following statements about the function \\[ f(x,y,z)=\\frac{xy+yz^2+xz^2}{x^2+y^2+z^2} \\] (I) $\\lim_{(x,y)\\to(0,0)}f(x,y,0)=0$, (II) $\\lim_{(x,z)\\to(0,0)}f(x,0,z)=0$, (III) $\\lim_{x\\to0}f(x,x,x)=\\dfrac13$. Then",
+      "opts": ["(II) and (III) are true", "(I) and (II) are true", "(I) and (III) are true", "only (III) is true", "only (I) is true"],
+      "ans": 0,
+      "hints": [
+        "For each statement, substitute the given restriction and study the resulting limit.",
+        "Simplify each restricted function; for a two-variable limit, try different paths or use a bound such as $|x|\\le\\sqrt{x^2+z^2}$.",
+        "If a limit gives different values along two paths it does not exist; if $|g|\\le(\\text{something})\\to0$, then $g\\to0$."
+      ],
+      "steps": [
+        "(I) $f(x,y,0)=\\dfrac{xy}{x^2+y^2}$. Along $y=0$ it is $0$, along $y=x$ it is $\\tfrac12$, so the limit does not exist: (I) is false.",
+        "(II) $f(x,0,z)=\\dfrac{xz^2}{x^2+z^2}$, and $\\left|\\dfrac{xz^2}{x^2+z^2}\\right|\\le|x|\\to0$, so the limit is $0$: (II) is true.",
+        "(III) $f(x,x,x)=\\dfrac{x^2+2x^3}{3x^2}=\\dfrac{1+2x}{3}\\to\\dfrac13$: (III) is true."
+      ],
+      "brief": "(I) path-dependent (0 vs $\\frac12$), (II) $\\le|x|\\to0$, (III) $\\frac{1+2x}{3}\\to\\frac13$."
+    },
+    {
+      "sec": "13.3",
+      "q": "If $f(x,y,z)=e^{-x}\\sin(yz)$, then $f_{xyy}=$",
+      "opts": ["$e^{-x}z^2\\sin(yz)$", "$e^{-x}\\cos(yz)$", "$-e^{-x}z^2\\cos(yz)$", "$e^{-x}y^2\\cos(yz)$", "$-e^{-x}\\sin(yz)$"],
+      "ans": 0,
+      "hints": [
+        "This is a mixed higher-order partial derivative; the subscripts say which variable to differentiate in turn.",
+        "Differentiate in the order given by the subscripts (first $x$, then $y$, then $y$), treating the other variables as constants.",
+        "$\\dfrac{d}{dx}e^{-x}=-e^{-x}$ and, with $z$ constant, $\\dfrac{\\partial}{\\partial y}\\sin(yz)=z\\cos(yz)$, $\\dfrac{\\partial}{\\partial y}\\cos(yz)=-z\\sin(yz)$."
+      ],
+      "steps": [
+        "$f_x=-e^{-x}\\sin(yz)$.",
+        "$f_{xy}=-e^{-x}z\\cos(yz)$.",
+        "$f_{xyy}=-e^{-x}z\\cdot(-z\\sin(yz))=e^{-x}z^2\\sin(yz)$."
+      ],
+      "brief": "$f_x=-e^{-x}\\sin yz$, $f_{xy}=-ze^{-x}\\cos yz$, $f_{xyy}=z^2e^{-x}\\sin yz$."
+    },
+    {
+      "sec": "13.4",
+      "q": "Using total differential, the expression $5\\sqrt{(4.03)^2+(3.1)^2}-5\\sqrt{4^2+3^2}$ is approximately equal to",
+      "opts": ["$0.42$", "$0.50$", "$0.35$", "$0.30$", "$0.60$"],
+      "ans": 0,
+      "hints": [
+        "The expression is a change $\\Delta f$ in a function of two variables, which the total differential $df$ approximates.",
+        "Identify $f(x,y)$, the base point $(x,y)$, and the small changes $dx$ and $dy$.",
+        "$\\Delta f\\approx df=f_x\\,dx+f_y\\,dy$, evaluated at the base point."
+      ],
+      "steps": [
+        "Let $f(x,y)=5\\sqrt{x^2+y^2}$ at $(4,3)$ with $dx=0.03$, $dy=0.1$.",
+        "$f_x=\\dfrac{5x}{\\sqrt{x^2+y^2}}=\\dfrac{20}{5}=4$ and $f_y=\\dfrac{5y}{\\sqrt{x^2+y^2}}=\\dfrac{15}{5}=3$.",
+        "$df=4(0.03)+3(0.1)=0.12+0.30=0.42$."
+      ],
+      "brief": "$f=5\\sqrt{x^2+y^2}$ at $(4,3)$: $df=4(0.03)+3(0.1)=0.42$."
+    },
+    {
+      "sec": "13.5",
+      "q": "Let $w=x^2-y^2$, where $x=s\\cos t$ and $y=s\\sin t$. The value of $\\dfrac{\\partial w}{\\partial t}$ when $s=3$ and $t=\\dfrac{\\pi}{4}$ is equal to",
+      "opts": ["$-18$", "$-12$", "$9$", "$3$", "$6$"],
+      "ans": 0,
+      "hints": [
+        "Use the chain rule for a function of two intermediate variables, each depending on $s$ and $t$.",
+        "Compute $w_x$, $w_y$, $x_t$, $y_t$, then combine and substitute $s$ and $t$ at the end.",
+        "$\\dfrac{\\partial w}{\\partial t}=\\dfrac{\\partial w}{\\partial x}\\dfrac{\\partial x}{\\partial t}+\\dfrac{\\partial w}{\\partial y}\\dfrac{\\partial y}{\\partial t}$."
+      ],
+      "steps": [
+        "$w_x=2x$, $w_y=-2y$, $x_t=-s\\sin t$, $y_t=s\\cos t$.",
+        "$w_t=2x(-s\\sin t)-2y(s\\cos t)=-2s^2\\cos t\\sin t-2s^2\\sin t\\cos t=-2s^2\\sin 2t$.",
+        "At $s=3$, $t=\\pi/4$: $-2(9)\\sin\\frac{\\pi}{2}=-18$."
+      ],
+      "brief": "$w_t=-2s^2\\sin2t$, so at $s=3$, $t=\\frac{\\pi}{4}$: $-18$."
+    },
+    {
+      "sec": "13.5",
+      "q": "If $\\tan(x+y)+\\cos z=2$, then $\\dfrac{\\partial z}{\\partial x}+\\dfrac{\\partial z}{\\partial y}=$",
+      "opts": ["$\\dfrac{2\\sec^2(x+y)}{\\sin z}$", "$-\\dfrac{\\sec^2(x+y)}{\\sin z}$", "$\\dfrac{2\\tan(x+y)}{\\cos z}$", "$\\dfrac{\\tan^2(x+y)}{\\cos z}$", "$\\dfrac{\\csc^2(x+y)}{\\sin z}$"],
+      "ans": 0,
+      "hints": [
+        "$z$ is defined implicitly as a function of $x$ and $y$, so use implicit differentiation.",
+        "Write the equation as $F(x,y,z)=0$ and find $F_x$, $F_y$, $F_z$.",
+        "For $F(x,y,z)=0$: $\\dfrac{\\partial z}{\\partial x}=-\\dfrac{F_x}{F_z}$ and $\\dfrac{\\partial z}{\\partial y}=-\\dfrac{F_y}{F_z}$."
+      ],
+      "steps": [
+        "Let $F=\\tan(x+y)+\\cos z-2$. Then $F_x=F_y=\\sec^2(x+y)$ and $F_z=-\\sin z$.",
+        "$\\dfrac{\\partial z}{\\partial x}=-\\dfrac{\\sec^2(x+y)}{-\\sin z}=\\dfrac{\\sec^2(x+y)}{\\sin z}$, and $\\dfrac{\\partial z}{\\partial y}$ is the same.",
+        "The sum is $\\dfrac{2\\sec^2(x+y)}{\\sin z}$."
+      ],
+      "brief": "$z_x=z_y=-\\frac{\\sec^2(x+y)}{-\\sin z}$, so the sum is $\\frac{2\\sec^2(x+y)}{\\sin z}$."
+    },
+    {
+      "sec": "13.6",
+      "q": "The directional derivative of $f(x,y)=e^y\\sin x$ at the point $P(0,0)$ in the direction of the vector $\\overrightarrow{PQ}$, where $Q(2,1)$, is equal to",
+      "opts": ["$\\dfrac{2}{\\sqrt5}$", "$\\dfrac{3}{\\sqrt5}$", "$\\dfrac{1}{\\sqrt5}$", "$2$", "$-\\sqrt5$"],
+      "ans": 0,
+      "hints": [
+        "A directional derivative is the dot product of the gradient with a unit vector.",
+        "Compute $\\nabla f$ at $P$ and turn $\\overrightarrow{PQ}$ into a unit vector.",
+        "$D_{\\mathbf u}f=\\nabla f\\cdot\\mathbf u$, where $\\mathbf u=\\dfrac{\\mathbf v}{\\|\\mathbf v\\|}$ is a unit vector."
+      ],
+      "steps": [
+        "$\\nabla f=\\langle e^y\\cos x,\\ e^y\\sin x\\rangle$, so $\\nabla f(0,0)=\\langle1,0\\rangle$.",
+        "$\\overrightarrow{PQ}=\\langle2,1\\rangle$, $\\|\\overrightarrow{PQ}\\|=\\sqrt5$, so $\\mathbf u=\\dfrac{1}{\\sqrt5}\\langle2,1\\rangle$.",
+        "$D_{\\mathbf u}f=\\langle1,0\\rangle\\cdot\\dfrac{1}{\\sqrt5}\\langle2,1\\rangle=\\dfrac{2}{\\sqrt5}$."
+      ],
+      "brief": "$\\nabla f(0,0)=\\langle1,0\\rangle$, $\\mathbf u=\\frac{\\langle2,1\\rangle}{\\sqrt5}$: $D_{\\mathbf u}f=\\frac{2}{\\sqrt5}$."
+    },
+    {
+      "sec": "13.7",
+      "q": "An equation of the tangent plane to the surface $z^2-2x^2-2y^2=12$ at the point $(1,-1,4)$ is given by $x+ay+bz+c=0$, then $a+b+c=$",
+      "opts": ["$3$", "$6$", "$9$", "$12$", "$1$"],
+      "ans": 0,
+      "hints": [
+        "The tangent plane to a level surface has the gradient as its normal vector.",
+        "Write the surface as $F(x,y,z)=\\text{const}$, compute $\\nabla F$ at the point, then write the plane and scale so the $x$ coefficient is $1$.",
+        "The tangent plane to $F(x,y,z)=k$ at $(x_0,y_0,z_0)$ is $F_x(x-x_0)+F_y(y-y_0)+F_z(z-z_0)=0$."
+      ],
+      "steps": [
+        "Let $F=z^2-2x^2-2y^2$. Then $\\nabla F=\\langle-4x,-4y,2z\\rangle$, which at $(1,-1,4)$ is $\\langle-4,4,8\\rangle$.",
+        "Plane: $-4(x-1)+4(y+1)+8(z-4)=0$, i.e. $-4x+4y+8z-24=0$.",
+        "Divide by $-4$: $x-y-2z+6=0$, so $a=-1$, $b=-2$, $c=6$.",
+        "$a+b+c=-1-2+6=3$."
+      ],
+      "brief": "$\\nabla F=\\langle-4,4,8\\rangle$: plane $x-y-2z+6=0$, so $a+b+c=3$."
+    },
+    {
+      "sec": "13.7",
+      "q": "A set of symmetric equations for the tangent line to the curve of intersection of the surfaces \\[ x^2+y^2+z^2=14 \\quad\\text{and}\\quad x-y-z=0 \\] at the point $(3,1,2)$ is",
+      "opts": [
+        "$x-3=\\dfrac{y-1}{5}=\\dfrac{z-2}{-4}$",
+        "$x-3=\\dfrac{y-1}{-5}=\\dfrac{z-2}{4}$",
+        "$\\dfrac{x-3}{2}=\\dfrac{y-1}{5}=\\dfrac{z-2}{-4}$",
+        "$\\dfrac{x-3}{2}=\\dfrac{y-1}{10}=\\dfrac{z-2}{-7}$",
+        "$\\dfrac{x-3}{4}=y-1=\\dfrac{z-3}{5}$"
+      ],
+      "ans": 0,
+      "hints": [
+        "The tangent line to the intersection of two surfaces lies in both tangent planes.",
+        "Find the normal (gradient) vector of each surface at the point and take a vector perpendicular to both.",
+        "The tangent direction is $\\nabla F\\times\\nabla G$; the symmetric equations are $\\dfrac{x-x_0}{a}=\\dfrac{y-y_0}{b}=\\dfrac{z-z_0}{c}$ for direction $\\langle a,b,c\\rangle$."
+      ],
+      "steps": [
+        "$\\nabla F=\\langle2x,2y,2z\\rangle=\\langle6,2,4\\rangle$ and $\\nabla G=\\langle1,-1,-1\\rangle$.",
+        "Direction: $\\nabla F\\times\\nabla G=\\langle2(-1)-4(-1),\\ 4(1)-6(-1),\\ 6(-1)-2(1)\\rangle=\\langle2,10,-8\\rangle$.",
+        "This is parallel to $\\langle1,5,-4\\rangle$.",
+        "So the line is $x-3=\\dfrac{y-1}{5}=\\dfrac{z-2}{-4}$."
+      ],
+      "brief": "$\\langle6,2,4\\rangle\\times\\langle1,-1,-1\\rangle=\\langle2,10,-8\\rangle\\parallel\\langle1,5,-4\\rangle$."
+    },
+    {
+      "sec": "11.5",
+      "q": "The distance between the planes given by the equations \\[ -x+6y+2z=3 \\quad\\text{and}\\quad -\\frac12x+3y+z=4 \\] is",
+      "opts": ["$\\dfrac{5}{\\sqrt{41}}$", "$\\dfrac{3}{\\sqrt{41}}$", "$\\dfrac{7}{\\sqrt{41}}$", "$\\dfrac{1}{\\sqrt{41}}$", "$\\dfrac{8}{\\sqrt{41}}$"],
+      "ans": 0,
+      "hints": [
+        "First decide whether the planes are parallel by comparing their normal vectors.",
+        "Rewrite both planes with the same normal vector (scale one equation) so only the right-hand sides differ.",
+        "For parallel planes $ax+by+cz=d_1$ and $ax+by+cz=d_2$, the distance is $\\dfrac{|d_1-d_2|}{\\sqrt{a^2+b^2+c^2}}$."
+      ],
+      "steps": [
+        "The normals $\\langle-1,6,2\\rangle$ and $\\langle-\\frac12,3,1\\rangle$ are parallel, so the planes are parallel.",
+        "Multiply the second equation by $2$: $-x+6y+2z=8$.",
+        "Distance $=\\dfrac{|8-3|}{\\sqrt{1+36+4}}=\\dfrac{5}{\\sqrt{41}}$."
+      ],
+      "brief": "Parallel planes $-x+6y+2z=3$ and $=8$: distance $\\frac{5}{\\sqrt{41}}$."
+    }
+  ]
+}

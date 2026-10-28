@@ -1,0 +1,336 @@
+{
+  "course": "math102",
+  "term": "253",
+  "kind": "e1",
+  "date": "",
+  "minutes": 90,
+  "source": "math102-253-ex1.pdf",
+  "note": "Date and exam length are not printed (the source PDF has no cover page, only the 14 question pages). Minutes assumed to be 90, the usual length of a major exam. All master keys were marked (a) and verified with sympy; no disagreements.",
+  "qs": [
+    {
+      "sec": "5.2",
+      "q": "The lower sum (in terms of $n$, the number of subintervals) for the region bounded by the graph of $f(x)=4-x^2$ and the $x$-axis on the interval $[0,2]$ is",
+      "opts": [
+        "$\\dfrac{4}{3n^2}\\left(4n^2-3n-1\\right)$",
+        "$\\dfrac{2}{n^2}\\left(4n^2-3n-1\\right)$",
+        "$\\dfrac{3}{4n^2}\\left(4n^2+3n-1\\right)$",
+        "$\\dfrac{4}{3n^2}\\left(4n^2+3n+1\\right)$",
+        "$\\dfrac{3}{4n^2}\\left(4n^2-3n+1\\right)$"
+      ],
+      "ans": 0,
+      "hints": [
+        "A lower sum uses the smallest value of $f$ on each subinterval, so first decide where that value occurs.",
+        "Find $\\Delta x$ and the endpoints $x_i$, decide which endpoint gives the minimum for this monotonic function, and write the sum in sigma notation.",
+        "$\\Delta x=\\dfrac{b-a}{n}$, $x_i=a+i\\Delta x$, lower sum $=\\sum f(m_i)\\Delta x$ where $m_i$ is the point of the $i$th subinterval with the smallest value, and $\\sum_{i=1}^n i^2=\\dfrac{n(n+1)(2n+1)}{6}$."
+      ],
+      "steps": [
+        "$\\Delta x=\\dfrac2n$ and $x_i=\\dfrac{2i}{n}$. Since $f$ is decreasing on $[0,2]$, the minimum on each subinterval is at the right endpoint.",
+        "$s_n=\\sum_{i=1}^n\\left(4-\\dfrac{4i^2}{n^2}\\right)\\dfrac2n=8-\\dfrac{8}{n^3}\\sum_{i=1}^n i^2$.",
+        "$\\sum i^2=\\dfrac{n(n+1)(2n+1)}{6}$, so $s_n=8-\\dfrac{4(n+1)(2n+1)}{3n^2}$.",
+        "$s_n=\\dfrac{24n^2-4(2n^2+3n+1)}{3n^2}=\\dfrac{4}{3n^2}\\left(4n^2-3n-1\\right)$."
+      ],
+      "brief": "$f$ decreasing: right endpoints, $s_n=8-\\frac{4(n+1)(2n+1)}{3n^2}=\\frac{4}{3n^2}(4n^2-3n-1)$."
+    },
+    {
+      "sec": "5.2",
+      "q": "Using the Midpoint rule with 2 rectangles, the approximate area of the region bounded by the graph of $f(x)=\\cos x$ and the $x$-axis over the interval $\\left[-\\dfrac{\\pi}{2},\\dfrac{\\pi}{2}\\right]$ is equal to",
+      "opts": [
+        "$\\dfrac{\\pi}{\\sqrt2}$",
+        "$\\dfrac{\\pi}{2}$",
+        "$\\sqrt2\\,\\pi$",
+        "$2\\pi$",
+        "$\\pi$"
+      ],
+      "ans": 0,
+      "hints": [
+        "The Midpoint rule evaluates the function at the middle of each subinterval.",
+        "Split the interval into 2 equal subintervals, find their midpoints and the width of each rectangle.",
+        "Midpoint rule: $\\sum_{i=1}^n f\\!\\left(\\dfrac{x_{i-1}+x_i}{2}\\right)\\Delta x$ with $\\Delta x=\\dfrac{b-a}{n}$."
+      ],
+      "steps": [
+        "$\\Delta x=\\dfrac{\\pi}{2}$; the subintervals are $\\left[-\\dfrac\\pi2,0\\right]$ and $\\left[0,\\dfrac\\pi2\\right]$.",
+        "The midpoints are $-\\dfrac\\pi4$ and $\\dfrac\\pi4$.",
+        "Area $\\approx\\left[\\cos\\left(-\\dfrac\\pi4\\right)+\\cos\\dfrac\\pi4\\right]\\dfrac\\pi2=\\sqrt2\\cdot\\dfrac\\pi2=\\dfrac{\\pi}{\\sqrt2}$."
+      ],
+      "brief": "$\\Delta x=\\frac\\pi2$, midpoints $\\pm\\frac\\pi4$: $2\\cdot\\frac{\\sqrt2}{2}\\cdot\\frac\\pi2=\\frac{\\pi}{\\sqrt2}$."
+    },
+    {
+      "sec": "5.3",
+      "q": "$\\lim_{n\\to\\infty}\\sum_{i=1}^{n}\\left(\\dfrac{i^4}{n^5}+\\dfrac{i}{n^2}\\right)=$ (Hint: Recognize the sum as a Riemann sum for a function defined on $[0,1]$.)",
+      "opts": [
+        "$\\dfrac{7}{10}$",
+        "$\\dfrac35$",
+        "$\\dfrac45$",
+        "$\\dfrac{9}{10}$",
+        "$\\dfrac15$"
+      ],
+      "ans": 0,
+      "hints": [
+        "A limit of a sum of the form $\\sum g(i/n)\\cdot\\frac1n$ is a definite integral.",
+        "Factor each term as (function of $i/n$) times $\\frac1n$ and identify the function.",
+        "$\\lim_{n\\to\\infty}\\sum_{i=1}^n f\\!\\left(\\dfrac in\\right)\\dfrac1n=\\int_0^1 f(x)\\,dx$."
+      ],
+      "steps": [
+        "Write the term as $\\left[\\left(\\dfrac in\\right)^4+\\dfrac in\\right]\\dfrac1n$.",
+        "So the sum is a Riemann sum for $f(x)=x^4+x$ on $[0,1]$ with $x_i=\\dfrac in$.",
+        "The limit is $\\int_0^1(x^4+x)\\,dx=\\dfrac15+\\dfrac12=\\dfrac{7}{10}$."
+      ],
+      "brief": "Riemann sum for $\\int_0^1(x^4+x)\\,dx=\\frac15+\\frac12=\\frac7{10}$."
+    },
+    {
+      "sec": "5.5",
+      "q": "Consider an odd continuous function $f$ such that $\\int_{-3}^{6}f(x)\\,dx=9$ and $\\int_0^3 f(x)\\,dx=-3$. Then $\\int_0^6 f(x)\\,dx=$",
+      "opts": [
+        "$6$",
+        "$-6$",
+        "$12$",
+        "$-12$",
+        "$0$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Use the symmetry of an odd function over an interval symmetric about $0$.",
+        "Split the integral from the lower limit to the upper limit at a point so that one piece is over an interval symmetric about $0$.",
+        "If $f$ is odd, $\\int_{-a}^{a}f(x)\\,dx=0$; also $\\int_a^c+\\int_c^b=\\int_a^b$."
+      ],
+      "steps": [
+        "$\\int_{-3}^{6}f=\\int_{-3}^{3}f+\\int_3^6 f$.",
+        "Since $f$ is odd, $\\int_{-3}^{3}f=0$, so $\\int_3^6 f=9$.",
+        "$\\int_0^6 f=\\int_0^3 f+\\int_3^6 f=-3+9=6$."
+      ],
+      "brief": "Odd: $\\int_{-3}^3f=0$, so $\\int_3^6f=9$ and $\\int_0^6f=-3+9=6$."
+    },
+    {
+      "sec": "5.4",
+      "q": "The average value of $f(x)=3x^2+8x$ on the interval $[-1,2]$ is equal to",
+      "opts": [
+        "$7$",
+        "$6$",
+        "$5$",
+        "$4$",
+        "$3$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Use the formula for the average value of a function on an interval.",
+        "Compute the definite integral of $f$ over the interval, then divide by the length of the interval.",
+        "$f_{\\text{avg}}=\\dfrac{1}{b-a}\\int_a^b f(x)\\,dx$."
+      ],
+      "steps": [
+        "$f_{\\text{avg}}=\\dfrac{1}{2-(-1)}\\int_{-1}^{2}(3x^2+8x)\\,dx$.",
+        "An antiderivative is $x^3+4x^2$.",
+        "$\\left[x^3+4x^2\\right]_{-1}^{2}=(8+16)-(-1+4)=21$.",
+        "So $f_{\\text{avg}}=\\dfrac{21}{3}=7$."
+      ],
+      "brief": "$\\frac13\\int_{-1}^2(3x^2+8x)\\,dx=\\frac13\\cdot21=7$."
+    },
+    {
+      "sec": "5.4",
+      "q": "If $F(x)=\\int_0^{\\tan x}\\sqrt{t+\\sqrt t}\\,dt$, then $F'\\!\\left(\\dfrac{\\pi}{4}\\right)=$",
+      "opts": [
+        "$2\\sqrt2$",
+        "$\\sqrt2$",
+        "$\\dfrac{1}{\\sqrt2}$",
+        "$4\\sqrt2$",
+        "$1$"
+      ],
+      "ans": 0,
+      "hints": [
+        "The upper limit is a function of $x$, so combine the Fundamental Theorem of Calculus with the chain rule.",
+        "Evaluate the integrand at the upper limit and multiply by the derivative of the upper limit.",
+        "$\\dfrac{d}{dx}\\int_a^{g(x)}h(t)\\,dt=h(g(x))\\,g'(x)$, and $\\dfrac{d}{dx}\\tan x=\\sec^2x$."
+      ],
+      "steps": [
+        "$F'(x)=\\sqrt{\\tan x+\\sqrt{\\tan x}}\\,\\sec^2x$.",
+        "At $x=\\dfrac\\pi4$: $\\tan\\dfrac\\pi4=1$ and $\\sec^2\\dfrac\\pi4=2$.",
+        "$F'\\!\\left(\\dfrac\\pi4\\right)=\\sqrt{1+1}\\cdot2=2\\sqrt2$."
+      ],
+      "brief": "$F'(x)=\\sqrt{\\tan x+\\sqrt{\\tan x}}\\sec^2x$; at $\\frac\\pi4$: $\\sqrt2\\cdot2=2\\sqrt2$."
+    },
+    {
+      "sec": "5.5",
+      "q": "$\\int_0^1 x(1-x)^9\\,dx=$",
+      "opts": [
+        "$\\dfrac{1}{110}$",
+        "$\\dfrac{1}{100}$",
+        "$\\dfrac{1}{10}$",
+        "$\\dfrac19$",
+        "$\\dfrac{1}{101}$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Substitution works well when a power of a linear expression appears.",
+        "Let $u$ be the expression inside the power, and write the remaining $x$ in terms of $u$. Change the limits too.",
+        "For $u=g(x)$: $\\int_a^b f(g(x))g'(x)\\,dx=\\int_{g(a)}^{g(b)}f(u)\\,du$, and $\\int u^n\\,du=\\dfrac{u^{n+1}}{n+1}$."
+      ],
+      "steps": [
+        "Let $u=1-x$, so $x=1-u$ and $dx=-du$; $x=0\\Rightarrow u=1$, $x=1\\Rightarrow u=0$.",
+        "$\\int_0^1x(1-x)^9dx=\\int_0^1(1-u)u^9\\,du=\\int_0^1(u^9-u^{10})\\,du$.",
+        "$=\\dfrac1{10}-\\dfrac1{11}=\\dfrac{1}{110}$."
+      ],
+      "brief": "$u=1-x$: $\\int_0^1(u^9-u^{10})\\,du=\\frac1{10}-\\frac1{11}=\\frac1{110}$."
+    },
+    {
+      "sec": "7.1",
+      "q": "The area of the region bounded by the graphs of $f(x)=\\sin x$ and $g(x)=\\dfrac{2}{\\pi}x$ on the interval $[0,\\pi]$ is equal to",
+      "opts": [
+        "$\\dfrac{\\pi}{2}$",
+        "$\\dfrac{\\pi}{4}$",
+        "$\\dfrac{\\pi}{3}$",
+        "$\\pi$",
+        "$2\\pi$"
+      ],
+      "ans": 0,
+      "hints": [
+        "The area between two curves needs the points where the curves cross, since the upper curve may change.",
+        "Solve $f(x)=g(x)$ on $[0,\\pi]$, then decide which graph is on top on each piece.",
+        "Area $=\\int_a^b|f(x)-g(x)|\\,dx$, split at the intersection points."
+      ],
+      "steps": [
+        "$\\sin x=\\dfrac{2x}{\\pi}$ at $x=0$ and at $x=\\dfrac\\pi2$ (both sides equal $1$). At $x=\\pi$ the values are $0$ and $2$, so the curves do not meet there; the region is split at $\\dfrac\\pi2$.",
+        "On $\\left[0,\\dfrac\\pi2\\right]$, $\\sin x\\ge\\dfrac{2x}\\pi$; on $\\left[\\dfrac\\pi2,\\pi\\right]$, $\\dfrac{2x}{\\pi}\\ge\\sin x$.",
+        "First piece: $\\left[-\\cos x-\\dfrac{x^2}{\\pi}\\right]_0^{\\pi/2}=1-\\dfrac\\pi4$.",
+        "Second piece: $\\left[\\dfrac{x^2}{\\pi}+\\cos x\\right]_{\\pi/2}^{\\pi}=(\\pi-1)-\\dfrac\\pi4$. The sum is $\\dfrac{\\pi}{2}$."
+      ],
+      "brief": "Cross at $0,\\frac\\pi2$: $\\left(1-\\frac\\pi4\\right)+\\left(\\frac{3\\pi}4-1\\right)=\\frac\\pi2$."
+    },
+    {
+      "sec": "8.3",
+      "q": "$\\int_{-\\pi/2}^{\\pi/2}\\sin(7x)\\cos(3x)\\,dx=$",
+      "opts": [
+        "$0$",
+        "$1$",
+        "$\\pi$",
+        "$\\dfrac\\pi4$",
+        "$\\dfrac\\pi2$"
+      ],
+      "ans": 0,
+      "hints": [
+        "A product of a sine and a cosine with different frequencies can be turned into a sum, or you can use symmetry.",
+        "Rewrite the product with a product-to-sum identity and check whether the result is odd or even.",
+        "$\\sin mx\\cos nx=\\tfrac12[\\sin(m-n)x+\\sin(m+n)x]$, and $\\int_{-a}^{a}f=0$ for odd $f$."
+      ],
+      "steps": [
+        "$\\sin7x\\cos3x=\\dfrac12\\left[\\sin4x+\\sin10x\\right]$.",
+        "Both terms are odd functions, so the integrand is odd.",
+        "The interval $\\left[-\\dfrac\\pi2,\\dfrac\\pi2\\right]$ is symmetric about $0$, so the integral is $0$."
+      ],
+      "brief": "Integrand $=\\frac12(\\sin4x+\\sin10x)$ is odd on a symmetric interval, so the integral is $0$."
+    },
+    {
+      "sec": "5.5",
+      "q": "$\\int_1^4\\dfrac{1}{\\sqrt x\\,(1+\\sqrt x)}\\,dx=$",
+      "opts": [
+        "$2\\ln\\dfrac32$",
+        "$\\ln\\dfrac32$",
+        "$2\\ln\\dfrac23$",
+        "$\\ln\\dfrac23$",
+        "$\\ln\\dfrac43$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Look for an inner function whose derivative also appears in the integrand.",
+        "Substitute $u=1+\\sqrt x$ and compute $du$; change the limits.",
+        "For $u=g(x)$, $\\int\\dfrac{du}{u}=\\ln|u|+C$ and $\\dfrac{d}{dx}\\sqrt x=\\dfrac{1}{2\\sqrt x}$."
+      ],
+      "steps": [
+        "Let $u=1+\\sqrt x$, so $du=\\dfrac{dx}{2\\sqrt x}$ and $\\dfrac{dx}{\\sqrt x}=2\\,du$.",
+        "Limits: $x=1\\Rightarrow u=2$, $x=4\\Rightarrow u=3$.",
+        "$\\int_2^3\\dfrac{2}{u}\\,du=2\\ln\\dfrac32$."
+      ],
+      "brief": "$u=1+\\sqrt x$: $\\int_2^3\\frac2u\\,du=2\\ln\\frac32$."
+    },
+    {
+      "sec": "8.1",
+      "q": "$\\int\\dfrac{x^2+1}{x+1}\\,dx=$",
+      "opts": [
+        "$\\dfrac{x^2}{2}-x+2\\ln|x+1|+C$",
+        "$\\dfrac{x^2}{2}+x-2\\ln|x+1|+C$",
+        "$\\dfrac{x^2}{4}-x+2\\ln|x+1|+C$",
+        "$\\dfrac{x^2}{2}+x+2\\ln|x+1|+C$",
+        "$\\dfrac{x^2}{2}-x-2\\ln|x+1|+C$"
+      ],
+      "ans": 0,
+      "hints": [
+        "The numerator has a higher degree than the denominator, so divide first.",
+        "Carry out polynomial long division of the numerator by the denominator.",
+        "Improper rational function: $\\dfrac{p(x)}{q(x)}=\\text{quotient}+\\dfrac{\\text{remainder}}{q(x)}$, and $\\int\\dfrac{dx}{x+a}=\\ln|x+a|+C$."
+      ],
+      "steps": [
+        "Long division: $x^2+1=(x+1)(x-1)+2$.",
+        "So $\\dfrac{x^2+1}{x+1}=x-1+\\dfrac{2}{x+1}$.",
+        "Integrate: $\\dfrac{x^2}{2}-x+2\\ln|x+1|+C$."
+      ],
+      "brief": "$\\frac{x^2+1}{x+1}=x-1+\\frac2{x+1}$, so $\\frac{x^2}2-x+2\\ln|x+1|+C$."
+    },
+    {
+      "sec": "5.8",
+      "q": "$\\int_0^{1/6}\\dfrac{3}{\\sqrt{1-9x^2}}\\,dx=$",
+      "opts": [
+        "$\\dfrac\\pi6$",
+        "$\\dfrac\\pi3$",
+        "$\\dfrac{\\pi}{18}$",
+        "$\\dfrac\\pi9$",
+        "$\\dfrac\\pi2$"
+      ],
+      "ans": 0,
+      "hints": [
+        "This has the form of an inverse sine integral.",
+        "Write the quantity under the root as $1$ minus a perfect square and substitute for the inside of that square.",
+        "$\\int\\dfrac{du}{\\sqrt{1-u^2}}=\\arcsin u+C$."
+      ],
+      "steps": [
+        "Let $u=3x$, so $du=3\\,dx$; $x=0\\Rightarrow u=0$, $x=\\dfrac16\\Rightarrow u=\\dfrac12$.",
+        "$\\int_0^{1/2}\\dfrac{du}{\\sqrt{1-u^2}}=\\arcsin u\\Big|_0^{1/2}$.",
+        "$=\\arcsin\\dfrac12-0=\\dfrac\\pi6$."
+      ],
+      "brief": "$u=3x$: $\\arcsin u\\big|_0^{1/2}=\\frac\\pi6$."
+    },
+    {
+      "sec": "5.9",
+      "q": "$\\int_0^{\\ln3}\\tanh x\\,dx=$",
+      "opts": [
+        "$\\ln\\dfrac53$",
+        "$\\ln\\dfrac35$",
+        "$\\ln\\dfrac34$",
+        "$\\ln\\dfrac43$",
+        "$\\ln\\dfrac54$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Write $\\tanh$ in terms of $\\sinh$ and $\\cosh$ and look for a logarithmic antiderivative.",
+        "Use $\\tanh x=\\dfrac{\\sinh x}{\\cosh x}$ and the derivative of $\\cosh x$.",
+        "$\\int\\tanh x\\,dx=\\ln\\cosh x+C$, and $\\cosh x=\\dfrac{e^x+e^{-x}}{2}$."
+      ],
+      "steps": [
+        "$\\int_0^{\\ln3}\\tanh x\\,dx=\\Big[\\ln\\cosh x\\Big]_0^{\\ln3}$.",
+        "$\\cosh(\\ln3)=\\dfrac{3+\\frac13}{2}=\\dfrac53$ and $\\cosh0=1$.",
+        "The value is $\\ln\\dfrac53-\\ln1=\\ln\\dfrac53$."
+      ],
+      "brief": "$\\ln\\cosh x\\big|_0^{\\ln3}=\\ln\\frac53$, since $\\cosh(\\ln3)=\\frac53$."
+    },
+    {
+      "sec": "7.1",
+      "q": "The area of the region bounded by the graphs of the functions $f(x)=x(2-x)$ and $g(x)=-x$ is equal to",
+      "opts": [
+        "$\\dfrac92$",
+        "$4$",
+        "$3$",
+        "$\\dfrac72$",
+        "$\\dfrac52$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Find where the two graphs intersect, then integrate the difference of upper and lower curves.",
+        "Solve $f(x)=g(x)$, and check which function is larger between the intersection points.",
+        "Area $=\\int_a^b\\left[f(x)-g(x)\\right]dx$ when $f\\ge g$ on $[a,b]$."
+      ],
+      "steps": [
+        "$2x-x^2=-x\\Rightarrow x^2-3x=0$, so $x=0$ and $x=3$.",
+        "At $x=1$: $f=1>g=-1$, so $f$ is on top.",
+        "Area $=\\int_0^3(3x-x^2)\\,dx=\\left[\\dfrac{3x^2}2-\\dfrac{x^3}3\\right]_0^3=\\dfrac{27}2-9=\\dfrac92$."
+      ],
+      "brief": "Intersections $x=0,3$: $\\int_0^3(3x-x^2)\\,dx=\\frac92$."
+    }
+  ]
+}

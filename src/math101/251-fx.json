@@ -1,0 +1,488 @@
+{
+  "course": "math101",
+  "term": "251",
+  "kind": "fx",
+  "date": "",
+  "minutes": 120,
+  "source": "math101-251-fx.pdf",
+  "note": "Date and exam length are not printed on the master (the scan has no cover page). Date left empty; 120 minutes is the usual Final length from the syllabus. All 20 official keys are (a) on the master and all were verified; no disagreements.",
+  "qs": [
+    {
+      "sec": "2.4",
+      "q": "If \\[ f(x)=\\begin{cases} x^2 & x\\le 2\\\\ 8-2x & 2<x<4\\\\ 4 & x\\ge 4\\end{cases} \\] then",
+      "opts": [
+        "$f'(2)$ does not exist",
+        "$f$ is continuous on $\\mathbb{R}$",
+        "$f$ is increasing on $(2,4)$",
+        "$\\lim_{x\\to\\infty}f(x)=\\infty$",
+        "$\\lim_{x\\to-\\infty}f(x)$ exists"
+      ],
+      "ans": 0,
+      "hints": [
+        "Check each statement against the pieces of a piecewise function: continuity, differentiability, monotonicity and end behaviour.",
+        "Compare the one-sided limits and the one-sided slopes at the break points $x=2$ and $x=4$.",
+        "A function is differentiable at $a$ only if it is continuous there and the left and right derivatives agree; continuity needs $\\lim_{x\\to a^-}f=\\lim_{x\\to a^+}f=f(a)$."
+      ],
+      "steps": [
+        "At $x=2$: left value $4$, right limit $8-4=4$, so $f$ is continuous at 2.",
+        "Left slope is $2x=4$; right slope is $-2$. They differ, so $f'(2)$ does not exist.",
+        "At $x=4$: $8-2(4)=0\\neq4$, so $f$ is not continuous on $\\mathbb{R}$.",
+        "On $(2,4)$ the slope is $-2<0$ (decreasing). For $x\\ge4$, $f=4$, and as $x\\to-\\infty$, $x^2\\to\\infty$, so the last three statements are false."
+      ],
+      "brief": "Left slope 4, right slope $-2$ at $x=2$, so $f'(2)$ does not exist."
+    },
+    {
+      "sec": "2.5",
+      "q": "The function $f(x)=\\dfrac{\\ln(x^2+1)}{x+1}$",
+      "opts": [
+        "has one vertical asymptote at $x=-1$",
+        "has one vertical asymptote at $x=1$",
+        "has two vertical asymptote at $x=0$ and $x=-1$",
+        "has no vertical asymptote",
+        "has two vertical asymptotes at $x=1$ and $x=-1$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Vertical asymptotes occur where the denominator is zero and the numerator is not.",
+        "Find where $x+1=0$ and evaluate the numerator there. Also check that the logarithm in the numerator is defined everywhere.",
+        "If the numerator tends to a nonzero number and the denominator tends to $0$ as $x\\to a$, then $x=a$ is a vertical asymptote."
+      ],
+      "steps": [
+        "$x^2+1>0$ for all $x$, so the numerator is defined everywhere.",
+        "The denominator is zero only at $x=-1$.",
+        "At $x=-1$ the numerator is $\\ln 2\\neq0$, so the one-sided limits are infinite.",
+        "Hence the only vertical asymptote is $x=-1$."
+      ],
+      "brief": "Denominator zero only at $x=-1$, numerator $\\ln2\\ne0$: one vertical asymptote $x=-1$."
+    },
+    {
+      "sec": "4.5",
+      "q": "$\\lim_{x\\to-\\infty}\\left(3x+\\sqrt{9x^2-x}\\right)=$",
+      "opts": [
+        "$\\dfrac16$",
+        "$\\infty$",
+        "$-\\infty$",
+        "$\\dfrac13$",
+        "$\\dfrac12$"
+      ],
+      "ans": 0,
+      "hints": [
+        "This is an infinity minus infinity type limit at $-\\infty$.",
+        "Multiply and divide by the conjugate, then divide numerator and denominator by $x$ (careful with the sign of $x$).",
+        "$A+B=\\dfrac{A^2-B^2}{A-B}$, and for $x<0$, $\\sqrt{x^2}=|x|=-x$."
+      ],
+      "steps": [
+        "Multiply by the conjugate: $\\dfrac{(9x^2-x)-9x^2}{\\sqrt{9x^2-x}-3x}=\\dfrac{-x}{\\sqrt{9x^2-x}-3x}$.",
+        "For $x<0$ divide top and bottom by $x$: $\\sqrt{9x^2-x}/x=-\\sqrt{9-1/x}$.",
+        "The expression becomes $\\dfrac{-1}{-\\sqrt{9-1/x}-3}$.",
+        "As $x\\to-\\infty$: $\\dfrac{-1}{-3-3}=\\dfrac16$."
+      ],
+      "brief": "Conjugate gives $\\frac{-x}{\\sqrt{9x^2-x}-3x}\\to\\frac{-1}{-6}=\\frac16$."
+    },
+    {
+      "sec": "3.3",
+      "q": "If $f(x)=xe^{2x}$, then $f^{(4)}(1)=$",
+      "opts": [
+        "$48e^2$",
+        "$36e^2$",
+        "$20e^2$",
+        "$28e^2$",
+        "$24e^2$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Differentiate repeatedly with the product rule and look for a pattern.",
+        "Compute $f'$, $f''$, $f'''$ and watch how the coefficients grow.",
+        "$(e^{kx})'=ke^{kx}$ and $(uv)'=u'v+uv'$."
+      ],
+      "steps": [
+        "$f'=(1+2x)e^{2x}$.",
+        "$f''=(4+4x)e^{2x}$.",
+        "$f'''=(12+8x)e^{2x}$.",
+        "$f^{(4)}=(32+16x)e^{2x}$, so $f^{(4)}(1)=48e^2$."
+      ],
+      "brief": "$f^{(4)}=(32+16x)e^{2x}$, so $f^{(4)}(1)=48e^2$."
+    },
+    {
+      "sec": "3.5",
+      "q": "An equation of the tangent line to the curve $x^{2/3}+y^{2/3}=5$ at the point $(8,1)$ is",
+      "opts": [
+        "$2y+x-10=0$",
+        "$y-x+7=0$",
+        "$y+2x-17=0$",
+        "$2y-x+6=0$",
+        "$y-2x+15=0$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Use implicit differentiation to find the slope at the point.",
+        "Differentiate both sides with respect to $x$, treating $y$ as a function of $x$, then substitute the point.",
+        "Tangent line: $y-y_0=m(x-x_0)$ with $m=y'$ at the point, and $\\frac{d}{dx}y^{n}=ny^{n-1}y'$."
+      ],
+      "steps": [
+        "$\\frac23x^{-1/3}+\\frac23y^{-1/3}y'=0$, so $y'=-\\dfrac{y^{1/3}}{x^{1/3}}$.",
+        "At $(8,1)$: $y'=-\\dfrac12$.",
+        "$y-1=-\\dfrac12(x-8)$, so $2y-2=-x+8$.",
+        "That is $2y+x-10=0$."
+      ],
+      "brief": "$y'=-(y/x)^{1/3}=-\\frac12$ at $(8,1)$: $2y+x-10=0$."
+    },
+    {
+      "sec": "4.1",
+      "q": "The sum of all critical numbers of the function $f(x)=\\dfrac{4x}{x^2+1}$ is equal to",
+      "opts": [
+        "$0$",
+        "$1$",
+        "$-1$",
+        "$2$",
+        "$-3$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Critical numbers are where $f'=0$ or $f'$ does not exist (inside the domain).",
+        "Use the quotient rule and set the numerator of $f'$ equal to zero; check where the denominator vanishes.",
+        "$\\left(\\dfrac uv\\right)'=\\dfrac{u'v-uv'}{v^2}$."
+      ],
+      "steps": [
+        "$f'(x)=\\dfrac{4(x^2+1)-4x(2x)}{(x^2+1)^2}=\\dfrac{4(1-x^2)}{(x^2+1)^2}$.",
+        "The denominator is never zero, so $f'$ exists everywhere.",
+        "$f'=0$ gives $x=\\pm1$.",
+        "The sum is $1+(-1)=0$."
+      ],
+      "brief": "$f'=\\frac{4(1-x^2)}{(x^2+1)^2}=0$ gives $x=\\pm1$, sum $0$."
+    },
+    {
+      "sec": "4.1",
+      "q": "Which of the following is/are True? (I) There is no function with an infinite number of critical numbers. (II) Every polynomial has at least one critical number. (III) A polynomial of degree $n\\ge1$ has at most $(n-1)$ critical numbers.",
+      "opts": [
+        "III",
+        "II and III",
+        "II",
+        "I and III",
+        "I"
+      ],
+      "ans": 0,
+      "hints": [
+        "Test each statement by considering the derivative of a polynomial and simple examples.",
+        "For (I) think of a periodic function; for (II) think of a linear function; for (III) count the roots of the derivative.",
+        "A polynomial of degree $n\\ge1$ has a derivative of degree $n-1$, which has at most $n-1$ real roots."
+      ],
+      "steps": [
+        "(I) is false: $f(x)=\\sin x$ has infinitely many critical numbers.",
+        "(II) is false: $f(x)=x$ has $f'=1\\neq0$ and no critical number.",
+        "(III) is true: $f'$ is a polynomial of degree $n-1$ with at most $n-1$ roots, and it always exists.",
+        "Only III is true."
+      ],
+      "brief": "Only III is true: $f'$ has degree $n-1$; $\\sin x$ and $x$ are counterexamples to I and II."
+    },
+    {
+      "sec": "4.3",
+      "q": "The function $f(x)=7x^3-21x+3$ is",
+      "opts": [
+        "decreasing on $(-1,1)$",
+        "increasing on $(-1,1)$",
+        "decreasing on $(-\\infty,-1)$",
+        "increasing on $(0,\\infty)$",
+        "increasing on $(0,2)$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Use the first derivative to find the intervals of increase and decrease.",
+        "Compute $f'$, find its zeros and check its sign on each interval.",
+        "$f'>0$ on an interval means $f$ is increasing there; $f'<0$ means decreasing."
+      ],
+      "steps": [
+        "$f'(x)=21x^2-21=21(x-1)(x+1)$.",
+        "Zeros at $x=\\pm1$.",
+        "$f'>0$ on $(-\\infty,-1)$ and $(1,\\infty)$; $f'<0$ on $(-1,1)$.",
+        "So $f$ is decreasing on $(-1,1)$."
+      ],
+      "brief": "$f'=21(x-1)(x+1)<0$ on $(-1,1)$, so $f$ is decreasing there."
+    },
+    {
+      "sec": "4.4",
+      "q": "Consider the function $f(x)=\\sqrt[3]{x}$. Which statement is TRUE about $f(x)$?",
+      "opts": [
+        "$f(x)$ has one inflection point at $(0,0)$",
+        "$f(x)$ is decreasing for all $x>0$",
+        "$f(x)$ has no inflection point",
+        "$f(x)$ has two critical points",
+        "$f(x)$ concave down on $(-\\infty,0)$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Look at the signs of $f'$ and $f''$ on each side of $x=0$.",
+        "Write $f=x^{1/3}$ and compute $f'$ and $f''$.",
+        "An inflection point is a point of the graph, in the domain, where concavity changes, i.e. $f''$ changes sign."
+      ],
+      "steps": [
+        "$f'=\\frac13x^{-2/3}>0$ for $x\\ne0$, so $f$ is increasing.",
+        "$f'$ is undefined only at $0$, so there is one critical number.",
+        "$f''=-\\frac29x^{-5/3}$: positive for $x<0$ (concave up) and negative for $x>0$ (concave down).",
+        "Concavity changes at $x=0$ and $f$ is defined there: one inflection point $(0,0)$."
+      ],
+      "brief": "$f''=-\\frac29x^{-5/3}$ changes sign at $0$: inflection point $(0,0)$."
+    },
+    {
+      "sec": "4.4",
+      "q": "The graph of the function $f(x)=\\dfrac{\\cos x}{1+\\sin x}$ on $\\left(-\\dfrac\\pi2,\\dfrac\\pi2\\right)$",
+      "opts": [
+        "is decreasing and concave upward",
+        "is decreasing and concave downward",
+        "is increasing and concave upward",
+        "is increasing and concave downward",
+        "intersects the $x$-axis at $x=0$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Find the signs of $f'$ and $f''$ on the interval.",
+        "Use the quotient rule for $f'$ and simplify with a Pythagorean identity.",
+        "$\\sin^2x+\\cos^2x=1$; $f'<0$ means decreasing and $f''>0$ means concave upward."
+      ],
+      "steps": [
+        "$f'=\\dfrac{-\\sin x(1+\\sin x)-\\cos^2x}{(1+\\sin x)^2}=\\dfrac{-1-\\sin x}{(1+\\sin x)^2}=-\\dfrac1{1+\\sin x}<0$.",
+        "$f''=\\dfrac{\\cos x}{(1+\\sin x)^2}$.",
+        "On $(-\\frac\\pi2,\\frac\\pi2)$, $\\cos x>0$, so $f''>0$.",
+        "Also $f(0)=1\\neq0$. So $f$ is decreasing and concave upward."
+      ],
+      "brief": "$f'=-\\frac1{1+\\sin x}<0$ and $f''=\\frac{\\cos x}{(1+\\sin x)^2}>0$: decreasing, concave up."
+    },
+    {
+      "sec": "4.6",
+      "q": "Consider the function $f(x)=\\dfrac{x}{x^2+1}$. Which statement is TRUE about the graph of $f$?",
+      "opts": [
+        "$f(x)$ has a relative minimum at $\\left(-1,-\\dfrac12\\right)$ and a relative maximum at $\\left(1,\\dfrac12\\right)$",
+        "$f(x)$ is increasing on $(-\\infty,-1)$ and $(1,\\infty)$",
+        "$f(x)$ is concave upward on $(0,\\sqrt3)$ and concave downward on $(-\\sqrt3,0)$",
+        "$f(x)$ has exactly one point of inflection at $(0,0)$",
+        "The line $x=0$ is a vertical asymptote of $f(x)$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Use $f'$ for extrema and monotonicity, and $f''$ for concavity and inflection points.",
+        "Compute $f'$ and $f''$ with the quotient rule and find their zeros and sign changes.",
+        "First derivative test: $f'$ changes from $-$ to $+$ at a minimum and from $+$ to $-$ at a maximum."
+      ],
+      "steps": [
+        "$f'=\\dfrac{1-x^2}{(x^2+1)^2}$, zero at $x=\\pm1$; $f'<0$ on $(-\\infty,-1)$, $f'>0$ on $(-1,1)$, $f'<0$ on $(1,\\infty)$.",
+        "So $f(-1)=-\\frac12$ is a relative minimum and $f(1)=\\frac12$ is a relative maximum.",
+        "$f''=\\dfrac{2x(x^2-3)}{(x^2+1)^3}$ changes sign at $0,\\pm\\sqrt3$: three inflection points, and $f''<0$ on $(0,\\sqrt3)$.",
+        "There is no vertical asymptote at $0$ since $f(0)=0$. Only the first statement holds."
+      ],
+      "brief": "$f'=\\frac{1-x^2}{(x^2+1)^2}$: min at $(-1,-\\frac12)$, max at $(1,\\frac12)$."
+    },
+    {
+      "sec": "4.7",
+      "q": "Let $x$ and $y$ be two positive numbers such that the sum of the first number cubed and the second number is $500$, and the product of $x$ and $y$ is maximum. Then $x+y=$",
+      "opts": [
+        "$380$",
+        "$375$",
+        "$385$",
+        "$240$",
+        "$120$"
+      ],
+      "ans": 0,
+      "hints": [
+        "This is an optimization problem with a constraint.",
+        "Use the constraint to write $y$ in terms of $x$, then write the product as a function of one variable and maximize it.",
+        "Set the derivative of the objective function equal to zero and confirm with the first or second derivative test."
+      ],
+      "steps": [
+        "$x^3+y=500$ gives $y=500-x^3$.",
+        "$P(x)=xy=500x-x^4$, $P'(x)=500-4x^3=0$ gives $x^3=125$, $x=5$.",
+        "$P''=-12x^2<0$, so this is a maximum.",
+        "$y=500-125=375$, so $x+y=380$."
+      ],
+      "brief": "$P=500x-x^4$, $x=5$, $y=375$, so $x+y=380$."
+    },
+    {
+      "sec": "4.8",
+      "q": "If $y=e^{-x/2}\\cos 4x$, then $dy=$",
+      "opts": [
+        "$e^{-x/2}\\left(-4\\sin 4x-\\dfrac12\\cos 4x\\right)dx$",
+        "$e^{-x/2}\\left(4\\sin 4x-\\dfrac12\\cos 4x\\right)dx$",
+        "$e^{-x/2}\\left(-4\\cos 4x-\\dfrac12\\sin 4x\\right)dx$",
+        "$e^{-x/2}\\left(4\\cos 4x+\\dfrac12\\sin 4x\\right)dx$",
+        "$e^{-x/2}\\left(4\\cos 4x-\\dfrac12\\sin 4x\\right)dx$"
+      ],
+      "ans": 0,
+      "hints": [
+        "A differential is the derivative times $dx$.",
+        "Find $y'$ with the product rule and the chain rule.",
+        "$dy=f'(x)\\,dx$, $(e^{u})'=u'e^{u}$, $(\\cos kx)'=-k\\sin kx$."
+      ],
+      "steps": [
+        "$y'=-\\frac12e^{-x/2}\\cos4x+e^{-x/2}(-4\\sin4x)$.",
+        "Factor: $y'=e^{-x/2}\\left(-4\\sin4x-\\frac12\\cos4x\\right)$.",
+        "So $dy=e^{-x/2}\\left(-4\\sin4x-\\frac12\\cos4x\\right)dx$."
+      ],
+      "brief": "$dy=y'\\,dx$ with $y'=e^{-x/2}(-4\\sin4x-\\frac12\\cos4x)$."
+    },
+    {
+      "sec": "5.1",
+      "q": "$\\int(\\sec y)(\\tan y-\\sec y)\\,dy=$",
+      "opts": [
+        "$\\sec y-\\tan y+c$",
+        "$\\sec^2y-\\tan y+c$",
+        "$\\tan^2y+\\csc y+c$",
+        "$\\cos y+\\tan y+c$",
+        "$\\sec^2y+\\tan y+c$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Expand the product and use basic trigonometric antiderivatives.",
+        "Distribute the first factor over the bracket.",
+        "$\\int\\sec u\\tan u\\,du=\\sec u+c$ and $\\int\\sec^2u\\,du=\\tan u+c$."
+      ],
+      "steps": [
+        "$\\sec y(\\tan y-\\sec y)=\\sec y\\tan y-\\sec^2y$.",
+        "$\\int\\sec y\\tan y\\,dy=\\sec y$ and $\\int\\sec^2y\\,dy=\\tan y$.",
+        "Result: $\\sec y-\\tan y+c$."
+      ],
+      "brief": "$\\int(\\sec y\\tan y-\\sec^2y)dy=\\sec y-\\tan y+c$."
+    },
+    {
+      "sec": "5.1",
+      "q": "If $f$ is a function such that $f''(x)=-2$, $f(-1)=3$ and $f(0)=1$, then $f(1)=$",
+      "opts": [
+        "$-3$",
+        "$-2$",
+        "$-1$",
+        "$0$",
+        "$1$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Integrate twice and use the two given values to find the constants.",
+        "Write $f'$ then $f$ with two constants and substitute the points.",
+        "$\\int k\\,dx=kx+C$ and $\\int x\\,dx=\\frac{x^2}{2}+C$."
+      ],
+      "steps": [
+        "$f'=-2x+b$, so $f=-x^2+bx+c$.",
+        "$f(0)=1$ gives $c=1$.",
+        "$f(-1)=-1-b+1=3$ gives $b=-3$.",
+        "$f(1)=-1-3+1=-3$."
+      ],
+      "brief": "$f=-x^2-3x+1$, so $f(1)=-3$."
+    },
+    {
+      "sec": "5.1",
+      "q": "$\\int\\frac{x+6}{\\sqrt x}\\,dx=$",
+      "opts": [
+        "$\\dfrac23x^{3/2}+12x^{1/2}+c$",
+        "$\\dfrac32x^{3/2}+12x^{1/2}+c$",
+        "$\\dfrac32x^{3/2}+6x^{1/2}+c$",
+        "$\\dfrac23x^{2/3}+12x^{1/2}+c$",
+        "$\\dfrac32x^{2/3}+12x^{1/2}+c$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Split the fraction into powers of $x$.",
+        "Write the integrand as a sum of terms $x^{a}$.",
+        "$\\int x^n\\,dx=\\dfrac{x^{n+1}}{n+1}+c$ for $n\\neq-1$."
+      ],
+      "steps": [
+        "$\\dfrac{x+6}{\\sqrt x}=x^{1/2}+6x^{-1/2}$.",
+        "$\\int x^{1/2}dx=\\frac23x^{3/2}$.",
+        "$\\int6x^{-1/2}dx=12x^{1/2}$.",
+        "Sum: $\\frac23x^{3/2}+12x^{1/2}+c$."
+      ],
+      "brief": "$\\int(x^{1/2}+6x^{-1/2})dx=\\frac23x^{3/2}+12x^{1/2}+c$."
+    },
+    {
+      "sec": "5.6",
+      "q": "$\\lim_{x\\to0^+}(\\sin x)^x=$",
+      "opts": [
+        "$1$",
+        "$0$",
+        "$\\dfrac\\pi4$",
+        "$\\dfrac e4$",
+        "DNE"
+      ],
+      "ans": 0,
+      "hints": [
+        "This is a $0^0$ indeterminate form.",
+        "Take the natural log, rewrite as a quotient and use L'Hopital's rule.",
+        "If $\\ln L=\\lim g(x)\\ln f(x)$ then $L=e^{\\ln L}$; for a $\\frac{\\infty}{\\infty}$ form use $\\lim\\frac{f}{g}=\\lim\\frac{f'}{g'}$."
+      ],
+      "steps": [
+        "Let $L=(\\sin x)^x$. $\\ln L=x\\ln\\sin x=\\dfrac{\\ln\\sin x}{1/x}$, of type $\\frac{-\\infty}{\\infty}$.",
+        "L'Hopital: $\\dfrac{\\cos x/\\sin x}{-1/x^2}=-\\dfrac{x^2\\cos x}{\\sin x}$.",
+        "$=-\\cos x\\cdot x\\cdot\\dfrac{x}{\\sin x}\\to-1\\cdot0\\cdot1=0$.",
+        "So $\\ln L\\to0$ and $L\\to e^0=1$."
+      ],
+      "brief": "$\\ln L=x\\ln\\sin x\\to0$, so the limit is $e^0=1$."
+    },
+    {
+      "sec": "5.6",
+      "q": "$\\lim_{x\\to0^+}(e^x+x)^{2/x}=$",
+      "opts": [
+        "$e^4$",
+        "$e^2$",
+        "$1$",
+        "$e$",
+        "$\\infty$"
+      ],
+      "ans": 0,
+      "hints": [
+        "This is a $1^\\infty$ indeterminate form.",
+        "Take the natural log of the expression and apply L'Hopital's rule.",
+        "If $\\ln L=\\lim\\frac{\\ln f(x)}{g(x)}$ is of type $\\frac00$, differentiate numerator and denominator; then $L=e^{\\ln L}$."
+      ],
+      "steps": [
+        "$\\ln L=\\dfrac{2\\ln(e^x+x)}{x}$, of type $\\frac00$.",
+        "L'Hopital: $\\dfrac{2(e^x+1)/(e^x+x)}{1}$.",
+        "At $x=0$: $2\\cdot\\dfrac{2}{1}=4$.",
+        "So $L=e^4$."
+      ],
+      "brief": "$\\ln L=\\lim\\frac{2\\ln(e^x+x)}{x}=4$, so $L=e^4$."
+    },
+    {
+      "sec": "5.9",
+      "q": "The sum of all the relative maxima and minima of the function $f(x)=\\sin x\\sinh x-\\cos x\\cosh x$ on $(-4,4)$ is",
+      "opts": [
+        "$2\\cosh\\pi-1$",
+        "$\\cosh\\pi-1$",
+        "$1-\\cosh\\pi$",
+        "$1-2\\cosh\\pi$",
+        "$-1$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Find the critical numbers from $f'$, classify them, and add the function values.",
+        "Differentiate with the product rule; terms should cancel. Then use the second derivative test.",
+        "$(\\sinh x)'=\\cosh x$, $(\\cosh x)'=\\sinh x$, $\\cosh x>0$ for all $x$; $f''>0$ gives a minimum, $f''<0$ a maximum."
+      ],
+      "steps": [
+        "$f'=\\cos x\\sinh x+\\sin x\\cosh x+\\sin x\\cosh x-\\cos x\\sinh x=2\\sin x\\cosh x$.",
+        "$f'=0$ when $\\sin x=0$: $x=0,\\pm\\pi$ in $(-4,4)$.",
+        "$f''=2\\cos x\\cosh x+2\\sin x\\sinh x$: $f''(0)=2>0$ (min), $f''(\\pm\\pi)=-2\\cosh\\pi<0$ (max).",
+        "$f(0)=-1$ and $f(\\pm\\pi)=\\cosh\\pi$. Sum: $2\\cosh\\pi-1$."
+      ],
+      "brief": "$f'=2\\sin x\\cosh x$: min $f(0)=-1$, maxima $f(\\pm\\pi)=\\cosh\\pi$; sum $2\\cosh\\pi-1$."
+    },
+    {
+      "sec": "5.9",
+      "q": "$\\lim_{x\\to0}\\frac{\\sinh 2x}{x}=$",
+      "opts": [
+        "$2$",
+        "$1$",
+        "$0$",
+        "$-1$",
+        "$-2$"
+      ],
+      "ans": 0,
+      "hints": [
+        "This is a $\\frac00$ form.",
+        "Apply L'Hopital's rule, using the derivative of $\\sinh$.",
+        "$(\\sinh kx)'=k\\cosh kx$ and $\\cosh0=1$."
+      ],
+      "steps": [
+        "Type $\\frac00$.",
+        "L'Hopital: $\\dfrac{2\\cosh2x}{1}$.",
+        "At $x=0$: $2\\cosh0=2$."
+      ],
+      "brief": "L'Hopital: $2\\cosh 2x\\to2$."
+    }
+  ]
+}

@@ -1,0 +1,431 @@
+{
+  "course": "math101",
+  "term": "223",
+  "kind": "e1",
+  "date": "12 July 2023",
+  "minutes": 120,
+  "source": "math101-223-ex1.pdf",
+  "note": "Date and time are printed on the cover (July 12, 2023; net time 120 minutes). All 18 master keys agree with independent checks (sympy and by hand). Q6 has only one integer among the choices (x = 1). Q13 prints 'ax+b,,' (double comma), transcribed as 'ax+b'. Section numbers follow the exam's own labels except Q5 (printed 'Review Chapter 2'), tagged 2.5, and Q6 (Review Chapter 2), tagged 2.4.",
+  "qs": [
+    {
+      "sec": "2.2",
+      "q": "Let \\[ f(x)=\\begin{cases} x^2, & x\\le 2\\\\ 8-2x, & 2<x<4\\\\ 4, & x\\ge 4 \\end{cases} \\] The sum of all values of $c$ for which $\\lim_{x\\to c} f(x)$ does not exist is",
+      "opts": [
+        "$4$",
+        "$6$",
+        "$2$",
+        "$0$",
+        "$-4$"
+      ],
+      "ans": 0,
+      "hints": [
+        "A two-sided limit exists only when the left and right limits agree, so look at the points where the formula changes.",
+        "At each break point compute the left-hand and right-hand limits separately and compare them.",
+        "$\\lim_{x\\to c}f(x)$ exists if and only if $\\lim_{x\\to c^-}f(x)=\\lim_{x\\to c^+}f(x)$; away from the break points each piece is a polynomial or constant, so the limit exists there."
+      ],
+      "steps": [
+        "The only possible trouble spots are $c=2$ and $c=4$.",
+        "At $c=2$: left limit $=2^2=4$, right limit $=8-2(2)=4$. They agree, so the limit exists.",
+        "At $c=4$: left limit $=8-2(4)=0$, right limit $=4$. They differ, so the limit does not exist.",
+        "The only such value is $c=4$, so the sum is $4$."
+      ],
+      "brief": "Only $c=4$ fails (left limit $0$, right limit $4$); $c=2$ gives $4=4$. Sum $=4$."
+    },
+    {
+      "sec": "2.3",
+      "q": "$\\lim_{x\\to1}\\frac{\\ln x}{x-1}+\\lim_{x\\to\\ln 2}\\frac{e^{3x}-8}{e^{2x}-4}=$",
+      "opts": [
+        "$4$",
+        "$5$",
+        "$3$",
+        "$2$",
+        "$6$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Each limit is of the form $0/0$, so each needs algebra or a known derivative-type limit.",
+        "For the first, recognise a difference quotient. For the second, substitute $u=e^x$ and factor.",
+        "$\\lim_{x\\to a}\\dfrac{g(x)-g(a)}{x-a}=g'(a)$, and $u^3-a^3=(u-a)(u^2+au+a^2)$, $u^2-a^2=(u-a)(u+a)$."
+      ],
+      "steps": [
+        "First limit: $\\dfrac{\\ln x-\\ln 1}{x-1}\\to\\dfrac{d}{dx}\\ln x\\Big|_{x=1}=1$.",
+        "Second: let $u=e^x$, so $u\\to2$ as $x\\to\\ln2$. The limit is $\\lim_{u\\to2}\\frac{u^3-8}{u^2-4}$.",
+        "Factor: $\\dfrac{(u-2)(u^2+2u+4)}{(u-2)(u+2)}=\\dfrac{u^2+2u+4}{u+2}\\to\\dfrac{12}{4}=3$.",
+        "The sum is $1+3=4$."
+      ],
+      "brief": "First limit $=1$; with $u=e^x$ the second is $\\frac{u^3-8}{u^2-4}\\to3$. Sum $=4$."
+    },
+    {
+      "sec": "2.3",
+      "q": "$\\lim_{x\\to0}\\frac{\\sec x-1}{x^2}=$",
+      "opts": [
+        "$\\dfrac12$",
+        "$-\\dfrac12$",
+        "$0$",
+        "$1$",
+        "$-1$"
+      ],
+      "ans": 0,
+      "hints": [
+        "The limit has the form $0/0$; rewrite the secant in terms of cosine to simplify.",
+        "Write $\\sec x-1$ over a common denominator, then multiply top and bottom by the conjugate of the numerator.",
+        "$1-\\cos^2x=\\sin^2x$ and $\\lim_{x\\to0}\\frac{\\sin x}{x}=1$."
+      ],
+      "steps": [
+        "$\\sec x-1=\\dfrac{1-\\cos x}{\\cos x}$, so the expression is $\\dfrac{1-\\cos x}{x^2\\cos x}$.",
+        "Multiply by $\\dfrac{1+\\cos x}{1+\\cos x}$: $\\dfrac{1-\\cos^2x}{x^2\\cos x(1+\\cos x)}=\\dfrac{\\sin^2x}{x^2}\\cdot\\dfrac{1}{\\cos x(1+\\cos x)}$.",
+        "As $x\\to0$: $\\dfrac{\\sin^2x}{x^2}\\to1$ and $\\dfrac{1}{\\cos x(1+\\cos x)}\\to\\dfrac{1}{1\\cdot2}$.",
+        "The limit is $\\dfrac12$."
+      ],
+      "brief": "$\\frac{\\sec x-1}{x^2}=\\frac{\\sin^2x}{x^2}\\cdot\\frac{1}{\\cos x(1+\\cos x)}\\to\\frac12$."
+    },
+    {
+      "sec": "2.4",
+      "q": "If the function \\[ f(x)=\\begin{cases} ae^{x-1}+3, & x<1\\\\ \\tan^{-1}(x-1)+2, & x\\ge1 \\end{cases} \\] is continuous on the entire real number line, then $a=$",
+      "opts": [
+        "$-1$",
+        "$1$",
+        "$-2$",
+        "$2$",
+        "$0$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Each piece is continuous by itself, so only the point where the formula changes matters.",
+        "Compute the left-hand limit and the value of the other piece at the joining point and set them equal.",
+        "$f$ is continuous at $c$ iff $\\lim_{x\\to c^-}f(x)=\\lim_{x\\to c^+}f(x)=f(c)$."
+      ],
+      "steps": [
+        "The only point to check is $x=1$.",
+        "Left limit: $\\lim_{x\\to1^-}\\left(ae^{x-1}+3\\right)=a+3$.",
+        "Right side: $f(1)=\\tan^{-1}(0)+2=2$.",
+        "Set $a+3=2$, so $a=-1$."
+      ],
+      "brief": "Match at $x=1$: $a+3=\\tan^{-1}(0)+2=2$, so $a=-1$."
+    },
+    {
+      "sec": "2.5",
+      "q": "The sum of all $k$'s for which $x=k$ is a vertical asymptote for the function $f(x)=\\sec\\dfrac{\\pi x}{2}$ on the interval $(0,6)$ is",
+      "opts": [
+        "$9$",
+        "$10$",
+        "$11$",
+        "$8$",
+        "$7$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Write the secant as a quotient; vertical asymptotes occur where the denominator is zero.",
+        "Solve for $x$ where the cosine in the denominator vanishes, and keep only those values lying in $(0,6)$.",
+        "$\\cos\\theta=0$ exactly when $\\theta=\\dfrac{\\pi}{2}+n\\pi$ for integer $n$."
+      ],
+      "steps": [
+        "$f(x)=\\dfrac{1}{\\cos(\\pi x/2)}$, which has asymptotes where $\\cos\\dfrac{\\pi x}{2}=0$.",
+        "$\\dfrac{\\pi x}{2}=\\dfrac{\\pi}{2}+n\\pi$ gives $x=1+2n$, the odd integers.",
+        "In $(0,6)$: $x=1,3,5$.",
+        "The sum is $1+3+5=9$."
+      ],
+      "brief": "$\\cos\\frac{\\pi x}{2}=0$ at odd $x$; in $(0,6)$: $1+3+5=9$."
+    },
+    {
+      "sec": "2.4",
+      "q": "The function $f(x)=2e^{\\lfloor x\\rfloor/4}$ has a nonremovable discontinuity at $x=$",
+      "opts": [
+        "$1$",
+        "$\\dfrac12$",
+        "$-\\dfrac12$",
+        "$\\dfrac32$",
+        "$-\\dfrac32$"
+      ],
+      "ans": 0,
+      "hints": [
+        "The greatest integer function is continuous except at integers, where it jumps.",
+        "Decide where $\\lfloor x\\rfloor$ is discontinuous, then check whether the one-sided limits of $f$ agree there.",
+        "A discontinuity is removable only if the two-sided limit exists; a jump (unequal one-sided limits) is nonremovable. $\\lfloor x\\rfloor$ is constant on each interval $[n,n+1)$."
+      ],
+      "steps": [
+        "$f$ is continuous wherever $\\lfloor x\\rfloor$ is, so any discontinuity is at an integer.",
+        "Near $x=n$: the left limit is $2e^{(n-1)/4}$ and the right limit is $2e^{n/4}$, which differ.",
+        "So $f$ has a jump (nonremovable) at every integer, and no discontinuity elsewhere.",
+        "Among the choices only $x=1$ is an integer."
+      ],
+      "brief": "$\\lfloor x\\rfloor$ jumps at integers, so $f$ has jump discontinuities there; only $x=1$ is an integer."
+    },
+    {
+      "sec": "2.3",
+      "q": "$\\lim_{x\\to1}\\left(\\lfloor x\\rfloor+\\lfloor -x\\rfloor\\right)=$",
+      "opts": [
+        "$-1$",
+        "$1$",
+        "$0$",
+        "$2$",
+        "does not exist"
+      ],
+      "ans": 0,
+      "hints": [
+        "Because of the jumps in the greatest integer function, find the one-sided limits separately.",
+        "Evaluate $\\lfloor x\\rfloor$ and $\\lfloor -x\\rfloor$ for $x$ slightly below $1$ and slightly above $1$.",
+        "$\\lfloor t\\rfloor=n$ for $n\\le t<n+1$."
+      ],
+      "steps": [
+        "As $x\\to1^-$: $0<x<1$ gives $\\lfloor x\\rfloor=0$ and $-1<-x<0$ gives $\\lfloor -x\\rfloor=-1$, so the sum is $-1$.",
+        "As $x\\to1^+$: $1<x<2$ gives $\\lfloor x\\rfloor=1$ and $-2<-x<-1$ gives $\\lfloor -x\\rfloor=-2$, so the sum is $-1$.",
+        "Both one-sided limits equal $-1$, so the limit is $-1$."
+      ],
+      "brief": "Left: $0+(-1)=-1$. Right: $1+(-2)=-1$. Limit $=-1$."
+    },
+    {
+      "sec": "4.5",
+      "q": "$\\lim_{x\\to-\\infty}\\left(3x+\\sqrt{9x^2-x}\\right)=$",
+      "opts": [
+        "$\\dfrac16$",
+        "$-\\dfrac16$",
+        "$\\dfrac13$",
+        "$-\\dfrac13$",
+        "$\\dfrac14$"
+      ],
+      "ans": 0,
+      "hints": [
+        "This is an $\\infty-\\infty$ form, so multiply by the conjugate.",
+        "Multiply and divide by the conjugate, then divide numerator and denominator by $x$, remembering that $x<0$.",
+        "$(A+B)(A-B)=A^2-B^2$, and for $x<0$, $\\sqrt{x^2}=|x|=-x$."
+      ],
+      "steps": [
+        "Conjugate: $\\dfrac{(9x^2-x)-9x^2}{\\sqrt{9x^2-x}-3x}=\\dfrac{-x}{\\sqrt{9x^2-x}-3x}$.",
+        "For $x<0$, $\\sqrt{9x^2-x}=-x\\sqrt{9-\\frac1x}$. Divide top and bottom by $-x$: $\\dfrac{1}{\\sqrt{9-\\frac1x}+3}$.",
+        "As $x\\to-\\infty$, $\\sqrt{9-\\frac1x}\\to3$, so the limit is $\\dfrac{1}{3+3}=\\dfrac16$."
+      ],
+      "brief": "Conjugate gives $\\frac{-x}{\\sqrt{9x^2-x}-3x}=\\frac{1}{\\sqrt{9-1/x}+3}\\to\\frac16$."
+    },
+    {
+      "sec": "3.1",
+      "q": "If the tangent line to the graph of $y=g(x)$ at the point $(4,5)$ passes through the point $(7,0)$, then $g(4)+g'(4)=$",
+      "opts": [
+        "$\\dfrac{10}{3}$",
+        "$5$",
+        "$12$",
+        "$0$",
+        "$\\dfrac73$"
+      ],
+      "ans": 0,
+      "hints": [
+        "The derivative at a point is the slope of the tangent line there.",
+        "Use two points on the tangent line to find its slope, which equals $g'(4)$.",
+        "The slope through $(x_1,y_1)$ and $(x_2,y_2)$ is $\\dfrac{y_2-y_1}{x_2-x_1}$, and the point of tangency $(a,g(a))$ gives $g(a)$."
+      ],
+      "steps": [
+        "The point of tangency is $(4,5)$, so $g(4)=5$.",
+        "The tangent line passes through $(4,5)$ and $(7,0)$, so its slope is $\\dfrac{0-5}{7-4}=-\\dfrac53$.",
+        "Hence $g'(4)=-\\dfrac53$.",
+        "$g(4)+g'(4)=5-\\dfrac53=\\dfrac{10}{3}$."
+      ],
+      "brief": "$g(4)=5$, $g'(4)=\\frac{0-5}{7-4}=-\\frac53$, so the sum is $\\frac{10}{3}$."
+    },
+    {
+      "sec": "3.1",
+      "q": "If \\[ f(x)=\\begin{cases} x^2\\sin\\dfrac1x, & x\\ne0\\\\ 0, & x=0, \\end{cases} \\] then $f'(0)$",
+      "opts": [
+        "equals zero",
+        "does not exist",
+        "equals $1$",
+        "equals $-1$",
+        "equals $\\pi$"
+      ],
+      "ans": 0,
+      "hints": [
+        "At a point where the formula changes, use the limit definition of the derivative.",
+        "Write the difference quotient at $0$ and simplify; then bound the leftover sine factor.",
+        "$f'(a)=\\lim_{h\\to0}\\frac{f(a+h)-f(a)}{h}$, and the Squeeze Theorem applies since $-1\\le\\sin t\\le1$."
+      ],
+      "steps": [
+        "$f'(0)=\\lim_{h\\to0}\\frac{h^2\\sin(1/h)-0}{h}=\\lim_{h\\to0}h\\sin\\frac1h$.",
+        "Since $-|h|\\le h\\sin\\frac1h\\le|h|$ and $|h|\\to0$, the Squeeze Theorem gives the limit $0$.",
+        "So $f'(0)=0$."
+      ],
+      "brief": "$f'(0)=\\lim_{h\\to0}h\\sin\\frac1h=0$ by the Squeeze Theorem."
+    },
+    {
+      "sec": "3.2",
+      "q": "If the graph of the function $f(x)=\\sqrt3\\,x+2\\cos x$, $0\\le x<2\\pi$ has a horizontal tangent line at $x=a$, then the sum of all $a$'s is",
+      "opts": [
+        "$\\pi$",
+        "$2\\pi$",
+        "$0$",
+        "$3\\pi$",
+        "$4\\pi$"
+      ],
+      "ans": 0,
+      "hints": [
+        "A horizontal tangent line means the slope, that is the derivative, is zero.",
+        "Differentiate, set $f'(x)=0$, and solve the trigonometric equation on $[0,2\\pi)$.",
+        "$\\dfrac{d}{dx}\\cos x=-\\sin x$; and $\\sin x=\\sin\\alpha$ has the solutions $x=\\alpha$ and $x=\\pi-\\alpha$ in $[0,2\\pi)$ when $0<\\alpha<\\pi/2$."
+      ],
+      "steps": [
+        "$f'(x)=\\sqrt3-2\\sin x=0$, so $\\sin x=\\dfrac{\\sqrt3}{2}$.",
+        "On $[0,2\\pi)$ the sine is positive only in the first two quadrants: $x=\\dfrac\\pi3$ and $x=\\dfrac{2\\pi}{3}$.",
+        "The sum is $\\dfrac\\pi3+\\dfrac{2\\pi}3=\\pi$."
+      ],
+      "brief": "$f'=\\sqrt3-2\\sin x=0\\Rightarrow x=\\frac\\pi3,\\frac{2\\pi}3$; sum $=\\pi$."
+    },
+    {
+      "sec": "3.2",
+      "q": "If the line $y=x+4$ is tangent to the graph of the function $f(x)=k\\sqrt x$, then $k=$",
+      "opts": [
+        "$4$",
+        "$0$",
+        "$-4$",
+        "$2$",
+        "$-2$"
+      ],
+      "ans": 0,
+      "hints": [
+        "At the point of tangency the function and the line have the same value and the same slope.",
+        "Let the tangency point be $x=a$. Write two equations (equal slopes and equal heights), then solve for $a$ and $k$.",
+        "$\\dfrac{d}{dx}\\sqrt x=\\dfrac{1}{2\\sqrt x}$; and $\\sqrt{a}$ must be nonnegative, which can rule out spurious solutions."
+      ],
+      "steps": [
+        "Slopes: $f'(a)=\\dfrac{k}{2\\sqrt a}=1$, so $\\sqrt a=\\dfrac k2$ and $a=\\dfrac{k^2}{4}$.",
+        "Heights: $k\\sqrt a=a+4$, so $k\\cdot\\dfrac k2=\\dfrac{k^2}{4}+4$.",
+        "Then $\\dfrac{k^2}{4}=4$, so $k=\\pm4$.",
+        "Since $\\sqrt a=\\dfrac k2\\ge0$, we need $k>0$, so $k=4$ (tangent at $x=4$)."
+      ],
+      "brief": "$\\frac{k}{2\\sqrt a}=1$, $k\\sqrt a=a+4\\Rightarrow k^2=16$; $\\sqrt a=k/2>0$ gives $k=4$."
+    },
+    {
+      "sec": "3.2",
+      "q": "If \\[ f(x)=\\begin{cases} \\cos x, & x<0\\\\ ax+b, & x\\ge0 \\end{cases} \\] is differentiable everywhere, then $a+b=$",
+      "opts": [
+        "$1$",
+        "$0$",
+        "$-1$",
+        "$2$",
+        "$-2$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Differentiable at the joining point means the function is continuous there and the one-sided derivatives agree.",
+        "Impose continuity at $x=0$ to get one equation, and equal one-sided derivatives to get another.",
+        "If $f$ is differentiable at $c$ then $f$ is continuous at $c$ and $f'_-(c)=f'_+(c)$."
+      ],
+      "steps": [
+        "Continuity at $0$: $\\cos0=1$ must equal $a(0)+b$, so $b=1$.",
+        "Derivatives: for $x<0$, $f'(x)=-\\sin x\\to0$; for $x>0$, $f'(x)=a$. So $a=0$.",
+        "$a+b=0+1=1$."
+      ],
+      "brief": "Continuity: $b=\\cos0=1$; slopes: $-\\sin0=a$ gives $a=0$. So $a+b=1$."
+    },
+    {
+      "sec": "3.3",
+      "q": "If $f(x)=(2x^3+5x)(x-3)(x+2)$, then $f'(0)=$",
+      "opts": [
+        "$-30$",
+        "$-20$",
+        "$-10$",
+        "$-40$",
+        "$-50$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Use the product rule for a product of three factors.",
+        "Note that the first factor is $0$ at $x=0$, so most terms of the product rule vanish there.",
+        "$(uvw)'=u'vw+uv'w+uvw'$."
+      ],
+      "steps": [
+        "Let $u=2x^3+5x$, $v=x-3$, $w=x+2$. At $x=0$: $u=0$, $u'=6x^2+5=5$, $v=-3$, $w=2$.",
+        "$f'(0)=u'vw+u(v'w+vw')=5(-3)(2)+0=-30$."
+      ],
+      "brief": "Since $u(0)=0$: $f'(0)=u'(0)\\,v(0)\\,w(0)=5\\cdot(-3)\\cdot2=-30$."
+    },
+    {
+      "sec": "3.3",
+      "q": "If $f(x)=\\dfrac{e^x}{x+4}$, then the equation of the tangent line to the graph of $f$ at the point $\\left(0,\\dfrac14\\right)$ is $y=$",
+      "opts": [
+        "$\\dfrac{3}{16}x+\\dfrac14$",
+        "$\\dfrac{1}{16}x+\\dfrac14$",
+        "$\\dfrac{5}{16}x+\\dfrac14$",
+        "$-\\dfrac{1}{16}x+\\dfrac14$",
+        "$\\dfrac{7}{16}x+\\dfrac14$"
+      ],
+      "ans": 0,
+      "hints": [
+        "The tangent line needs the slope $f'(0)$, found with a differentiation rule for quotients.",
+        "Differentiate with the quotient rule and evaluate at $x=0$, then use the point-slope form.",
+        "$\\left(\\dfrac uv\\right)'=\\dfrac{u'v-uv'}{v^2}$ and the tangent line at $(a,f(a))$ is $y=f(a)+f'(a)(x-a)$."
+      ],
+      "steps": [
+        "$f'(x)=\\dfrac{e^x(x+4)-e^x\\cdot1}{(x+4)^2}=\\dfrac{e^x(x+3)}{(x+4)^2}$.",
+        "$f'(0)=\\dfrac{1\\cdot3}{16}=\\dfrac3{16}$.",
+        "Tangent line: $y=\\dfrac14+\\dfrac3{16}x$."
+      ],
+      "brief": "$f'(x)=\\frac{e^x(x+3)}{(x+4)^2}$, $f'(0)=\\frac3{16}$: $y=\\frac3{16}x+\\frac14$."
+    },
+    {
+      "sec": "3.3",
+      "q": "If $f''(x)=-\\sin x$, then $f^{(8)}\\!\\left(\\dfrac\\pi2\\right)=$",
+      "opts": [
+        "$1$",
+        "$-1$",
+        "$0$",
+        "$\\pi$",
+        "$-\\pi$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Differentiating sine and cosine repeatedly gives a repeating cycle.",
+        "Start from $f''$ and differentiate six more times, tracking the pattern.",
+        "$\\dfrac{d}{dx}\\sin x=\\cos x$, $\\dfrac{d}{dx}\\cos x=-\\sin x$; the derivatives of $\\sin x$ repeat with period $4$."
+      ],
+      "steps": [
+        "$f''=-\\sin x$, $f'''=-\\cos x$, $f^{(4)}=\\sin x$, $f^{(5)}=\\cos x$.",
+        "$f^{(6)}=-\\sin x$, $f^{(7)}=-\\cos x$, $f^{(8)}=\\sin x$.",
+        "$f^{(8)}\\!\\left(\\dfrac\\pi2\\right)=\\sin\\dfrac\\pi2=1$."
+      ],
+      "brief": "Derivatives cycle with period 4, so $f^{(8)}=\\sin x$ and $f^{(8)}(\\pi/2)=1$."
+    },
+    {
+      "sec": "4.5",
+      "q": "The product of all $k$'s for which $y=k$ is a horizontal asymptote for the function $f(x)=\\dfrac{|x|}{x+1}$ is",
+      "opts": [
+        "$-1$",
+        "$1$",
+        "$0$",
+        "$-2$",
+        "$2$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Horizontal asymptotes come from the limits at $+\\infty$ and at $-\\infty$, which may differ because of the absolute value.",
+        "Remove the absolute value separately for $x>0$ and $x<0$, then take each limit.",
+        "$|x|=x$ for $x>0$ and $|x|=-x$ for $x<0$; $\\lim_{x\\to\\pm\\infty}\\frac{ax+b}{cx+d}=\\frac ac$."
+      ],
+      "steps": [
+        "As $x\\to+\\infty$: $\\dfrac{x}{x+1}\\to1$, so $y=1$ is an asymptote.",
+        "As $x\\to-\\infty$: $\\dfrac{-x}{x+1}\\to-1$, so $y=-1$ is an asymptote.",
+        "The values are $k=1$ and $k=-1$, with product $-1$."
+      ],
+      "brief": "$\\lim_{x\\to\\infty}=1$, $\\lim_{x\\to-\\infty}=-1$; product $=-1$."
+    },
+    {
+      "sec": "3.3",
+      "q": "If $y=-e^x+\\tan x$, then $y'(0)=$",
+      "opts": [
+        "$0$",
+        "$1$",
+        "$-1$",
+        "$2$",
+        "$-2$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Differentiate term by term using standard derivatives.",
+        "Differentiate each term, then substitute $x=0$.",
+        "$\\dfrac{d}{dx}e^x=e^x$ and $\\dfrac{d}{dx}\\tan x=\\sec^2x$."
+      ],
+      "steps": [
+        "$y'=-e^x+\\sec^2x$.",
+        "$y'(0)=-1+\\sec^20=-1+1=0$."
+      ],
+      "brief": "$y'=-e^x+\\sec^2x$, so $y'(0)=-1+1=0$."
+    }
+  ]
+}

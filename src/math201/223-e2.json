@@ -1,0 +1,477 @@
+{
+  "course": "math201",
+  "term": "223",
+  "kind": "e2",
+  "date": "",
+  "minutes": 90,
+  "source": "math201-223-ex2.pdf",
+  "note": "Scanned master, no cover page. Neither the date nor the exam length is printed, so date is left blank and 90 minutes is assumed (usual major exam length). Master key is A for all 20 questions and every answer was verified independently with sympy; no disagreements. Q19 section set to 13.4 (differentiability); Q17 is 13.6 (gradient normal to level curve).",
+  "qs": [
+    {
+      "sec": "11.5",
+      "q": "If the plane containing the point $(2,1,2)$ and the line given by \\[ \\frac{x-1}{3}=\\frac{y-2}{4}=z+1 \\] passes through the point $(-1,b,1)$, then $b=$",
+      "opts": [
+        "$-3$",
+        "$3$",
+        "$2$",
+        "$-2$",
+        "$1$"
+      ],
+      "ans": 0,
+      "hints": [
+        "A plane is determined by a point and a direction vector in it together with a second vector in it; use a normal vector.",
+        "Read a point and the direction of the line, form a vector from that point to $(2,1,2)$, and cross it with the direction vector to get a normal to the plane.",
+        "A plane with normal $\\mathbf{n}$ through $P_0$ is $\\mathbf{n}\\cdot(X-P_0)=0$, and $\\mathbf{n}=\\mathbf{u}\\times\\mathbf{w}$ for two vectors $\\mathbf{u},\\mathbf{w}$ lying in the plane."
+      ],
+      "steps": [
+        "The line passes through $P_0=(1,2,-1)$ with direction $\\mathbf{d}=\\langle3,4,1\\rangle$.",
+        "A second vector in the plane: $\\overrightarrow{P_0Q}=\\langle1,-1,3\\rangle$ with $Q=(2,1,2)$.",
+        "$\\mathbf{n}=\\mathbf{d}\\times\\overrightarrow{P_0Q}=\\langle13,-8,-7\\rangle$.",
+        "The point $(-1,b,1)$ gives $\\overrightarrow{P_0X}=\\langle-2,b-2,2\\rangle$, and $\\mathbf{n}\\cdot\\overrightarrow{P_0X}=-26-8(b-2)-14=0$.",
+        "So $-8b-24=0$ and $b=-3$."
+      ],
+      "brief": "Normal $\\langle13,-8,-7\\rangle$; $-26-8(b-2)-14=0$ gives $b=-3$."
+    },
+    {
+      "sec": "11.5",
+      "q": "The distance between the planes \\[ 2x-3y+6z=6 \\quad\\text{and}\\quad -4x+6y-12z=2 \\] is equal to",
+      "opts": [
+        "$1$",
+        "$2$",
+        "$3$",
+        "$6$",
+        "$8$"
+      ],
+      "ans": 0,
+      "hints": [
+        "The two normals are parallel, so the planes are parallel.",
+        "Rewrite the second plane so that it has the same coefficients as the first, then use the distance formula for parallel planes.",
+        "The distance between $ax+by+cz=d_1$ and $ax+by+cz=d_2$ is $\\dfrac{|d_1-d_2|}{\\sqrt{a^2+b^2+c^2}}$."
+      ],
+      "steps": [
+        "Divide the second equation by $-2$: $2x-3y+6z=-1$.",
+        "$\\sqrt{2^2+(-3)^2+6^2}=\\sqrt{49}=7$.",
+        "Distance $=\\dfrac{|6-(-1)|}{7}=\\dfrac77=1$."
+      ],
+      "brief": "Second plane is $2x-3y+6z=-1$; distance $\\frac{|6+1|}{7}=1$."
+    },
+    {
+      "sec": "11.5",
+      "q": "The distance between the two lines \\[ L_1:\\ -2x=y-3=2z-8 \\quad\\text{and}\\quad L_2:\\ 2x=1-y=8-2z, \\] is equal to",
+      "opts": [
+        "$\\dfrac{\\sqrt{12}}{3}$",
+        "$\\dfrac{\\sqrt{22}}{3}$",
+        "$\\dfrac{\\sqrt{66}}{3}$",
+        "$\\dfrac43$",
+        "$\\dfrac23$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Write each line in parametric form and compare the direction vectors.",
+        "Set each common value equal to a parameter to read a point and direction for each line, check whether the directions are parallel, and then take the distance from a point of one line to the other line.",
+        "The distance from a point $Q$ to a line through $P$ with direction $\\mathbf{d}$ is $\\dfrac{\\|\\overrightarrow{PQ}\\times\\mathbf{d}\\|}{\\|\\mathbf{d}\\|}$."
+      ],
+      "steps": [
+        "For $L_1$ put $-2x=y-3=2z-8=s$: $(x,y,z)=(-s/2,\\,3+s,\\,4+s/2)$, point $(0,3,4)$, direction $\\langle-1,2,1\\rangle$.",
+        "For $L_2$ put $2x=1-y=8-2z=u$: $(x,y,z)=(u/2,\\,1-u,\\,4-u/2)$, point $(0,1,4)$, direction $\\langle1,-2,-1\\rangle$, which is $-1$ times the direction of $L_1$, so the lines are parallel.",
+        "Take $P=(0,3,4)$, $Q=(0,1,4)$: $\\overrightarrow{PQ}=\\langle0,-2,0\\rangle$ and $\\mathbf{d}=\\langle-1,2,1\\rangle$.",
+        "$\\overrightarrow{PQ}\\times\\mathbf{d}=\\langle-2,0,-2\\rangle$, with length $\\sqrt8$, and $\\|\\mathbf{d}\\|=\\sqrt6$.",
+        "Distance $=\\sqrt{8/6}=\\dfrac{2}{\\sqrt3}=\\dfrac{2\\sqrt3}{3}=\\dfrac{\\sqrt{12}}{3}$."
+      ],
+      "brief": "Parallel lines, $d=\\frac{\\|PQ\\times\\mathbf d\\|}{\\|\\mathbf d\\|}=\\sqrt{8/6}=\\frac{\\sqrt{12}}{3}$."
+    },
+    {
+      "sec": "11.6",
+      "q": "The surface \\[ 4x^2-3y^2+12z^2+12=0 \\] is",
+      "opts": [
+        "a hyperboloid of two sheets with the $y$-axis as its axis",
+        "a hyperboloid of two sheets with the $x$-axis as its axis",
+        "a hyperboloid of one sheet with the $z$-axis as its axis",
+        "a hyperboloid of one sheet with the $y$-axis as its axis",
+        "a hyperboloid of one sheet with the $x$-axis as its axis"
+      ],
+      "ans": 0,
+      "hints": [
+        "This is a quadric surface; put it in standard form.",
+        "Move the constant to the right side and divide to make the right side equal to $1$, then look at the signs of the three squared terms.",
+        "One positive and two negative squared terms with right side $1$ gives a hyperboloid of two sheets, with axis along the variable having the positive sign. Two positive and one negative gives one sheet, with axis along the negative variable."
+      ],
+      "steps": [
+        "$4x^2-3y^2+12z^2=-12$.",
+        "Divide by $-12$: $-\\dfrac{x^2}{3}+\\dfrac{y^2}{4}-z^2=1$.",
+        "Only the $y^2$ term is positive, so it is a hyperboloid of two sheets, with the $y$-axis as its axis."
+      ],
+      "brief": "$-\\frac{x^2}{3}+\\frac{y^2}{4}-z^2=1$: two sheets, $y$-axis."
+    },
+    {
+      "sec": "11.6",
+      "q": "An equation of the surface that consists of all points equidistant from the point $(2,2,2)$ and the $xy$-plane is",
+      "opts": [
+        "$z=\\dfrac{(x-2)^2}{4}+\\dfrac{(y-2)^2}{4}+1$",
+        "$\\dfrac{(z-1)^2}{2}=\\dfrac{(x-2)^2}{4}+\\dfrac{(y-2)^2}{4}$",
+        "$\\dfrac{(z-2)^2}{4}=(x-2)^2+(y-2)^2$",
+        "$z=(x-2)^2+(y-2)^2+2$",
+        "$y=\\dfrac{(x+2)^2}{4}+\\dfrac{(z+2)^2}{4}+2$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Translate the geometric condition into an equation for a point $(x,y,z)$.",
+        "Write the distance from $(x,y,z)$ to $(2,2,2)$, and the distance from $(x,y,z)$ to the $xy$-plane, then set them equal and square.",
+        "The distance from $(x,y,z)$ to the $xy$-plane is $|z|$, and the distance to $(a,b,c)$ is $\\sqrt{(x-a)^2+(y-b)^2+(z-c)^2}$."
+      ],
+      "steps": [
+        "Equal distances: $\\sqrt{(x-2)^2+(y-2)^2+(z-2)^2}=|z|$.",
+        "Square: $(x-2)^2+(y-2)^2+z^2-4z+4=z^2$.",
+        "So $4z=(x-2)^2+(y-2)^2+4$, i.e. $z=\\dfrac{(x-2)^2}{4}+\\dfrac{(y-2)^2}{4}+1$."
+      ],
+      "brief": "$(x-2)^2+(y-2)^2+(z-2)^2=z^2$ gives $z=\\frac{(x-2)^2+(y-2)^2}{4}+1$."
+    },
+    {
+      "sec": "13.1",
+      "q": "The level curves of $f(x,y)=e^{1-x^2+y^2}$ are",
+      "opts": [
+        "hyperbolas",
+        "parabolas",
+        "ellipses",
+        "circles",
+        "lines"
+      ],
+      "ans": 0,
+      "hints": [
+        "A level curve is the set where $f$ equals a constant.",
+        "Set $f(x,y)=c$ and take the natural logarithm of both sides.",
+        "Since $e^u$ is one-to-one, $e^{u}=c$ with $c>0$ means $u=\\ln c$; then identify the conic from the signs of the $x^2$ and $y^2$ terms."
+      ],
+      "steps": [
+        "$e^{1-x^2+y^2}=c$ with $c>0$ gives $1-x^2+y^2=\\ln c$.",
+        "So $y^2-x^2=\\ln c-1$, a constant $k$.",
+        "$y^2-x^2=k$ is a hyperbola for $k\\neq0$ (it degenerates to a pair of lines only for the single value $c=e$), so the level curves are hyperbolas."
+      ],
+      "brief": "$y^2-x^2=\\ln c-1$: hyperbolas."
+    },
+    {
+      "sec": "13.2",
+      "q": "$\\lim_{(x,y)\\to(0,0)} e^{\\left(\\frac{1-\\sec(x^2+y^2)}{x^2+y^2}\\right)}=$",
+      "opts": [
+        "$1$",
+        "$e$",
+        "$0$",
+        "$\\infty$",
+        "$-\\infty$"
+      ],
+      "ans": 0,
+      "hints": [
+        "The exponent depends only on $x^2+y^2$, so reduce to a one-variable limit.",
+        "Let $r=x^2+y^2\\to0$, find the limit of the exponent, and use continuity of $e^u$.",
+        "$\\sec r=\\dfrac1{\\cos r}$, and $\\lim_{r\\to0}\\dfrac{1-\\cos r}{r}=0$ (or use L'Hopital's rule)."
+      ],
+      "steps": [
+        "Let $r=x^2+y^2$, so $r\\to0$.",
+        "$\\dfrac{1-\\sec r}{r}=\\dfrac{\\cos r-1}{r\\cos r}=-\\dfrac{1-\\cos r}{r}\\cdot\\dfrac1{\\cos r}\\to-0\\cdot1=0$.",
+        "By continuity of the exponential, the limit is $e^0=1$."
+      ],
+      "brief": "Exponent $\\to0$ as $r=x^2+y^2\\to0$, so the limit is $e^0=1$."
+    },
+    {
+      "sec": "13.2",
+      "q": "$\\lim_{(x,y)\\to(0,1)} \\tan^{-1}\\left(\\frac{x^2-1}{x^2+(y-1)^2}\\right)=$",
+      "opts": [
+        "$-\\dfrac{\\pi}{2}$",
+        "$\\dfrac{\\pi}{2}$",
+        "$0$",
+        "DNE",
+        "$-\\dfrac{\\pi}{4}$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Look at the numerator and denominator of the inside fraction separately.",
+        "Find what each tends to as $(x,y)\\to(0,1)$, and decide the sign of the denominator.",
+        "If the numerator tends to a negative constant and the denominator tends to $0$ through positive values, the fraction tends to $-\\infty$; and $\\lim_{u\\to-\\infty}\\tan^{-1}u=-\\dfrac\\pi2$."
+      ],
+      "steps": [
+        "Numerator: $x^2-1\\to-1$.",
+        "Denominator: $x^2+(y-1)^2\\to0$ and it is always positive, so the fraction tends to $-\\infty$ along every path.",
+        "Hence the limit is $\\tan^{-1}(-\\infty)=-\\dfrac{\\pi}{2}$."
+      ],
+      "brief": "Fraction $\\to-1/0^+=-\\infty$, so the limit is $-\\frac{\\pi}{2}$."
+    },
+    {
+      "sec": "13.3",
+      "q": "Let $f(x,y,z)=ye^x+x\\ln z$, then $xf_{xz}f_{zx}+f_{zz}=$",
+      "opts": [
+        "$0$",
+        "$\\dfrac{-x}{z^2}$",
+        "$1$",
+        "$\\dfrac{x}{z^2}$",
+        "$\\dfrac{-x}{z}$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Compute the needed second-order partial derivatives.",
+        "Find $f_x$ and $f_z$ first, then differentiate again to get $f_{xz}$, $f_{zx}$ and $f_{zz}$.",
+        "In $f_x$ treat $y,z$ as constants and in $f_z$ treat $x,y$ as constants; $\\dfrac{d}{dz}\\ln z=\\dfrac1z$ and $\\dfrac{d}{dz}z^{-1}=-z^{-2}$."
+      ],
+      "steps": [
+        "$f_x=ye^x+\\ln z$ and $f_z=\\dfrac xz$.",
+        "$f_{xz}=\\dfrac1z$, $f_{zx}=\\dfrac1z$, $f_{zz}=-\\dfrac{x}{z^2}$.",
+        "$xf_{xz}f_{zx}+f_{zz}=x\\cdot\\dfrac1{z^2}-\\dfrac x{z^2}=0$."
+      ],
+      "brief": "$f_{xz}=f_{zx}=\\frac1z$, $f_{zz}=-\\frac{x}{z^2}$, so the sum is $0$."
+    },
+    {
+      "sec": "13.3",
+      "q": "Let $f(x,y)=x^y$, then $f_y(e,1)=$",
+      "opts": [
+        "$e$",
+        "$1$",
+        "$e^2$",
+        "$e^e$",
+        "$0$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Differentiate with respect to $y$ while $x$ is held constant.",
+        "Rewrite $x^y$ as an exponential with base $e$ before differentiating.",
+        "$x^y=e^{y\\ln x}$ and $\\dfrac{d}{dy}a^y=a^y\\ln a$ for a constant $a>0$."
+      ],
+      "steps": [
+        "$f_y=x^y\\ln x$.",
+        "At $(e,1)$: $f_y=e^1\\ln e=e\\cdot1=e$."
+      ],
+      "brief": "$f_y=x^y\\ln x$, so $f_y(e,1)=e\\ln e=e$."
+    },
+    {
+      "sec": "13.4",
+      "q": "If the radius and height of a right circular cylinder are respectively measured as $10\\,\\text{cm}$ and $30\\,\\text{cm}$ with possible errors $\\pm0.02\\,\\text{cm}$ and $\\pm0.04\\,\\text{cm}$, respectively, then the error in calculating the volume of the cylinder is approximately",
+      "opts": [
+        "$\\pm16\\pi\\,\\text{cm}^3$",
+        "$\\pm18\\pi\\,\\text{cm}^3$",
+        "$\\pm15\\pi\\,\\text{cm}^3$",
+        "$\\pm20\\pi\\,\\text{cm}^3$",
+        "$\\pm12\\pi\\,\\text{cm}^3$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Use the total differential to estimate the propagated error.",
+        "Write the volume formula $V(r,h)$ and compute $dV$ with $dr=0.02$ and $dh=0.04$ at the measured values.",
+        "For a cylinder $V=\\pi r^2h$, and $dV=V_r\\,dr+V_h\\,dh$."
+      ],
+      "steps": [
+        "$V=\\pi r^2h$, so $dV=2\\pi rh\\,dr+\\pi r^2\\,dh$.",
+        "At $r=10$, $h=30$: $2\\pi(10)(30)=600\\pi$ and $\\pi(10)^2=100\\pi$.",
+        "$dV=600\\pi(0.02)+100\\pi(0.04)=12\\pi+4\\pi=16\\pi$."
+      ],
+      "brief": "$dV=2\\pi rh\\,dr+\\pi r^2dh=12\\pi+4\\pi=\\pm16\\pi\\ \\text{cm}^3$."
+    },
+    {
+      "sec": "13.4",
+      "q": "If $(x,y)$ moves from the point $(2,2)$ to the point $(2.04,1.98)$, then, using differentials, we find that the change in $z=\\sqrt{3x^2+y^2}$ is approximately",
+      "opts": [
+        "$0.05$",
+        "$0.04$",
+        "$0.03$",
+        "$0.02$",
+        "$0.06$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Approximate the change $\\Delta z$ by the total differential $dz$.",
+        "Compute $z_x$ and $z_y$ at $(2,2)$ and take $dx=0.04$, $dy=-0.02$.",
+        "$dz=z_x\\,dx+z_y\\,dy$, and $\\dfrac{\\partial}{\\partial x}\\sqrt{u}=\\dfrac{u_x}{2\\sqrt u}$."
+      ],
+      "steps": [
+        "$z_x=\\dfrac{3x}{\\sqrt{3x^2+y^2}}$, $z_y=\\dfrac{y}{\\sqrt{3x^2+y^2}}$.",
+        "At $(2,2)$: $\\sqrt{16}=4$, so $z_x=\\dfrac64=1.5$ and $z_y=\\dfrac24=0.5$.",
+        "$dx=0.04$, $dy=-0.02$: $dz=1.5(0.04)+0.5(-0.02)=0.06-0.01=0.05$."
+      ],
+      "brief": "$dz=1.5(0.04)+0.5(-0.02)=0.05$."
+    },
+    {
+      "sec": "13.5",
+      "q": "If $x\\cos3y+x^3y^5=3x-e^{xy}$, then the value of $\\dfrac{dy}{dx}$ at the point $(1,0)$ is",
+      "opts": [
+        "$2$",
+        "$-2$",
+        "$1$",
+        "$-1$",
+        "$0$"
+      ],
+      "ans": 0,
+      "hints": [
+        "This is an implicit differentiation problem.",
+        "Move everything to one side to get $F(x,y)=0$, then compute $F_x$ and $F_y$ and evaluate at $(1,0)$.",
+        "If $F(x,y)=0$ defines $y$ as a function of $x$, then $\\dfrac{dy}{dx}=-\\dfrac{F_x}{F_y}$ (when $F_y\\neq0$)."
+      ],
+      "steps": [
+        "Let $F=x\\cos3y+x^3y^5-3x+e^{xy}$.",
+        "$F_x=\\cos3y+3x^2y^5-3+ye^{xy}$, so $F_x(1,0)=1+0-3+0=-2$.",
+        "$F_y=-3x\\sin3y+5x^3y^4+xe^{xy}$, so $F_y(1,0)=0+0+1=1$.",
+        "$\\dfrac{dy}{dx}=-\\dfrac{-2}{1}=2$."
+      ],
+      "brief": "$F_x(1,0)=-2$, $F_y(1,0)=1$, so $\\frac{dy}{dx}=-\\frac{F_x}{F_y}=2$."
+    },
+    {
+      "sec": "13.5",
+      "q": "Let $w=xy^2+yz^2+zx^2$, $x=t^2$, $y=t^2-2s$, $z=s^2-2t$. The value of $\\dfrac{\\partial w}{\\partial s}$ when $t=1$, $s=1$ is equal to",
+      "opts": [
+        "$8$",
+        "$4$",
+        "$6$",
+        "$2$",
+        "$0$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Use the chain rule for a function of three intermediate variables.",
+        "Find $\\dfrac{\\partial x}{\\partial s}$, $\\dfrac{\\partial y}{\\partial s}$, $\\dfrac{\\partial z}{\\partial s}$, then $w_x,w_y,w_z$, and evaluate everything at $t=s=1$.",
+        "$\\dfrac{\\partial w}{\\partial s}=w_x\\dfrac{\\partial x}{\\partial s}+w_y\\dfrac{\\partial y}{\\partial s}+w_z\\dfrac{\\partial z}{\\partial s}$."
+      ],
+      "steps": [
+        "$\\dfrac{\\partial x}{\\partial s}=0$, $\\dfrac{\\partial y}{\\partial s}=-2$, $\\dfrac{\\partial z}{\\partial s}=2s$.",
+        "At $t=s=1$: $x=1$, $y=-1$, $z=-1$.",
+        "$w_y=2xy+z^2=-2+1=-1$ and $w_z=2yz+x^2=2+1=3$.",
+        "$\\dfrac{\\partial w}{\\partial s}=(-1)(-2)+3(2)=8$ (the $x$ term is multiplied by $0$)."
+      ],
+      "brief": "$w_s=w_y(-2)+w_z(2s)=(-1)(-2)+3(2)=8$."
+    },
+    {
+      "sec": "13.6",
+      "q": "The directional derivative of $f(x,y)=e^{-(x^2+y^2)}$ at $(0,0)$ in the direction of $\\vec v=\\langle1,1\\rangle$ is",
+      "opts": [
+        "$0$",
+        "$1$",
+        "$2$",
+        "$-1$",
+        "$-2$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Use the gradient.",
+        "Compute $\\nabla f$, evaluate it at the origin, and dot it with the unit vector in the direction of $\\vec v$.",
+        "$D_{\\mathbf u}f=\\nabla f\\cdot\\mathbf u$ with $\\mathbf u=\\dfrac{\\vec v}{\\|\\vec v\\|}$."
+      ],
+      "steps": [
+        "$f_x=-2xe^{-(x^2+y^2)}$ and $f_y=-2ye^{-(x^2+y^2)}$.",
+        "At $(0,0)$: $\\nabla f=\\langle0,0\\rangle$.",
+        "$D_{\\mathbf u}f=\\langle0,0\\rangle\\cdot\\dfrac{1}{\\sqrt2}\\langle1,1\\rangle=0$."
+      ],
+      "brief": "$\\nabla f(0,0)=\\mathbf 0$, so $D_{\\mathbf u}f=0$."
+    },
+    {
+      "sec": "13.6",
+      "q": "If the temperature at the point $(x,y)$ on a metal plate is $T(x,y)=\\dfrac{x}{x^2+2y^2}$, the direction of the greatest increase in heat from the point $(1,-1)$ is",
+      "opts": [
+        "$\\left\\langle\\dfrac19,\\dfrac49\\right\\rangle$",
+        "$\\left\\langle\\dfrac19,\\dfrac{-2}{9}\\right\\rangle$",
+        "$\\left\\langle\\dfrac29,\\dfrac{-1}{9}\\right\\rangle$",
+        "$\\left\\langle\\dfrac49,\\dfrac19\\right\\rangle$",
+        "$\\left\\langle\\dfrac1{25},\\dfrac{-4}{25}\\right\\rangle$"
+      ],
+      "ans": 0,
+      "hints": [
+        "A function increases fastest in the direction of its gradient.",
+        "Compute $T_x$ and $T_y$ with the quotient rule and evaluate at $(1,-1)$.",
+        "The direction of greatest increase at a point is $\\nabla T$ there, and $\\left(\\dfrac uv\\right)'=\\dfrac{u'v-uv'}{v^2}$."
+      ],
+      "steps": [
+        "$T_x=\\dfrac{(x^2+2y^2)-x(2x)}{(x^2+2y^2)^2}=\\dfrac{2y^2-x^2}{(x^2+2y^2)^2}$.",
+        "$T_y=\\dfrac{-x(4y)}{(x^2+2y^2)^2}=\\dfrac{-4xy}{(x^2+2y^2)^2}$.",
+        "At $(1,-1)$: $x^2+2y^2=3$, so $T_x=\\dfrac{2-1}{9}=\\dfrac19$ and $T_y=\\dfrac{4}{9}$.",
+        "$\\nabla T(1,-1)=\\left\\langle\\dfrac19,\\dfrac49\\right\\rangle$."
+      ],
+      "brief": "$\\nabla T(1,-1)=\\langle\\frac{2y^2-x^2}{9},\\frac{-4xy}{9}\\rangle=\\langle\\frac19,\\frac49\\rangle$."
+    },
+    {
+      "sec": "13.6",
+      "q": "If $f(x,y)=x-y^2$, then the tangent line to the level curve $f(x,y)=3$ at the point $(4,-1)$ is",
+      "opts": [
+        "$2y=-x+2$",
+        "$7y=-2x+1$",
+        "$y=-x+3$",
+        "$-7y=-x+11$",
+        "$y=x+1$"
+      ],
+      "ans": 0,
+      "hints": [
+        "The gradient is perpendicular to the level curve.",
+        "Compute $\\nabla f(4,-1)$ and use it as a normal vector to the tangent line.",
+        "The tangent line to the level curve $f=c$ at $(x_0,y_0)$ is $f_x(x_0,y_0)(x-x_0)+f_y(x_0,y_0)(y-y_0)=0$."
+      ],
+      "steps": [
+        "$\\nabla f=\\langle1,-2y\\rangle$, so $\\nabla f(4,-1)=\\langle1,2\\rangle$ (and $f(4,-1)=4-1=3$).",
+        "Tangent line: $1(x-4)+2(y+1)=0$.",
+        "So $2y=-x+2$."
+      ],
+      "brief": "$\\nabla f(4,-1)=\\langle1,2\\rangle$: $(x-4)+2(y+1)=0$, i.e. $2y=-x+2$."
+    },
+    {
+      "sec": "13.1",
+      "q": "The domain of the function $f(x,y,z)=\\dfrac{\\sqrt{x^2+y^2+z^2-64}}{y}$ is",
+      "opts": [
+        "The set of all points lying on or outside the sphere with center at the origin and radius $8$ and are not on the $xz$-plane.",
+        "The set of all points lying on or inside the sphere with center at the origin and radius $8$ and are not on the $xz$-plane.",
+        "The set of all points lying on or outside the sphere with center the origin and radius $4$ and are not on the $x$-axis.",
+        "The set of all points lying on or inside the sphere with center at the origin and radius $4$ and are not on the $y$-axis.",
+        "The set of all points lying on or outside the sphere with center at the origin and radius $8$ and are not on the $x$-axis."
+      ],
+      "ans": 0,
+      "hints": [
+        "The domain excludes points where the square root is undefined and where the denominator is zero.",
+        "Write the two conditions: the expression under the root must be nonnegative, and the denominator must not be zero.",
+        "$\\sqrt{u}$ needs $u\\ge0$, a fraction needs a nonzero denominator, and $y=0$ is the $xz$-plane."
+      ],
+      "steps": [
+        "The root needs $x^2+y^2+z^2-64\\ge0$, i.e. $x^2+y^2+z^2\\ge64$: on or outside the sphere of radius $8$ centered at the origin.",
+        "The denominator needs $y\\neq0$, which removes the $xz$-plane."
+      ],
+      "brief": "$x^2+y^2+z^2\\ge64$ and $y\\neq0$."
+    },
+    {
+      "sec": "13.4",
+      "q": "Let \\[ f(x,y)=\\begin{cases}\\dfrac{3x^2y}{x^4+y^2}, & (x,y)\\neq(0,0)\\\\[2mm] 0, & (x,y)=(0,0)\\end{cases} \\] Which one of the following statements is FALSE?",
+      "opts": [
+        "$\\lim_{(x,y)\\to(0,0)}f(x,y)$ exists",
+        "$f$ is not differentiable at $(0,0)$",
+        "$f$ is not continuous at $(0,0)$",
+        "The domain of $f$ is $\\mathbb{R}^2$",
+        "$f_x(0,0)=0$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Test the limit along different paths, and recall how continuity and differentiability are related.",
+        "Compare the limit along the $x$-axis with the limit along the parabola $y=x^2$.",
+        "If a limit gives different values along two paths, it does not exist; a function that is not continuous at a point is not differentiable there; and $f_x(0,0)=\\lim_{h\\to0}\\dfrac{f(h,0)-f(0,0)}{h}$."
+      ],
+      "steps": [
+        "Along $y=0$: $f=0$, so the limit along this path is $0$.",
+        "Along $y=x^2$: $f=\\dfrac{3x^4}{2x^4}=\\dfrac32$. The two values differ, so the limit does not exist, and the statement about the limit is false.",
+        "Because the limit does not exist, $f(0,0)=0$ is not equal to it: $f$ is not continuous at $(0,0)$, hence not differentiable there. Both statements are true.",
+        "$f$ is defined at every point, so its domain is $\\mathbb{R}^2$ (true), and $f_x(0,0)=\\lim\\dfrac{f(h,0)-0}{h}=0$ (true)."
+      ],
+      "brief": "Limit is $0$ along $y=0$ but $\\frac32$ along $y=x^2$, so the limit does not exist."
+    },
+    {
+      "sec": "13.5",
+      "q": "If $z$ is defined implicitly as a differentiable function of $x$ and $y$ by the equation \\[ x\\ln y+y^2z-z^2x=10 \\] then $\\dfrac{\\partial z}{\\partial x}=$",
+      "opts": [
+        "$\\dfrac{z^2-\\ln y}{y^2-2xz}$",
+        "$\\dfrac{z^2-\\ln y}{y^2+2xz}$",
+        "$\\dfrac{z^2+\\ln y}{y^2+2xz}$",
+        "$\\dfrac{z^2-x}{y^2-2xz}$",
+        "$\\dfrac{y^2-\\ln y}{y^2-2xz}$"
+      ],
+      "ans": 0,
+      "hints": [
+        "This is implicit differentiation with $z$ as a function of $x$ and $y$.",
+        "Differentiate both sides with respect to $x$, treating $y$ as a constant and $z$ as depending on $x$.",
+        "If $F(x,y,z)=0$ then $\\dfrac{\\partial z}{\\partial x}=-\\dfrac{F_x}{F_z}$ (when $F_z\\neq0$)."
+      ],
+      "steps": [
+        "Let $F=x\\ln y+y^2z-z^2x-10$.",
+        "$F_x=\\ln y-z^2$ and $F_z=y^2-2xz$.",
+        "$\\dfrac{\\partial z}{\\partial x}=-\\dfrac{\\ln y-z^2}{y^2-2xz}=\\dfrac{z^2-\\ln y}{y^2-2xz}$."
+      ],
+      "brief": "$F_x=\\ln y-z^2$, $F_z=y^2-2xz$, so $z_x=\\frac{z^2-\\ln y}{y^2-2xz}$."
+    }
+  ]
+}

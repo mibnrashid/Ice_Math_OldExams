@@ -1,0 +1,338 @@
+{
+  "course": "math101",
+  "term": "241",
+  "kind": "e1",
+  "date": "",
+  "minutes": 90,
+  "source": "math101-241-e1.pdf",
+  "note": "Date and exam length are not printed on the scan (only '241, Math 101, Major Exam I'); minutes set to 90 (usual length per syllabus). Master key is all A; all 14 answers verified with sympy and agree. Handwritten solutions and red annotations on the scan were ignored.",
+  "qs": [
+    {
+      "sec": "2.4",
+      "q": "If $g(x)=\\begin{cases}\\sqrt{1-x}, & x\\le 1\\\\ x+1, & x>1\\end{cases}$ then $\\lim_{x\\to1}g(x)$",
+      "opts": [
+        "does not exist",
+        "is equal to $0$",
+        "is equal to $2$",
+        "is equal to $1$",
+        "is equal to $\\dfrac12$"
+      ],
+      "ans": 0,
+      "hints": [
+        "The function changes formula at the point, so compare one-sided limits.",
+        "Evaluate the limit from the left using the first formula and from the right using the second formula.",
+        "$\\lim_{x\\to c}f(x)$ exists if and only if $\\lim_{x\\to c^-}f(x)=\\lim_{x\\to c^+}f(x)$."
+      ],
+      "steps": [
+        "Left: $\\lim_{x\\to1^-}\\sqrt{1-x}=0$.",
+        "Right: $\\lim_{x\\to1^+}(x+1)=2$.",
+        "The one-sided limits differ, so the limit does not exist."
+      ],
+      "brief": "Left limit $0$, right limit $2$, so the limit does not exist."
+    },
+    {
+      "sec": "2.5",
+      "q": "$\\lim_{x\\to5^-}\\dfrac{x}{x-5}=$",
+      "opts": [
+        "$-\\infty$",
+        "$\\infty$",
+        "$5$",
+        "$\\dfrac15$",
+        "$1$"
+      ],
+      "ans": 0,
+      "hints": [
+        "This is an infinite limit: the denominator tends to zero while the numerator does not.",
+        "Decide the sign of the numerator and of the denominator for $x$ slightly less than the limit point.",
+        "If the numerator tends to a nonzero number and the denominator tends to $0$, the limit is $\\pm\\infty$, with the sign given by the sign of the quotient near the point."
+      ],
+      "steps": [
+        "As $x\\to5^-$, the numerator tends to $5>0$.",
+        "For $x<5$, $x-5$ is a small negative number.",
+        "The quotient is negative and its size grows without bound, so the limit is $-\\infty$."
+      ],
+      "brief": "Numerator $\\to5$, denominator $\\to0^-$: limit $-\\infty$."
+    },
+    {
+      "sec": "2.4",
+      "q": "Which one of the following statements is TRUE? ($c$ and $L$ are real numbers)",
+      "opts": [
+        "If $\\lim_{x\\to c}f(x)=f(c)$, then $f$ is continuous at $c$.",
+        "If $f(c)=L$, then $\\lim_{x\\to c}f(x)=L$.",
+        "If $\\lim_{x\\to c}f(x)=L$, then $f(c)=L$.",
+        "If $f(c)$ is undefined, then $\\lim_{x\\to c}f(x)$ does not exist.",
+        "If $\\lim_{x\\to c}f(x)=\\infty$, then $f(c)$ is undefined."
+      ],
+      "ans": 0,
+      "hints": [
+        "Compare each statement with the definition of continuity.",
+        "For each doubtful statement, try to sketch a function with a hole or a displaced point at $c$.",
+        "$f$ is continuous at $c$ if $f(c)$ is defined, $\\lim_{x\\to c}f(x)$ exists, and the two are equal; the value of $f$ at $c$ does not affect the limit."
+      ],
+      "steps": [
+        "Continuity at $c$ means exactly $\\lim_{x\\to c}f(x)=f(c)$, so this statement is the definition.",
+        "The limit does not depend on $f(c)$, so a limit need not equal $f(c)$ and $f(c)=L$ does not force the limit to be $L$.",
+        "A hole at $c$ shows that an undefined $f(c)$ is compatible with an existing limit.",
+        "A function may have an infinite limit at $c$ and still be defined at $c$ (give $f(c)$ any value)."
+      ],
+      "brief": "Continuity is defined by $\\lim_{x\\to c}f(x)=f(c)$; the others fail by holes or displaced points."
+    },
+    {
+      "sec": "4.5",
+      "q": "$\\lim_{x\\to-\\infty}\\left(5e^x-3x^3\\right)=$",
+      "opts": [
+        "$\\infty$",
+        "$-\\infty$",
+        "$2$",
+        "$0$",
+        "$-2$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Look at the behavior of each term as $x\\to-\\infty$ separately.",
+        "Find the limit of $e^x$ and of $x^3$ as $x\\to-\\infty$.",
+        "$e^x\\to0$ as $x\\to-\\infty$, and an odd power $x^n$ tends to $-\\infty$ as $x\\to-\\infty$."
+      ],
+      "steps": [
+        "$5e^x\\to0$ as $x\\to-\\infty$.",
+        "$x^3\\to-\\infty$, so $-3x^3\\to+\\infty$.",
+        "The sum tends to $0+\\infty=\\infty$."
+      ],
+      "brief": "$5e^x\\to0$, $-3x^3\\to\\infty$: limit $\\infty$."
+    },
+    {
+      "sec": "2.3",
+      "q": "$\\lim_{x\\to0}\\dfrac{e^{3x}-1}{e^x-1}=$",
+      "opts": [
+        "$3$",
+        "$2$",
+        "$0$",
+        "$1$",
+        "$\\infty$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Direct substitution gives $0/0$, so rewrite the numerator to cancel the zero factor.",
+        "Write $e^{3x}$ as $(e^x)^3$ and factor the numerator.",
+        "$a^3-b^3=(a-b)(a^2+ab+b^2)$."
+      ],
+      "steps": [
+        "Let $u=e^x$: $e^{3x}-1=u^3-1=(u-1)(u^2+u+1)$.",
+        "Cancel $e^x-1$ (for $x\\neq0$): the expression equals $e^{2x}+e^x+1$.",
+        "Substitute $x=0$: $1+1+1=3$."
+      ],
+      "brief": "$\\frac{(e^x-1)(e^{2x}+e^x+1)}{e^x-1}\\to 1+1+1=3$."
+    },
+    {
+      "sec": "2.3",
+      "q": "$\\lim_{x\\to4}\\dfrac{x-2\\sqrt{x}}{x^2-3x-4}=$",
+      "opts": [
+        "$\\dfrac1{10}$",
+        "$\\dfrac1{20}$",
+        "$\\dfrac15$",
+        "$\\dfrac45$",
+        "$\\dfrac58$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Direct substitution gives $0/0$, so simplify algebraically.",
+        "Factor the denominator, and rationalize the numerator by multiplying by its conjugate.",
+        "$(a-b)(a+b)=a^2-b^2$, and a quadratic $x^2+px+q$ factors using two numbers with product $q$ and sum $p$."
+      ],
+      "steps": [
+        "Multiply top and bottom by $x+2\\sqrt x$: numerator becomes $x^2-4x=x(x-4)$.",
+        "Denominator: $x^2-3x-4=(x+1)(x-4)$.",
+        "Cancel $x-4$: $\\dfrac{x}{(x+1)(x+2\\sqrt x)}$.",
+        "At $x=4$: $\\dfrac{4}{5\\cdot8}=\\dfrac1{10}$."
+      ],
+      "brief": "Conjugate and factor: $\\frac{x}{(x+1)(x+2\\sqrt x)}\\to\\frac{4}{40}=\\frac1{10}$."
+    },
+    {
+      "sec": "2.4",
+      "q": "Find the interval(s) on which $f(x)=\\dfrac{\\sqrt{x+3}}{x^2+4x}$ is continuous?",
+      "opts": [
+        "$[-3,0)\\cup(0,\\infty)$",
+        "$(-4,-3)\\cup(-3,0)\\cup(0,\\infty)$",
+        "$(-\\infty,-4)\\cup(0,\\infty)$",
+        "$(-\\infty,-4)\\cup[-3,\\infty)$",
+        "$(-4,-3]$"
+      ],
+      "ans": 0,
+      "hints": [
+        "A quotient of continuous functions is continuous wherever it is defined.",
+        "Find where the square root is defined and where the denominator is zero.",
+        "$\\sqrt{g(x)}$ requires $g(x)\\ge0$, and a quotient requires a nonzero denominator."
+      ],
+      "steps": [
+        "The square root needs $x+3\\ge0$, so $x\\ge-3$.",
+        "The denominator $x(x+4)=0$ at $x=0$ and $x=-4$; $x=-4$ is already excluded.",
+        "So $f$ is continuous on $[-3,0)\\cup(0,\\infty)$."
+      ],
+      "brief": "Need $x\\ge-3$ and $x\\neq0,-4$: $[-3,0)\\cup(0,\\infty)$."
+    },
+    {
+      "sec": "2.4",
+      "q": "If the function $f(x)=\\begin{cases}\\dfrac{\\tan(3x)}{x}, & x<0\\\\[2mm] 6a-x^2, & x\\ge0\\end{cases}$ is continuous at $x=0$, then $a=$",
+      "opts": [
+        "$\\dfrac12$",
+        "$0$",
+        "$2$",
+        "$-1$",
+        "$\\dfrac13$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Continuity at the junction requires the left limit, right limit and the value to agree.",
+        "Compute the left limit of the first formula and the right limit (equal to $f(0)$) of the second formula.",
+        "$\\lim_{u\\to0}\\dfrac{\\sin u}{u}=1$ and $\\tan u=\\dfrac{\\sin u}{\\cos u}$."
+      ],
+      "steps": [
+        "$\\lim_{x\\to0^-}\\dfrac{\\tan3x}{x}=3\\cdot\\dfrac{\\sin3x}{3x}\\cdot\\dfrac1{\\cos3x}\\to3$.",
+        "$\\lim_{x\\to0^+}(6a-x^2)=6a=f(0)$.",
+        "Set $6a=3$, so $a=\\dfrac12$."
+      ],
+      "brief": "Left limit $3$, $f(0)=6a$: $a=\\frac12$."
+    },
+    {
+      "sec": "2.4",
+      "q": "Which one of the following statements is TRUE about $f(x)=\\dfrac{x^3+x}{x^2+x}$?",
+      "opts": [
+        "$f$ has a nonremovable discontinuity at $x=-1$.",
+        "$f$ has a nonremovable discontinuity at $x=0$.",
+        "$f$ has a nonremovable discontinuity at $x=1$.",
+        "$f$ has a removable discontinuity at $x=-1$.",
+        "$f$ has a removable discontinuity at $x=1$."
+      ],
+      "ans": 0,
+      "hints": [
+        "Find where the function is undefined, then decide whether the discontinuity can be removed.",
+        "Factor numerator and denominator and cancel common factors.",
+        "A discontinuity is removable when the limit there exists (a common factor cancels); it is nonremovable when the limit does not exist or is infinite."
+      ],
+      "steps": [
+        "$f(x)=\\dfrac{x(x^2+1)}{x(x+1)}$, undefined at $x=0$ and $x=-1$.",
+        "After cancelling $x$: $\\dfrac{x^2+1}{x+1}$, which has a finite limit at $x=0$ (removable).",
+        "At $x=-1$ the numerator tends to $2\\neq0$ while the denominator tends to $0$, so the limit is infinite (nonremovable).",
+        "$f$ is continuous at $x=1$."
+      ],
+      "brief": "$x=0$ removable (factor cancels); $x=-1$ nonremovable (infinite limit)."
+    },
+    {
+      "sec": "4.5",
+      "q": "$\\lim_{x\\to\\infty}\\dfrac{\\sqrt{x^4-1}}{x^3-1}=$",
+      "opts": [
+        "$0$",
+        "$1$",
+        "$\\infty$",
+        "$-\\infty$",
+        "$-1$"
+      ],
+      "ans": 0,
+      "hints": [
+        "This is a limit at infinity of a ratio, so compare the dominant powers.",
+        "Factor the highest power of $x$ out of the numerator and denominator.",
+        "For $x>0$, $\\sqrt{x^4}=x^2$; compare the degree of the numerator with the degree of the denominator."
+      ],
+      "steps": [
+        "The numerator behaves like $\\sqrt{x^4}=x^2$ and the denominator like $x^3$.",
+        "Divide numerator and denominator by $x^3$: $\\dfrac{\\frac1x\\sqrt{1-x^{-4}}}{1-x^{-3}}$.",
+        "As $x\\to\\infty$ this tends to $\\dfrac{0\\cdot1}{1}=0$."
+      ],
+      "brief": "Degree $2$ over degree $3$: limit $0$."
+    },
+    {
+      "sec": "2.4",
+      "q": "$\\lim_{x\\to\\frac12}\\left(\\lfloor 2x\\rfloor +\\lfloor -2x\\rfloor \\right)$",
+      "opts": [
+        "is equal to $-1$",
+        "is equal to $1$",
+        "is equal to $0$",
+        "is equal to $2$",
+        "does not exist"
+      ],
+      "ans": 0,
+      "hints": [
+        "This involves the greatest integer function, so check both one-sided limits.",
+        "Find the values of $\\lfloor 2x\\rfloor $ and $\\lfloor -2x\\rfloor $ for $x$ just below and just above the limit point.",
+        "$\\lfloor u\\rfloor $ is the greatest integer less than or equal to $u$; it is constant between integers."
+      ],
+      "steps": [
+        "Left of $\\frac12$: $2x$ is just below $1$, so $\\lfloor 2x\\rfloor =0$; $-2x$ is just above $-1$, so $\\lfloor -2x\\rfloor =-1$. Sum $-1$.",
+        "Right of $\\frac12$: $\\lfloor 2x\\rfloor =1$; $-2x$ is just below $-1$, so $\\lfloor -2x\\rfloor =-2$. Sum $-1$.",
+        "Both one-sided limits equal $-1$, so the limit is $-1$."
+      ],
+      "brief": "Left: $0+(-1)=-1$; right: $1+(-2)=-1$; limit $-1$."
+    },
+    {
+      "sec": "4.5",
+      "q": "The graph of $f(x)=\\dfrac{x^4}{x^3-9x}$ has (V.A: vertical asymptote(s); H.A: horizontal asymptote(s))",
+      "opts": [
+        "2 V. A. and no H. A.",
+        "2 V. A. and 1 H. A.",
+        "3 V. A. and no H. A.",
+        "3 V. A. and 1 H. A.",
+        "no V. A. and 1 H. A."
+      ],
+      "ans": 0,
+      "hints": [
+        "Vertical asymptotes come from zeros of the denominator, horizontal ones from limits at $\\pm\\infty$.",
+        "Factor and simplify first, then check the zeros of the simplified denominator and the limits at infinity.",
+        "A vertical asymptote at $x=a$ requires an infinite limit there (a cancelled factor gives a hole); a horizontal asymptote exists only if the limit at $\\pm\\infty$ is finite."
+      ],
+      "steps": [
+        "$f(x)=\\dfrac{x^4}{x(x-3)(x+3)}=\\dfrac{x^3}{(x-3)(x+3)}$ for $x\\neq0$.",
+        "The denominator vanishes at $x=\\pm3$ where the numerator is nonzero, so there are 2 vertical asymptotes ($x=0$ is a hole).",
+        "The numerator has degree $3$ and the denominator degree $2$, so $f\\to\\infty$ as $x\\to\\infty$ and $f\\to-\\infty$ as $x\\to-\\infty$: no horizontal asymptote."
+      ],
+      "brief": "V.A. at $x=\\pm3$ ($x=0$ is a hole); degree $3>2$, so no H.A."
+    },
+    {
+      "sec": "3.2",
+      "q": "If $y=Ax+B$ is an equation of the tangent line to the graph of $f(x)=8\\sqrt x+\\dfrac{3}{x^2}$ at the point $(1,11)$, then $A-B=$",
+      "opts": [
+        "$-15$",
+        "$-11$",
+        "$0$",
+        "$-9$",
+        "$4$"
+      ],
+      "ans": 0,
+      "hints": [
+        "The slope of the tangent line is the derivative at the point.",
+        "Rewrite $f$ with powers of $x$, differentiate, and evaluate at the given point; then use the point-slope form.",
+        "Power rule $\\frac{d}{dx}x^n=nx^{n-1}$; tangent line: $y-y_0=f'(x_0)(x-x_0)$."
+      ],
+      "steps": [
+        "$f(x)=8x^{1/2}+3x^{-2}$, so $f'(x)=4x^{-1/2}-6x^{-3}$.",
+        "$A=f'(1)=4-6=-2$.",
+        "Through $(1,11)$: $11=-2(1)+B$, so $B=13$.",
+        "$A-B=-2-13=-15$."
+      ],
+      "brief": "$A=f'(1)=-2$, $B=13$, so $A-B=-15$."
+    },
+    {
+      "sec": "3.2",
+      "q": "If the line $y=3x+1$ is tangent to the graph of $f(x)=kx^2$, then",
+      "opts": [
+        "$k=-\\dfrac94$",
+        "$k=-\\dfrac32$",
+        "$k=\\dfrac54$",
+        "$k=\\dfrac92$",
+        "$k=\\dfrac32$"
+      ],
+      "ans": 0,
+      "hints": [
+        "At the point of tangency the curve and the line share both the point and the slope.",
+        "Let the point of tangency have $x$-coordinate $x_0$ and write two equations: equal values and equal slopes.",
+        "Tangency at $x_0$ means $f(x_0)$ equals the line value there and $f'(x_0)$ equals the slope of the line."
+      ],
+      "steps": [
+        "Equal slopes: $f'(x_0)=2kx_0=3$, so $kx_0=\\dfrac32$.",
+        "Equal values: $kx_0^2=3x_0+1$, so $\\dfrac32x_0=3x_0+1$.",
+        "Then $-\\dfrac32x_0=1$, so $x_0=-\\dfrac23$.",
+        "$k=\\dfrac{3}{2x_0}=-\\dfrac94$."
+      ],
+      "brief": "$2kx_0=3$ and $kx_0^2=3x_0+1$ give $x_0=-\\frac23$, $k=-\\frac94$."
+    }
+  ]
+}

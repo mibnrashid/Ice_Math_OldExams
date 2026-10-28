@@ -1,0 +1,335 @@
+{
+  "course": "math101",
+  "term": "241",
+  "kind": "e2",
+  "date": "",
+  "minutes": 90,
+  "source": "math101-241-e24a0308a0-84e1-40f7-bb4f-707407a1fa6b.pdf",
+  "note": "Cover page not in the scan: date not printed (left empty) and 90 minutes assumed. Master key is A for every question; all 14 answers were verified with sympy, no disagreements.",
+  "qs": [
+    {
+      "sec": "3.3",
+      "q": "If $y=Ax+B$ is an equation of the tangent line to the graph of $f(x)=1+x\\cos x$ at the point $(0,1)$, then $AB=$",
+      "opts": [
+        "$1$",
+        "$-1$",
+        "$0$",
+        "$2$",
+        "$-\\dfrac12$"
+      ],
+      "ans": 0,
+      "hints": [
+        "The slope of a tangent line is the derivative at the point.",
+        "Differentiate with the product rule, evaluate at $x=0$, then write the line through the given point.",
+        "Product rule: $(uv)'=u'v+uv'$. Tangent line at $(x_0,y_0)$: $y-y_0=f'(x_0)(x-x_0)$."
+      ],
+      "steps": [
+        "$f'(x)=\\cos x-x\\sin x$.",
+        "$A=f'(0)=1$.",
+        "Line: $y-1=1\\cdot(x-0)$, so $y=x+1$ and $B=1$.",
+        "$AB=1$."
+      ],
+      "brief": "$f'(0)=1$, tangent $y=x+1$, so $AB=1$."
+    },
+    {
+      "sec": "3.3",
+      "q": "The slope of the tangent line to the graph of $f(x)=\\dfrac{4x}{x^2+6}$ at the point $\\left(2,\\dfrac45\\right)$ is equal to",
+      "opts": [
+        "$\\dfrac{2}{25}$",
+        "$\\dfrac{4}{25}$",
+        "$\\dfrac{1}{25}$",
+        "$0$",
+        "$\\dfrac{3}{25}$"
+      ],
+      "ans": 0,
+      "hints": [
+        "The slope is the value of the derivative at the point.",
+        "Differentiate with the quotient rule, then substitute the $x$-value.",
+        "$\\left(\\dfrac uv\\right)'=\\dfrac{u'v-uv'}{v^2}$."
+      ],
+      "steps": [
+        "$f'(x)=\\dfrac{4(x^2+6)-4x(2x)}{(x^2+6)^2}=\\dfrac{24-4x^2}{(x^2+6)^2}$.",
+        "$f'(2)=\\dfrac{24-16}{100}=\\dfrac{8}{100}=\\dfrac{2}{25}$."
+      ],
+      "brief": "$f'(x)=\\frac{24-4x^2}{(x^2+6)^2}$, so $f'(2)=\\frac{2}{25}$."
+    },
+    {
+      "sec": "3.4",
+      "q": "If $y=x^2\\sqrt{4-x^2}$, then $\\dfrac{dy}{dx}=$",
+      "opts": [
+        "$\\dfrac{8x-3x^3}{\\sqrt{4-x^2}}$",
+        "$\\dfrac{8x+x^3}{\\sqrt{4-x^2}}$",
+        "$\\dfrac{2x-x^3}{\\sqrt{4-x^2}}$",
+        "$\\dfrac{4x+3x^3}{\\sqrt{4-x^2}}$",
+        "$\\dfrac{-x^3}{\\sqrt{4-x^2}}$"
+      ],
+      "ans": 0,
+      "hints": [
+        "This needs the product rule together with the chain rule.",
+        "Differentiate $x^2$ times the square root, using the chain rule on the root, then put everything over a common denominator.",
+        "$\\dfrac{d}{dx}\\sqrt{u}=\\dfrac{u'}{2\\sqrt u}$ and $(fg)'=f'g+fg'$."
+      ],
+      "steps": [
+        "$y'=2x\\sqrt{4-x^2}+x^2\\cdot\\dfrac{-2x}{2\\sqrt{4-x^2}}$.",
+        "$=2x\\sqrt{4-x^2}-\\dfrac{x^3}{\\sqrt{4-x^2}}$.",
+        "Common denominator: $\\dfrac{2x(4-x^2)-x^3}{\\sqrt{4-x^2}}=\\dfrac{8x-3x^3}{\\sqrt{4-x^2}}$."
+      ],
+      "brief": "Product and chain rules: $y'=\\frac{8x-3x^3}{\\sqrt{4-x^2}}$."
+    },
+    {
+      "sec": "3.5",
+      "q": "If $x^2+y^2-3\\ln y=10$, then, by implicit differentiation, $\\dfrac{dy}{dx}=$",
+      "opts": [
+        "$\\dfrac{2xy}{3-2y^2}$",
+        "$\\dfrac{2xy}{3-2y}$",
+        "$\\dfrac{2x}{3-y^2}$",
+        "$\\dfrac{xy}{1-2y^2}$",
+        "$\\dfrac{3xy}{2-3y^2}$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Differentiate both sides with respect to $x$, treating $y$ as a function of $x$.",
+        "Collect all terms containing $y'$ on one side and solve for $y'$.",
+        "$\\dfrac{d}{dx}g(y)=g'(y)\\,y'$, for example $\\dfrac{d}{dx}\\ln y=\\dfrac{y'}{y}$."
+      ],
+      "steps": [
+        "Differentiate: $2x+2yy'-\\dfrac{3}{y}y'=0$.",
+        "$y'\\left(2y-\\dfrac3y\\right)=-2x$, i.e. $y'\\,\\dfrac{2y^2-3}{y}=-2x$.",
+        "$y'=\\dfrac{-2xy}{2y^2-3}=\\dfrac{2xy}{3-2y^2}$."
+      ],
+      "brief": "$2x+2yy'-\\frac3y y'=0$, so $y'=\\frac{2xy}{3-2y^2}$."
+    },
+    {
+      "sec": "3.8",
+      "q": "Using Newton's Method to approximate the zero of the function $f(x)=x-2\\sqrt{x+1}$, starting with $x_1=3$, we get $x_2=$",
+      "opts": [
+        "$5$",
+        "$4$",
+        "$\\dfrac72$",
+        "$\\dfrac52$",
+        "$\\dfrac92$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Apply one step of Newton's iteration.",
+        "Compute the function value and the derivative at the starting point.",
+        "$x_{n+1}=x_n-\\dfrac{f(x_n)}{f'(x_n)}$."
+      ],
+      "steps": [
+        "$f(3)=3-2\\cdot2=-1$.",
+        "$f'(x)=1-\\dfrac{1}{\\sqrt{x+1}}$, so $f'(3)=\\dfrac12$.",
+        "$x_2=3-\\dfrac{-1}{1/2}=5$."
+      ],
+      "brief": "$f(3)=-1$, $f'(3)=\\frac12$, $x_2=3+2=5$."
+    },
+    {
+      "sec": "3.4",
+      "q": "Let $f$ be a differentiable function and \\[ g(x)=f\\left(x^3-3\\sin(\\pi x)\\right),\\quad f(1)=3,\\quad f'(1)=\\frac13. \\] Then $g'(1)=$",
+      "opts": [
+        "$\\pi+1$",
+        "$3\\pi+3$",
+        "$\\pi$",
+        "$3-3\\pi$",
+        "$1-3\\pi$"
+      ],
+      "ans": 0,
+      "hints": [
+        "This is a chain rule problem with an unknown outer function.",
+        "Differentiate the outer function, keep the inside, multiply by the derivative of the inside, then evaluate at $x=1$.",
+        "$\\dfrac{d}{dx}f(h(x))=f'(h(x))\\,h'(x)$."
+      ],
+      "steps": [
+        "$g'(x)=f'\\left(x^3-3\\sin\\pi x\\right)\\left(3x^2-3\\pi\\cos\\pi x\\right)$.",
+        "At $x=1$: the inside value is $1-0=1$, and the second factor is $3+3\\pi$.",
+        "$g'(1)=f'(1)(3+3\\pi)=\\dfrac13(3+3\\pi)=1+\\pi$."
+      ],
+      "brief": "$g'(1)=f'(1)(3+3\\pi)=\\pi+1$."
+    },
+    {
+      "sec": "4.1",
+      "q": "If $m$ and $M$ are respectively the absolute minimum and absolute maximum values of the function $f(x)=x^3-\\dfrac32x^2+1$ on the interval $[-1,2]$, then $m+M=$",
+      "opts": [
+        "$\\dfrac32$",
+        "$-1$",
+        "$-\\dfrac12$",
+        "$\\dfrac72$",
+        "$0$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Closed interval method for absolute extrema.",
+        "Find the critical points in the interval, then compare $f$ at them and at the endpoints.",
+        "Absolute extrema of a continuous function on $[a,b]$ occur at critical points or endpoints."
+      ],
+      "steps": [
+        "$f'(x)=3x^2-3x=3x(x-1)=0$, so $x=0,1$, both in $(-1,2)$.",
+        "$f(0)=1,\\ f(1)=\\dfrac12,\\ f(-1)=-\\dfrac32,\\ f(2)=3$.",
+        "$m=-\\dfrac32$, $M=3$, so $m+M=\\dfrac32$."
+      ],
+      "brief": "Values $1,\\frac12,-\\frac32,3$: $m+M=-\\frac32+3=\\frac32$."
+    },
+    {
+      "sec": "3.7",
+      "q": "Air is being pumped into a spherical balloon at a rate of $32\\pi\\ \\text{cm}^3/\\text{min}$. When the volume of the balloon is $\\dfrac{32\\pi}{3}\\ \\text{cm}^3$, the radius of the balloon is changing at a rate of (Hint: The volume of the sphere is $V=\\dfrac43\\pi r^3$)",
+      "opts": [
+        "$2\\ \\text{cm/min}$",
+        "$4\\ \\text{cm/min}$",
+        "$3\\ \\text{cm/min}$",
+        "$\\dfrac34\\ \\text{cm/min}$",
+        "$\\dfrac32\\ \\text{cm/min}$"
+      ],
+      "ans": 0,
+      "hints": [
+        "This is a related rates problem.",
+        "Differentiate the volume formula with respect to time and find the radius at the given instant from the volume.",
+        "If $V=\\frac43\\pi r^3$ then $\\dfrac{dV}{dt}=4\\pi r^2\\dfrac{dr}{dt}$ (chain rule)."
+      ],
+      "steps": [
+        "$\\dfrac43\\pi r^3=\\dfrac{32\\pi}{3}$ gives $r^3=8$, so $r=2$.",
+        "$\\dfrac{dV}{dt}=4\\pi r^2\\dfrac{dr}{dt}$: $32\\pi=16\\pi\\dfrac{dr}{dt}$.",
+        "$\\dfrac{dr}{dt}=2\\ \\text{cm/min}$."
+      ],
+      "brief": "$r=2$; $32\\pi=4\\pi r^2 r'$ gives $r'=2$ cm/min."
+    },
+    {
+      "sec": "3.5",
+      "q": "If $y=(1+x^2)^{\\cos x}$, then $\\dfrac{y'}{y}=$",
+      "opts": [
+        "$\\dfrac{2x\\cos x-\\sin x\\cdot(1+x^2)\\ln(1+x^2)}{1+x^2}$",
+        "$\\dfrac{2x\\cos x-\\sin x\\cdot\\ln(1+x^2)}{1+x^2}$",
+        "$\\dfrac{\\cos x-\\sin x}{1+x^2}$",
+        "$\\dfrac{x\\cos x+(1+x^2)\\sin x}{1+x^2}$",
+        "$-\\dfrac{2x\\sin x}{1+x^2}$"
+      ],
+      "ans": 0,
+      "hints": [
+        "The variable is in both the base and the exponent, so use logarithmic differentiation.",
+        "Take $\\ln$ of both sides, then differentiate with the product rule.",
+        "$\\ln(a^b)=b\\ln a$ and $\\dfrac{d}{dx}\\ln y=\\dfrac{y'}{y}$."
+      ],
+      "steps": [
+        "$\\ln y=\\cos x\\,\\ln(1+x^2)$.",
+        "Differentiate: $\\dfrac{y'}{y}=\\cos x\\cdot\\dfrac{2x}{1+x^2}-\\sin x\\,\\ln(1+x^2)$.",
+        "Common denominator: $\\dfrac{2x\\cos x-\\sin x\\,(1+x^2)\\ln(1+x^2)}{1+x^2}$."
+      ],
+      "brief": "$\\ln y=\\cos x\\ln(1+x^2)$, so $\\frac{y'}{y}=\\frac{2x\\cos x}{1+x^2}-\\sin x\\ln(1+x^2)$."
+    },
+    {
+      "sec": "3.3",
+      "q": "If $(A,B)$ and $(C,D)$ are the points on the graph of the function $f(x)=\\dfrac{x+1}{x-1}$ at which the tangent lines are perpendicular to the line $2x-y=1$, then $A+B+C+D=$",
+      "opts": [
+        "$4$",
+        "$-1$",
+        "$0$",
+        "$3$",
+        "$5$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Perpendicular lines have slopes whose product is $-1$.",
+        "Find the slope of the given line, set $f'(x)$ equal to the perpendicular slope and solve for $x$.",
+        "Lines with slopes $m_1,m_2$ are perpendicular iff $m_1m_2=-1$."
+      ],
+      "steps": [
+        "The line is $y=2x-1$, slope $2$, so we need $f'(x)=-\\dfrac12$.",
+        "$f'(x)=\\dfrac{(x-1)-(x+1)}{(x-1)^2}=\\dfrac{-2}{(x-1)^2}=-\\dfrac12$, so $(x-1)^2=4$, $x=3$ or $x=-1$.",
+        "$f(3)=2$ and $f(-1)=0$: points $(3,2)$ and $(-1,0)$.",
+        "$A+B+C+D=3+2-1+0=4$."
+      ],
+      "brief": "$f'=-\\frac12$ gives $x=3,-1$; points $(3,2),(-1,0)$; sum $=4$."
+    },
+    {
+      "sec": "3.3",
+      "q": "If $f(x)=\\dfrac{1}{e^x}$, then $f^{(55)}(0)=$",
+      "opts": [
+        "$-1$",
+        "$1$",
+        "$\\dfrac1e$",
+        "$e$",
+        "$-\\dfrac1e$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Look for a pattern in the successive derivatives.",
+        "Rewrite $f$ with a negative exponent and differentiate a few times.",
+        "$\\dfrac{d}{dx}e^{kx}=ke^{kx}$, so the $n$th derivative of $e^{kx}$ is $k^ne^{kx}$."
+      ],
+      "steps": [
+        "$f(x)=e^{-x}$, $f'(x)=-e^{-x}$, $f''(x)=e^{-x}$, and so on.",
+        "$f^{(n)}(x)=(-1)^ne^{-x}$.",
+        "$f^{(55)}(0)=(-1)^{55}e^0=-1$."
+      ],
+      "brief": "$f^{(n)}(x)=(-1)^ne^{-x}$, so $f^{(55)}(0)=-1$."
+    },
+    {
+      "sec": "3.5",
+      "q": "If $y=\\dfrac{(x^2+2)(x^3+3)}{(x^2-2)(x^3-3)}$, then the value of $\\dfrac{dy}{dx}$ at $x=1$ is equal to",
+      "opts": [
+        "$\\dfrac{59}{2}$",
+        "$\\dfrac{49}{2}$",
+        "$\\dfrac{39}{4}$",
+        "$\\dfrac{17}{2}$",
+        "$\\dfrac{29}{4}$"
+      ],
+      "ans": 0,
+      "hints": [
+        "The expression is a long product and quotient, so use logarithmic differentiation.",
+        "Take $\\ln$ of both sides, differentiate, then evaluate at $x=1$ (also compute $y(1)$).",
+        "$\\ln\\dfrac{ab}{cd}=\\ln a+\\ln b-\\ln c-\\ln d$ and $y'=y\\,(\\ln y)'$."
+      ],
+      "steps": [
+        "$\\ln y=\\ln(x^2+2)+\\ln(x^3+3)-\\ln(x^2-2)-\\ln(x^3-3)$.",
+        "$\\dfrac{y'}{y}=\\dfrac{2x}{x^2+2}+\\dfrac{3x^2}{x^3+3}-\\dfrac{2x}{x^2-2}-\\dfrac{3x^2}{x^3-3}$.",
+        "At $x=1$: $y=\\dfrac{3\\cdot4}{(-1)(-2)}=6$ and $\\dfrac{y'}{y}=\\dfrac23+\\dfrac34+2+\\dfrac32=\\dfrac{59}{12}$.",
+        "$y'=6\\cdot\\dfrac{59}{12}=\\dfrac{59}{2}$."
+      ],
+      "brief": "$y(1)=6$, $\\frac{y'}{y}=\\frac{59}{12}$, so $y'(1)=\\frac{59}{2}$."
+    },
+    {
+      "sec": "3.6",
+      "q": "If $f(x)=x\\sqrt{x-3}$, then $(f^{-1})'(4)=$ (Hint: What is the value of $f(4)$?)",
+      "opts": [
+        "$\\dfrac13$",
+        "$\\dfrac14$",
+        "$\\dfrac12$",
+        "$1$",
+        "$\\dfrac15$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Use the formula for the derivative of an inverse function.",
+        "The hint gives the $x$-value with $f(x)=4$; then compute $f'$ there.",
+        "$(f^{-1})'(b)=\\dfrac{1}{f'(a)}$ where $f(a)=b$."
+      ],
+      "steps": [
+        "$f(4)=4\\sqrt1=4$, so $f^{-1}(4)=4$.",
+        "$f'(x)=\\dfrac{x}{2\\sqrt{x-3}}+\\sqrt{x-3}$, so $f'(4)=2+1=3$.",
+        "$(f^{-1})'(4)=\\dfrac1{f'(4)}=\\dfrac13$."
+      ],
+      "brief": "$f(4)=4$, $f'(4)=3$, so $(f^{-1})'(4)=\\frac13$."
+    },
+    {
+      "sec": "4.2",
+      "q": "The value of $c$ that satisfies the Mean Value Theorem when applied to $f(x)=2x-\\ln x$ on the interval $[1,e]$ is equal to",
+      "opts": [
+        "$e-1$",
+        "$e-\\dfrac12$",
+        "$\\dfrac{e+1}{e}$",
+        "$\\dfrac{2e}{e-1}$",
+        "$2e-3$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Set up the Mean Value Theorem equation on the interval.",
+        "Compute the average rate of change and solve $f'(c)$ equal to it.",
+        "MVT: $f'(c)=\\dfrac{f(b)-f(a)}{b-a}$ for some $c\\in(a,b)$."
+      ],
+      "steps": [
+        "$f(e)=2e-1$, $f(1)=2$, so the average rate is $\\dfrac{2e-3}{e-1}$.",
+        "$f'(c)=2-\\dfrac1c=\\dfrac{2e-3}{e-1}$.",
+        "$\\dfrac1c=\\dfrac{2(e-1)-(2e-3)}{e-1}=\\dfrac{1}{e-1}$, so $c=e-1\\approx1.72\\in(1,e)$."
+      ],
+      "brief": "$2-\\frac1c=\\frac{2e-3}{e-1}$ gives $c=e-1$."
+    }
+  ]
+}

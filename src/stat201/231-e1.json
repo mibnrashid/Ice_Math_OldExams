@@ -1,0 +1,431 @@
+{
+  "course": "stat201",
+  "term": "231",
+  "kind": "e1",
+  "date": "",
+  "minutes": 90,
+  "source": "stat319-231-ex1.pdf",
+  "note": "Original course STAT 319. No cover page: date and minutes are not printed (date left empty, minutes assumed 90 for the old 90-point exam per the syllabus). No term or course header; keys identified from the red worked solutions on each page (all correct choices were (a) in master order). Q15 (pH mean/sd) and Q16 (box plot outliers) had no red solution; keys determined by computation. The geometric-distribution question is outside the term 261 syllabus. The two stem-and-leaf questions share the same data and the two Cola questions share the same data; the stem is repeated in each. Tables and stem-and-leaf typed as LaTeX arrays; the box plot is a cropped figure.",
+  "qs": [
+    {
+      "sec": "2.3",
+      "q": "Each of the possible five outcomes of a random experiment is equally likely. The sample space is $\\{a,b,c,d,e\\}$. Let $A$ denote the event $\\{a,b\\}$, and let $B$ denote the event $\\{c,d,e\\}$. Determine $P(A\\cup B)$.",
+      "opts": [
+        "$1$",
+        "$0$",
+        "$\\dfrac{2}{5}$",
+        "$\\dfrac{3}{5}$",
+        "$\\dfrac{2}{3}$"
+      ],
+      "ans": 0,
+      "hints": [
+        "This is a question about the probability of a union of events.",
+        "Check whether $A$ and $B$ share any outcome, then count outcomes or use the addition rule.",
+        "Addition rule: $P(A\\cup B)=P(A)+P(B)-P(A\\cap B)$; with equally likely outcomes $P(E)=\\dfrac{\\text{number of outcomes in }E}{\\text{number of outcomes in }S}$."
+      ],
+      "steps": [
+        "$A$ has 2 outcomes and $B$ has 3, so $P(A)=\\dfrac25$ and $P(B)=\\dfrac35$.",
+        "$A$ and $B$ have no common outcome, so $P(A\\cap B)=0$.",
+        "$P(A\\cup B)=\\dfrac25+\\dfrac35-0=1$."
+      ],
+      "brief": "$P(A)+P(B)-P(A\\cap B)=\\frac25+\\frac35-0=1$."
+    },
+    {
+      "sec": "2.2",
+      "q": "Cooking oil is produced in two main varieties: monounsaturated and polyunsaturated. Two common sources of cooking oil are corn and canola. The following table shows the number of bottles of these oils at a supermarket: \\[\\begin{array}{ll|cc} & & \\text{Type of oil} & \\\\ & & \\text{Canola} & \\text{Corn}\\\\ \\hline \\text{Type of Unsaturation} & \\text{Mono} & 7 & 13\\\\ & \\text{Poly} & 93 & 77 \\end{array}\\] If a bottle of oil chosen at random, what is the probability that it belongs to the monounsaturated corn oil?",
+      "opts": [
+        "$\\dfrac{13}{190}$",
+        "$\\dfrac{20}{190}$",
+        "$\\dfrac{7}{190}$",
+        "$\\dfrac{13}{20}$",
+        "$\\dfrac{13}{90}$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Use equally likely outcomes: favourable bottles over all bottles.",
+        "Add all four table entries for the total, and pick the single cell that is both mono and corn.",
+        "$P(E)=\\dfrac{\\text{number of outcomes in }E}{\\text{total number of outcomes}}$."
+      ],
+      "steps": [
+        "The total number of bottles is $7+13+93+77=190$.",
+        "The cell for mono and corn contains 13 bottles.",
+        "$P(\\text{mono}\\cap\\text{corn})=\\dfrac{13}{190}$."
+      ],
+      "brief": "Total $=190$; mono and corn cell $=13$: $\\frac{13}{190}$."
+    },
+    {
+      "sec": "2.4",
+      "q": "A batch of 500 containers for frozen orange juice contains 5 that are defective. Two are selected, at random, without replacement from the batch. What is the probability that the second one selected is defective given that the first one was defective?",
+      "opts": [
+        "$\\dfrac{4}{499}$",
+        "$\\dfrac{5}{500}\\left(\\dfrac{4}{499}\\right)$",
+        "$\\dfrac{5}{500}\\left(\\dfrac{495}{499}\\right)$",
+        "$\\dfrac{495}{500}\\left(\\dfrac{494}{499}\\right)$",
+        "$2\\left(\\dfrac{5}{500}\\right)\\left(\\dfrac{4}{499}\\right)$"
+      ],
+      "ans": 0,
+      "hints": [
+        "This is a conditional probability when sampling without replacement.",
+        "Imagine the first container is already removed and known to be defective; what does the batch look like now?",
+        "Given the first outcome, the remaining batch is what matters: $P(B\\mid A)=\\dfrac{\\text{favourable items left}}{\\text{items left}}$, or $\\dfrac{P(A\\cap B)}{P(A)}$."
+      ],
+      "steps": [
+        "After a defective container is removed, 499 containers remain, of which 4 are defective.",
+        "$P(\\text{2nd defective}\\mid\\text{1st defective})=\\dfrac{4}{499}$.",
+        "Check: $\\dfrac{(5/500)(4/499)}{5/500}=\\dfrac{4}{499}$."
+      ],
+      "brief": "After one defective is removed: $\\frac{4}{499}$."
+    },
+    {
+      "sec": "2.5",
+      "q": "A credit card contains 16 digits. It also contains the month and year of expiration. Suppose there are 1 million credit card holders with unique card numbers. A hacker randomly selects a 16-digit credit card number. Suppose a hacker has a $25\\%$ chance of correctly guessing the year your card expires and randomly selects 1 of the 12 months. What is the probability that the hacker correctly selects the month and year of expiration?",
+      "opts": [
+        "$0.0208$",
+        "$0.0833$",
+        "$0.0156$",
+        "$10^{-10}$",
+        "$1.6\\times10^{-6}$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Two guesses must both be correct, and they are made separately.",
+        "Treat the year guess and the month guess as independent events and find each probability.",
+        "For independent events, $P(A\\cap B)=P(A)P(B)$."
+      ],
+      "steps": [
+        "$P(\\text{year correct})=0.25$.",
+        "$P(\\text{month correct})=\\dfrac{1}{12}$, since one of 12 months is picked at random.",
+        "$P(\\text{both})=0.25\\cdot\\dfrac{1}{12}=0.0208$."
+      ],
+      "brief": "Independent guesses: $0.25\\cdot\\frac{1}{12}=0.0208$."
+    },
+    {
+      "sec": "2.7",
+      "q": "Suppose that $P(A\\mid B)=0.5$, $P(A\\mid B')=0.1$, and $P(B)=0.7$. Determine $P(B\\mid A)$.",
+      "opts": [
+        "$0.921$",
+        "$0.079$",
+        "$0.350$",
+        "$0.380$",
+        "$0.930$"
+      ],
+      "ans": 0,
+      "hints": [
+        "This is a Bayes' theorem question.",
+        "Find $P(A)$ first by splitting on $B$ and $B'$, then reverse the conditioning.",
+        "Total probability: $P(A)=P(A\\mid B)P(B)+P(A\\mid B')P(B')$; Bayes: $P(B\\mid A)=\\dfrac{P(A\\mid B)P(B)}{P(A)}$."
+      ],
+      "steps": [
+        "$P(A\\cap B)=P(A\\mid B)P(B)=0.5(0.7)=0.35$.",
+        "$P(A)=0.35+0.1(0.3)=0.38$.",
+        "$P(B\\mid A)=\\dfrac{0.35}{0.38}=0.921$."
+      ],
+      "brief": "$P(A)=0.38$, so $P(B\\mid A)=0.35/0.38=0.921$."
+    },
+    {
+      "sec": "2.7",
+      "q": "The probability is $1\\%$ that an electrical connector that is kept dry fails during the warranty period of a portable computer. If the connector is ever wet, the probability of a failure during the warranty period is $5\\%$. If $90\\%$ of the connectors are kept dry and $10\\%$ are wet, what proportion of connectors fail during the warranty period?",
+      "opts": [
+        "$0.014$",
+        "$0.090$",
+        "$0.046$",
+        "$0.045$",
+        "$0.005$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Split the failures according to whether the connector is dry or wet.",
+        "Multiply each failure probability by the proportion of connectors in that group, then add.",
+        "Total probability: $P(F)=\\sum_i P(F\\mid B_i)P(B_i)$ for a partition $B_1,\\dots,B_k$."
+      ],
+      "steps": [
+        "Let $F$ be failure and $W$ wet: $P(F\\mid W)=0.05$, $P(W)=0.1$, $P(F\\mid W')=0.01$, $P(W')=0.9$.",
+        "$P(F)=0.05(0.1)+0.01(0.9)$.",
+        "$=0.005+0.009=0.014$."
+      ],
+      "brief": "Total probability: $0.05(0.1)+0.01(0.9)=0.014$."
+    },
+    {
+      "sec": "3.3",
+      "q": "The thickness of wood paneling (in inches) that a customer orders is a random variable with the following cumulative distribution function. \\[F(x)=\\begin{cases}0, & x<\\frac{1}{8}\\\\ 0.2, & \\frac{1}{8}\\le x<\\frac{1}{4}\\\\ 0.9, & \\frac{1}{4}\\le x<\\frac{3}{8}\\\\ 1, & x\\ge\\frac{3}{8}\\end{cases}\\] Determine $P\\left(X\\le\\frac{1}{18}\\right)$.",
+      "opts": [
+        "$0$",
+        "$0.1$",
+        "$0.2$",
+        "$0.9$",
+        "$0.7$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Read the probability straight from the cumulative distribution function.",
+        "Decide which piece of $F$ the given value lies in.",
+        "By definition $F(a)=P(X\\le a)$."
+      ],
+      "steps": [
+        "$P(X\\le\\frac{1}{18})=F\\left(\\frac{1}{18}\\right)$.",
+        "Since $\\frac{1}{18}<\\frac{1}{8}$, we are in the first piece of $F$.",
+        "So $F\\left(\\frac{1}{18}\\right)=0$."
+      ],
+      "brief": "$F(1/18)=0$ because $1/18<1/8$."
+    },
+    {
+      "sec": "3.6",
+      "q": "The phone lines to an airline reservation system are occupied $40\\%$ of the time. Assume that the events that the lines are occupied on successive calls are independent. Assume that 10 calls are placed to the airline. What is the expected number of calls in which the lines are all occupied?",
+      "opts": [
+        "$4$",
+        "$6$",
+        "$24$",
+        "$2.4$",
+        "$1.2$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Count the number of successes in a fixed number of independent trials.",
+        "Identify $n$ and $p$ for the binomial model.",
+        "For $X\\sim\\text{Binomial}(n,p)$, $E(X)=np$."
+      ],
+      "steps": [
+        "Let $X$ be the number of calls with all lines occupied; $X\\sim\\text{Binomial}(n=10,\\ p=0.4)$.",
+        "$E(X)=np=10(0.4)=4$."
+      ],
+      "brief": "$X\\sim\\text{Bin}(10,0.4)$: $E(X)=np=4$."
+    },
+    {
+      "sec": "3.9",
+      "q": "Astronomers treat the number of stars in a given volume of space as a Poisson random variable. The density in the Milky Way Galaxy in the vicinity of our solar system is one star per 16 cubic light-years. How many cubic light-years of space must be studied so that the probability of one or more stars exceeds $0.95$?",
+      "opts": [
+        "$47.9317$",
+        "$2.9957$",
+        "$0.0513$",
+        "$0.8207$",
+        "$1/16$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Poisson process with a rate per unit volume; the mean grows with the volume studied.",
+        "Write $P(X\\ge1)$ as a complement, set it equal to the target probability and solve for the mean number of stars, then convert to volume.",
+        "$P(X=0)=e^{-\\mu}$, so $P(X\\ge1)=1-e^{-\\mu}$, and $\\mu=(\\text{rate})\\times(\\text{volume})$."
+      ],
+      "steps": [
+        "Let $\\mu$ be the mean number of stars in the studied volume; $P(X\\ge1)=1-e^{-\\mu}=0.95$.",
+        "$e^{-\\mu}=0.05$, so $\\mu=-\\ln(0.05)=2.9957$.",
+        "The rate is $\\dfrac{1}{16}$ star per cubic light-year, so volume $=16\\mu=16(2.9957)=47.9317$."
+      ],
+      "brief": "$1-e^{-\\mu}=0.95$, $\\mu=2.9957$, volume $=16\\mu=47.9317$."
+    },
+    {
+      "sec": "3.8",
+      "q": "A research study uses 900 men under the age of 55. Suppose that $30\\%$ carry a marker on the male chromosome that indicates an increased risk for high blood pressure. If 10 men are selected randomly and tested for the marker, what is the probability that more than 1 has the marker?",
+      "opts": [
+        "$0.8522$",
+        "$0.1478$",
+        "$0.4567$",
+        "$0.5433$",
+        "$0.0276$"
+      ],
+      "ans": 0,
+      "hints": [
+        "The men are sampled without replacement from a finite group with a known number of carriers.",
+        "Identify $N$, $K$ and $n$, and use the complement of $P(X\\le1)$.",
+        "Hypergeometric: $P(X=x)=\\dfrac{\\binom{K}{x}\\binom{N-K}{n-x}}{\\binom{N}{n}}$, and $P(X>1)=1-P(X=0)-P(X=1)$."
+      ],
+      "steps": [
+        "$X$ is hypergeometric with $N=900$, $K=0.3(900)=270$, $n=10$.",
+        "$P(X>1)=1-\\dfrac{\\binom{270}{0}\\binom{630}{10}+\\binom{270}{1}\\binom{630}{9}}{\\binom{900}{10}}$.",
+        "$=1-0.1478=0.8522$ (about $0.852167$)."
+      ],
+      "brief": "Hypergeometric $N=900,K=270,n=10$: $1-P(0)-P(1)=0.8522$."
+    },
+    {
+      "sec": "3.7",
+      "q": "A player of a video game is confronted with a series of opponents and has a $70\\%$ probability of defeating each one. Success with any opponent is independent of previous encounters. The player continues to play until defeated. What is the probability that a player defeats at least two opponents in a game?",
+      "opts": [
+        "$0.49$",
+        "$0.21$",
+        "$0.7$",
+        "$0.79$",
+        "$0.91$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Play continues until the first failure, which is a geometric situation, although a direct argument also works.",
+        "Ask what must happen in the first two encounters for the player to have defeated at least two opponents.",
+        "Geometric: $P(X=x)=(1-p)^{x-1}p$ for the trial number of the first 'defeat'; independent events multiply."
+      ],
+      "steps": [
+        "Defeating at least two opponents means the first two encounters are both won.",
+        "Encounters are independent, so the probability is $0.7\\times0.7$.",
+        "$=0.49$. (Equivalently $P(X\\ge3)=1-0.3-0.7(0.3)=0.49$, with $X$ the encounter in which the player is first defeated.)"
+      ],
+      "brief": "Win the first two encounters: $0.7^2=0.49$.",
+      "note": "Geometric distribution (3.7) is outside the term 261 STAT 201 section list; kept as practice."
+    },
+    {
+      "sec": "3.4",
+      "q": "In a NiCd battery, a fully charged cell is composed of nickelic hydroxide. Nickel is an element that has multiple oxidation states. Assume the following proportions of the state: \\[\\begin{array}{|c|c|} \\hline \\text{Nickel Charge} & \\text{Proportions Found}\\\\ \\hline 0 & 0.15\\\\ +2 & x\\\\ +3 & 0.33\\\\ +4 & 0.15\\\\ \\hline \\end{array}\\] Determine the variance of the nickel charge.",
+      "opts": [
+        "$1.42$",
+        "$2.33$",
+        "$0.37$",
+        "$0.35$",
+        "$1.19$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Find the missing probability, then compute a variance of a discrete distribution.",
+        "The proportions must add to 1; use that to get $x$, then compute $E(X)$ and $E(X^2)$.",
+        "$\\sum_x P(x)=1$, $\\mu=\\sum xP(x)$ and $\\sigma^2=\\sum x^2P(x)-\\mu^2$."
+      ],
+      "steps": [
+        "$x=1-0.15-0.33-0.15=0.37$.",
+        "$\\mu=2(0.37)+3(0.33)+4(0.15)=0.74+0.99+0.60=2.33$.",
+        "$E(X^2)=4(0.37)+9(0.33)+16(0.15)=1.48+2.97+2.40=6.85$.",
+        "$\\sigma^2=6.85-2.33^2=6.85-5.4289=1.4211\\approx1.42$."
+      ],
+      "brief": "$x=0.37$, $\\mu=2.33$, $E(X^2)=6.85$: $\\sigma^2=1.4211$."
+    },
+    {
+      "sec": "6.1",
+      "q": "An article in Technometrics (1977, Vol. 19, p. 425) presented data on the motor fuel octane ratings of several blends of gasoline and the stem and leaf of the data is displayed as (the decimal point is at the $|$, so $88\\mid 0$ means $88.0$): \\[\\begin{array}{r|l} 84 & 3\\\\ 86 & 7\\\\ 88 & 0\\ 2\\ 2\\ 3\\ 5\\ 6\\ 7\\ 8\\ 9\\\\ 90 & 1\\ 2\\ 2\\ 4\\ 6\\ 6\\ 7\\\\ 92 & 2\\ 2\\ 2\\ 3\\ 3\\\\ 94 & 2\\ 4\\\\ 96 & 5 \\end{array}\\] Calculate the interquartile range of these data.",
+      "opts": [
+        "$3.75$",
+        "$88.825$",
+        "$12.2$",
+        "$90.2$",
+        "$7.6$"
+      ],
+      "ans": 0,
+      "hints": [
+        "The interquartile range is the spread of the middle half of the ordered data.",
+        "Write out the 26 ordered values and locate $Q_1$ and $Q_3$ by interpolating at the positions $\\frac{n+1}{4}$ and $\\frac{3(n+1)}{4}$.",
+        "$\\text{IQR}=Q_3-Q_1$, where the $p$-th quantile sits at position $p(n+1)$ in the ordered data (interpolate when it is not a whole number)."
+      ],
+      "steps": [
+        "There are 26 observations. In order: $84.3,\\ 86.7,\\ 88.0,\\ 88.2,\\ 88.2,\\ 88.3,\\ 88.5,\\ 88.6,\\ 88.7,\\ 88.8,\\ 88.9,\\ 90.1,\\ 90.2,\\ 90.2,\\dots$ and the 20th and 21st values are both $92.2$.",
+        "$Q_1$ is at position $\\frac{27}{4}=6.75$: $Q_1=88.3+0.75(88.5-88.3)=88.45$.",
+        "$Q_3$ is at position $\\frac{81}{4}=20.25$: $Q_3=92.2+0.25(92.2-92.2)=92.2$.",
+        "$\\text{IQR}=92.2-88.45=3.75$."
+      ],
+      "brief": "$Q_1=88.45$, $Q_3=92.2$: IQR $=3.75$.",
+      "note": "Uses the (n+1)p interpolation quartile convention taken from the master solution; the median-of-halves convention gives 3.7, which is not a choice."
+    },
+    {
+      "sec": "6.1",
+      "q": "An article in Technometrics (1977, Vol. 19, p. 425) presented data on the motor fuel octane ratings of several blends of gasoline and the stem and leaf of the data is displayed as (the decimal point is at the $|$, so $88\\mid 0$ means $88.0$): \\[\\begin{array}{r|l} 84 & 3\\\\ 86 & 7\\\\ 88 & 0\\ 2\\ 2\\ 3\\ 5\\ 6\\ 7\\ 8\\ 9\\\\ 90 & 1\\ 2\\ 2\\ 4\\ 6\\ 6\\ 7\\\\ 92 & 2\\ 2\\ 2\\ 3\\ 3\\\\ 94 & 2\\ 4\\\\ 96 & 5 \\end{array}\\] Calculate the median of these data.",
+      "opts": [
+        "$90.2$",
+        "$3.75$",
+        "$88.825$",
+        "$12.2$",
+        "$7.6$"
+      ],
+      "ans": 0,
+      "hints": [
+        "The median is the middle value of the ordered data.",
+        "Count the observations in the plot, then decide which positions are the middle ones.",
+        "For even $n$ the median is the average of the $\\frac n2$-th and $\\left(\\frac n2+1\\right)$-th ordered values."
+      ],
+      "steps": [
+        "Count the leaves: $1+1+9+7+5+2+1=26$ observations.",
+        "The median is the average of the 13th and 14th ordered values.",
+        "Both are $90.2$, so the median is $\\dfrac{90.2+90.2}{2}=90.2$."
+      ],
+      "brief": "$n=26$: average of 13th and 14th values $=90.2$."
+    },
+    {
+      "sec": "6.1",
+      "q": "The pH of a solution is measured eight times by one operator using the same instrument. She obtains the following data: 7.15, 7.20, 7.18, 7.19, 7.21, 7.20, 7.16, and 7.18. Calculate the sample mean and sample standard deviation.",
+      "opts": [
+        "The mean is $7.1838$ and the standard deviation is $0.02066$",
+        "The mean is $7.1750$ and the standard deviation is $0.06000$",
+        "The mean is $7.2000$ and the standard deviation is $0.00042$",
+        "The mean is $7.1750$ and the standard deviation is $0.02066$",
+        "The mean is $7.1838$ and the standard deviation is $0.00042$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Compute the usual sample mean and sample standard deviation.",
+        "Add the eight values for the mean, then sum the squared deviations from it.",
+        "$\\bar x=\\dfrac{1}{n}\\sum x_i$, $s^2=\\dfrac{\\sum(x_i-\\bar x)^2}{n-1}$ and $s=\\sqrt{s^2}$."
+      ],
+      "steps": [
+        "$\\sum x_i=57.47$, so $\\bar x=\\dfrac{57.47}{8}=7.18375\\approx7.1838$.",
+        "$\\sum(x_i-\\bar x)^2\\approx0.002988$.",
+        "$s^2=\\dfrac{0.002988}{7}\\approx0.000427$, so $s\\approx0.02066$."
+      ],
+      "brief": "$\\bar x=7.1838$, $s^2\\approx0.000427$, $s=0.02066$.",
+      "note": "No red solution was shown on this page; key determined by computation (mean 7.18375, s = 0.020659)."
+    },
+    {
+      "sec": "6.4",
+      "q": "The nine measurements that follow are furnace temperatures recorded on successive batches in a semiconductor manufacturing process (units are $^\\circ\\text{F}$): 953, 950, 948, 955, 951, 949, 957, 954, 955. The box plot of these data is shown below. Based on the information above, which of the following measurements is/are potential outlier(s)? (i) 941  (ii) 961  (iii) 943",
+      "opts": [
+        "(i) only",
+        "(ii) only",
+        "(i) and (ii) only",
+        "(i) and (iii) only",
+        "(i), (ii) and (iii)"
+      ],
+      "ans": 0,
+      "hints": [
+        "Use the box plot fences for potential outliers.",
+        "Read $Q_1$ and $Q_3$ from the box, find the IQR, and compute the lower and upper fences.",
+        "A value is a potential outlier if it is below $Q_1-1.5\\,\\text{IQR}$ or above $Q_3+1.5\\,\\text{IQR}$."
+      ],
+      "steps": [
+        "From the box: $Q_1=950$ and $Q_3=955$ (also from the ordered data $948,949,950,951,953,954,955,955,957$), so $\\text{IQR}=5$.",
+        "Lower fence $=950-7.5=942.5$ and upper fence $=955+7.5=962.5$.",
+        "$941<942.5$ is an outlier; $961<962.5$ and $943>942.5$ are not. So only (i) is a potential outlier."
+      ],
+      "brief": "$Q_1=950$, $Q_3=955$: fences $942.5$ and $962.5$; only 941 is outside.",
+      "img": "stat201-231-e1-q16.png",
+      "note": "No red solution on this page; key determined by computation. Q1=950 and Q3=955 agree with the printed box. The question text shows the data and the figure; the options (i)-(iii) are listed inside q."
+    },
+    {
+      "sec": "6.3",
+      "q": "A group of Cola enthusiasts taste-tested Cola. The evaluation was to grade the Cola on a 0-to-100-point scale. The results follow as: \\[\\begin{array}{cccccccccc} 83&84&85&85&85&86&86&87&87&88\\\\ 88&88&89&89&89&89&89&89&90&90\\\\ 90&90&90&90&90&91&91&91&91&91\\\\ 91&91&92&92&92&92&93&94&95&95 \\end{array}\\] If the target is to draw a frequency distribution with exactly 8 intervals, what is the appropriate class width for constructing a frequency table from this data?",
+      "opts": [
+        "$2$",
+        "$3$",
+        "$5$",
+        "$1$",
+        "$4$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Class width comes from the range and the number of intervals.",
+        "Find the smallest and largest values, then divide their difference by the number of classes.",
+        "$\\text{class width}\\approx\\dfrac{\\text{range}}{\\text{number of intervals}}=\\dfrac{x_{\\max}-x_{\\min}}{k}$, rounded up to a convenient value."
+      ],
+      "steps": [
+        "The smallest value is $83$ and the largest is $95$, so the range is $12$.",
+        "$\\dfrac{12}{8}=1.5$.",
+        "Round up to a convenient whole number: class width $=2$."
+      ],
+      "brief": "Range $=95-83=12$; $12/8=1.5\\approx2$."
+    },
+    {
+      "sec": "6.3",
+      "q": "A group of Cola enthusiasts taste-tested Cola. The evaluation was to grade the Cola on a 0-to-100-point scale. The results follow as: \\[\\begin{array}{cccccccccc} 83&84&85&85&85&86&86&87&87&88\\\\ 88&88&89&89&89&89&89&89&90&90\\\\ 90&90&90&90&90&91&91&91&91&91\\\\ 91&91&92&92&92&92&93&94&95&95 \\end{array}\\] If the target is to draw a frequency distribution with exactly 7 intervals, such that the last interval is from 95 but less than 97, what is the relative frequency of the 3rd class?",
+      "opts": [
+        "$0.125$",
+        "$0.275$",
+        "$0.05$",
+        "$0.225$",
+        "$0.325$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Build the frequency table first, then find the relative frequency of the required class.",
+        "Seven intervals ending at 97 and starting at the minimum value fix the class width; list the class boundaries.",
+        "Relative frequency $=\\dfrac{\\text{class frequency}}{n}$, with $n$ the total number of observations."
+      ],
+      "steps": [
+        "The data start at $83$ and the last class is $95\\le x<97$, so the width is $2$ and the 7 classes are $83$-$85$, $85$-$87$, $87$-$89$, $\\dots$, $95$-$97$.",
+        "The 3rd class is $87\\le x<89$. It contains the value $87$ twice and the value $88$ three times, so its frequency is $5$.",
+        "There are 40 observations, so the relative frequency is $\\dfrac{5}{40}=0.125$."
+      ],
+      "brief": "3rd class $87\\le x<89$ has 5 of 40 values: $0.125$."
+    }
+  ]
+}

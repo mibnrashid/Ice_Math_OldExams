@@ -1,0 +1,344 @@
+{
+  "course": "math101",
+  "term": "251",
+  "kind": "e2",
+  "date": "11 November 2025",
+  "minutes": 90,
+  "source": "math101-251-e2.pdf",
+  "note": "Scan with handwritten solutions; only printed text transcribed. Master key is A for all 14 questions and all were verified independently (sympy for Q1, Q2, Q11, Q14). Q9 says 'see figure below' but the figure is hand-drawn solution work, so no image is used; 'angle of evaluation' corrected to 'elevation'. Q5: (1,0) also has a horizontal tangent but is not a listed choice. Section numbers: Q1 is mainly 3.2/3.3, Q6 and Q7 involve inverse trig derivatives (3.6).",
+  "qs": [
+    {
+      "sec": "3.3",
+      "q": "If $f(x)=\\sqrt[3]{x}\\,(\\sqrt{x}+3)$, then $f'(x)=$",
+      "opts": [
+        "$\\dfrac{5x^{2/3}+6x^{1/6}}{6x^{5/6}}$",
+        "$\\dfrac{5x^{1/6}+6x^{2/3}}{6x^{5/6}}$",
+        "$\\dfrac{5x^{2/3}+x^{1/6}}{6x^{5/6}}$",
+        "$\\dfrac{x^{2/3}+x^{1/6}}{6x^{5/6}}$",
+        "$\\dfrac{x^{2/3}+6x^{2/3}}{6x^{5/6}}$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Rewrite the roots as fractional powers and differentiate with the power rule (or the product rule).",
+        "Multiply out first so that $f$ becomes a sum of two powers of $x$, then differentiate each term.",
+        "$x^a\\cdot x^b=x^{a+b}$ and $\\dfrac{d}{dx}x^n=nx^{n-1}$; to compare with fractions, write everything over a common denominator."
+      ],
+      "steps": [
+        "$f(x)=x^{1/3}x^{1/2}+3x^{1/3}=x^{5/6}+3x^{1/3}$.",
+        "$f'(x)=\\dfrac56x^{-1/6}+x^{-2/3}$.",
+        "Over the denominator $6x^{5/6}$: $\\dfrac56x^{-1/6}=\\dfrac{5x^{2/3}}{6x^{5/6}}$ and $x^{-2/3}=\\dfrac{6x^{1/6}}{6x^{5/6}}$.",
+        "So $f'(x)=\\dfrac{5x^{2/3}+6x^{1/6}}{6x^{5/6}}$."
+      ],
+      "brief": "$f=x^{5/6}+3x^{1/3}$, so $f'=\\frac56x^{-1/6}+x^{-2/3}=\\frac{5x^{2/3}+6x^{1/6}}{6x^{5/6}}$."
+    },
+    {
+      "sec": "3.4",
+      "q": "If $y=\\cos\\sqrt{\\sin(\\tan\\pi x)}$, then $y'\\left(\\dfrac14\\right)=$",
+      "opts": [
+        "$\\dfrac{-\\pi\\sin\\left(\\sqrt{\\sin 1}\\right)\\cos 1}{\\sqrt{\\sin 1}}$",
+        "$\\dfrac{-\\pi\\sin\\left(\\sqrt{\\sin 1}\\right)\\cos 1}{\\cos\\sqrt{\\sin 1}}$",
+        "$\\dfrac{-\\pi\\sin\\left(\\sqrt{\\sin 1}\\right)\\sin 1}{\\sqrt{\\cos 1}}$",
+        "$\\dfrac{-\\pi\\csc\\left(\\sqrt{\\sin 1/2}\\right)\\cos 1}{\\sqrt{\\sin 1}}$",
+        "$\\dfrac{-\\pi\\sin\\left(\\sqrt{\\sin 2}\\right)\\cos 1}{\\sqrt{2}\\cos\\sqrt{\\sin 1}}$"
+      ],
+      "ans": 0,
+      "hints": [
+        "This is a nested composition, so apply the chain rule several times, from the outside in.",
+        "Peel the layers in order: cosine, square root, sine, tangent, then the linear function inside. Evaluate the inner values at the given point at the end.",
+        "$\\dfrac{d}{dx}\\cos u=-\\sin u\\,u'$, $\\dfrac{d}{dx}\\sqrt u=\\dfrac{u'}{2\\sqrt u}$, $\\dfrac{d}{dx}\\sin u=\\cos u\\,u'$, $\\dfrac{d}{dx}\\tan u=\\sec^2u\\,u'$."
+      ],
+      "steps": [
+        "$y'=-\\sin\\left(\\sqrt{\\sin(\\tan\\pi x)}\\right)\\cdot\\dfrac{1}{2\\sqrt{\\sin(\\tan\\pi x)}}\\cdot\\cos(\\tan\\pi x)\\cdot\\sec^2(\\pi x)\\cdot\\pi$.",
+        "At $x=\\tfrac14$: $\\tan\\dfrac\\pi4=1$ and $\\sec^2\\dfrac\\pi4=2$.",
+        "$y'\\left(\\tfrac14\\right)=-\\sin\\left(\\sqrt{\\sin1}\\right)\\cdot\\dfrac{1}{2\\sqrt{\\sin1}}\\cdot\\cos1\\cdot2\\pi$.",
+        "$=\\dfrac{-\\pi\\sin\\left(\\sqrt{\\sin1}\\right)\\cos1}{\\sqrt{\\sin1}}$."
+      ],
+      "brief": "Chain rule; at $x=\\frac14$, $\\tan=1$, $\\sec^2=2$: $y'=\\frac{-\\pi\\sin(\\sqrt{\\sin1})\\cos1}{\\sqrt{\\sin1}}$."
+    },
+    {
+      "sec": "3.5",
+      "q": "The slope of the graph of $(\\sin\\pi x+\\cos\\pi y)^2=1$ at the point $\\left(\\dfrac16,\\dfrac13\\right)$ is equal to",
+      "opts": [
+        "$1$",
+        "$0$",
+        "$\\dfrac{\\sqrt3}{2}$",
+        "$\\dfrac12$",
+        "The graph has no slope at this point"
+      ],
+      "ans": 0,
+      "hints": [
+        "Use implicit differentiation to find $dy/dx$ at the point.",
+        "Differentiate both sides with respect to $x$ (chain rule on the square and on $\\cos\\pi y$, treating $y$ as a function of $x$), then substitute the point.",
+        "$\\dfrac{d}{dx}\\left[g(x,y)\\right]^2=2g\\,g'$ and $\\dfrac{d}{dx}\\cos(\\pi y)=-\\pi\\sin(\\pi y)\\,y'$; if the common factor is nonzero at the point you may divide by it."
+      ],
+      "steps": [
+        "Differentiate: $2(\\sin\\pi x+\\cos\\pi y)\\left(\\pi\\cos\\pi x-\\pi\\sin\\pi y\\cdot y'\\right)=0$.",
+        "At $\\left(\\tfrac16,\\tfrac13\\right)$: $\\sin\\dfrac\\pi6+\\cos\\dfrac\\pi3=\\dfrac12+\\dfrac12=1\\neq0$.",
+        "So $\\cos\\dfrac\\pi6-\\sin\\dfrac\\pi3\\,y'=0$, i.e. $\\dfrac{\\sqrt3}{2}-\\dfrac{\\sqrt3}{2}y'=0$.",
+        "Hence $y'=1$."
+      ],
+      "brief": "$2(\\sin\\pi x+\\cos\\pi y)\\pi(\\cos\\pi x-\\sin\\pi y\\,y')=0$; at the point $\\frac{\\sqrt3}2-\\frac{\\sqrt3}2y'=0$, $y'=1$."
+    },
+    {
+      "sec": "3.5",
+      "q": "If $y-\\cos(xy)=x$, then $y''(0)=$",
+      "opts": [
+        "$-1$",
+        "$2$",
+        "$-2$",
+        "$0$",
+        "$2\\pi$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Differentiate implicitly twice and evaluate at $x=0$.",
+        "First find $y(0)$ from the original equation, then differentiate once to get $y'(0)$, and differentiate again to get $y''(0)$.",
+        "$\\dfrac{d}{dx}\\cos u=-\\sin u\\,u'$ and, by the product rule, $\\dfrac{d}{dx}(xy)=y+xy'$; the second derivative needs the product and chain rules again."
+      ],
+      "steps": [
+        "At $x=0$: $y-\\cos0=0$, so $y(0)=1$.",
+        "Differentiate: $y'+\\sin(xy)(y+xy')=1$. At $x=0$: $y'+0=1$, so $y'(0)=1$.",
+        "Differentiate again: $y''+\\cos(xy)(y+xy')^2+\\sin(xy)(2y'+xy'')=0$.",
+        "At $(0,1)$: $y''+1\\cdot(1+0)^2+0=0$, so $y''(0)=-1$."
+      ],
+      "brief": "$y(0)=1$, $y'(0)=1$; second derivative gives $y''+\\cos(xy)(y+xy')^2+\\dots=0$, so $y''(0)=-1$."
+    },
+    {
+      "sec": "3.5",
+      "q": "The graph of the equation $4x^2+y^2-8x+4y+4=0$ has a horizontal tangent line at the point",
+      "opts": [
+        "$(1,-4)$",
+        "$(0,-2)$",
+        "$(2,-2)$",
+        "$(1,1)$",
+        "$(-2,0)$"
+      ],
+      "ans": 0,
+      "hints": [
+        "A horizontal tangent means $dy/dx=0$. Find $dy/dx$ implicitly.",
+        "Differentiate implicitly, solve for $y'$, set the numerator equal to zero, then use the original equation to find the matching $y$-values.",
+        "A horizontal tangent occurs where $y'=0$ with the denominator of $y'$ not zero; the point must also lie on the curve."
+      ],
+      "steps": [
+        "Differentiate: $8x+2yy'-8+4y'=0$, so $y'=\\dfrac{8-8x}{2y+4}=\\dfrac{4(1-x)}{y+2}$.",
+        "$y'=0$ requires $x=1$.",
+        "Put $x=1$ in the equation: $4+y^2-8+4y+4=0$, so $y^2+4y=0$ and $y=0$ or $y=-4$.",
+        "Of the listed points, only $(1,-4)$ has $x=1$ and lies on the curve (here $y+2=-2\\neq0$)."
+      ],
+      "brief": "$y'=\\frac{4(1-x)}{y+2}=0\\Rightarrow x=1$; then $y^2+4y=0$, and $(1,-4)$ is the listed point."
+    },
+    {
+      "sec": "3.6",
+      "q": "If $y=\\arctan x-\\dfrac{x}{1+x^2}$, then $y'(x)=$",
+      "opts": [
+        "$\\dfrac{2x^2}{(1+x^2)^2}$",
+        "$\\dfrac{2}{(1+x^2)^2}$",
+        "$\\dfrac{1-x^2}{(1+x^2)^2}$",
+        "$\\dfrac{1-x^2}{1+x^2}$",
+        "$\\dfrac{2x}{(1+x^2)^2}$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Differentiate the inverse tangent term directly and the fraction with the quotient rule.",
+        "Differentiate each term separately, then combine over the common denominator $(1+x^2)^2$.",
+        "$\\dfrac{d}{dx}\\arctan x=\\dfrac{1}{1+x^2}$ and $\\left(\\dfrac uv\\right)'=\\dfrac{u'v-uv'}{v^2}$."
+      ],
+      "steps": [
+        "$\\dfrac{d}{dx}\\arctan x=\\dfrac1{1+x^2}$.",
+        "$\\dfrac{d}{dx}\\dfrac{x}{1+x^2}=\\dfrac{(1+x^2)-x(2x)}{(1+x^2)^2}=\\dfrac{1-x^2}{(1+x^2)^2}$.",
+        "$y'=\\dfrac{1+x^2}{(1+x^2)^2}-\\dfrac{1-x^2}{(1+x^2)^2}=\\dfrac{2x^2}{(1+x^2)^2}$."
+      ],
+      "brief": "$y'=\\frac{1}{1+x^2}-\\frac{1-x^2}{(1+x^2)^2}=\\frac{2x^2}{(1+x^2)^2}$."
+    },
+    {
+      "sec": "3.6",
+      "q": "The equation of the tangent line to the graph of $x\\arctan y+x^2=y-1$ at $(0,1)$ is",
+      "opts": [
+        "$4y-\\pi x=4$",
+        "$y+\\dfrac{\\pi}{4}x=1$",
+        "$y-4\\pi x=4$",
+        "$4y+\\pi x=2$",
+        "$y=\\dfrac{\\pi}{4}x+4$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Find the slope at the point by implicit differentiation, then write the line through the point.",
+        "Differentiate both sides with respect to $x$ (product rule on $x\\arctan y$), substitute $(0,1)$ and solve for $y'$.",
+        "$\\dfrac{d}{dx}\\arctan y=\\dfrac{y'}{1+y^2}$; the tangent line at $(x_0,y_0)$ with slope $m$ is $y-y_0=m(x-x_0)$."
+      ],
+      "steps": [
+        "Differentiate: $\\arctan y+\\dfrac{x\\,y'}{1+y^2}+2x=y'$.",
+        "At $(0,1)$: $\\arctan1+0+0=y'$, so $y'=\\dfrac\\pi4$.",
+        "Tangent line: $y-1=\\dfrac\\pi4x$.",
+        "Multiply by 4: $4y-4=\\pi x$, i.e. $4y-\\pi x=4$."
+      ],
+      "brief": "$y'(0,1)=\\arctan1=\\frac\\pi4$; line $y-1=\\frac\\pi4x$, i.e. $4y-\\pi x=4$."
+    },
+    {
+      "sec": "3.7",
+      "q": "If all edges of a cube are expanding at a rate of $6\\ \\text{cm/sec}$, then the surface area is changing, when each edge is $2\\ \\text{cm}$, at the rate of",
+      "opts": [
+        "$144\\ \\text{cm}^2/\\text{sec}$",
+        "$72\\ \\text{cm}^2/\\text{sec}$",
+        "$24\\ \\text{cm}^2/\\text{sec}$",
+        "$36\\ \\text{cm}^2/\\text{sec}$",
+        "$96\\ \\text{cm}^2/\\text{sec}$"
+      ],
+      "ans": 0,
+      "hints": [
+        "This is a related rates problem: relate the surface area to the edge length and differentiate with respect to time.",
+        "Write the surface area as a function of the edge $x$, differentiate both sides with respect to $t$, and substitute the given values.",
+        "A cube with edge $x$ has $6$ square faces, so $S=6x^2$; then $\\dfrac{dS}{dt}=\\dfrac{dS}{dx}\\cdot\\dfrac{dx}{dt}$."
+      ],
+      "steps": [
+        "$S=6x^2$ with $\\dfrac{dx}{dt}=6$.",
+        "$\\dfrac{dS}{dt}=12x\\,\\dfrac{dx}{dt}$.",
+        "At $x=2$: $\\dfrac{dS}{dt}=12(2)(6)=144\\ \\text{cm}^2/\\text{sec}$."
+      ],
+      "brief": "$S=6x^2$, $S'=12x\\,x'=12(2)(6)=144\\ \\text{cm}^2/\\text{sec}$."
+    },
+    {
+      "sec": "3.7",
+      "q": "If an airplane flies at an altitude of 5 kms toward a point directly over an observer (see figure below) and the speed of the plane is 400 kms per hour, then the rate at which the angle of elevation $\\theta$ is changing when the angle is $30^\\circ$ is equal to",
+      "opts": [
+        "$20$ rad/hr",
+        "$10$ rad/hr",
+        "$40$ rad/hr",
+        "$80$ rad/hr",
+        "$5$ rad/hr"
+      ],
+      "ans": 0,
+      "hints": [
+        "This is a related rates problem with a right triangle: relate the angle to the horizontal distance.",
+        "Let $x$ be the horizontal distance from the observer to the point below the plane, so $\\tan\\theta=5/x$. Differentiate with respect to $t$ and use the fact that $x$ is decreasing.",
+        "$\\dfrac{d}{dt}\\tan\\theta=\\sec^2\\theta\\,\\dfrac{d\\theta}{dt}$; in a right triangle $\\tan\\theta=\\dfrac{\\text{opposite}}{\\text{adjacent}}$ and $\\sec^2\\theta=1+\\tan^2\\theta$."
+      ],
+      "steps": [
+        "$\\tan\\theta=\\dfrac5x$ with $\\dfrac{dx}{dt}=-400$ (the plane is approaching).",
+        "Differentiate: $\\sec^2\\theta\\,\\dfrac{d\\theta}{dt}=-\\dfrac{5}{x^2}\\dfrac{dx}{dt}=\\dfrac{2000}{x^2}$.",
+        "At $\\theta=30^\\circ$: $x=\\dfrac{5}{\\tan30^\\circ}=5\\sqrt3$, so $x^2=75$, and $\\sec^2 30^\\circ=\\dfrac43$.",
+        "$\\dfrac43\\dfrac{d\\theta}{dt}=\\dfrac{2000}{75}$, so $\\dfrac{d\\theta}{dt}=\\dfrac{2000}{75}\\cdot\\dfrac34=20$ rad/hr."
+      ],
+      "brief": "$\\tan\\theta=5/x$, $x'=-400$: $\\frac43\\theta'=\\frac{2000}{75}$, so $\\theta'=20$ rad/hr."
+    },
+    {
+      "sec": "3.8",
+      "q": "Using Newton's method to approximate the zero of the function $f(x)=x-e^{-x}$ with initial value $x_1=0$, $x_2=$",
+      "opts": [
+        "$\\dfrac12$",
+        "$-\\dfrac12$",
+        "$0$",
+        "$-\\dfrac14$",
+        "$1$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Apply one step of Newton's method.",
+        "Compute $f'(x)$, then evaluate $f$ and $f'$ at $x_1$ and substitute into the iteration formula.",
+        "Newton's method: $x_{n+1}=x_n-\\dfrac{f(x_n)}{f'(x_n)}$."
+      ],
+      "steps": [
+        "$f'(x)=1+e^{-x}$.",
+        "$f(0)=0-1=-1$ and $f'(0)=1+1=2$.",
+        "$x_2=0-\\dfrac{-1}{2}=\\dfrac12$."
+      ],
+      "brief": "$f'=1+e^{-x}$; $x_2=0-\\frac{f(0)}{f'(0)}=0-\\frac{-1}{2}=\\frac12$."
+    },
+    {
+      "sec": "4.1",
+      "q": "Let $M$ and $m$ be the absolute Maximum and absolute Minimum, respectively, for the function $f(x)=e^x\\cos x$ on the interval $[0,\\pi]$. Then $\\dfrac{M^4}{m}=$",
+      "opts": [
+        "$\\dfrac{-1}{4}$",
+        "$\\dfrac{-e^{\\pi}}{4}$",
+        "$\\dfrac{-e^{\\pi/2}}{4}$",
+        "$\\dfrac{-1}{2}$",
+        "$\\dfrac{-e^{\\pi/4}}{4}$"
+      ],
+      "ans": 0,
+      "hints": [
+        "This is an absolute extrema problem on a closed interval.",
+        "Find the critical numbers inside $[0,\\pi]$, then evaluate $f$ at those and at both endpoints and compare.",
+        "Closed interval method: the absolute maximum and minimum of a continuous $f$ on $[a,b]$ are the largest and smallest values of $f$ at the critical numbers in $(a,b)$ and at $a$, $b$."
+      ],
+      "steps": [
+        "$f'(x)=e^x(\\cos x-\\sin x)=0$ gives $\\tan x=1$, so $x=\\dfrac\\pi4$ in $[0,\\pi]$.",
+        "Values: $f(0)=1$, $f\\left(\\tfrac\\pi4\\right)=\\dfrac{e^{\\pi/4}}{\\sqrt2}$, $f(\\pi)=-e^{\\pi}$.",
+        "Since $\\dfrac{e^{\\pi/4}}{\\sqrt2}\\approx1.55>1$, $M=\\dfrac{e^{\\pi/4}}{\\sqrt2}$ and $m=-e^{\\pi}$.",
+        "$M^4=\\dfrac{e^{\\pi}}{4}$, so $\\dfrac{M^4}{m}=\\dfrac{e^\\pi/4}{-e^\\pi}=-\\dfrac14$."
+      ],
+      "brief": "Critical point $\\frac\\pi4$: $M=\\frac{e^{\\pi/4}}{\\sqrt2}$, $m=-e^\\pi$, so $\\frac{M^4}{m}=-\\frac14$."
+    },
+    {
+      "sec": "4.1",
+      "q": "If $f(x)=x-\\dfrac32x^{2/3}$, then the number of critical numbers is",
+      "opts": [
+        "$2$",
+        "$1$",
+        "$0$",
+        "$3$",
+        "$4$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Critical numbers are where $f'$ is zero or undefined, provided $f$ is defined there.",
+        "Differentiate, combine into a single fraction, and look for zeros of the numerator and for zeros of the denominator.",
+        "$c$ is a critical number of $f$ if $c$ is in the domain of $f$ and either $f'(c)=0$ or $f'(c)$ does not exist."
+      ],
+      "steps": [
+        "$f'(x)=1-x^{-1/3}=\\dfrac{x^{1/3}-1}{x^{1/3}}$.",
+        "$f'(x)=0$ when $x^{1/3}=1$, so $x=1$.",
+        "$f'(x)$ is undefined at $x=0$, which is in the domain of $f$, so $x=0$ is also a critical number.",
+        "There are $2$ critical numbers."
+      ],
+      "brief": "$f'=\\frac{x^{1/3}-1}{x^{1/3}}$: zero at $x=1$, undefined at $x=0$ (in domain), so 2 critical numbers."
+    },
+    {
+      "sec": "4.2",
+      "q": "The value of $c$ that satisfies Rolle's Theorem when applied to $f(x)=(x-4)(x+2)^2$ on $[-2,4]$ is equal to",
+      "opts": [
+        "$2$",
+        "$0$",
+        "$-2$",
+        "$1$",
+        "$-1$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Rolle's Theorem guarantees a point where the derivative is zero.",
+        "Check $f(-2)=f(4)$, differentiate $f$ with the product rule, and solve $f'(c)=0$, keeping only solutions inside the open interval.",
+        "Rolle's Theorem: if $f$ is continuous on $[a,b]$, differentiable on $(a,b)$ and $f(a)=f(b)$, then $f'(c)=0$ for some $c$ in $(a,b)$ (an open interval, so endpoints are excluded)."
+      ],
+      "steps": [
+        "$f(-2)=0=f(4)$, and $f$ is a polynomial, so Rolle's Theorem applies.",
+        "$f'(x)=(x+2)^2+2(x-4)(x+2)=(x+2)(3x-6)=3(x+2)(x-2)$.",
+        "$f'(c)=0$ gives $c=-2$ or $c=2$.",
+        "Only $c=2$ lies in $(-2,4)$."
+      ],
+      "brief": "$f'=3(x+2)(x-2)$; $c=\\pm2$, and only $c=2$ is in $(-2,4)$."
+    },
+    {
+      "sec": "4.2",
+      "q": "The value of $c$ that satisfies the Mean Value Theorem when applied to $f(x)=\\dfrac{x}{x+1}$ on $\\left[-\\dfrac12,2\\right]$ is equal to",
+      "opts": [
+        "$-1+\\dfrac{\\sqrt6}{2}$",
+        "$-1-\\dfrac{\\sqrt6}{2}$",
+        "$-1+\\dfrac{\\sqrt3}{2}$",
+        "$-1-\\dfrac{\\sqrt3}{2}$",
+        "$\\dfrac23$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Apply the Mean Value Theorem: some $c$ has instantaneous slope equal to the average slope.",
+        "Compute the average rate of change over the interval, find $f'(x)$ with the quotient rule, and solve $f'(c)=$ that average, keeping a solution inside the open interval.",
+        "MVT: if $f$ is continuous on $[a,b]$ and differentiable on $(a,b)$, there is $c$ in $(a,b)$ with $f'(c)=\\dfrac{f(b)-f(a)}{b-a}$."
+      ],
+      "steps": [
+        "$f$ is continuous on $\\left[-\\tfrac12,2\\right]$ and differentiable on the open interval (the only trouble is at $x=-1$, outside).",
+        "$\\dfrac{f(2)-f\\left(-\\frac12\\right)}{2+\\frac12}=\\dfrac{\\frac23+1}{\\frac52}=\\dfrac23$.",
+        "$f'(x)=\\dfrac{(x+1)-x}{(x+1)^2}=\\dfrac1{(x+1)^2}$, so $\\dfrac1{(c+1)^2}=\\dfrac23$ and $(c+1)^2=\\dfrac32$.",
+        "$c=-1\\pm\\dfrac{\\sqrt6}{2}$; the root $-1-\\dfrac{\\sqrt6}2$ is below $-\\dfrac12$, outside the interval, so $c=-1+\\dfrac{\\sqrt6}{2}\\approx0.22$."
+      ],
+      "brief": "Average slope $\\frac23$; $\\frac1{(c+1)^2}=\\frac23$, $c=-1+\\frac{\\sqrt6}{2}$ (the other root is outside)."
+    }
+  ]
+}

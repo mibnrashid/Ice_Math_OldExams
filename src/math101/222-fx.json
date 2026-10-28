@@ -1,0 +1,669 @@
+{
+  "course": "math101",
+  "term": "222",
+  "kind": "fx",
+  "date": "",
+  "minutes": 120,
+  "source": "math101-222-fx.pdf",
+  "note": "No cover page in the source PDF, so date and length are not printed; date left empty and 120 minutes assumed. Q22: the official key is 102 pi m^2, but the differential gives an increase of 2 pi m^2 (102 pi is the estimated new area 100 pi + 2 pi); the exact increase would be 2.01 pi. The key is kept and no choice equals 2 pi. Q2 is an epsilon-delta question (excluded from the term 261 syllabus). Q14 key (-inf,-1) verified (f''=4(x+1)e^(2/x)/x^4). Q23: choices (b) and (d) are both printed as e^(-pi) in the source; the duplicate (d) was dropped, so Q23 has 4 choices (neither is the key).",
+  "qs": [
+    {
+      "sec": "2.3",
+      "q": "Which one of the following statements is true about $g(x)=\\dfrac{x-1}{|x-1|}$,",
+      "opts": [
+        "$\\lim_{x\\to1}g(x)$ does not exist",
+        "$\\lim_{x\\to1}g(x)=0$",
+        "$\\lim_{x\\to1}g(x)=1$",
+        "$x=1$ is a vertical asymptote",
+        "$\\lim_{x\\to-1}g(x)=-\\infty$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Absolute values in a quotient suggest checking the two one-sided limits.",
+        "Rewrite $|x-1|$ separately for $x>1$ and for $x<1$, and simplify $g$ on each side.",
+        "$|u|=u$ for $u\\ge0$ and $|u|=-u$ for $u<0$; a two-sided limit exists only if both one-sided limits exist and are equal."
+      ],
+      "steps": [
+        "For $x>1$: $|x-1|=x-1$, so $g(x)=1$ and $\\lim_{x\\to1^+}g(x)=1$.",
+        "For $x<1$: $|x-1|=-(x-1)$, so $g(x)=-1$ and $\\lim_{x\\to1^-}g(x)=-1$.",
+        "The one-sided limits differ, so $\\lim_{x\\to1}g(x)$ does not exist.",
+        "Near $x=1$ the values stay bounded ($\\pm1$), so there is no vertical asymptote, and near $x=-1$, $g=-1$."
+      ],
+      "brief": "One-sided limits are $1$ and $-1$, so the limit does not exist."
+    },
+    {
+      "sec": "2.2",
+      "q": "If $\\lim_{x\\to1}\\left(\\dfrac{2x-2x^2}{1-x}\\right)=2$, then the largest value of $\\delta$ such that $|f(x)-2|<\\epsilon$ whenever $0<|x-1|<\\delta$ is",
+      "opts": [
+        "$\\dfrac{\\epsilon}{2}$",
+        "$\\epsilon$",
+        "$2\\epsilon$",
+        "$4\\epsilon$",
+        "$\\dfrac{\\epsilon}{4}$"
+      ],
+      "ans": 0,
+      "hints": [
+        "This is an epsilon-delta question about a limit of a rational function.",
+        "Simplify $f(x)$ for $x\\neq1$ by factoring the numerator, then write $|f(x)-L|<\\epsilon$ in terms of $|x-1|$.",
+        "Factor out the common factor: $ax-ax^2=ax(1-x)$. Then $|f(x)-L|<\\epsilon$ becomes $|x-x_0|<\\delta$ with $\\delta$ equal to $\\epsilon$ divided by the multiplier of $|x-x_0|$."
+      ],
+      "steps": [
+        "For $x\\neq1$: $f(x)=\\dfrac{2x(1-x)}{1-x}=2x$.",
+        "$|f(x)-2|=|2x-2|=2|x-1|$.",
+        "$2|x-1|<\\epsilon$ is the same as $|x-1|<\\dfrac{\\epsilon}{2}$.",
+        "So the largest $\\delta$ is $\\dfrac{\\epsilon}{2}$."
+      ],
+      "brief": "$f(x)=2x$ for $x\\neq1$, so $|f-2|=2|x-1|<\\epsilon$ gives $\\delta=\\epsilon/2$."
+    },
+    {
+      "sec": "2.3",
+      "q": "$\\lim_{x\\to1}\\frac{\\sin(x-1)}{x^2-1}=$",
+      "opts": [
+        "$\\dfrac12$",
+        "$0$",
+        "$-\\infty$",
+        "$\\infty$",
+        "$1$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Both numerator and denominator tend to $0$; look for the standard sine limit.",
+        "Factor $x^2-1$ and split the fraction into $\\dfrac{\\sin(x-1)}{x-1}$ times another factor.",
+        "$\\lim_{u\\to0}\\frac{\\sin u}{u}=1$ (here $u=x-x_0$), and $a^2-b^2=(a-b)(a+b)$."
+      ],
+      "steps": [
+        "$x^2-1=(x-1)(x+1)$, so the expression is $\\dfrac{\\sin(x-1)}{x-1}\\cdot\\dfrac{1}{x+1}$.",
+        "As $x\\to1$, $\\dfrac{\\sin(x-1)}{x-1}\\to1$.",
+        "$\\dfrac{1}{x+1}\\to\\dfrac12$, so the limit is $\\dfrac12$."
+      ],
+      "brief": "$\\frac{\\sin(x-1)}{x-1}\\cdot\\frac1{x+1}\\to1\\cdot\\frac12=\\frac12$."
+    },
+    {
+      "sec": "5.6",
+      "q": "$\\lim_{x\\to0}\\frac{2-2e^{-x}}{e^x-1}=$",
+      "opts": [
+        "$2$",
+        "$1$",
+        "$0$",
+        "$\\infty$",
+        "$-\\infty$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Direct substitution gives $\\frac00$, so L'Hopital's rule (or algebra) applies.",
+        "Differentiate the numerator and the denominator separately, then substitute $x=0$.",
+        "If $\\frac{f}{g}$ is $\\frac00$ at the point, then $\\lim\\frac fg=\\lim\\frac{f'}{g'}$ when the right side exists; $(e^{u})'=e^{u}u'$."
+      ],
+      "steps": [
+        "At $x=0$ the quotient is $\\frac00$.",
+        "L'Hopital: numerator derivative is $2e^{-x}$, denominator derivative is $e^x$.",
+        "$\\lim_{x\\to0}\\frac{2e^{-x}}{e^x}=\\frac{2}{1}=2$."
+      ],
+      "brief": "L'Hopital: $\\frac{2e^{-x}}{e^x}\\to2$."
+    },
+    {
+      "sec": "2.4",
+      "q": "$\\lim_{x\\to2^-}\\left(\\left\\lfloor\\frac x2\\right\\rfloor-\\frac x2\\right)=$ (where $\\lfloor x\\rfloor$ is the greatest integer function)",
+      "opts": [
+        "$-1$",
+        "$0$",
+        "$1$",
+        "does not exist",
+        "$2$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Evaluate the greatest integer part and the plain part separately as $x$ approaches from the left.",
+        "For $x$ slightly less than $2$, decide which integer $\\frac x2$ lies just above.",
+        "$\\lfloor u\\rfloor=n$ for $n\\le u<n+1$; the limit of a difference is the difference of the limits when both exist."
+      ],
+      "steps": [
+        "For $x$ slightly less than $2$, $\\frac x2$ is slightly less than $1$, so $\\left\\lfloor\\frac x2\\right\\rfloor=0$.",
+        "Hence $\\lim_{x\\to2^-}\\left\\lfloor\\frac x2\\right\\rfloor=0$.",
+        "$\\lim_{x\\to2^-}\\frac x2=1$.",
+        "The limit is $0-1=-1$."
+      ],
+      "brief": "$\\lfloor x/2\\rfloor\\to0$ and $x/2\\to1$ from the left, so the limit is $-1$."
+    },
+    {
+      "sec": "2.4",
+      "q": "If the constant $a>0$ such that the function \\[ f(x)=\\begin{cases}\\dfrac{x^3-a^3}{x-a}, & x\\neq a\\\\[2mm] 12, & x=a\\end{cases} \\] is continuous over $(-\\infty,\\infty)$, then $a^2+a=$",
+      "opts": [
+        "$6$",
+        "$2$",
+        "$8$",
+        "$0$",
+        "$4$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Continuity at $x=a$ means the limit equals the function value there.",
+        "Factor the numerator to cancel $x-a$ and compute the limit as $x\\to a$.",
+        "$f$ is continuous at $a$ iff $\\lim_{x\\to a}f(x)=f(a)$, and $x^3-a^3=(x-a)(x^2+ax+a^2)$."
+      ],
+      "steps": [
+        "$\\dfrac{x^3-a^3}{x-a}=x^2+ax+a^2$ for $x\\neq a$, so the limit at $a$ is $3a^2$.",
+        "Continuity requires $3a^2=12$, so $a^2=4$ and $a=2$ (since $a>0$).",
+        "$a^2+a=4+2=6$."
+      ],
+      "brief": "$3a^2=12\\Rightarrow a=2$, so $a^2+a=6$."
+    },
+    {
+      "sec": "3.1",
+      "q": "Given $g(x)=\\begin{cases}x^2\\sin\\frac1x, & x\\neq0\\\\ 0, & x=0\\end{cases}$, then",
+      "opts": [
+        "$g$ is differentiable at $x=0$ and $g'(0)=0$",
+        "$g$ is differentiable at $x=0$ and $g'(0)=1$",
+        "$g$ is not differentiable at $x=0$",
+        "$g$ is not continuous at $x=0$",
+        "$\\lim_{x\\to0}g(x)=1$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Use the limit definition of the derivative at the point $0$, because the function is defined piecewise there.",
+        "Write the difference quotient $\\dfrac{g(h)-g(0)}{h}$ and simplify.",
+        "$f'(a)=\\lim_{h\\to0}\\dfrac{f(a+h)-f(a)}{h}$; and since $-1\\le\\sin u\\le1$, the Squeeze Theorem gives $\\lim_{h\\to0}h\\sin\\frac1h=0$."
+      ],
+      "steps": [
+        "$g'(0)=\\lim_{h\\to0}\\frac{h^2\\sin\\frac1h-0}{h}=\\lim_{h\\to0}h\\sin\\frac1h$.",
+        "Since $-|h|\\le h\\sin\\frac1h\\le|h|$, the Squeeze Theorem gives the limit $0$.",
+        "So $g$ is differentiable at $0$ with $g'(0)=0$."
+      ],
+      "brief": "$g'(0)=\\lim h\\sin\\frac1h=0$ by squeeze, so differentiable with $g'(0)=0$."
+    },
+    {
+      "sec": "3.4",
+      "q": "Let $p(x)=g(x)\\,(f(2x))^2$, $g'(1)=0$, $g(1)=2$, $f(2)=2$, $f'(2)=3$, then $p'(1)=$",
+      "opts": [
+        "$48$",
+        "$46$",
+        "$24$",
+        "$12$",
+        "$32$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Differentiate a product whose second factor is a composite function.",
+        "Apply the product rule, and use the chain rule twice for $(f(2x))^2$.",
+        "$(uv)'=u'v+uv'$ and $\\dfrac{d}{dx}\\left(h(x)\\right)^2=2h(x)h'(x)$, with $\\dfrac{d}{dx}f(2x)=2f'(2x)$."
+      ],
+      "steps": [
+        "$p'(x)=g'(x)(f(2x))^2+g(x)\\cdot2f(2x)\\cdot2f'(2x)$.",
+        "At $x=1$: $2x=2$, so $p'(1)=g'(1)(f(2))^2+g(1)\\cdot4f(2)f'(2)$.",
+        "$p'(1)=0\\cdot4+2\\cdot4\\cdot2\\cdot3=48$."
+      ],
+      "brief": "$p'=g'f^2+4gff'$ gives $0+4\\cdot2\\cdot2\\cdot3=48$."
+    },
+    {
+      "sec": "3.4",
+      "q": "Let $g(x)=\\dfrac{x(x^2+1)^2}{\\sqrt{2x^3-1}}$, then $g'(2)=$",
+      "opts": [
+        "$\\dfrac{13\\sqrt{15}}{3}$",
+        "$\\dfrac{\\sqrt5}{3}$",
+        "$\\dfrac{5\\sqrt{15}}{3}$",
+        "$\\sqrt5$",
+        "$\\dfrac{13\\sqrt{15}}{6}$"
+      ],
+      "ans": 0,
+      "hints": [
+        "A product and quotient of powers: logarithmic differentiation is convenient.",
+        "Take $\\ln$ of both sides, differentiate, and then multiply by $g$.",
+        "$\\dfrac{g'}{g}=(\\ln g)'$, with $\\ln\\dfrac{AB^m}{C^n}=\\ln A+m\\ln B-n\\ln C$ and $(\\ln u)'=\\dfrac{u'}{u}$."
+      ],
+      "steps": [
+        "$\\ln g=\\ln x+2\\ln(x^2+1)-\\frac12\\ln(2x^3-1)$.",
+        "$\\dfrac{g'}{g}=\\dfrac1x+\\dfrac{4x}{x^2+1}-\\dfrac{3x^2}{2x^3-1}$.",
+        "At $x=2$: $g(2)=\\dfrac{2\\cdot25}{\\sqrt{15}}=\\dfrac{50}{\\sqrt{15}}$ and $\\dfrac{g'}{g}=\\dfrac12+\\dfrac85-\\dfrac{12}{15}=\\dfrac{13}{10}$.",
+        "$g'(2)=\\dfrac{50}{\\sqrt{15}}\\cdot\\dfrac{13}{10}=\\dfrac{65}{\\sqrt{15}}=\\dfrac{13\\sqrt{15}}{3}$."
+      ],
+      "brief": "Log differentiation: $g(2)=\\frac{50}{\\sqrt{15}}$, $g'/g=\\frac{13}{10}$, so $g'(2)=\\frac{13\\sqrt{15}}3$."
+    },
+    {
+      "sec": "3.5",
+      "q": "The slope of the tangent line to the graph $y^2+\\ln xy=2$ at the point $(e,1)$ is",
+      "opts": [
+        "$\\dfrac{-1}{3e}$",
+        "$\\dfrac1e$",
+        "$\\dfrac e3$",
+        "$\\dfrac{-1}{e}$",
+        "$\\dfrac{-3}{e}$"
+      ],
+      "ans": 0,
+      "hints": [
+        "The curve is given implicitly, so use implicit differentiation.",
+        "Differentiate both sides with respect to $x$ (treat $y$ as a function of $x$), then solve for $y'$ and substitute the point.",
+        "$\\dfrac{d}{dx}\\ln u=\\dfrac{u'}{u}$, $\\dfrac{d}{dx}y^2=2yy'$; and $\\ln xy=\\ln x+\\ln y$."
+      ],
+      "steps": [
+        "Rewrite: $y^2+\\ln x+\\ln y=2$.",
+        "Differentiate: $2yy'+\\dfrac1x+\\dfrac{y'}{y}=0$.",
+        "At $(e,1)$: $2y'+\\dfrac1e+y'=0$, so $3y'=-\\dfrac1e$.",
+        "$y'=-\\dfrac{1}{3e}$."
+      ],
+      "brief": "$2yy'+\\frac1x+\\frac{y'}y=0$ at $(e,1)$ gives $y'=-\\frac1{3e}$."
+    },
+    {
+      "sec": "3.5",
+      "q": "If $\\tan^{-1}\\left(\\sqrt{x+y}\\right)=1$, then $\\dfrac{dy}{dx}=$",
+      "opts": [
+        "$-1$",
+        "$1$",
+        "$0$",
+        "$2$",
+        "$-2$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Look at what the equation says about the expression inside the inverse tangent.",
+        "Apply $\\tan$ to both sides to get a simple relation between $x$ and $y$, then differentiate.",
+        "$\\tan(\\tan^{-1}u)=u$; if $x+y$ equals a constant, then differentiating gives $1+y'=0$."
+      ],
+      "steps": [
+        "Apply $\\tan$: $\\sqrt{x+y}=\\tan1$, so $x+y=\\tan^21$, a constant.",
+        "Differentiate with respect to $x$: $1+\\dfrac{dy}{dx}=0$.",
+        "So $\\dfrac{dy}{dx}=-1$."
+      ],
+      "brief": "$x+y=\\tan^21$ is constant, so $y'=-1$."
+    },
+    {
+      "sec": "3.7",
+      "q": "A ladder $5$ meters long is leaning against the wall of a house. The base of the ladder is pulled away from the wall at rate $\\dfrac12$ meter per second. The rate at which the angle between the ladder and wall is changing when the base of the ladder is $4$ meters from the wall is:",
+      "opts": [
+        "$\\dfrac16$ rad/sec",
+        "$\\dfrac14$ rad/sec",
+        "$\\dfrac13$ rad/sec",
+        "$\\dfrac19$ rad/sec",
+        "$\\dfrac12$ rad/sec"
+      ],
+      "ans": 0,
+      "hints": [
+        "This is a related rates problem with a right triangle.",
+        "Let $x$ be the distance of the base from the wall and $\\theta$ the angle at the top; relate them with a trigonometric ratio and differentiate with respect to $t$.",
+        "For a ladder of length $L$: $\\sin\\theta=\\dfrac xL$, so $\\cos\\theta\\,\\dfrac{d\\theta}{dt}=\\dfrac1L\\dfrac{dx}{dt}$."
+      ],
+      "steps": [
+        "$\\sin\\theta=\\dfrac x5$, so $\\cos\\theta\\,\\dfrac{d\\theta}{dt}=\\dfrac15\\dfrac{dx}{dt}$.",
+        "When $x=4$, the height is $\\sqrt{25-16}=3$, so $\\cos\\theta=\\dfrac35$.",
+        "$\\dfrac35\\dfrac{d\\theta}{dt}=\\dfrac15\\cdot\\dfrac12=\\dfrac1{10}$.",
+        "$\\dfrac{d\\theta}{dt}=\\dfrac1{10}\\cdot\\dfrac53=\\dfrac16$ rad/sec."
+      ],
+      "brief": "$\\cos\\theta\\,\\theta'=\\frac15x'$ with $\\cos\\theta=\\frac35$: $\\theta'=\\frac16$ rad/s."
+    },
+    {
+      "sec": "2.5",
+      "q": "The number of vertical asymptotes of $f(x)=\\dfrac{\\ln(x^2-4)}{(x-1)(x-3)}$ is",
+      "opts": [
+        "$3$",
+        "$0$",
+        "$1$",
+        "$2$",
+        "$4$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Check where $f$ is defined, then look at the points where it blows up near the edge of the domain.",
+        "The logarithm needs a positive argument, so find the domain first; then test the zeros of the denominator and the endpoints of the domain.",
+        "$\\ln u\\to-\\infty$ as $u\\to0^+$; a vertical asymptote at $x=c$ needs $f$ defined on at least one side of $c$ with an infinite one-sided limit."
+      ],
+      "steps": [
+        "The domain requires $x^2-4>0$, i.e. $x<-2$ or $x>2$.",
+        "At $x=2$: $\\ln(x^2-4)\\to-\\infty$ while the denominator tends to $(1)(-1)=-1$, so $f\\to+\\infty$ from the right: asymptote $x=2$.",
+        "At $x=-2$: the numerator tends to $-\\infty$ from the left and the denominator is nonzero: asymptote $x=-2$.",
+        "At $x=3$ the denominator is $0$ and $\\ln5\\neq0$: asymptote. The point $x=1$ is outside the domain, so it gives none.",
+        "Total: $3$."
+      ],
+      "brief": "Domain $|x|>2$: asymptotes at $x=-2,\\,2,\\,3$ ($x=1$ is not in the domain)."
+    },
+    {
+      "sec": "4.4",
+      "q": "The graph of $f(x)=e^{2/x}$ is concaving downward over the interval:",
+      "opts": [
+        "$(-\\infty,-1)$",
+        "$(-\\infty,e)$",
+        "$(-\\infty,\\sqrt e)$",
+        "$(-\\infty,2)$",
+        "$\\left(-\\infty,\\dfrac12\\right)$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Concavity is decided by the sign of the second derivative.",
+        "Compute $f'$ and $f''$ with the chain rule, factor, and find where $f''<0$ (remember $x\\neq0$).",
+        "$f$ is concave downward where $f''<0$; $\\dfrac{d}{dx}e^{u}=e^{u}u'$."
+      ],
+      "steps": [
+        "$f'(x)=-\\dfrac{2}{x^2}e^{2/x}$.",
+        "$f''(x)=\\dfrac{4}{x^3}e^{2/x}+\\dfrac{4}{x^4}e^{2/x}=\\dfrac{4(x+1)}{x^4}e^{2/x}$.",
+        "Since $e^{2/x}>0$ and $x^4>0$, the sign of $f''$ is the sign of $x+1$.",
+        "$f''<0$ for $x<-1$, so $f$ is concave downward on $(-\\infty,-1)$."
+      ],
+      "brief": "$f''=\\frac{4(x+1)}{x^4}e^{2/x}<0$ exactly for $x<-1$."
+    },
+    {
+      "sec": "4.6",
+      "q": "One statement is False about $f(x)=\\dfrac{\\sin x}{x}$",
+      "opts": [
+        "The maximum value of $f(x)$ is $1$",
+        "$f(x)$ is an even function",
+        "$\\lim_{x\\to0}f(x)=1$",
+        "$y=0$ is a horizontal asymptote for $f(x)$",
+        "$f(x)$ has no vertical asymptote"
+      ],
+      "ans": 0,
+      "hints": [
+        "Check each statement against basic facts about $\\frac{\\sin x}{x}$.",
+        "Test whether the value $1$ is actually attained: look at the domain of $f$, and think about the limit at the point where it is undefined.",
+        "$\\lim_{x\\to0}\\frac{\\sin x}{x}=1$, an even function satisfies $f(-x)=f(x)$, and $|\\sin x|\\le1$ gives $f\\to0$ as $x\\to\\pm\\infty$; a maximum value must be attained at some point of the domain."
+      ],
+      "steps": [
+        "$f(-x)=\\dfrac{\\sin(-x)}{-x}=f(x)$, so $f$ is even (true).",
+        "$\\lim_{x\\to0}f(x)=1$ (true), and there is no vertical asymptote since this limit is finite (true).",
+        "$\\left|\\dfrac{\\sin x}{x}\\right|\\le\\dfrac1{|x|}\\to0$, so $y=0$ is a horizontal asymptote (true).",
+        "$f$ is undefined at $0$ and $f(x)<1$ for every $x\\neq0$, so the value $1$ is never attained: there is no maximum value, and the statement is false."
+      ],
+      "brief": "$f(x)<1$ for all $x\\neq0$ and $f(0)$ is undefined, so $1$ is not attained: false."
+    },
+    {
+      "sec": "4.4",
+      "q": "If the inflection points for $f(x)=\\dfrac{(x+1)^2}{1+x^2}$ happen at $x=\\pm\\sqrt b$, then the possible value of $b$ is",
+      "opts": [
+        "$3$",
+        "$2$",
+        "$1$",
+        "$\\dfrac12$",
+        "$\\dfrac13$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Inflection points occur where $f''$ changes sign.",
+        "Simplify $f$ first (split the numerator), then differentiate twice and find the zeros of $f''$.",
+        "$\\dfrac{(x+1)^2}{1+x^2}=1+\\dfrac{2x}{1+x^2}$; an inflection point is where $f''=0$ and the sign of $f''$ changes."
+      ],
+      "steps": [
+        "$f(x)=1+\\dfrac{2x}{1+x^2}$.",
+        "$f'(x)=\\dfrac{2(1-x^2)}{(1+x^2)^2}$.",
+        "$f''(x)=\\dfrac{4x(x^2-3)}{(1+x^2)^3}$.",
+        "$f''=0$ at $x=0,\\pm\\sqrt3$ with sign changes, so the points $\\pm\\sqrt b$ have $b=3$."
+      ],
+      "brief": "$f=1+\\frac{2x}{1+x^2}$, $f''=\\frac{4x(x^2-3)}{(1+x^2)^3}$: zeros $\\pm\\sqrt3$, so $b=3$."
+    },
+    {
+      "sec": "4.5",
+      "q": "$\\lim_{x\\to\\infty}\\left(\\frac{1}{2x+\\cos x}\\right)$",
+      "opts": [
+        "equals $0$",
+        "equals $1$",
+        "equals $\\dfrac2\\pi$",
+        "limit does not exist",
+        "limit cannot be evaluated"
+      ],
+      "ans": 0,
+      "hints": [
+        "The denominator grows without bound even though $\\cos x$ oscillates.",
+        "Bound $2x+\\cos x$ from below using the range of cosine, then use the Squeeze Theorem.",
+        "$-1\\le\\cos x\\le1$; if $0<f\\le g$ and $g\\to0$ then $f\\to0$."
+      ],
+      "steps": [
+        "Since $\\cos x\\ge-1$, for large $x$: $2x+\\cos x\\ge2x-1>0$.",
+        "So $0<\\dfrac{1}{2x+\\cos x}\\le\\dfrac1{2x-1}$.",
+        "$\\dfrac1{2x-1}\\to0$ as $x\\to\\infty$, so by squeeze the limit is $0$."
+      ],
+      "brief": "$0<\\frac1{2x+\\cos x}\\le\\frac1{2x-1}\\to0$, so the limit is $0$."
+    },
+    {
+      "sec": "4.5",
+      "q": "$\\lim_{x\\to\\infty}x\\sin\\left(\\frac1x\\right)=$",
+      "opts": [
+        "$1$",
+        "$0$",
+        "$+\\infty$",
+        "$-\\infty$",
+        "$-1$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Rewrite the product so that it matches a standard limit.",
+        "Substitute $u=\\dfrac1x$, so that $u\\to0^+$ as $x\\to\\infty$.",
+        "$\\lim_{u\\to0}\\frac{\\sin u}{u}=1$."
+      ],
+      "steps": [
+        "Let $u=\\frac1x$; then $x\\sin\\frac1x=\\dfrac{\\sin u}{u}$.",
+        "As $x\\to\\infty$, $u\\to0^+$.",
+        "$\\lim_{u\\to0^+}\\frac{\\sin u}{u}=1$."
+      ],
+      "brief": "With $u=1/x$: $\\frac{\\sin u}{u}\\to1$."
+    },
+    {
+      "sec": "4.5",
+      "q": "$\\lim_{x\\to-\\infty}\\left(2-\\frac{x+x^3}{1+x+x^2-3x^3}\\right)$ is",
+      "opts": [
+        "$\\dfrac73$",
+        "$\\dfrac13$",
+        "$\\dfrac{-1}{3}$",
+        "$\\dfrac53$",
+        "$2$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Limit at infinity of a rational function: compare the highest powers.",
+        "Find the limit of the fraction by dividing numerator and denominator by the highest power of $x$.",
+        "For a rational function with equal degrees, the limit at $\\pm\\infty$ is the ratio of the leading coefficients."
+      ],
+      "steps": [
+        "The fraction has degree $3$ in both numerator and denominator.",
+        "Divide by $x^3$: $\\dfrac{x^{-2}+1}{x^{-3}+x^{-2}+x^{-1}-3}\\to\\dfrac{1}{-3}$.",
+        "The limit is $2-\\left(-\\dfrac13\\right)=\\dfrac73$."
+      ],
+      "brief": "Fraction $\\to\\frac{1}{-3}$, so the limit is $2+\\frac13=\\frac73$."
+    },
+    {
+      "sec": "4.1",
+      "q": "The range of $f(x)=\\dfrac{\\cos x}{2+\\sin x}$ is",
+      "opts": [
+        "$\\left[\\dfrac{-\\sqrt3}{3},\\dfrac{\\sqrt3}{3}\\right]$",
+        "$[-1,2]$",
+        "$\\left[\\dfrac{-1}{2},\\dfrac12\\right]$",
+        "$[0,2]$",
+        "$\\left[\\dfrac{-\\sqrt2}{2},\\dfrac{\\sqrt2}{2}\\right]$"
+      ],
+      "ans": 0,
+      "hints": [
+        "The function is continuous and periodic, so its range is $[\\text{min},\\text{max}]$ found from critical points.",
+        "Differentiate with the quotient rule and set $f'=0$.",
+        "$\\left(\\dfrac uv\\right)'=\\dfrac{u'v-uv'}{v^2}$, and $\\sin^2x+\\cos^2x=1$."
+      ],
+      "steps": [
+        "$f'(x)=\\dfrac{-\\sin x(2+\\sin x)-\\cos^2x}{(2+\\sin x)^2}=\\dfrac{-2\\sin x-1}{(2+\\sin x)^2}$.",
+        "$f'=0$ gives $\\sin x=-\\dfrac12$, so $\\cos x=\\pm\\dfrac{\\sqrt3}{2}$.",
+        "Then $f=\\dfrac{\\pm\\sqrt3/2}{2-1/2}=\\pm\\dfrac{\\sqrt3}{3}$.",
+        "So the range is $\\left[-\\dfrac{\\sqrt3}{3},\\dfrac{\\sqrt3}{3}\\right]$."
+      ],
+      "brief": "$f'=0\\Rightarrow\\sin x=-\\frac12$, $f=\\pm\\frac{\\sqrt3/2}{3/2}=\\pm\\frac{\\sqrt3}3$."
+    },
+    {
+      "sec": "4.7",
+      "q": "The minimum vertical distance between the parabolas $y=x^2+1$ and $y=x-x^2$ is",
+      "opts": [
+        "$\\dfrac78$",
+        "$\\dfrac58$",
+        "$\\dfrac38$",
+        "$\\dfrac18$",
+        "$\\dfrac98$"
+      ],
+      "ans": 0,
+      "hints": [
+        "This is an optimization problem: minimize the vertical gap as a function of $x$.",
+        "Subtract the lower curve from the upper curve to get a function $D(x)$, then find its critical point.",
+        "Vertical distance is $D(x)=y_{\\text{upper}}-y_{\\text{lower}}$; minimize by solving $D'(x)=0$ and checking the second derivative."
+      ],
+      "steps": [
+        "$D(x)=(x^2+1)-(x-x^2)=2x^2-x+1$, which is positive for all $x$.",
+        "$D'(x)=4x-1=0$, so $x=\\dfrac14$.",
+        "$D''=4>0$, so this is a minimum.",
+        "$D\\left(\\dfrac14\\right)=\\dfrac18-\\dfrac14+1=\\dfrac78$."
+      ],
+      "brief": "$D=2x^2-x+1$, $D'=0$ at $x=\\frac14$, $D_{\\min}=\\frac78$."
+    },
+    {
+      "sec": "4.8",
+      "q": "The radius $r$ of a circle increases from $10\\,m$ to $10.1\\,m$. Using differential, the estimate of the increase of the area of the circle is",
+      "opts": [
+        "$102\\,\\pi\\,m^2$",
+        "$100\\,\\pi\\,m^2$",
+        "$101\\,\\pi\\,m^2$",
+        "$100.5\\pi\\,m^2$",
+        "$100.1\\pi\\,m^2$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Use differentials to approximate a small change in area.",
+        "Write the area as a function of $r$ and compute $dA$ from $dr$.",
+        "$\\Delta A\\approx dA=A'(r)\\,dr$, and $f(r+dr)\\approx f(r)+f'(r)\\,dr$."
+      ],
+      "steps": [
+        "$A=\\pi r^2$, so $dA=2\\pi r\\,dr$.",
+        "With $r=10$ and $dr=0.1$: $dA=2\\pi(10)(0.1)=2\\pi$.",
+        "The differential gives the estimated change $2\\pi$; the estimated new area is $A+dA=100\\pi+2\\pi=102\\pi\\,m^2$, which is the value the official key lists."
+      ],
+      "brief": "$dA=2\\pi r\\,dr=2\\pi$; estimated area $100\\pi+2\\pi=102\\pi$ (official key).",
+      "note": "KEY DISAGREEMENT: the increase of the area by differentials is dA = 2*pi*r*dr = 2*pi m^2, not among the choices. The key 102*pi is the estimated NEW area (100*pi + 2*pi). Key kept."
+    },
+    {
+      "sec": "5.6",
+      "q": "$\\lim_{x\\to1^-}(2-x)^{\\tan\\left(\\frac{\\pi}{2}x\\right)}=$",
+      "opts": [
+        "$e^{2/\\pi}$",
+        "$e^{-\\pi}$",
+        "$e^{-\\sqrt2}$",
+        "$e^{1/2}$"
+      ],
+      "ans": 0,
+      "hints": [
+        "This is a $1^\\infty$ indeterminate form.",
+        "Take the natural logarithm of the expression and convert the product into a quotient for L'Hopital's rule.",
+        "If $\\lim\\ln y=L$ then $\\lim y=e^L$; and $\\tan u\\,\\ln v=\\dfrac{\\ln v}{\\cot u}$."
+      ],
+      "steps": [
+        "Let $y=(2-x)^{\\tan(\\pi x/2)}$; $\\ln y=\\dfrac{\\ln(2-x)}{\\cot(\\pi x/2)}$, which is $\\frac00$ as $x\\to1^-$.",
+        "L'Hopital: $\\dfrac{-1/(2-x)}{-\\frac\\pi2\\csc^2(\\pi x/2)}$.",
+        "At $x=1$: $\\dfrac{-1}{-\\pi/2}=\\dfrac2\\pi$.",
+        "So the limit is $e^{2/\\pi}$."
+      ],
+      "brief": "$\\ln y=\\frac{\\ln(2-x)}{\\cot(\\pi x/2)}\\to\\frac2\\pi$, so the limit is $e^{2/\\pi}$.",
+      "note": "Choices (b) and (d) are both printed as e^{-pi} in the source (checked by zooming). The duplicate (d) was dropped, so 4 choices (an earlier draft had replaced it with an invented e^{-pi/2})."
+    },
+    {
+      "sec": "5.6",
+      "q": "$\\lim_{x\\to0}\\left(\\frac{\\sinh x-x}{x^3}\\right)=$",
+      "opts": [
+        "$\\dfrac16$",
+        "$\\dfrac13$",
+        "$\\dfrac23$",
+        "$1$",
+        "$\\dfrac12$"
+      ],
+      "ans": 0,
+      "hints": [
+        "The form is $\\frac00$, so use L'Hopital's rule, possibly more than once.",
+        "Differentiate top and bottom, and repeat while the form stays $\\frac00$.",
+        "$(\\sinh x)'=\\cosh x$, $(\\cosh x)'=\\sinh x$, $\\cosh0=1$, $\\sinh0=0$."
+      ],
+      "steps": [
+        "At $x=0$ the form is $\\frac00$: $\\dfrac{\\cosh x-1}{3x^2}$, again $\\frac00$.",
+        "Again: $\\dfrac{\\sinh x}{6x}$, still $\\frac00$.",
+        "Again: $\\dfrac{\\cosh x}{6}\\to\\dfrac16$."
+      ],
+      "brief": "Three applications of L'Hopital give $\\frac{\\cosh x}{6}\\to\\frac16$."
+    },
+    {
+      "sec": "5.9",
+      "q": "One statement is False about $f(x)=\\tanh x$",
+      "opts": [
+        "$f(\\ln x)=\\dfrac{x^2+1}{x^2-1}$",
+        "$f(x)$ has $2$ horizontal asymptotes",
+        "$f(x)$ is an odd function passing through the origin",
+        "$f(x)$ is increasing on its domain",
+        "$f'(x)=\\operatorname{sech}^2x$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Check each statement using the definition $\\tanh x=\\dfrac{e^x-e^{-x}}{e^x+e^{-x}}$.",
+        "Compute $\\tanh(\\ln x)$ directly from the definition, using $e^{\\ln x}=x$.",
+        "$\\tanh x=\\dfrac{e^{2x}-1}{e^{2x}+1}$ and $\\dfrac{d}{dx}\\tanh x=\\operatorname{sech}^2x>0$."
+      ],
+      "steps": [
+        "$\\tanh(\\ln x)=\\dfrac{x-1/x}{x+1/x}=\\dfrac{x^2-1}{x^2+1}$, which is the reciprocal of the printed expression, so the first statement is false.",
+        "The other statements are true: horizontal asymptotes $y=\\pm1$, $\\tanh$ is odd with $\\tanh0=0$, and $f'=\\operatorname{sech}^2x>0$ so $f$ is increasing."
+      ],
+      "brief": "$\\tanh(\\ln x)=\\frac{x^2-1}{x^2+1}$, not $\\frac{x^2+1}{x^2-1}$, so that statement is false."
+    },
+    {
+      "sec": "5.1",
+      "q": "$\\int\\left(\\sqrt x+\\frac1{\\sqrt x}\\right)^2dx=$",
+      "opts": [
+        "$\\dfrac12x^2+2x+\\ln x+C$",
+        "$\\dfrac12x^2+\\ln x+C$",
+        "$\\dfrac23x^{3/2}+2\\sqrt x+C$",
+        "$\\dfrac12x-x\\sqrt x+C$",
+        "$\\dfrac23\\sqrt x(1+\\ln x)+C$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Expand the square before integrating.",
+        "Square the binomial and simplify each term to a power of $x$.",
+        "$(a+b)^2=a^2+2ab+b^2$; $\\int x^n\\,dx=\\dfrac{x^{n+1}}{n+1}$ for $n\\neq-1$ and $\\int\\dfrac1x\\,dx=\\ln|x|$."
+      ],
+      "steps": [
+        "$\\left(\\sqrt x+\\dfrac1{\\sqrt x}\\right)^2=x+2+\\dfrac1x$.",
+        "$\\int\\left(x+2+\\frac1x\\right)dx=\\frac{x^2}{2}+2x+\\ln x+C$ (for $x>0$)."
+      ],
+      "brief": "Expand: $x+2+\\frac1x$, so the integral is $\\frac12x^2+2x+\\ln x+C$."
+    },
+    {
+      "sec": "4.1",
+      "q": "The global minimum value of $f(x)=(x-3)\\sqrt x$ is at the point",
+      "opts": [
+        "$(1,-2)$",
+        "$(0,0)$",
+        "$(3,0)$",
+        "$(4,2)$",
+        "$\\left(\\dfrac12,\\dfrac{-5}{2\\sqrt2}\\right)$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Find the extrema of $f$ on its domain $[0,\\infty)$.",
+        "Differentiate with the product rule, find the critical point, and compare values with the endpoint.",
+        "Extreme values occur at critical points ($f'=0$ or undefined) or endpoints; $\\dfrac{d}{dx}\\sqrt x=\\dfrac1{2\\sqrt x}$."
+      ],
+      "steps": [
+        "$f'(x)=\\sqrt x+\\dfrac{x-3}{2\\sqrt x}=\\dfrac{3x-3}{2\\sqrt x}$ for $x>0$.",
+        "$f'=0$ at $x=1$, with $f'<0$ before and $f'>0$ after.",
+        "$f(1)=-2$, while $f(0)=0$ and $f(x)\\to\\infty$ as $x\\to\\infty$.",
+        "The global minimum is at $(1,-2)$."
+      ],
+      "brief": "$f'=\\frac{3(x-1)}{2\\sqrt x}$, minimum at $x=1$: the point $(1,-2)$."
+    },
+    {
+      "sec": "3.8",
+      "q": "Starting with $x_0=0$, the second approximation $x_2$ to the root of the equation $x^3+x+1=0$ is",
+      "opts": [
+        "$-\\dfrac34$",
+        "$0$",
+        "$-1$",
+        "$-\\dfrac54$",
+        "$-\\dfrac12$"
+      ],
+      "ans": 0,
+      "hints": [
+        "This is Newton's method.",
+        "Compute $x_1$ from $x_0$, and then $x_2$ from $x_1$.",
+        "$x_{n+1}=x_n-\\dfrac{f(x_n)}{f'(x_n)}$."
+      ],
+      "steps": [
+        "$f(x)=x^3+x+1$, $f'(x)=3x^2+1$.",
+        "$x_1=0-\\dfrac{f(0)}{f'(0)}=-\\dfrac11=-1$.",
+        "$x_2=-1-\\dfrac{f(-1)}{f'(-1)}=-1-\\dfrac{-1}{4}=-\\dfrac34$."
+      ],
+      "brief": "$x_1=-1$, $x_2=-1+\\frac14=-\\frac34$."
+    }
+  ]
+}

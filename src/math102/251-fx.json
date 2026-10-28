@@ -1,0 +1,485 @@
+{
+  "course": "math102",
+  "term": "251",
+  "kind": "fx",
+  "date": "22 December 2025",
+  "minutes": 120,
+  "source": "math102-251-fx.pdf",
+  "qs": [
+    {
+      "sec": "8.8",
+      "q": "Consider the improper integral \\[ \\int_4^\\infty \\frac{dx}{x(\\ln x)^3}. \\] It",
+      "opts": [
+        "converges to $\\dfrac{1}{2(\\ln 4)^2}$",
+        "diverges",
+        "converges to $\\dfrac{1}{(\\ln 4)^2}$",
+        "converges to $\\dfrac{2}{(\\ln 4)^2}$",
+        "converges to $\\dfrac{1}{2(\\ln 2)^2}$"
+      ],
+      "ans": 0,
+      "hints": [
+        "This is an improper integral with an infinite upper limit, and the integrand has a logarithm-derivative pattern.",
+        "Replace the upper limit by $b$, substitute $u=\\ln x$, and then let $b\\to\\infty$.",
+        "$\\int_a^\\infty f\\,dx=\\lim_{b\\to\\infty}\\int_a^b f\\,dx$, and $\\int u^{-p}\\,du=\\dfrac{u^{1-p}}{1-p}$ for $p\\neq1$."
+      ],
+      "steps": [
+        "Write the integral as $\\lim_{b\\to\\infty}\\int_4^b \\dfrac{dx}{x(\\ln x)^3}$.",
+        "Let $u=\\ln x$, $du=\\dfrac{dx}{x}$: the integral becomes $\\int_{\\ln 4}^{\\ln b} u^{-3}\\,du$.",
+        "$\\int u^{-3}\\,du=-\\dfrac{1}{2u^2}$, so the value is $\\dfrac{1}{2(\\ln 4)^2}-\\dfrac{1}{2(\\ln b)^2}$.",
+        "As $b\\to\\infty$, $\\dfrac{1}{2(\\ln b)^2}\\to0$, so the integral converges to $\\dfrac{1}{2(\\ln 4)^2}$."
+      ],
+      "brief": "$u=\\ln x$: $\\left[-\\frac{1}{2u^2}\\right]_{\\ln 4}^{\\infty}=\\frac{1}{2(\\ln 4)^2}$."
+    },
+    {
+      "sec": "8.8",
+      "q": "Consider the improper integral \\[ \\int_0^8 \\frac{3}{\\sqrt{8-x}}\\,dx. \\] It",
+      "opts": [
+        "converges to $12\\sqrt2$",
+        "diverges",
+        "converges to $6\\sqrt2$",
+        "converges to $4\\sqrt2$",
+        "converges to $\\sqrt2$"
+      ],
+      "ans": 0,
+      "hints": [
+        "The integrand is unbounded at the upper endpoint, so this is an improper integral with an infinite discontinuity.",
+        "Replace the upper limit $8$ by $b$, find an antiderivative with the substitution $u=8-x$, and let $b\\to8^-$.",
+        "If $f$ is unbounded at $b$, then $\\int_a^b f\\,dx=\\lim_{c\\to b^-}\\int_a^c f\\,dx$; also $\\int u^{-1/2}\\,du=2u^{1/2}$."
+      ],
+      "steps": [
+        "$\\int_0^8 \\dfrac{3}{\\sqrt{8-x}}dx=\\lim_{b\\to8^-}\\int_0^b 3(8-x)^{-1/2}dx$.",
+        "An antiderivative is $-6\\sqrt{8-x}$.",
+        "Evaluate: $-6\\sqrt{8-b}+6\\sqrt8$.",
+        "As $b\\to8^-$ this tends to $6\\sqrt8=12\\sqrt2$, so the integral converges to $12\\sqrt2$."
+      ],
+      "brief": "Antiderivative $-6\\sqrt{8-x}$, limit gives $6\\sqrt8=12\\sqrt2$."
+    },
+    {
+      "sec": "9.1",
+      "q": "The sequence whose $n$th term is $a_n=\\dfrac{\\ln(n^3)}{2n}$ converges to",
+      "opts": [
+        "$0$",
+        "$\\dfrac32$",
+        "$3$",
+        "$\\dfrac23$",
+        "$2$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Compare how fast a logarithm and a linear function grow.",
+        "Simplify $\\ln(n^3)$ with a logarithm law, then take the limit of the resulting ratio (L'Hopital's rule applies to the continuous version).",
+        "$\\ln(n^k)=k\\ln n$, and $\\lim_{x\\to\\infty}\\dfrac{\\ln x}{x}=0$ (for example by L'Hopital: $\\dfrac{1/x}{1}\\to0$)."
+      ],
+      "steps": [
+        "$\\ln(n^3)=3\\ln n$, so $a_n=\\dfrac{3\\ln n}{2n}$.",
+        "Apply L'Hopital to $\\dfrac{3\\ln x}{2x}$: $\\lim\\dfrac{3/x}{2}=\\lim\\dfrac{3}{2x}$.",
+        "This limit is $0$, so $a_n\\to0$."
+      ],
+      "brief": "$a_n=\\frac{3\\ln n}{2n}\\to0$ (L'Hopital)."
+    },
+    {
+      "sec": "9.2",
+      "q": "Evaluate \\[ \\sum_{n=1}^{\\infty}5\\left(\\frac23\\right)^n+\\sum_{n=1}^{\\infty}\\frac{4}{n(n+2)}. \\]",
+      "opts": [
+        "$13$",
+        "$14$",
+        "$15$",
+        "$16$",
+        "$18$"
+      ],
+      "ans": 0,
+      "hints": [
+        "The first series is geometric and the second one telescopes after partial fractions.",
+        "For the first series find the first term and the ratio; for the second write $\\dfrac{4}{n(n+2)}$ as a difference of two fractions and list the first few partial sums.",
+        "A geometric series $\\sum_{n=1}^\\infty ar^{n-1}$ with $|r|<1$ has sum $\\dfrac{a}{1-r}$; and $\\dfrac{1}{n(n+k)}=\\dfrac1k\\left(\\dfrac1n-\\dfrac1{n+k}\\right)$."
+      ],
+      "steps": [
+        "Geometric: first term $5\\cdot\\frac23=\\frac{10}{3}$, ratio $\\frac23$, sum $=\\dfrac{10/3}{1/3}=10$.",
+        "$\\dfrac{4}{n(n+2)}=2\\left(\\dfrac1n-\\dfrac1{n+2}\\right)$.",
+        "Partial sums: $S_N=2\\left(1+\\frac12-\\frac1{N+1}-\\frac1{N+2}\\right)\\to2\\cdot\\frac32=3$.",
+        "Total $=10+3=13$."
+      ],
+      "brief": "Geometric sum $=10$; telescoping sum $=2(1+\\frac12)=3$; total $13$."
+    },
+    {
+      "sec": "9.3",
+      "q": "Which one of the following series is/are convergent? \\[ \\text{(I)}\\ \\sum_{n=1}^\\infty\\frac{\\arctan n}{n^2+1}\\qquad \\text{(II)}\\ \\sum_{n=1}^\\infty 3^{-n}\\qquad \\text{(III)}\\ \\sum_{n=1}^\\infty\\frac{1}{n^{1.03}} \\]",
+      "opts": [
+        "I, II and III",
+        "I and II only",
+        "I and III only",
+        "II and III only",
+        "III only"
+      ],
+      "ans": 0,
+      "hints": [
+        "Compare each series with a geometric series or a $p$-series.",
+        "For (I) bound the numerator; for (II) rewrite $3^{-n}$ as a power of a ratio; for (III) look at the exponent of $n$.",
+        "A $p$-series $\\sum\\dfrac1{n^p}$ converges iff $p>1$; a geometric series $\\sum r^n$ converges iff $|r|<1$; if $0\\le a_n\\le b_n$ and $\\sum b_n$ converges, so does $\\sum a_n$."
+      ],
+      "steps": [
+        "(I) $0<\\arctan n<\\dfrac\\pi2$, so $\\dfrac{\\arctan n}{n^2+1}<\\dfrac{\\pi/2}{n^2}$, and $\\sum\\dfrac1{n^2}$ converges: converges.",
+        "(II) $3^{-n}=\\left(\\frac13\\right)^n$ is geometric with $|r|<1$: converges.",
+        "(III) $p$-series with $p=1.03>1$: converges.",
+        "All three converge."
+      ],
+      "brief": "(I) compare with $\\sum\\frac{1}{n^2}$; (II) geometric $r=\\frac13$; (III) $p=1.03>1$: all converge."
+    },
+    {
+      "sec": "9.4",
+      "q": "Which one of the following series is/are divergent? \\[ \\text{(I)}\\ \\sum_{n=1}^\\infty\\frac{2+\\cos n}{\\sqrt n}\\qquad \\text{(II)}\\ \\sum_{n=1}^\\infty\\frac{1}{n\\sqrt{n^2+1}}\\qquad \\text{(III)}\\ \\sum_{n=1}^\\infty\\frac{n^k-1}{n^k+1},\\ k>2 \\]",
+      "opts": [
+        "I and III only",
+        "I and II only",
+        "II and III only",
+        "II only",
+        "I only"
+      ],
+      "ans": 0,
+      "hints": [
+        "Use comparison tests for (I) and (II), and think about what the terms do as $n\\to\\infty$ in (III).",
+        "For (I) bound $2+\\cos n$ from below; for (II) compare with a $p$-series; for (III) compute $\\lim a_n$.",
+        "Direct comparison: if $0\\le b_n\\le a_n$ and $\\sum b_n$ diverges then $\\sum a_n$ diverges; if $a_n\\not\\to0$ then $\\sum a_n$ diverges; $\\sum n^{-p}$ converges iff $p>1$."
+      ],
+      "steps": [
+        "(I) $2+\\cos n\\ge1$, so $\\dfrac{2+\\cos n}{\\sqrt n}\\ge\\dfrac1{\\sqrt n}$, a divergent $p$-series ($p=\\frac12$): diverges.",
+        "(II) $\\dfrac1{n\\sqrt{n^2+1}}<\\dfrac1{n^2}$, and $\\sum\\dfrac1{n^2}$ converges: converges.",
+        "(III) For $k>2$, $\\dfrac{n^k-1}{n^k+1}\\to1\\neq0$, so the series diverges by the $n$th-term test.",
+        "The divergent series are I and III."
+      ],
+      "brief": "(I) $\\ge\\sum n^{-1/2}$ diverges; (II) $<\\sum n^{-2}$ converges; (III) terms $\\to1$ diverges."
+    },
+    {
+      "sec": "9.5",
+      "q": "The least number of terms required to approximate the sum of the series $\\sum_{n=1}^\\infty\\frac{(-1)^n}{n!}$ with an error of less than $0.01$ is (Hint: use the Remainder Theorem.)",
+      "opts": [
+        "$4$",
+        "$6$",
+        "$2$",
+        "$8$",
+        "$10$"
+      ],
+      "ans": 0,
+      "hints": [
+        "This is an alternating series, so use the alternating series remainder estimate.",
+        "The error after $N$ terms is at most the size of the first omitted term; find the smallest $N$ with that term below $0.01$.",
+        "For a convergent alternating series with decreasing terms, $|S-S_N|\\le a_{N+1}$, where $a_{N+1}$ is the first omitted term."
+      ],
+      "steps": [
+        "Terms $\\dfrac1{n!}$ decrease to $0$, so $|R_N|\\le a_{N+1}=\\dfrac{1}{(N+1)!}$.",
+        "Need $\\dfrac1{(N+1)!}<0.01$, i.e. $(N+1)!>100$.",
+        "$4!=24<100$ and $5!=120>100$, so $N+1=5$ and $N=4$.",
+        "Four terms are needed."
+      ],
+      "brief": "$|R_N|\\le\\frac{1}{(N+1)!}<0.01\\Rightarrow(N+1)!>100\\Rightarrow N=4$."
+    },
+    {
+      "sec": "9.5",
+      "q": "The series $\\sum_{n=0}^\\infty\\frac{(-1)^n}{\\sqrt{n+4}}$",
+      "opts": [
+        "converges conditionally",
+        "diverges",
+        "converges absolutely",
+        "diverges by the Alternating Series Test",
+        "converges by the Integral Test"
+      ],
+      "ans": 0,
+      "hints": [
+        "It is an alternating series; check convergence of the series and of the series of absolute values separately.",
+        "Apply the Alternating Series Test to $a_n=\\dfrac1{\\sqrt{n+4}}$, then test $\\sum a_n$ by comparison with a $p$-series.",
+        "Alternating Series Test: $a_n\\ge a_{n+1}>0$ and $a_n\\to0$ imply $\\sum(-1)^na_n$ converges. $\\sum n^{-p}$ diverges for $p\\le1$. A series converging only because of the signs converges conditionally."
+      ],
+      "steps": [
+        "$a_n=\\dfrac1{\\sqrt{n+4}}$ is positive, decreasing and tends to $0$, so the series converges.",
+        "The absolute series $\\sum\\dfrac1{\\sqrt{n+4}}$ compares with $\\sum\\dfrac1{\\sqrt n}$: limit of the ratio is $1$, and $p=\\frac12\\le1$, so it diverges.",
+        "Converges but not absolutely: conditionally convergent."
+      ],
+      "brief": "Alternating series test passes; $\\sum\\frac1{\\sqrt{n+4}}$ diverges ($p=\\frac12$): conditional."
+    },
+    {
+      "sec": "9.6",
+      "q": "Which one of the following series is/are divergent? \\[ \\text{(I)}\\ \\sum_{n=1}^\\infty\\frac{9^n}{n^5}\\qquad \\text{(II)}\\ \\sum_{n=1}^\\infty\\frac{(2n)!}{n^5}\\qquad \\text{(III)}\\ \\sum_{n=1}^\\infty\\left(\\frac{3n+2}{n+3}\\right)^n \\]",
+      "opts": [
+        "I, II and III",
+        "I and II only",
+        "II and III only",
+        "I and III only",
+        "III only"
+      ],
+      "ans": 0,
+      "hints": [
+        "Use the ratio test for the first two series and the root test for the third.",
+        "Compute $\\lim\\left|\\dfrac{a_{n+1}}{a_n}\\right|$ for (I) and (II) and $\\lim\\sqrt[n]{|a_n|}$ for (III).",
+        "Ratio/root test: if the limit $L>1$ (or $\\infty$) the series diverges; if $L<1$ it converges."
+      ],
+      "steps": [
+        "(I) $\\dfrac{a_{n+1}}{a_n}=9\\left(\\dfrac{n}{n+1}\\right)^5\\to9>1$: diverges.",
+        "(II) $\\dfrac{a_{n+1}}{a_n}=\\dfrac{(2n+2)(2n+1)\\,n^5}{(n+1)^5}\\to\\infty$: diverges.",
+        "(III) $\\sqrt[n]{a_n}=\\dfrac{3n+2}{n+3}\\to3>1$: diverges.",
+        "All three diverge."
+      ],
+      "brief": "Ratio: (I) $\\to9$, (II) $\\to\\infty$; root: (III) $\\to3$; all diverge."
+    },
+    {
+      "sec": "9.7",
+      "q": "Using a second degree Maclaurin polynomial of the function $f(x)=\\sec x$, the approximation of the value $\\sec 1$ is equal to",
+      "opts": [
+        "$\\dfrac32$",
+        "$\\dfrac52$",
+        "$\\dfrac72$",
+        "$\\dfrac92$",
+        "$\\dfrac{11}{2}$"
+      ],
+      "ans": 0,
+      "hints": [
+        "A Maclaurin polynomial of degree 2 uses $f(0)$, $f'(0)$ and $f''(0)$.",
+        "Differentiate $\\sec x$ twice and evaluate at $0$, then build the polynomial and plug in $x=1$.",
+        "$P_2(x)=f(0)+f'(0)x+\\dfrac{f''(0)}{2!}x^2$, and $(\\sec x)'=\\sec x\\tan x$."
+      ],
+      "steps": [
+        "$f=\\sec x$, $f'=\\sec x\\tan x$, $f''=\\sec x\\tan^2x+\\sec^3x$.",
+        "$f(0)=1$, $f'(0)=0$, $f''(0)=1$.",
+        "$P_2(x)=1+\\dfrac{x^2}{2}$.",
+        "$\\sec 1\\approx P_2(1)=1+\\dfrac12=\\dfrac32$."
+      ],
+      "brief": "$P_2(x)=1+\\frac{x^2}{2}$, so $\\sec1\\approx\\frac32$."
+    },
+    {
+      "sec": "9.8",
+      "q": "The interval of convergence for the series $\\sum_{n=1}^\\infty\\frac{(-1)^{n+1}(x-4)^n}{n\\,9^n}$ is",
+      "opts": [
+        "$(-5,13]$",
+        "$[-5,13]$",
+        "$(4,9]$",
+        "$[4,9]$",
+        "$(-5,13)$"
+      ],
+      "ans": 0,
+      "hints": [
+        "This is a power series centered at $4$; find its radius with the ratio test, then test the endpoints.",
+        "Use the ratio test to get the open interval, then substitute each endpoint into the series.",
+        "For $\\sum a_n(x-c)^n$, if $\\lim\\left|\\dfrac{a_{n+1}}{a_n}\\right|=\\dfrac1R$ the series converges for $|x-c|<R$; endpoints must be checked separately (harmonic series diverges, alternating harmonic converges)."
+      ],
+      "steps": [
+        "$\\left|\\dfrac{a_{n+1}}{a_n}\\right|=\\dfrac{|x-4|}{9}\\cdot\\dfrac{n}{n+1}\\to\\dfrac{|x-4|}{9}<1$, so $|x-4|<9$, i.e. $-5<x<13$.",
+        "At $x=13$: $\\sum\\dfrac{(-1)^{n+1}}{n}$, the alternating harmonic series: converges.",
+        "At $x=-5$: $(x-4)^n=(-9)^n$, so the terms are $\\dfrac{(-1)^{n+1}(-1)^n}{n}=-\\dfrac1n$: harmonic, diverges.",
+        "Interval of convergence: $(-5,13]$."
+      ],
+      "brief": "$R=9$ about $4$; $x=13$ converges, $x=-5$ diverges: $(-5,13]$."
+    },
+    {
+      "sec": "9.9",
+      "q": "A power series representation for the function $f(x)=\\ln(x^2+1)$ centered at $c=0$ is",
+      "opts": [
+        "$\\sum_{n=0}^\\infty\\frac{(-1)^nx^{2n+2}}{n+1},\\ [-1,1]$",
+        "$\\sum_{n=0}^\\infty\\frac{(-1)^nx^{2n}}{n+1},\\ [-1,1]$",
+        "$\\sum_{n=0}^\\infty\\frac{(-1)^nx^{n+1}}{n+1},\\ [-1,1]$",
+        "$\\sum_{n=0}^\\infty\\frac{(-1)^nx^{2n+1}}{n+1},\\ [-1,1]$",
+        "$\\sum_{n=1}^\\infty\\frac{(-1)^nx^{2n+2}}{n},\\ [-1,1]$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Differentiate, expand using the geometric series, then integrate term by term.",
+        "Compute $f'(x)$, write it as $\\dfrac{1}{1-r}$ with $r=-x^2$, expand, and integrate with $f(0)=0$.",
+        "$\\dfrac1{1-r}=\\sum_{n=0}^\\infty r^n$ for $|r|<1$, and $\\int x^m\\,dx=\\dfrac{x^{m+1}}{m+1}$."
+      ],
+      "steps": [
+        "$f'(x)=\\dfrac{2x}{1+x^2}=2x\\sum_{n=0}^\\infty(-1)^nx^{2n}=\\sum_{n=0}^\\infty2(-1)^nx^{2n+1}$.",
+        "Integrate term by term: $f(x)=\\sum_{n=0}^\\infty\\dfrac{2(-1)^nx^{2n+2}}{2n+2}+C=\\sum_{n=0}^\\infty\\dfrac{(-1)^nx^{2n+2}}{n+1}+C$.",
+        "$f(0)=0$ gives $C=0$.",
+        "$\\ln(x^2+1)=\\sum_{n=0}^\\infty\\dfrac{(-1)^nx^{2n+2}}{n+1}$, and the series also converges at $x=\\pm1$ (alternating harmonic), giving $[-1,1]$."
+      ],
+      "brief": "$f'=\\frac{2x}{1+x^2}$, integrate the geometric series: $\\sum\\frac{(-1)^nx^{2n+2}}{n+1}$."
+    },
+    {
+      "sec": "9.10",
+      "q": "The coefficient of $x^{11}$ in the Maclaurin series for the function $f(x)=x\\sin(x^2)$ is",
+      "opts": [
+        "$\\dfrac1{5!}$",
+        "$\\dfrac{-1}{5!}$",
+        "$\\dfrac{-1}{4!}$",
+        "$\\dfrac1{4!}$",
+        "$\\dfrac1{9!}$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Use the known Maclaurin series of $\\sin u$ and substitute.",
+        "Replace $u$ by $x^2$ in the series for $\\sin u$, multiply by $x$, and find which term gives $x^{11}$.",
+        "$\\sin u=\\sum_{k=0}^\\infty\\dfrac{(-1)^ku^{2k+1}}{(2k+1)!}$."
+      ],
+      "steps": [
+        "$\\sin(x^2)=\\sum_{k=0}^\\infty\\dfrac{(-1)^kx^{4k+2}}{(2k+1)!}$, so $x\\sin(x^2)=\\sum_{k=0}^\\infty\\dfrac{(-1)^kx^{4k+3}}{(2k+1)!}$.",
+        "$4k+3=11$ gives $k=2$.",
+        "Coefficient: $\\dfrac{(-1)^2}{5!}=\\dfrac1{5!}$."
+      ],
+      "brief": "$x\\sin x^2=\\sum\\frac{(-1)^kx^{4k+3}}{(2k+1)!}$; $k=2$ gives $\\frac1{5!}$."
+    },
+    {
+      "sec": "5.7",
+      "q": "Evaluate \\[ \\int_0^1\\frac{e^{2x}-e^{-2x}}{e^{2x}+e^{-2x}}\\,dx. \\]",
+      "opts": [
+        "$\\dfrac12\\ln\\dfrac{e^2+e^{-2}}{2}$",
+        "$\\ln(e^2+e^{-2})$",
+        "$\\ln\\left(\\dfrac{e^2+e^{-2}}{2}\\right)$",
+        "$\\dfrac12\\ln\\left[2(e^2+e^{-2})\\right]$",
+        "$\\ln(e^2-e^{-2})$"
+      ],
+      "ans": 0,
+      "hints": [
+        "The numerator is related to the derivative of the denominator, so use the log rule.",
+        "Substitute $u$ equal to the denominator and compute $du$.",
+        "$\\int\\dfrac{du}{u}=\\ln|u|+C$."
+      ],
+      "steps": [
+        "Let $u=e^{2x}+e^{-2x}$, $du=2\\left(e^{2x}-e^{-2x}\\right)dx$.",
+        "The integral becomes $\\dfrac12\\int\\dfrac{du}{u}=\\dfrac12\\ln u$.",
+        "Limits: $x=0$ gives $u=2$; $x=1$ gives $u=e^2+e^{-2}$.",
+        "Value: $\\dfrac12\\left[\\ln(e^2+e^{-2})-\\ln2\\right]=\\dfrac12\\ln\\dfrac{e^2+e^{-2}}{2}$."
+      ],
+      "brief": "$u=e^{2x}+e^{-2x}$: $\\frac12\\ln u\\big|_2^{e^2+e^{-2}}=\\frac12\\ln\\frac{e^2+e^{-2}}{2}$."
+    },
+    {
+      "sec": "8.4",
+      "q": "Evaluate \\[ \\int_0^{\\sqrt3/2}\\frac{t^2}{(1-t^2)^{3/2}}\\,dt. \\]",
+      "opts": [
+        "$\\sqrt3-\\dfrac\\pi3$",
+        "$\\sqrt2+\\dfrac\\pi3$",
+        "$\\sqrt3+\\dfrac\\pi6$",
+        "$\\sqrt2+\\dfrac\\pi6$",
+        "$\\sqrt3-\\pi$"
+      ],
+      "ans": 0,
+      "hints": [
+        "The integrand contains $\\sqrt{1-t^2}$ (raised to a power), so use a trigonometric substitution.",
+        "Let $t=\\sin\\theta$, simplify, and convert the limits of integration to $\\theta$.",
+        "For $\\sqrt{a^2-u^2}$ use $u=a\\sin\\theta$; also $1-\\sin^2\\theta=\\cos^2\\theta$, $\\tan^2\\theta=\\sec^2\\theta-1$ and $\\int\\sec^2\\theta\\,d\\theta=\\tan\\theta$."
+      ],
+      "steps": [
+        "$t=\\sin\\theta$, $dt=\\cos\\theta\\,d\\theta$, $(1-t^2)^{3/2}=\\cos^3\\theta$. Limits: $t=0\\to\\theta=0$, $t=\\frac{\\sqrt3}{2}\\to\\theta=\\frac\\pi3$.",
+        "Integral $=\\int_0^{\\pi/3}\\dfrac{\\sin^2\\theta}{\\cos^2\\theta}\\,d\\theta=\\int_0^{\\pi/3}\\tan^2\\theta\\,d\\theta$.",
+        "$\\int\\tan^2\\theta\\,d\\theta=\\tan\\theta-\\theta$.",
+        "Value: $\\tan\\frac\\pi3-\\frac\\pi3=\\sqrt3-\\dfrac\\pi3$."
+      ],
+      "brief": "$t=\\sin\\theta$: $\\int_0^{\\pi/3}\\tan^2\\theta\\,d\\theta=\\sqrt3-\\frac\\pi3$."
+    },
+    {
+      "sec": "8.5",
+      "q": "Evaluate \\[ \\int\\frac{x^2+12x+12}{x^3-4x}\\,dx. \\]",
+      "opts": [
+        "$5\\ln|x-2|-\\ln|x+2|-3\\ln|x|+C$",
+        "$\\ln|x-2|-\\ln|x+2|-\\ln|x|+C$",
+        "$5\\ln|x-2|-\\ln|x+2|+\\ln|x|+C$",
+        "$\\ln|x-2|+\\ln|x+2|-3\\ln|x|+C$",
+        "$5\\ln|x-2|+\\ln|x+2|-3\\ln|x|+C$"
+      ],
+      "ans": 0,
+      "hints": [
+        "The denominator factors into distinct linear factors, so use partial fractions.",
+        "Factor $x^3-4x$, write one fraction over each linear factor, and solve for the constants.",
+        "For distinct linear factors, $\\dfrac{P(x)}{(x-a)(x-b)(x-c)}=\\dfrac{A}{x-a}+\\dfrac{B}{x-b}+\\dfrac{C}{x-c}$ and $\\int\\dfrac{dx}{x-a}=\\ln|x-a|$; each constant can be found by evaluating $P$ at the matching root (cover-up)."
+      ],
+      "steps": [
+        "$x^3-4x=x(x-2)(x+2)$, so write $\\dfrac{x^2+12x+12}{x(x-2)(x+2)}=\\dfrac Ax+\\dfrac B{x-2}+\\dfrac C{x+2}$.",
+        "$x=0$: $A=\\dfrac{12}{(-2)(2)}=-3$.  $x=2$: $B=\\dfrac{4+24+12}{2\\cdot4}=5$.  $x=-2$: $C=\\dfrac{4-24+12}{(-2)(-4)}=-1$.",
+        "Integrate: $-3\\ln|x|+5\\ln|x-2|-\\ln|x+2|+C$."
+      ],
+      "brief": "Partial fractions $-\\frac3x+\\frac5{x-2}-\\frac1{x+2}$, so $5\\ln|x-2|-\\ln|x+2|-3\\ln|x|+C$."
+    },
+    {
+      "sec": "7.2",
+      "q": "The volume of the solid generated by revolving the region bounded by the graph of $y=1-x^2$ (in the first quadrant) about the $x$-axis is",
+      "opts": [
+        "$\\dfrac{8\\pi}{15}$",
+        "$\\dfrac{4\\pi}{15}$",
+        "$\\dfrac{8\\pi}{5}$",
+        "$\\dfrac{4\\pi}{5}$",
+        "$\\dfrac{2\\pi}{15}$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Use the disk method; the region in the first quadrant lies between the curve and the coordinate axes.",
+        "Find where the curve meets the $x$-axis to get the limits of integration, then integrate $\\pi y^2$.",
+        "Disk method about the $x$-axis: $V=\\pi\\int_a^b[f(x)]^2\\,dx$."
+      ],
+      "steps": [
+        "In the first quadrant, the region is bounded by the curve, the $x$-axis and the $y$-axis, with $0\\le x\\le1$ (since $1-x^2=0$ at $x=1$).",
+        "$V=\\pi\\int_0^1(1-x^2)^2dx=\\pi\\int_0^1(1-2x^2+x^4)\\,dx$.",
+        "$=\\pi\\left[x-\\dfrac{2x^3}{3}+\\dfrac{x^5}{5}\\right]_0^1=\\pi\\left(1-\\dfrac23+\\dfrac15\\right)=\\dfrac{8\\pi}{15}$."
+      ],
+      "brief": "$V=\\pi\\int_0^1(1-x^2)^2dx=\\frac{8\\pi}{15}$."
+    },
+    {
+      "sec": "7.1",
+      "q": "The area of the region bounded by the graphs of the equations $y=x^2+2x$ and $y=x+2$ is",
+      "opts": [
+        "$\\dfrac92$",
+        "$\\dfrac72$",
+        "$\\dfrac52$",
+        "$\\dfrac{11}2$",
+        "$\\dfrac{13}2$"
+      ],
+      "ans": 0,
+      "hints": [
+        "The area between two curves is found by integrating the difference between the upper and lower curve.",
+        "Set the two expressions equal to find the intersection points, then decide which curve is on top between them.",
+        "$A=\\int_a^b\\left[f_{\\text{top}}(x)-f_{\\text{bottom}}(x)\\right]dx$ between consecutive intersection points."
+      ],
+      "steps": [
+        "$x^2+2x=x+2\\Rightarrow x^2+x-2=0\\Rightarrow(x+2)(x-1)=0$, so $x=-2$ and $x=1$.",
+        "On $(-2,1)$ the line is above the parabola (at $x=0$: $2>0$).",
+        "$A=\\int_{-2}^1\\left[(x+2)-(x^2+2x)\\right]dx=\\int_{-2}^1(2-x-x^2)\\,dx$.",
+        "$=\\left[2x-\\dfrac{x^2}2-\\dfrac{x^3}3\\right]_{-2}^{1}=\\dfrac76-\\left(-\\dfrac{10}{3}\\right)=\\dfrac92$."
+      ],
+      "brief": "Intersections $x=-2,1$; $A=\\int_{-2}^1(2-x-x^2)dx=\\frac92$."
+    },
+    {
+      "sec": "7.4",
+      "q": "The arc length of the graph of the function $f(x)=\\dfrac12\\left(e^x+e^{-x}\\right)$ over the interval $[0,2]$ is",
+      "opts": [
+        "$\\dfrac12\\left(e^2-\\dfrac1{e^2}\\right)$",
+        "$\\dfrac14\\left(e^2+\\dfrac1{e^2}\\right)$",
+        "$\\left(e^2+\\dfrac1e\\right)$",
+        "$\\dfrac12\\left(e-\\dfrac1e\\right)$",
+        "$\\dfrac14\\left(e+\\dfrac1{e^2}\\right)$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Use the arc length formula and simplify the integrand with a hyperbolic identity.",
+        "Compute $f'(x)$ and then $1+[f'(x)]^2$; it should become a perfect square.",
+        "$L=\\int_a^b\\sqrt{1+[f'(x)]^2}\\,dx$, with $1+\\sinh^2x=\\cosh^2x$."
+      ],
+      "steps": [
+        "$f(x)=\\cosh x$, so $f'(x)=\\sinh x=\\dfrac{e^x-e^{-x}}2$.",
+        "$\\sqrt{1+\\sinh^2x}=\\cosh x$.",
+        "$L=\\int_0^2\\cosh x\\,dx=\\sinh 2$.",
+        "$\\sinh2=\\dfrac12\\left(e^2-e^{-2}\\right)=\\dfrac12\\left(e^2-\\dfrac1{e^2}\\right)$."
+      ],
+      "brief": "$f=\\cosh x$, $L=\\int_0^2\\cosh x\\,dx=\\sinh2=\\frac12(e^2-e^{-2})$."
+    },
+    {
+      "sec": "8.2",
+      "q": "Evaluate \\[ \\int\\frac{\\ln x}{x^3}\\,dx. \\]",
+      "opts": [
+        "$\\dfrac{-1}{2x^2}\\ln x-\\dfrac1{4x^2}+C$",
+        "$\\dfrac1{x^2}\\ln x-\\dfrac1{4x^2}+C$",
+        "$\\dfrac{-1}{x^2}\\ln x+\\dfrac1{x^2}+C$",
+        "$\\dfrac{-1}{2x^2}\\ln x+\\dfrac1{x^2}+C$",
+        "$\\dfrac{-1}{x^2}\\ln x+\\dfrac1{2x^2}+C$"
+      ],
+      "ans": 0,
+      "hints": [
+        "This is a product of a logarithm and a power, so use integration by parts.",
+        "Choose $u=\\ln x$ (it simplifies when differentiated) and $dv=x^{-3}dx$.",
+        "$\\int u\\,dv=uv-\\int v\\,du$ and $\\int x^n\\,dx=\\dfrac{x^{n+1}}{n+1}$ for $n\\neq-1$."
+      ],
+      "steps": [
+        "$u=\\ln x$, $dv=x^{-3}dx$, so $du=\\dfrac{dx}x$ and $v=-\\dfrac1{2x^2}$.",
+        "$\\int\\dfrac{\\ln x}{x^3}dx=-\\dfrac{\\ln x}{2x^2}+\\dfrac12\\int x^{-3}dx$.",
+        "$\\dfrac12\\int x^{-3}dx=\\dfrac12\\cdot\\left(-\\dfrac1{2x^2}\\right)=-\\dfrac1{4x^2}$.",
+        "Result: $-\\dfrac{\\ln x}{2x^2}-\\dfrac1{4x^2}+C$."
+      ],
+      "brief": "Parts with $u=\\ln x$: $-\\frac{\\ln x}{2x^2}-\\frac1{4x^2}+C$."
+    }
+  ]
+}

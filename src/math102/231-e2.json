@@ -1,0 +1,440 @@
+{
+  "course": "math102",
+  "term": "231",
+  "kind": "e2",
+  "date": "7 November 2023",
+  "minutes": 120,
+  "source": "math102-231-ex2.pdf",
+  "note": "Date (November 07, 2023) and time (Net Time Allowed 120 minutes) are printed on the cover. Master key is A for all 18 questions; all were verified with sympy and agree with the key.",
+  "qs": [
+    {
+      "sec": "7.3",
+      "q": "The volume of the solid formed by revolving the region bounded by the graphs of $y=x^2+1$, $y=0$, $x=0$ and $x=1$ about the $y$-axis is: (Hint: The Shell Method is preferable in this question)",
+      "opts": [
+        "$\\dfrac{3\\pi}{2}$",
+        "$\\dfrac{5\\pi}{2}$",
+        "$\\dfrac{\\pi}{2}$",
+        "$\\dfrac{7\\pi}{2}$",
+        "$\\dfrac{9\\pi}{2}$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Revolving about the $y$-axis a region described by $x$-limits suggests cylindrical shells.",
+        "Identify the shell radius (distance from the $y$-axis) and the shell height (the top curve minus the bottom curve), then set up one integral in $x$.",
+        "Shell method about the $y$-axis: $V=2\\pi\\int_a^b x\\,h(x)\\,dx$, where $h(x)$ is the height of the region at $x$."
+      ],
+      "steps": [
+        "Radius $=x$ and height $=x^2+1$ for $0\\le x\\le1$.",
+        "$V=2\\pi\\int_0^1 x(x^2+1)\\,dx=2\\pi\\int_0^1 (x^3+x)\\,dx$.",
+        "$=2\\pi\\left[\\dfrac{x^4}{4}+\\dfrac{x^2}{2}\\right]_0^1=2\\pi\\cdot\\dfrac34=\\dfrac{3\\pi}{2}$."
+      ],
+      "brief": "Shells: $V=2\\pi\\int_0^1 x(x^2+1)\\,dx=\\frac{3\\pi}{2}$."
+    },
+    {
+      "sec": "8.1",
+      "q": "$\\int_0^1\\dfrac{2}{e^{-x}+1}\\,dx=$",
+      "opts": [
+        "$2\\ln\\left(\\dfrac{e+1}{2}\\right)$",
+        "$\\ln\\left(\\dfrac{e+1}{2}\\right)$",
+        "$2\\ln\\left(\\dfrac{e-1}{2}\\right)$",
+        "$\\ln\\left(\\dfrac{e-1}{2}\\right)$",
+        "$2\\ln\\left(\\dfrac{e+2}{2}\\right)$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Rewrite the integrand so that it becomes a log-rule integral.",
+        "Multiply the numerator and denominator by $e^{x}$ so that the numerator becomes the derivative of the denominator (up to a constant).",
+        "Log rule: $\\int\\dfrac{u'}{u}\\,dx=\\ln|u|+C$."
+      ],
+      "steps": [
+        "Multiply by $\\dfrac{e^x}{e^x}$: $\\dfrac{2}{e^{-x}+1}=\\dfrac{2e^x}{1+e^x}$.",
+        "$\\int_0^1\\dfrac{2e^x}{1+e^x}\\,dx=2\\ln(1+e^x)\\Big|_0^1$.",
+        "$=2\\ln(1+e)-2\\ln 2=2\\ln\\left(\\dfrac{e+1}{2}\\right)$."
+      ],
+      "brief": "$\\frac{2}{e^{-x}+1}=\\frac{2e^x}{1+e^x}$, so the value is $2\\ln\\frac{e+1}{2}$."
+    },
+    {
+      "sec": "8.2",
+      "q": "$\\int \\arctan x\\,dx=$",
+      "opts": [
+        "$x\\arctan x-\\dfrac12\\ln(1+x^2)+c$",
+        "$x\\arctan x+\\dfrac12\\ln(1+x^2)+c$",
+        "$x^2\\arctan x-\\dfrac12\\ln(1+x^2)+c$",
+        "$x\\arctan x-\\dfrac12\\ln(1+x)+c$",
+        "$x\\arctan x-\\dfrac12\\ln(x^2)+c$"
+      ],
+      "ans": 0,
+      "hints": [
+        "The integrand is a single inverse function with no obvious substitution, so use integration by parts.",
+        "Take $u=\\arctan x$ and $dv=dx$, then handle the remaining integral with a substitution.",
+        "$\\int u\\,dv=uv-\\int v\\,du$ and $\\dfrac{d}{dx}\\arctan x=\\dfrac{1}{1+x^2}$."
+      ],
+      "steps": [
+        "Let $u=\\arctan x$, $dv=dx$, so $du=\\dfrac{dx}{1+x^2}$, $v=x$.",
+        "$\\int\\arctan x\\,dx=x\\arctan x-\\int\\dfrac{x}{1+x^2}\\,dx$.",
+        "With $w=1+x^2$: $\\int\\dfrac{x}{1+x^2}dx=\\dfrac12\\ln(1+x^2)$.",
+        "So the result is $x\\arctan x-\\dfrac12\\ln(1+x^2)+c$."
+      ],
+      "brief": "Parts with $u=\\arctan x$: $x\\arctan x-\\int\\frac{x}{1+x^2}dx=x\\arctan x-\\frac12\\ln(1+x^2)+c$."
+    },
+    {
+      "sec": "8.3",
+      "q": "If $\\int \\sin^3 x\\,\\cos^4 x\\,dx=-\\dfrac15(\\cos x)^m+\\dfrac17(\\cos x)^n+c$, then $m+n=$",
+      "opts": [
+        "$12$",
+        "$14$",
+        "$13$",
+        "$11$",
+        "$10$"
+      ],
+      "ans": 0,
+      "hints": [
+        "The power of sine is odd, so this is a trigonometric integral that can be handled by saving one sine factor.",
+        "Split off one $\\sin x$, convert the remaining even power of sine to cosines, and substitute $u=\\cos x$.",
+        "$\\sin^2x=1-\\cos^2x$, and with $u=\\cos x$ we have $du=-\\sin x\\,dx$."
+      ],
+      "steps": [
+        "$\\sin^3x\\cos^4x=(1-\\cos^2x)\\cos^4x\\,\\sin x$.",
+        "With $u=\\cos x$: $-\\int(1-u^2)u^4\\,du=-\\int(u^4-u^6)\\,du$.",
+        "$=-\\dfrac{u^5}{5}+\\dfrac{u^7}{7}+c$, so $m=5$ and $n=7$.",
+        "$m+n=12$."
+      ],
+      "brief": "$u=\\cos x$: $-\\frac{u^5}{5}+\\frac{u^7}{7}$, so $m=5$, $n=7$, $m+n=12$."
+    },
+    {
+      "sec": "8.3",
+      "q": "$\\int_0^{\\pi/2}\\sin 8x\\,\\cos 7x\\,dx=$",
+      "opts": [
+        "$\\dfrac{8}{15}$",
+        "$-\\dfrac{8}{15}$",
+        "$\\dfrac{3}{5}$",
+        "$-\\dfrac{3}{15}$",
+        "$\\dfrac{2}{3}$"
+      ],
+      "ans": 0,
+      "hints": [
+        "This is a product of sine and cosine with different frequencies.",
+        "Convert the product into a sum with a product-to-sum identity, then integrate term by term.",
+        "$\\sin mx\\cos nx=\\dfrac12\\left[\\sin(m-n)x+\\sin(m+n)x\\right]$ and $\\int\\sin kx\\,dx=-\\dfrac{\\cos kx}{k}$."
+      ],
+      "steps": [
+        "$\\sin8x\\cos7x=\\dfrac12(\\sin x+\\sin15x)$.",
+        "$\\int_0^{\\pi/2}=\\dfrac12\\left[-\\cos x-\\dfrac{\\cos15x}{15}\\right]_0^{\\pi/2}$.",
+        "At $\\pi/2$: $\\cos\\frac{\\pi}{2}=0$ and $\\cos\\frac{15\\pi}{2}=0$, giving $0$. At $0$: $-1-\\frac1{15}=-\\frac{16}{15}$.",
+        "$\\dfrac12\\left(0+\\dfrac{16}{15}\\right)=\\dfrac{8}{15}$."
+      ],
+      "brief": "$\\sin8x\\cos7x=\\frac12(\\sin x+\\sin15x)$; integral $=\\frac12\\cdot\\frac{16}{15}=\\frac8{15}$."
+    },
+    {
+      "sec": "7.4",
+      "q": "The area of the surface formed by revolving the graph of $f(x)=x^2$ on the interval $[0,\\sqrt2]$ about the $y$-axis is:",
+      "opts": [
+        "$\\dfrac{13\\pi}{3}$",
+        "$\\dfrac{14\\pi}{3}$",
+        "$\\dfrac{16\\pi}{3}$",
+        "$\\dfrac{11\\pi}{3}$",
+        "$\\dfrac{10\\pi}{3}$"
+      ],
+      "ans": 0,
+      "hints": [
+        "This is a surface of revolution about the $y$-axis, so the radius is the $x$-coordinate.",
+        "Compute $f'(x)$, form $\\sqrt{1+(f')^2}$, set up the integral with radius $x$, and use a substitution for the expression under the root.",
+        "Surface area about the $y$-axis: $S=2\\pi\\int_a^b x\\sqrt{1+\\left(f'(x)\\right)^2}\\,dx$."
+      ],
+      "steps": [
+        "$f'(x)=2x$, so $S=2\\pi\\int_0^{\\sqrt2}x\\sqrt{1+4x^2}\\,dx$.",
+        "Let $u=1+4x^2$, $du=8x\\,dx$; limits $u=1$ to $u=9$.",
+        "$S=2\\pi\\cdot\\dfrac18\\int_1^9u^{1/2}du=\\dfrac{\\pi}{4}\\cdot\\dfrac23\\left[u^{3/2}\\right]_1^9$.",
+        "$=\\dfrac{\\pi}{6}(27-1)=\\dfrac{13\\pi}{3}$."
+      ],
+      "brief": "$S=2\\pi\\int_0^{\\sqrt2}x\\sqrt{1+4x^2}\\,dx=\\frac{\\pi}{6}(27-1)=\\frac{13\\pi}{3}$."
+    },
+    {
+      "sec": "8.2",
+      "q": "$\\int\\dfrac{\\ln x}{x^3}\\,dx=$",
+      "opts": [
+        "$\\dfrac{-\\ln x}{2x^2}-\\dfrac{1}{4x^2}+c$",
+        "$\\dfrac{\\ln x}{2x^2}+\\dfrac{1}{4x^2}+c$",
+        "$\\dfrac{-\\ln x}{2x^2}-\\dfrac{1}{2x^2}+c$",
+        "$\\dfrac{-\\ln x}{x^2}-\\dfrac{1}{4x^2}+c$",
+        "$\\dfrac{-\\ln x}{2x^2}+\\dfrac{1}{4x^2}+c$"
+      ],
+      "ans": 0,
+      "hints": [
+        "A logarithm times a power of $x$ calls for integration by parts.",
+        "Let $u=\\ln x$ (it simplifies when differentiated) and $dv=x^{-3}\\,dx$.",
+        "$\\int u\\,dv=uv-\\int v\\,du$ and $\\int x^n\\,dx=\\dfrac{x^{n+1}}{n+1}$ for $n\\neq-1$."
+      ],
+      "steps": [
+        "$u=\\ln x$, $dv=x^{-3}dx$: $du=\\dfrac{dx}{x}$, $v=-\\dfrac{1}{2x^2}$.",
+        "$\\int\\dfrac{\\ln x}{x^3}dx=-\\dfrac{\\ln x}{2x^2}+\\dfrac12\\int x^{-3}\\,dx$.",
+        "$\\dfrac12\\int x^{-3}dx=\\dfrac12\\cdot\\left(-\\dfrac{1}{2x^2}\\right)=-\\dfrac{1}{4x^2}$.",
+        "Result: $-\\dfrac{\\ln x}{2x^2}-\\dfrac{1}{4x^2}+c$."
+      ],
+      "brief": "Parts, $u=\\ln x$, $v=-\\frac1{2x^2}$: $-\\frac{\\ln x}{2x^2}-\\frac1{4x^2}+c$."
+    },
+    {
+      "sec": "8.4",
+      "q": "$\\int\\dfrac{dx}{\\sqrt{x^2-25}}=$",
+      "opts": [
+        "$\\ln\\left|x+\\sqrt{x^2-25}\\right|+c$",
+        "$\\ln\\left|x-\\sqrt{x^2-25}\\right|+c$",
+        "$\\ln\\left|\\dfrac{x}{5}+\\sqrt{x^2-25}\\right|+c$",
+        "$\\ln\\left|\\dfrac{x}{5}-\\sqrt{x^2-25}\\right|+c$",
+        "$\\ln\\left|x-\\dfrac{\\sqrt{x^2-25}}{5}\\right|+c$"
+      ],
+      "ans": 0,
+      "hints": [
+        "The radical has the form $\\sqrt{x^2-a^2}$, which suggests a trigonometric substitution.",
+        "Substitute $x=a\\sec\\theta$ with $a=5$ and simplify the radical, then integrate in $\\theta$ and return to $x$ with a right triangle.",
+        "For $x=a\\sec\\theta$: $\\sqrt{x^2-a^2}=a\\tan\\theta$, $dx=a\\sec\\theta\\tan\\theta\\,d\\theta$, and $\\int\\sec\\theta\\,d\\theta=\\ln|\\sec\\theta+\\tan\\theta|+C$."
+      ],
+      "steps": [
+        "Let $x=5\\sec\\theta$: $dx=5\\sec\\theta\\tan\\theta\\,d\\theta$, $\\sqrt{x^2-25}=5\\tan\\theta$.",
+        "The integral becomes $\\int\\sec\\theta\\,d\\theta=\\ln|\\sec\\theta+\\tan\\theta|+C_1$.",
+        "From the triangle: $\\sec\\theta=\\dfrac x5$, $\\tan\\theta=\\dfrac{\\sqrt{x^2-25}}{5}$.",
+        "$\\ln\\left|\\dfrac{x+\\sqrt{x^2-25}}{5}\\right|+C_1=\\ln\\left|x+\\sqrt{x^2-25}\\right|+c$, absorbing $-\\ln5$ into the constant."
+      ],
+      "brief": "$x=5\\sec\\theta$: $\\int\\sec\\theta\\,d\\theta$, giving $\\ln|x+\\sqrt{x^2-25}|+c$."
+    },
+    {
+      "sec": "8.5",
+      "q": "$\\int\\dfrac{5x^2+20x+6}{x^3+2x^2+x}\\,dx=$",
+      "opts": [
+        "$\\ln\\left|\\dfrac{x^6}{x+1}\\right|-\\dfrac{9}{x+1}+c$",
+        "$\\ln\\left|\\dfrac{x^5}{x+1}\\right|-\\dfrac{9}{x+1}+c$",
+        "$\\ln\\left|\\dfrac{x^4}{x+1}\\right|-\\dfrac{8}{x+1}+c$",
+        "$6\\ln|x|-\\dfrac{8}{(x+1)^2}+c$",
+        "$\\ln\\left|\\dfrac{x^6}{x+1}\\right|-\\dfrac{8}{(x+1)^2}+c$"
+      ],
+      "ans": 0,
+      "hints": [
+        "The integrand is a rational function whose denominator can be factored, so use partial fractions.",
+        "Factor the denominator completely; it has a repeated linear factor, so the decomposition needs a term for each power of that factor.",
+        "For a factor $(x-r)^2$ use $\\dfrac{B}{x-r}+\\dfrac{C}{(x-r)^2}$; also $\\int\\dfrac{dx}{(x-r)^2}=-\\dfrac{1}{x-r}$."
+      ],
+      "steps": [
+        "$x^3+2x^2+x=x(x+1)^2$, so $\\dfrac{5x^2+20x+6}{x(x+1)^2}=\\dfrac Ax+\\dfrac B{x+1}+\\dfrac C{(x+1)^2}$.",
+        "Clearing denominators: $5x^2+20x+6=A(x+1)^2+Bx(x+1)+Cx$. Put $x=0$: $A=6$. Put $x=-1$: $-9=-C$, so $C=9$.",
+        "Compare $x^2$ coefficients: $5=A+B$, so $B=-1$.",
+        "$\\int\\left(\\dfrac6x-\\dfrac1{x+1}+\\dfrac9{(x+1)^2}\\right)dx=6\\ln|x|-\\ln|x+1|-\\dfrac9{x+1}+c=\\ln\\left|\\dfrac{x^6}{x+1}\\right|-\\dfrac9{x+1}+c$."
+      ],
+      "brief": "$\\frac6x-\\frac1{x+1}+\\frac9{(x+1)^2}$, so $\\ln\\left|\\frac{x^6}{x+1}\\right|-\\frac9{x+1}+c$."
+    },
+    {
+      "sec": "8.5",
+      "q": "If $\\dfrac{6x}{x^3-8}=\\dfrac{A}{x-2}+\\dfrac{Bx+C}{x^2+2x+4}$, then $A+B+C=$",
+      "opts": [
+        "$2$",
+        "$3$",
+        "$1$",
+        "$-1$",
+        "$0$"
+      ],
+      "ans": 0,
+      "hints": [
+        "This is a partial fraction decomposition with a linear factor and an irreducible quadratic factor.",
+        "Multiply both sides by the common denominator $x^3-8=(x-2)(x^2+2x+4)$ and compare the two sides.",
+        "Two polynomials are equal when all coefficients match; plugging in the root of a simple linear factor isolates its coefficient."
+      ],
+      "steps": [
+        "Multiply through: $6x=A(x^2+2x+4)+(Bx+C)(x-2)$.",
+        "At $x=2$: $12=12A$, so $A=1$.",
+        "Coefficient of $x^2$: $0=A+B$, so $B=-1$. Constant term: $0=4A-2C$, so $C=2$.",
+        "$A+B+C=1-1+2=2$."
+      ],
+      "brief": "$6x=A(x^2+2x+4)+(Bx+C)(x-2)$ gives $A=1$, $B=-1$, $C=2$, so the sum is $2$."
+    },
+    {
+      "sec": "8.7",
+      "q": "$\\int_0^{\\pi/2}\\dfrac{d\\theta}{1+\\sin\\theta+\\cos\\theta}=$",
+      "opts": [
+        "$\\ln 2$",
+        "$\\ln 3$",
+        "$2\\ln 2$",
+        "$2\\ln 3$",
+        "$\\ln 5$"
+      ],
+      "ans": 0,
+      "hints": [
+        "This is a rational function of $\\sin\\theta$ and $\\cos\\theta$, so use the half-angle substitution.",
+        "Let $u=\\tan\\dfrac\\theta2$, rewrite $\\sin\\theta$, $\\cos\\theta$ and $d\\theta$ in terms of $u$, and change the limits.",
+        "With $u=\\tan\\dfrac\\theta2$: $\\sin\\theta=\\dfrac{2u}{1+u^2}$, $\\cos\\theta=\\dfrac{1-u^2}{1+u^2}$, $d\\theta=\\dfrac{2\\,du}{1+u^2}$."
+      ],
+      "steps": [
+        "The limits $\\theta=0,\\ \\pi/2$ become $u=0,\\ 1$.",
+        "Denominator: $1+\\dfrac{2u}{1+u^2}+\\dfrac{1-u^2}{1+u^2}=\\dfrac{2+2u}{1+u^2}$.",
+        "The integral becomes $\\int_0^1\\dfrac{2\\,du}{1+u^2}\\cdot\\dfrac{1+u^2}{2+2u}=\\int_0^1\\dfrac{du}{1+u}$.",
+        "$=\\ln(1+u)\\Big|_0^1=\\ln2$."
+      ],
+      "brief": "$u=\\tan\\frac\\theta2$: integral becomes $\\int_0^1\\frac{du}{1+u}=\\ln2$."
+    },
+    {
+      "sec": "8.3",
+      "q": "If $\\int\\sec^4 3x\\,\\tan^3 3x\\,dx=\\dfrac{\\tan^4 3x}{A}+\\dfrac{\\tan^6 3x}{B}+C$, then $A+B=$",
+      "opts": [
+        "$30$",
+        "$6$",
+        "$28$",
+        "$26$",
+        "$32$"
+      ],
+      "ans": 0,
+      "hints": [
+        "The power of secant is even, so save a $\\sec^2$ factor and use a tangent substitution.",
+        "Write $\\sec^4 3x=\\sec^2 3x\\,(1+\\tan^2 3x)$ and substitute $u=\\tan3x$, keeping the factor from the chain rule in mind.",
+        "$\\sec^2\\theta=1+\\tan^2\\theta$ and $\\dfrac{d}{dx}\\tan kx=k\\sec^2kx$."
+      ],
+      "steps": [
+        "$u=\\tan3x$, $du=3\\sec^23x\\,dx$, so the integral is $\\dfrac13\\int u^3(1+u^2)\\,du$.",
+        "$=\\dfrac13\\left(\\dfrac{u^4}{4}+\\dfrac{u^6}{6}\\right)+C=\\dfrac{\\tan^43x}{12}+\\dfrac{\\tan^63x}{18}+C$.",
+        "So $A=12$ and $B=18$, and $A+B=30$."
+      ],
+      "brief": "$u=\\tan3x$: $\\frac13\\int(u^3+u^5)du=\\frac{u^4}{12}+\\frac{u^6}{18}$, so $A+B=30$."
+    },
+    {
+      "sec": "7.2",
+      "q": "The volume of the solid generated by revolving the region bounded by the graphs of the equations $y=x$, $y=3$ and $x=0$ about the line $y=4$ is",
+      "opts": [
+        "$18\\pi$",
+        "$17\\pi$",
+        "$16\\pi$",
+        "$19\\pi$",
+        "$20\\pi$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Revolving about a horizontal line that does not touch the region gives washers.",
+        "Sketch the region: it lies between $y=x$ and $y=3$ for $x$ from $0$ to where they meet. Find the distances of both curves from the axis.",
+        "Washer method about $y=k$: $V=\\pi\\int_a^b\\left[R(x)^2-r(x)^2\\right]dx$, where $R$ and $r$ are the distances from the axis to the farther and nearer boundaries."
+      ],
+      "steps": [
+        "The curves $y=x$ and $y=3$ meet at $x=3$, so $0\\le x\\le3$.",
+        "Outer radius $R=4-x$ (to $y=x$), inner radius $r=4-3=1$ (to $y=3$).",
+        "$V=\\pi\\int_0^3\\left[(4-x)^2-1\\right]dx=\\pi\\left[-\\dfrac{(4-x)^3}{3}-x\\right]_0^3$.",
+        "$=\\pi\\left[\\left(-\\dfrac13-3\\right)-\\left(-\\dfrac{64}3\\right)\\right]=\\pi(21-3)=18\\pi$."
+      ],
+      "brief": "Washers: $V=\\pi\\int_0^3[(4-x)^2-1]\\,dx=18\\pi$."
+    },
+    {
+      "sec": "7.2",
+      "q": "The base of a solid is the region bounded by the graphs of $y=x+1$ and $y=x^2-1$. If the cross sections of the solid perpendicular to the $x$-axis are squares, then the volume of the solid is equal to:",
+      "opts": [
+        "$\\int_{-1}^{2}(x^4-2x^3-3x^2+4x+4)\\,dx$",
+        "$\\int_{-2}^{1}(x^4-2x^3-3x^2+4x+4)\\,dx$",
+        "$\\int_{-1}^{2}(x^4+2x^3+3x^2+4x+4)\\,dx$",
+        "$\\int_{-1}^{-2}(x^4+2x^3+3x^2+4x+4)\\,dx$",
+        "$\\int_{-1}^{2}(x^4-2x^3-3x^2-4x+4)\\,dx$"
+      ],
+      "ans": 0,
+      "hints": [
+        "This is a volume by known cross sections: the area of each square depends on its side length.",
+        "Find where the two curves intersect to get the limits, and find the side of the square as the vertical distance between the curves.",
+        "For cross sections perpendicular to the $x$-axis: $V=\\int_a^bA(x)\\,dx$, and for a square of side $s$, $A=s^2$."
+      ],
+      "steps": [
+        "Set $x+1=x^2-1$: $x^2-x-2=(x-2)(x+1)=0$, so $x=-1$ and $x=2$.",
+        "On $[-1,2]$ the line is above the parabola, so $s=(x+1)-(x^2-1)=-x^2+x+2$.",
+        "$A(x)=s^2=(x^2-x-2)^2=x^4-2x^3-3x^2+4x+4$.",
+        "$V=\\int_{-1}^{2}(x^4-2x^3-3x^2+4x+4)\\,dx$."
+      ],
+      "brief": "Limits $-1$ to $2$; side $=-x^2+x+2$, area $=x^4-2x^3-3x^2+4x+4$."
+    },
+    {
+      "sec": "7.4",
+      "q": "The arc length of the graph of $y=\\dfrac{x^3}{6}+\\dfrac{1}{2x}$ on the interval $\\left[\\dfrac12,2\\right]$ is:",
+      "opts": [
+        "$\\dfrac{33}{16}$",
+        "$\\dfrac{31}{16}$",
+        "$\\dfrac{29}{16}$",
+        "$\\dfrac{27}{16}$",
+        "$\\dfrac{35}{16}$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Use the arc length formula; the integrand is designed so that $1+(y')^2$ is a perfect square.",
+        "Differentiate $y$, compute $1+(y')^2$, and recognise it as the square of a simple expression.",
+        "$L=\\int_a^b\\sqrt{1+\\left(y'\\right)^2}\\,dx$, and $1+\\left(\\dfrac{p-q}{2}\\right)^2=\\left(\\dfrac{p+q}{2}\\right)^2$ when $pq=1$."
+      ],
+      "steps": [
+        "$y'=\\dfrac{x^2}{2}-\\dfrac{1}{2x^2}$.",
+        "$1+(y')^2=1+\\dfrac{x^4}{4}-\\dfrac12+\\dfrac{1}{4x^4}=\\left(\\dfrac{x^2}{2}+\\dfrac{1}{2x^2}\\right)^2$.",
+        "$L=\\int_{1/2}^{2}\\left(\\dfrac{x^2}{2}+\\dfrac{1}{2x^2}\\right)dx=\\left[\\dfrac{x^3}{6}-\\dfrac{1}{2x}\\right]_{1/2}^{2}$.",
+        "$=\\left(\\dfrac43-\\dfrac14\\right)-\\left(\\dfrac1{48}-1\\right)=\\dfrac{13}{12}+\\dfrac{47}{48}=\\dfrac{33}{16}$."
+      ],
+      "brief": "$1+(y')^2=(\\frac{x^2}2+\\frac1{2x^2})^2$; $L=[\\frac{x^3}6-\\frac1{2x}]_{1/2}^2=\\frac{33}{16}$."
+    },
+    {
+      "sec": "8.2",
+      "q": "If $\\int\\sin\\sqrt x\\,dx=a\\sqrt x\\,\\cos\\sqrt x+b\\sin\\sqrt x+c$, then $a+b=$",
+      "opts": [
+        "$0$",
+        "$4$",
+        "$1$",
+        "$-1$",
+        "$-4$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Remove the square root with a substitution, then use integration by parts.",
+        "Let $t=\\sqrt x$ so $x=t^2$ and $dx=2t\\,dt$, then integrate the resulting product by parts.",
+        "$\\int u\\,dv=uv-\\int v\\,du$ and $\\int\\sin t\\,dt=-\\cos t$."
+      ],
+      "steps": [
+        "With $t=\\sqrt x$: $\\int\\sin\\sqrt x\\,dx=2\\int t\\sin t\\,dt$.",
+        "Parts with $u=t$, $dv=\\sin t\\,dt$: $\\int t\\sin t\\,dt=-t\\cos t+\\int\\cos t\\,dt=-t\\cos t+\\sin t$.",
+        "So the integral is $-2\\sqrt x\\cos\\sqrt x+2\\sin\\sqrt x+c$, giving $a=-2$ and $b=2$.",
+        "$a+b=0$."
+      ],
+      "brief": "$t=\\sqrt x$: $2\\int t\\sin t\\,dt=-2t\\cos t+2\\sin t$, so $a=-2$, $b=2$, $a+b=0$."
+    },
+    {
+      "sec": "8.4",
+      "q": "$\\int\\dfrac{x}{\\sqrt{4x-x^2}}\\,dx=$",
+      "opts": [
+        "$2\\arcsin\\left(\\dfrac{x-2}{2}\\right)-\\sqrt{4x-x^2}+c$",
+        "$\\arcsin\\left(\\dfrac{x-2}{2}\\right)-\\sqrt{4x-x^2}+c$",
+        "$\\arccos\\left(\\dfrac{x-2}{2}\\right)-\\sqrt{4x-x^2}+c$",
+        "$2\\arcsin\\left(\\dfrac{x-2}{2}\\right)+\\sqrt{4x-x^2}+c$",
+        "$2\\arccos\\left(\\dfrac{x-2}{2}\\right)-\\sqrt{4x-x^2}+c$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Complete the square under the radical to reach the form $\\sqrt{a^2-u^2}$.",
+        "Rewrite the radicand as $a^2$ minus a square, substitute $u$ for the shifted variable, and split the numerator into two integrals.",
+        "$\\int\\dfrac{du}{\\sqrt{a^2-u^2}}=\\arcsin\\dfrac ua+C$ and $\\int\\dfrac{u\\,du}{\\sqrt{a^2-u^2}}=-\\sqrt{a^2-u^2}+C$."
+      ],
+      "steps": [
+        "$4x-x^2=4-(x-2)^2$. Let $u=x-2$, so $x=u+2$ and $dx=du$.",
+        "$\\int\\dfrac{u+2}{\\sqrt{4-u^2}}\\,du=\\int\\dfrac{u}{\\sqrt{4-u^2}}\\,du+2\\int\\dfrac{du}{\\sqrt{4-u^2}}$.",
+        "$=-\\sqrt{4-u^2}+2\\arcsin\\dfrac u2+c$.",
+        "Back in $x$: $2\\arcsin\\left(\\dfrac{x-2}{2}\\right)-\\sqrt{4x-x^2}+c$."
+      ],
+      "brief": "Complete the square, $u=x-2$: $2\\arcsin\\frac{x-2}{2}-\\sqrt{4x-x^2}+c$."
+    },
+    {
+      "sec": "8.5",
+      "q": "$\\int\\dfrac{\\sec^2x}{\\tan^2x+5\\tan x+6}\\,dx=$",
+      "opts": [
+        "$\\ln\\left|\\dfrac{\\tan x+2}{\\tan x+3}\\right|+c$",
+        "$\\ln\\left|\\dfrac{\\tan x-2}{\\tan x+3}\\right|+c$",
+        "$\\ln\\left|\\dfrac{\\tan x+2}{\\tan x-3}\\right|+c$",
+        "$\\ln\\left|\\dfrac{\\tan x-2}{\\tan x-3}\\right|+c$",
+        "$\\dfrac{\\tan x+2}{\\tan x+3}+c$"
+      ],
+      "ans": 0,
+      "hints": [
+        "The numerator is the derivative of $\\tan x$, so a substitution turns this into a rational integral.",
+        "Let $u=\\tan x$, factor the resulting quadratic denominator, and use partial fractions.",
+        "$\\dfrac{d}{dx}\\tan x=\\sec^2x$; for distinct roots, $\\dfrac{1}{(u-r)(u-s)}=\\dfrac{1}{r-s}\\left(\\dfrac1{u-r}-\\dfrac1{u-s}\\right)$."
+      ],
+      "steps": [
+        "$u=\\tan x$, $du=\\sec^2x\\,dx$: $\\int\\dfrac{du}{u^2+5u+6}=\\int\\dfrac{du}{(u+2)(u+3)}$.",
+        "$\\dfrac{1}{(u+2)(u+3)}=\\dfrac1{u+2}-\\dfrac1{u+3}$.",
+        "$\\ln|u+2|-\\ln|u+3|+c=\\ln\\left|\\dfrac{u+2}{u+3}\\right|+c$.",
+        "Replace $u=\\tan x$."
+      ],
+      "brief": "$u=\\tan x$: $\\int\\left(\\frac1{u+2}-\\frac1{u+3}\\right)du=\\ln\\left|\\frac{\\tan x+2}{\\tan x+3}\\right|+c$."
+    }
+  ]
+}

@@ -1,0 +1,456 @@
+{
+  "course": "math201",
+  "term": "232",
+  "kind": "e1",
+  "date": "",
+  "minutes": 90,
+  "source": "math201-232-e1caacf0a6-c3bb-493b-bddf-7b382fbe990f.pdf",
+  "note": "Scan has no cover page: date and exam length are not printed. Date left empty; minutes set to 90 (the usual major-exam length). The scan jumps from question 9 (page 5) to question 11 (page 6); question 10 is not in the scan, so this file has 19 questions (printed numbers 1-9 and 11-20). All answers match the master key (marked correct); sympy confirmed the polar slope, areas, arc length and coplanarity determinant. Handwritten annotations on the scan were ignored. Section for the tangent-perpendicular-vector question was read from a handwritten tag and is a best match.",
+  "qs": [
+    {
+      "sec": "10.2",
+      "q": "The curve represented by the parametric equations \\[ x=e^{-t},\\quad y=e^{3t},\\quad t\\ge 0 \\] is represented by the rectangular equation",
+      "opts": [
+        "$y=\\dfrac{1}{x^3},\\ 0<x\\le 1$",
+        "$y=\\dfrac{1}{x^3},\\ x\\ge 1$",
+        "$y=\\dfrac{1}{\\sqrt[3]{x}},\\ x\\ge 1$",
+        "$y=x^3,\\ 0<x\\le 1$",
+        "$y=\\dfrac{1}{3x},\\ x\\ge 1$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Eliminate the parameter, and then use the range of $t$ to find which part of the curve is traced.",
+        "Write $y$ as a power of $e^{-t}$, then find the range of $x=e^{-t}$ for $t\\ge0$.",
+        "$e^{at}=\\left(e^{-t}\\right)^{-a}$, and $e^{-t}$ is decreasing, taking values in $(0,1]$ for $t\\ge 0$."
+      ],
+      "steps": [
+        "$y=e^{3t}=\\left(e^{-t}\\right)^{-3}=x^{-3}=\\dfrac{1}{x^3}$.",
+        "For $t\\ge0$, $x=e^{-t}$ decreases from $1$ toward $0$ and never reaches $0$.",
+        "So $0<x\\le1$ and $y=\\dfrac1{x^3}$."
+      ],
+      "brief": "$y=x^{-3}$ and $x=e^{-t}\\in(0,1]$ for $t\\ge 0$."
+    },
+    {
+      "sec": "10.2",
+      "q": "Which set of the following parametric equations represents a parabola or part of a parabola?",
+      "opts": [
+        "$x=t+1,\\ y=\\sqrt{t},\\ t\\ge 0$",
+        "$x=2t-1,\\ y=2t+1,\\ t\\in(-\\infty,\\infty)$",
+        "$x=1+\\cos t,\\ y=\\sin t,\\ t\\in[0,2\\pi]$",
+        "$x=\\dfrac1t,\\ y=t-1,\\ t\\in(0,\\infty)$",
+        "$x=\\sec t,\\ y=\\cos t,\\ t\\in\\left[0,\\dfrac{\\pi}{2}\\right)$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Eliminate the parameter in each set and identify the resulting curve.",
+        "Look for a set where one variable ends up as a quadratic expression in the other.",
+        "A parabola has an equation of the form $x=ay^2+by+c$ or $y=ax^2+bx+c$ with $a\\neq0$; a line is linear, a circle has $(x-h)^2+(y-k)^2=r^2$, and $y=k/x$ is a hyperbola."
+      ],
+      "steps": [
+        "First set: $y^2=t$, so $x=y^2+1$ with $y\\ge0$, which is half of a parabola.",
+        "Second set: $y=x+2$, a line.",
+        "Third set: $(x-1)^2+y^2=1$, a circle.",
+        "Fourth set: $y=\\dfrac1x-1$, a hyperbola branch.",
+        "Fifth set: $y=\\dfrac1x$, a hyperbola branch."
+      ],
+      "brief": "$t=y^2$ gives $x=y^2+1$, part of a parabola; others are line, circle, hyperbolas."
+    },
+    {
+      "sec": "10.3",
+      "q": "An equation of the tangent line to the parametric curve \\[ x=t^2-4,\\quad y=t^2-2t \\] at the point $(x,y)=(-3,3)$ is given by",
+      "opts": [
+        "$y=2x+9$",
+        "$y=3$",
+        "$y=x+6$",
+        "$y=-2x-3$",
+        "$x=-3$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Find the parameter value at the point, then the slope from the parametric derivative.",
+        "Solve $x(t)=-3$, and check which solution also gives $y=3$.",
+        "$\\dfrac{dy}{dx}=\\dfrac{dy/dt}{dx/dt}$, and the tangent line is $y-y_0=m(x-x_0)$."
+      ],
+      "steps": [
+        "$t^2-4=-3$ gives $t=\\pm1$; $y(1)=-1$ and $y(-1)=3$, so $t=-1$.",
+        "$\\dfrac{dy}{dx}=\\dfrac{2t-2}{2t}$, which at $t=-1$ equals $\\dfrac{-4}{-2}=2$.",
+        "$y-3=2(x+3)$, so $y=2x+9$."
+      ],
+      "brief": "$t=-1$, slope $\\frac{2t-2}{2t}=2$: $y-3=2(x+3)$, so $y=2x+9$."
+    },
+    {
+      "sec": "10.3",
+      "q": "The curve given by the parametric equations \\[ x=1+t^2,\\quad y=1+t^2+t^3 \\] is concave upward when",
+      "opts": [
+        "$t>0$",
+        "$t<0$",
+        "$-\\infty<t<\\infty$",
+        "$-1<t<1$",
+        "$t>-2$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Concavity is decided by the sign of the second derivative $d^2y/dx^2$.",
+        "Compute $dy/dx$ in terms of $t$, then differentiate it with respect to $t$ and divide by $dx/dt$.",
+        "$\\dfrac{d^2y}{dx^2}=\\dfrac{\\frac{d}{dt}\\left(\\frac{dy}{dx}\\right)}{dx/dt}$, and the curve is concave upward where this is positive."
+      ],
+      "steps": [
+        "$\\dfrac{dy}{dx}=\\dfrac{2t+3t^2}{2t}=1+\\dfrac32t$ for $t\\neq0$.",
+        "$\\dfrac{d^2y}{dx^2}=\\dfrac{3/2}{2t}=\\dfrac{3}{4t}$.",
+        "This is positive exactly when $t>0$."
+      ],
+      "brief": "$\\frac{d^2y}{dx^2}=\\frac{3}{4t}>0$ when $t>0$."
+    },
+    {
+      "sec": "10.3",
+      "q": "The surface area of the surface generated by revolving the parametric curve \\[ x=\\cos^2 t,\\quad y=2\\cos t,\\quad 0\\le t\\le\\frac{\\pi}{2} \\] about the $x$-axis is given by",
+      "opts": [
+        "$\\int_0^{\\pi/2}4\\pi\\sin(2t)\\cdot\\sqrt{1+\\cos^2 t}\\,dt$",
+        "$\\int_0^{\\pi/2}8\\pi\\cos t\\cdot\\sqrt{1+\\cos^2 t}\\,dt$",
+        "$\\int_0^{\\pi/2}2\\pi\\cos(2t)\\cdot\\sqrt{1+\\cos^2 t}\\,dt$",
+        "$\\int_0^{\\pi/2}8\\pi\\sin t\\cdot\\sqrt{1+\\cos^2 t}\\,dt$",
+        "$\\int_0^{\\pi/2}2\\pi\\cos^2 t\\cdot\\sqrt{1+\\cos^2 t}\\,dt$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Use the surface area formula for a parametric curve revolved about the $x$-axis.",
+        "Compute $dx/dt$ and $dy/dt$, simplify the expression under the square root, and then simplify the integrand with a double-angle identity.",
+        "$S=\\int_a^b 2\\pi y\\sqrt{\\left(\\dfrac{dx}{dt}\\right)^2+\\left(\\dfrac{dy}{dt}\\right)^2}\\,dt$ and $\\sin 2t=2\\sin t\\cos t$."
+      ],
+      "steps": [
+        "$dx/dt=-2\\cos t\\sin t$ and $dy/dt=-2\\sin t$.",
+        "$\\sqrt{4\\cos^2t\\sin^2t+4\\sin^2t}=2\\sin t\\sqrt{\\cos^2t+1}$ (since $\\sin t\\ge0$).",
+        "$S=\\int_0^{\\pi/2}2\\pi(2\\cos t)(2\\sin t)\\sqrt{1+\\cos^2t}\\,dt$.",
+        "Since $4\\sin t\\cos t=2\\sin 2t$, this is $\\int_0^{\\pi/2}4\\pi\\sin(2t)\\sqrt{1+\\cos^2t}\\,dt$."
+      ],
+      "brief": "$S=\\int 2\\pi y\\,ds$ with $ds=2\\sin t\\sqrt{1+\\cos^2t}\\,dt$ gives $4\\pi\\sin 2t\\sqrt{1+\\cos^2 t}$."
+    },
+    {
+      "sec": "10.3",
+      "q": "Which one of the following statements is TRUE about the graph given by the parametric equations \\[ x=t^2-t,\\quad y=2t^3-6t+5 \\]",
+      "opts": [
+        "It has two horizontal tangents and one vertical tangent",
+        "It has one horizontal tangent and one vertical tangent",
+        "It has no horizontal tangent and two vertical tangents",
+        "It has one horizontal tangent and no vertical tangent",
+        "It has one horizontal tangent and two vertical tangents"
+      ],
+      "ans": 0,
+      "hints": [
+        "Horizontal tangents occur where $dy/dt=0$ and vertical tangents where $dx/dt=0$.",
+        "Compute $dx/dt$ and $dy/dt$, solve each for zero, and check that the other derivative is nonzero there.",
+        "A horizontal tangent needs $dy/dt=0$, $dx/dt\\neq0$; a vertical tangent needs $dx/dt=0$, $dy/dt\\neq0$."
+      ],
+      "steps": [
+        "$dx/dt=2t-1$ is zero only at $t=\\tfrac12$, where $dy/dt=6t^2-6=-\\tfrac92\\neq0$: one vertical tangent.",
+        "$dy/dt=6(t-1)(t+1)$ is zero at $t=\\pm1$, where $dx/dt=2t-1\\neq0$ (it is $1$ and $-3$): two horizontal tangents.",
+        "So there are two horizontal tangents and one vertical tangent."
+      ],
+      "brief": "$dy/dt=0$ at $t=\\pm1$ (2 horizontal); $dx/dt=0$ at $t=\\frac12$ (1 vertical)."
+    },
+    {
+      "sec": "10.4",
+      "q": "If a point has polar coordinates $(r,\\theta)=\\left(-4,-\\dfrac{3\\pi}{4}\\right)$, then the corresponding rectangular coordinates for the point are",
+      "opts": [
+        "$(x,y)=(2\\sqrt2,\\,2\\sqrt2)$",
+        "$(x,y)=(2\\sqrt2,\\,-2\\sqrt2)$",
+        "$(x,y)=(-2\\sqrt2,\\,2\\sqrt2)$",
+        "$(x,y)=(-2\\sqrt2,\\,-2\\sqrt2)$",
+        "$(x,y)=(\\sqrt2,\\,\\sqrt2)$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Convert polar to rectangular coordinates directly.",
+        "Evaluate cosine and sine at the given angle and multiply by the (negative) value of $r$.",
+        "$x=r\\cos\\theta$ and $y=r\\sin\\theta$; cosine and sine are even/odd: $\\cos(-\\alpha)=\\cos\\alpha$, $\\sin(-\\alpha)=-\\sin\\alpha$."
+      ],
+      "steps": [
+        "$\\cos\\left(-\\tfrac{3\\pi}{4}\\right)=-\\tfrac{\\sqrt2}{2}$ and $\\sin\\left(-\\tfrac{3\\pi}{4}\\right)=-\\tfrac{\\sqrt2}{2}$.",
+        "$x=-4\\left(-\\tfrac{\\sqrt2}{2}\\right)=2\\sqrt2$.",
+        "$y=-4\\left(-\\tfrac{\\sqrt2}{2}\\right)=2\\sqrt2$."
+      ],
+      "brief": "$x=-4\\cos(-\\frac{3\\pi}{4})=2\\sqrt2$, $y=-4\\sin(-\\frac{3\\pi}{4})=2\\sqrt2$."
+    },
+    {
+      "sec": "10.4",
+      "q": "The graph of the polar equation $r=\\dfrac{6}{\\sin\\theta-3\\cos\\theta}$ is",
+      "opts": [
+        "a line",
+        "an ellipse",
+        "a circle",
+        "a parabola",
+        "a hyperbola"
+      ],
+      "ans": 0,
+      "hints": [
+        "Convert the polar equation to rectangular form.",
+        "Multiply both sides by the denominator and substitute for $r\\cos\\theta$ and $r\\sin\\theta$.",
+        "$x=r\\cos\\theta$ and $y=r\\sin\\theta$."
+      ],
+      "steps": [
+        "Multiply: $r\\sin\\theta-3r\\cos\\theta=6$.",
+        "Substitute: $y-3x=6$.",
+        "So $y=3x+6$, which is a line."
+      ],
+      "brief": "$r\\sin\\theta-3r\\cos\\theta=6\\Rightarrow y-3x=6$, a line."
+    },
+    {
+      "sec": "10.4",
+      "q": "The slope of the tangent line to the polar graph $r=3-3\\cos\\theta$ at the point corresponding to $\\theta=\\dfrac{\\pi}{4}$ is",
+      "opts": [
+        "$\\dfrac{\\sqrt2}{2-\\sqrt2}$",
+        "$-1$",
+        "$-\\dfrac{1}{\\sqrt2}$",
+        "$\\dfrac{1-\\sqrt2}{\\sqrt2}$",
+        "$\\dfrac{-\\sqrt2}{2+\\sqrt2}$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Treat the polar curve as the parametric curve $x=r\\cos\\theta$, $y=r\\sin\\theta$.",
+        "Compute $r'(\\theta)$ and evaluate $r$ and $r'$ at the given angle.",
+        "$\\dfrac{dy}{dx}=\\dfrac{r'\\sin\\theta+r\\cos\\theta}{r'\\cos\\theta-r\\sin\\theta}$."
+      ],
+      "steps": [
+        "$r'=3\\sin\\theta$; at $\\theta=\\frac\\pi4$: $r'=\\tfrac{3\\sqrt2}{2}$ and $r=3-\\tfrac{3\\sqrt2}{2}$.",
+        "Numerator: $\\tfrac{3\\sqrt2}{2}\\cdot\\tfrac{\\sqrt2}{2}+\\left(3-\\tfrac{3\\sqrt2}{2}\\right)\\tfrac{\\sqrt2}{2}=\\tfrac{3}{2}+\\tfrac{3\\sqrt2}{2}-\\tfrac32=\\tfrac{3\\sqrt2}{2}$.",
+        "Denominator: $\\tfrac{3\\sqrt2}{2}\\cdot\\tfrac{\\sqrt2}{2}-\\left(3-\\tfrac{3\\sqrt2}{2}\\right)\\tfrac{\\sqrt2}{2}=\\tfrac32-\\tfrac{3\\sqrt2}{2}+\\tfrac32=3-\\tfrac{3\\sqrt2}{2}$.",
+        "Slope $=\\dfrac{3\\sqrt2/2}{3-3\\sqrt2/2}=\\dfrac{3\\sqrt2}{6-3\\sqrt2}=\\dfrac{\\sqrt2}{2-\\sqrt2}$."
+      ],
+      "brief": "$\\frac{dy}{dx}=\\frac{r'\\sin\\theta+r\\cos\\theta}{r'\\cos\\theta-r\\sin\\theta}=\\frac{\\sqrt2}{2-\\sqrt2}$."
+    },
+    {
+      "omitted": true,
+      "q": "Question 10 of the original exam is omitted (missing from the published exam file)."
+    },
+    {
+      "sec": "10.5",
+      "q": "The area of the region inside the graph of the polar equation $r=2\\sin\\theta$ for $\\dfrac{\\pi}{4}\\le\\theta\\le\\dfrac{\\pi}{2}$ is equal to",
+      "opts": [
+        "$\\dfrac{\\pi}{4}+\\dfrac12$",
+        "$\\dfrac{\\pi}{2}+\\dfrac12$",
+        "$\\dfrac{\\pi}{2}-\\dfrac12$",
+        "$\\dfrac{\\pi}{4}+1$",
+        "$\\dfrac{3\\pi}{4}-\\dfrac12$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Use the area formula for a polar region.",
+        "Set up the integral over the given angle range and use a half-angle identity for $\\sin^2\\theta$.",
+        "$A=\\int_\\alpha^\\beta\\frac12r^2\\,d\\theta$ and $\\sin^2\\theta=\\dfrac{1-\\cos2\\theta}{2}$."
+      ],
+      "steps": [
+        "$A=\\int_{\\pi/4}^{\\pi/2}\\tfrac12(2\\sin\\theta)^2d\\theta=\\int_{\\pi/4}^{\\pi/2}2\\sin^2\\theta\\,d\\theta$.",
+        "$=\\int_{\\pi/4}^{\\pi/2}(1-\\cos2\\theta)\\,d\\theta=\\left[\\theta-\\tfrac12\\sin2\\theta\\right]_{\\pi/4}^{\\pi/2}$.",
+        "$=\\left(\\tfrac\\pi2-0\\right)-\\left(\\tfrac\\pi4-\\tfrac12\\right)=\\tfrac\\pi4+\\tfrac12$."
+      ],
+      "brief": "$A=\\int_{\\pi/4}^{\\pi/2}(1-\\cos2\\theta)d\\theta=\\frac\\pi4+\\frac12$."
+    },
+    {
+      "sec": "10.5",
+      "q": "The area of the region inside the polar curve $r=4\\cos\\theta$ and outside the polar curve $r=2$ is equal to",
+      "opts": [
+        "$\\dfrac{4\\pi+6\\sqrt3}{3}$",
+        "$\\dfrac{4\\pi+5\\sqrt3}{3}$",
+        "$\\pi+\\dfrac{\\sqrt3}{2}$",
+        "$\\dfrac{2\\pi-\\sqrt3}{6}$",
+        "$\\dfrac{3\\pi+\\sqrt3}{6}$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Find where the two curves intersect, then use the area between two polar curves.",
+        "Solve $4\\cos\\theta=2$ for the limits and use symmetry about the polar axis.",
+        "$A=\\int_\\alpha^\\beta\\frac12\\left(r_{\\text{outer}}^2-r_{\\text{inner}}^2\\right)d\\theta$ and $\\cos^2\\theta=\\dfrac{1+\\cos2\\theta}{2}$."
+      ],
+      "steps": [
+        "$4\\cos\\theta=2$ gives $\\theta=\\pm\\frac\\pi3$; the region is symmetric about the polar axis.",
+        "$A=2\\int_0^{\\pi/3}\\tfrac12\\left(16\\cos^2\\theta-4\\right)d\\theta=\\int_0^{\\pi/3}(16\\cos^2\\theta-4)\\,d\\theta$.",
+        "$=\\int_0^{\\pi/3}(4+8\\cos2\\theta)\\,d\\theta=\\left[4\\theta+4\\sin2\\theta\\right]_0^{\\pi/3}$.",
+        "$=\\dfrac{4\\pi}{3}+2\\sqrt3=\\dfrac{4\\pi+6\\sqrt3}{3}$."
+      ],
+      "brief": "Limits $\\pm\\frac\\pi3$: $A=\\int_0^{\\pi/3}(16\\cos^2\\theta-4)d\\theta=\\frac{4\\pi+6\\sqrt3}{3}$."
+    },
+    {
+      "sec": "10.5",
+      "q": "The length of the polar curve \\[ r=2-2\\cos\\theta,\\quad 0\\le\\theta\\le\\frac{\\pi}{3} \\] is equal to",
+      "opts": [
+        "$8-4\\sqrt3$",
+        "$2-2\\sqrt3$",
+        "$4+2\\sqrt3$",
+        "$6-\\sqrt3$",
+        "$4+\\sqrt3$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Use the arc length formula for a polar curve.",
+        "Compute $r^2+(r')^2$, simplify it, and use a half-angle identity to remove the square root.",
+        "$L=\\int_\\alpha^\\beta\\sqrt{r^2+\\left(\\frac{dr}{d\\theta}\\right)^2}\\,d\\theta$ and $1-\\cos\\theta=2\\sin^2\\dfrac\\theta2$."
+      ],
+      "steps": [
+        "$r^2+(r')^2=(2-2\\cos\\theta)^2+4\\sin^2\\theta=8-8\\cos\\theta=16\\sin^2\\frac\\theta2$.",
+        "$L=\\int_0^{\\pi/3}4\\sin\\frac\\theta2\\,d\\theta$ since $\\sin\\frac\\theta2\\ge0$ on the interval.",
+        "$=\\left[-8\\cos\\frac\\theta2\\right]_0^{\\pi/3}=-8\\left(\\frac{\\sqrt3}{2}-1\\right)=8-4\\sqrt3$."
+      ],
+      "brief": "$r^2+r'^2=16\\sin^2\\frac\\theta2$, $L=\\int_0^{\\pi/3}4\\sin\\frac\\theta2\\,d\\theta=8-4\\sqrt3$."
+    },
+    {
+      "sec": "11.2",
+      "q": "The center $C$ and the radius $r$ of the sphere \\[ x^2+y^2+z^2-2x+6y+8z+1=0 \\] are",
+      "opts": [
+        "$C(1,-3,-4),\\ r=5$",
+        "$C(-1,3,4),\\ r=5$",
+        "$C(-2,6,8),\\ r=4$",
+        "$C(1,3,-4),\\ r=3$",
+        "$C(-1,-3,4),\\ r=5$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Complete the square in each variable to reach the standard form of a sphere.",
+        "Group the $x$, $y$ and $z$ terms and complete each square, moving constants to the right side.",
+        "$(x-h)^2+(y-k)^2+(z-l)^2=r^2$ has center $(h,k,l)$ and radius $r$; $x^2+bx$ becomes $\\left(x+\\frac b2\\right)^2-\\frac{b^2}{4}$."
+      ],
+      "steps": [
+        "$(x^2-2x+1)+(y^2+6y+9)+(z^2+8z+16)=-1+1+9+16$.",
+        "$(x-1)^2+(y+3)^2+(z+4)^2=25$.",
+        "So the center is $(1,-3,-4)$ and the radius is $5$."
+      ],
+      "brief": "Completing squares: $(x-1)^2+(y+3)^2+(z+4)^2=25$."
+    },
+    {
+      "sec": "11.2",
+      "q": "The vector with initial point $P(1,1,-3)$ and terminal point $Q(3,4,-4)$ is parallel to the vector",
+      "opts": [
+        "$\\left\\langle-\\dfrac23,-1,\\dfrac13\\right\\rangle$",
+        "$\\langle3,4,-4\\rangle$",
+        "$\\langle1,1,-3\\rangle$",
+        "$\\langle2,-9,3\\rangle$",
+        "$\\left\\langle1,\\dfrac32,-1\\right\\rangle$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Find the vector from $P$ to $Q$, then test which choice is a scalar multiple of it.",
+        "Subtract the coordinates of $P$ from those of $Q$.",
+        "Two nonzero vectors are parallel when one is a scalar multiple of the other, that is, all component ratios are equal."
+      ],
+      "steps": [
+        "$\\overrightarrow{PQ}=\\langle3-1,\\,4-1,\\,-4+3\\rangle=\\langle2,3,-1\\rangle$.",
+        "$-3\\left\\langle-\\tfrac23,-1,\\tfrac13\\right\\rangle=\\langle2,3,-1\\rangle$.",
+        "So $\\overrightarrow{PQ}$ is parallel to $\\left\\langle-\\tfrac23,-1,\\tfrac13\\right\\rangle$."
+      ],
+      "brief": "$\\overrightarrow{PQ}=\\langle2,3,-1\\rangle=-3\\langle-\\frac23,-1,\\frac13\\rangle$."
+    },
+    {
+      "sec": "11.3",
+      "q": "The projection of $\\vec u=\\langle0,3,3\\rangle$ onto $\\vec v=\\langle-1,1,1\\rangle$ is",
+      "opts": [
+        "$\\langle-2,2,2\\rangle$",
+        "$\\langle2,-2,2\\rangle$",
+        "$\\langle-3,3,3\\rangle$",
+        "$\\langle0,1,4\\rangle$",
+        "$\\langle-1,4,4\\rangle$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Use the vector projection formula.",
+        "Compute $\\vec u\\cdot\\vec v$ and $\\|\\vec v\\|^2$, then multiply the scalar by $\\vec v$.",
+        "$\\operatorname{proj}_{\\vec v}\\vec u=\\dfrac{\\vec u\\cdot\\vec v}{\\|\\vec v\\|^2}\\,\\vec v$."
+      ],
+      "steps": [
+        "$\\vec u\\cdot\\vec v=0+3+3=6$.",
+        "$\\|\\vec v\\|^2=1+1+1=3$.",
+        "$\\operatorname{proj}_{\\vec v}\\vec u=\\dfrac63\\langle-1,1,1\\rangle=\\langle-2,2,2\\rangle$."
+      ],
+      "brief": "$\\frac{\\vec u\\cdot\\vec v}{\\|\\vec v\\|^2}\\vec v=\\frac63\\langle-1,1,1\\rangle=\\langle-2,2,2\\rangle$."
+    },
+    {
+      "sec": "11.4",
+      "q": "The area of the parallelogram that has the vectors $\\vec u=\\vec i+\\vec j+\\vec k$ and $\\vec v=\\vec j+\\vec k$ as adjacent sides is equal to",
+      "opts": [
+        "$\\sqrt2$",
+        "$2$",
+        "$2\\sqrt2$",
+        "$\\dfrac{\\sqrt2}{2}$",
+        "$3\\sqrt2$"
+      ],
+      "ans": 0,
+      "hints": [
+        "The area of a parallelogram is given by a cross product.",
+        "Compute $\\vec u\\times\\vec v$ with a $3\\times3$ determinant and find its length.",
+        "Area $=\\|\\vec u\\times\\vec v\\|$."
+      ],
+      "steps": [
+        "$\\vec u\\times\\vec v=\\begin{vmatrix}\\vec i&\\vec j&\\vec k\\\\1&1&1\\\\0&1&1\\end{vmatrix}=0\\vec i-\\vec j+\\vec k=\\langle0,-1,1\\rangle$.",
+        "Area $=\\sqrt{0+1+1}=\\sqrt2$."
+      ],
+      "brief": "$\\vec u\\times\\vec v=\\langle0,-1,1\\rangle$, area $=\\|\\vec u\\times\\vec v\\|=\\sqrt2$."
+    },
+    {
+      "sec": "11.1",
+      "q": "Which one of the following vectors is perpendicular to the tangent line to the graph of $f(x)=x^4-2x$ at the point $(1,-1)$?",
+      "opts": [
+        "$\\langle2,-1\\rangle$",
+        "$\\langle2,1\\rangle$",
+        "$\\langle-1,1\\rangle$",
+        "$\\langle-2,4\\rangle$",
+        "$\\langle1,2\\rangle$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Find the direction of the tangent line from the derivative, then find a vector with zero dot product with it.",
+        "Compute $f'(1)$ and write a direction vector of the tangent line.",
+        "A line of slope $m$ has direction vector $\\langle1,m\\rangle$, and two vectors are perpendicular when their dot product is $0$."
+      ],
+      "steps": [
+        "$f'(x)=4x^3-2$, so the slope at $x=1$ is $f'(1)=2$.",
+        "A direction vector of the tangent line is $\\langle1,2\\rangle$.",
+        "$\\langle2,-1\\rangle\\cdot\\langle1,2\\rangle=2-2=0$, so $\\langle2,-1\\rangle$ is perpendicular to the tangent line."
+      ],
+      "brief": "Tangent direction $\\langle1,2\\rangle$; $\\langle2,-1\\rangle\\cdot\\langle1,2\\rangle=0$."
+    },
+    {
+      "sec": "11.4",
+      "q": "If the vectors $\\vec u=\\langle1,a,b\\rangle$, $\\vec v=\\langle a,b,1\\rangle$, and $\\vec w=\\langle b,1,a\\rangle$ lie in the same plane, then",
+      "opts": [
+        "$a^3+b^3=3ab-1$",
+        "$a^3-b^3=2ab$",
+        "$a=b$",
+        "$a^2+b^2=3ab+1$",
+        "$a^3+b^3=ab-2$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Three vectors lie in the same plane when the volume of the parallelepiped they span is zero.",
+        "Set the scalar triple product, a $3\\times3$ determinant, equal to zero and expand it.",
+        "$\\vec u\\cdot(\\vec v\\times\\vec w)$ is the $3\\times3$ determinant with rows $\\vec u,\\vec v,\\vec w$, and it is $0$ exactly when the vectors are coplanar."
+      ],
+      "steps": [
+        "Coplanar means $\\begin{vmatrix}1&a&b\\\\a&b&1\\\\b&1&a\\end{vmatrix}=0$.",
+        "Expand: $1(ab-1)-a(a^2-b)+b(a-b^2)=3ab-1-a^3-b^3$.",
+        "Setting this to $0$ gives $a^3+b^3=3ab-1$."
+      ],
+      "brief": "$\\det=3ab-1-a^3-b^3=0$, so $a^3+b^3=3ab-1$."
+    },
+    {
+      "sec": "11.2",
+      "q": "If $R(a,b,c)$ is the point that lies two-thirds of the way from $P(1,0,1)$ to $Q(0,2,0)$, then $a+b+c=$",
+      "opts": [
+        "$2$",
+        "$\\dfrac43$",
+        "$-\\dfrac23$",
+        "$-3$",
+        "$4$"
+      ],
+      "ans": 0,
+      "hints": [
+        "The point $R$ is reached from $P$ by a fraction of the vector $\\overrightarrow{PQ}$.",
+        "Write $\\overrightarrow{PR}=\\frac23\\overrightarrow{PQ}$ and solve component by component.",
+        "If $R$ lies a fraction $s$ of the way from $P$ to $Q$, then $\\overrightarrow{PR}=s\\,\\overrightarrow{PQ}$."
+      ],
+      "steps": [
+        "$\\overrightarrow{PQ}=\\langle-1,2,-1\\rangle$, so $\\langle a-1,b,c-1\\rangle=\\tfrac23\\langle-1,2,-1\\rangle$.",
+        "$a=1-\\tfrac23=\\tfrac13$, $b=\\tfrac43$, $c=1-\\tfrac23=\\tfrac13$.",
+        "$a+b+c=\\tfrac13+\\tfrac43+\\tfrac13=2$."
+      ],
+      "brief": "$R=P+\\frac23\\overrightarrow{PQ}=(\\frac13,\\frac43,\\frac13)$, so $a+b+c=2$."
+    }
+  ]
+}

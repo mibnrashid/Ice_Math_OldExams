@@ -1,0 +1,365 @@
+{
+  "course": "math201",
+  "term": "251",
+  "kind": "e1",
+  "date": "1 October 2025",
+  "minutes": 90,
+  "source": "math201-251-e1.pdf",
+  "note": "The master pages show no marked key; every answer was determined by hand and checked with sympy/numerics, and in master order the correct choice is (a) for all 15 questions. Date and 90 minutes (net time) are from the cover page. Q13 (9 intersection points) was checked numerically. The source labels Q13 as sec 10.3, but intersections of polar graphs belong to 10.5, so 10.5 is used. Q10 is labelled 11.1/11.4 in the source; 11.4 is used.",
+  "qs": [
+    {
+      "sec": "10.3",
+      "q": "The parametric curve \\[ x=\\frac{t^3}{3},\\qquad y=1+t^2+\\frac{t^4}{8} \\] is",
+      "opts": [
+        "concave upward for $t<-2$",
+        "concave upward for $-1<t<0$",
+        "concave upward for $0<t<1$",
+        "concave downward for $t>2$",
+        "concave downward for $t>3$"
+      ],
+      "ans": 0,
+      "hints": [
+        "This is the second derivative of a parametric curve, which decides concavity.",
+        "Compute $dy/dx$ as $\\frac{dy/dt}{dx/dt}$, then differentiate that with respect to $t$ and divide by $dx/dt$ again.",
+        "For $x=x(t),\\ y=y(t)$: $\\dfrac{d^2y}{dx^2}=\\dfrac{\\frac{d}{dt}\\left(\\frac{dy}{dx}\\right)}{dx/dt}$, and the curve is concave upward where this is positive."
+      ],
+      "steps": [
+        "$\\dfrac{dx}{dt}=t^2$ and $\\dfrac{dy}{dt}=2t+\\dfrac{t^3}{2}$, so $\\dfrac{dy}{dx}=\\dfrac2t+\\dfrac t2$.",
+        "$\\dfrac{d}{dt}\\left(\\dfrac{dy}{dx}\\right)=-\\dfrac{2}{t^2}+\\dfrac12=\\dfrac{t^2-4}{2t^2}$.",
+        "$\\dfrac{d^2y}{dx^2}=\\dfrac{t^2-4}{2t^2\\cdot t^2}=\\dfrac{t^2-4}{2t^4}$.",
+        "This is positive exactly when $|t|>2$, so the curve is concave upward for $t<-2$ (and for $t>2$)."
+      ],
+      "brief": "$y''=\\frac{t^2-4}{2t^4}>0$ for $|t|>2$: concave upward for $t<-2$."
+    },
+    {
+      "sec": "10.2",
+      "q": "Which of the following sets of parametric equations describe a parabola or any part of a parabola?",
+      "opts": [
+        "$x=e^{2t},\\ y=e^{t}$",
+        "$x=e^{-t},\\ y=e^{2t}-1$",
+        "$x=2t^2,\\ y=t^4+t$",
+        "$x=\\tan^2 t,\\ y=\\sec^2 t$",
+        "$x=3\\cos t,\\ y=7\\sin t$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Eliminate the parameter and identify the resulting curve.",
+        "For each pair, look for a relation between $x$ and $y$ that removes $t$, using exponent rules or trigonometric identities.",
+        "$e^{2t}=(e^t)^2$, $\\sec^2t=1+\\tan^2t$, and $\\cos^2t+\\sin^2t=1$; a parabola has the form $x=ay^2+by+c$ or $y=ax^2+bx+c$."
+      ],
+      "steps": [
+        "First set: $y=e^t$ gives $x=e^{2t}=y^2$, with $y>0$, which is the upper half of the parabola $x=y^2$.",
+        "Second set: $y=e^{2t}-1=\\dfrac{1}{x^2}-1$, which is not a parabola.",
+        "Third set: $y=t^4+t$ with $x=2t^2$ is not a quadratic relation (the odd term $t$ cannot be written in terms of $x$).",
+        "Fourth set: $y=1+x$ (part of a line). Fifth set: $\\dfrac{x^2}{9}+\\dfrac{y^2}{49}=1$ (an ellipse).",
+        "So only the first set gives part of a parabola."
+      ],
+      "brief": "$y=e^t\\Rightarrow x=y^2$ with $y>0$: half of a parabola; others are not."
+    },
+    {
+      "sec": "10.3",
+      "q": "The parametric curve \\[ x=2t^2-8t,\\qquad y=3t^4-4t^3 \\] has",
+      "opts": [
+        "a horizontal tangent line at the point $(-6,-1)$",
+        "a vertical tangent line at the point $(0,0)$",
+        "a horizontal tangent line at the point $(-8,16)$",
+        "a vertical tangent line at the point $(2,0)$",
+        "a horizontal tangent line at the point $(6,-1)$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Horizontal and vertical tangents are found from $dy/dt$ and $dx/dt$.",
+        "Compute both derivatives, find where each vanishes, and evaluate $x$ and $y$ at those parameter values.",
+        "The tangent is horizontal where $\\frac{dy}{dt}=0$ and $\\frac{dx}{dt}\\neq0$, and vertical where $\\frac{dx}{dt}=0$ and $\\frac{dy}{dt}\\neq0$."
+      ],
+      "steps": [
+        "$\\dfrac{dx}{dt}=4t-8$ and $\\dfrac{dy}{dt}=12t^3-12t^2=12t^2(t-1)$.",
+        "$dy/dt=0$ at $t=0$ and $t=1$; $dx/dt\\neq0$ there, so the tangents are horizontal.",
+        "$t=0$ gives the point $(0,0)$; $t=1$ gives $(2-8,\\ 3-4)=(-6,-1)$.",
+        "$dx/dt=0$ at $t=2$ (where $dy/dt\\neq0$): vertical tangent at $(0,16)$.",
+        "So the curve has a horizontal tangent at $(-6,-1)$."
+      ],
+      "brief": "$y'(t)=12t^2(t-1)=0$ at $t=1$: horizontal tangent at $(-6,-1)$."
+    },
+    {
+      "sec": "11.4",
+      "q": "The area of the triangle with vertices $P(0,0,2)$, $Q(1,0,3)$, $R(-3,2,0)$ is equal to",
+      "opts": [
+        "$\\dfrac32$",
+        "$\\dfrac{\\sqrt{11}}{2}$",
+        "$\\dfrac52$",
+        "$\\dfrac{3\\sqrt7}{2}$",
+        "$\\dfrac{\\sqrt{80}}{2}$"
+      ],
+      "ans": 0,
+      "hints": [
+        "The cross product gives the area of a parallelogram.",
+        "Form two edge vectors from the same vertex and take their cross product.",
+        "The area of the triangle with edge vectors $\\mathbf{a},\\mathbf{b}$ from a common vertex is $\\dfrac12\\|\\mathbf{a}\\times\\mathbf{b}\\|$."
+      ],
+      "steps": [
+        "$\\overrightarrow{PQ}=\\langle1,0,1\\rangle$ and $\\overrightarrow{PR}=\\langle-3,2,-2\\rangle$.",
+        "$\\overrightarrow{PQ}\\times\\overrightarrow{PR}=\\langle0\\cdot(-2)-1\\cdot2,\\ 1\\cdot(-3)-1\\cdot(-2),\\ 1\\cdot2-0\\cdot(-3)\\rangle=\\langle-2,-1,2\\rangle$.",
+        "Its length is $\\sqrt{4+1+4}=3$.",
+        "Area $=\\dfrac12\\cdot3=\\dfrac32$."
+      ],
+      "brief": "$\\overrightarrow{PQ}\\times\\overrightarrow{PR}=\\langle-2,-1,2\\rangle$, norm 3, area $=\\frac32$."
+    },
+    {
+      "sec": "10.4",
+      "q": "The slope of the tangent line to the polar curve \\[ r=2+3\\sin\\theta \\] at the point corresponding to $\\theta=\\pi$ is equal to",
+      "opts": [
+        "$-\\dfrac23$",
+        "$-1$",
+        "$-\\dfrac52$",
+        "$0$",
+        "$\\dfrac12$"
+      ],
+      "ans": 0,
+      "hints": [
+        "This is the slope of a tangent line to a polar curve.",
+        "Write $x=r\\cos\\theta$, $y=r\\sin\\theta$ and use $\\frac{dy/d\\theta}{dx/d\\theta}$ at the given angle.",
+        "$\\dfrac{dy}{dx}=\\dfrac{r'\\sin\\theta+r\\cos\\theta}{r'\\cos\\theta-r\\sin\\theta}$, where $r'=\\dfrac{dr}{d\\theta}$."
+      ],
+      "steps": [
+        "$r'=3\\cos\\theta$. At $\\theta=\\pi$: $r=2$ and $r'=-3$.",
+        "Numerator: $r'\\sin\\pi+r\\cos\\pi=0+2(-1)=-2$.",
+        "Denominator: $r'\\cos\\pi-r\\sin\\pi=(-3)(-1)-0=3$.",
+        "Slope $=-\\dfrac23$."
+      ],
+      "brief": "$\\frac{dy}{dx}=\\frac{r'\\sin\\theta+r\\cos\\theta}{r'\\cos\\theta-r\\sin\\theta}=\\frac{-2}{3}$ at $\\theta=\\pi$."
+    },
+    {
+      "sec": "10.4",
+      "q": "The polar equation \\[ r=\\frac{2}{1+\\cos\\theta} \\] can be converted to the rectangular equation",
+      "opts": [
+        "$y^2=4-4x$",
+        "$x^2+x+y^2=2$",
+        "$y=\\dfrac{2}{1+x}$",
+        "$x^2+y^2+2x=1$",
+        "$x=2$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Convert using $x=r\\cos\\theta$ and $r^2=x^2+y^2$.",
+        "Clear the denominator first, then replace $r\\cos\\theta$ by $x$.",
+        "$x=r\\cos\\theta$, $y=r\\sin\\theta$, $r^2=x^2+y^2$."
+      ],
+      "steps": [
+        "Multiply out: $r+r\\cos\\theta=2$, so $r+x=2$.",
+        "$r=2-x$; square both sides: $x^2+y^2=4-4x+x^2$.",
+        "$y^2=4-4x$."
+      ],
+      "brief": "$r+x=2\\Rightarrow x^2+y^2=(2-x)^2\\Rightarrow y^2=4-4x$."
+    },
+    {
+      "sec": "10.5",
+      "q": "The area of one petal of the rose curve $r=2\\cos(3\\theta)$ is equal to",
+      "opts": [
+        "$\\dfrac{\\pi}{3}$",
+        "$\\dfrac{3\\pi}{4}$",
+        "$\\dfrac{\\pi}{6}$",
+        "$\\dfrac{2\\pi}{3}$",
+        "$\\dfrac{3\\pi}{7}$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Use the area formula in polar coordinates over the angle range of a single petal.",
+        "One petal is traced while $\\cos3\\theta$ stays nonnegative around $\\theta=0$; find those limits.",
+        "$A=\\dfrac12\\int_\\alpha^\\beta r^2\\,d\\theta$ and $\\cos^2u=\\dfrac{1+\\cos2u}{2}$."
+      ],
+      "steps": [
+        "The petal on the $x$-axis has $\\cos3\\theta\\ge0$, i.e. $-\\dfrac\\pi6\\le\\theta\\le\\dfrac\\pi6$.",
+        "$A=\\dfrac12\\int_{-\\pi/6}^{\\pi/6}4\\cos^2(3\\theta)\\,d\\theta=\\int_{-\\pi/6}^{\\pi/6}\\left(1+\\cos6\\theta\\right)d\\theta$.",
+        "$=\\left[\\theta+\\dfrac{\\sin6\\theta}{6}\\right]_{-\\pi/6}^{\\pi/6}=\\dfrac\\pi3+0=\\dfrac\\pi3$."
+      ],
+      "brief": "$A=\\frac12\\int_{-\\pi/6}^{\\pi/6}4\\cos^2 3\\theta\\,d\\theta=\\frac\\pi3$."
+    },
+    {
+      "sec": "11.1",
+      "q": "In the $xy$-plane, if the vector $\\vec{\\mathbf u}$ is of magnitude 4 and makes an angle of $\\dfrac\\pi6$ with the positive $x$-axis, and the vector $\\vec{\\mathbf u}+\\vec{\\mathbf v}$ is of magnitude 6 and makes an angle of $\\dfrac{2\\pi}3$ with the positive $x$ axis, then",
+      "opts": [
+        "$\\vec{\\mathbf v}=\\langle -3-2\\sqrt3,\\ 3\\sqrt3-2\\rangle$",
+        "$\\vec{\\mathbf v}=\\langle 2\\sqrt3,\\ -2\\sqrt3\\rangle$",
+        "$\\vec{\\mathbf v}=\\langle -3-\\sqrt3,\\ \\sqrt3-2\\rangle$",
+        "$\\vec{\\mathbf v}=\\langle -2-3\\sqrt3,\\ 2\\sqrt3-3\\rangle$",
+        "$\\vec{\\mathbf v}=\\langle 2,\\ \\sqrt3\\rangle$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Write each vector in component form from its magnitude and direction angle.",
+        "Find $\\vec{\\mathbf u}$ and $\\vec{\\mathbf u}+\\vec{\\mathbf v}$ in components, then subtract.",
+        "A vector of magnitude $m$ at angle $\\theta$ is $\\langle m\\cos\\theta,\\ m\\sin\\theta\\rangle$, and $\\vec{\\mathbf v}=(\\vec{\\mathbf u}+\\vec{\\mathbf v})-\\vec{\\mathbf u}$."
+      ],
+      "steps": [
+        "$\\vec{\\mathbf u}=4\\langle\\cos\\frac\\pi6,\\sin\\frac\\pi6\\rangle=\\langle2\\sqrt3,\\ 2\\rangle$.",
+        "$\\vec{\\mathbf u}+\\vec{\\mathbf v}=6\\langle\\cos\\frac{2\\pi}3,\\sin\\frac{2\\pi}3\\rangle=\\langle-3,\\ 3\\sqrt3\\rangle$.",
+        "$\\vec{\\mathbf v}=\\langle-3-2\\sqrt3,\\ 3\\sqrt3-2\\rangle$."
+      ],
+      "brief": "$\\vec{\\mathbf u}=\\langle2\\sqrt3,2\\rangle$, $\\vec{\\mathbf u}+\\vec{\\mathbf v}=\\langle-3,3\\sqrt3\\rangle$, subtract."
+    },
+    {
+      "sec": "11.2",
+      "q": "If the points \\[ P(1,-2,-k),\\quad Q(k-1,1,0),\\quad R(9,10,3k) \\] are collinear, then $(2k-1)^2=$",
+      "opts": [
+        "$49$",
+        "$90$",
+        "$81$",
+        "$64$",
+        "$36$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Three points are collinear exactly when two vectors between them are parallel.",
+        "Form $\\overrightarrow{PQ}$ and $\\overrightarrow{PR}$ and set one equal to a scalar multiple of the other.",
+        "$\\mathbf a\\parallel\\mathbf b$ iff $\\mathbf b=c\\,\\mathbf a$ for some scalar $c$, so all component ratios are equal."
+      ],
+      "steps": [
+        "$\\overrightarrow{PQ}=\\langle k-2,\\ 3,\\ k\\rangle$ and $\\overrightarrow{PR}=\\langle8,\\ 12,\\ 4k\\rangle$.",
+        "$\\overrightarrow{PR}=c\\,\\overrightarrow{PQ}$: the second components give $c=4$.",
+        "First component: $8=4(k-2)$, so $k=4$. Third component: $4k=4k$ holds.",
+        "$(2k-1)^2=7^2=49$."
+      ],
+      "brief": "$\\overrightarrow{PR}=4\\overrightarrow{PQ}\\Rightarrow k=4$, so $(2k-1)^2=49$."
+    },
+    {
+      "sec": "11.4",
+      "q": "If $\\vec{\\mathbf u}=\\langle-1,2,2\\rangle$ and $\\vec{\\mathbf v}=\\langle0,1,2\\rangle$, then \\[ \\left\\|\\frac{\\vec{\\mathbf u}\\times\\vec{\\mathbf v}}{\\|3\\vec{\\mathbf v}-\\vec{\\mathbf u}\\|}\\right\\|= \\]",
+      "opts": [
+        "$\\dfrac{1}{\\sqrt2}$",
+        "$\\dfrac{1}{\\sqrt6}$",
+        "$\\sqrt6$",
+        "$\\dfrac{2}{3\\sqrt2}$",
+        "$\\dfrac12$"
+      ],
+      "ans": 0,
+      "hints": [
+        "The expression is a vector divided by a scalar, and then its length is taken.",
+        "Compute the cross product and the vector $3\\vec{\\mathbf v}-\\vec{\\mathbf u}$ separately, then take lengths.",
+        "For a scalar $c\\neq0$, $\\left\\|\\dfrac{\\mathbf w}{c}\\right\\|=\\dfrac{\\|\\mathbf w\\|}{|c|}$; and $\\mathbf a\\times\\mathbf b=\\begin{vmatrix}\\mathbf i&\\mathbf j&\\mathbf k\\\\a_1&a_2&a_3\\\\b_1&b_2&b_3\\end{vmatrix}$."
+      ],
+      "steps": [
+        "$\\vec{\\mathbf u}\\times\\vec{\\mathbf v}=\\langle2\\cdot2-2\\cdot1,\\ 2\\cdot0-(-1)\\cdot2,\\ (-1)\\cdot1-2\\cdot0\\rangle=\\langle2,2,-1\\rangle$, with length $3$.",
+        "$3\\vec{\\mathbf v}-\\vec{\\mathbf u}=\\langle0,3,6\\rangle-\\langle-1,2,2\\rangle=\\langle1,1,4\\rangle$, with length $\\sqrt{18}=3\\sqrt2$.",
+        "The quantity is $\\dfrac{3}{3\\sqrt2}=\\dfrac1{\\sqrt2}$."
+      ],
+      "brief": "$\\|\\mathbf u\\times\\mathbf v\\|=3$, $\\|3\\mathbf v-\\mathbf u\\|=3\\sqrt2$, ratio $\\frac1{\\sqrt2}$."
+    },
+    {
+      "sec": "10.5",
+      "q": "The area of the region inside the polar curve $r=2\\sin\\theta$ and outside $r=2(1+\\cos\\theta)$ is equal to",
+      "opts": [
+        "$4-\\pi$",
+        "$2\\pi-5$",
+        "$\\dfrac{2\\pi-1}{8}$",
+        "$2-\\dfrac\\pi2$",
+        "$\\pi-3$"
+      ],
+      "ans": 0,
+      "hints": [
+        "This is the area between two polar curves, so find where they meet first.",
+        "Set the two radii equal to find the intersection angles, then sketch to see which curve is outer on which interval.",
+        "$A=\\dfrac12\\int_\\alpha^\\beta\\left(r_{\\text{outer}}^2-r_{\\text{inner}}^2\\right)d\\theta$."
+      ],
+      "steps": [
+        "$2\\sin\\theta=2+2\\cos\\theta$ gives $\\sin\\theta-\\cos\\theta=1$, so $\\theta=\\dfrac\\pi2$ (or $\\theta=\\pi$ at the pole, where both curves have $r=0$).",
+        "On $0<\\theta<\\dfrac\\pi2$ the cardioid is outside the circle. On $\\dfrac\\pi2\\le\\theta\\le\\pi$ the circle $r=2\\sin\\theta$ is outside the cardioid.",
+        "$A=\\dfrac12\\int_{\\pi/2}^{\\pi}\\left[4\\sin^2\\theta-4(1+\\cos\\theta)^2\\right]d\\theta=2\\int_{\\pi/2}^{\\pi}\\left[-\\cos2\\theta-2\\cos\\theta-1\\right]d\\theta$ (using $\\sin^2\\theta-\\cos^2\\theta=-\\cos2\\theta$).",
+        "$=2\\left[-\\dfrac{\\sin2\\theta}{2}-2\\sin\\theta-\\theta\\right]_{\\pi/2}^{\\pi}=2\\left[-\\pi-\\left(-2-\\dfrac\\pi2\\right)\\right]=4-\\pi$."
+      ],
+      "brief": "$A=\\frac12\\int_{\\pi/2}^{\\pi}\\left[4\\sin^2\\theta-4(1+\\cos\\theta)^2\\right]d\\theta=4-\\pi$."
+    },
+    {
+      "sec": "11.3",
+      "q": "The projection of $\\vec{\\mathbf u}=\\langle5,-1,-1\\rangle$ onto $\\vec{\\mathbf v}=\\langle-1,5,8\\rangle$ is",
+      "opts": [
+        "$\\left\\langle\\dfrac15,\\ -1,\\ -\\dfrac85\\right\\rangle$",
+        "$\\left\\langle-1,\\ 1,\\ -\\dfrac58\\right\\rangle$",
+        "$\\left\\langle\\dfrac23,\\ -\\dfrac25,\\ \\dfrac18\\right\\rangle$",
+        "$\\left\\langle\\dfrac13,\\ -\\dfrac15,\\ \\dfrac18\\right\\rangle$",
+        "$\\left\\langle2,\\ -\\dfrac38,\\ 4\\right\\rangle$"
+      ],
+      "ans": 0,
+      "hints": [
+        "This is the vector projection of one vector onto another.",
+        "Compute $\\vec{\\mathbf u}\\cdot\\vec{\\mathbf v}$ and $\\|\\vec{\\mathbf v}\\|^2$.",
+        "$\\operatorname{proj}_{\\mathbf v}\\mathbf u=\\dfrac{\\mathbf u\\cdot\\mathbf v}{\\|\\mathbf v\\|^2}\\,\\mathbf v$."
+      ],
+      "steps": [
+        "$\\vec{\\mathbf u}\\cdot\\vec{\\mathbf v}=-5-5-8=-18$.",
+        "$\\|\\vec{\\mathbf v}\\|^2=1+25+64=90$.",
+        "$\\operatorname{proj}_{\\mathbf v}\\mathbf u=-\\dfrac{18}{90}\\langle-1,5,8\\rangle=-\\dfrac15\\langle-1,5,8\\rangle=\\left\\langle\\dfrac15,-1,-\\dfrac85\\right\\rangle$."
+      ],
+      "brief": "$\\frac{\\mathbf u\\cdot\\mathbf v}{\\|\\mathbf v\\|^2}\\mathbf v=-\\frac15\\mathbf v=\\langle\\frac15,-1,-\\frac85\\rangle$."
+    },
+    {
+      "sec": "10.5",
+      "q": "The number of intersection points between the two polar curves \\[ r=1-2\\cos\\theta\\quad\\text{and}\\quad r=3\\sin(2\\theta) \\] is",
+      "opts": [
+        "$9$",
+        "$11$",
+        "$7$",
+        "$13$",
+        "$17$"
+      ],
+      "ans": 0,
+      "hints": [
+        "A point can have many polar representations, so setting the two $r$ equal only finds some intersections.",
+        "Look for solutions of $r_1(\\theta)=r_2(\\theta)$, and also of $r_1(\\theta+\\pi)=-r_2(\\theta)$, then check the pole separately.",
+        "The point $(r,\\theta)$ equals $(-r,\\theta+\\pi)$, and the pole is an intersection whenever each curve reaches $r=0$ (possibly at different angles)."
+      ],
+      "steps": [
+        "Same-angle solutions: $1-2\\cos\\theta=3\\sin2\\theta$ has 4 solutions on $[0,2\\pi)$ (found by graphing both sides and confirmed numerically).",
+        "Opposite-angle solutions: $1+2\\cos\\theta=-3\\sin2\\theta$ also has 4 solutions on $[0,2\\pi)$, giving 4 further distinct points.",
+        "The pole: $r=1-2\\cos\\theta$ is $0$ at $\\theta=\\pm\\frac\\pi3$ and $r=3\\sin2\\theta$ is $0$ at $\\theta=0$, so both pass through the pole: 1 more point.",
+        "Total: $4+4+1=9$."
+      ],
+      "brief": "$4+4$ non-pole solutions (both representations) plus the pole: $9$ points."
+    },
+    {
+      "sec": "11.4",
+      "q": "The volume of the parallelepiped with adjacent edges $\\vec{\\mathbf u},\\vec{\\mathbf v}$ and $\\vec{\\mathbf w}$, where \\[ \\vec{\\mathbf u}=\\langle1,2,1\\rangle\\quad\\text{and}\\quad\\vec{\\mathbf v}\\times\\vec{\\mathbf w}=\\langle-24,-24,24\\rangle, \\] is equal to",
+      "opts": [
+        "$48$",
+        "$24$",
+        "$0$",
+        "$36$",
+        "$12$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Use the scalar triple product.",
+        "The cross product is already given, so only a dot product is needed.",
+        "$V=\\left|\\mathbf u\\cdot(\\mathbf v\\times\\mathbf w)\\right|$."
+      ],
+      "steps": [
+        "$\\vec{\\mathbf u}\\cdot(\\vec{\\mathbf v}\\times\\vec{\\mathbf w})=1(-24)+2(-24)+1(24)=-48$.",
+        "$V=|-48|=48$."
+      ],
+      "brief": "$V=|\\mathbf u\\cdot(\\mathbf v\\times\\mathbf w)|=|-24-48+24|=48$."
+    },
+    {
+      "sec": "11.3",
+      "q": "If $\\vec{\\mathbf u}$ and $\\vec{\\mathbf v}$ are two unit vectors in 3D-space and \\[ \\vec{\\mathbf a}=\\operatorname{Proj}_{\\mathbf v}\\mathbf u,\\qquad \\vec{\\mathbf b}=\\operatorname{Proj}_{\\mathbf u}\\mathbf v, \\] then $\\vec{\\mathbf a}\\cdot\\vec{\\mathbf b}=$",
+      "opts": [
+        "$(\\vec{\\mathbf u}\\cdot\\vec{\\mathbf v})^3$",
+        "$1$",
+        "$0$",
+        "$(\\vec{\\mathbf u}\\cdot\\vec{\\mathbf v})^2$",
+        "$(\\vec{\\mathbf u}+\\vec{\\mathbf v})\\cdot(\\vec{\\mathbf u}-\\vec{\\mathbf v})$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Write both projections with the projection formula and simplify using unit length.",
+        "Since $\\|\\mathbf u\\|=\\|\\mathbf v\\|=1$, each projection is a scalar multiple of one of the vectors.",
+        "$\\operatorname{proj}_{\\mathbf v}\\mathbf u=\\dfrac{\\mathbf u\\cdot\\mathbf v}{\\|\\mathbf v\\|^2}\\mathbf v$ and $\\mathbf w\\cdot\\mathbf w=\\|\\mathbf w\\|^2$."
+      ],
+      "steps": [
+        "Because $\\|\\mathbf u\\|=\\|\\mathbf v\\|=1$: $\\vec{\\mathbf a}=(\\mathbf u\\cdot\\mathbf v)\\,\\mathbf v$ and $\\vec{\\mathbf b}=(\\mathbf u\\cdot\\mathbf v)\\,\\mathbf u$.",
+        "$\\vec{\\mathbf a}\\cdot\\vec{\\mathbf b}=(\\mathbf u\\cdot\\mathbf v)^2\\,(\\mathbf v\\cdot\\mathbf u)$.",
+        "$=(\\vec{\\mathbf u}\\cdot\\vec{\\mathbf v})^3$."
+      ],
+      "brief": "$\\mathbf a=(\\mathbf u\\cdot\\mathbf v)\\mathbf v$, $\\mathbf b=(\\mathbf u\\cdot\\mathbf v)\\mathbf u$, so $\\mathbf a\\cdot\\mathbf b=(\\mathbf u\\cdot\\mathbf v)^3$."
+    }
+  ]
+}

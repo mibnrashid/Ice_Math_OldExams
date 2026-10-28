@@ -1,0 +1,341 @@
+{
+  "course": "math101",
+  "term": "221",
+  "kind": "e2",
+  "date": "",
+  "minutes": 90,
+  "source": "math101-221-e2.pdf",
+  "note": "Date and exam length are not printed on the scanned master pages (there is no cover page). Date left empty; 90 minutes assumed as usual for a major exam. All 18 master answers are (a) in the key table; every one was verified independently with sympy and by hand, with no disagreements. Q11 prints the point with a bold 2, read as (2,0), consistent with the curve. Q14 statement (b) is judged false because the function need not be differentiable (and the printed key marks (a) correct).",
+  "qs": [
+    {
+      "sec": "3.3",
+      "q": "If the slope of the tangent line to the curve $y=\\dfrac{e^x-a}{e^x+a}$ at $x=0$ is $\\dfrac12$, then the value of $a$ is equal to",
+      "opts": ["$1$", "$-1$", "$\\dfrac12$", "$-\\dfrac12$", "$0$"],
+      "ans": 0,
+      "hints": [
+        "Differentiate with the quotient rule, then use the slope condition to get an equation for $a$.",
+        "Find $y'$, substitute $x=0$, and set the result equal to the given slope.",
+        "Quotient rule: $\\left(\\dfrac{u}{v}\\right)'=\\dfrac{u'v-uv'}{v^2}$."
+      ],
+      "steps": [
+        "$y'=\\dfrac{e^x(e^x+a)-e^x(e^x-a)}{(e^x+a)^2}=\\dfrac{2ae^x}{(e^x+a)^2}$.",
+        "At $x=0$: $\\dfrac{2a}{(1+a)^2}=\\dfrac12$.",
+        "$4a=(1+a)^2$, so $a^2-2a+1=0$, i.e. $(a-1)^2=0$.",
+        "Hence $a=1$."
+      ],
+      "brief": "$y'=\\frac{2ae^x}{(e^x+a)^2}$, $\\frac{2a}{(1+a)^2}=\\frac12\\Rightarrow(a-1)^2=0$, $a=1$."
+    },
+    {
+      "sec": "3.4",
+      "q": "If $y=\\ln\\left|\\sec\\dfrac x2+\\tan\\dfrac x2\\right|$, then $y'(0)=$",
+      "opts": ["$\\dfrac12$", "$\\dfrac14$", "$0$", "$-\\dfrac14$", "$-\\dfrac12$"],
+      "ans": 0,
+      "hints": [
+        "Use the chain rule for a logarithm of a trigonometric expression.",
+        "Differentiate the inside, remembering the factor from the argument $x/2$, then substitute $x=0$.",
+        "$\\dfrac{d}{dx}\\ln|u|=\\dfrac{u'}{u}$, $(\\sec u)'=\\sec u\\tan u\\,u'$, $(\\tan u)'=\\sec^2u\\,u'$."
+      ],
+      "steps": [
+        "$y'=\\dfrac{\\frac12\\sec\\frac x2\\tan\\frac x2+\\frac12\\sec^2\\frac x2}{\\sec\\frac x2+\\tan\\frac x2}$.",
+        "At $x=0$: $\\sec0=1$ and $\\tan0=0$.",
+        "$y'(0)=\\dfrac{0+\\frac12}{1+0}=\\dfrac12$."
+      ],
+      "brief": "$y'=\\frac{\\frac12\\sec\\frac x2\\tan\\frac x2+\\frac12\\sec^2\\frac x2}{\\sec\\frac x2+\\tan\\frac x2}$, so $y'(0)=\\frac12$."
+    },
+    {
+      "sec": "3.5",
+      "q": "The $x$-intercept of the tangent line to the curve of $x^{2/3}+y^{2/3}=5$ at the point $(1,8)$ is",
+      "opts": ["$(5,0)$", "$(4,0)$", "$(6,0)$", "$(7,0)$", "$(9,0)$"],
+      "ans": 0,
+      "hints": [
+        "Use implicit differentiation to find the slope at the point, then write the tangent line.",
+        "Differentiate both sides with respect to $x$, solve for $y'$, and evaluate at the point.",
+        "The tangent line at $(x_0,y_0)$ with slope $m$ is $y-y_0=m(x-x_0)$; its $x$-intercept is where $y=0$."
+      ],
+      "steps": [
+        "$\\frac23x^{-1/3}+\\frac23y^{-1/3}y'=0$, so $y'=-\\left(\\dfrac yx\\right)^{1/3}$.",
+        "At $(1,8)$: $y'=-8^{1/3}=-2$.",
+        "Tangent line: $y-8=-2(x-1)$, i.e. $y=-2x+10$.",
+        "Setting $y=0$ gives $x=5$, so the intercept is $(5,0)$."
+      ],
+      "brief": "$y'=-(y/x)^{1/3}=-2$, tangent $y=-2x+10$, so the intercept is $(5,0)$."
+    },
+    {
+      "sec": "3.5",
+      "q": "The slope of the tangent line to the curve $x^4+2x^2y^2+y^4=4x^2y$ at $(-1,1)$ is",
+      "opts": ["$0$", "$1$", "$-1$", "$2$", "$-2$"],
+      "ans": 0,
+      "hints": [
+        "Use implicit differentiation, treating $y$ as a function of $x$.",
+        "Differentiate every term with respect to $x$ (product rule on $x^2y^2$ and $x^2y$), substitute the point, and solve for $y'$.",
+        "$\\dfrac{d}{dx}\\left(x^ny^m\\right)=nx^{n-1}y^m+mx^ny^{m-1}y'$."
+      ],
+      "steps": [
+        "$4x^3+4xy^2+4x^2yy'+4y^3y'=8xy+4x^2y'$.",
+        "At $(-1,1)$: $-4-4+4y'+4y'=-8+4y'$.",
+        "So $-8+8y'=-8+4y'$, which gives $4y'=0$.",
+        "Hence $y'=0$."
+      ],
+      "brief": "Implicit differentiation at $(-1,1)$: $-8+8y'=-8+4y'$, so $y'=0$."
+    },
+    {
+      "sec": "3.6",
+      "q": "If $y(x)=\\ln\\sqrt{\\dfrac{1-x}{1+x}}+\\arctan x$, then $y'(0)=$",
+      "opts": ["$0$", "$2$", "$-2$", "$-1$", "$1$"],
+      "ans": 0,
+      "hints": [
+        "Simplify the logarithm with the log laws before differentiating.",
+        "Write the first term as a half of a difference of two logarithms and differentiate term by term.",
+        "$\\ln\\dfrac{A}{B}=\\ln A-\\ln B$, $\\ln\\sqrt A=\\frac12\\ln A$, $\\dfrac{d}{dx}\\arctan x=\\dfrac1{1+x^2}$."
+      ],
+      "steps": [
+        "$y=\\frac12\\left(\\ln(1-x)-\\ln(1+x)\\right)+\\arctan x$ near $x=0$.",
+        "$y'=\\frac12\\left(\\dfrac{-1}{1-x}-\\dfrac1{1+x}\\right)+\\dfrac1{1+x^2}$.",
+        "$y'(0)=\\frac12(-1-1)+1=0$."
+      ],
+      "brief": "$y'=\\frac12\\left(\\frac{-1}{1-x}-\\frac1{1+x}\\right)+\\frac1{1+x^2}$, so $y'(0)=-1+1=0$."
+    },
+    {
+      "sec": "3.6",
+      "q": "If $f(x)=x^3+3x-1$, then $(f^{-1})'(-5)=$",
+      "opts": ["$\\dfrac16$", "$\\dfrac23$", "$\\dfrac13$", "$\\dfrac12$", "$\\dfrac25$"],
+      "ans": 0,
+      "hints": [
+        "This is a derivative of an inverse function.",
+        "First find the $x$ with $f(x)=-5$, then compute $f'$ at that $x$.",
+        "$(f^{-1})'(b)=\\dfrac{1}{f'(a)}$ where $f(a)=b$."
+      ],
+      "steps": [
+        "Solve $f(a)=-5$: $a^3+3a+4=0$, and $a=-1$ works.",
+        "$f'(x)=3x^2+3$, so $f'(-1)=6$.",
+        "$(f^{-1})'(-5)=\\dfrac1{f'(-1)}=\\dfrac16$."
+      ],
+      "brief": "$f(-1)=-5$, $f'(-1)=6$, so $(f^{-1})'(-5)=\\frac16$."
+    },
+    {
+      "sec": "3.7",
+      "q": "If a point moves along the curve $y=\\sqrt[3]{x^2}$ such that the $y$-component of the point is increasing at a rate of 2 units per second, then the rate at which the $x$-component is changing when $x=1$ is equal to",
+      "opts": ["$3$", "$\\dfrac23$", "$1$", "$\\dfrac32$", "$6$"],
+      "ans": 0,
+      "hints": [
+        "This is a related rates problem.",
+        "Differentiate the curve equation with respect to time $t$ using the chain rule.",
+        "If $y=g(x)$ then $\\dfrac{dy}{dt}=g'(x)\\dfrac{dx}{dt}$."
+      ],
+      "steps": [
+        "$y=x^{2/3}$, so $\\dfrac{dy}{dt}=\\dfrac23x^{-1/3}\\dfrac{dx}{dt}$.",
+        "At $x=1$ with $\\dfrac{dy}{dt}=2$: $2=\\dfrac23\\dfrac{dx}{dt}$.",
+        "So $\\dfrac{dx}{dt}=3$."
+      ],
+      "brief": "$\\frac{dy}{dt}=\\frac23x^{-1/3}\\frac{dx}{dt}$; at $x=1$, $2=\\frac23\\frac{dx}{dt}$, so $\\frac{dx}{dt}=3$."
+    },
+    {
+      "sec": "3.8",
+      "q": "Using Newton's Method with initial guess $x_1=1$, the approximated zero of $f(x)=x^3-7$ after two iterations is equal to",
+      "opts": ["$\\dfrac{61}{27}$", "$\\dfrac{101}{27}$", "$\\dfrac{55}{27}$", "$\\dfrac{52}{27}$", "$\\dfrac{88}{27}$"],
+      "ans": 0,
+      "hints": [
+        "Apply Newton's iteration twice.",
+        "Compute $f'(x)$, then find $x_2$ from $x_1$, and $x_3$ from $x_2$.",
+        "$x_{n+1}=x_n-\\dfrac{f(x_n)}{f'(x_n)}$."
+      ],
+      "steps": [
+        "$f'(x)=3x^2$.",
+        "$x_2=1-\\dfrac{1-7}{3}=3$.",
+        "$x_3=3-\\dfrac{27-7}{27}=\\dfrac{81-20}{27}=\\dfrac{61}{27}$."
+      ],
+      "brief": "$x_2=3$, $x_3=3-\\frac{20}{27}=\\frac{61}{27}$."
+    },
+    {
+      "sec": "4.1",
+      "q": "If $M$ and $m$ are the absolute maximum and absolute minimum values of the function $f(x)=3x^4-4x^3$ where $-1\\le x\\le 2$ respectively, then $M+m=$",
+      "opts": ["$15$", "$25$", "$10$", "$12$", "$23$"],
+      "ans": 0,
+      "hints": [
+        "Find the extreme values of a continuous function on a closed interval.",
+        "Find the critical numbers inside the interval, then compare $f$ at them and at the endpoints.",
+        "Closed Interval Method: the absolute extrema occur at critical numbers or endpoints, and the largest and smallest of those values are $M$ and $m$."
+      ],
+      "steps": [
+        "$f'(x)=12x^3-12x^2=12x^2(x-1)$, so the critical numbers are $x=0$ and $x=1$.",
+        "$f(-1)=7$, $f(0)=0$, $f(1)=-1$, $f(2)=16$.",
+        "$M=16$ and $m=-1$.",
+        "$M+m=15$."
+      ],
+      "brief": "Values at $-1,0,1,2$ are $7,0,-1,16$; $M+m=16-1=15$."
+    },
+    {
+      "sec": "4.3",
+      "q": "The function $f(x)=x^3+2x^2+x+1$ has",
+      "opts": [
+        "a local maximum at $x=-1$ and a local minimum at $x=-\\dfrac13$",
+        "a local minimum at $x=-1$ and a local maximum at $x=-\\dfrac13$",
+        "a local minimum at $x=-\\dfrac23$ and a local maximum at $x=-\\dfrac13$",
+        "a local maximum at $x=-\\dfrac23$ and a local minimum at $x=-\\dfrac13$",
+        "a local maximum at $x=-\\dfrac43$ and a local minimum at $x=-\\dfrac23$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Local extrema of a polynomial occur where the derivative changes sign.",
+        "Find the critical numbers from $f'(x)=0$, then check the sign of $f'$ on each side.",
+        "First derivative test: if $f'$ changes from $+$ to $-$ at $c$ there is a local maximum, and from $-$ to $+$ a local minimum."
+      ],
+      "steps": [
+        "$f'(x)=3x^2+4x+1=(3x+1)(x+1)$, so $x=-1$ or $x=-\\frac13$.",
+        "$f'>0$ for $x<-1$, $f'<0$ on $\\left(-1,-\\frac13\\right)$, and $f'>0$ for $x>-\\frac13$.",
+        "So $f$ has a local maximum at $x=-1$ and a local minimum at $x=-\\frac13$."
+      ],
+      "brief": "$f'=(3x+1)(x+1)$ has signs $+,-,+$: local max at $-1$, local min at $-\\frac13$."
+    },
+    {
+      "sec": "3.5",
+      "q": "The slope of the tangent line to the curve $4e^{xy}=x^2-y^2$ at the point $(2,0)$ is",
+      "opts": ["$\\dfrac12$", "$1$", "$\\dfrac13$", "$\\dfrac14$", "$\\dfrac15$"],
+      "ans": 0,
+      "hints": [
+        "Use implicit differentiation.",
+        "Differentiate both sides with respect to $x$ (chain rule on $e^{xy}$, product rule on $xy$), substitute the point, and solve for $y'$.",
+        "$\\dfrac{d}{dx}e^{u}=e^{u}u'$ and $(xy)'=y+xy'$."
+      ],
+      "steps": [
+        "$4e^{xy}(y+xy')=2x-2yy'$.",
+        "At $(2,0)$: $4(0+2y')=4-0$.",
+        "$8y'=4$, so $y'=\\dfrac12$."
+      ],
+      "brief": "$4e^{xy}(y+xy')=2x-2yy'$ at $(2,0)$: $8y'=4$, so $y'=\\frac12$."
+    },
+    {
+      "sec": "4.1",
+      "q": "If $f(x)=2\\sin x-\\cos 2x$ is defined on $[0,2\\pi]$, then the sum of all its critical numbers is",
+      "opts": ["$5\\pi$", "$\\dfrac{9\\pi}{2}$", "$3\\pi$", "$\\dfrac{5\\pi}{3}$", "$2\\pi$"],
+      "ans": 0,
+      "hints": [
+        "Critical numbers are where $f'=0$ or $f'$ does not exist.",
+        "Differentiate, factor $f'$ using a double-angle identity, and solve each factor on $[0,2\\pi]$.",
+        "$\\dfrac{d}{dx}\\cos2x=-2\\sin2x$ and $\\sin2x=2\\sin x\\cos x$."
+      ],
+      "steps": [
+        "$f'(x)=2\\cos x+2\\sin2x=2\\cos x(1+2\\sin x)$, defined everywhere.",
+        "$\\cos x=0$ gives $x=\\frac\\pi2,\\frac{3\\pi}2$.",
+        "$\\sin x=-\\frac12$ gives $x=\\frac{7\\pi}6,\\frac{11\\pi}6$.",
+        "Sum: $\\frac\\pi2+\\frac{3\\pi}2+\\frac{7\\pi}6+\\frac{11\\pi}6=2\\pi+3\\pi=5\\pi$."
+      ],
+      "brief": "$f'=2\\cos x(1+2\\sin x)$: $\\frac\\pi2,\\frac{3\\pi}2,\\frac{7\\pi}6,\\frac{11\\pi}6$, sum $5\\pi$."
+    },
+    {
+      "sec": "3.4",
+      "q": "If $f(x)=\\dfrac{(2x+1)^3(x^2-1)^2}{x+3}$, then $f'(0)=$",
+      "opts": ["$\\dfrac{17}{9}$", "$\\dfrac{13}{3}$", "$\\dfrac{19}{7}$", "$\\dfrac{15}{7}$", "$\\dfrac{21}{5}$"],
+      "ans": 0,
+      "hints": [
+        "The function is a product and quotient of powers, so logarithmic differentiation is convenient.",
+        "Take $\\ln$ of both sides, differentiate, then multiply by $f(x)$ and substitute $x=0$.",
+        "$\\dfrac{f'}{f}=(\\ln|f|)'$, so $f'=f\\cdot(\\ln|f|)'$."
+      ],
+      "steps": [
+        "$\\ln|f|=3\\ln|2x+1|+2\\ln|x^2-1|-\\ln|x+3|$.",
+        "$\\dfrac{f'}{f}=\\dfrac6{2x+1}+\\dfrac{4x}{x^2-1}-\\dfrac1{x+3}$.",
+        "$f(0)=\\dfrac{1\\cdot1}{3}=\\dfrac13$ and $\\dfrac{f'}{f}(0)=6+0-\\dfrac13=\\dfrac{17}3$.",
+        "$f'(0)=\\dfrac13\\cdot\\dfrac{17}3=\\dfrac{17}9$."
+      ],
+      "brief": "$f(0)=\\frac13$, $\\frac{f'}{f}(0)=6-\\frac13=\\frac{17}3$, so $f'(0)=\\frac{17}9$."
+    },
+    {
+      "sec": "3.8",
+      "q": "Which one of the following statements is always true",
+      "opts": [
+        "Newton's Method fails when the initial guess $x_1$ corresponds to a horizontal tangent line for the graph of $f$ at $x_1$",
+        "If the graph of a function has three $x$-intercepts, then it must have at least two points at which its tangent line is horizontal",
+        "If $f$ and $g$ are increasing functions then $fg$ is an increasing function",
+        "If $f$ is continuous on $[a,b]$, differentiable on $(a,b)$ and there exists $c\\in(a,b)$ such that $f'(c)=0$, then $f(a)=f(b)$",
+        "The maximum value of $f(x)=x^2$ on the interval $(-3,3)$ is $9$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Test each statement against the relevant theorem or a simple counterexample.",
+        "Look at what the Newton formula needs at $x_1$, and test the other statements with simple functions such as $|x|$, $x$, $x^2$.",
+        "Newton's formula $x_2=x_1-\\dfrac{f(x_1)}{f'(x_1)}$ needs $f'(x_1)\\neq0$; Rolle's theorem goes from $f(a)=f(b)$ to some $f'(c)=0$, not the other way, and needs differentiability."
+      ],
+      "steps": [
+        "Newton's formula $x_2=x_1-\\frac{f(x_1)}{f'(x_1)}$ is undefined when $f'(x_1)=0$ (horizontal tangent), so the method fails. This statement is always true.",
+        "Three $x$-intercepts: Rolle's theorem needs differentiability, so a continuous graph with corners (for example $|x|$ shapes) can have no horizontal tangent. Not always true.",
+        "$f(x)=g(x)=x$ on $(-\\infty,0)$ are increasing but $fg=x^2$ is decreasing there. Not always true.",
+        "$f(x)=x^2$ on $[-1,2]$ has $f'(0)=0$ but $f(-1)\\neq f(2)$. The converse of Rolle's theorem is false.",
+        "On the open interval $(-3,3)$ the value $9$ is never attained, so $x^2$ has no maximum there."
+      ],
+      "brief": "Only the Newton statement is always true: $f'(x_1)=0$ makes the formula undefined."
+    },
+    {
+      "sec": "4.2",
+      "q": "If $f$ is a function such that $f'(x)\\ge4$ for all $x\\in(-2,2)$ and $f(1)=3$, then the largest value that $f(0)$ can take is",
+      "opts": ["$-1$", "$0$", "$2$", "$3$", "$4$"],
+      "ans": 0,
+      "hints": [
+        "Use the Mean Value Theorem on a short interval containing both given points.",
+        "Write the average rate of change over $[0,1]$ as $f'(c)$ for some $c$ in $(0,1)$, then use the lower bound on $f'$.",
+        "MVT: if $f$ is continuous on $[a,b]$ and differentiable on $(a,b)$, then $\\dfrac{f(b)-f(a)}{b-a}=f'(c)$ for some $c\\in(a,b)$."
+      ],
+      "steps": [
+        "$f$ is differentiable on $(-2,2)$, so the MVT applies on $[0,1]$.",
+        "$\\dfrac{f(1)-f(0)}{1-0}=3-f(0)=f'(c)\\ge4$.",
+        "So $f(0)\\le-1$, and $f(x)=4x-1$ attains $-1$.",
+        "The largest possible value is $-1$."
+      ],
+      "brief": "MVT on $[0,1]$: $3-f(0)\\ge4$, so $f(0)\\le-1$; the largest value is $-1$."
+    },
+    {
+      "sec": "4.2",
+      "q": "If $f(x)=x\\log_2x$ is defined on the closed interval $[1,2]$, then a number $c$ in the open interval $(1,2)$ such that $f'(c)=f(2)-f(1)$ is equal to",
+      "opts": ["$\\dfrac4e$", "$\\dfrac5e$", "$\\dfrac e2$", "$\\dfrac3e$", "$\\dfrac e3$"],
+      "ans": 0,
+      "hints": [
+        "This is the conclusion of the Mean Value Theorem.",
+        "Compute $f'(x)$ and the number $f(2)-f(1)$, then solve $f'(c)=f(2)-f(1)$ for $c$.",
+        "$\\dfrac{d}{dx}\\log_bx=\\dfrac1{x\\ln b}$ and $\\log_bx=\\dfrac{\\ln x}{\\ln b}$."
+      ],
+      "steps": [
+        "$f'(x)=\\log_2x+x\\cdot\\dfrac1{x\\ln2}=\\log_2x+\\dfrac1{\\ln2}$, and $f(2)-f(1)=2-0=2$.",
+        "$\\dfrac{\\ln c}{\\ln2}+\\dfrac1{\\ln2}=2$, so $\\ln c+1=2\\ln2$.",
+        "$\\ln c=\\ln4-\\ln e=\\ln\\dfrac4e$.",
+        "$c=\\dfrac4e\\approx1.47$, which lies in $(1,2)$."
+      ],
+      "brief": "$\\log_2c+\\frac1{\\ln2}=2\\Rightarrow\\ln c=2\\ln2-1$, so $c=\\frac4e$."
+    },
+    {
+      "sec": "3.7",
+      "q": "If a man 1.5 meters tall walks at a rate of 3 meters per second away from a light that is 6 meters above the ground, then the rate at which the length of his shadow is changing when he is 6 meters from the base of the light is equal to",
+      "opts": ["$1$ m/sec", "$1.5$ m/sec", "$2$ m/sec", "$2.5$ m/sec", "$3$ m/sec"],
+      "ans": 0,
+      "hints": [
+        "This is a related rates problem with similar triangles.",
+        "Let $x$ be his distance from the base of the light and $y$ the shadow length; relate $x$ and $y$ by similar triangles, then differentiate with respect to $t$.",
+        "Similar triangles have equal ratios of corresponding sides, for example $\\dfrac{\\text{shadow}}{\\text{distance from the light's base to the shadow tip}}=\\dfrac{\\text{man's height}}{\\text{light height}}$."
+      ],
+      "steps": [
+        "Similar triangles: $\\dfrac{y}{x+y}=\\dfrac{1.5}{6}=\\dfrac14$.",
+        "So $4y=x+y$, i.e. $x=3y$.",
+        "Differentiate: $\\dfrac{dx}{dt}=3\\dfrac{dy}{dt}$, and $\\dfrac{dx}{dt}=3$.",
+        "So $\\dfrac{dy}{dt}=1$ m/sec (the same at every position)."
+      ],
+      "brief": "$\\frac{y}{x+y}=\\frac14\\Rightarrow x=3y$, so $\\frac{dy}{dt}=\\frac13\\cdot3=1$ m/sec."
+    },
+    {
+      "sec": "3.5",
+      "q": "If the normal line to the parabola $y=\\dfrac12(x-2)^2+1$ at the point $\\left(3,\\dfrac32\\right)$ intersects the parabola at another point $(a,b)$ then $4a+2b=$",
+      "opts": ["$7$", "$13$", "$0$", "$3$", "$1$"],
+      "ans": 0,
+      "hints": [
+        "Find the normal line, then intersect it with the parabola.",
+        "Compute the slope of the tangent at $x=3$, take the negative reciprocal, write the line, and set it equal to the parabola.",
+        "The normal slope is $-\\dfrac1{f'(x_0)}$, and the line is $y-y_0=m(x-x_0)$."
+      ],
+      "steps": [
+        "$y'=x-2=1$ at $x=3$, so the normal slope is $-1$.",
+        "Normal line: $y-\\frac32=-(x-3)$, i.e. $y=-x+\\frac92$.",
+        "$-x+\\frac92=\\frac12(x-2)^2+1$ gives $x^2-2x-3=0$, so $x=3$ or $x=-1$.",
+        "The other point is $a=-1$, $b=\\frac{11}2$, so $4a+2b=-4+11=7$."
+      ],
+      "brief": "Normal $y=-x+\\frac92$ meets the parabola again at $(-1,\\frac{11}2)$: $4a+2b=7$."
+    }
+  ]
+}

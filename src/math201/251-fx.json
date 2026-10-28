@@ -1,0 +1,418 @@
+{
+  "course": "math201",
+  "term": "251",
+  "kind": "fx",
+  "date": "16 December 2025",
+  "minutes": 120,
+  "source": "math201-251-fx36664d78-744b-4adc-bff5-04d642808f76.pdf",
+  "note": "Master key (a) for every question; all 21 answers independently verified with sympy and agree with the key. Date and net time (120 minutes) are printed on the cover. Question 13 is placed under 13.10 but can be solved by elimination; Question 16 is a volume set up as a double integral (14.2).",
+  "qs": [
+    {
+      "sec": "14.6",
+      "q": "\\[ \\int_0^{\\sqrt{\\pi/2}}\\int_x^{\\sqrt{\\pi/2}}\\int_2^{12}\\sin\\left(y^2\\right)\\,dz\\,dy\\,dx= \\]",
+      "opts": ["$5$", "$2\\sqrt{\\pi}+12$", "$2\\sqrt{\\dfrac{\\pi}{2}}+12$", "$10$", "$12-\\sqrt{\\dfrac{\\pi}{2}}$"],
+      "ans": 0,
+      "hints": [
+        "The integrand does not depend on $z$, and $\\sin(y^2)$ has no elementary antiderivative in $y$, so the order of integration matters.",
+        "Do the $z$-integral first, then swap the order of the $x$ and $y$ integrals so that $x$ is integrated first.",
+        "A region $0\\le x\\le y\\le b$ can be described as $0\\le y\\le b$, $0\\le x\\le y$; and $\\int g'(y)\\sin(g(y))\\,dy=-\\cos(g(y))+C$."
+      ],
+      "steps": [
+        "The $z$-integral is $\\int_2^{12}dz=10$, leaving $10\\int_0^{\\sqrt{\\pi/2}}\\int_x^{\\sqrt{\\pi/2}}\\sin(y^2)\\,dy\\,dx$.",
+        "The region is $0\\le x\\le y\\le\\sqrt{\\pi/2}$. Swap the order: $y$ from $0$ to $\\sqrt{\\pi/2}$, $x$ from $0$ to $y$.",
+        "$10\\int_0^{\\sqrt{\\pi/2}}y\\sin(y^2)\\,dy$.",
+        "$=10\\left[-\\dfrac12\\cos(y^2)\\right]_0^{\\sqrt{\\pi/2}}=5\\left(1-\\cos\\dfrac{\\pi}{2}\\right)=5$."
+      ],
+      "brief": "$z$ gives 10; swap order: $10\\int_0^{\\sqrt{\\pi/2}}y\\sin y^2\\,dy=5$."
+    },
+    {
+      "sec": "13.10",
+      "q": "The maximum value of $f(x,y)=6xy$, where $x>0$ and $y>0$, subject to the constraint $\\dfrac{x^2}{4}+\\dfrac{y^2}{9}=1$ is equal to",
+      "opts": ["$18$", "$36$", "$26$", "$44$", "$47$"],
+      "ans": 0,
+      "hints": [
+        "This is an optimization problem with one constraint, so Lagrange multipliers apply.",
+        "Write $\\nabla f=\\lambda\\nabla g$ with $g$ the constraint function, and compare the $x$- and $y$-components together with the constraint.",
+        "Lagrange: solve $\\nabla f=\\lambda\\nabla g$ and $g=k$ simultaneously; evaluate $f$ at the resulting point(s) with $x>0,\\ y>0$."
+      ],
+      "steps": [
+        "Let $g=\\dfrac{x^2}{4}+\\dfrac{y^2}{9}$. Then $\\nabla f=\\langle 6y,6x\\rangle$ and $\\nabla g=\\left\\langle \\dfrac{x}{2},\\dfrac{2y}{9}\\right\\rangle$.",
+        "$6y=\\lambda\\dfrac x2$ and $6x=\\lambda\\dfrac{2y}{9}$. Dividing: $\\dfrac{y}{x}=\\dfrac{x/2}{2y/9}=\\dfrac{9x}{4y}$, so $4y^2=9x^2$.",
+        "The constraint gives $\\dfrac{x^2}{4}+\\dfrac{9x^2/4}{9}=\\dfrac{x^2}{2}=1$, so $x=\\sqrt2$ and $y=\\dfrac{3x}{2}=\\dfrac{3\\sqrt2}{2}$.",
+        "$f=6\\cdot\\sqrt2\\cdot\\dfrac{3\\sqrt2}{2}=18$."
+      ],
+      "brief": "Lagrange: $4y^2=9x^2$, $x=\\sqrt2$, $y=\\frac{3\\sqrt2}{2}$, so $f=18$."
+    },
+    {
+      "sec": "11.5",
+      "q": "Let $(a,b,c)$ be a point on the line \\[ x=3t+1,\\quad y=t-1,\\quad z=4t+2. \\] If the distance from this point to the plane $2x+2y+z=2$ is $8$, then a possible value of $a^2+b^2+c^2=$",
+      "opts": ["$150$", "$79$", "$97$", "$158$", "$12$"],
+      "ans": 0,
+      "hints": [
+        "A point on the line is given by a value of the parameter $t$; the distance condition becomes an equation in $t$.",
+        "Substitute the coordinates of a general point of the line into the point-to-plane distance formula and solve for $t$.",
+        "The distance from $(x_0,y_0,z_0)$ to the plane $Ax+By+Cz+D=0$ is $\\dfrac{|Ax_0+By_0+Cz_0+D|}{\\sqrt{A^2+B^2+C^2}}$."
+      ],
+      "steps": [
+        "Plane: $2x+2y+z-2=0$, with $\\sqrt{4+4+1}=3$.",
+        "Numerator: $2(3t+1)+2(t-1)+(4t+2)-2=12t$.",
+        "Distance $\\dfrac{|12t|}{3}=4|t|=8$, so $t=\\pm2$.",
+        "$t=2$ gives $(7,1,10)$ and $a^2+b^2+c^2=49+1+100=150$ (the other value, $t=-2$, gives $70$, which is not listed)."
+      ],
+      "brief": "Distance $=4|t|=8$, $t=2$: point $(7,1,10)$, so $49+1+100=150$."
+    },
+    {
+      "sec": "11.5",
+      "q": "If $D$ is the distance between the point $Q(0,-2,2)$ and the line given by the set of parametric equations $x=t,\\ y=2t-3,\\ z=2t$, then $D=$",
+      "opts": ["$1$", "$8$", "$9$", "$3$", "$2$"],
+      "ans": 0,
+      "hints": [
+        "This is the distance from a point to a line in space.",
+        "Pick a point $P$ on the line and the direction vector $\\mathbf{u}$, then form the vector from $P$ to $Q$.",
+        "$D=\\dfrac{\\|\\overrightarrow{PQ}\\times\\mathbf{u}\\|}{\\|\\mathbf{u}\\|}$."
+      ],
+      "steps": [
+        "Take $P(0,-3,0)$ at $t=0$ and $\\mathbf{u}=\\langle1,2,2\\rangle$. Then $\\overrightarrow{PQ}=\\langle0,1,2\\rangle$.",
+        "$\\overrightarrow{PQ}\\times\\mathbf{u}=\\langle1\\cdot2-2\\cdot2,\\ 2\\cdot1-0\\cdot2,\\ 0\\cdot2-1\\cdot1\\rangle=\\langle-2,2,-1\\rangle$.",
+        "$\\|\\overrightarrow{PQ}\\times\\mathbf{u}\\|=\\sqrt{4+4+1}=3$ and $\\|\\mathbf{u}\\|=3$.",
+        "$D=\\dfrac33=1$."
+      ],
+      "brief": "$D=\\|\\overrightarrow{PQ}\\times\\mathbf{u}\\|/\\|\\mathbf{u}\\|=3/3=1$."
+    },
+    {
+      "sec": "11.7",
+      "q": "The point with rectangular coordinates $(x,y,z)=(\\sqrt3,1,2\\sqrt3)$ is represented in spherical coordinates by $(\\rho,\\theta,\\phi)=$",
+      "opts": [
+        "$\\left(4,\\dfrac{\\pi}{6},\\dfrac{\\pi}{6}\\right)$",
+        "$\\left(4,\\dfrac{\\pi}{3},\\dfrac{\\pi}{6}\\right)$",
+        "$\\left(4,\\dfrac{\\pi}{6},\\dfrac{\\pi}{3}\\right)$",
+        "$\\left(4,\\dfrac{\\pi}{6},\\dfrac{7\\pi}{6}\\right)$",
+        "$\\left(4,\\dfrac{7\\pi}{6},\\dfrac{\\pi}{6}\\right)$"
+      ],
+      "ans": 0,
+      "hints": [
+        "This is a conversion from rectangular to spherical coordinates.",
+        "Find $\\rho$ first, then $\\theta$ from the $xy$-position, then $\\phi$ from $z$ and $\\rho$.",
+        "$\\rho=\\sqrt{x^2+y^2+z^2}$, $\\tan\\theta=\\dfrac yx$ (with the correct quadrant), $\\cos\\phi=\\dfrac z\\rho$ with $0\\le\\phi\\le\\pi$."
+      ],
+      "steps": [
+        "$\\rho=\\sqrt{3+1+12}=4$.",
+        "$\\tan\\theta=\\dfrac{1}{\\sqrt3}$ and $x,y>0$, so $\\theta=\\dfrac\\pi6$.",
+        "$\\cos\\phi=\\dfrac{2\\sqrt3}{4}=\\dfrac{\\sqrt3}{2}$, so $\\phi=\\dfrac\\pi6$.",
+        "$(\\rho,\\theta,\\phi)=\\left(4,\\dfrac\\pi6,\\dfrac\\pi6\\right)$."
+      ],
+      "brief": "$\\rho=4$, $\\theta=\\frac\\pi6$, $\\cos\\phi=\\frac{\\sqrt3}{2}$ so $\\phi=\\frac\\pi6$."
+    },
+    {
+      "sec": "10.5",
+      "q": "The area of the region that lies inside $r=1+\\cos\\theta$ and outside $r=\\cos\\theta$ is",
+      "opts": ["$\\dfrac{5\\pi}{4}$", "$\\dfrac{7\\pi}{4}$", "$\\dfrac{3\\pi}{2}$", "$\\dfrac{5\\pi}{2}$", "$\\dfrac{\\pi}{2}$"],
+      "ans": 0,
+      "hints": [
+        "Area between two polar curves: sketch both and decide which is the outer curve.",
+        "The circle $r=\\cos\\theta$ lies entirely inside the cardioid, so subtract its area from the cardioid's area.",
+        "Area in polar form: $A=\\dfrac12\\int_\\alpha^\\beta\\left(r_{\\text{outer}}^2-r_{\\text{inner}}^2\\right)d\\theta$; use $\\cos^2\\theta=\\dfrac{1+\\cos2\\theta}{2}$."
+      ],
+      "steps": [
+        "The cardioid $r=1+\\cos\\theta$ has $r\\ge\\cos\\theta$ for all $\\theta$, so the circle (traced for $-\\frac\\pi2\\le\\theta\\le\\frac\\pi2$) lies inside it.",
+        "Cardioid area: $\\dfrac12\\int_0^{2\\pi}(1+\\cos\\theta)^2d\\theta=\\dfrac12\\left(2\\pi+\\pi\\right)=\\dfrac{3\\pi}{2}$.",
+        "Circle area: $\\dfrac12\\int_{-\\pi/2}^{\\pi/2}\\cos^2\\theta\\,d\\theta=\\dfrac\\pi4$.",
+        "Required area $=\\dfrac{3\\pi}{2}-\\dfrac\\pi4=\\dfrac{5\\pi}{4}$."
+      ],
+      "brief": "Cardioid $\\frac{3\\pi}{2}$ minus circle $\\frac\\pi4$ $=\\frac{5\\pi}{4}$."
+    },
+    {
+      "sec": "13.5",
+      "q": "If $w=x^2+y^2+z^2$, $x=t\\sin s$, $y=t\\cos s$, $z=st^2$, then the value of $\\dfrac{\\partial w}{\\partial t}$, when $s=3$ and $t=2$, is equal to",
+      "opts": ["$292$", "$220$", "$288+\\dfrac{\\pi^2}{8}$", "$216+\\dfrac{\\pi^2}{4}$", "$220+\\dfrac{\\pi^2}{9}$"],
+      "ans": 0,
+      "hints": [
+        "Use the chain rule for a function of three variables that each depend on $s$ and $t$.",
+        "Write $\\dfrac{\\partial w}{\\partial t}$ as a sum of three products, then substitute $s=3$, $t=2$ at the end.",
+        "$\\dfrac{\\partial w}{\\partial t}=\\dfrac{\\partial w}{\\partial x}\\dfrac{\\partial x}{\\partial t}+\\dfrac{\\partial w}{\\partial y}\\dfrac{\\partial y}{\\partial t}+\\dfrac{\\partial w}{\\partial z}\\dfrac{\\partial z}{\\partial t}$, and $\\sin^2s+\\cos^2s=1$."
+      ],
+      "steps": [
+        "$w_x=2x,\\ w_y=2y,\\ w_z=2z$ and $x_t=\\sin s,\\ y_t=\\cos s,\\ z_t=2st$.",
+        "$\\dfrac{\\partial w}{\\partial t}=2t\\sin^2s+2t\\cos^2s+2st^2\\cdot2st=2t+4s^2t^3$.",
+        "At $s=3,\\ t=2$: $4+4\\cdot9\\cdot8=4+288=292$."
+      ],
+      "brief": "$\\partial w/\\partial t=2t+4s^2t^3=4+288=292$."
+    },
+    {
+      "sec": "13.6",
+      "q": "The surface of a mountain is modeled by the equation \\[ h(x,y)=5000-0.001x^2-0.004y^2. \\] A mountain climber is at the point $(500,300,4390)$. Which of the following vectors points in the direction of steepest descent (descend at the greatest rate)?",
+      "opts": ["$5\\mathbf{i}+12\\mathbf{j}$", "$5\\mathbf{i}-12\\mathbf{j}$", "$-5\\mathbf{i}+3\\mathbf{j}$", "$-\\mathbf{i}-4\\mathbf{j}$", "$-5\\mathbf{i}-3\\mathbf{j}$"],
+      "ans": 0,
+      "hints": [
+        "The gradient points in the direction of fastest increase, so fastest decrease is the opposite direction.",
+        "Compute $\\nabla h$ at the climber's $(x,y)$ position and reverse it; only the direction matters, so scale to the simplest multiple.",
+        "The direction of steepest descent of $h$ at a point is $-\\nabla h=-\\langle h_x,h_y\\rangle$ evaluated there."
+      ],
+      "steps": [
+        "$h_x=-0.002x$ and $h_y=-0.008y$.",
+        "At $(500,300)$: $\\nabla h=\\langle-1,\\,-2.4\\rangle$.",
+        "Steepest descent direction: $-\\nabla h=\\langle1,\\,2.4\\rangle$.",
+        "Multiplying by $5$ gives $\\langle5,12\\rangle$, i.e. $5\\mathbf{i}+12\\mathbf{j}$."
+      ],
+      "brief": "$\\nabla h(500,300)=\\langle-1,-2.4\\rangle$; $-\\nabla h\\parallel 5\\mathbf{i}+12\\mathbf{j}$."
+    },
+    {
+      "sec": "13.7",
+      "q": "If $(a,b,c)$, with $a<0$, is the point on the surface $4x^2+2y^2-z^2=100$ where the tangent plane is parallel to the $yz$-plane, then $a^2+b^2+c^2=$",
+      "opts": ["$25$", "$16$", "$225$", "$100$", "$256$"],
+      "ans": 0,
+      "hints": [
+        "A plane parallel to the $yz$-plane has normal vector along the $x$-axis.",
+        "The normal of the tangent plane is the gradient of $F(x,y,z)$; require its $y$- and $z$-components to be zero, then use the surface equation.",
+        "For the surface $F(x,y,z)=k$, the tangent plane at a point has normal vector $\\nabla F$ there."
+      ],
+      "steps": [
+        "Let $F=4x^2+2y^2-z^2$. Then $\\nabla F=\\langle8x,\\,4y,\\,-2z\\rangle$.",
+        "The normal must be parallel to $\\mathbf{i}$, so $4y=0$ and $-2z=0$: $b=c=0$.",
+        "Surface: $4a^2=100$, so $a^2=25$ and $a=-5$.",
+        "$a^2+b^2+c^2=25$."
+      ],
+      "brief": "$\\nabla F\\parallel\\mathbf{i}\\Rightarrow b=c=0$; $4a^2=100$, so $a^2+b^2+c^2=25$."
+    },
+    {
+      "sec": "13.8",
+      "q": "The graph of the function \\[ f(x,y)=4x-4xy+2y^2-4y+x^3+10 \\] has",
+      "opts": [
+        "one saddle point and one relative minimum",
+        "one saddle point and one relative maximum",
+        "one relative minimum and one relative maximum",
+        "no saddle point",
+        "one saddle point and two relative maxima"
+      ],
+      "ans": 0,
+      "hints": [
+        "Find the critical points, then classify each with the second partials test.",
+        "Set $f_x=0$ and $f_y=0$; solve one equation for one variable and substitute into the other.",
+        "At a critical point let $D=f_{xx}f_{yy}-f_{xy}^2$: $D<0$ saddle; $D>0$ with $f_{xx}>0$ minimum, with $f_{xx}<0$ maximum."
+      ],
+      "steps": [
+        "$f_x=4-4y+3x^2=0$ and $f_y=-4x+4y-4=0$, so $y=x+1$.",
+        "Substitute: $4-4x-4+3x^2=3x^2-4x=0$, so $x=0$ or $x=\\dfrac43$. Critical points: $(0,1)$ and $\\left(\\dfrac43,\\dfrac73\\right)$.",
+        "$f_{xx}=6x,\\ f_{yy}=4,\\ f_{xy}=-4$, so $D=24x-16$.",
+        "At $(0,1)$: $D=-16<0$, a saddle point. At $\\left(\\frac43,\\frac73\\right)$: $D=16>0$ and $f_{xx}=8>0$, a relative minimum."
+      ],
+      "brief": "Critical points $(0,1)$ ($D=-16$, saddle) and $(\\frac43,\\frac73)$ ($D=16,\\ f_{xx}=8$, min)."
+    },
+    {
+      "sec": "13.8",
+      "q": "The maximum value of $f(x,y)=4x^2+4y^2-8y$ over the region in the $xy$-plane bounded by the graphs of $y=2x^2$ and $y=2$ is equal to",
+      "opts": ["$4$", "$2$", "$-2$", "$0$", "$28$"],
+      "ans": 0,
+      "hints": [
+        "This is an absolute maximum on a closed region: check interior critical points and the boundary.",
+        "Find the critical points of $f$ inside the region, then substitute each boundary curve into $f$ and maximize the resulting one-variable function.",
+        "Absolute extrema on a closed bounded region occur at interior critical points or on the boundary (including corner points); compare all the values."
+      ],
+      "steps": [
+        "Region: $-1\\le x\\le1$, $2x^2\\le y\\le2$ (the curves meet at $(\\pm1,2)$).",
+        "Interior: $f_x=8x=0$ and $f_y=8y-8=0$ give $(0,1)$, which is inside; $f(0,1)=-4$.",
+        "Boundary $y=2$: $f=4x^2+16-16=4x^2$, with maximum $4$ at $x=\\pm1$.",
+        "Boundary $y=2x^2$: $f=16x^4-12x^2$ on $[-1,1]$. Its critical values are $0$ and $-\\dfrac94$, and the endpoints give $4$.",
+        "The maximum value is $4$."
+      ],
+      "brief": "Interior $f(0,1)=-4$; boundary $y=2$ gives $4x^2\\le4$; $y=2x^2$ gives at most $4$."
+    },
+    {
+      "sec": "13.9",
+      "q": "If $(a,b,c)$ is the point on the paraboloid $z=x^2+y^2$ that is closest to the point $(3,3,1)$, then $a^3+b^3+c^3=$",
+      "opts": ["$10$", "$6$", "$64+4\\sqrt2$", "$0$", "$64-4\\sqrt2$"],
+      "ans": 0,
+      "hints": [
+        "This is a minimum-distance optimization problem.",
+        "Minimize the squared distance to the given point, after replacing $z$ using the equation of the paraboloid.",
+        "Minimizing $d^2=(x-x_0)^2+(y-y_0)^2+(z-z_0)^2$ gives the same point as minimizing $d$; set both partial derivatives to zero."
+      ],
+      "steps": [
+        "$d^2=(x-3)^2+(y-3)^2+\\left(x^2+y^2-1\\right)^2$.",
+        "$\\dfrac{\\partial}{\\partial x}$: $2(x-3)+4x(x^2+y^2-1)=0$, and similarly $2(y-3)+4y(x^2+y^2-1)=0$.",
+        "Subtracting gives $x=y$ (the only real critical point); then $x-3+2x(2x^2-1)=0$, i.e. $4x^3-x-3=0$, so $x=1$.",
+        "The point is $(1,1,2)$, and $a^3+b^3+c^3=1+1+8=10$."
+      ],
+      "brief": "Minimize $d^2$: $x=y=1$, point $(1,1,2)$, so $1+1+8=10$."
+    },
+    {
+      "sec": "13.10",
+      "q": "The highest point on the curve of intersection of the cone $x^2+y^2-z^2=0$ and the plane $x+4z=9$ is",
+      "opts": ["$(-3,0,3)$", "$(-4,0,4)$", "$(1,\\sqrt3,2)$", "$(5,2,1)$", "$(3,-3,3)$"],
+      "ans": 0,
+      "hints": [
+        "Highest means largest $z$ on the curve in which the plane cuts the cone.",
+        "Use the plane to write $z$ in terms of $x$, so the highest point is where $x$ is extreme, then see which values of $x$ the cone allows.",
+        "On the curve, $x^2+y^2=z^2$ requires $y^2=z^2-x^2\\ge0$, which limits the possible values of $x$."
+      ],
+      "steps": [
+        "From the plane, $z=\\dfrac{9-x}{4}$, so $z$ is largest when $x$ is smallest.",
+        "The cone gives $y^2=z^2-x^2=\\dfrac{(9-x)^2}{16}-x^2\\ge0$, i.e. $|9-x|\\ge4|x|$.",
+        "This holds for $-3\\le x\\le\\dfrac95$, so the smallest $x$ is $-3$.",
+        "Then $z=\\dfrac{12}{4}=3$ and $y^2=9-9=0$: the highest point is $(-3,0,3)$."
+      ],
+      "brief": "$z=(9-x)/4$ is largest at smallest $x$; $y^2\\ge0$ forces $x\\ge-3$: $(-3,0,3)$."
+    },
+    {
+      "sec": "14.2",
+      "q": "If $R=\\left\\{(x,y):0\\le x\\le\\dfrac{\\pi}{4},\\ 0\\le y\\le1\\right\\}$, then \\[ \\iint_R 4\\sqrt2\\,y\\,\\cos x\\,dA= \\]",
+      "opts": ["$2$", "$\\dfrac{\\sqrt2}{4}$", "$\\dfrac{\\sqrt2}{2}$", "$4\\sqrt2$", "$4$"],
+      "ans": 0,
+      "hints": [
+        "The region is a rectangle and the integrand is a product of a function of $x$ and a function of $y$.",
+        "Split the double integral into a product of two single integrals.",
+        "$\\iint_R g(x)h(y)\\,dA=\\left(\\int_a^b g(x)\\,dx\\right)\\left(\\int_c^d h(y)\\,dy\\right)$ over $[a,b]\\times[c,d]$."
+      ],
+      "steps": [
+        "$\\iint_R=4\\sqrt2\\left(\\int_0^{\\pi/4}\\cos x\\,dx\\right)\\left(\\int_0^1y\\,dy\\right)$.",
+        "$\\int_0^{\\pi/4}\\cos x\\,dx=\\sin\\dfrac\\pi4=\\dfrac{\\sqrt2}{2}$ and $\\int_0^1y\\,dy=\\dfrac12$.",
+        "$4\\sqrt2\\cdot\\dfrac{\\sqrt2}{2}\\cdot\\dfrac12=2$."
+      ],
+      "brief": "$4\\sqrt2\\cdot\\frac{\\sqrt2}{2}\\cdot\\frac12=2$."
+    },
+    {
+      "sec": "14.2",
+      "q": "\\[ \\int_0^4\\int_0^y f(x,y)\\,dx\\,dy= \\]",
+      "opts": [
+        "$\\int_0^4\\int_x^4 f(x,y)\\,dy\\,dx$",
+        "$\\int_0^4\\int_4^x f(x,y)\\,dy\\,dx$",
+        "$\\int_{-4}^0\\int_x^4 f(x,y)\\,dy\\,dx$",
+        "$\\int_{-4}^0\\int_0^x f(x,y)\\,dy\\,dx$",
+        "$\\int_0^4\\int_{4x}^0 f(x,y)\\,dy\\,dx$"
+      ],
+      "ans": 0,
+      "hints": [
+        "This is a change of the order of integration.",
+        "Sketch the region described by the limits and re-describe it with $x$ as the outer variable.",
+        "The region is $0\\le y\\le4,\\ 0\\le x\\le y$; for a fixed $x$, $y$ runs from the line $y=x$ up to the top boundary."
+      ],
+      "steps": [
+        "The region is $0\\le x\\le y\\le4$, the triangle with vertices $(0,0)$, $(0,4)$, $(4,4)$ in the $xy$-plane.",
+        "$x$ ranges over $0\\le x\\le4$.",
+        "For fixed $x$, $y$ runs from $y=x$ to $y=4$.",
+        "So the integral is $\\int_0^4\\int_x^4f(x,y)\\,dy\\,dx$."
+      ],
+      "brief": "Region $0\\le x\\le y\\le4$: $\\int_0^4\\int_x^4 f\\,dy\\,dx$."
+    },
+    {
+      "sec": "14.2",
+      "q": "The volume of the solid region bounded by the graphs of the equations \\[ z=4-x^2-y^2\\quad\\text{and}\\quad z=4-2x \\] is equal to",
+      "opts": [
+        "$\\int_0^2\\int_{-\\sqrt{1-(x-1)^2}}^{\\sqrt{1-(x-1)^2}}\\left(2x-x^2-y^2\\right)dy\\,dx$",
+        "$\\int_0^2\\int_{-\\sqrt{1-(x+1)^2}}^{\\sqrt{1-(x+1)^2}}\\left(x^2+y^2+2x\\right)dy\\,dx$",
+        "$-\\int_{-2}^0\\int_{-\\sqrt{1-(x-1)^2}}^{\\sqrt{1-(x-1)^2}}\\left(x^2+y^2+2x\\right)dy\\,dx$",
+        "$\\int_{-2}^2\\int_0^{\\sqrt{1-(x+1)^2}}\\left(2x-x^2-y^2\\right)dy\\,dx$",
+        "$\\int_0^2\\int_{-\\sqrt{1+(x-1)^2}}^{\\sqrt{1+(x-1)^2}}\\left(2x-x^2-y^2\\right)dy\\,dx$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Volume between two surfaces is a double integral of (top minus bottom) over the region where they enclose a solid.",
+        "Set the two $z$-expressions equal to find the boundary curve of the base region, and decide which surface is on top there.",
+        "$V=\\iint_D\\left(z_{\\text{top}}-z_{\\text{bottom}}\\right)dA$; complete the square to recognize the shape of $D$."
+      ],
+      "steps": [
+        "Equal $z$: $4-x^2-y^2=4-2x$, so $x^2-2x+y^2=0$, i.e. $(x-1)^2+y^2=1$, a disk of radius $1$ centred at $(1,0)$.",
+        "Inside the disk $4-x^2-y^2-(4-2x)=2x-x^2-y^2\\ge0$, so the paraboloid is the top.",
+        "The disk has $0\\le x\\le2$ and $|y|\\le\\sqrt{1-(x-1)^2}$.",
+        "$V=\\int_0^2\\int_{-\\sqrt{1-(x-1)^2}}^{\\sqrt{1-(x-1)^2}}\\left(2x-x^2-y^2\\right)dy\\,dx$."
+      ],
+      "brief": "Base disk $(x-1)^2+y^2\\le1$, height $2x-x^2-y^2$ (paraboloid minus plane)."
+    },
+    {
+      "sec": "14.2",
+      "q": "Let $f(x,y)=2xy$ and $R$ be the triangular region with vertices $(0,0)$, $(-3,-1)$, and $(0,-1)$. Then the average value of $f$ over $R$ is equal to",
+      "opts": ["$\\dfrac32$", "$\\dfrac83$", "$\\dfrac23$", "$\\dfrac94$", "$\\dfrac{27}{8}$"],
+      "ans": 0,
+      "hints": [
+        "The average value of a function over a region is the integral divided by the area.",
+        "Describe the triangle with limits (find the equation of the slanted side), compute the integral of $f$ and the area of $R$.",
+        "$f_{\\text{avg}}=\\dfrac{1}{A(R)}\\iint_R f\\,dA$, and a triangle has area $\\dfrac12\\cdot\\text{base}\\cdot\\text{height}$."
+      ],
+      "steps": [
+        "The slanted side through $(0,0)$ and $(-3,-1)$ is $x=3y$. So $R$: $-1\\le y\\le0$, $3y\\le x\\le0$.",
+        "Area $=\\dfrac12\\cdot3\\cdot1=\\dfrac32$.",
+        "$\\iint_R2xy\\,dA=\\int_{-1}^0y\\left[x^2\\right]_{3y}^{0}dy=\\int_{-1}^0\\left(-9y^3\\right)dy=\\dfrac94$.",
+        "Average $=\\dfrac{9/4}{3/2}=\\dfrac32$."
+      ],
+      "brief": "Integral $=\\frac94$, area $=\\frac32$, average $=\\frac32$."
+    },
+    {
+      "sec": "14.3",
+      "q": "\\[ \\int_0^{3/\\sqrt2}\\int_y^{\\sqrt{9-y^2}}\\sqrt{x^2+y^2}\\,dx\\,dy= \\]",
+      "opts": ["$\\dfrac{9\\pi}{4}$", "$\\dfrac{13\\pi}{9}$", "$\\dfrac{15\\pi}{4}$", "$\\dfrac{7\\pi}{2}$", "$\\dfrac{8\\pi}{5}$"],
+      "ans": 0,
+      "hints": [
+        "The integrand $\\sqrt{x^2+y^2}$ and the circular boundary suggest polar coordinates.",
+        "Sketch the region: identify the bounding lines and the circle, and find the range of $\\theta$ and $r$.",
+        "In polar form $dA=r\\,dr\\,d\\theta$, with $x=r\\cos\\theta$, $y=r\\sin\\theta$ and $\\sqrt{x^2+y^2}=r$."
+      ],
+      "steps": [
+        "The region lies below the line $y=x$ and above the $x$-axis (since $x\\ge y\\ge0$), inside the circle $x^2+y^2=9$; the line and circle meet at $y=\\dfrac{3}{\\sqrt2}$.",
+        "So $0\\le\\theta\\le\\dfrac\\pi4$ and $0\\le r\\le3$.",
+        "$\\int_0^{\\pi/4}\\int_0^3r\\cdot r\\,dr\\,d\\theta=\\int_0^{\\pi/4}d\\theta\\cdot\\int_0^3r^2dr$.",
+        "$=\\dfrac\\pi4\\cdot9=\\dfrac{9\\pi}{4}$."
+      ],
+      "brief": "Polar: $0\\le\\theta\\le\\frac\\pi4$, $0\\le r\\le3$: $\\int r^2\\,dr\\,d\\theta=\\frac{9\\pi}{4}$."
+    },
+    {
+      "sec": "14.7",
+      "q": "The volume of the solid region bounded below by the upper nappe of the cone $z^2=x^2+y^2$ and above by the sphere $x^2+y^2+z^2=4$ is equal to",
+      "opts": ["$\\dfrac{8\\pi}{3}\\left(2-\\sqrt2\\right)$", "$\\dfrac{26\\pi}{3}\\left(2-\\sqrt2\\right)$", "$9\\pi\\left(2-\\sqrt2\\right)$", "$\\dfrac{8\\pi}{3}\\left(2+\\sqrt2\\right)$", "$\\dfrac{8\\pi}{3}\\left(5+\\sqrt2\\right)$"],
+      "ans": 0,
+      "hints": [
+        "A region between a cone and a sphere centred at the origin is natural in spherical coordinates.",
+        "Find the angle $\\phi$ the cone makes with the positive $z$-axis, and the constant $\\rho$ of the sphere.",
+        "Spherical volume element: $dV=\\rho^2\\sin\\phi\\,d\\rho\\,d\\phi\\,d\\theta$; the cone $z=\\sqrt{x^2+y^2}$ is $\\phi=\\dfrac\\pi4$."
+      ],
+      "steps": [
+        "The sphere is $\\rho=2$ and the upper cone is $\\phi=\\dfrac\\pi4$. So $0\\le\\rho\\le2$, $0\\le\\phi\\le\\dfrac\\pi4$, $0\\le\\theta\\le2\\pi$.",
+        "$V=\\int_0^{2\\pi}\\int_0^{\\pi/4}\\int_0^2\\rho^2\\sin\\phi\\,d\\rho\\,d\\phi\\,d\\theta$.",
+        "$\\int_0^2\\rho^2d\\rho=\\dfrac83$ and $\\int_0^{\\pi/4}\\sin\\phi\\,d\\phi=1-\\dfrac{\\sqrt2}{2}$.",
+        "$V=2\\pi\\cdot\\dfrac83\\left(1-\\dfrac{\\sqrt2}{2}\\right)=\\dfrac{8\\pi}{3}\\left(2-\\sqrt2\\right)$."
+      ],
+      "brief": "Spherical: $\\rho\\le2$, $\\phi\\le\\frac\\pi4$: $V=2\\pi\\cdot\\frac83(1-\\frac{\\sqrt2}{2})=\\frac{8\\pi}{3}(2-\\sqrt2)$."
+    },
+    {
+      "sec": "14.7",
+      "q": "\\[ \\int_0^3\\int_0^{\\sqrt{9-x^2}}\\int_0^{\\sqrt{9-x^2-y^2}}\\sqrt{x^2+y^2+z^2}\\,dz\\,dy\\,dx= \\]",
+      "opts": [
+        "$\\int_0^{\\pi/2}\\int_0^{\\pi/2}\\int_0^3\\rho^3\\sin\\phi\\,d\\rho\\,d\\phi\\,d\\theta$",
+        "$\\int_0^{\\pi}\\int_0^{\\pi/2}\\int_0^3\\rho^3\\sin\\phi\\,d\\rho\\,d\\phi\\,d\\theta$",
+        "$\\int_0^{\\pi/2}\\int_0^{\\pi/2}\\int_0^3\\rho^{5/2}\\sin\\phi\\,d\\rho\\,d\\phi\\,d\\theta$",
+        "$\\int_0^{\\pi}\\int_0^{\\pi}\\int_0^3\\rho^3\\sin\\phi\\,d\\rho\\,d\\phi\\,d\\theta$",
+        "$\\int_0^{\\pi/2}\\int_0^{\\pi}\\int_0^3\\rho^{5/2}\\sin\\phi\\,d\\rho\\,d\\phi\\,d\\theta$"
+      ],
+      "ans": 0,
+      "hints": [
+        "The limits describe part of a ball, so convert to spherical coordinates.",
+        "Identify the solid from the limits (what sphere, and which part of it), then find the ranges of $\\theta$ and $\\phi$ and rewrite the integrand.",
+        "$\\sqrt{x^2+y^2+z^2}=\\rho$ and $dV=\\rho^2\\sin\\phi\\,d\\rho\\,d\\phi\\,d\\theta$."
+      ],
+      "steps": [
+        "The limits give $x,y,z\\ge0$ and $x^2+y^2+z^2\\le9$: the first-octant part of the ball of radius $3$.",
+        "So $0\\le\\rho\\le3$, $0\\le\\phi\\le\\dfrac\\pi2$, $0\\le\\theta\\le\\dfrac\\pi2$.",
+        "The integrand is $\\rho$ and $dV=\\rho^2\\sin\\phi\\,d\\rho\\,d\\phi\\,d\\theta$, giving $\\rho^3\\sin\\phi$.",
+        "$\\int_0^{\\pi/2}\\int_0^{\\pi/2}\\int_0^3\\rho^3\\sin\\phi\\,d\\rho\\,d\\phi\\,d\\theta$."
+      ],
+      "brief": "First octant of ball $\\rho\\le3$: $\\theta,\\phi\\in[0,\\frac\\pi2]$, integrand $\\rho\\cdot\\rho^2\\sin\\phi$."
+    },
+    {
+      "sec": "10.3",
+      "q": "Let $L$ be the arc length of the curve represented by the parametric equations \\[ x=ae^{-t}\\cos t,\\qquad y=ae^{-t}\\sin t,\\qquad 0\\le t\\le\\frac{\\pi}{2}. \\] If $L=4\\left(1-e^{-\\frac{\\pi}{2}}\\right)$, then $a=$",
+      "opts": ["$\\sqrt8$", "$\\sqrt2$", "$\\sqrt{18}$", "$4$", "$2$"],
+      "ans": 0,
+      "hints": [
+        "This is an arc length problem for a parametric curve, with $a$ an unknown constant.",
+        "Differentiate $x$ and $y$ with respect to $t$, form $(x')^2+(y')^2$ and simplify using $\\sin^2t+\\cos^2t=1$.",
+        "$L=\\int_{t_1}^{t_2}\\sqrt{\\left(\\dfrac{dx}{dt}\\right)^2+\\left(\\dfrac{dy}{dt}\\right)^2}\\,dt$."
+      ],
+      "steps": [
+        "$x'=-ae^{-t}(\\cos t+\\sin t)$ and $y'=ae^{-t}(\\cos t-\\sin t)$.",
+        "$(x')^2+(y')^2=a^2e^{-2t}\\left[(\\cos t+\\sin t)^2+(\\cos t-\\sin t)^2\\right]=2a^2e^{-2t}$.",
+        "$L=\\int_0^{\\pi/2}\\sqrt2\\,a\\,e^{-t}\\,dt=\\sqrt2\\,a\\left(1-e^{-\\pi/2}\\right)$.",
+        "Setting $\\sqrt2\\,a=4$ gives $a=2\\sqrt2=\\sqrt8$."
+      ],
+      "brief": "Speed $=\\sqrt2\\,ae^{-t}$, so $L=\\sqrt2\\,a(1-e^{-\\pi/2})$; $\\sqrt2\\,a=4$ gives $a=\\sqrt8$."
+    }
+  ]
+}

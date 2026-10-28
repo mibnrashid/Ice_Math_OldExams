@@ -1,0 +1,365 @@
+{
+  "course": "math201",
+  "term": "242",
+  "kind": "e1",
+  "date": "",
+  "minutes": 90,
+  "source": "math201-242-e1.pdf",
+  "note": "The scan has no cover page, so neither the date nor the exam length is printed. Date left empty; 90 minutes is the usual length of a major exam (assumed). Master key is A for every question and all 15 answers were verified independently (sympy). The handwritten solution on Q10 ends with -8/sqrt(65) but the printed key (a) -8/65 is correct (a=-1/sqrt65, b=8/sqrt65). Handwriting was ignored in the transcription.",
+  "qs": [
+    {
+      "sec": "10.3",
+      "q": "The parametric curve \\[ x=2+t^2,\\quad y=1+t+t^3 \\] is",
+      "opts": [
+        "concave downward on $\\left(0,\\dfrac{1}{\\sqrt3}\\right)$",
+        "concave downward on $(0,\\infty)$",
+        "concave downward on $\\left(-\\dfrac{1}{\\sqrt3},0\\right)$",
+        "concave upward on $\\left(-\\dfrac{1}{\\sqrt3},\\dfrac{1}{\\sqrt3}\\right)$",
+        "concave upward on $(0,\\infty)$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Concavity of a parametric curve is decided by the sign of the second derivative $d^2y/dx^2$.",
+        "First find $dy/dx$ as a function of $t$, then differentiate it with respect to $t$ and divide by $dx/dt$.",
+        "$\\dfrac{d^2y}{dx^2}=\\dfrac{\\frac{d}{dt}\\left(\\frac{dy}{dx}\\right)}{dx/dt}$; the curve is concave downward where this is negative and upward where it is positive."
+      ],
+      "steps": [
+        "$\\dfrac{dx}{dt}=2t$ and $\\dfrac{dy}{dt}=1+3t^2$, so $\\dfrac{dy}{dx}=\\dfrac{1+3t^2}{2t}=\\dfrac12t^{-1}+\\dfrac32t$.",
+        "$\\dfrac{d}{dt}\\left(\\dfrac{dy}{dx}\\right)=-\\dfrac12t^{-2}+\\dfrac32=\\dfrac{3t^2-1}{2t^2}$.",
+        "$\\dfrac{d^2y}{dx^2}=\\dfrac{3t^2-1}{2t^2\\cdot 2t}=\\dfrac{3t^2-1}{4t^3}$.",
+        "For $t>0$ the sign is that of $3t^2-1$: negative for $0<t<\\dfrac1{\\sqrt3}$, positive for $t>\\dfrac1{\\sqrt3}$.",
+        "For $-\\dfrac1{\\sqrt3}<t<0$ the numerator is negative and $t^3<0$, so the quotient is positive (concave upward). Hence the curve is concave downward on $\\left(0,\\dfrac1{\\sqrt3}\\right)$."
+      ],
+      "brief": "$y''_{xx}=\\frac{3t^2-1}{4t^3}<0$ for $0<t<\\frac1{\\sqrt3}$."
+    },
+    {
+      "sec": "10.2",
+      "q": "The graph of the parametric curve \\[ x=\\sin t,\\quad y=\\cos(2t),\\quad t\\in(-\\infty,\\infty) \\] is",
+      "opts": [
+        "part of a parabola",
+        "a full parabola",
+        "an ellipse",
+        "part of a line",
+        "a hyperbola"
+      ],
+      "ans": 0,
+      "hints": [
+        "Eliminate the parameter to identify the curve, then check which values of $x$ are actually reached.",
+        "Rewrite $\\cos(2t)$ using a double-angle identity so that it involves $\\sin t$ only.",
+        "The identity $\\cos 2t=1-2\\sin^2t$ applies, and the range of $\\sin t$ restricts the values of $x$ on the curve."
+      ],
+      "steps": [
+        "$\\cos 2t=1-2\\sin^2 t$, so $y=1-2x^2$, which is a parabola.",
+        "Since $x=\\sin t$, only $-1\\le x\\le 1$ occurs.",
+        "A full parabola would need all real $x$, so the graph is only part of the parabola (the arc with $-1\\le x\\le1$)."
+      ],
+      "brief": "$y=1-2x^2$ with $-1\\le x\\le1$: part of a parabola."
+    },
+    {
+      "sec": "10.3",
+      "q": "The parametric curve \\[ x=t^2-2t+1,\\quad y=t^3-6t^2 \\] has a vertical tangent line at the point",
+      "opts": [
+        "$(x,y)=(0,-5)$",
+        "$(x,y)=(4,-7)$",
+        "$(x,y)=(1,-16)$",
+        "$(x,y)=(9,-32)$",
+        "$(x,y)=(1,0)$"
+      ],
+      "ans": 0,
+      "hints": [
+        "A vertical tangent occurs where the slope $dy/dx$ is undefined because the horizontal speed is zero but the vertical one is not.",
+        "Solve $dx/dt=0$, then check $dy/dt$ at each solution and compute the point.",
+        "A parametric curve has a vertical tangent at $t_0$ when $\\dfrac{dx}{dt}=0$ and $\\dfrac{dy}{dt}\\neq0$ at $t_0$."
+      ],
+      "steps": [
+        "$\\dfrac{dx}{dt}=2t-2=0$ gives $t=1$.",
+        "$\\dfrac{dy}{dt}=3t^2-12t$, which at $t=1$ is $-9\\neq0$.",
+        "The point is $x=1-2+1=0$, $y=1-6=-5$, i.e. $(0,-5)$."
+      ],
+      "brief": "$x'=2t-2=0\\Rightarrow t=1$, $y'(1)=-9\\neq0$: point $(0,-5)$."
+    },
+    {
+      "sec": "10.3",
+      "q": "The length of the parametric curve \\[ x=\\frac13t^3-t,\\quad y=t^2,\\quad 0\\le t\\le 3 \\] is equal to",
+      "opts": [
+        "$12$",
+        "$\\dfrac{14}{3}$",
+        "$\\dfrac{5}{3}$",
+        "$9$",
+        "$15$"
+      ],
+      "ans": 0,
+      "hints": [
+        "This is an arc length problem for a parametric curve.",
+        "Compute $dx/dt$ and $dy/dt$ and see whether the expression under the square root becomes a perfect square.",
+        "$L=\\int_a^b\\sqrt{\\left(\\frac{dx}{dt}\\right)^2+\\left(\\frac{dy}{dt}\\right)^2}\\,dt$."
+      ],
+      "steps": [
+        "$\\dfrac{dx}{dt}=t^2-1$ and $\\dfrac{dy}{dt}=2t$.",
+        "$(t^2-1)^2+4t^2=t^4+2t^2+1=(t^2+1)^2$.",
+        "$L=\\int_0^3(t^2+1)\\,dt=\\left[\\frac{t^3}{3}+t\\right]_0^3=9+3=12$."
+      ],
+      "brief": "$\\sqrt{(t^2-1)^2+4t^2}=t^2+1$, $L=\\int_0^3(t^2+1)dt=12$."
+    },
+    {
+      "sec": "10.4",
+      "q": "The slope of the tangent line to the polar curve \\[ r=2+\\cos(3\\theta) \\] at the point corresponding to $\\theta=\\dfrac{\\pi}{2}$ is equal to",
+      "opts": [
+        "$-\\dfrac32$",
+        "$-1$",
+        "$-3$",
+        "$3$",
+        "$\\dfrac12$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Treat the polar curve as the parametric curve $x=r\\cos\\theta$, $y=r\\sin\\theta$ with parameter $\\theta$.",
+        "Compute $r$ and $dr/d\\theta$ at the given angle, then substitute into the slope formula.",
+        "$\\dfrac{dy}{dx}=\\dfrac{r\\cos\\theta+\\frac{dr}{d\\theta}\\sin\\theta}{-r\\sin\\theta+\\frac{dr}{d\\theta}\\cos\\theta}$."
+      ],
+      "steps": [
+        "$\\dfrac{dr}{d\\theta}=-3\\sin(3\\theta)$.",
+        "At $\\theta=\\dfrac\\pi2$: $r=2+\\cos\\dfrac{3\\pi}{2}=2$ and $\\dfrac{dr}{d\\theta}=-3\\sin\\dfrac{3\\pi}{2}=3$.",
+        "With $\\cos\\dfrac\\pi2=0$, $\\sin\\dfrac\\pi2=1$: numerator $=2\\cdot0+3\\cdot1=3$.",
+        "Denominator $=-2\\cdot1+3\\cdot0=-2$, so the slope is $-\\dfrac32$."
+      ],
+      "brief": "$r=2$, $r'=3$ at $\\frac\\pi2$: slope $=\\frac{3}{-2}=-\\frac32$."
+    },
+    {
+      "sec": "10.4",
+      "q": "The polar equation $\\theta=\\dfrac{5\\pi}{6}$ can be converted to the rectangular equation",
+      "opts": [
+        "$y=-\\dfrac{\\sqrt3}{3}x$",
+        "$y=-\\sqrt3\\,x$",
+        "$y=\\sqrt3\\,x$",
+        "$y=-2\\sqrt3\\,x$",
+        "$y=\\dfrac{\\sqrt3}{2}x$"
+      ],
+      "ans": 0,
+      "hints": [
+        "A polar equation $\\theta=$ constant describes a line through the origin.",
+        "Take the tangent of both sides and use the relation between $\\tan\\theta$ and $x,y$.",
+        "$\\tan\\theta=\\dfrac yx$ for $x\\neq0$."
+      ],
+      "steps": [
+        "$\\tan\\theta=\\dfrac yx=\\tan\\dfrac{5\\pi}{6}=-\\dfrac1{\\sqrt3}$.",
+        "So $y=-\\dfrac1{\\sqrt3}x=-\\dfrac{\\sqrt3}{3}x$."
+      ],
+      "brief": "$\\frac yx=\\tan\\frac{5\\pi}6=-\\frac1{\\sqrt3}$, so $y=-\\frac{\\sqrt3}{3}x$."
+    },
+    {
+      "sec": "10.5",
+      "q": "The area of the region lying in the first quadrant and inside the polar curve $r^2=2\\cos(2\\theta)$ is equal to",
+      "opts": [
+        "$\\dfrac12$",
+        "$1$",
+        "$\\dfrac1{\\sqrt2}$",
+        "$\\sqrt2$",
+        "$\\dfrac14$"
+      ],
+      "ans": 0,
+      "hints": [
+        "This is an area in polar coordinates; first find the range of $\\theta$ for the first-quadrant part of the loop.",
+        "The loop starts at $\\theta=0$ and ends where $r=0$; find that angle from $\\cos(2\\theta)=0$.",
+        "$A=\\int_\\alpha^\\beta\\frac12r^2\\,d\\theta$ and $\\int\\cos(k\\theta)\\,d\\theta=\\frac1k\\sin(k\\theta)$."
+      ],
+      "steps": [
+        "In the first quadrant $r=0$ first at $2\\theta=\\dfrac\\pi2$, i.e. $\\theta=\\dfrac\\pi4$, so $0\\le\\theta\\le\\dfrac\\pi4$.",
+        "$A=\\int_0^{\\pi/4}\\frac12\\cdot2\\cos(2\\theta)\\,d\\theta=\\int_0^{\\pi/4}\\cos(2\\theta)\\,d\\theta$.",
+        "$=\\left[\\dfrac12\\sin(2\\theta)\\right]_0^{\\pi/4}=\\dfrac12(1-0)=\\dfrac12$."
+      ],
+      "brief": "$A=\\int_0^{\\pi/4}\\cos2\\theta\\,d\\theta=\\frac12$."
+    },
+    {
+      "sec": "10.5",
+      "q": "The area of the region in the common interior of the polar curves $r=2(1+\\cos\\theta)$ and $r=2\\sin\\theta$ is equal to",
+      "opts": [
+        "$2\\pi-4$",
+        "$2\\pi-2$",
+        "$2\\pi+3$",
+        "$2\\pi+5$",
+        "$\\pi+6$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Sketch the cardioid and the circle, and decide which curve is closer to the origin on each range of $\\theta$.",
+        "The curves meet where $2(1+\\cos\\theta)=2\\sin\\theta$; split the region at that angle and use the nearer curve on each piece.",
+        "$A=\\int\\frac12r^2\\,d\\theta$ over each piece, and $\\cos^2\\theta=\\dfrac{1+\\cos2\\theta}{2}$."
+      ],
+      "steps": [
+        "The curves meet at $\\theta=\\dfrac\\pi2$ (and at the origin). For $0\\le\\theta\\le\\dfrac\\pi2$ the circle $r=2\\sin\\theta$ is inside the cardioid; for $\\dfrac\\pi2\\le\\theta\\le\\pi$ the cardioid is inside the circle.",
+        "Circle part: $\\int_0^{\\pi/2}\\frac12(2\\sin\\theta)^2d\\theta=\\int_0^{\\pi/2}(1-\\cos2\\theta)\\,d\\theta=\\frac\\pi2$.",
+        "Cardioid part: $\\int_{\\pi/2}^{\\pi}2(1+\\cos\\theta)^2d\\theta=2\\int_{\\pi/2}^{\\pi}\\left(\\frac32+2\\cos\\theta+\\frac12\\cos2\\theta\\right)d\\theta$.",
+        "$=2\\left[\\dfrac32\\theta+2\\sin\\theta+\\dfrac14\\sin2\\theta\\right]_{\\pi/2}^{\\pi}=2\\left(\\dfrac{3\\pi}{4}-2\\right)=\\dfrac{3\\pi}{2}-4$.",
+        "Total: $\\dfrac\\pi2+\\dfrac{3\\pi}2-4=2\\pi-4$."
+      ],
+      "brief": "$\\frac\\pi2$ (circle part) $+\\left(\\frac{3\\pi}2-4\\right)$ (cardioid part) $=2\\pi-4$."
+    },
+    {
+      "sec": "11.2",
+      "q": "If the points \\[ P(1,-2,k),\\quad Q(k-1,1,0),\\quad R(4,7,-2k) \\] are collinear, then $k^3-2k+10=$",
+      "opts": [
+        "$31$",
+        "$29$",
+        "$-21$",
+        "$-15$",
+        "$0$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Three points are collinear when the vectors between them are parallel.",
+        "Form $\\overrightarrow{PQ}$ and $\\overrightarrow{PR}$ and compare a component that does not involve $k$ in a complicated way.",
+        "$\\overrightarrow{PR}=c\\,\\overrightarrow{PQ}$ for some scalar $c$ when $P,Q,R$ are collinear; compare components."
+      ],
+      "steps": [
+        "$\\overrightarrow{PQ}=\\langle k-2,\\,3,\\,-k\\rangle$ and $\\overrightarrow{PR}=\\langle 3,\\,9,\\,-3k\\rangle$.",
+        "Middle components: $9=c\\cdot3$, so $c=3$.",
+        "First components: $3=3(k-2)$, so $k=3$. (Third components: $-3k=-3k$, consistent.)",
+        "$k^3-2k+10=27-6+10=31$."
+      ],
+      "brief": "$\\overrightarrow{PR}=3\\overrightarrow{PQ}\\Rightarrow k=3$, so $27-6+10=31$."
+    },
+    {
+      "sec": "11.1",
+      "q": "If $\\vec{\\mathbf u}=\\langle a,b\\rangle$, with $a<0$, is a unit vector that is parallel to the tangent line to the curve $y=-x^3+x^2-1$ at the point $(2,-5)$, then $ab=$",
+      "opts": [
+        "$-\\dfrac{8}{65}$",
+        "$\\dfrac{8}{65}$",
+        "$-\\dfrac{4}{63}$",
+        "$\\dfrac{8}{63}$",
+        "$\\dfrac{2}{65}$"
+      ],
+      "ans": 0,
+      "hints": [
+        "A vector parallel to a tangent line can be built from the slope of the line.",
+        "Find the slope at the given point from the derivative, write a direction vector, and normalize it.",
+        "A line of slope $m$ has direction vector $\\langle1,m\\rangle$; a unit vector parallel to $\\mathbf v$ is $\\pm\\mathbf v/\\|\\mathbf v\\|$."
+      ],
+      "steps": [
+        "$y'=-3x^2+2x$, so the slope at $x=2$ is $-12+4=-8$.",
+        "A direction vector is $\\langle1,-8\\rangle$, of length $\\sqrt{65}$.",
+        "The unit vectors are $\\pm\\dfrac{1}{\\sqrt{65}}\\langle1,-8\\rangle$; with $a<0$: $\\langle a,b\\rangle=\\left\\langle-\\dfrac1{\\sqrt{65}},\\dfrac8{\\sqrt{65}}\\right\\rangle$.",
+        "$ab=-\\dfrac{8}{65}$."
+      ],
+      "brief": "Slope $-8$, $\\mathbf u=\\frac{1}{\\sqrt{65}}\\langle-1,8\\rangle$, so $ab=-\\frac8{65}$."
+    },
+    {
+      "sec": "11.1",
+      "q": "In the $xy$-plane, if the vector $\\vec{\\mathbf u}$ is of magnitude $2$ and makes an angle of $\\dfrac\\pi3$ with the positive $x$-axis, and the vector $\\vec{\\mathbf u}+\\vec{\\mathbf v}$ is of magnitude $2\\sqrt3$ and makes an angle of $\\dfrac\\pi2$ with the positive $x$ axis, then",
+      "opts": [
+        "$\\vec{\\mathbf v}=\\langle-1,\\sqrt3\\rangle$",
+        "$\\vec{\\mathbf v}=\\langle1,2\\sqrt3\\rangle$",
+        "$\\vec{\\mathbf v}=\\langle-1,0\\rangle$",
+        "$\\vec{\\mathbf v}=\\langle0,-\\sqrt3\\rangle$",
+        "$\\vec{\\mathbf v}=\\langle1,\\sqrt3\\rangle$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Write each given vector in component form from its magnitude and direction angle.",
+        "Then isolate $\\vec{\\mathbf v}$ by subtracting $\\vec{\\mathbf u}$ from $\\vec{\\mathbf u}+\\vec{\\mathbf v}$.",
+        "A vector of magnitude $m$ at angle $\\alpha$ with the positive $x$-axis is $m\\langle\\cos\\alpha,\\sin\\alpha\\rangle$."
+      ],
+      "steps": [
+        "$\\vec{\\mathbf u}=2\\langle\\cos\\frac\\pi3,\\sin\\frac\\pi3\\rangle=\\langle1,\\sqrt3\\rangle$.",
+        "$\\vec{\\mathbf u}+\\vec{\\mathbf v}=2\\sqrt3\\langle\\cos\\frac\\pi2,\\sin\\frac\\pi2\\rangle=\\langle0,2\\sqrt3\\rangle$.",
+        "$\\vec{\\mathbf v}=\\langle0,2\\sqrt3\\rangle-\\langle1,\\sqrt3\\rangle=\\langle-1,\\sqrt3\\rangle$."
+      ],
+      "brief": "$\\mathbf u=\\langle1,\\sqrt3\\rangle$, $\\mathbf u+\\mathbf v=\\langle0,2\\sqrt3\\rangle$, so $\\mathbf v=\\langle-1,\\sqrt3\\rangle$."
+    },
+    {
+      "sec": "11.3",
+      "q": "The projection of $\\vec{\\mathbf u}=\\langle0,2,-3\\rangle$ onto $\\vec{\\mathbf v}=\\langle1,-1,2\\rangle$ is",
+      "opts": [
+        "$\\left\\langle-\\dfrac43,\\dfrac43,-\\dfrac83\\right\\rangle$",
+        "$\\left\\langle-1,1,-\\dfrac23\\right\\rangle$",
+        "$\\left\\langle\\dfrac23,-\\dfrac23,\\dfrac43\\right\\rangle$",
+        "$\\left\\langle\\dfrac13,-\\dfrac13,\\dfrac13\\right\\rangle$",
+        "$\\left\\langle0,-\\dfrac83,4\\right\\rangle$"
+      ],
+      "ans": 0,
+      "hints": [
+        "This asks for the vector projection of one vector onto another.",
+        "Compute the dot product $\\mathbf u\\cdot\\mathbf v$ and the squared length $\\|\\mathbf v\\|^2$.",
+        "$\\operatorname{proj}_{\\mathbf v}\\mathbf u=\\dfrac{\\mathbf u\\cdot\\mathbf v}{\\|\\mathbf v\\|^2}\\,\\mathbf v$."
+      ],
+      "steps": [
+        "$\\mathbf u\\cdot\\mathbf v=0-2-6=-8$.",
+        "$\\|\\mathbf v\\|^2=1+1+4=6$.",
+        "$\\operatorname{proj}_{\\mathbf v}\\mathbf u=\\dfrac{-8}{6}\\langle1,-1,2\\rangle=\\left\\langle-\\dfrac43,\\dfrac43,-\\dfrac83\\right\\rangle$."
+      ],
+      "brief": "$\\frac{-8}{6}\\langle1,-1,2\\rangle=\\langle-\\frac43,\\frac43,-\\frac83\\rangle$."
+    },
+    {
+      "sec": "11.4",
+      "q": "The area of the triangle with vertices \\[ P(2,2,2),\\quad Q(5,4,0),\\quad R(-1,1,1) \\] is equal to",
+      "opts": [
+        "$\\dfrac{\\sqrt{106}}{2}$",
+        "$\\dfrac{3\\sqrt{10}}{2}$",
+        "$5$",
+        "$\\dfrac{\\sqrt{97}}{2}$",
+        "$\\dfrac{\\sqrt{101}}{2}$"
+      ],
+      "ans": 0,
+      "hints": [
+        "The area of a triangle can be obtained from a cross product of two of its edge vectors.",
+        "Form $\\overrightarrow{PQ}$ and $\\overrightarrow{PR}$, then compute their cross product with a $3\\times3$ determinant.",
+        "Area of the triangle $=\\dfrac12\\|\\overrightarrow{PQ}\\times\\overrightarrow{PR}\\|$."
+      ],
+      "steps": [
+        "$\\overrightarrow{PQ}=\\langle3,2,-2\\rangle$ and $\\overrightarrow{PR}=\\langle-3,-1,-1\\rangle$.",
+        "$\\overrightarrow{PQ}\\times\\overrightarrow{PR}=\\begin{vmatrix}\\mathbf i&\\mathbf j&\\mathbf k\\\\3&2&-2\\\\-3&-1&-1\\end{vmatrix}=\\langle-4,9,3\\rangle$.",
+        "$\\|\\cdot\\|=\\sqrt{16+81+9}=\\sqrt{106}$, so the area is $\\dfrac{\\sqrt{106}}{2}$."
+      ],
+      "brief": "$\\overrightarrow{PQ}\\times\\overrightarrow{PR}=\\langle-4,9,3\\rangle$, area $=\\frac12\\sqrt{106}$."
+    },
+    {
+      "sec": "11.4",
+      "q": "Let $x>0$. If the volume of the parallelepiped with adjacent edges \\[ \\vec{\\mathbf u}=\\langle2,x,-x\\rangle,\\quad \\vec{\\mathbf v}=\\langle3,x,4\\rangle,\\quad \\vec{\\mathbf w}=\\langle5,-3,3\\rangle \\] is equal to $55$, then $x^3+x^2-4=$",
+      "opts": [
+        "$-2$",
+        "$2$",
+        "$0$",
+        "$3$",
+        "$-5$"
+      ],
+      "ans": 0,
+      "hints": [
+        "The volume of a parallelepiped is given by a triple product.",
+        "Write the three edge vectors as the rows of a $3\\times3$ determinant, expand it in terms of $x$, and set its absolute value equal to the volume.",
+        "$V=|\\mathbf u\\cdot(\\mathbf v\\times\\mathbf w)|$, which equals the absolute value of the determinant of the matrix with rows $\\mathbf u,\\mathbf v,\\mathbf w$."
+      ],
+      "steps": [
+        "$\\det\\begin{bmatrix}2&x&-x\\\\3&x&4\\\\5&-3&3\\end{bmatrix}=2(3x+12)-x(9-20)-x(-9-5x)=5x^2+26x+24$.",
+        "For $x>0$ this is positive, so $5x^2+26x+24=55$, i.e. $5x^2+26x-31=0$.",
+        "$(5x+31)(x-1)=0$, and $x>0$ gives $x=1$.",
+        "$x^3+x^2-4=1+1-4=-2$."
+      ],
+      "brief": "$|\\det|=5x^2+26x+24=55\\Rightarrow x=1$, so $1+1-4=-2$."
+    },
+    {
+      "sec": "11.4",
+      "q": "Which one of the following statements is TRUE: ($\\vec{\\mathbf u}$, $\\vec{\\mathbf v}$, and $\\vec{\\mathbf w}$ are vectors in 3D-space, $\\vec{\\mathbf o}$ is the zero vector)",
+      "opts": [
+        "$(\\vec{\\mathbf u}+\\vec{\\mathbf v})\\times(\\vec{\\mathbf u}-\\vec{\\mathbf v})=2(\\vec{\\mathbf v}\\times\\vec{\\mathbf u})$",
+        "If $\\vec{\\mathbf u}\\cdot\\vec{\\mathbf v}=\\vec{\\mathbf u}\\cdot\\vec{\\mathbf w}$ and $\\vec{\\mathbf u}\\neq\\vec{\\mathbf o}$, then $\\vec{\\mathbf v}=\\vec{\\mathbf w}$",
+        "$\\|\\vec{\\mathbf u}+\\vec{\\mathbf v}\\|^2=\\|\\vec{\\mathbf u}\\|^2+\\|\\vec{\\mathbf v}\\|^2$",
+        "If $\\vec{\\mathbf u}\\neq\\vec{\\mathbf o}$ and $\\vec{\\mathbf v}\\neq\\vec{\\mathbf o}$, then $\\vec{\\mathbf u}\\times\\vec{\\mathbf v}\\neq\\vec{\\mathbf o}$",
+        "$\\vec{\\mathbf u}\\cdot\\vec{\\mathbf v}+\\vec{\\mathbf u}\\times\\vec{\\mathbf v}=\\vec{\\mathbf v}\\cdot\\vec{\\mathbf u}-(-\\vec{\\mathbf v})\\times\\vec{\\mathbf u}$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Test each statement with the algebra rules for dot and cross products, and try simple counterexamples for the false ones.",
+        "Expand the cross product in the first statement using the distributive law, and remember that the cross product is not commutative.",
+        "$\\mathbf a\\times\\mathbf a=\\mathbf 0$, $\\mathbf a\\times\\mathbf b=-\\mathbf b\\times\\mathbf a$, and the cross product distributes over addition."
+      ],
+      "steps": [
+        "Expand: $(\\mathbf u+\\mathbf v)\\times(\\mathbf u-\\mathbf v)=\\mathbf u\\times\\mathbf u-\\mathbf u\\times\\mathbf v+\\mathbf v\\times\\mathbf u-\\mathbf v\\times\\mathbf v=-\\mathbf u\\times\\mathbf v+\\mathbf v\\times\\mathbf u=2(\\mathbf v\\times\\mathbf u)$, so this one is true.",
+        "False: $\\mathbf u=\\mathbf i$, $\\mathbf v=\\mathbf j$, $\\mathbf w=\\mathbf k$ give $\\mathbf u\\cdot\\mathbf v=\\mathbf u\\cdot\\mathbf w=0$ but $\\mathbf v\\neq\\mathbf w$.",
+        "False: $\\mathbf u=\\langle1,0,0\\rangle$, $\\mathbf v=\\langle1,1,0\\rangle$ have $\\mathbf u\\cdot\\mathbf v\\neq0$, so $\\|\\mathbf u+\\mathbf v\\|^2\\neq\\|\\mathbf u\\|^2+\\|\\mathbf v\\|^2$.",
+        "False: $\\mathbf u=\\mathbf i$, $\\mathbf v=2\\mathbf i$ are nonzero but $\\mathbf u\\times\\mathbf v=\\mathbf o$.",
+        "False: the last statement reduces to $\\mathbf u\\times\\mathbf v=\\mathbf v\\times\\mathbf u$, which fails for $\\mathbf u=\\mathbf i$, $\\mathbf v=\\mathbf j$."
+      ],
+      "brief": "$(\\mathbf u+\\mathbf v)\\times(\\mathbf u-\\mathbf v)=2(\\mathbf v\\times\\mathbf u)$; the others have counterexamples."
+    }
+  ]
+}

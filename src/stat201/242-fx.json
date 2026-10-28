@@ -1,0 +1,483 @@
+{
+  "course": "stat201",
+  "term": "242",
+  "kind": "fx",
+  "date": "12 May 2025",
+  "minutes": 120,
+  "source": "stat319-242-fx.pdf",
+  "note": "Original course STAT 319 (listed under Stat 201). Date and minutes printed on the cover (12 May 2025, net time 120). Master key marks the correct choice (a) in every question. The 'option c also accepted' remark is printed at Q5 (not Q6); keep (a), see Q5 note. Q1/Q2 share one output (stat201-242-fx-q1.png) and Q19/Q20 share one output (stat201-242-fx-q19.png). Q9 key 0.2867 comes from rounded z-values (exact 0.2881). Q3 uses the textbook (n+1) quartile rule, which reproduces the key.",
+  "qs": [
+    {
+      "sec": "11.2",
+      "q": "Consider the computer output given here. What is the estimated value of $\\sigma^2$?",
+      "opts": [
+        "$2.1938$",
+        "$17.5500$",
+        "$2.3445$",
+        "$20.3870$",
+        "$1.0320$"
+      ],
+      "ans": 0,
+      "hints": [
+        "The estimate of the error variance is the residual (error) mean square.",
+        "Read the residual error row of the ANOVA table and divide its sum of squares by its degrees of freedom.",
+        "$\\hat\\sigma^2=MSE=\\dfrac{SSE}{n-2}$ in simple linear regression."
+      ],
+      "steps": [
+        "From the ANOVA table, $SSE=17.55$ with $8$ residual degrees of freedom.",
+        "$\\hat\\sigma^2=MSE=\\dfrac{17.55}{8}$.",
+        "$\\hat\\sigma^2=2.1938$ (consistent with $S^2=1.48114^2=2.1938$)."
+      ],
+      "brief": "$\\hat\\sigma^2=SSE/df=17.55/8=2.1938$.",
+      "img": "stat201-242-fx-q1.png"
+    },
+    {
+      "sec": "11.4",
+      "q": "Consider the computer output given here. We are interested in testing the significance of intercept. What is the value of the test statistic?",
+      "opts": [
+        "$12.4583$",
+        "$12.8570$",
+        "$912.4300$",
+        "$1.4811$",
+        "$1.0320$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Testing the intercept is a $t$-test on one regression coefficient.",
+        "Take the intercept estimate and its standard error from the coefficient table; the hypothesised value is zero.",
+        "$T_0=\\dfrac{\\hat\\beta_0-\\beta_{0,0}}{se(\\hat\\beta_0)}$, with $\\beta_{0,0}=0$ for a test of significance."
+      ],
+      "steps": [
+        "$H_0:\\beta_0=0$ versus $H_1:\\beta_0\\neq0$.",
+        "From the output, $\\hat\\beta_0=12.857$ and $se(\\hat\\beta_0)=1.032$.",
+        "$T_0=\\dfrac{12.857}{1.032}=12.4583$."
+      ],
+      "brief": "$T_0=12.857/1.032=12.4583$.",
+      "img": "stat201-242-fx-q1.png"
+    },
+    {
+      "sec": "6.1",
+      "q": "The \"cold start ignition time\" of an automobile engine is being investigated by a gasoline manufacturer. The following times (in seconds) were obtained for a test vehicle: 1.75, 1.92, 2.62, 2.35, 3.09, 3.15, 2.53, 1.91. What is the value of inter quartile range of the data?",
+      "opts": [
+        "$1.0600$",
+        "$2.9725$",
+        "$1.9125$",
+        "$0.5900$",
+        "$2.6850$"
+      ],
+      "ans": 0,
+      "hints": [
+        "The interquartile range is the difference between the third and first quartiles.",
+        "Sort the data first, then locate the 25th and 75th percentiles using the textbook (n+1) positioning rule.",
+        "$IQR=Q_3-Q_1$; the $p$-th percentile sits at position $p(n+1)$ in the sorted list, interpolating linearly when the position is not a whole number."
+      ],
+      "steps": [
+        "Sorted data: $1.75,\\ 1.91,\\ 1.92,\\ 2.35,\\ 2.53,\\ 2.62,\\ 3.09,\\ 3.15$ with $n=8$.",
+        "$Q_1$ is at position $0.25(9)=2.25$: $Q_1=1.91+0.25(1.92-1.91)=1.9125$.",
+        "$Q_3$ is at position $0.75(9)=6.75$: $Q_3=2.62+0.75(3.09-2.62)=2.9725$.",
+        "$IQR=2.9725-1.9125=1.0600$."
+      ],
+      "brief": "$Q_1=1.9125$, $Q_3=2.9725$, so $IQR=1.0600$."
+    },
+    {
+      "sec": "4.3",
+      "q": "For the copper current measurement, the cumulative distribution function of continuous random variable $X$ is given as: \\[ F(x)=\\begin{cases}0, & x<0\\\\ 0.05x, & 0\\le x<20\\\\ 1, & x\\ge 20\\end{cases} \\] What is the probability that a current measurement is between 5 and 20 milliamperes?",
+      "opts": [
+        "$0.750$",
+        "$0.500$",
+        "$0.050$",
+        "$0.075$",
+        "$0.150$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Use the cumulative distribution function to find a probability over an interval.",
+        "Write the probability as a difference of $F$ values at the two endpoints.",
+        "For a continuous variable, $P(a<X<b)=F(b)-F(a)$."
+      ],
+      "steps": [
+        "$P(5<X<20)=F(20)-F(5)$.",
+        "$F(20)=1$ and $F(5)=0.05(5)=0.25$.",
+        "$P=1-0.25=0.750$."
+      ],
+      "brief": "$P(5<X<20)=F(20)-F(5)=1-0.25=0.750$."
+    },
+    {
+      "sec": "7.2",
+      "q": "Suppose that the random variable $X$ has the continuous distribution given by the following: \\[ f(x)=\\begin{cases}1, & 0\\le x\\le 1\\\\ 0, & \\text{otherwise}\\end{cases} \\] Suppose that a random sample of $n=12$ is selected from this distribution. What is the sampling distribution of $\\bar X+6$?",
+      "opts": [
+        "Approximately $N\\left(\\mu_{\\bar x}=\\frac{13}{2},\\ \\sigma_{\\bar x}=\\frac{1}{12}\\right)$, by central limit theorem",
+        "Approximately $N\\left(\\mu_{\\bar x}=\\frac{13}{2},\\ \\sigma_{\\bar x}=\\frac{73}{12}\\right)$, by central limit theorem",
+        "Approximately $N\\left(\\mu_{\\bar x}=\\frac{1}{2},\\ \\sigma_{\\bar x}=\\frac{1}{12}\\right)$, by central limit theorem",
+        "Exactly $N\\left(\\mu_{\\bar x}=\\frac{13}{2},\\ \\sigma_{\\bar x}=\\frac{1}{12}\\right)$",
+        "Approximately $N\\left(\\mu_{\\bar x}=\\frac{13}{2},\\ \\sigma_{\\bar x}=\\frac{1}{\\sqrt{12}}\\right)$, by central limit theorem"
+      ],
+      "ans": 0,
+      "hints": [
+        "This is a sampling-distribution question: the central limit theorem and the effect of adding a constant.",
+        "Find the mean and standard deviation of $X$ from its density, then those of $\\bar X$, then shift by the constant.",
+        "$\\bar X\\approx N(\\mu,\\sigma/\\sqrt n)$ for large enough $n$; $E(\\bar X+c)=\\mu+c$ and the standard deviation is unchanged by adding $c$. For a uniform density on $[a,b]$: $\\mu=\\frac{a+b}{2}$, $\\sigma^2=\\frac{(b-a)^2}{12}$."
+      ],
+      "steps": [
+        "$X$ is uniform on $[0,1]$: $\\mu=\\tfrac12$ and $\\sigma^2=\\tfrac1{12}$, so $\\sigma=\\tfrac{1}{\\sqrt{12}}$.",
+        "$\\bar X$ is approximately normal (CLT) with mean $\\tfrac12$ and standard deviation $\\dfrac{1/\\sqrt{12}}{\\sqrt{12}}=\\tfrac1{12}$.",
+        "Adding 6 shifts the mean to $\\tfrac12+6=\\tfrac{13}{2}$ and leaves the standard deviation $\\tfrac1{12}$.",
+        "So $\\bar X+6$ is approximately $N\\left(\\tfrac{13}{2},\\tfrac1{12}\\right)$ by the central limit theorem. The official key also accepted the choice with mean $\\tfrac12$, but the mean of $\\bar X+6$ is $\\tfrac{13}{2}$."
+      ],
+      "brief": "$\\bar X+6\\approx N(13/2,\\ 1/12)$ by the CLT.",
+      "note": "Source prints 'Note: Option c is also considered correct in grading' next to Q5 (the task brief called it Q6). Option c has mean 1/2, which is mathematically the mean of X-bar, not X-bar+6. Key kept as (a); the site marks only one answer."
+    },
+    {
+      "sec": "8.2",
+      "q": "A random sample has been taken from a normal distribution and the following confidence intervals for the population mean ($\\mu$) are constructed using the same data: $(37.53,\\ 49.87)$ and $(35.59,\\ 51.81)$. What is the value of the sample mean?",
+      "opts": [
+        "$43.70$",
+        "$87.40$",
+        "$37.53$",
+        "$35.59$",
+        "$21.85$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Both intervals come from the same data, so they share the same centre.",
+        "A two-sided confidence interval is symmetric about the sample mean, so use the endpoints of one interval.",
+        "$\\bar x=\\dfrac{\\text{lower limit}+\\text{upper limit}}{2}$ for $\\bar x\\pm\\text{margin}$."
+      ],
+      "steps": [
+        "Each interval has the form $\\bar x\\pm\\text{margin}$.",
+        "First interval: $\\bar x=\\dfrac{37.53+49.87}{2}=43.70$.",
+        "Check with the second: $\\dfrac{35.59+51.81}{2}=43.70$."
+      ],
+      "brief": "$\\bar x=(37.53+49.87)/2=43.70$."
+    },
+    {
+      "sec": "9.1",
+      "q": "A textile fiber manufacturer is investigating a new drapery yarn, which the company claims has a mean thread elongation of 12 kilograms with a standard deviation of 0.5 kilograms. The company wishes to test the hypothesis $H_0:\\mu=12$ against $H_1:\\mu<12$, using a random sample of four specimens. What is the type I error probability if the critical region is defined as $\\bar x<11.5$ kilograms?",
+      "opts": [
+        "$0.02275$",
+        "$0.97725$",
+        "$0.15866$",
+        "$0.84134$",
+        "$0.05000$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Type I error means rejecting $H_0$ when it is true.",
+        "Under $H_0$ find the distribution of $\\bar X$ and the probability of landing in the critical region.",
+        "$\\alpha=P(\\bar X\\in\\text{critical region}\\mid\\mu_0)$ with $\\bar X\\sim N(\\mu_0,\\sigma^2/n)$ and $Z=\\dfrac{\\bar X-\\mu_0}{\\sigma/\\sqrt n}$."
+      ],
+      "steps": [
+        "Under $H_0$: $\\bar X\\sim N\\left(12,\\ 0.5^2/4\\right)$, so $\\sigma_{\\bar X}=0.25$.",
+        "$z=\\dfrac{11.5-12}{0.25}=-2$.",
+        "$\\alpha=P(Z<-2)=0.02275$."
+      ],
+      "brief": "$\\sigma_{\\bar X}=0.25$, $z=-2$: $\\alpha=0.02275$."
+    },
+    {
+      "sec": "9.2",
+      "q": "A textile fiber manufacturer is investigating a new drapery yarn, which the company claims has a mean thread elongation of 12 kilograms with a standard deviation of 0.5 kilograms. The company wishes to test the hypothesis $H_0:\\mu=12$ against $H_1:\\mu<12$, using a random sample of four specimens. Calculate the $P$-value if the observed statistic is $\\bar x=11.25$.",
+      "opts": [
+        "$0.00135$",
+        "$0.99865$",
+        "$0.00270$",
+        "$0.99730$",
+        "$0.05000$"
+      ],
+      "ans": 0,
+      "hints": [
+        "This is a one-sided $z$-test with known $\\sigma$; the alternative points to the left.",
+        "Compute the test statistic, then take the left-tail area.",
+        "$z_0=\\dfrac{\\bar x-\\mu_0}{\\sigma/\\sqrt n}$; for $H_1:\\mu<\\mu_0$, $p\\text{-value}=P(Z<z_0)=\\Phi(z_0)$."
+      ],
+      "steps": [
+        "$z_0=\\dfrac{11.25-12}{0.5/\\sqrt4}=\\dfrac{-0.75}{0.25}=-3$.",
+        "The alternative is $\\mu<12$, so the $p$-value is the lower tail.",
+        "$p=P(Z<-3)=0.00135$."
+      ],
+      "brief": "$z_0=-3$; $p=P(Z<-3)=0.00135$."
+    },
+    {
+      "sec": "9.2",
+      "q": "A manufacturer is interested in the output voltage of a power supply used in a PC. Output voltage is assumed to be normally distributed, with standard deviation 0.25 volt, and the manufacturer wishes to test $H_0:\\mu=5$ against $H_1:\\mu\\neq5$, using $n=8$ units. The acceptance region is $4.85\\le\\bar x\\le5.15$. Find the power of the test for detecting a true mean output voltage of 5.1 volts.",
+      "opts": [
+        "$0.2867$",
+        "$0.7133$",
+        "$0.0895$",
+        "$0.9105$",
+        "$0.9500$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Power is the probability of rejecting $H_0$ when the true mean is the stated alternative value.",
+        "Find $\\beta$, the probability that $\\bar X$ falls in the acceptance region when $\\mu=5.1$, then subtract from 1.",
+        "$\\beta=P(a\\le\\bar X\\le b\\mid\\mu)$ with $\\bar X\\sim N(\\mu,\\sigma^2/n)$, and power $=1-\\beta$."
+      ],
+      "steps": [
+        "With $\\mu=5.1$: $\\sigma_{\\bar X}=\\dfrac{0.25}{\\sqrt8}=0.0884$.",
+        "$z_1=\\dfrac{4.85-5.1}{0.0884}=-2.83$ and $z_2=\\dfrac{5.15-5.1}{0.0884}=0.57$.",
+        "$\\beta=\\Phi(0.57)-\\Phi(-2.83)=0.7157-0.0023=0.7134$.",
+        "Power $=1-0.7134=0.2866\\approx0.2867$ (the key's value, from slightly different table rounding)."
+      ],
+      "brief": "$\\beta=P(-2.83<Z<0.57)\\approx0.7133$; power $=1-\\beta\\approx0.2867$.",
+      "note": "Key kept. Unrounded z-values give power 0.2881; with z rounded to -2.83 and 0.57 the table value is 0.2866, so 0.2867 is the nearest listed option and matches the key."
+    },
+    {
+      "sec": "9.2",
+      "q": "Medical researchers have developed a new artificial heart constructed primarily of titanium and plastic. The heart will last and operate almost indefinitely once it is implanted in the patient's body, but the battery pack needs to be recharged about every four hours. A random sample of 50 battery packs is selected and subjected to a life test. The average life of these batteries is 4.05 hours. Assume that battery life is normally distributed with standard deviation $\\sigma=0.2$ hour. We are interested in testing the claim that mean battery life exceeds 4 hours, using $\\alpha=0.0044$. We reject the null hypothesis if the calculated value of test statistic is:",
+      "opts": [
+        "greater than $2.62$.",
+        "less than $-2.62$.",
+        "greater than $2.85$.",
+        "less than $2.62$.",
+        "greater than $1.96$."
+      ],
+      "ans": 0,
+      "hints": [
+        "This is a one-sided $z$-test for a mean with known $\\sigma$; the claim ($\\mu>4$) is the alternative.",
+        "The rejection region is set by the significance level alone: find the $z$-value that leaves $\\alpha$ in the correct tail.",
+        "For $H_1:\\mu>\\mu_0$, reject $H_0$ when $z_0>z_\\alpha$, where $P(Z>z_\\alpha)=\\alpha$."
+      ],
+      "steps": [
+        "$H_0:\\mu=4$ versus $H_1:\\mu>4$, so the rejection region is in the upper tail.",
+        "We need $P(Z>z_\\alpha)=0.0044$, i.e. $\\Phi(z_\\alpha)=0.9956$, which gives $z_\\alpha=2.62$.",
+        "Reject $H_0$ if the test statistic is greater than $2.62$."
+      ],
+      "brief": "Upper tail $\\alpha=0.0044$: $z_\\alpha=2.62$; reject if $z_0>2.62$."
+    },
+    {
+      "sec": "9.5",
+      "q": "The advertised claim for batteries for cell phones is set at 48 operating hours, with proper charging procedures. A study of 500 batteries is carried out and 45 stop operating prior to 48 hours. We want to test if these experimental results support the claim that less than 12 percent of the company's batteries will fail during the advertised time period, with proper charging procedures. What is value of the test statistic?",
+      "opts": [
+        "$-2.06$",
+        "$2.77$",
+        "$-4.13$",
+        "$2.34$",
+        "$-0.65$"
+      ],
+      "ans": 0,
+      "hints": [
+        "This is a large-sample test on a population proportion.",
+        "Compute the sample proportion, then standardise it using the null value $p_0$ in the standard error.",
+        "$z_0=\\dfrac{\\hat p-p_0}{\\sqrt{p_0(1-p_0)/n}}$."
+      ],
+      "steps": [
+        "$\\hat p=\\dfrac{45}{500}=0.09$, with $H_0:p=0.12$ versus $H_1:p<0.12$.",
+        "Standard error: $\\sqrt{\\dfrac{0.12(0.88)}{500}}=0.014532$.",
+        "$z_0=\\dfrac{0.09-0.12}{0.014532}=-2.06$."
+      ],
+      "brief": "$\\hat p=0.09$; $z_0=(0.09-0.12)/\\sqrt{0.12(0.88)/500}=-2.06$."
+    },
+    {
+      "sec": "11.8",
+      "q": "Suppose data is obtained from 20 pairs of $(x,y)$ and the sample correlation coefficient is $0.4438$. We want to test the hypothesis $H_0:\\rho=0$ against $H_1:\\rho\\neq0$ with $\\alpha=0.01$. What is the approximate $p$-value of this test?",
+      "opts": [
+        "$0.050$",
+        "$0.025$",
+        "$0.010$",
+        "$0.005$",
+        "$0.020$"
+      ],
+      "ans": 0,
+      "hints": [
+        "This is a $t$-test for the correlation coefficient, two-sided.",
+        "Convert $r$ to a $t$ statistic with $n-2$ degrees of freedom, then find the two-tail area.",
+        "$T_0=\\dfrac{r\\sqrt{n-2}}{\\sqrt{1-r^2}}$ with $n-2$ degrees of freedom; two-sided $p=2P(T>|T_0|)$."
+      ],
+      "steps": [
+        "$T_0=\\dfrac{0.4438\\sqrt{18}}{\\sqrt{1-0.4438^2}}=\\dfrac{1.8829}{0.8961}=2.10$.",
+        "With $18$ degrees of freedom, the upper-tail area beyond $2.10$ is about $0.025$ (the table value $t_{0.025,18}=2.101$).",
+        "Two-sided: $p\\approx2(0.025)=0.050$."
+      ],
+      "brief": "$T_0=2.10$ with 18 df, so $p\\approx2(0.025)=0.050$."
+    },
+    {
+      "sec": "2.3",
+      "q": "If $A$, $B$, and $C$ are mutually exclusive events with $P(A)=0.2$, $P(B)=0.3$, and $P(C)=0.4$. Determine $P(A'\\cap B'\\cap C')$.",
+      "opts": [
+        "$0.100$",
+        "$0.000$",
+        "$0.900$",
+        "$0.024$",
+        "$0.976$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Use a complement (De Morgan) argument.",
+        "$A'\\cap B'\\cap C'$ is the event that none of $A,B,C$ occurs, the complement of their union.",
+        "$P(A'\\cap B'\\cap C')=1-P(A\\cup B\\cup C)$, and for mutually exclusive events $P(A\\cup B\\cup C)=P(A)+P(B)+P(C)$."
+      ],
+      "steps": [
+        "$A'\\cap B'\\cap C'=(A\\cup B\\cup C)'$.",
+        "Mutually exclusive: $P(A\\cup B\\cup C)=0.2+0.3+0.4=0.9$.",
+        "$P=1-0.9=0.100$."
+      ],
+      "brief": "$1-P(A\\cup B\\cup C)=1-0.9=0.100$."
+    },
+    {
+      "sec": "3.4",
+      "q": "Two new product designs are to be compared on the basis of revenue potential. Marketing feels that the revenue from design A can be predicted quite accurately to be $\\$3$ million. The revenue potential of design $B$ is more difficult to assess. Marketing concludes that there is a probability of 0.3 that the revenue from design $B$ will be $\\$7$ million, but there is a 0.7 probability that the revenue will be only $\\$2$ million. What is the standard deviation value of the revenue from design $B$ (in millions of dollars)?",
+      "opts": [
+        "$2.29$",
+        "$3.50$",
+        "$3.00$",
+        "$5.25$",
+        "$6.50$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Treat the revenue of design B as a discrete random variable with two values.",
+        "Compute the mean first, then the variance, then take the square root.",
+        "$\\mu=\\sum xf(x)$, $\\sigma^2=\\sum x^2f(x)-\\mu^2$, and $\\sigma=\\sqrt{\\sigma^2}$."
+      ],
+      "steps": [
+        "$\\mu=7(0.3)+2(0.7)=3.5$.",
+        "$E(X^2)=49(0.3)+4(0.7)=17.5$, so $\\sigma^2=17.5-3.5^2=5.25$.",
+        "$\\sigma=\\sqrt{5.25}=2.29$."
+      ],
+      "brief": "$\\mu=3.5$, $\\sigma^2=17.5-12.25=5.25$, $\\sigma=2.29$."
+    },
+    {
+      "sec": "11.4",
+      "q": "Consider the computer output given here. What is the approximate $p$-value of $F$-test for testing the significance of regression?",
+      "opts": [
+        "$p\\text{-value}<0.005$",
+        "$0.005<p\\text{-value}<0.01$",
+        "$0.01<p\\text{-value}<0.025$",
+        "$0.025<p\\text{-value}<0.05$",
+        "$p\\text{-value}>0.25$"
+      ],
+      "ans": 0,
+      "hints": [
+        "This is the $F$-test for significance of regression; the $p$-value is an upper-tail area.",
+        "Read $F_0$ and the degrees of freedom from the ANOVA table and compare with $F$ critical values.",
+        "$p\\text{-value}=P(F_{1,\\,n-2}>F_0)$; a very large $F_0$ gives a very small $p$-value."
+      ],
+      "steps": [
+        "From the output, $F_0=149.24$ with $1$ and $22$ degrees of freedom.",
+        "The critical value $F_{0.005,1,22}\\approx 8.9$, far below $149.24$.",
+        "So the upper-tail area is below $0.005$: $p\\text{-value}<0.005$ (in fact about $3\\times10^{-11}$)."
+      ],
+      "brief": "$F_0=149.24$ on $(1,22)$ df is far beyond $F_{0.005}$, so $p<0.005$.",
+      "img": "stat201-242-fx-q15.png"
+    },
+    {
+      "sec": "12.2",
+      "q": "You have fit a regression model with two regressors to a data set that has 20 observations. The total sum of squares is 1000 and the model sum of squares is 750. Suppose that you add a third regressor to the model and as a result that model sum of squares is now 785. We are interested in testing that adding this factor has improved the model. What are the degrees of freedom of the test used for this testing?",
+      "opts": [
+        "$1,\\ 16$",
+        "$1,\\ 17$",
+        "$2,\\ 16$",
+        "$3,\\ 16$",
+        "$2,\\ 17$"
+      ],
+      "ans": 0,
+      "hints": [
+        "This is a partial $F$-test for adding one regressor to an existing model.",
+        "Numerator degrees of freedom count the added regressors; the denominator belongs to the error of the larger (full) model.",
+        "$F_0=\\dfrac{(SSR_{full}-SSR_{reduced})/r}{MSE_{full}}$ with $r$ added regressors, and $MSE_{full}$ has $n-k-1$ degrees of freedom ($k$ regressors in the full model)."
+      ],
+      "steps": [
+        "One regressor is added, so the numerator degrees of freedom are $r=1$.",
+        "The full model has $k=3$ regressors and $n=20$, so the error degrees of freedom are $20-3-1=16$.",
+        "(Here $F_0=\\dfrac{(785-750)/1}{(1000-785)/16}=2.60$.) The degrees of freedom are $1$ and $16$."
+      ],
+      "brief": "Partial $F$: numerator $r=1$, denominator $n-k-1=20-3-1=16$."
+    },
+    {
+      "sec": "12.1",
+      "q": "Consider the computer output given here. What is the percentage of total variation that is explained by the model?",
+      "opts": [
+        "$98.67\\%$",
+        "$98.40\\%$",
+        "$94.94\\%$",
+        "$91.72\\%$",
+        "$90.06\\%$"
+      ],
+      "ans": 0,
+      "hints": [
+        "The percentage of variation explained is the coefficient of determination $R^2$.",
+        "The $R^2$ entry is missing, but the ANOVA table has the sums of squares you need.",
+        "$R^2=\\dfrac{SSR}{SST}$."
+      ],
+      "steps": [
+        "From the ANOVA table, $SSR=22784$ and $SST=23091$.",
+        "$R^2=\\dfrac{22784}{23091}=0.98670$.",
+        "So about $98.67\\%$ of the total variation is explained (the $98.4\\%$ shown is the adjusted $R^2$)."
+      ],
+      "brief": "$R^2=SSR/SST=22784/23091=98.67\\%$.",
+      "img": "stat201-242-fx-q17.png"
+    },
+    {
+      "sec": "12.2",
+      "q": "Consider the computer output given below. Which one of the following statements about the significance of regression is correct at $\\alpha=0.05$?",
+      "opts": [
+        "It is insignificant, as $F=2.91$ which leads to $p\\text{-value}>0.05$",
+        "It is significant, as $F=2.91$ which leads to $p\\text{-value}<0.05$",
+        "It is significant, as $T=2.40$ which leads to $p\\text{-value}<0.05$",
+        "It is insignificant, as $T=0.45$ which leads to $p\\text{-value}>0.05$",
+        "It is significant, as $T=32.06$ which leads to $p\\text{-value}<0.05$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Significance of regression (at least one predictor matters) is judged by the overall $F$-test, not by individual $t$ statistics.",
+        "Compare the $F$ statistic in the ANOVA table with the critical value for the given degrees of freedom.",
+        "Reject $H_0:\\beta_1=\\beta_2=0$ at level $\\alpha$ iff $F_0>F_{\\alpha,k,n-k-1}$ (equivalently $p\\text{-value}<\\alpha$)."
+      ],
+      "steps": [
+        "The overall test uses $F_0=2.91$ with $k=2$ and $n-k-1=12$ degrees of freedom.",
+        "The critical value is $F_{0.05,2,12}=3.89$.",
+        "Since $2.91<3.89$, we do not reject $H_0$: $p\\text{-value}>0.05$ (about $0.09$), so the regression is insignificant."
+      ],
+      "brief": "$F_0=2.91<F_{0.05,2,12}=3.89$, so $p>0.05$: not significant.",
+      "img": "stat201-242-fx-q18.png"
+    },
+    {
+      "sec": "11.4",
+      "q": "Consider the computer output given here. What is the value of $F$-statistic for testing the significance of regression?",
+      "opts": [
+        "$192.696$",
+        "$1405.2$",
+        "$7.292$",
+        "$2.7$",
+        "$94.8$"
+      ],
+      "ans": 0,
+      "hints": [
+        "This is the $F$ statistic of the ANOVA table for significance of regression.",
+        "Fill in the missing entries by subtraction: get $SSR$ from $SST$ and $SSE$, and the error degrees of freedom from the total.",
+        "$F_0=\\dfrac{MSR}{MSE}$ with $MSR=\\dfrac{SSR}{1}$, $MSE=\\dfrac{SSE}{n-2}$ and $SST=SSR+SSE$."
+      ],
+      "steps": [
+        "$SSR=SST-SSE=1500-94.8=1405.2$, so $MSR=1405.2$ (1 df).",
+        "Error df $=14-1=13$, so $MSE=\\dfrac{94.8}{13}=7.292$.",
+        "$F_0=\\dfrac{1405.2}{7.292}=192.696$."
+      ],
+      "brief": "$SSR=1405.2$, $MSE=94.8/13=7.292$; $F_0=192.696$.",
+      "img": "stat201-242-fx-q19.png"
+    },
+    {
+      "sec": "11.5",
+      "q": "Consider the computer output given here. Compute $98\\%$ confidence interval for the slope coefficient $\\beta_1$. What is the lower limit of the resulting confidence interval?",
+      "opts": [
+        "$1.1939$",
+        "$20.5263$",
+        "$1.2476$",
+        "$1.1591$",
+        "$1.7545$"
+      ],
+      "ans": 0,
+      "hints": [
+        "This is a $t$ confidence interval for the slope in simple regression.",
+        "Find the error degrees of freedom from the ANOVA table, then the $t$ critical value for the required confidence level.",
+        "$\\hat\\beta_1\\pm t_{\\alpha/2,\\,n-2}\\,se(\\hat\\beta_1)$."
+      ],
+      "steps": [
+        "Total df $=14$, so $n=15$ and error df $=n-2=13$.",
+        "$98\\%$ interval: $\\alpha/2=0.01$, so $t_{0.01,13}=2.650$.",
+        "Lower limit $=1.4756-2.650(0.1063)=1.4756-0.2817=1.1939$."
+      ],
+      "brief": "$1.4756-t_{0.01,13}(0.1063)=1.4756-2.650(0.1063)=1.1939$.",
+      "img": "stat201-242-fx-q19.png"
+    }
+  ]
+}

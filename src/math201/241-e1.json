@@ -1,0 +1,367 @@
+{
+  "course": "math201",
+  "term": "241",
+  "kind": "e1",
+  "date": "",
+  "minutes": 90,
+  "source": "math201-241-e1.pdf",
+  "note": "The source PDF has no cover page: the date and exam length are not printed, so date is left empty and 90 minutes is the usual length of a major exam (assumed). All 15 master answers were verified with sympy and agree with the printed (correct) marks.",
+  "qs": [
+    {
+      "sec": "10.2",
+      "q": "The curve represented by the parametric equations \\[ x=\\frac{1}{\\sqrt{t+1}} \\quad\\text{and}\\quad y=\\frac{t}{t+1};\\qquad -1<t\\le 0 \\] is given by the rectangular equation",
+      "opts": [
+        "$y=1-x^2,\\quad x\\ge 1$",
+        "$y=1-x^2,\\quad 0\\le x\\le 1$",
+        "$y=x^2-1,\\quad x>0$",
+        "$y=-1-x^2,\\quad 0<x<1$",
+        "$y=\\dfrac{x}{1+x},\\quad -1<x\\le 0$"
+      ],
+      "ans": 0,
+      "hints": [
+        "This is eliminating the parameter, and the range of $x$ must come from the restricted range of $t$.",
+        "Express $t+1$ in terms of $x$, and rewrite $y$ so that it contains only the combination $t+1$.",
+        "Write $\\dfrac{t}{t+1}=1-\\dfrac{1}{t+1}$; then find the range of $x$ by checking what values it takes as $t$ runs through its interval."
+      ],
+      "steps": [
+        "From $x=(t+1)^{-1/2}$ we get $x^2=\\dfrac{1}{t+1}$.",
+        "$y=\\dfrac{t}{t+1}=1-\\dfrac{1}{t+1}=1-x^2$.",
+        "For $-1<t\\le 0$ we have $0<t+1\\le 1$, so $x=\\dfrac{1}{\\sqrt{t+1}}\\ge 1$.",
+        "Hence $y=1-x^2$ with $x\\ge 1$."
+      ],
+      "brief": "$x^2=\\frac{1}{t+1}$, $y=1-\\frac1{t+1}=1-x^2$; $0<t+1\\le1$ gives $x\\ge1$."
+    },
+    {
+      "sec": "10.2",
+      "q": "A possible set of parametric equations for the line through $(0,0)$ and $(4,-7)$ is",
+      "opts": [
+        "$x=4+4t,\\quad y=-7-7t$",
+        "$x=1-4t,\\quad y=1+7t$",
+        "$x=-4+4t,\\quad y=-7t$",
+        "$x=4-4t,\\quad y=7-7t$",
+        "$x=-7t,\\quad y=4t$"
+      ],
+      "ans": 0,
+      "hints": [
+        "A line is described by a point on it and a direction vector.",
+        "Find the direction vector from the two given points, then test whether each choice passes through both points for some values of $t$.",
+        "A line through $(x_0,y_0)$ with direction $\\langle a,b\\rangle$ is $x=x_0+at$, $y=y_0+bt$; the direction vector must be a multiple of the difference of the two points, and $(x_0,y_0)$ must lie on the line."
+      ],
+      "steps": [
+        "The direction vector is $\\langle 4,-7\\rangle$, and the line has slope $-\\dfrac74$ through the origin, so $7x+4y=0$.",
+        "$x=4+4t,\\ y=-7-7t$: direction $\\langle4,-7\\rangle$ and $7(4+4t)+4(-7-7t)=0$, so it lies on the line (it passes through $(0,0)$ at $t=-1$ and $(4,-7)$ at $t=0$).",
+        "$x=1-4t,\\ y=1+7t$: $7(1-4t)+4(1+7t)=11\\neq0$, so it misses the line.",
+        "$x=-4+4t,\\ y=-7t$: $7(-4+4t)-28t=-28\\neq0$. $x=4-4t,\\ y=7-7t$: $7(4-4t)+4(7-7t)=56-56t$, not zero for all $t$ (wrong direction). $x=-7t,\\ y=4t$: direction $\\langle-7,4\\rangle$, wrong slope."
+      ],
+      "brief": "Direction $\\langle4,-7\\rangle$; $x=4+4t,\\ y=-7-7t$ lies on $7x+4y=0$ with that direction."
+    },
+    {
+      "sec": "10.3",
+      "q": "Let $C$ be the curve given by the parametric equations \\[ x=\\cos\\theta,\\quad y=2\\sin 2\\theta \\quad\\text{on } [0,2\\pi). \\] Let $m$ be the number of points on the curve at which the tangent line is horizontal, and $n$ be the number of points on the curve at which the tangent line is vertical. Then",
+      "opts": [
+        "$m=4$ and $n=2$",
+        "$m=4$ and $n=0$",
+        "$m=2$ and $n=0$",
+        "$m=2$ and $n=4$",
+        "$m=0$ and $n=4$"
+      ],
+      "ans": 0,
+      "hints": [
+        "For a parametric curve, horizontal and vertical tangents are found from $dy/d\\theta$ and $dx/d\\theta$.",
+        "Compute $dx/d\\theta$ and $dy/d\\theta$, solve each for zero on $[0,2\\pi)$, and make sure the other derivative is nonzero there.",
+        "Horizontal tangent: $\\dfrac{dy}{d\\theta}=0$ and $\\dfrac{dx}{d\\theta}\\neq0$. Vertical tangent: $\\dfrac{dx}{d\\theta}=0$ and $\\dfrac{dy}{d\\theta}\\neq0$."
+      ],
+      "steps": [
+        "$\\dfrac{dx}{d\\theta}=-\\sin\\theta$ and $\\dfrac{dy}{d\\theta}=4\\cos2\\theta$.",
+        "Horizontal: $\\cos2\\theta=0$ gives $\\theta=\\dfrac\\pi4,\\dfrac{3\\pi}4,\\dfrac{5\\pi}4,\\dfrac{7\\pi}4$. Here $-\\sin\\theta\\neq0$, and the four points $\\left(\\pm\\tfrac{\\sqrt2}{2},\\pm2\\right)$ are distinct, so $m=4$.",
+        "Vertical: $\\sin\\theta=0$ gives $\\theta=0,\\pi$. Here $4\\cos2\\theta=4\\neq0$, and the points are $(1,0)$ and $(-1,0)$, so $n=2$."
+      ],
+      "brief": "$dy/d\\theta=4\\cos2\\theta=0$: 4 points; $dx/d\\theta=-\\sin\\theta=0$: 2 points."
+    },
+    {
+      "sec": "10.3",
+      "q": "The parametric curve given by \\[ x=2t+\\ln t,\\quad\\text{and}\\quad y=2t-\\ln t \\] is",
+      "opts": [
+        "concave upward when $t>0$",
+        "concave downward when $t>0$",
+        "concave upward when $0<t<\\dfrac12$ and downward when $t>\\dfrac12$",
+        "concave downward when $0<t<\\dfrac12$ and upward when $t>\\dfrac12$",
+        "concave downward when $0<t<\\dfrac14$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Concavity of a parametric curve is decided by the sign of $\\dfrac{d^2y}{dx^2}$.",
+        "First compute $\\dfrac{dy}{dx}=\\dfrac{dy/dt}{dx/dt}$, then differentiate that with respect to $t$ and divide by $dx/dt$ again.",
+        "$\\dfrac{d^2y}{dx^2}=\\dfrac{\\frac{d}{dt}\\left(\\frac{dy}{dx}\\right)}{dx/dt}$; the curve is concave upward where this is positive."
+      ],
+      "steps": [
+        "$\\dfrac{dx}{dt}=2+\\dfrac1t=\\dfrac{2t+1}{t}$ and $\\dfrac{dy}{dt}=2-\\dfrac1t=\\dfrac{2t-1}{t}$, so $\\dfrac{dy}{dx}=\\dfrac{2t-1}{2t+1}$.",
+        "$\\dfrac{d}{dt}\\left(\\dfrac{2t-1}{2t+1}\\right)=\\dfrac{2(2t+1)-2(2t-1)}{(2t+1)^2}=\\dfrac{4}{(2t+1)^2}$.",
+        "$\\dfrac{d^2y}{dx^2}=\\dfrac{4/(2t+1)^2}{(2t+1)/t}=\\dfrac{4t}{(2t+1)^3}$.",
+        "For $t>0$ this is positive, so the curve is concave upward for all $t>0$."
+      ],
+      "brief": "$\\frac{dy}{dx}=\\frac{2t-1}{2t+1}$, $\\frac{d^2y}{dx^2}=\\frac{4t}{(2t+1)^3}>0$ for $t>0$."
+    },
+    {
+      "sec": "10.4",
+      "q": "An interval of $\\theta$ over which the rose curve represented by the polar equation $r=\\sin 3\\theta$ is traced only once is",
+      "opts": [
+        "$[0,\\pi)$",
+        "$\\left[0,\\dfrac{2\\pi}{3}\\right)$",
+        "$\\left[\\dfrac{\\pi}{3},\\dfrac{2\\pi}{3}\\right)$",
+        "$\\left[\\dfrac{\\pi}{3},\\pi\\right)$",
+        "$[0,2\\pi)$"
+      ],
+      "ans": 0,
+      "hints": [
+        "This is a rose curve $r=\\sin n\\theta$; the answer depends on whether $n$ is odd or even.",
+        "Check what happens to the point $(r,\\theta)$ when $\\theta$ is increased by $\\pi$.",
+        "For $r=\\sin n\\theta$ with $n$ odd, the curve has $n$ petals and is traced exactly once on an interval of length $\\pi$; with $n$ even it has $2n$ petals and needs length $2\\pi$."
+      ],
+      "steps": [
+        "Replace $\\theta$ by $\\theta+\\pi$: $\\sin(3\\theta+3\\pi)=-\\sin3\\theta$.",
+        "So the point $(-r,\\theta+\\pi)$ is the same as $(r,\\theta)$: the second half of $[0,2\\pi)$ retraces the first half.",
+        "Therefore the curve is traced once on an interval of length $\\pi$, such as $[0,\\pi)$.",
+        "A shorter interval, like one of length $\\tfrac{2\\pi}3$, does not complete all three petals."
+      ],
+      "brief": "$n=3$ is odd: $(r,\\theta+\\pi)$ repeats $(r,\\theta)$, so $[0,\\pi)$ traces it once."
+    },
+    {
+      "sec": "10.4",
+      "q": "The slope of the tangent line to the graph of $r=2+3\\sin\\theta$ at $\\theta=\\pi$ is",
+      "opts": [
+        "$-\\dfrac23$",
+        "$\\dfrac23$",
+        "$-\\dfrac12$",
+        "$\\dfrac12$",
+        "$0$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Write the polar curve as parametric equations in $\\theta$.",
+        "Use $x=r\\cos\\theta$, $y=r\\sin\\theta$, differentiate with the product rule, and evaluate at the given $\\theta$.",
+        "$\\dfrac{dy}{dx}=\\dfrac{r'\\sin\\theta+r\\cos\\theta}{r'\\cos\\theta-r\\sin\\theta}$, where $r'=\\dfrac{dr}{d\\theta}$."
+      ],
+      "steps": [
+        "$r=2+3\\sin\\theta$ and $r'=3\\cos\\theta$. At $\\theta=\\pi$: $r=2$, $r'=-3$.",
+        "Numerator: $r'\\sin\\pi+r\\cos\\pi=0+2(-1)=-2$.",
+        "Denominator: $r'\\cos\\pi-r\\sin\\pi=(-3)(-1)-0=3$.",
+        "Slope $=\\dfrac{-2}{3}=-\\dfrac23$."
+      ],
+      "brief": "$r=2$, $r'=-3$ at $\\pi$: $\\frac{dy}{dx}=\\frac{-2}{3}=-\\frac23$."
+    },
+    {
+      "sec": "10.5",
+      "q": "The area of the region interior to $r=2+\\sin\\theta$ and below the polar axis is",
+      "opts": [
+        "$\\dfrac{9\\pi}{4}-4$",
+        "$\\dfrac{9\\pi}{2}$",
+        "$\\dfrac{9\\pi}{4}$",
+        "$\\dfrac{9\\pi}{2}-4$",
+        "$\\dfrac{9\\pi}{4}-8$"
+      ],
+      "ans": 0,
+      "hints": [
+        "This is an area in polar coordinates, and \"below the polar axis\" restricts the range of $\\theta$.",
+        "Decide which values of $\\theta$ give points below the polar axis (the $x$-axis), then set up the integral over that interval.",
+        "Polar area: $A=\\dfrac12\\int_\\alpha^\\beta r^2\\,d\\theta$, and $\\sin^2\\theta=\\dfrac{1-\\cos2\\theta}{2}$."
+      ],
+      "steps": [
+        "Points below the polar axis correspond to $\\pi\\le\\theta\\le2\\pi$.",
+        "$A=\\dfrac12\\int_\\pi^{2\\pi}(2+\\sin\\theta)^2d\\theta=\\dfrac12\\int_\\pi^{2\\pi}\\left(4+4\\sin\\theta+\\dfrac{1-\\cos2\\theta}{2}\\right)d\\theta$.",
+        "$\\int_\\pi^{2\\pi}\\left(\\dfrac92+4\\sin\\theta-\\dfrac12\\cos2\\theta\\right)d\\theta=\\dfrac{9\\pi}{2}-8-0$.",
+        "$A=\\dfrac12\\left(\\dfrac{9\\pi}{2}-8\\right)=\\dfrac{9\\pi}{4}-4$."
+      ],
+      "brief": "$A=\\frac12\\int_\\pi^{2\\pi}(2+\\sin\\theta)^2d\\theta=\\frac{9\\pi}{4}-4$."
+    },
+    {
+      "sec": "10.5",
+      "q": "The area of the region that lies inside $r=1+\\cos\\theta$ and outside $r=\\cos\\theta$ is",
+      "opts": [
+        "$\\dfrac{5\\pi}{4}$",
+        "$\\pi$",
+        "$\\dfrac{\\pi}{3}$",
+        "$\\dfrac{7\\pi}{4}$",
+        "$\\dfrac{5\\pi}{2}$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Sketch both curves: one is a cardioid and the other is a circle. Find out whether they actually cross.",
+        "Compare $1+\\cos\\theta$ with $\\cos\\theta$ for every $\\theta$ to see how the circle sits relative to the cardioid.",
+        "Area between curves: $A=\\dfrac12\\int(r_{\\text{outer}}^2-r_{\\text{inner}}^2)\\,d\\theta$, or subtract the area of the inner region from the outer one; the area of a circle of radius $\\rho$ is $\\pi\\rho^2$."
+      ],
+      "steps": [
+        "Since $1+\\cos\\theta>\\cos\\theta$ for all $\\theta$, the circle $r=\\cos\\theta$ lies inside the cardioid and the curves do not cross.",
+        "Cardioid area: $\\dfrac12\\int_0^{2\\pi}(1+\\cos\\theta)^2d\\theta=\\dfrac12\\left(2\\pi+0+\\pi\\right)=\\dfrac{3\\pi}{2}$.",
+        "The circle $r=\\cos\\theta$ has diameter 1, so its area is $\\pi\\left(\\dfrac12\\right)^2=\\dfrac\\pi4$.",
+        "Required area $=\\dfrac{3\\pi}{2}-\\dfrac{\\pi}{4}=\\dfrac{5\\pi}{4}$."
+      ],
+      "brief": "Circle lies inside cardioid: $\\frac{3\\pi}{2}-\\frac{\\pi}{4}=\\frac{5\\pi}{4}$."
+    },
+    {
+      "sec": "11.1",
+      "q": "Let $\\vec v=\\langle a,b\\rangle$ be the vector of magnitude 5 and in the same direction as the vector $\\langle -1,2\\rangle$. Then $a+b=$",
+      "opts": [
+        "$\\sqrt5$",
+        "$5$",
+        "$2\\sqrt5$",
+        "$-\\sqrt5$",
+        "$3\\sqrt5$"
+      ],
+      "ans": 0,
+      "hints": [
+        "A vector with a given direction and magnitude is a scalar multiple of the unit vector in that direction.",
+        "Find the length of $\\langle-1,2\\rangle$, form its unit vector, and multiply by 5.",
+        "The unit vector in the direction of $\\mathbf{u}$ is $\\dfrac{\\mathbf{u}}{\\|\\mathbf{u}\\|}$, where $\\|\\langle p,q\\rangle\\|=\\sqrt{p^2+q^2}$."
+      ],
+      "steps": [
+        "$\\|\\langle-1,2\\rangle\\|=\\sqrt{1+4}=\\sqrt5$.",
+        "$\\vec v=\\dfrac{5}{\\sqrt5}\\langle-1,2\\rangle=\\sqrt5\\,\\langle-1,2\\rangle=\\langle-\\sqrt5,2\\sqrt5\\rangle$.",
+        "$a+b=-\\sqrt5+2\\sqrt5=\\sqrt5$."
+      ],
+      "brief": "$\\vec v=\\sqrt5\\langle-1,2\\rangle$, so $a+b=-\\sqrt5+2\\sqrt5=\\sqrt5$."
+    },
+    {
+      "sec": "11.2",
+      "q": "The four vertices of a parallelogram $ABCD$ taken in order are $A(2,9,1)$, $B(3,11,4)$, $C(1,12,a)$ and $D(0,b,2)$. Then $a+b=$",
+      "opts": [
+        "$15$",
+        "$5$",
+        "$20$",
+        "$-15$",
+        "$6$"
+      ],
+      "ans": 0,
+      "hints": [
+        "In a parallelogram, opposite sides are equal as vectors.",
+        "With the vertices taken in order, set the vector $\\overrightarrow{AB}$ equal to $\\overrightarrow{DC}$ and compare components.",
+        "For $P(x_1,y_1,z_1)$ and $Q(x_2,y_2,z_2)$, $\\overrightarrow{PQ}=\\langle x_2-x_1,\\,y_2-y_1,\\,z_2-z_1\\rangle$."
+      ],
+      "steps": [
+        "$\\overrightarrow{AB}=\\langle1,2,3\\rangle$.",
+        "$\\overrightarrow{DC}=\\langle1-0,\\,12-b,\\,a-2\\rangle$.",
+        "Setting $\\overrightarrow{AB}=\\overrightarrow{DC}$: $12-b=2$ gives $b=10$, and $a-2=3$ gives $a=5$.",
+        "$a+b=15$."
+      ],
+      "brief": "$\\overrightarrow{AB}=\\overrightarrow{DC}$: $\\langle1,2,3\\rangle=\\langle1,12-b,a-2\\rangle$, so $a=5$, $b=10$."
+    },
+    {
+      "sec": "11.3",
+      "q": "The triangle with vertices $(-3,0,0)$, $(0,0,0)$ and $(1,2,3)$",
+      "opts": [
+        "is obtuse",
+        "is acute",
+        "is right",
+        "is equilateral",
+        "has zero area"
+      ],
+      "ans": 0,
+      "hints": [
+        "The type of a triangle is decided by its angles, and angles between vectors come from the dot product.",
+        "Form the two side vectors at each vertex and compute their dot products.",
+        "The angle between $\\mathbf{u}$ and $\\mathbf{v}$ satisfies $\\cos\\theta=\\dfrac{\\mathbf{u}\\cdot\\mathbf{v}}{\\|\\mathbf{u}\\|\\|\\mathbf{v}\\|}$; the angle is acute, right, or obtuse when $\\mathbf{u}\\cdot\\mathbf{v}$ is positive, zero, or negative."
+      ],
+      "steps": [
+        "Let $P(-3,0,0)$, $O(0,0,0)$, $Q(1,2,3)$.",
+        "At $O$: $\\overrightarrow{OP}\\cdot\\overrightarrow{OQ}=\\langle-3,0,0\\rangle\\cdot\\langle1,2,3\\rangle=-3<0$, so the angle at $O$ is obtuse.",
+        "A triangle with one obtuse angle is obtuse (the other angles give $12>0$ and $17>0$, so they are acute).",
+        "It is not equilateral (sides $3,\\ \\sqrt{14},\\ \\sqrt{29}$) and not degenerate."
+      ],
+      "brief": "At the origin, $\\langle-3,0,0\\rangle\\cdot\\langle1,2,3\\rangle=-3<0$: obtuse angle."
+    },
+    {
+      "sec": "11.3",
+      "q": "The vector component of $\\vec u=\\langle5,-1,-1\\rangle$ orthogonal to $\\vec v=\\langle-1,5,8\\rangle$ is",
+      "opts": [
+        "$\\vec u+\\dfrac15\\vec v$",
+        "$\\vec u-\\dfrac15\\vec v$",
+        "$-\\vec u+\\dfrac15\\vec v$",
+        "$\\vec u+\\dfrac{6}{\\sqrt{10}}\\vec v$",
+        "$\\vec 0$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Split $\\vec u$ into a part parallel to $\\vec v$ and a part orthogonal to $\\vec v$.",
+        "Compute the projection of $\\vec u$ onto $\\vec v$ and subtract it from $\\vec u$.",
+        "$\\operatorname{proj}_{\\mathbf{v}}\\mathbf{u}=\\dfrac{\\mathbf{u}\\cdot\\mathbf{v}}{\\mathbf{v}\\cdot\\mathbf{v}}\\,\\mathbf{v}$, and the orthogonal component is $\\mathbf{u}-\\operatorname{proj}_{\\mathbf{v}}\\mathbf{u}$."
+      ],
+      "steps": [
+        "$\\vec u\\cdot\\vec v=-5-5-8=-18$.",
+        "$\\vec v\\cdot\\vec v=1+25+64=90$.",
+        "$\\operatorname{proj}_{\\vec v}\\vec u=\\dfrac{-18}{90}\\vec v=-\\dfrac15\\vec v$.",
+        "Orthogonal component $=\\vec u-\\left(-\\dfrac15\\vec v\\right)=\\vec u+\\dfrac15\\vec v$."
+      ],
+      "brief": "$\\operatorname{proj}=\\frac{-18}{90}\\vec v=-\\frac15\\vec v$, so the orthogonal part is $\\vec u+\\frac15\\vec v$."
+    },
+    {
+      "sec": "11.4",
+      "q": "The area of the triangle with vertices $A(2,-3,4)$, $B(0,1,2)$ and $C(-1,2,0)$ is",
+      "opts": [
+        "$\\sqrt{11}$",
+        "$\\sqrt{13}$",
+        "$\\sqrt7$",
+        "$\\sqrt5$",
+        "$\\sqrt3$"
+      ],
+      "ans": 0,
+      "hints": [
+        "The cross product of two side vectors gives the area of a parallelogram.",
+        "Form $\\overrightarrow{AB}$ and $\\overrightarrow{AC}$, compute their cross product, and take its length.",
+        "Triangle area $=\\dfrac12\\|\\overrightarrow{AB}\\times\\overrightarrow{AC}\\|$."
+      ],
+      "steps": [
+        "$\\overrightarrow{AB}=\\langle-2,4,-2\\rangle$ and $\\overrightarrow{AC}=\\langle-3,5,-4\\rangle$.",
+        "$\\overrightarrow{AB}\\times\\overrightarrow{AC}=\\begin{vmatrix}\\mathbf i&\\mathbf j&\\mathbf k\\\\-2&4&-2\\\\-3&5&-4\\end{vmatrix}=\\langle-6,-2,2\\rangle$.",
+        "$\\|\\langle-6,-2,2\\rangle\\|=\\sqrt{36+4+4}=\\sqrt{44}=2\\sqrt{11}$.",
+        "Area $=\\dfrac12\\cdot2\\sqrt{11}=\\sqrt{11}$."
+      ],
+      "brief": "$\\overrightarrow{AB}\\times\\overrightarrow{AC}=\\langle-6,-2,2\\rangle$, area $=\\frac12\\sqrt{44}=\\sqrt{11}$."
+    },
+    {
+      "sec": "11.4",
+      "q": "Consider the three vectors $\\vec u=\\langle1,3,1\\rangle$, $\\vec v=\\langle0,6,6\\rangle$ and $\\vec w=\\langle-4,0,-4\\rangle$. Then $\\vec u\\cdot(\\vec v\\times\\vec w)=$",
+      "opts": [
+        "$-72$",
+        "$64$",
+        "$72$",
+        "$24$",
+        "$-64$"
+      ],
+      "ans": 0,
+      "hints": [
+        "This is a scalar triple product.",
+        "Write the three vectors as the rows of a $3\\times3$ determinant, in the order $\\vec u,\\vec v,\\vec w$.",
+        "$\\mathbf{u}\\cdot(\\mathbf{v}\\times\\mathbf{w})=\\begin{vmatrix}u_1&u_2&u_3\\\\v_1&v_2&v_3\\\\w_1&w_2&w_3\\end{vmatrix}$."
+      ],
+      "steps": [
+        "$\\vec u\\cdot(\\vec v\\times\\vec w)=\\begin{vmatrix}1&3&1\\\\0&6&6\\\\-4&0&-4\\end{vmatrix}$.",
+        "Expand along the first row: $1(6\\cdot(-4)-6\\cdot0)-3(0\\cdot(-4)-6\\cdot(-4))+1(0\\cdot0-6\\cdot(-4))$.",
+        "$=-24-3(24)+24=-72$."
+      ],
+      "brief": "$\\det\\begin{bmatrix}1&3&1\\\\0&6&6\\\\-4&0&-4\\end{bmatrix}=-24-72+24=-72$."
+    },
+    {
+      "sec": "11.2",
+      "q": "If the standard equation of the sphere with center $(-7,7,6)$ and tangent to the $xy$-plane is $(x-a)^2+(y-b)^2+(z-c)^2=r^2$, then $a+b+c+r^2=$",
+      "opts": [
+        "$42$",
+        "$6$",
+        "$12$",
+        "$14$",
+        "$26$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Read $a,b,c$ from the center, and use the tangency condition to get the radius.",
+        "The radius of a sphere tangent to a plane is the distance from the center to that plane.",
+        "The distance from a point $(x_0,y_0,z_0)$ to the $xy$-plane ($z=0$) is $|z_0|$."
+      ],
+      "steps": [
+        "The center gives $a=-7$, $b=7$, $c=6$.",
+        "Tangent to the $xy$-plane means $r=|c|=6$, so $r^2=36$.",
+        "$a+b+c+r^2=-7+7+6+36=42$."
+      ],
+      "brief": "$(a,b,c)=(-7,7,6)$, $r=6$: $-7+7+6+36=42$."
+    }
+  ]
+}

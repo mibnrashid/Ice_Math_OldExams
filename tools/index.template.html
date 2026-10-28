@@ -1,0 +1,363 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#faf9f5;color:#141413}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style>
+<title>Ice❄️ Math Old Exams Archive - Unofficial</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+/*FONTS*/
+:root{--paper:#ffffff;--ink:#000000;--soft:#4a4a4a;--rule:#000000;--faint:#d6d6d6;--tint:#f4f4f4;color-scheme:light}
+html{background:var(--paper)}
+body{background:var(--paper);color:var(--ink);font-family:"LM Roman","Latin Modern Roman","Computer Modern","Times New Roman",serif;font-size:18px;line-height:1.5;padding-inline:16px}
+.wrap{max-width:760px;margin:0 auto;padding-block:28px 64px}
+header{text-align:center;display:grid;gap:2px}
+header .uni{font-weight:700;font-size:1.05rem}
+header .dept{font-weight:700}
+header h1{font-size:1.45rem;margin:10px 0 2px;font-weight:700;text-wrap:balance}
+header .meta{color:var(--soft);font-size:.95rem}
+.bar{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:var(--paper);border-block:1px solid var(--rule);margin-top:18px;padding-block:8px;display:flex;flex-wrap:wrap;gap:10px 18px;align-items:center;justify-content:space-between}
+.score{font-variant-numeric:tabular-nums}
+.bar .actions{display:flex;gap:8px;flex-wrap:wrap}
+button,.btn{font:inherit;font-size:.9rem;color:var(--ink);background:var(--paper);border:1px solid var(--ink);border-radius:2px;padding:4px 12px;cursor:pointer}
+button:hover:not(:disabled),.btn:hover{background:var(--tint)}
+button:focus-visible,.btn:focus-visible,.opt:focus-visible{outline:2px solid var(--ink);outline-offset:2px}
+button:disabled{border-color:var(--faint);color:#a0a0a0;cursor:default}
+button.primary{background:var(--ink);color:var(--paper)}
+button.primary:hover:not(:disabled){background:#333}
+.btn{display:inline-block;text-decoration:none}
+ol.qs{list-style:none;padding:0;margin:28px 0 0;display:grid;gap:40px}
+.q{display:grid;gap:12px}
+.qhead{display:flex;gap:10px;align-items:baseline}
+.qnum{font-weight:700;flex:none}
+.qtext{flex:1;min-width:0}
+/* Wide formulas scroll inside their own box on phones instead of widening the page. */
+.qtext,.opt .body,.hint,.sol li,.verdict{overflow-x:auto;overflow-y:hidden}
+.q,.sol,.hint{min-width:0}
+ol.qs,.q,.opts{grid-template-columns:minmax(0,1fr)}
+.qimg{display:block;max-width:min(100%,460px);margin:0 auto}
+.sec{flex:none;font-size:.78rem;color:var(--soft);letter-spacing:.04em;white-space:nowrap}
+.opts{display:grid;gap:4px;padding-left:28px}
+.opt{display:flex;gap:12px;align-items:center;padding:4px 8px;border:1px solid transparent;border-radius:2px;cursor:pointer;text-align:left;background:none;width:100%;font-size:1rem}
+.opt:hover{background:var(--tint)}
+.bubble{flex:none;width:26px;height:26px;border:1.3px solid var(--ink);border-radius:50%;display:grid;place-items:center;font-size:.85rem;line-height:1}
+.opt.sel .bubble{background:var(--ink);color:var(--paper)}
+.opt .body{flex:1;min-width:0;overflow-wrap:anywhere}
+.opt .mark{flex:none;font-size:.85rem;font-weight:700}
+.opt.right{border-color:var(--ink)}
+.opt.wrong .body{text-decoration:line-through;text-decoration-thickness:1px}
+.q.done .opt{cursor:default}
+.q.done .opt:hover{background:none}
+.tools{display:flex;flex-wrap:wrap;gap:8px;padding-left:28px}
+.hint,.sol{margin-left:28px;border-left:1px solid var(--ink);padding:2px 0 2px 14px}
+.hint b,.sol b{font-weight:700}
+.sol ol{margin:6px 0 0;padding-left:1.4em;display:grid;gap:8px}
+.verdict{font-weight:700}
+mjx-container[display="true"]{max-width:100%;overflow-x:auto;overflow-y:hidden;padding-block:2px}
+mjx-container[display="true"]{margin:.5em 0!important}
+
+.sub{font-style:italic;color:var(--ink);margin-top:4px}
+.home h1{font-size:1.7rem}
+.pick{margin-top:30px}
+.pick h2{font-size:1rem;font-weight:700;letter-spacing:.04em;text-transform:uppercase;margin:0 0 8px}
+.terms{list-style:none;margin:0;padding:0;border-top:1px solid var(--rule)}
+.terms li{border-bottom:1px solid var(--rule)}
+.term{display:grid;grid-template-columns:auto 1fr auto;gap:4px 18px;align-items:baseline;width:100%;text-align:left;border:0;border-radius:0;padding:14px 6px;font-size:1rem;background:var(--paper);cursor:pointer}
+.term:hover{background:var(--tint)}
+.term .tacts{grid-column:2 / -1;display:flex;flex-wrap:wrap;gap:8px;margin-top:6px}
+.term .tnum{font-weight:700;font-size:1.25rem;font-variant-numeric:tabular-nums}
+.term .tinfo{color:var(--ink)}
+.term .tinfo small{display:block;color:var(--soft);font-size:.85rem}
+.term .tprog{font-size:.85rem;color:var(--soft);font-variant-numeric:tabular-nums;white-space:nowrap}
+.course{display:grid;grid-template-columns:1fr;gap:8px;padding:14px 6px}
+.course .cname{font-weight:700;font-size:1.25rem}
+.course .cname small{display:block;font-weight:400;color:var(--soft);font-size:.85rem}
+.course .kinds{display:flex;flex-wrap:wrap;gap:8px}
+.course .kinds .soon{font-size:.85rem;color:var(--soft);font-style:italic}
+.homenote{margin:22px 0 0;font:1rem/1.8 "IBM Plex Sans Arabic",sans-serif;color:var(--ink);text-align:right}
+[lang="ar"]{font-family:"IBM Plex Sans Arabic",sans-serif;font-style:normal}
+.sub [lang="ar"]{font-weight:700}
+.back{font-size:.9rem;margin-bottom:14px;border:0;padding:4px 0;text-decoration:underline;text-underline-offset:3px}
+.back:hover:not(:disabled){background:none}
+@media (max-width:520px){.term{grid-template-columns:auto 1fr}.term .tprog{grid-column:2}.term .tacts{grid-column:1 / -1}}
+footer{margin-top:48px;border-top:1px solid var(--rule);padding-top:10px;font-size:.85rem;color:var(--soft)}
+@media (max-width:520px){body{font-size:16.5px}.opts,.tools{padding-left:0}.hint,.sol{margin-left:0}}
+@media (prefers-reduced-motion:no-preference){.opt,button{transition:background .12s}}
+</style>
+<script>
+window.MathJax={tex:{inlineMath:[["$","$"]],displayMath:[["\\[","\\]"]]},svg:{fontCache:"global"},startup:{typeset:false}};
+</script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3.2.2/es5/tex-svg-full.js"></script>
+<script src="data/courses.js"></script>
+</head>
+<body>
+
+<div class="wrap">
+  <section class="home" id="home">
+    <header>
+      <div class="uni">King Fahd University of Petroleum and Minerals</div>
+      <div class="dept">Department of Mathematics</div>
+      <h1>Ice❄️ Math Old Exams Archive - Unofficial</h1>
+      <div class="sub">Student effort not Official. <bdi dir="rtl" lang="ar">دعواتكم له</bdi></div>
+    </header>
+    <p class="homenote" dir="rtl" lang="ar">هذا الموقع يساعدك على التدريب على الاولدات بدون ما تشوف الأجوبة واذا انزنقت في سؤال يعطيك تلميحات! ما تبي تحل في الموقع نفسه؟ يمديك تحمل نسخة PDF وتفتحها عندك في الايباد او اي مكان</p>
+    <div class="pick">
+      <h2>Choose a course and an exam</h2>
+      <ul class="terms" id="courses"></ul>
+    </div>
+  </section>
+
+  <section id="list" hidden>
+    <button class="back" id="back1" type="button">&larr; All courses</button>
+    <header>
+      <div class="uni">King Fahd University of Petroleum and Minerals</div>
+      <div class="dept">Department of Mathematics</div>
+      <h1 id="ltitle"></h1>
+      <div class="sub">Student effort not Official. Generated by Ice ❄️. <bdi dir="rtl" lang="ar">دعواتكم له</bdi></div>
+    </header>
+    <div class="pick">
+      <h2>Choose a term</h2>
+      <ul class="terms" id="terms"></ul>
+    </div>
+  </section>
+
+  <section id="exam" hidden>
+    <button class="back" id="back2" type="button">&larr; All terms</button>
+    <header>
+      <div class="uni">King Fahd University of Petroleum and Minerals</div>
+      <div class="dept">Department of Mathematics</div>
+      <div class="sub">Student effort not Official. Generated by Ice ❄️. <bdi dir="rtl" lang="ar">دعواتكم له</bdi></div>
+      <h1 id="etitle"></h1>
+      <div class="meta" id="emeta"></div>
+    </header>
+    <div class="bar">
+      <span class="score" id="score"></span>
+      <span class="actions">
+        <a class="btn" id="dl" href="#">Download PDF</a>
+        <button id="reset" type="button">Reset</button>
+      </span>
+    </div>
+    <ol class="qs" id="qs"></ol>
+    <footer>Pick a choice, then press Check answer. Hints open in order: the idea, the first move, then the key formula.</footer>
+  </section>
+</div>
+
+<script>
+const COURSES = [
+  {id: "math101", name: "Math 101", title: "Calculus I"},
+  {id: "math102", name: "Math 102", title: "Calculus II"},
+  {id: "math201", name: "Math 201", title: "Calculus III"},
+  {id: "math208", name: "Math 208", title: "Differential Equations and Linear Algebra"},
+  {id: "stat201", name: "Stat 201", title: "Statistics (includes the old Stat 319)"}
+];
+const KINDS = {e1: "Major Exam I", e2: "Major Exam II", fx: "Final Exam"};
+const KSHORT = {e1: "Major I", e2: "Major II", fx: "Final"};
+const L = "abcde";
+const STORE = "ice-oldexams-v1";
+const AVAIL = window.ICE_COURSES || {};
+// Highlight the exam kind whose next usual date (taken from all past exam dates) comes soonest;
+// the exam day itself and the day after still count, so it switches the day after the exam.
+const NEXT_KIND = (() => {
+  const D = window.ICE_DATES || {}, now = new Date(), y = now.getFullYear();
+  const today = new Date(y, now.getMonth(), now.getDate());
+  let best = "e1", bestDays = Infinity;
+  for (const k of ["e1", "e2", "fx"]) for (const md of D[k] || []) {
+    const [m, d] = md.split("-").map(Number);
+    let t = new Date(y, m - 1, d);
+    if ((t - today) / 864e5 < -1) t = new Date(y + 1, m - 1, d);
+    const days = (t - today) / 864e5;
+    if (days < bestDays) { bestDays = days; best = k; }
+  }
+  return best;
+})();
+let saved = {};
+try { saved = JSON.parse(localStorage.getItem(STORE) || "{}") || {}; } catch (e) { saved = {}; }
+function persist(){ try { localStorage.setItem(STORE, JSON.stringify(saved)); } catch (e) {} }
+
+let curCourse = null, curKind = null, cur = null;
+const qs = document.getElementById("qs");
+function el(tag, cls, text){const e=document.createElement(tag);if(cls)e.className=cls;if(text!=null)e.textContent=text;return e;}
+function typeset(nodes){ if(window.MathJax && MathJax.typesetPromise){ return MathJax.typesetPromise(nodes).catch(()=>{}); } }
+function course(id){ return COURSES.find(c => c.id === id); }
+function key(T){ return `${T.course}-${T.term}-${T.kind}`; }
+function stateOf(T){
+  const k = key(T);
+  if (!saved[k] || saved[k].length !== T.qs.length) saved[k] = T.qs.map(() => ({sel: null, hints: 0, done: false}));
+  return saved[k];
+}
+function tally(T){ const st = stateOf(T);
+  return {answered: st.filter(s => s.done).length, correct: st.filter((s,i) => s.done && s.sel === T.qs[i].ans).length}; }
+
+function loadCourse(id){
+  if (window.ICE_DATA && window.ICE_DATA[id]) return Promise.resolve(window.ICE_DATA[id]);
+  return new Promise((ok, bad) => {
+    const s = document.createElement("script");
+    s.src = `data/${id}.js`;
+    s.onload = () => { (window.ICE_DATA[id] || []).forEach(T => T.course = id); ok(window.ICE_DATA[id] || []); };
+    s.onerror = bad;
+    document.head.append(s);
+  });
+}
+function show(which){
+  ["home", "list", "exam"].forEach(s => document.getElementById(s).hidden = s !== which);
+  window.scrollTo(0, 0);
+}
+function setHash(h){ try { history.replaceState(null, "", h ? "#" + h : location.pathname + location.search); } catch (e) {} }
+
+function renderHome(){
+  curCourse = curKind = cur = null;
+  const ul = document.getElementById("courses"); ul.textContent = "";
+  COURSES.forEach(C => {
+    const li = el("li"); const box = el("div", "course");
+    const n = el("span", "cname", C.name); n.append(el("small", null, C.title)); box.append(n);
+    const kinds = el("span", "kinds"); const have = AVAIL[C.id] || [];
+    if (!have.length) kinds.append(el("span", "soon", "Coming soon"));
+    else Object.keys(KINDS).forEach(k => {
+      const b = el("button", k === NEXT_KIND ? "primary" : null, KINDS[k]); b.type = "button";
+      if (!have.includes(k)) { b.disabled = true; b.title = "Coming soon"; }
+      b.addEventListener("click", () => openList(C.id, k));
+      kinds.append(b);
+    });
+    box.append(kinds); li.append(box); ul.append(li);
+  });
+  setHash(""); show("home");
+}
+
+async function openList(cid, kind, fromHash){
+  const all = await loadCourse(cid);
+  curCourse = cid; curKind = kind; cur = null;
+  const C = course(cid);
+  document.getElementById("ltitle").innerHTML = `${C.name} &nbsp; ${KINDS[kind]}`;
+  const ul = document.getElementById("terms"); ul.textContent = "";
+  all.filter(T => T.kind === kind).sort((a, b) => parseInt(b.term) - parseInt(a.term) || (a.term < b.term ? -1 : 1)).forEach(T => {
+    const li = el("li"); const b = el("div", "term"); b.id = "term" + T.term;
+    b.append(el("span", "tnum", T.term.slice(0, 3)));
+    const info = el("span", "tinfo", T.season);
+    info.append(el("small", null, (T.version ? "Version " + T.version + " · " : "") + (T.orig ? "Originally " + T.orig + " · " : "") + (T.date ? T.date + " · " : "") + T.qs.length + " questions · Sections " + T.secs.join(", ")));
+    b.append(info);
+    const k = tally(T);
+    b.append(el("span", "tprog", k.answered ? `${k.answered}/${T.qs.length} done · ${k.correct} correct` : "Not started"));
+    const acts = el("span", "tacts");
+    const start = el("button", "primary", "Start Exam in Browser"); start.type = "button";
+    const dl = el("a", "btn", "Download PDF"); dl.href = T.pdf; dl.download = T.dl;
+    dl.addEventListener("click", e => e.stopPropagation());
+    acts.append(start, dl); b.append(acts);
+    b.addEventListener("click", () => openExam(T));
+    li.append(b); ul.append(li);
+  });
+  if (!fromHash) setHash(`${cid}/${kind}`);
+  show("list");
+}
+
+function openExam(T, fromHash){
+  cur = T;
+  const C = course(T.course);
+  document.getElementById("etitle").innerHTML = `${C.name} &nbsp; ${KINDS[T.kind]} &nbsp; Term ${T.term.slice(0, 3)}${T.version ? " &nbsp; Version " + T.version : ""}`;
+  document.getElementById("emeta").textContent = `${T.season} · ${T.date ? T.date + " · " : ""}${T.qs.length} questions · ${T.minutes} minutes${T.orig ? " · originally " + T.orig : ""}`;
+  const dl = document.getElementById("dl"); dl.href = T.pdf; dl.download = T.dl;
+  if (!fromHash) setHash(`${T.course}/${T.kind}/${T.term}`);
+  show("exam");
+  renderExam();
+}
+document.getElementById("back1").addEventListener("click", renderHome);
+document.getElementById("back2").addEventListener("click", () => openList(curCourse, curKind));
+
+function buildItem(i){
+  const q = cur.qs[i], s = stateOf(cur)[i];
+  const li = el("li", "q" + (s.done ? " done" : "")); li.id = "q" + (i+1);
+  const head = el("div", "qhead");
+  head.append(el("span", "qnum", (i+1) + "."), el("span", "qtext", q.q));
+  if (q.omitted) { li.append(head); return li; }
+  head.append(el("span", "sec", "Sec. " + q.sec));
+  li.append(head);
+  if (q.img) { const im = el("img", "qimg"); im.src = `img/${cur.course}/${q.img}`; im.alt = "Figure for question " + (i+1); li.append(im); }
+
+  const opts = el("div", "opts");
+  (q.written ? [] : q.opts).forEach((o, j) => {
+    const b = el("button", "opt"); b.type = "button"; b.id = `q${i+1}${L[j]}`;
+    if (s.sel === j) b.classList.add("sel");
+    if (s.done && j === q.ans) b.classList.add("right");
+    if (s.done && s.sel === j && j !== q.ans) b.classList.add("wrong");
+    b.append(el("span", "bubble", L[j]), el("span", "body", o));
+    if (s.done && j === q.ans) b.append(el("span", "mark", "✓ correct"));
+    if (s.done && s.sel === j && j !== q.ans) b.append(el("span", "mark", "✗ your pick"));
+    b.addEventListener("click", () => { if (s.done) return; s.sel = (s.sel === j ? null : j); refresh(i); });
+    opts.append(b);
+  });
+  if (!q.written) li.append(opts);
+
+  const tools = el("div", "tools");
+  [0,1,2].forEach(h => {
+    const b = el("button", null, "Hint " + (h+1)); b.type = "button"; b.id = `q${i+1}h${h+1}`;
+    b.disabled = s.hints !== h;
+    if (s.hints < h) b.title = "Open the previous hint first";
+    b.addEventListener("click", () => { s.hints = h+1; refresh(i); });
+    tools.append(b);
+  });
+  const chk = el("button", "primary", s.done ? "Solution shown" : (q.written || s.sel === null ? "Show answer" : "Check answer"));
+  chk.type = "button"; chk.id = `q${i+1}chk`; chk.disabled = s.done;
+  chk.addEventListener("click", () => { s.done = true; refresh(i); });
+  tools.append(chk);
+  li.append(tools);
+
+  for (let h = 0; h < s.hints; h++){
+    const d = el("div", "hint");
+    d.append(el("b", null, "Hint " + (h+1) + ". "), document.createTextNode(q.hints[h]));
+    li.append(d);
+  }
+  if (s.done){
+    const d = el("div", "sol");
+    let v;
+    if (q.written) v = "Answer: " + q.answer;
+    else if (s.sel === null) v = "Answer: (" + L[q.ans] + ")";
+    else if (s.sel === q.ans) v = "Correct. Answer: (" + L[q.ans] + ")";
+    else v = "Not quite. You chose (" + L[s.sel] + "); the answer is (" + L[q.ans] + ")";
+    d.append(el("div", "verdict", v));
+    const ol = el("ol");
+    q.steps.forEach(t => ol.append(el("li", null, t)));
+    d.append(ol); li.append(d);
+  }
+  return li;
+}
+
+function renderExam(){
+  qs.textContent = "";
+  cur.qs.forEach((_, i) => qs.append(buildItem(i)));
+  updateScore();
+  typeset([qs]);
+}
+function refresh(i){
+  const old = document.getElementById("q" + (i+1));
+  const li = buildItem(i);
+  old.replaceWith(li);
+  updateScore(); persist();
+  typeset([li]);
+}
+function updateScore(){
+  const k = tally(cur);
+  document.getElementById("score").textContent = `Answered ${k.answered}/${cur.qs.length} · Correct ${k.correct}`;
+}
+
+document.getElementById("reset").addEventListener("click", () => {
+  stateOf(cur).forEach(s => { s.sel = null; s.hints = 0; s.done = false; });
+  persist(); renderExam();
+});
+
+async function route(){
+  const m = (location.hash || "").match(/^#([a-z]+\d{3})\/(e1|e2|fx)(?:\/(\d{3}b?))?$/);
+  if (!m || !course(m[1]) || !(AVAIL[m[1]] || []).includes(m[2])) return renderHome();
+  try {
+    await openList(m[1], m[2], true);
+    const T = m[3] && window.ICE_DATA[m[1]].find(x => x.kind === m[2] && x.term === m[3]);
+    if (T) openExam(T, true);
+  } catch (e) { renderHome(); }
+}
+route();
+if (window.MathJax && MathJax.startup && MathJax.startup.promise) MathJax.startup.promise.then(() => { if (cur) typeset([qs]); });
+</script>
+
+</body>
+</html>

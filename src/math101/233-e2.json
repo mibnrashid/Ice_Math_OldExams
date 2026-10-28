@@ -1,0 +1,342 @@
+{
+  "course": "math101",
+  "term": "233",
+  "kind": "e2",
+  "date": "25 July 2024",
+  "minutes": 90,
+  "source": "math101-233-e2.pdf",
+  "note": "No official key; answers derived and verified (sympy). Date and 90 minutes are printed on the cover. Q6 source text reads 'in such away'; fixed to 'in such a way'. Q14 exponent -2 overlaps a green label in the scan but reads -2.",
+  "qs": [
+    {
+      "sec": "4.2",
+      "q": "The value of $c$ that satisfies Rolle's Theorem when applied to $f(x)=(x-2)(x+3)^2$ on $[-3,2]$ is equal to",
+      "opts": [
+        "$\\dfrac13$",
+        "$\\dfrac12$",
+        "$-3$",
+        "$2$",
+        "$-\\dfrac13$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Rolle's Theorem guarantees a point in the open interval where the derivative is zero.",
+        "Differentiate $f$ with the product rule, set $f'(x)=0$, and keep only the solution inside the open interval.",
+        "Rolle's Theorem: if $f$ is continuous on $[a,b]$, differentiable on $(a,b)$ and $f(a)=f(b)$, then $f'(c)=0$ for some $c$ in $(a,b)$."
+      ],
+      "steps": [
+        "$f(-3)=0=f(2)$, so Rolle's Theorem applies.",
+        "$f'(x)=(x+3)^2+2(x-2)(x+3)=(x+3)(3x-1)$.",
+        "$f'(x)=0$ gives $x=-3$ or $x=\\frac13$.",
+        "Only $x=\\frac13$ lies in $(-3,2)$, so $c=\\frac13$."
+      ],
+      "brief": "$f'=(x+3)(3x-1)=0$ with $c\\in(-3,2)$ gives $c=\\frac13$."
+    },
+    {
+      "sec": "4.2",
+      "q": "The value of $c$ that satisfies the Mean Value Theorem when applied to $f(x)=x-\\cos x$ on $\\left[-\\dfrac{\\pi}{2},\\dfrac{\\pi}{2}\\right]$ is equal to",
+      "opts": [
+        "$0$",
+        "$\\dfrac{\\pi}{6}$",
+        "$\\dfrac{\\pi}{3}$",
+        "$-\\dfrac{\\pi}{4}$",
+        "$-\\dfrac{\\pi}{3}$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Compare the average rate of change on the interval with the derivative at an interior point.",
+        "Compute $\\dfrac{f(b)-f(a)}{b-a}$ first, then solve $f'(c)$ equal to that number.",
+        "Mean Value Theorem: $f'(c)=\\dfrac{f(b)-f(a)}{b-a}$ for some $c$ in $(a,b)$."
+      ],
+      "steps": [
+        "$f\\left(\\frac{\\pi}{2}\\right)=\\frac{\\pi}{2}$ and $f\\left(-\\frac{\\pi}{2}\\right)=-\\frac{\\pi}{2}$, so the average rate is $\\dfrac{\\pi}{\\pi}=1$.",
+        "$f'(x)=1+\\sin x$.",
+        "$1+\\sin c=1$ gives $\\sin c=0$.",
+        "In $\\left(-\\frac{\\pi}{2},\\frac{\\pi}{2}\\right)$ this gives $c=0$."
+      ],
+      "brief": "Average rate $=1$, $f'(c)=1+\\sin c=1$, so $c=0$."
+    },
+    {
+      "sec": "4.1",
+      "q": "If $x=c$ is a critical number of the function $f(x)=\\sin^2x+\\cos x$ on $(0,2\\pi)$, then the sum of all possible values of $c$ is",
+      "opts": [
+        "$3\\pi$",
+        "$2\\pi$",
+        "$\\pi$",
+        "$\\dfrac{5\\pi}{3}$",
+        "$\\dfrac{2\\pi}{3}$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Critical numbers are where $f'$ is zero or undefined.",
+        "Differentiate $f$, factor the result, and solve each factor on the interval $(0,2\\pi)$.",
+        "A critical number of $f$ is a point $c$ in the domain with $f'(c)=0$ or $f'(c)$ undefined; also $\\dfrac{d}{dx}\\sin^2x=2\\sin x\\cos x$."
+      ],
+      "steps": [
+        "$f'(x)=2\\sin x\\cos x-\\sin x=\\sin x\\,(2\\cos x-1)$.",
+        "$\\sin x=0$ gives $x=\\pi$ in $(0,2\\pi)$.",
+        "$\\cos x=\\frac12$ gives $x=\\frac{\\pi}{3},\\ \\frac{5\\pi}{3}$.",
+        "Sum: $\\pi+\\frac{\\pi}{3}+\\frac{5\\pi}{3}=3\\pi$."
+      ],
+      "brief": "$f'=\\sin x(2\\cos x-1)=0$: $c=\\frac{\\pi}{3},\\pi,\\frac{5\\pi}{3}$, sum $3\\pi$."
+    },
+    {
+      "sec": "4.1",
+      "q": "If $M$ and $m$ are the absolute maximum and absolute minimum respectively of the function $f(x)=3x^{2/3}-2x$ on $[-1,1]$, then $M+m=$",
+      "opts": [
+        "$5$",
+        "$2$",
+        "$4$",
+        "$7$",
+        "$3$"
+      ],
+      "ans": 0,
+      "hints": [
+        "This is an extreme value problem on a closed interval.",
+        "Find the critical numbers (including where $f'$ is undefined) and evaluate $f$ there and at both endpoints.",
+        "Closed Interval Method: for continuous $f$ on $[a,b]$, the absolute extrema occur at critical numbers in $(a,b)$ or at the endpoints $a$, $b$."
+      ],
+      "steps": [
+        "$f'(x)=2x^{-1/3}-2$, which is undefined at $x=0$ and zero at $x=1$.",
+        "Candidates: $x=-1,0,1$.",
+        "$f(-1)=3+2=5$, $f(0)=0$, $f(1)=3-2=1$.",
+        "So $M=5$, $m=0$, and $M+m=5$."
+      ],
+      "brief": "Values $f(-1)=5$, $f(0)=0$, $f(1)=1$: $M=5$, $m=0$, so $M+m=5$."
+    },
+    {
+      "sec": "3.8",
+      "q": "Newton's Method is used to approximate a zero of the function $f(x)=x-e^{-x}$. If we choose $x_1=0$, then $x_2=$",
+      "opts": [
+        "$\\dfrac12$",
+        "$-\\dfrac12$",
+        "$1$",
+        "$-1$",
+        "$2$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Apply one step of Newton's Method.",
+        "Compute $f'(x)$, then evaluate $f(x_1)$ and $f'(x_1)$.",
+        "Newton's Method: $x_{n+1}=x_n-\\dfrac{f(x_n)}{f'(x_n)}$."
+      ],
+      "steps": [
+        "$f'(x)=1+e^{-x}$.",
+        "$f(0)=0-1=-1$ and $f'(0)=2$.",
+        "$x_2=0-\\dfrac{-1}{2}=\\dfrac12$."
+      ],
+      "brief": "$x_2=0-\\frac{f(0)}{f'(0)}=0-\\frac{-1}{2}=\\frac12$."
+    },
+    {
+      "sec": "3.7",
+      "q": "A point moves along the curve $y=\\sqrt{x}$ in such a way that the $y$-component of the position of the point is increasing at a rate of 2 units per second. At what rate is the $x$-component changing when $x=4$?",
+      "opts": [
+        "increasing at a rate of 8 units per second",
+        "decreasing at a rate of 8 units per second",
+        "increasing at a rate of $\\dfrac12$ unit per second",
+        "decreasing at a rate of $\\dfrac12$ unit per second",
+        "increasing at a rate of 1 unit per second"
+      ],
+      "ans": 0,
+      "hints": [
+        "This is a related rates problem: both coordinates depend on time.",
+        "Differentiate $y=\\sqrt{x}$ with respect to $t$ using the chain rule, then substitute the given values.",
+        "If $y=g(x)$ and both depend on $t$, then $\\dfrac{dy}{dt}=g'(x)\\dfrac{dx}{dt}$, and $\\dfrac{d}{dx}\\sqrt{x}=\\dfrac{1}{2\\sqrt{x}}$."
+      ],
+      "steps": [
+        "$\\dfrac{dy}{dt}=\\dfrac{1}{2\\sqrt{x}}\\dfrac{dx}{dt}$.",
+        "With $\\dfrac{dy}{dt}=2$ and $x=4$: $2=\\dfrac14\\dfrac{dx}{dt}$.",
+        "$\\dfrac{dx}{dt}=8>0$, so $x$ is increasing at 8 units per second."
+      ],
+      "brief": "$\\frac{dy}{dt}=\\frac{1}{2\\sqrt x}\\frac{dx}{dt}$: $2=\\frac14\\frac{dx}{dt}$, so $\\frac{dx}{dt}=8$ (increasing)."
+    },
+    {
+      "sec": "3.7",
+      "q": "An airplane is flying at an altitude of 5 miles and passes directly over a radar antenna. When the distance between the plane and the radar is 10 miles, the radar detects that the distance between the radar and the plane is changing at a rate of 240 miles per hour. What is the speed of the plane?",
+      "opts": [
+        "$160\\sqrt3$",
+        "$320\\sqrt3$",
+        "$160$",
+        "$320$",
+        "$480$"
+      ],
+      "ans": 0,
+      "hints": [
+        "This is a related rates problem with a right triangle.",
+        "Let $x$ be the horizontal distance and $z$ the distance to the radar, relate them with the Pythagorean theorem, and differentiate in $t$.",
+        "If $x^2+h^2=z^2$ with $h$ constant, then $x\\dfrac{dx}{dt}=z\\dfrac{dz}{dt}$."
+      ],
+      "steps": [
+        "Let $x$ be the horizontal distance: $x^2+5^2=z^2$.",
+        "Differentiate: $x\\dfrac{dx}{dt}=z\\dfrac{dz}{dt}$.",
+        "When $z=10$: $x=\\sqrt{100-25}=5\\sqrt3$.",
+        "$\\dfrac{dx}{dt}=\\dfrac{10\\cdot240}{5\\sqrt3}=\\dfrac{480}{\\sqrt3}=160\\sqrt3$ miles per hour."
+      ],
+      "brief": "$x\\,x'=z\\,z'$ with $x=5\\sqrt3$, $z=10$, $z'=240$: speed $=160\\sqrt3$."
+    },
+    {
+      "sec": "3.6",
+      "q": "If $y=\\arctan(3x)+\\arcsin(\\sqrt{x})$, then $\\left.\\dfrac{dy}{dx}\\right|_{x=\\frac12}=$",
+      "opts": [
+        "$\\dfrac{25}{13}$",
+        "$\\dfrac{23}{13}$",
+        "$\\dfrac{27}{13}$",
+        "$\\dfrac{29}{13}$",
+        "$\\dfrac{21}{13}$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Differentiate each term with an inverse trigonometric rule together with the chain rule.",
+        "Treat $3x$ and $\\sqrt{x}$ as the inner functions, differentiate, then substitute $x=\\frac12$.",
+        "$\\dfrac{d}{dx}\\arctan u=\\dfrac{u'}{1+u^2}$ and $\\dfrac{d}{dx}\\arcsin u=\\dfrac{u'}{\\sqrt{1-u^2}}$."
+      ],
+      "steps": [
+        "$y'=\\dfrac{3}{1+9x^2}+\\dfrac{1}{\\sqrt{1-x}}\\cdot\\dfrac{1}{2\\sqrt x}$.",
+        "At $x=\\frac12$ the first term is $\\dfrac{3}{1+\\frac94}=\\dfrac{12}{13}$.",
+        "The second term is $\\dfrac{1}{\\sqrt{1/2}\\cdot2\\sqrt{1/2}}=1$.",
+        "$y'\\left(\\frac12\\right)=\\dfrac{12}{13}+1=\\dfrac{25}{13}$."
+      ],
+      "brief": "$y'=\\frac{3}{1+9x^2}+\\frac{1}{2\\sqrt{x(1-x)}}$, at $x=\\frac12$: $\\frac{12}{13}+1=\\frac{25}{13}$."
+    },
+    {
+      "sec": "3.6",
+      "q": "If $f(x)=\\tan x,\\ -\\dfrac{\\pi}{4}\\le x\\le\\dfrac{\\pi}{4}$, then $\\left(f^{-1}\\right)'\\left(\\dfrac{\\sqrt3}{3}\\right)=$",
+      "opts": [
+        "$\\dfrac34$",
+        "$\\dfrac14$",
+        "$1$",
+        "$\\dfrac12$",
+        "$\\dfrac54$"
+      ],
+      "ans": 0,
+      "hints": [
+        "This asks for the derivative of an inverse function at a point.",
+        "First find the $x$ for which $f(x)$ equals the given value, then use $f'$ at that $x$.",
+        "$\\left(f^{-1}\\right)'(b)=\\dfrac{1}{f'(a)}$ where $f(a)=b$, and $\\dfrac{d}{dx}\\tan x=\\sec^2x$."
+      ],
+      "steps": [
+        "Solve $\\tan a=\\frac{\\sqrt3}{3}$ with $a$ in $\\left[-\\frac{\\pi}{4},\\frac{\\pi}{4}\\right]$: $a=\\frac{\\pi}{6}$.",
+        "$f'(a)=\\sec^2\\frac{\\pi}{6}=\\left(\\frac{2}{\\sqrt3}\\right)^2=\\frac43$.",
+        "$\\left(f^{-1}\\right)'\\left(\\frac{\\sqrt3}{3}\\right)=\\dfrac{1}{4/3}=\\dfrac34$."
+      ],
+      "brief": "$a=\\frac{\\pi}{6}$, $f'(a)=\\sec^2\\frac{\\pi}{6}=\\frac43$, so $\\left(f^{-1}\\right)'=\\frac34$."
+    },
+    {
+      "sec": "3.5",
+      "q": "The slope of the graph of the relation $x+y-1=\\ln(x^2+y^2)$ at the point $(1,0)$ is",
+      "opts": [
+        "$1$",
+        "$2$",
+        "$-1$",
+        "$-2$",
+        "$0$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Use implicit differentiation.",
+        "Differentiate both sides with respect to $x$, treating $y$ as a function of $x$, then substitute the point.",
+        "Implicit differentiation: $\\dfrac{d}{dx}y=y'$, $\\dfrac{d}{dx}y^2=2yy'$ and $\\dfrac{d}{dx}\\ln u=\\dfrac{u'}{u}$."
+      ],
+      "steps": [
+        "Differentiate: $1+y'=\\dfrac{2x+2yy'}{x^2+y^2}$.",
+        "At $(1,0)$: $1+y'=\\dfrac{2}{1}=2$.",
+        "So $y'=1$."
+      ],
+      "brief": "$1+y'=\\frac{2x+2yy'}{x^2+y^2}$, at $(1,0)$: $1+y'=2$, so $y'=1$."
+    },
+    {
+      "sec": "3.5",
+      "q": "If $y=Ax+B$ is the equation of the normal line to the circle $x^2+y^2=25$ at the point $(4,3)$, then $A+B=$",
+      "opts": [
+        "$\\dfrac34$",
+        "$\\dfrac{-3}{4}$",
+        "$\\dfrac43$",
+        "$\\dfrac{-4}{3}$",
+        "$\\dfrac15$"
+      ],
+      "ans": 0,
+      "hints": [
+        "The normal line is perpendicular to the tangent line.",
+        "Find the tangent slope by implicit differentiation, take the negative reciprocal, and write the line through the given point.",
+        "The normal slope is $-\\dfrac{1}{m}$ where $m$ is the tangent slope; the line through $(x_0,y_0)$ with slope $A$ is $y-y_0=A(x-x_0)$."
+      ],
+      "steps": [
+        "$2x+2yy'=0$, so $y'=-\\dfrac{x}{y}=-\\dfrac43$ at $(4,3)$.",
+        "The normal slope is the negative reciprocal: $A=\\dfrac34$.",
+        "$y-3=\\frac34(x-4)$ gives $y=\\frac34x$, so $B=0$.",
+        "$A+B=\\dfrac34$."
+      ],
+      "brief": "Tangent slope $-\\frac43$, normal slope $\\frac34$, line $y=\\frac34x$: $A+B=\\frac34$."
+    },
+    {
+      "sec": "3.5",
+      "q": "If $y=(\\ln x)^{\\ln x},\\ x>1$, then $y'(e)=$",
+      "opts": [
+        "$\\dfrac1e$",
+        "$e$",
+        "$e^2$",
+        "$1$",
+        "$\\dfrac{1}{e^2}$"
+      ],
+      "ans": 0,
+      "hints": [
+        "The variable appears in both the base and the exponent, so use logarithmic differentiation.",
+        "Take $\\ln$ of both sides, differentiate implicitly with the product rule, then solve for $y'$.",
+        "If $y=u^v$ then $\\ln y=v\\ln u$ and $\\dfrac{y'}{y}=\\dfrac{d}{dx}\\left(v\\ln u\\right)$."
+      ],
+      "steps": [
+        "$\\ln y=\\ln x\\cdot\\ln(\\ln x)$.",
+        "$\\dfrac{y'}{y}=\\dfrac1x\\ln(\\ln x)+\\ln x\\cdot\\dfrac{1}{x\\ln x}=\\dfrac{\\ln(\\ln x)+1}{x}$.",
+        "At $x=e$: $y=1^1=1$ and $\\dfrac{y'}{y}=\\dfrac{\\ln1+1}{e}=\\dfrac1e$.",
+        "So $y'(e)=\\dfrac1e$."
+      ],
+      "brief": "$\\frac{y'}{y}=\\frac{\\ln(\\ln x)+1}{x}$; at $x=e$, $y=1$: $y'(e)=\\frac1e$."
+    },
+    {
+      "sec": "3.4",
+      "q": "If $h(x)=\\dfrac19(3x+1)^3$, then $h''(1)=$",
+      "opts": [
+        "$24$",
+        "$22$",
+        "$26$",
+        "$20$",
+        "$28$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Differentiate twice using the chain rule.",
+        "Apply the power rule with the chain rule once to get $h'$, then again to get $h''$.",
+        "Chain rule: $\\dfrac{d}{dx}\\left(u^n\\right)=n\\,u^{n-1}u'$."
+      ],
+      "steps": [
+        "$h'(x)=\\dfrac19\\cdot3(3x+1)^2\\cdot3=(3x+1)^2$.",
+        "$h''(x)=2(3x+1)\\cdot3=6(3x+1)$.",
+        "$h''(1)=6\\cdot4=24$."
+      ],
+      "brief": "$h'=(3x+1)^2$, $h''=6(3x+1)$, so $h''(1)=24$."
+    },
+    {
+      "sec": "3.4",
+      "q": "If $g(x)=\\left(\\dfrac{3x^2-2}{2x+3}\\right)^{-2}$, then $g'(0)=$",
+      "opts": [
+        "$3$",
+        "$4$",
+        "$2$",
+        "$0$",
+        "$1$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Use the chain rule (general power rule) with the quotient rule for the inside function.",
+        "Write $g=u^{-2}$ with $u$ the fraction, find $u(0)$ and $u'(0)$ by the quotient rule, then combine.",
+        "$\\dfrac{d}{dx}u^n=nu^{n-1}u'$ and $\\left(\\dfrac fg\\right)'=\\dfrac{f'g-fg'}{g^2}$."
+      ],
+      "steps": [
+        "Let $u=\\dfrac{3x^2-2}{2x+3}$, so $g'=-2u^{-3}u'$.",
+        "$u(0)=-\\dfrac23$.",
+        "$u'=\\dfrac{6x(2x+3)-2(3x^2-2)}{(2x+3)^2}$, so $u'(0)=\\dfrac49$.",
+        "$g'(0)=-2\\left(-\\dfrac32\\right)^3\\cdot\\dfrac49=-2\\cdot\\left(-\\dfrac{27}{8}\\right)\\cdot\\dfrac49=3$."
+      ],
+      "brief": "$g'=-2u^{-3}u'$ with $u(0)=-\\frac23$, $u'(0)=\\frac49$: $g'(0)=3$."
+    }
+  ]
+}

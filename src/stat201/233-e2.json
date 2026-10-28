@@ -1,0 +1,335 @@
+{
+  "course": "stat201",
+  "term": "233",
+  "kind": "e2",
+  "date": "28 July 2024",
+  "minutes": 90,
+  "source": "stat319-233-e2.pdf",
+  "note": "Original course STAT 319. Cover prints July 28, 2024 and 90 minutes (net). The master has no marks; no official key; answers derived and verified (python), and (a) matches my result in every question except Q5 and the rounding in Q7. Q5 (exponential, mean 10 km, next 30 km): the correct value from the printed data is e^-3 = 0.0498, which is not among the choices; the master's choice (a) 0.1353 = e^-2 corresponds to 20 km (or mean 15 km), so the printed 30 km is probably a misprint. Kept the text as printed and kept (a) as key; the steps say this openly. Q7: exact value is 0.4415; choice (a) 0.4524 is the closest, so table rounding is assumed. Q1 and Q2 share a stem and are written separately.",
+  "qs": [
+    {
+      "sec": "4.3",
+      "q": "The diameter of a particle of contamination (in micrometers) is modeled with the probability density function $f(x)=\\dfrac{2}{x^3}$, $x>1$, then the third quartile is",
+      "opts": [
+        "2",
+        "1.5",
+        "2.5",
+        "3",
+        "3.5"
+      ],
+      "ans": 0,
+      "hints": [
+        "A quartile is a percentile of the distribution, so work with the cumulative distribution function.",
+        "Integrate the density from the lower end of its range to $x$ to get $F(x)$, then solve $F(x)=0.75$.",
+        "$F(x)=\\int_{-\\infty}^{x}f(u)\\,du$, and the $p$-th percentile $x_p$ satisfies $F(x_p)=p$."
+      ],
+      "steps": [
+        "For $x>1$: $F(x)=\\int_1^x 2u^{-3}\\,du=\\left[-u^{-2}\\right]_1^x=1-\\dfrac{1}{x^2}$.",
+        "Set $F(x)=0.75$: $\\dfrac{1}{x^2}=0.25$.",
+        "$x^2=4$, so $x=2$ (taking the positive root, since $x>1$)."
+      ],
+      "brief": "$F(x)=1-1/x^2=0.75$ gives $x=2$."
+    },
+    {
+      "sec": "4.4",
+      "q": "The diameter of a particle of contamination (in micrometers) is modeled with the probability density function $f(x)=\\dfrac{2}{x^3}$, $x>1$, then the expected value of the diameter of a particle of contamination (in micrometers) is",
+      "opts": [
+        "2",
+        "1",
+        "2.5",
+        "1.5",
+        "0"
+      ],
+      "ans": 0,
+      "hints": [
+        "This is the mean of a continuous random variable.",
+        "Multiply the density by $x$ and integrate over the whole range of $x$.",
+        "$E(X)=\\int_{-\\infty}^{\\infty}x f(x)\\,dx$."
+      ],
+      "steps": [
+        "$E(X)=\\int_1^{\\infty}x\\cdot\\dfrac{2}{x^3}\\,dx=\\int_1^{\\infty}2x^{-2}\\,dx$.",
+        "$=\\left[-2x^{-1}\\right]_1^{\\infty}=0-(-2)$.",
+        "$E(X)=2$."
+      ],
+      "brief": "$E(X)=\\int_1^\\infty 2x^{-2}dx=2$."
+    },
+    {
+      "sec": "4.6",
+      "q": "Assume that in the detection of a digital signal the background noise follows a normal distribution with a mean of 0 volt and standard deviation of 0.45 volt. Determine symmetric bounds about the mean that include 98.86$\\%$ of all noise readings.",
+      "opts": [
+        "Between $-1.1385$ and $1.1385$",
+        "Between $-0.882$ and $0.882$",
+        "Between $-0.738$ and $0.738$",
+        "Between $-2.58$ and $2.58$",
+        "Between $-1.96$ and $1.96$"
+      ],
+      "ans": 0,
+      "hints": [
+        "This is a reverse normal problem: the probability is given and the bounds are unknown.",
+        "Find the $z$-value that leaves half of the remaining probability in each tail, then convert back to volts.",
+        "$P(-z<Z<z)=p$ means $\\Phi(z)=\\dfrac{1+p}{2}$, and the bound is $\\mu\\pm z\\sigma$."
+      ],
+      "steps": [
+        "Each tail has $\\dfrac{1-0.9886}{2}=0.0057$, so $\\Phi(z)=0.9943$.",
+        "From the normal table, $z=2.53$.",
+        "Bounds: $0\\pm 2.53(0.45)=\\pm1.1385$."
+      ],
+      "brief": "$\\Phi(z)=0.9943\\Rightarrow z=2.53$; bounds $\\pm2.53(0.45)=\\pm1.1385$."
+    },
+    {
+      "sec": "4.6",
+      "q": "The compressive strength of samples of cement can be modeled by a normal distribution with a mean of 6000 kilograms per square centimeter and a standard deviation of 100 kilograms per square centimeter. What is the probability that a sample's strength is less than 6250 $\\text{Kg}/\\text{cm}^2$?",
+      "opts": [
+        "0.99379",
+        "0.00621",
+        "0.99180",
+        "0.00820",
+        "0.50000"
+      ],
+      "ans": 0,
+      "hints": [
+        "This is a normal probability: standardise and use the normal table.",
+        "Subtract the mean from 6250 and divide by the standard deviation.",
+        "$Z=\\dfrac{X-\\mu}{\\sigma}$ and $P(X<x)=\\Phi\\left(\\dfrac{x-\\mu}{\\sigma}\\right)$."
+      ],
+      "steps": [
+        "$z=\\dfrac{6250-6000}{100}=2.5$.",
+        "$P(X<6250)=P(Z<2.5)$.",
+        "From the normal table, $P(Z<2.5)=0.99379$."
+      ],
+      "brief": "$z=(6250-6000)/100=2.5$, $P(Z<2.5)=0.99379$."
+    },
+    {
+      "sec": "4.8",
+      "q": "The distance between major cracks in a highway follows an exponential distribution with a mean of 10 km. Given that there are no cracks in the first 10 km inspected, what is the probability that there are no major cracks in the next 30 km inspected?",
+      "opts": [
+        "0.1353",
+        "0.2707",
+        "0.3679",
+        "0.7647",
+        "0.500"
+      ],
+      "ans": 0,
+      "hints": [
+        "Use the lack-of-memory property of the exponential distribution.",
+        "The 10 km already inspected do not matter; find the rate from the mean and use the survival probability for the next stretch.",
+        "$P(X>t+s\\mid X>t)=P(X>s)=e^{-\\lambda s}$ with $\\lambda=1/\\text{mean}$."
+      ],
+      "steps": [
+        "$\\lambda=1/10$ per km, and $P(X>x)=e^{-x/10}$.",
+        "The intended reading is that the inspection reaches the 30 km mark: $P(X>30\\mid X>10)=\\dfrac{P(X>30)}{P(X>10)}=\\dfrac{e^{-3}}{e^{-1}}=e^{-2}$.",
+        "By the memoryless property this equals $P(X>20)=e^{-2}=0.1353$.",
+        "(Reading it as 30 km beyond the first 10 km would give $e^{-3}=0.0498$, which is not among the choices.)"
+      ],
+      "brief": "Memoryless: $P(X>30\\mid X>10)=P(X>20)=e^{-2}=0.1353$.",
+      "note": "No official key. Read literally ('next 30 km' after the first 10) the answer e^-3 = 0.0498 is not a choice; the choice 0.1353 = e^-2 = P(X>30 | X>10) (inspection up to the 30 km mark), the master (a) convention."
+    },
+    {
+      "sec": "4.10",
+      "q": "Suppose that $x$ has a Weibull distribution with $\\beta=2$ and $\\delta=8.6$, then the value of $a$ such that $P(X>a)=0.9$ will be",
+      "opts": [
+        "2.791",
+        "$-0.1054$",
+        "7.7925",
+        "13.0498",
+        "170.299"
+      ],
+      "ans": 0,
+      "hints": [
+        "This is a Weibull percentile problem: use the survival function.",
+        "Set $P(X>a)=e^{-(a/\\delta)^{\\beta}}=0.9$, take logarithms, then solve for $a$.",
+        "Weibull: $P(X>x)=\\exp\\left[-(x/\\delta)^{\\beta}\\right]$ for $x>0$."
+      ],
+      "steps": [
+        "$e^{-(a/8.6)^2}=0.9$, so $(a/8.6)^2=-\\ln0.9=0.10536$.",
+        "$a/8.6=\\sqrt{0.10536}=0.32459$.",
+        "$a=8.6(0.32459)=2.791$."
+      ],
+      "brief": "$(a/8.6)^2=-\\ln0.9=0.10536$, so $a=2.791$."
+    },
+    {
+      "sec": "4.11",
+      "q": "Suppose that $X$ has a lognormal distribution with parameters $\\theta=2$ and $\\omega^2=4$. Then the conditional probability that $X<1500$ given that $X>1000$ equals to",
+      "opts": [
+        "0.4524",
+        "0.0102",
+        "0.9846",
+        "0.9744",
+        "0.5000"
+      ],
+      "ans": 0,
+      "hints": [
+        "A lognormal variable has a normal logarithm, and this is a conditional probability.",
+        "Write $P(X<1500\\mid X>1000)=\\dfrac{P(1000<X<1500)}{P(X>1000)}$ and convert each probability to a standard normal one using logarithms.",
+        "If $\\ln X\\sim N(\\theta,\\omega^2)$ then $P(X<x)=\\Phi\\left(\\dfrac{\\ln x-\\theta}{\\omega}\\right)$, and $P(A\\mid B)=P(A\\cap B)/P(B)$."
+      ],
+      "steps": [
+        "$\\omega=2$. For 1000: $z=\\dfrac{\\ln1000-2}{2}=\\dfrac{6.9078-2}{2}=2.45$. For 1500: $z=\\dfrac{7.3132-2}{2}=2.66$.",
+        "Numerator: $\\Phi(2.66)-\\Phi(2.45)\\approx0.9961-0.9929$. Denominator: $1-\\Phi(2.45)\\approx0.0071$.",
+        "The ratio is about $0.44$ to $0.45$ (about $0.4415$ with unrounded values; table rounding moves the last digits), and the closest listed value is $0.4524$."
+      ],
+      "brief": "$[\\Phi(2.66)-\\Phi(2.45)]/[1-\\Phi(2.45)]\\approx0.45$, closest choice 0.4524."
+    },
+    {
+      "sec": "7.2",
+      "q": "An electronics company manufactures resistors that have a mean resistance of 100 ohms and a standard deviation of 10 ohms. The distribution of resistance is normal, for a sample of size 25 resistors, then",
+      "opts": [
+        "The sampling distribution of the sample mean is normal with mean 100 and standard error 2",
+        "The sampling distribution of the sample mean is normal with mean 100 and standard error 10",
+        "The sampling distribution of the sample mean is normal with mean 20 and standard error 2",
+        "The sampling distribution of the sample mean is normal with mean 20 and standard error 10",
+        "The sampling distribution of the sample mean is student-$t$ with mean 100 and standard error 2"
+      ],
+      "ans": 0,
+      "hints": [
+        "Think about the sampling distribution of $\\bar X$ when the population is normal.",
+        "Find the mean of $\\bar X$ and its standard error from the population mean, standard deviation and $n$.",
+        "If $X\\sim N(\\mu,\\sigma^2)$ then $\\bar X\\sim N(\\mu,\\sigma^2/n)$, with standard error $\\sigma/\\sqrt n$."
+      ],
+      "steps": [
+        "The population is normal, so $\\bar X$ is exactly normal for any $n$.",
+        "$E(\\bar X)=\\mu=100$.",
+        "Standard error $=\\dfrac{\\sigma}{\\sqrt n}=\\dfrac{10}{\\sqrt{25}}=2$."
+      ],
+      "brief": "$\\bar X\\sim N(100,\\,2^2)$: mean 100, standard error $10/5=2$."
+    },
+    {
+      "sec": "7.2",
+      "q": "The amount of time that a customer spends waiting at an airport check-in counter is a random variable with mean 8.2 minutes and standard deviation 2 minutes. Suppose that a random sample of size 49 customers is observed. Find the probability that the average time waiting in line for these customers is more than 540 seconds.",
+      "opts": [
+        "0.00256",
+        "0.99744",
+        "0.65542",
+        "0.34458",
+        "0.41629"
+      ],
+      "ans": 0,
+      "hints": [
+        "Use the central limit theorem for the sample mean, and first make the units agree.",
+        "Convert 540 seconds to minutes, find the standard error, and standardise.",
+        "$\\bar X\\approx N(\\mu,\\sigma^2/n)$, so $Z=\\dfrac{\\bar X-\\mu}{\\sigma/\\sqrt n}$."
+      ],
+      "steps": [
+        "540 seconds $=9$ minutes.",
+        "Standard error $=2/\\sqrt{49}=2/7=0.2857$, so $z=\\dfrac{9-8.2}{0.2857}=2.8$.",
+        "$P(\\bar X>9)=P(Z>2.8)=1-0.99744=0.00256$."
+      ],
+      "brief": "$z=(9-8.2)/(2/7)=2.8$, $P(Z>2.8)=0.00256$."
+    },
+    {
+      "sec": "8.1",
+      "q": "For a normal population with known variance, what is the confidence level for the interval $\\bar x\\pm2.14\\dfrac{\\sigma}{\\sqrt n}$?",
+      "opts": [
+        "96.76$\\%$",
+        "98.76$\\%$",
+        "98.72$\\%$",
+        "93.56$\\%$",
+        "95$\\%$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Compare the given multiplier with the form of the known-variance interval.",
+        "The multiplier is $z_{\\alpha/2}$; find the area between $-z$ and $z$.",
+        "The interval is $\\bar x\\pm z_{\\alpha/2}\\dfrac{\\sigma}{\\sqrt n}$ with confidence level $1-\\alpha=2\\Phi(z_{\\alpha/2})-1$."
+      ],
+      "steps": [
+        "Here $z_{\\alpha/2}=2.14$.",
+        "$\\Phi(2.14)=0.9838$, so the upper tail is $\\alpha/2=0.0162$.",
+        "$1-\\alpha=1-2(0.0162)=0.9676$, i.e. $96.76\\%$."
+      ],
+      "brief": "$z_{\\alpha/2}=2.14$, $\\alpha/2=0.0162$, level $=96.76\\%$."
+    },
+    {
+      "sec": "8.1",
+      "q": "The diameter of holes for a cable harness is known to have a normal distribution with standard deviation of 0.01 inch. A random sample of size 10 yields an average diameter of 1.5045 inch. A 99$\\%$ confidence interval on the mean hole diameter is given by",
+      "opts": [
+        "Between 1.496 inch and 1.513 inch",
+        "Between 1.498 inch and 1.511 inch",
+        "Between 1.499 inch and 1.509 inch",
+        "Between 1.494 inch and 1.514 inch",
+        "Between 1.498 inch and 1.510 inch"
+      ],
+      "ans": 0,
+      "hints": [
+        "$\\sigma$ is known, so this is a $z$ interval for the mean.",
+        "Find $z_{\\alpha/2}$ for 99$\\%$ confidence and compute the margin of error.",
+        "$\\bar x-z_{\\alpha/2}\\dfrac{\\sigma}{\\sqrt n}\\le\\mu\\le\\bar x+z_{\\alpha/2}\\dfrac{\\sigma}{\\sqrt n}$."
+      ],
+      "steps": [
+        "$z_{0.005}=2.576$.",
+        "Margin $=2.576\\times\\dfrac{0.01}{\\sqrt{10}}=0.00815$.",
+        "Interval: $1.5045\\pm0.00815=(1.4964,\\ 1.5126)$, i.e. between 1.496 and 1.513."
+      ],
+      "brief": "$1.5045\\pm2.576(0.01/\\sqrt{10})=(1.496,\\ 1.513)$."
+    },
+    {
+      "sec": "8.2",
+      "q": "An Izod impact test was performed on 20 specimens of PVC pipe. The sample mean is 1.25 and the sample standard deviation is 0.25. Assuming the population is normal, then the length of a 99$\\%$ confidence interval on Izod impact strength is",
+      "opts": [
+        "0.3199",
+        "0.193420",
+        "0.233669",
+        "0.283981",
+        "0.148699"
+      ],
+      "ans": 0,
+      "hints": [
+        "$\\sigma$ is unknown, so this is a $t$ interval for the mean; the length is twice the margin of error.",
+        "Find the $t$ critical value with $n-1$ degrees of freedom for 99$\\%$ confidence, then double the margin.",
+        "Length $=2\\,t_{\\alpha/2,n-1}\\dfrac{s}{\\sqrt n}$."
+      ],
+      "steps": [
+        "$n-1=19$ and $t_{0.005,19}=2.861$.",
+        "Margin $=2.861\\times\\dfrac{0.25}{\\sqrt{20}}=0.15994$.",
+        "Length $=2(0.15994)=0.3199$."
+      ],
+      "brief": "$t_{0.005,19}=2.861$: length $=2(2.861)(0.25/\\sqrt{20})=0.3199$."
+    },
+    {
+      "sec": "8.1",
+      "q": "The life in hours of a 75-watt light bulb is known to be normally distributed with variance 225 hours$^2$. If we wanted the error in estimating the mean life from the confidence interval to be three hours at 95$\\%$ confidence, what sample size should be used?",
+      "opts": [
+        "97",
+        "10",
+        "9",
+        "68",
+        "4"
+      ],
+      "ans": 0,
+      "hints": [
+        "This is a sample-size problem for a mean with known variance.",
+        "The error is the margin of error; set it equal to 3 and solve for $n$, rounding up.",
+        "$E=z_{\\alpha/2}\\dfrac{\\sigma}{\\sqrt n}$, so $n=\\left(\\dfrac{z_{\\alpha/2}\\sigma}{E}\\right)^2$, rounded up."
+      ],
+      "steps": [
+        "$\\sigma=\\sqrt{225}=15$ and $z_{0.025}=1.96$.",
+        "$n=\\left(\\dfrac{1.96\\times15}{3}\\right)^2=(9.8)^2=96.04$.",
+        "Round up: $n=97$."
+      ],
+      "brief": "$n=(1.96\\cdot15/3)^2=96.04$, so $n=97$."
+    },
+    {
+      "sec": "8.4",
+      "q": "The fraction of defective integrated circuits produced in a photolithography process is being studied. A random sample of 350 circuits is tested, revealing 336 non-defective circuits. A 95$\\%$ confidence interval on the percentage of defective circuits produced by this particular tool is given by",
+      "opts": [
+        "Between 1.95$\\%$ and 6.05$\\%$",
+        "Between 2.28$\\%$ and 5.72$\\%$",
+        "Between 1.30$\\%$ and 6.70$\\%$",
+        "Between 1.80$\\%$ and 6.20$\\%$",
+        "Between 1.48$\\%$ and 6.52$\\%$"
+      ],
+      "ans": 0,
+      "hints": [
+        "This is a large-sample confidence interval for a proportion; be careful that it asks for the defective ones.",
+        "Count the defective circuits, find $\\hat p$, then compute the margin using $z_{0.025}$.",
+        "$\\hat p\\pm z_{\\alpha/2}\\sqrt{\\dfrac{\\hat p(1-\\hat p)}{n}}$."
+      ],
+      "steps": [
+        "Defective circuits: $350-336=14$, so $\\hat p=14/350=0.04$.",
+        "Standard error $=\\sqrt{\\dfrac{0.04(0.96)}{350}}=0.01047$; $z_{0.025}=1.96$, margin $=0.0205$.",
+        "Interval: $0.04\\pm0.0205=(0.0195,\\ 0.0605)$, i.e. between $1.95\\%$ and $6.05\\%$."
+      ],
+      "brief": "$\\hat p=0.04$: $0.04\\pm1.96\\sqrt{0.04(0.96)/350}=(1.95\\%,\\ 6.05\\%)$."
+    }
+  ]
+}

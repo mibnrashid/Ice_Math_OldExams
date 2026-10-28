@@ -1,0 +1,367 @@
+{
+  "course": "math208",
+  "term": "251",
+  "kind": "e1",
+  "date": "30 September 2025",
+  "minutes": 90,
+  "source": "math208-251-e1.pdf",
+  "qs": [
+    {
+      "sec": "1.6",
+      "q": "If the function $k(x)$ with $k(0)=0$ makes \\[ \\frac{dy}{dx}=\\frac{y\\cos x+2xe^y+3}{k(x)-x^2e^y+2x} \\] an exact differential equation, then $k(x)=$",
+      "opts": [
+        "$-\\sin x-2x$",
+        "$\\sin x-2x$",
+        "$-\\sin x+3x$",
+        "$-\\sin x+4x$",
+        "$\\sin x+2x$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Rewrite the equation in differential form $M\\,dx+N\\,dy=0$ and use the test for exactness.",
+        "Cross-multiply, move everything to one side, and read off $M$ and $N$, paying attention to the sign of $N$.",
+        "$M\\,dx+N\\,dy=0$ is exact if and only if $M_y=N_x$; integrate the resulting $k'(x)$ and use the given value of $k(0)$ for the constant."
+      ],
+      "steps": [
+        "Cross-multiply: $\\left(y\\cos x+2xe^y+3\\right)dx-\\left(k(x)-x^2e^y+2x\\right)dy=0$, so $N=-k(x)+x^2e^y-2x$.",
+        "$M_y=\\cos x+2xe^y$ and $N_x=-k'(x)+2xe^y-2$.",
+        "$M_y=N_x$ gives $\\cos x=-k'(x)-2$, so $k'(x)=-\\cos x-2$.",
+        "$k(x)=-\\sin x-2x+C$, and $k(0)=0$ gives $C=0$: $k(x)=-\\sin x-2x$."
+      ],
+      "brief": "$N=-k+x^2e^y-2x$; $M_y=N_x\\Rightarrow k'=-\\cos x-2$, so $k=-\\sin x-2x$."
+    },
+    {
+      "sec": "1.6",
+      "q": "A general solution of the exact differential equation \\[ \\left(y^2+3x^2-2xy^3\\right)dx-\\left(1-2xy+3x^2y^2\\right)dy=0 \\] is",
+      "opts": [
+        "$y-xy^2+x^2y^3-x^3=c$",
+        "$y+xy^2+x^2y^3-x^3=c$",
+        "$y-xy^2-x^2y^3-x^3=c$",
+        "$y-xy^2+x^2y^3+x^3=c$",
+        "$y-2xy^2+x^2y^3+x^3=c$"
+      ],
+      "ans": 0,
+      "hints": [
+        "The equation is exact, so look for a potential function $F(x,y)$ with $F_x=M$ and $F_y=N$.",
+        "Take the minus sign into $N$, then integrate $M$ with respect to $x$ to start building $F$.",
+        "If $M_y=N_x$, then $F=\\int M\\,dx+g(y)$ with $F_y=N$, and the solution is $F(x,y)=C$; multiplying $F=C$ by a nonzero constant gives the same family."
+      ],
+      "steps": [
+        "$M=y^2+3x^2-2xy^3$ and $N=-1+2xy-3x^2y^2$; $M_y=2y-6xy^2=N_x$.",
+        "$F=\\int M\\,dx=xy^2+x^3-x^2y^3+g(y)$.",
+        "$F_y=2xy-3x^2y^2+g'(y)=N$, so $g'(y)=-1$ and $g(y)=-y$.",
+        "$xy^2+x^3-x^2y^3-y=C$; multiply by $-1$: $y-xy^2+x^2y^3-x^3=c$."
+      ],
+      "brief": "$F=xy^2+x^3-x^2y^3-y$ ($g'=-1$); times $-1$: $y-xy^2+x^2y^3-x^3=c$."
+    },
+    {
+      "sec": "1.4",
+      "q": "The solution of the initial-value problem \\[ \\left(1+x\\cos^2 y+x+\\cos^2 y\\right)dx-x\\sin y\\,dy=0, \\quad y(1)=0 \\] is",
+      "opts": [
+        "$\\ln|x|+x+\\tan^{-1}(\\cos y)=1+\\dfrac{\\pi}{4}$",
+        "$\\ln|x|+2x+\\tan^{-1}(\\cos y)=1+\\dfrac{\\pi}{4}$",
+        "$\\ln|x|+3x+\\tan^{-1}(\\cos y)=1+\\dfrac{\\pi}{3}$",
+        "$\\ln|x|+4x+\\tan^{-1}(\\cos y)=1+\\dfrac{\\pi}{4}$",
+        "$\\ln|x|+5x+\\tan^{-1}(\\cos y)=1+\\dfrac{\\pi}{2}$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Factor the coefficient of $dx$; the equation turns out to be separable.",
+        "Group the four terms in pairs to write the $dx$ coefficient as a product of a function of $x$ and a function of $y$, then separate the variables.",
+        "For a separable equation, $\\int f(y)\\,dy=\\int g(x)\\,dx+C$; with $u=\\cos y$, $du=-\\sin y\\,dy$, and $\\int\\dfrac{du}{1+u^2}=\\tan^{-1}u$."
+      ],
+      "steps": [
+        "Factor: $1+x+\\cos^2 y\\,(1+x)=(1+x)(1+\\cos^2 y)$, so $(1+x)(1+\\cos^2 y)\\,dx=x\\sin y\\,dy$.",
+        "Separate: $\\dfrac{1+x}{x}\\,dx=\\dfrac{\\sin y}{1+\\cos^2 y}\\,dy$.",
+        "Integrate: $\\ln|x|+x=-\\tan^{-1}(\\cos y)+C$, so $\\ln|x|+x+\\tan^{-1}(\\cos y)=C$.",
+        "$y(1)=0$: $C=0+1+\\tan^{-1}(1)=1+\\dfrac{\\pi}{4}$."
+      ],
+      "brief": "$(1+x)(1+\\cos^2y)dx=x\\sin y\\,dy$: $\\ln|x|+x+\\tan^{-1}(\\cos y)=1+\\frac{\\pi}{4}$."
+    },
+    {
+      "sec": "1.4",
+      "q": "At 4:00 pm, a thermometer reading $20^\\circ\\text{C}$ is put into a freezer where the temperature is $-10^\\circ\\text{C}$. If the reading is $5^\\circ\\text{C}$ at 4:02 pm, then the reading at 4:06 pm is",
+      "opts": [
+        "$-6.25^\\circ\\text{C}$",
+        "$-4.25^\\circ\\text{C}$",
+        "$0^\\circ\\text{C}$",
+        "$-8.25^\\circ\\text{C}$",
+        "$-7.25^\\circ\\text{C}$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Newton's law of cooling: the difference between the reading and the freezer temperature decays exponentially.",
+        "Measure $t$ in minutes from 4:00 pm, write the cooling solution, and use the 4:02 reading to find the decay factor.",
+        "Newton's law gives $T(t)=A+(T_0-A)e^{-kt}$, and $e^{-kt}=\\left(e^{-kt_1}\\right)^{t/t_1}$ for any fixed time $t_1$."
+      ],
+      "steps": [
+        "$T(t)=-10+(20-(-10))e^{-kt}=-10+30e^{-kt}$.",
+        "$T(2)=5$: $30e^{-2k}=15$, so $e^{-2k}=\\dfrac12$.",
+        "At 4:06 pm, $t=6$: $e^{-6k}=\\left(e^{-2k}\\right)^3=\\dfrac18$.",
+        "$T(6)=-10+\\dfrac{30}{8}=-10+3.75=-6.25^\\circ\\text{C}$."
+      ],
+      "brief": "$T=-10+30e^{-kt}$, $e^{-2k}=\\frac12$: $T(6)=-10+\\frac{30}{8}=-6.25^\\circ\\text{C}$."
+    },
+    {
+      "sec": "1.5",
+      "q": "The general solution of the linear differential equation \\[ (x^2+1)\\frac{dy}{dx}+3x^3y=6x\\,e^{-\\frac32x^2} \\] is",
+      "opts": [
+        "$y(x)=\\left[-2+c(x^2+1)^{\\frac32}\\right]e^{-\\frac32x^2}$",
+        "$y(x)=\\left[-3+c(x^2+1)^{\\frac32}\\right]e^{-\\frac32x^2}$",
+        "$y(x)=\\left[-4+c(x^2+1)^{\\frac32}\\right]e^{-\\frac32x^2}$",
+        "$y(x)=\\left[-6+c(x^2+1)^{\\frac32}\\right]e^{-\\frac32x^2}$",
+        "$y(x)=\\left[1+c(x^2+1)^{\\frac32}\\right]e^{-\\frac32x^2}$"
+      ],
+      "ans": 0,
+      "hints": [
+        "This is a first-order linear equation in $y$.",
+        "Divide by $x^2+1$ to get the form $y'+P(x)y=Q(x)$; to integrate $P$, first divide the polynomial in the numerator by $x^2+1$.",
+        "$\\rho=e^{\\int P\\,dx}$ and $(\\rho y)'=\\rho Q$; also $\\int x(x^2+1)^n\\,dx=\\dfrac{(x^2+1)^{n+1}}{2(n+1)}$ for $n\\neq-1$."
+      ],
+      "steps": [
+        "Standard form: $y'+\\dfrac{3x^3}{x^2+1}y=\\dfrac{6x\\,e^{-\\frac32x^2}}{x^2+1}$, and $\\dfrac{3x^3}{x^2+1}=3x-\\dfrac{3x}{x^2+1}$.",
+        "$\\int P\\,dx=\\dfrac32x^2-\\dfrac32\\ln(x^2+1)$, so $\\rho=e^{\\frac32x^2}(x^2+1)^{-\\frac32}$.",
+        "$(\\rho y)'=\\rho Q=6x(x^2+1)^{-\\frac52}$, so $\\rho y=-2(x^2+1)^{-\\frac32}+c$.",
+        "Divide by $\\rho$: $y=\\left[-2+c(x^2+1)^{\\frac32}\\right]e^{-\\frac32x^2}$."
+      ],
+      "brief": "$\\rho=e^{\\frac32x^2}(x^2+1)^{-\\frac32}$, $\\rho y=-2(x^2+1)^{-\\frac32}+c$."
+    },
+    {
+      "sec": "1.6",
+      "q": "By using a suitable substitution, we can transform the differential equation \\[ \\left(2y\\cos^2 x-2\\sqrt{y}\\right)dx+x\\cos^2 x\\,dy=0 \\] into the linear differential equation",
+      "opts": [
+        "$v'+\\dfrac{1}{x}v=\\dfrac{1}{x}\\sec^2 x$",
+        "$v'-\\dfrac{1}{x}v=\\dfrac{1}{x}\\sec^2 x$",
+        "$v'+\\dfrac{2}{x}v=\\dfrac{1}{x}\\sec^2 x$",
+        "$v'-\\dfrac{2}{x}v=\\dfrac{1}{x}\\sec^2 x$",
+        "$v'+\\dfrac{2}{x}v=\\dfrac{1}{x}\\cos^2 x$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Besides the linear terms there is a $\\sqrt{y}$ term, so this is a Bernoulli equation.",
+        "Solve for $y'$, divide by the coefficient of $y'$ to reach $y'+P(x)y=Q(x)y^n$, then substitute $v=y^{1-n}$.",
+        "For $y'+Py=Qy^n$, the substitution $v=y^{1-n}$ gives $v'=(1-n)y^{-n}y'$, and the equation becomes $v'+(1-n)Pv=(1-n)Q$."
+      ],
+      "steps": [
+        "Divide by $x\\cos^2 x$: $y'+\\dfrac{2}{x}y=\\dfrac{2}{x}\\sec^2 x\\;y^{1/2}$, so $n=\\dfrac12$.",
+        "Let $v=y^{1-n}=y^{1/2}$, so $v'=\\dfrac12y^{-1/2}y'$.",
+        "Multiply the equation by $\\dfrac12y^{-1/2}$: $v'+\\dfrac1x v=\\dfrac1x\\sec^2 x$."
+      ],
+      "brief": "Bernoulli $n=\\frac12$, $v=\\sqrt y$: $v'+\\frac1x v=\\frac1x\\sec^2 x$."
+    },
+    {
+      "sec": "1.6",
+      "q": "The general solution of the differential equation \\[ \\left(2xy+3y^2\\right)dx-\\left(2xy+x^2\\right)dy=0 \\] is given by",
+      "opts": [
+        "$y^2+xy=cx^3$",
+        "$y^3+xy=cx^2$",
+        "$y^2+2xy=cx^3$",
+        "$y^2-xy=cx^2$",
+        "$y^2+xy=cx^4$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Every term has the same total degree in $x$ and $y$, so the equation is homogeneous.",
+        "Solve for $y'$, divide the numerator and denominator by $x^2$ to write $y'$ in terms of $y/x$, then substitute $v=y/x$.",
+        "With $v=\\dfrac yx$: $y=vx$ and $y'=v+xv'$, and the new equation is separable; also $\\int\\dfrac{f'(v)}{f(v)}\\,dv=\\ln|f(v)|$."
+      ],
+      "steps": [
+        "$y'=\\dfrac{2xy+3y^2}{2xy+x^2}=\\dfrac{2v+3v^2}{2v+1}$ with $v=\\dfrac yx$.",
+        "$v+xv'=\\dfrac{2v+3v^2}{2v+1}$, so $xv'=\\dfrac{v^2+v}{2v+1}$.",
+        "Separate: $\\dfrac{2v+1}{v^2+v}\\,dv=\\dfrac{dx}{x}$, so $\\ln|v^2+v|=\\ln|x|+C$ and $v^2+v=cx$.",
+        "$\\dfrac{y^2}{x^2}+\\dfrac yx=cx$; multiply by $x^2$: $y^2+xy=cx^3$."
+      ],
+      "brief": "Homogeneous, $v=y/x$: $xv'=\\frac{v^2+v}{2v+1}$, $v^2+v=cx$, so $y^2+xy=cx^3$."
+    },
+    {
+      "sec": "1.6",
+      "q": "The general solution of the differential equation $x^2y''+3xy'=2$ is given by (Note: $A$ and $B$ are constants, and $x>0$)",
+      "opts": [
+        "$y(x)=\\ln x+\\dfrac{A}{x^2}+B$",
+        "$y(x)=2\\ln x+\\dfrac{A}{x^2}+B$",
+        "$y(x)=\\ln x+\\dfrac{A}{x^3}+B$",
+        "$y(x)=2\\ln x+\\dfrac{A}{x^3}+B$",
+        "$y(x)=\\ln x+\\dfrac{A}{x^2}+Bx$"
+      ],
+      "ans": 0,
+      "hints": [
+        "The dependent variable $y$ itself does not appear, so this is a reducible second-order equation with $y$ missing.",
+        "Set $p=y'$ so that $y''=p'$; this gives a first-order linear equation in $p$.",
+        "With $y$ missing, $p=y'$ and $y''=\\dfrac{dp}{dx}$; solve $p'+P(x)p=Q(x)$ with $\\rho=e^{\\int P\\,dx}$ and $(\\rho p)'=\\rho Q$, then integrate $p$ to get $y$."
+      ],
+      "steps": [
+        "With $p=y'$: $x^2p'+3xp=2$, so $p'+\\dfrac3x p=\\dfrac{2}{x^2}$.",
+        "$\\rho=e^{\\int 3/x\\,dx}=x^3$: $\\left(x^3p\\right)'=2x$, so $x^3p=x^2+C$.",
+        "$p=y'=\\dfrac1x+\\dfrac{C}{x^3}$.",
+        "Integrate: $y=\\ln x-\\dfrac{C}{2x^2}+B=\\ln x+\\dfrac{A}{x^2}+B$ with $A=-\\dfrac C2$."
+      ],
+      "brief": "$p=y'$: $(x^3p)'=2x$, $p=\\frac1x+\\frac{C}{x^3}$, so $y=\\ln x+\\frac{A}{x^2}+B$."
+    },
+    {
+      "sec": "1.6",
+      "q": "By making a suitable substitution, the differential equation $\\dfrac{dy}{dx}=1+e^{y-x+5}$ can be transformed into a separable differential equation",
+      "opts": [
+        "$e^{-v}\\,dv=dx$",
+        "$e^{v}\\,dv=dx$",
+        "$e^{-v}\\,dv=2\\,dx$",
+        "$e^{v}\\,dv=2\\,dx$",
+        "$e^{-v}\\,dv=x\\,dx$"
+      ],
+      "ans": 0,
+      "hints": [
+        "The right side depends on $x$ and $y$ only through one linear expression, so use a substitution $v=ax+by+c$.",
+        "Let $v$ be the exponent and differentiate it with respect to $x$ to express $y'$ in terms of $v'$.",
+        "With $v=ax+by+c$, $v'=a+by'$; the equation becomes $v'=f(v)$, which separates as $\\dfrac{dv}{f(v)}=dx$."
+      ],
+      "steps": [
+        "Let $v=y-x+5$, so $v'=y'-1$.",
+        "Then $v'=\\left(1+e^{v}\\right)-1=e^{v}$.",
+        "Separate: $e^{-v}\\,dv=dx$."
+      ],
+      "brief": "$v=y-x+5$: $v'=y'-1=e^v$, so $e^{-v}\\,dv=dx$."
+    },
+    {
+      "sec": "1.1",
+      "q": "Let $y=x^m$ be a solution of the differential equation $xy^{(4)}+6y'''=0$, then the sum of all values of $m$ is equal to",
+      "opts": [
+        "$0$",
+        "$1$",
+        "$2$",
+        "$-1$",
+        "$3$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Substitute the power function $y=x^m$ into the equation to get a polynomial equation in $m$.",
+        "Compute $y'''$ and $y^{(4)}$ for $y=x^m$, substitute, and factor out the common power of $x$.",
+        "For $y=x^m$, $y^{(n)}=m(m-1)\\cdots(m-n+1)\\,x^{m-n}$; $x^m$ is a solution exactly when the resulting polynomial in $m$ is zero."
+      ],
+      "steps": [
+        "$y'''=m(m-1)(m-2)x^{m-3}$ and $y^{(4)}=m(m-1)(m-2)(m-3)x^{m-4}$.",
+        "$xy^{(4)}+6y'''=m(m-1)(m-2)\\left[(m-3)+6\\right]x^{m-3}=m(m-1)(m-2)(m+3)x^{m-3}$.",
+        "Setting it to zero gives $m=0,\\,1,\\,2,\\,-3$.",
+        "Sum: $0+1+2-3=0$."
+      ],
+      "brief": "$m(m-1)(m-2)(m+3)=0$: $m=0,1,2,-3$, sum $=0$."
+    },
+    {
+      "sec": "1.2",
+      "q": "A particle is moving in a straight line with acceleration $a(t)=t^2\\ln t$ and an initial velocity $v(1)=0$. The velocity at any time $t>1$ is given by",
+      "opts": [
+        "$\\dfrac{t^3}{3}\\ln t-\\dfrac{t^3}{9}+\\dfrac19$",
+        "$\\dfrac{t^3}{3}\\ln t-\\dfrac{t^3}{8}+\\dfrac18$",
+        "$\\dfrac{t^4}{4}\\ln t-\\dfrac{t^4}{8}+\\dfrac18$",
+        "$\\dfrac{t^4}{4}\\ln t-\\dfrac{t^4}{9}+\\dfrac19$",
+        "$\\dfrac{t^2}{2}\\ln t-\\dfrac{t^2}{8}+\\dfrac18$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Velocity is an antiderivative of acceleration.",
+        "Integrate $a(t)$ by parts, taking the logarithm as the part to differentiate, then use $v(1)=0$ to find the constant.",
+        "$v(t)=\\int a(t)\\,dt+C$; integration by parts is $\\int u\\,dv=uv-\\int v\\,du$, and $\\ln 1=0$."
+      ],
+      "steps": [
+        "Take $u=\\ln t$, $dv=t^2\\,dt$, so $du=\\dfrac{dt}{t}$ and $v=\\dfrac{t^3}{3}$.",
+        "$\\int t^2\\ln t\\,dt=\\dfrac{t^3}{3}\\ln t-\\int\\dfrac{t^2}{3}\\,dt=\\dfrac{t^3}{3}\\ln t-\\dfrac{t^3}{9}+C$.",
+        "$v(1)=0-\\dfrac19+C=0$, so $C=\\dfrac19$.",
+        "$v(t)=\\dfrac{t^3}{3}\\ln t-\\dfrac{t^3}{9}+\\dfrac19$."
+      ],
+      "brief": "By parts: $v=\\frac{t^3}{3}\\ln t-\\frac{t^3}{9}+C$, $v(1)=0\\Rightarrow C=\\frac19$."
+    },
+    {
+      "sec": "4.2",
+      "q": "Which one of the following subsets is not a subspace of $\\mathbb{R}^3$?",
+      "opts": [
+        "The set of all vectors $(x_1,x_2,x_3)$ such that $x_3=1$",
+        "The set of all vectors $(x_1,x_2,x_3)$ such that $x_3=0$",
+        "The set of all vectors $(x_1,x_2,x_3)$ such that $x_1+x_2=0$",
+        "The set of all vectors $(x_1,x_2,x_3)$ such that $x_3=x_1+x_2$",
+        "The set of all vectors $(x_1,x_2,x_3)$ such that $x_1+x_2+x_3=0$"
+      ],
+      "ans": 0,
+      "hints": [
+        "A subset is a subspace when it contains $\\mathbf{0}$ and is closed under addition and scalar multiplication.",
+        "Check first which sets contain the zero vector, and note which conditions are homogeneous linear equations.",
+        "Every subspace contains $\\mathbf{0}$, and the solution set of a homogeneous linear system $A\\mathbf{x}=\\mathbf{0}$ is always a subspace of $\\mathbb{R}^n$."
+      ],
+      "steps": [
+        "$x_3=0$, $x_1+x_2=0$, $x_3=x_1+x_2$ (that is, $x_1+x_2-x_3=0$) and $x_1+x_2+x_3=0$ are homogeneous linear equations, so each solution set is a subspace.",
+        "For $x_3=1$: the zero vector has $x_3=0\\neq1$, so $\\mathbf{0}$ is not in the set.",
+        "Hence the set with $x_3=1$ is not a subspace."
+      ],
+      "brief": "$x_3=1$ does not contain $\\mathbf{0}$; the others are homogeneous linear equations."
+    },
+    {
+      "sec": "4.1",
+      "q": "Let $\\mathbf{v}_1=(5,3,4)$, $\\mathbf{v}_2=(3,2,5)$ and $\\mathbf{w}=(1,0,-7)$ be three vectors in $\\mathbb{R}^3$. If $\\mathbf{w}=a\\mathbf{v}_1+b\\mathbf{v}_2$, then $ab=$",
+      "opts": [
+        "$-6$",
+        "$6$",
+        "$0$",
+        "$-8$",
+        "$10$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Writing $\\mathbf{w}$ as a linear combination of $\\mathbf{v}_1$ and $\\mathbf{v}_2$ is a linear system in $a$ and $b$.",
+        "Compare components to get three equations in $a$ and $b$; solve two of them and check the third.",
+        "$\\mathbf{w}=a\\mathbf{v}_1+b\\mathbf{v}_2$ holds exactly when each component of $\\mathbf{w}$ equals $a$ times the matching component of $\\mathbf{v}_1$ plus $b$ times that of $\\mathbf{v}_2$; solve by elimination."
+      ],
+      "steps": [
+        "Components: $5a+3b=1$, $3a+2b=0$, $4a+5b=-7$.",
+        "$2(5a+3b)-3(3a+2b)=2-0$ gives $a=2$; then $3(2)+2b=0$ gives $b=-3$.",
+        "Check: $4(2)+5(-3)=-7$, which holds.",
+        "$ab=2(-3)=-6$."
+      ],
+      "brief": "$5a+3b=1$, $3a+2b=0$: $a=2$, $b=-3$ (third checks), so $ab=-6$."
+    },
+    {
+      "sec": "4.2",
+      "q": "If the solution space of the system \\[\\begin{aligned} x_1-4x_2-3x_3-7x_4&=0\\\\ 2x_1-x_2+x_3+7x_4&=0\\\\ x_1+2x_2+3x_3+11x_4&=0 \\end{aligned}\\] is the set of all linear combinations of the form $s\\mathbf{u}+t\\mathbf{v}$ where $s,t$ are real numbers, then",
+      "opts": [
+        "$\\mathbf{u}=(-5,-3,0,1)$ and $\\mathbf{v}=(-1,-1,1,0)$",
+        "$\\mathbf{u}=(5,-3,0,1)$ and $\\mathbf{v}=(-1,-1,1,0)$",
+        "$\\mathbf{u}=(-5,-3,0,-1)$ and $\\mathbf{v}=(-1,-1,1,0)$",
+        "$\\mathbf{u}=(-5,-3,0,1)$ and $\\mathbf{v}=(1,-1,1,0)$",
+        "$\\mathbf{u}=(-5,-3,0,-1)$ and $\\mathbf{v}=(1,1,-1,0)$"
+      ],
+      "ans": 0,
+      "hints": [
+        "The solution space of a homogeneous system is found by row reducing its coefficient matrix.",
+        "Reduce the coefficient matrix to reduced echelon form, identify the free variables, and give each one a parameter.",
+        "In reduced echelon form, solve for the leading variables in terms of the free variables; the coefficient vectors of the free parameters span the solution space."
+      ],
+      "steps": [
+        "$R_2-2R_1$ and $R_3-R_1$ give rows $(0,7,7,21)$ and $(0,6,6,18)$, both multiples of $(0,1,1,3)$.",
+        "Reduced echelon form: $x_1+x_3+5x_4=0$ and $x_2+x_3+3x_4=0$, with $x_3$, $x_4$ free.",
+        "Let $x_4=s$, $x_3=t$: $x_1=-5s-t$ and $x_2=-3s-t$.",
+        "$\\mathbf{x}=s(-5,-3,0,1)+t(-1,-1,1,0)$, so $\\mathbf{u}=(-5,-3,0,1)$ and $\\mathbf{v}=(-1,-1,1,0)$."
+      ],
+      "brief": "RREF: $x_1=-x_3-5x_4$, $x_2=-x_3-3x_4$: $\\mathbf{u}=(-5,-3,0,1)$, $\\mathbf{v}=(-1,-1,1,0)$."
+    },
+    {
+      "sec": "4.1",
+      "q": "If the vectors $\\mathbf{u}=(5,-4,3)$, $\\mathbf{v}=(-2,0,3)$ and $\\mathbf{w}=(a,-8,1)$ are linearly dependent, then $3a=$",
+      "opts": [
+        "$40$",
+        "$-40$",
+        "$42$",
+        "$36$",
+        "$-42$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Three vectors in $\\mathbb{R}^3$ are dependent exactly when the matrix built from them is singular.",
+        "Put $\\mathbf{u}$, $\\mathbf{v}$, $\\mathbf{w}$ as the rows of a $3\\times3$ matrix and compute its determinant as a function of $a$, expanding along a row with a zero.",
+        "$n$ vectors in $\\mathbb{R}^n$ are linearly dependent if and only if the matrix having them as rows (or columns) has determinant $0$."
+      ],
+      "steps": [
+        "Take $\\det\\begin{bmatrix}5&-4&3\\\\-2&0&3\\\\a&-8&1\\end{bmatrix}$ and expand along the second row.",
+        "$=2\\left((-4)(1)-(3)(-8)\\right)+0-3\\left((5)(-8)-(-4)a\\right)=2(20)-3(-40+4a)$.",
+        "$=40+120-12a=160-12a$.",
+        "Dependent when $160-12a=0$, so $a=\\dfrac{40}{3}$ and $3a=40$."
+      ],
+      "brief": "$\\det=160-12a=0\\Rightarrow a=\\frac{40}{3}$, so $3a=40$."
+    }
+  ]
+}

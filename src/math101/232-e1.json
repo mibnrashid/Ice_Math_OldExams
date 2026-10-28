@@ -1,0 +1,428 @@
+{
+  "course": "math101",
+  "term": "232",
+  "kind": "e1",
+  "date": "",
+  "minutes": 90,
+  "source": "math101-232-e1.pdf",
+  "note": "Date and exam length are not printed on the scanned master (cover not included in the scan). Minutes set to the usual 90. Key is the printed master key (all A) and matches my own solutions. Q2 mixes topics (2.4/2.5/3.1); labelled 2.5.",
+  "qs": [
+    {
+      "sec": "2.1",
+      "q": "If the points $P_1=(1,1)$, $P_2=(3,y_1)$ and $P_3=(5,y_2)$ lie on the graph of $y=f(x)$ and the slope of the secant line through $P_1$ and $P_2$ is $2$ and the slope of the secant line through $P_1$ and $P_3$ is $-1$, then $f(3)+f(5)=$",
+      "opts": [
+        "$2$",
+        "$1$",
+        "$-1$",
+        "$-2$",
+        "$4$"
+      ],
+      "ans": 0,
+      "hints": [
+        "The slope of a secant line is a difference quotient.",
+        "Write the slope condition for each secant line and solve for the unknown $y$-value.",
+        "The slope of the secant line through $(x_1,y_1)$ and $(x_2,y_2)$ is $\\dfrac{y_2-y_1}{x_2-x_1}$."
+      ],
+      "steps": [
+        "$\\dfrac{f(3)-1}{3-1}=2$, so $f(3)=5$.",
+        "$\\dfrac{f(5)-1}{5-1}=-1$, so $f(5)=-3$.",
+        "$f(3)+f(5)=5-3=2$."
+      ],
+      "brief": "$f(3)=1+2\\cdot2=5$, $f(5)=1-4=-3$, sum $2$."
+    },
+    {
+      "sec": "2.5",
+      "q": "Which one of the following statements is always true?",
+      "opts": [
+        "If $\\lim_{x\\to a^-}f(x)=-\\infty$, then $x=a$ is a vertical asymptote.",
+        "If $\\lim_{x\\to a^+}f(x)=f(a)=\\lim_{x\\to a^-}f(x)$, then $f$ is differentiable at $a$.",
+        "If $\\lim_{x\\to a}f(x)$ and $\\lim_{x\\to a}g(x)$ do not exist, then $\\lim_{x\\to a}f(x)g(x)$ does not exist.",
+        "$\\lim_{x\\to0}\\frac{\\cos x-1}{x}=-1$.",
+        "$f(x)=\\left\\lfloor\\dfrac12-x\\right\\rfloor$ is continuous on $\\left[-\\dfrac12,\\dfrac12\\right)$."
+      ],
+      "ans": 0,
+      "hints": [
+        "Test each statement against the definitions, and look for counterexamples to the false ones.",
+        "For each statement, try a standard example such as $|x|$, a function with opposite signs on either side of $a$, or a greatest integer function.",
+        "A vertical asymptote at $x=a$ occurs when at least one one-sided limit at $a$ is $\\pm\\infty$; continuity at $a$ means $\\lim_{x\\to a}f(x)=f(a)$."
+      ],
+      "steps": [
+        "A one-sided limit equal to $-\\infty$ at $a$ is exactly the definition of a vertical asymptote at $x=a$, so that statement is true.",
+        "Continuity does not give differentiability: $f(x)=|x|$ at $0$.",
+        "$f=\\operatorname{sgn}x$ and $g=-\\operatorname{sgn}x$ have no limit at $0$, but $fg=-1$ has limit $-1$.",
+        "$\\lim_{x\\to0}\\frac{\\cos x-1}{x}=0$, not $-1$.",
+        "At $x=-\\frac12$, $f=1$ but $f(x)=0$ just to the right, so $f$ is not continuous there."
+      ],
+      "brief": "Only the vertical-asymptote statement is always true; others have counterexamples."
+    },
+    {
+      "sec": "2.3",
+      "q": "If $f(x)=\\begin{cases}x^2+3 & x\\neq1\\\\ 2 & x=1\\end{cases}$ then $f(1)-\\lim_{x\\to1}f(x)=$",
+      "opts": [
+        "$-2$",
+        "$2$",
+        "$0$",
+        "$3$",
+        "does not exist"
+      ],
+      "ans": 0,
+      "hints": [
+        "A limit ignores the value of the function at the point itself.",
+        "Find $f(1)$ from the second rule and the limit from the first rule.",
+        "$\\lim_{x\\to a}f(x)$ depends only on values of $f$ near $a$, not at $a$; polynomials satisfy $\\lim_{x\\to a}p(x)=p(a)$."
+      ],
+      "steps": [
+        "$f(1)=2$.",
+        "Near $x=1$ (with $x\\neq1$), $f(x)=x^2+3$, so $\\lim_{x\\to1}f(x)=4$.",
+        "$f(1)-\\lim_{x\\to1}f(x)=2-4=-2$."
+      ],
+      "brief": "$f(1)=2$, limit $=1^2+3=4$, difference $-2$."
+    },
+    {
+      "sec": "3.1",
+      "q": "If $y=x+4$ is the tangent line to $f(x)=k\\sqrt{x}$ at $(a,f(a))$, then $a+k=$",
+      "opts": [
+        "$8$",
+        "$4$",
+        "$2$",
+        "$6$",
+        "$15$"
+      ],
+      "ans": 0,
+      "hints": [
+        "The tangent line touches the curve at $x=a$ and has the same slope there.",
+        "Write two equations: the line and curve have the same height at $x=a$, and $f'(a)$ equals the slope of the line.",
+        "The slope of the tangent line to $y=f(x)$ at $x=a$ is $f'(a)$, and $\\dfrac{d}{dx}\\sqrt{x}=\\dfrac{1}{2\\sqrt{x}}$."
+      ],
+      "steps": [
+        "$f'(x)=\\dfrac{k}{2\\sqrt{x}}$; slope $1$ gives $k=2\\sqrt{a}$.",
+        "Equal heights: $k\\sqrt{a}=a+4$, so $2a=a+4$ and $a=4$.",
+        "Then $k=2\\sqrt4=4$, so $a+k=8$."
+      ],
+      "brief": "$k=2\\sqrt a$, $2a=a+4$, $a=4$, $k=4$, so $a+k=8$."
+    },
+    {
+      "sec": "3.2",
+      "q": "If $f(x)=\\dfrac{x^3-3x^2-4}{x^2}$ then $f'(1)=$",
+      "opts": [
+        "$9$",
+        "$-7$",
+        "$5$",
+        "$-5$",
+        "$6$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Simplify before differentiating.",
+        "Divide each term of the numerator by $x^2$ and use the power rule.",
+        "Power rule: $\\dfrac{d}{dx}x^n=nx^{n-1}$ for any real $n$."
+      ],
+      "steps": [
+        "$f(x)=x-3-4x^{-2}$.",
+        "$f'(x)=1+8x^{-3}$.",
+        "$f'(1)=1+8=9$."
+      ],
+      "brief": "$f=x-3-4x^{-2}$, $f'=1+8x^{-3}$, $f'(1)=9$."
+    },
+    {
+      "sec": "2.4",
+      "q": "Let $f(x)=\\begin{cases}x^3 & x\\le2\\\\ ax^2 & x>2\\end{cases}$ The value of $a$ that makes $f$ continuous is",
+      "opts": [
+        "$2$",
+        "$-2$",
+        "$1$",
+        "$3$",
+        "$-3$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Each piece is continuous by itself, so only the break point $x=2$ matters.",
+        "Compute the left and right limits at $x=2$ and set them equal to $f(2)$.",
+        "$f$ is continuous at $c$ iff $\\lim_{x\\to c^-}f(x)=\\lim_{x\\to c^+}f(x)=f(c)$."
+      ],
+      "steps": [
+        "Left side: $\\lim_{x\\to2^-}x^3=8=f(2)$.",
+        "Right side: $\\lim_{x\\to2^+}ax^2=4a$.",
+        "Set $4a=8$, so $a=2$."
+      ],
+      "brief": "$2^3=a\\cdot2^2$, so $a=2$."
+    },
+    {
+      "sec": "2.4",
+      "q": "Let $f(x)=\\begin{cases}\\dfrac12x+1, & x\\le2\\\\ 3-x, & x>2\\end{cases}$ then",
+      "opts": [
+        "$f$ has a non-removable discontinuity at $x=2$.",
+        "$f$ has a removable discontinuity at $x=2$.",
+        "$f$ is continuous at $x=2$.",
+        "$\\lim_{x\\to2}f(x)$ exists.",
+        "$\\lim_{x\\to2^+}f(x)=f(2)$."
+      ],
+      "ans": 0,
+      "hints": [
+        "Compare the one-sided limits at $x=2$ with the value $f(2)$.",
+        "Compute $f(2)$, the left-hand limit and the right-hand limit.",
+        "A discontinuity is removable only if $\\lim_{x\\to c}f(x)$ exists; if the one-sided limits differ, the limit does not exist and the discontinuity is non-removable (a jump)."
+      ],
+      "steps": [
+        "$f(2)=\\frac12(2)+1=2$ and $\\lim_{x\\to2^-}f(x)=2$.",
+        "$\\lim_{x\\to2^+}f(x)=3-2=1$.",
+        "The one-sided limits differ, so the limit does not exist and the jump discontinuity is non-removable."
+      ],
+      "brief": "Left limit $2$, right limit $1$: jump, non-removable."
+    },
+    {
+      "sec": "2.4",
+      "q": "$\\lim_{x\\to2^-}\\frac{|x-2|}{x-2}+\\lim_{x\\to2^+}\\frac{x-2}{|x-2|}=$",
+      "opts": [
+        "$0$",
+        "$2$",
+        "$-2$",
+        "does not exist",
+        "$1$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Handle each one-sided limit separately by removing the absolute value.",
+        "Decide the sign of $x-2$ on each side of $2$.",
+        "$|u|=u$ if $u\\ge0$ and $|u|=-u$ if $u<0$."
+      ],
+      "steps": [
+        "For $x\\to2^-$, $x-2<0$, so $|x-2|=-(x-2)$ and the first limit is $-1$.",
+        "For $x\\to2^+$, $x-2>0$, so $|x-2|=x-2$ and the second limit is $1$.",
+        "Sum: $-1+1=0$."
+      ],
+      "brief": "First limit $-1$, second $+1$, sum $0$."
+    },
+    {
+      "sec": "2.3",
+      "q": "$\\lim_{x\\to-2}\\frac{x^3+8}{x^4-16}=$",
+      "opts": [
+        "$-\\dfrac38$",
+        "$\\dfrac12$",
+        "$-\\dfrac12$",
+        "$0$",
+        "does not exist"
+      ],
+      "ans": 0,
+      "hints": [
+        "Direct substitution gives $0/0$, so factor.",
+        "Factor the numerator as a sum of cubes and the denominator as a difference of squares twice, then cancel.",
+        "$a^3+b^3=(a+b)(a^2-ab+b^2)$ and $a^2-b^2=(a-b)(a+b)$."
+      ],
+      "steps": [
+        "$x^3+8=(x+2)(x^2-2x+4)$.",
+        "$x^4-16=(x-2)(x+2)(x^2+4)$.",
+        "Cancel $x+2$: $\\dfrac{x^2-2x+4}{(x-2)(x^2+4)}$.",
+        "At $x=-2$: $\\dfrac{12}{(-4)(8)}=-\\dfrac38$."
+      ],
+      "brief": "Cancel $x+2$: $\\frac{x^2-2x+4}{(x-2)(x^2+4)}\\to\\frac{12}{-32}=-\\frac38$."
+    },
+    {
+      "sec": "2.3",
+      "q": "$\\lim_{x\\to0}\\frac{x-\\cos x+1}{2x+\\sin x}=$",
+      "opts": [
+        "$\\dfrac13$",
+        "$\\dfrac23$",
+        "$1$",
+        "$-\\dfrac12$",
+        "does not exist"
+      ],
+      "ans": 0,
+      "hints": [
+        "This is a $0/0$ form involving the special trigonometric limits.",
+        "Divide numerator and denominator by $x$ and regroup $1-\\cos x$ with the $x$ term.",
+        "$\\lim_{x\\to0}\\frac{\\sin x}{x}=1$ and $\\lim_{x\\to0}\\frac{1-\\cos x}{x}=0$."
+      ],
+      "steps": [
+        "Write the numerator as $x+(1-\\cos x)$.",
+        "Divide by $x$: $\\dfrac{1+\\frac{1-\\cos x}{x}}{2+\\frac{\\sin x}{x}}$.",
+        "Limit: $\\dfrac{1+0}{2+1}=\\dfrac13$."
+      ],
+      "brief": "Divide by $x$: $\\frac{1+0}{2+1}=\\frac13$."
+    },
+    {
+      "sec": "2.3",
+      "q": "$\\lim_{x\\to64}\\frac{16-x^{1/3}}{16-\\sqrt{x}}=$",
+      "opts": [
+        "$\\dfrac32$",
+        "$0$",
+        "does not exist",
+        "$\\dfrac12$",
+        "$-\\infty$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Check whether the denominator vanishes at the point before doing anything clever.",
+        "Substitute $x=64$ directly.",
+        "If the denominator is nonzero at $c$ and both functions are continuous there, $\\lim_{x\\to c}\\frac{f(x)}{g(x)}=\\frac{f(c)}{g(c)}$."
+      ],
+      "steps": [
+        "$x^{1/3}\\to\\sqrt[3]{64}=4$, so the numerator tends to $16-4=12$.",
+        "$\\sqrt x\\to8$, so the denominator tends to $16-8=8$.",
+        "The limit is $\\dfrac{12}{8}=\\dfrac32$."
+      ],
+      "brief": "No indeterminacy: $\\frac{16-4}{16-8}=\\frac32$."
+    },
+    {
+      "sec": "4.5",
+      "q": "$\\lim_{x\\to-\\infty}\\left(\\frac{2}{x+1}-\\frac{x+1}{2}\\right)=$",
+      "opts": [
+        "$\\infty$",
+        "$-\\infty$",
+        "$0$",
+        "$-4$",
+        "$4$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Consider the behaviour of each term as $x\\to-\\infty$.",
+        "Decide what happens to $\\frac{2}{x+1}$ and to $\\frac{x+1}{2}$ separately.",
+        "$\\lim_{x\\to\\pm\\infty}\\frac{c}{x+d}=0$, and a linear function $mx+b$ with $m\\neq0$ is unbounded."
+      ],
+      "steps": [
+        "$\\dfrac{2}{x+1}\\to0$ as $x\\to-\\infty$.",
+        "$\\dfrac{x+1}{2}\\to-\\infty$, so $-\\dfrac{x+1}{2}\\to+\\infty$.",
+        "The limit is $+\\infty$."
+      ],
+      "brief": "First term $\\to0$, $-\\frac{x+1}{2}\\to+\\infty$, so limit $\\infty$."
+    },
+    {
+      "sec": "4.5",
+      "q": "$\\lim_{x\\to-\\infty}\\frac{\\sqrt{3x^6+\\cos x}}{2x^3+\\sin x}=$",
+      "opts": [
+        "$-\\dfrac{\\sqrt3}{2}$",
+        "$+\\infty$",
+        "$-\\infty$",
+        "$-\\sqrt3$",
+        "$-\\dfrac{\\sqrt3}{3}$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Compare the highest powers, and take care with the sign of $x^3$ as $x\\to-\\infty$.",
+        "Factor $x^6$ inside the root and divide numerator and denominator by $x^3$, remembering $\\sqrt{x^6}=|x^3|$.",
+        "$\\sqrt{x^6}=|x|^3=-x^3$ for $x<0$; and $\\dfrac{\\sin x}{x^3},\\dfrac{\\cos x}{x^6}\\to0$ by the squeeze theorem."
+      ],
+      "steps": [
+        "$\\sqrt{3x^6+\\cos x}=|x^3|\\sqrt{3+\\cos x/x^6}=-x^3\\sqrt{3+\\cos x/x^6}$ for $x<0$.",
+        "Dividing by $x^3$: $\\dfrac{-\\sqrt{3+\\cos x/x^6}}{2+\\sin x/x^3}$.",
+        "Since $\\cos x/x^6\\to0$ and $\\sin x/x^3\\to0$, the limit is $-\\dfrac{\\sqrt3}{2}$."
+      ],
+      "brief": "$\\sqrt{x^6}=-x^3$ for $x<0$, so limit $=-\\frac{\\sqrt3}{2}$."
+    },
+    {
+      "sec": "2.5",
+      "q": "The number of vertical asymptotes the function $f(x)=\\dfrac{x}{\\tan x}$ has in the interval $[-\\pi,\\pi]$ is",
+      "opts": [
+        "$2$",
+        "$0$",
+        "$1$",
+        "$3$",
+        "$4$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Look for points where the function is unbounded, and examine the zeros of $\\sin x$ and of $\\cos x$ separately.",
+        "Rewrite $f(x)=\\dfrac{x\\cos x}{\\sin x}$ and check each zero of $\\sin x$ in the interval, and also the points where $\\tan x$ is undefined.",
+        "At a zero $c$ of the denominator where the numerator is nonzero, there is a vertical asymptote; if $\\lim_{x\\to c}f(x)$ is finite there is none."
+      ],
+      "steps": [
+        "$f(x)=\\dfrac{x\\cos x}{\\sin x}$; $\\sin x=0$ at $x=-\\pi,0,\\pi$ in the interval.",
+        "At $x=\\pm\\pi$ the numerator $x\\cos x=\\mp\\pi\\neq0$, so there are vertical asymptotes.",
+        "At $x=0$, $\\dfrac{x}{\\sin x}\\cos x\\to1$, so no asymptote. At $x=\\pm\\frac\\pi2$, $f\\to0$ (since $\\tan x\\to\\pm\\infty$), so no asymptote.",
+        "Total: $2$."
+      ],
+      "brief": "Asymptotes only at $x=\\pm\\pi$; none at $0$ or $\\pm\\frac\\pi2$: $2$."
+    },
+    {
+      "sec": "2.3",
+      "q": "$\\lim_{x\\to0^+}\\left(\\frac1x-\\sin\\frac1x\\right)=$",
+      "opts": [
+        "$+\\infty$",
+        "$0$",
+        "$1$",
+        "$-1$",
+        "$-\\infty$"
+      ],
+      "ans": 0,
+      "hints": [
+        "The sine term is bounded, while $\\frac1x$ is not.",
+        "Bound $\\sin\\frac1x$ between $-1$ and $1$ and build an inequality for the whole expression.",
+        "Squeeze theorem: if $g(x)\\le f(x)$ and $\\lim g=\\infty$, then $\\lim f=\\infty$; also $-1\\le\\sin u\\le1$."
+      ],
+      "steps": [
+        "$-1\\le-\\sin\\frac1x\\le1$.",
+        "Hence $\\dfrac1x-1\\le\\dfrac1x-\\sin\\dfrac1x$.",
+        "$\\dfrac1x-1\\to+\\infty$ as $x\\to0^+$, so the limit is $+\\infty$."
+      ],
+      "brief": "$\\frac1x-\\sin\\frac1x\\ge\\frac1x-1\\to\\infty$."
+    },
+    {
+      "sec": "3.1",
+      "q": "The equation of the tangent line to the curve $y=\\sqrt[3]{x-1}+2$ at the point $(1,2)$ is",
+      "opts": [
+        "$x=1$",
+        "$x=2$",
+        "$y=1$",
+        "$y=2$",
+        "$y=x$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Check the slope at $x=1$ with the limit definition of the derivative.",
+        "Form the difference quotient at $x=1$ and see what it does.",
+        "If $\\lim_{x\\to c}\\frac{f(x)-f(c)}{x-c}=\\pm\\infty$ and $f$ is continuous at $c$, the tangent line at $x=c$ is the vertical line $x=c$."
+      ],
+      "steps": [
+        "$\\dfrac{f(x)-f(1)}{x-1}=\\dfrac{\\sqrt[3]{x-1}}{x-1}=\\dfrac{1}{(x-1)^{2/3}}$.",
+        "As $x\\to1$ this tends to $+\\infty$, so the slope is infinite.",
+        "The curve is continuous at $(1,2)$, so the tangent line is vertical: $x=1$."
+      ],
+      "brief": "Difference quotient $=(x-1)^{-2/3}\\to\\infty$: vertical tangent $x=1$."
+    },
+    {
+      "sec": "3.1",
+      "q": "The slope of the tangent line to the curve $y=\\dfrac{1}{x-1}$ at the point $\\left(3,\\dfrac12\\right)$ is",
+      "opts": [
+        "$-\\dfrac14$",
+        "$\\dfrac13$",
+        "$-\\dfrac19$",
+        "$\\dfrac14$",
+        "$\\dfrac19$"
+      ],
+      "ans": 0,
+      "hints": [
+        "The slope is the derivative at $x=3$.",
+        "Use the limit definition, or the power rule on $(x-1)^{-1}$.",
+        "$f'(c)=\\lim_{x\\to c}\\frac{f(x)-f(c)}{x-c}$, or $\\dfrac{d}{dx}\\left(x-1\\right)^{-1}=-(x-1)^{-2}$."
+      ],
+      "steps": [
+        "$\\dfrac{\\frac{1}{x-1}-\\frac12}{x-3}=\\dfrac{3-x}{2(x-1)(x-3)}=\\dfrac{-1}{2(x-1)}$.",
+        "Let $x\\to3$: $\\dfrac{-1}{2\\cdot2}=-\\dfrac14$."
+      ],
+      "brief": "$f'(x)=-\\frac{1}{(x-1)^2}$, so $f'(3)=-\\frac14$."
+    },
+    {
+      "sec": "3.2",
+      "q": "The sum of all values of $x$ in $[0,2\\pi)$ at which the function $f(x)=x+\\cos x$ has a horizontal tangent line is equal to",
+      "opts": [
+        "$\\dfrac{\\pi}{2}$",
+        "$\\dfrac{3\\pi}{2}$",
+        "$\\pi$",
+        "$2\\pi$",
+        "$3\\pi$"
+      ],
+      "ans": 0,
+      "hints": [
+        "A horizontal tangent means the slope is zero.",
+        "Differentiate $f$ and solve $f'(x)=0$ on the given interval.",
+        "$\\dfrac{d}{dx}\\cos x=-\\sin x$; $\\sin x=1$ has exactly one solution in $[0,2\\pi)$."
+      ],
+      "steps": [
+        "$f'(x)=1-\\sin x$.",
+        "$f'(x)=0$ gives $\\sin x=1$.",
+        "In $[0,2\\pi)$ the only solution is $x=\\dfrac\\pi2$, so the sum is $\\dfrac\\pi2$."
+      ],
+      "brief": "$f'=1-\\sin x=0\\Rightarrow x=\\frac\\pi2$ only."
+    }
+  ]
+}

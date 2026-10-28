@@ -1,0 +1,336 @@
+{
+  "course": "math102",
+  "term": "243",
+  "kind": "e1",
+  "date": "3 July 2025",
+  "minutes": 90,
+  "source": "math102-243-e1.pdf",
+  "qs": [
+    {
+      "sec": "5.2",
+      "q": "The upper sum (in terms of $n$, the number of subintervals) for the region bounded by the graph of the function $f(x)=7x^2$ and the $x$-axis on the interval $[0,3]$ is:",
+      "opts": [
+        "$63+\\dfrac{189}{2n}+\\dfrac{63}{2n^2}$",
+        "$63-\\dfrac{189}{2n}+\\dfrac{63}{2n^2}$",
+        "$63+\\dfrac{189}{2n}-\\dfrac{63}{2n^2}$",
+        "$189+\\dfrac{63}{2n}+\\dfrac{63}{2n^2}$",
+        "$189-\\dfrac{63}{2n}-\\dfrac{63}{2n^2}$"
+      ],
+      "ans": 0,
+      "hints": [
+        "This is an upper sum with equal subintervals, so decide which endpoint gives the maximum on each piece.",
+        "Find $\\Delta x$ and the endpoints $x_i$, then decide whether $f$ is increasing or decreasing on the interval to pick the right endpoint.",
+        "$S(n)=\\sum_{i=1}^n f(x_i)\\Delta x$ with $x_i=a+i\\Delta x$, and $\\sum_{i=1}^n i^2=\\dfrac{n(n+1)(2n+1)}{6}$."
+      ],
+      "steps": [
+        "$\\Delta x=\\dfrac3n$ and $f$ is increasing on $[0,3]$, so the maximum on each piece is at the right endpoint $x_i=\\dfrac{3i}{n}$.",
+        "$S(n)=\\sum_{i=1}^n 7\\left(\\dfrac{3i}{n}\\right)^2\\dfrac3n=\\dfrac{189}{n^3}\\sum_{i=1}^n i^2$.",
+        "$=\\dfrac{189}{n^3}\\cdot\\dfrac{n(n+1)(2n+1)}{6}=\\dfrac{63}{2}\\cdot\\dfrac{2n^2+3n+1}{n^2}$.",
+        "$S(n)=63+\\dfrac{189}{2n}+\\dfrac{63}{2n^2}$."
+      ],
+      "brief": "Right endpoints, $\\Delta x=\\frac3n$: $\\frac{189}{n^3}\\cdot\\frac{n(n+1)(2n+1)}{6}=63+\\frac{189}{2n}+\\frac{63}{2n^2}$."
+    },
+    {
+      "sec": "5.2",
+      "q": "Use the midpoint and 4 rectangles to find an approximation of the area of the region bounded by the graph of the function $f(x)=16-x^2$ and the $x$-axis over the interval $[0,4]$, then the approximated area is",
+      "opts": [
+        "$43$",
+        "$45$",
+        "$47$",
+        "$49$",
+        "$41$"
+      ],
+      "ans": 0,
+      "hints": [
+        "This is the midpoint rule with equal-width rectangles.",
+        "Find the width of each rectangle, list the four midpoints, and evaluate $f$ at each.",
+        "Midpoint rule: $\\text{Area}\\approx\\Delta x\\sum f(m_i)$ with $\\Delta x=\\dfrac{b-a}{n}$ and $m_i$ the midpoint of the $i$th subinterval."
+      ],
+      "steps": [
+        "$\\Delta x=\\dfrac{4-0}{4}=1$, with subintervals $[0,1],[1,2],[2,3],[3,4]$.",
+        "Midpoints: $\\tfrac12,\\tfrac32,\\tfrac52,\\tfrac72$.",
+        "$f$ values: $16-\\tfrac14=\\tfrac{63}{4}$, $16-\\tfrac94=\\tfrac{55}{4}$, $16-\\tfrac{25}{4}=\\tfrac{39}{4}$, $16-\\tfrac{49}{4}=\\tfrac{15}{4}$.",
+        "Sum $=\\dfrac{63+55+39+15}{4}=\\dfrac{172}{4}=43$, times $\\Delta x=1$."
+      ],
+      "brief": "$\\Delta x=1$, midpoints $\\frac12,\\frac32,\\frac52,\\frac72$: $\\frac{63+55+39+15}{4}=43$."
+    },
+    {
+      "sec": "5.3",
+      "q": "$\\lim_{n\\to\\infty}\\frac{1}{n^3}\\left(1^2+2^2+3^2+\\dots+n^2\\right)=$",
+      "opts": [
+        "$\\dfrac13$",
+        "$\\dfrac14$",
+        "$\\dfrac12$",
+        "$\\dfrac15$",
+        "$\\dfrac16$"
+      ],
+      "ans": 0,
+      "hints": [
+        "A limit of a sum like this can be read either with a summation formula or as a Riemann sum.",
+        "Write the sum with sigma notation and use the formula for the sum of the first $n$ squares, then take the limit.",
+        "$\\sum_{i=1}^n i^2=\\dfrac{n(n+1)(2n+1)}{6}$; alternatively $\\lim_{n\\to\\infty}\\sum f\\!\\left(\\tfrac in\\right)\\tfrac1n=\\int_0^1 f(x)\\,dx$."
+      ],
+      "steps": [
+        "$\\dfrac1{n^3}\\sum_{i=1}^n i^2=\\dfrac{1}{n^3}\\cdot\\dfrac{n(n+1)(2n+1)}{6}=\\dfrac{(n+1)(2n+1)}{6n^2}$.",
+        "$=\\dfrac{2n^2+3n+1}{6n^2}=\\dfrac13+\\dfrac1{2n}+\\dfrac{1}{6n^2}$.",
+        "As $n\\to\\infty$ the limit is $\\dfrac13$."
+      ],
+      "brief": "$\\frac{(n+1)(2n+1)}{6n^2}\\to\\frac13$ (also $\\int_0^1x^2dx=\\frac13$)."
+    },
+    {
+      "sec": "5.3",
+      "q": "$\\int_0^2 [\\![x]\\!]\\,dx=$ (Hint: find the area under the curve over $[0,2]$)",
+      "opts": [
+        "$1$",
+        "$2$",
+        "$\\dfrac32$",
+        "$\\dfrac12$",
+        "$3$"
+      ],
+      "ans": 0,
+      "hints": [
+        "$[\\![x]\\!]$ is the greatest integer function, which is a step function.",
+        "Split $[0,2]$ at the integers and find the constant value of $[\\![x]\\!]$ on each piece.",
+        "$[\\![x]\\!]=k$ for $k\\le x<k+1$, and the integral of a constant $c$ over an interval of length $L$ is $cL$."
+      ],
+      "steps": [
+        "On $[0,1)$, $[\\![x]\\!]=0$, which contributes area $0$.",
+        "On $[1,2)$, $[\\![x]\\!]=1$, which contributes area $1\\cdot1=1$.",
+        "Total: $0+1=1$."
+      ],
+      "brief": "Step function: $0$ on $[0,1)$, $1$ on $[1,2)$, so the area is $1$."
+    },
+    {
+      "sec": "5.4",
+      "q": "The average value of the function $f(x)=\\dfrac{4(x^2+1)}{x^2}$ over $[1,3]$ is equal to:",
+      "opts": [
+        "$\\dfrac{16}{3}$",
+        "$\\dfrac{14}{3}$",
+        "$\\dfrac{13}{3}$",
+        "$\\dfrac{11}{3}$",
+        "$\\dfrac{17}{3}$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Use the formula for the average value of a function on an interval.",
+        "Simplify $f$ to a sum of powers of $x$ before integrating.",
+        "$f_{\\text{avg}}=\\dfrac{1}{b-a}\\int_a^b f(x)\\,dx$, and $\\int x^{-2}\\,dx=-x^{-1}+C$."
+      ],
+      "steps": [
+        "$f(x)=4+4x^{-2}$.",
+        "$\\int_1^3\\left(4+4x^{-2}\\right)dx=\\left[4x-\\dfrac4x\\right]_1^3=\\left(12-\\dfrac43\\right)-0=\\dfrac{32}{3}$.",
+        "Average $=\\dfrac12\\cdot\\dfrac{32}{3}=\\dfrac{16}{3}$."
+      ],
+      "brief": "$\\frac12\\int_1^3(4+4x^{-2})dx=\\frac12\\cdot\\frac{32}{3}=\\frac{16}{3}$."
+    },
+    {
+      "sec": "5.4",
+      "q": "If $F(x)=\\int_0^{2x}\\cos t^4\\,dt$, then $F'\\!\\left(\\dfrac{\\sqrt[4]{\\pi/3}}{2}\\right)=$",
+      "opts": [
+        "$1$",
+        "$2$",
+        "$4$",
+        "$8$",
+        "$16$"
+      ],
+      "ans": 0,
+      "hints": [
+        "This is the Second Fundamental Theorem of Calculus with a non-trivial upper limit.",
+        "Differentiate $F$ using the chain rule with the upper limit $2x$, then substitute the given $x$.",
+        "If $F(x)=\\int_a^{g(x)}h(t)\\,dt$, then $F'(x)=h(g(x))\\,g'(x)$."
+      ],
+      "steps": [
+        "$F'(x)=\\cos\\left((2x)^4\\right)\\cdot2=2\\cos(16x^4)$.",
+        "For $x=\\dfrac{\\sqrt[4]{\\pi/3}}{2}$: $x^4=\\dfrac{\\pi/3}{16}$, so $16x^4=\\dfrac\\pi3$.",
+        "$F'=2\\cos\\dfrac\\pi3=2\\cdot\\dfrac12=1$."
+      ],
+      "brief": "$F'(x)=2\\cos(16x^4)$; $16x^4=\\frac\\pi3$, so $F'=2\\cdot\\frac12=1$."
+    },
+    {
+      "sec": "5.4",
+      "q": "Let the velocity function $v(t)=\\cos t$ in feet per second, be given for a particle moving along a straight line, where $t$ is the time in seconds. The total distance (in feet) that the particle travels over the interval $[0,2\\pi]$ is equal to",
+      "opts": [
+        "$4$",
+        "$3$",
+        "$2$",
+        "$0$",
+        "$1$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Total distance is not the same as displacement.",
+        "Find where $v$ changes sign on $[0,2\\pi]$ and split the integral there.",
+        "$\\text{Total distance}=\\int_a^b|v(t)|\\,dt$."
+      ],
+      "steps": [
+        "$\\cos t\\ge0$ on $[0,\\tfrac\\pi2]$ and $[\\tfrac{3\\pi}2,2\\pi]$, and $\\cos t\\le0$ on $[\\tfrac\\pi2,\\tfrac{3\\pi}2]$.",
+        "By symmetry, $\\int_0^{2\\pi}|\\cos t|\\,dt=4\\int_0^{\\pi/2}\\cos t\\,dt$.",
+        "$=4[\\sin t]_0^{\\pi/2}=4$."
+      ],
+      "brief": "$\\int_0^{2\\pi}|\\cos t|dt=4\\int_0^{\\pi/2}\\cos t\\,dt=4$."
+    },
+    {
+      "sec": "7.1",
+      "q": "The area of the region bounded by the graphs of the functions $f(x)=x^2+2x$ and $g(x)=x+2$ is equal to",
+      "opts": [
+        "$\\dfrac92$",
+        "$\\dfrac72$",
+        "$\\dfrac52$",
+        "$\\dfrac32$",
+        "$\\dfrac{11}{2}$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Area between two curves: find where they meet, then integrate top minus bottom.",
+        "Set $f(x)=g(x)$ and solve for the limits of integration, then decide which graph is on top between them.",
+        "$A=\\int_a^b\\left[f_{\\text{top}}(x)-f_{\\text{bottom}}(x)\\right]dx$ between consecutive intersection points."
+      ],
+      "steps": [
+        "$x^2+2x=x+2\\Rightarrow x^2+x-2=(x+2)(x-1)=0$, so $x=-2$ or $x=1$.",
+        "On $(-2,1)$ the line is above the parabola (at $x=0$: $2>0$).",
+        "$A=\\int_{-2}^1\\left(2-x-x^2\\right)dx=\\left[2x-\\dfrac{x^2}2-\\dfrac{x^3}3\\right]_{-2}^1$.",
+        "$=\\dfrac76-\\left(-\\dfrac{10}{3}\\right)=\\dfrac{27}{6}=\\dfrac92$."
+      ],
+      "brief": "Meet at $x=-2,1$; $\\int_{-2}^1(2-x-x^2)dx=\\frac92$."
+    },
+    {
+      "sec": "5.5",
+      "q": "$\\int_{-3}^{3}\\left(x^3+4x^2-3x-6\\right)dx=$",
+      "opts": [
+        "$36$",
+        "$25$",
+        "$16$",
+        "$9$",
+        "$49$"
+      ],
+      "ans": 0,
+      "hints": [
+        "The interval is symmetric about $0$, so use even and odd symmetry.",
+        "Split the integrand into odd-power terms and even-power terms.",
+        "Over $[-a,a]$: $\\int f=0$ if $f$ is odd, and $\\int f=2\\int_0^a f$ if $f$ is even."
+      ],
+      "steps": [
+        "The terms $x^3$ and $-3x$ are odd, so they integrate to $0$ over $[-3,3]$.",
+        "The terms $4x^2-6$ are even: $2\\int_0^3(4x^2-6)\\,dx$.",
+        "$=2\\left[\\dfrac{4x^3}{3}-6x\\right]_0^3=2(36-18)=36$."
+      ],
+      "brief": "Odd terms vanish; $2\\int_0^3(4x^2-6)dx=2(36-18)=36$."
+    },
+    {
+      "sec": "5.7",
+      "q": "$\\int e^{-x}\\tan\\left(e^{-x}\\right)dx=$",
+      "opts": [
+        "$\\ln|\\cos(e^{-x})|+C$",
+        "$\\ln|\\sin(e^{-x})|+C$",
+        "$\\ln|\\csc(e^{-x})|+C$",
+        "$\\ln|\\sec(e^{-x})|+C$",
+        "$\\ln|\\tan(e^{-x})|+C$"
+      ],
+      "ans": 0,
+      "hints": [
+        "A substitution turns this into the integral of a basic trigonometric function.",
+        "Let $u$ be the expression inside the tangent and find $du$.",
+        "$\\int\\tan u\\,du=-\\ln|\\cos u|+C$."
+      ],
+      "steps": [
+        "Let $u=e^{-x}$, so $du=-e^{-x}dx$.",
+        "The integral becomes $-\\int\\tan u\\,du$.",
+        "$=-(-\\ln|\\cos u|)+C=\\ln|\\cos u|+C=\\ln|\\cos(e^{-x})|+C$."
+      ],
+      "brief": "$u=e^{-x}$: $-\\int\\tan u\\,du=\\ln|\\cos(e^{-x})|+C$."
+    },
+    {
+      "sec": "5.7",
+      "q": "$\\int\\frac{2x^2+7x-3}{x-2}\\,dx=$",
+      "opts": [
+        "$x^2+11x+19\\ln|x-2|+C$",
+        "$x^2+11x-19\\ln|x-2|+C$",
+        "$x^2-11x+19\\ln|x-2|+C$",
+        "$x^2-19\\ln|x-2|+C$",
+        "$x^2+11x+C$"
+      ],
+      "ans": 0,
+      "hints": [
+        "The numerator has higher degree than the denominator, so divide first.",
+        "Carry out polynomial long division of the numerator by $x-2$.",
+        "$\\dfrac{P(x)}{x-a}=Q(x)+\\dfrac{P(a)}{x-a}$, and $\\int\\dfrac{dx}{x-a}=\\ln|x-a|+C$."
+      ],
+      "steps": [
+        "Long division: $2x^2+7x-3=(x-2)(2x+11)+19$.",
+        "So the integrand is $2x+11+\\dfrac{19}{x-2}$.",
+        "Integrate term by term: $x^2+11x+19\\ln|x-2|+C$."
+      ],
+      "brief": "Division: $2x+11+\\frac{19}{x-2}$, so $x^2+11x+19\\ln|x-2|+C$."
+    },
+    {
+      "sec": "5.8",
+      "q": "$\\int\\frac{2\\,dx}{\\sqrt{-x^2+4x}}=$",
+      "opts": [
+        "$2\\arcsin\\left(\\dfrac{x-2}{2}\\right)+C$",
+        "$\\arcsin\\left(\\dfrac{x-2}{2}\\right)+C$",
+        "$2\\arcsin(x-2)+C$",
+        "$\\arcsin(x-2)+C$",
+        "$2\\arccos\\left(\\dfrac{x-2}{2}\\right)+C$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Complete the square under the root to match an inverse trigonometric form.",
+        "Rewrite the expression under the root as a constant minus a square of a linear expression, then substitute for that linear expression.",
+        "$\\int\\frac{du}{\\sqrt{a^2-u^2}}=\\arcsin\\dfrac ua+C$."
+      ],
+      "steps": [
+        "$-x^2+4x=4-(x-2)^2$.",
+        "Let $u=x-2$, $du=dx$: $2\\int\\frac{du}{\\sqrt{4-u^2}}$.",
+        "$=2\\arcsin\\dfrac u2+C=2\\arcsin\\left(\\dfrac{x-2}{2}\\right)+C$."
+      ],
+      "brief": "$-x^2+4x=4-(x-2)^2$: $2\\arcsin\\frac{x-2}{2}+C$."
+    },
+    {
+      "sec": "5.9",
+      "q": "$\\int\\frac{\\sinh x}{1+\\sinh^2x}\\,dx=$",
+      "opts": [
+        "$-\\operatorname{sech}x+C$",
+        "$\\operatorname{sech}x+C$",
+        "$-\\operatorname{csch}x+C$",
+        "$\\operatorname{csch}x+C$",
+        "$\\cosh x+C$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Use a hyperbolic identity to simplify the denominator.",
+        "Replace the denominator using the identity and rewrite the integrand as a product of hyperbolic functions.",
+        "$\\cosh^2x-\\sinh^2x=1$ and $\\dfrac{d}{dx}\\operatorname{sech}x=-\\operatorname{sech}x\\tanh x$."
+      ],
+      "steps": [
+        "$1+\\sinh^2x=\\cosh^2x$.",
+        "The integrand is $\\dfrac{\\sinh x}{\\cosh^2x}=\\operatorname{sech}x\\tanh x$.",
+        "Since $\\dfrac{d}{dx}\\operatorname{sech}x=-\\operatorname{sech}x\\tanh x$, the integral is $-\\operatorname{sech}x+C$."
+      ],
+      "brief": "$1+\\sinh^2x=\\cosh^2x$, integrand $=\\operatorname{sech}x\\tanh x$, so $-\\operatorname{sech}x+C$."
+    },
+    {
+      "sec": "7.1",
+      "q": "The area of the region bounded by the graphs of the functions $f(x)=\\sin x$ and $g(x)=\\cos x$ over $[0,\\pi]$ is equal to",
+      "opts": [
+        "$2\\sqrt2$",
+        "$\\sqrt2$",
+        "$3\\sqrt2$",
+        "$2+2\\sqrt2$",
+        "$2-\\sqrt2$"
+      ],
+      "ans": 0,
+      "hints": [
+        "The graphs cross inside the interval, so the area must be split at the crossing point.",
+        "Solve $\\sin x=\\cos x$ on $[0,\\pi]$ and find which function is larger on each piece.",
+        "$A=\\int_a^b|f(x)-g(x)|\\,dx$, split at points where $f=g$; $\\int\\sin x\\,dx=-\\cos x$, $\\int\\cos x\\,dx=\\sin x$."
+      ],
+      "steps": [
+        "$\\sin x=\\cos x$ at $x=\\dfrac\\pi4$ in $[0,\\pi]$; $\\cos x\\ge\\sin x$ before it and $\\sin x\\ge\\cos x$ after it.",
+        "$\\int_0^{\\pi/4}(\\cos x-\\sin x)dx=[\\sin x+\\cos x]_0^{\\pi/4}=\\sqrt2-1$.",
+        "$\\int_{\\pi/4}^{\\pi}(\\sin x-\\cos x)dx=[-\\cos x-\\sin x]_{\\pi/4}^{\\pi}=1-(-\\sqrt2)=1+\\sqrt2$.",
+        "Total $=(\\sqrt2-1)+(1+\\sqrt2)=2\\sqrt2$."
+      ],
+      "brief": "Split at $\\frac\\pi4$: $(\\sqrt2-1)+(1+\\sqrt2)=2\\sqrt2$."
+    }
+  ]
+}

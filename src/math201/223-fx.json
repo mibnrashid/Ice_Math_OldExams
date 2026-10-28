@@ -1,0 +1,674 @@
+{
+  "course": "math201",
+  "term": "223",
+  "kind": "fx",
+  "date": "",
+  "minutes": 120,
+  "source": "math201-223-fx.pdf",
+  "note": "The scan begins at question 1 with no cover page, so the date and exam length are not printed: date left empty, 120 minutes assumed as the usual final exam length. The master answer key (all A) was used and every answer was verified independently with sympy; no disagreements. Q15 option (e) is transcribed as printed (outer limit 7/2, middle upper limit 7-2y).",
+  "qs": [
+    {
+      "sec": "13.7",
+      "q": "The tangent line to the curve of intersection of the surfaces $z=\\sqrt{x^2+y^2}$ and $x-2y+2z=20$ at the point $(4,-3,5)$ contains the point",
+      "opts": [
+        "$(-12,-16,0)$",
+        "$(12,-16,0)$",
+        "$(-12,16,0)$",
+        "$(12,16,0)$",
+        "$(16,12,0)$"
+      ],
+      "ans": 0,
+      "hints": [
+        "The curve lies on both surfaces, so its tangent line is perpendicular to both surface normals.",
+        "Write each surface as $F=0$, compute the two gradients at the given point, and take their cross product to get the direction of the line.",
+        "For surfaces $F=0$ and $G=0$ meeting at a point, the tangent direction of the intersection curve is $\\nabla F\\times\\nabla G$ at that point; the line is $\\mathbf r_0+t\\mathbf d$."
+      ],
+      "steps": [
+        "Let $F=\\sqrt{x^2+y^2}-z$ and $G=x-2y+2z-20$. At $(4,-3,5)$: $\\nabla F=\\left(\\tfrac45,-\\tfrac35,-1\\right)$, $\\nabla G=(1,-2,2)$.",
+        "$\\mathbf d=\\nabla F\\times\\nabla G=\\left(-\\tfrac{16}{5},-\\tfrac{13}{5},-1\\right)$, parallel to $(16,13,5)$.",
+        "The line is $(4+16t,\\,-3+13t,\\,5+5t)$.",
+        "Setting $z=0$ gives $t=-1$, so the point is $(-12,-16,0)$."
+      ],
+      "brief": "$\\nabla F\\times\\nabla G\\parallel(16,13,5)$; line $(4+16t,-3+13t,5+5t)$, $t=-1$ gives $(-12,-16,0)$."
+    },
+    {
+      "sec": "13.7",
+      "q": "The normal line at the point $(e,e,e)$ to the surface $x\\ln(y^2z)=3e$ contains the point",
+      "opts": [
+        "$(e-3,\\,e-2,\\,e-1)$",
+        "$(e-3,\\,e+2,\\,e-1)$",
+        "$(e-3,\\,e-2,\\,e+1)$",
+        "$(e+3,\\,e-2,\\,e+1)$",
+        "$(e+3,\\,e+2,\\,e-1)$"
+      ],
+      "ans": 0,
+      "hints": [
+        "The normal line to a level surface points along the gradient.",
+        "Put the surface in the form $F(x,y,z)=0$ and compute $\\nabla F$ at the given point.",
+        "The normal line to $F=0$ at $(x_0,y_0,z_0)$ is $(x_0,y_0,z_0)+t\\nabla F(x_0,y_0,z_0)$."
+      ],
+      "steps": [
+        "$F=x\\ln(y^2z)-3e$: $F_x=\\ln(y^2z)$, $F_y=\\dfrac{2x}{y}$, $F_z=\\dfrac xz$.",
+        "At $(e,e,e)$: $F_x=\\ln e^3=3$, $F_y=2$, $F_z=1$, so $\\nabla F=(3,2,1)$.",
+        "Normal line: $(e+3t,\\,e+2t,\\,e+t)$.",
+        "For $t=-1$ we get $(e-3,\\,e-2,\\,e-1)$."
+      ],
+      "brief": "$\\nabla F=(3,2,1)$; line $(e+3t,e+2t,e+t)$ at $t=-1$ gives $(e-3,e-2,e-1)$."
+    },
+    {
+      "sec": "13.8",
+      "q": "The function $f(x,y)=4xy-4x-2y^2+4y-x^3-1$ has",
+      "opts": [
+        "a relative maximum and a saddle point",
+        "a relative minimum and a saddle point",
+        "two saddle points",
+        "two relative extrema",
+        "no relative extrema and no saddle points"
+      ],
+      "ans": 0,
+      "hints": [
+        "Find the critical points and classify each with the second partials test.",
+        "Set $f_x=0$ and $f_y=0$, solve the system, then compute $f_{xx}$, $f_{yy}$, $f_{xy}$ at each critical point.",
+        "With $d=f_{xx}f_{yy}-f_{xy}^2$: $d<0$ is a saddle point; $d>0$ with $f_{xx}<0$ is a relative maximum, with $f_{xx}>0$ a relative minimum."
+      ],
+      "steps": [
+        "$f_x=4y-4-3x^2=0$ and $f_y=4x-4y+4=0$, so $y=x+1$.",
+        "Substituting: $4x-3x^2=0$, so $x=0$ or $x=\\tfrac43$. Critical points: $(0,1)$ and $\\left(\\tfrac43,\\tfrac73\\right)$.",
+        "$f_{xx}=-6x$, $f_{yy}=-4$, $f_{xy}=4$, so $d=24x-16$.",
+        "At $(0,1)$: $d=-16<0$, a saddle point. At $\\left(\\tfrac43,\\tfrac73\\right)$: $d=16>0$ and $f_{xx}=-8<0$, a relative maximum."
+      ],
+      "brief": "Critical points $(0,1)$ ($d=-16$, saddle) and $(\\frac43,\\frac73)$ ($d=16$, $f_{xx}<0$, max)."
+    },
+    {
+      "sec": "13.8",
+      "q": "If the absolute maximum and the absolute minimum of the function $f(x,y)=x^2-2xy+2y$ over the region $R=\\{(x,y)\\mid 0\\le x\\le 3,\\ 0\\le y\\le 2\\}$ are $M$ and $m$ respectively, then $M+m=$",
+      "opts": [
+        "$9$",
+        "$12$",
+        "$8$",
+        "$15$",
+        "$16$"
+      ],
+      "ans": 0,
+      "hints": [
+        "This is an absolute extrema problem on a closed rectangle.",
+        "Find the critical points inside $R$, then examine $f$ on each of the four edges (including corners).",
+        "On a closed bounded region the absolute extrema occur at interior critical points or on the boundary; compare all candidate values."
+      ],
+      "steps": [
+        "$f_x=2x-2y=0$ and $f_y=-2x+2=0$ give the critical point $(1,1)$, with $f(1,1)=1$.",
+        "Edge $y=0$: $f=x^2$ on $[0,3]$, range $[0,9]$. Edge $y=2$: $f=(x-2)^2$, range $[0,4]$.",
+        "Edge $x=0$: $f=2y$, range $[0,4]$. Edge $x=3$: $f=9-4y$, range $[1,9]$.",
+        "So $M=9$ and $m=0$, and $M+m=9$."
+      ],
+      "brief": "Candidates: interior value $1$; edges give range $[0,9]$. So $M=9$, $m=0$, $M+m=9$."
+    },
+    {
+      "sec": "13.9",
+      "q": "The minimum distance from the point $(6,6,0)$ to the surface $z=\\sqrt{10+6x+6y}$ is",
+      "opts": [
+        "$8$",
+        "$10$",
+        "$6$",
+        "$12$",
+        "$16$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Minimise the squared distance from the point to a general point of the surface.",
+        "Replace $z^2$ using the surface equation so the squared distance becomes a function of $x$ and $y$ only, then find its critical point.",
+        "The squared distance from $(x_0,y_0,z_0)$ to $(x,y,z)$ is $(x-x_0)^2+(y-y_0)^2+(z-z_0)^2$; minimising it also minimises the distance."
+      ],
+      "steps": [
+        "$d^2=(x-6)^2+(y-6)^2+z^2$ with $z^2=10+6x+6y$, so $d^2=x^2+y^2-6x-6y+82$.",
+        "$\\partial_x d^2=2x-6=0$ and $\\partial_y d^2=2y-6=0$ give $x=y=3$ (here $z^2=46>0$).",
+        "$d^2=9+9-18-18+82=64$, and this is the minimum because $d^2=(x-3)^2+(y-3)^2+64$.",
+        "So the minimum distance is $8$."
+      ],
+      "brief": "$d^2=x^2+y^2-6x-6y+82$, minimum at $(3,3)$: $d^2=64$, $d=8$."
+    },
+    {
+      "sec": "13.10",
+      "q": "The minimum value of the function $f(x,y)=3x^2-y^2$ subject to the constraint $2x-2y+5=0$ is equal to",
+      "opts": [
+        "$-\\dfrac{75}{8}$",
+        "$-\\dfrac{50}{3}$",
+        "$-\\dfrac{25}{4}$",
+        "$-\\dfrac14$",
+        "$-\\dfrac{225}{4}$"
+      ],
+      "ans": 0,
+      "hints": [
+        "This is a constrained optimisation problem, so use Lagrange multipliers.",
+        "Set $\\nabla f=\\lambda\\nabla g$ with $g=2x-2y+5$, solve for $x$ and $y$ in terms of $\\lambda$, then use the constraint.",
+        "To optimise $f$ subject to $g=0$, solve $\\nabla f=\\lambda\\nabla g$ together with $g=0$ and evaluate $f$ at the solutions."
+      ],
+      "steps": [
+        "$\\nabla f=(6x,-2y)=\\lambda(2,-2)$, so $x=\\dfrac\\lambda3$ and $y=\\lambda$.",
+        "Constraint: $\\dfrac{2\\lambda}{3}-2\\lambda+5=0$, so $\\lambda=\\dfrac{15}{4}$, giving $x=\\dfrac54$, $y=\\dfrac{15}{4}$.",
+        "$f=3\\cdot\\dfrac{25}{16}-\\dfrac{225}{16}=-\\dfrac{150}{16}=-\\dfrac{75}{8}$.",
+        "Substituting $y=x+\\tfrac52$ gives $f=2x^2-5x-\\tfrac{25}{4}$, an upward parabola, so this single critical value is the minimum."
+      ],
+      "brief": "$\\lambda=\\frac{15}{4}$, $(x,y)=(\\frac54,\\frac{15}{4})$, $f=-\\frac{75}{8}$."
+    },
+    {
+      "sec": "13.8",
+      "q": "The maximum value of the function $f(x,y)=2x^2+3y^2-4x-7$ on the disc $x^2+y^2\\le 16$ is equal to",
+      "opts": [
+        "$45$",
+        "$43$",
+        "$41$",
+        "$39$",
+        "$37$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Absolute extrema on a closed disc: check the interior and the boundary circle.",
+        "Find the interior critical point, then on the boundary replace $y^2$ using $x^2+y^2=16$ to get a function of $x$ alone on $[-4,4]$.",
+        "A continuous function on a closed bounded region attains its maximum at an interior critical point or on the boundary."
+      ],
+      "steps": [
+        "Interior: $f_x=4x-4=0$, $f_y=6y=0$ give $(1,0)$ with $f=-9$.",
+        "Boundary: $y^2=16-x^2$, so $f=2x^2+48-3x^2-4x-7=-x^2-4x+41$ for $-4\\le x\\le4$.",
+        "The vertex is at $x=-2$ with value $-4+8+41=45$; the endpoints give $41$ ($x=-4$) and $9$ ($x=4$).",
+        "The maximum value is $45$."
+      ],
+      "brief": "Interior $f=-9$; boundary $f=-x^2-4x+41$ has maximum $45$ at $x=-2$."
+    },
+    {
+      "sec": "14.2",
+      "q": "$\\int_1^{10}\\int_0^{\\ln y} f(x,y)\\,dx\\,dy=$",
+      "opts": [
+        "$\\int_0^{\\ln 10}\\int_{e^x}^{10} f(x,y)\\,dy\\,dx$",
+        "$\\int_0^{\\ln 10}\\int_0^{e^x} f(x,y)\\,dy\\,dx$",
+        "$\\int_0^{\\ln y}\\int_1^{10} f(x,y)\\,dy\\,dx$",
+        "$\\int_0^{\\ln 10}\\int_1^{10} f(x,y)\\,dy\\,dx$",
+        "$\\int_0^{10}\\int_0^{\\ln x} f(x,y)\\,dy\\,dx$"
+      ],
+      "ans": 0,
+      "hints": [
+        "This is a change of order of integration, so sketch the region.",
+        "Read off the region from the limits ($1\\le y\\le10$, $0\\le x\\le\\ln y$), rewrite the curve $x=\\ln y$ as $y=e^x$, and describe the region with $x$ as the outer variable.",
+        "For a swap of order, find the constant outer range of the new variable and the bounding curves of the inner variable; $x=\\ln y\\iff y=e^x$."
+      ],
+      "steps": [
+        "The region is $1\\le y\\le 10$, $0\\le x\\le\\ln y$, bounded by $x=0$, $y=10$ and $x=\\ln y$ (that is, $y=e^x$).",
+        "At $y=10$ the curve has $x=\\ln10$, so $x$ runs from $0$ to $\\ln 10$.",
+        "For fixed $x$, $y$ runs from the curve $y=e^x$ up to $y=10$.",
+        "So the integral is $\\int_0^{\\ln10}\\int_{e^x}^{10}f(x,y)\\,dy\\,dx$."
+      ],
+      "brief": "Region $0\\le x\\le\\ln10$, $e^x\\le y\\le10$."
+    },
+    {
+      "sec": "14.2",
+      "q": "$\\int_0^2\\int_{y^2}^4 \\sqrt{x}\\,\\sin x\\,dx\\,dy=$",
+      "opts": [
+        "$-4\\cos(4)+\\sin(4)$",
+        "$4\\cos(4)-\\sin(4)$",
+        "$2\\cos(2)+\\sin(2)$",
+        "$2\\cos(2)-\\sin(2)$",
+        "$\\cos(4)-4\\sin(4)$"
+      ],
+      "ans": 0,
+      "hints": [
+        "The inner integral $\\int\\sqrt x\\sin x\\,dx$ is awkward, so reverse the order of integration.",
+        "Sketch the region $0\\le y\\le 2$, $y^2\\le x\\le 4$ and describe it with $x$ outer from $0$ to $4$.",
+        "After the swap, integrate with respect to $y$ first (a constant integrand in $y$), then use integration by parts: $\\int u\\,dv=uv-\\int v\\,du$."
+      ],
+      "steps": [
+        "The region is $0\\le x\\le4$, $0\\le y\\le\\sqrt x$.",
+        "$\\int_0^4\\int_0^{\\sqrt x}\\sqrt x\\sin x\\,dy\\,dx=\\int_0^4 x\\sin x\\,dx$.",
+        "By parts: $\\int x\\sin x\\,dx=-x\\cos x+\\sin x$.",
+        "Evaluate from $0$ to $4$: $-4\\cos4+\\sin4$."
+      ],
+      "brief": "Swap order: $\\int_0^4x\\sin x\\,dx=[-x\\cos x+\\sin x]_0^4=-4\\cos4+\\sin4$."
+    },
+    {
+      "sec": "14.2",
+      "q": "$\\int_0^1\\int_y^1\\cos(x^2)\\,dx\\,dy=$",
+      "opts": [
+        "$\\dfrac{\\sin(1)}{2}$",
+        "$\\dfrac{\\cos(1)}{2}$",
+        "$\\dfrac12$",
+        "$\\dfrac32$",
+        "$0$"
+      ],
+      "ans": 0,
+      "hints": [
+        "$\\cos(x^2)$ has no elementary antiderivative in $x$, so reverse the order of integration.",
+        "The region is $0\\le y\\le1$, $y\\le x\\le1$; describe it with $x$ outer from $0$ to $1$ and $y$ from $0$ to $x$.",
+        "Substitution: $\\int g'(x)\\cos(g(x))\\,dx=\\sin(g(x))+C$."
+      ],
+      "steps": [
+        "The region is the triangle $0\\le x\\le 1$, $0\\le y\\le x$.",
+        "$\\int_0^1\\int_0^x\\cos(x^2)\\,dy\\,dx=\\int_0^1x\\cos(x^2)\\,dx$.",
+        "With $u=x^2$: $\\dfrac12\\sin(x^2)\\Big|_0^1=\\dfrac{\\sin 1}{2}$."
+      ],
+      "brief": "Swap order: $\\int_0^1x\\cos(x^2)\\,dx=\\frac{\\sin1}{2}$."
+    },
+    {
+      "sec": "14.2",
+      "q": "The average value of $f(x,y)=e^{x+y}$ over $R$, where $R$ is the triangle with vertices $(0,0)$, $(0,1)$ and $(1,1)$, is",
+      "opts": [
+        "$(e-1)^2$",
+        "$e-1$",
+        "$(e+1)^2$",
+        "$e+1$",
+        "$e^2-2$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Average value is the double integral of $f$ over $R$ divided by the area of $R$.",
+        "Describe the triangle as $0\\le x\\le y\\le1$, compute the area, and integrate $e^{x+y}$ over it.",
+        "Average value $=\\dfrac{1}{A(R)}\\iint_R f\\,dA$."
+      ],
+      "steps": [
+        "The triangle is $0\\le y\\le1$, $0\\le x\\le y$, with area $\\tfrac12$.",
+        "$\\iint_Re^{x+y}dA=\\int_0^1e^y\\,(e^y-1)\\,dy=\\left[\\tfrac{e^{2y}}{2}-e^y\\right]_0^1$.",
+        "$=\\dfrac{e^2}{2}-e-\\dfrac12+1=\\dfrac{(e-1)^2}{2}$.",
+        "Average value $=\\dfrac{(e-1)^2/2}{1/2}=(e-1)^2$."
+      ],
+      "brief": "$\\iint e^{x+y}dA=\\frac{(e-1)^2}{2}$, area $\\frac12$, average $=(e-1)^2$."
+    },
+    {
+      "sec": "14.3",
+      "q": "The volume of the solid bounded by the graphs of $z=\\sqrt{x^2+y^2}$, $z=0$ and $x^2+y^2=25$ is equal to",
+      "opts": [
+        "$\\dfrac{250\\pi}{3}$",
+        "$\\dfrac{125\\pi}{3}$",
+        "$\\dfrac{75\\pi}{3}$",
+        "$\\dfrac{50\\pi}{3}$",
+        "$\\dfrac{200\\pi}{3}$"
+      ],
+      "ans": 0,
+      "hints": [
+        "The base is a disc and the height is a function of $r$, so use polar coordinates.",
+        "Volume $=\\iint_D z\\,dA$ over the disc $x^2+y^2\\le25$; write $z$ in terms of $r$ and $dA=r\\,dr\\,d\\theta$.",
+        "In polar coordinates $x^2+y^2=r^2$ and $dA=r\\,dr\\,d\\theta$."
+      ],
+      "steps": [
+        "$V=\\int_0^{2\\pi}\\int_0^5 r\\cdot r\\,dr\\,d\\theta$.",
+        "$\\int_0^5r^2\\,dr=\\dfrac{125}{3}$.",
+        "$V=2\\pi\\cdot\\dfrac{125}{3}=\\dfrac{250\\pi}{3}$."
+      ],
+      "brief": "$V=\\int_0^{2\\pi}\\int_0^5r^2\\,dr\\,d\\theta=\\frac{250\\pi}{3}$."
+    },
+    {
+      "sec": "14.3",
+      "q": "Let $I=\\int_0^2\\int_0^x\\sqrt{x^2+y^2}\\,dy\\,dx+\\int_2^{2\\sqrt2}\\int_0^{\\sqrt{8-x^2}}\\sqrt{x^2+y^2}\\,dy\\,dx.$ After writing $I$ as a single iterated integral by converting to polar coordinates, $I=$",
+      "opts": [
+        "$\\dfrac{4\\sqrt2\\,\\pi}{3}$",
+        "$\\dfrac{2\\sqrt2\\,\\pi}{3}$",
+        "$\\dfrac{\\sqrt2\\,\\pi}{3}$",
+        "$\\dfrac{8\\sqrt2\\,\\pi}{3}$",
+        "$\\dfrac{16\\sqrt2\\,\\pi}{3}$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Sketch the two regions and see how they fit together; the integrand $\\sqrt{x^2+y^2}$ suggests polar coordinates.",
+        "The first region is the triangle between $y=0$, $y=x$, $x=2$; the second lies under a circle of radius $2\\sqrt2$. Together they form a circular sector.",
+        "In polar coordinates $\\sqrt{x^2+y^2}=r$ and $dA=r\\,dr\\,d\\theta$; the line $y=x$ is $\\theta=\\pi/4$."
+      ],
+      "steps": [
+        "First region: $0\\le y\\le x\\le2$. Second: $2\\le x\\le2\\sqrt2$ under $x^2+y^2=8$, $y\\ge0$.",
+        "The line $y=x$ meets the circle $x^2+y^2=8$ at $x=2$, so the union is the sector $0\\le\\theta\\le\\dfrac\\pi4$, $0\\le r\\le2\\sqrt2$.",
+        "$I=\\int_0^{\\pi/4}\\int_0^{2\\sqrt2}r\\cdot r\\,dr\\,d\\theta=\\dfrac\\pi4\\cdot\\dfrac{(2\\sqrt2)^3}{3}$.",
+        "$(2\\sqrt2)^3=16\\sqrt2$, so $I=\\dfrac{4\\sqrt2\\,\\pi}{3}$."
+      ],
+      "brief": "Union is the sector $0\\le\\theta\\le\\frac\\pi4$, $r\\le2\\sqrt2$: $I=\\frac\\pi4\\cdot\\frac{16\\sqrt2}{3}=\\frac{4\\sqrt2\\pi}{3}$."
+    },
+    {
+      "sec": "14.6",
+      "q": "$\\int_1^4\\int_0^1\\int_0^x 2z\\,e^{-x^2}\\,dy\\,dx\\,dz=$",
+      "opts": [
+        "$\\dfrac{15(1-e^{-1})}{2}$",
+        "$8(1-e^{-1})$",
+        "$\\dfrac{7(1-e^{-1})}{3}$",
+        "$\\dfrac{e^{-1}-1}{3}$",
+        "$\\dfrac{9(e^{-1}-1)}{2}$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Evaluate the iterated integral from the inside out.",
+        "Integrate in $y$ first (the integrand does not depend on $y$), then notice the remaining integrand factors into an $x$ part and a $z$ part.",
+        "A substitution $u=x^2$ handles $\\int x\\,e^{-x^2}dx=-\\tfrac12e^{-x^2}+C$."
+      ],
+      "steps": [
+        "Inner: $\\int_0^x2ze^{-x^2}dy=2zxe^{-x^2}$.",
+        "$\\int_0^1xe^{-x^2}dx=\\dfrac{1-e^{-1}}{2}$.",
+        "$\\int_1^42z\\,dz=15$.",
+        "Product: $15\\cdot\\dfrac{1-e^{-1}}{2}=\\dfrac{15(1-e^{-1})}{2}$."
+      ],
+      "brief": "$\\int_1^42z\\,dz\\cdot\\int_0^1xe^{-x^2}dx=15\\cdot\\frac{1-e^{-1}}{2}$."
+    },
+    {
+      "sec": "14.6",
+      "q": "The volume of the solid in the first octant bounded by the coordinate planes and the plane $z=7-x-2y$ is given by",
+      "opts": [
+        "$\\int_0^7\\int_0^{\\frac{7-x}{2}}\\int_0^{7-x-2y}dz\\,dy\\,dx$",
+        "$\\int_0^7\\int_0^{\\frac72}\\int_0^{7-x-2y}dz\\,dy\\,dx$",
+        "$\\int_0^7\\int_0^{\\frac72}\\int_0^{7}dz\\,dy\\,dx$",
+        "$\\int_0^7\\int_0^{7-x}\\int_0^{7-x-2y}dz\\,dy\\,dx$",
+        "$\\int_0^{\\frac72}\\int_0^{7-2y}\\int_0^{7-x-2y}dz\\,dy\\,dx$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Set up a triple integral: the solid lies between $z=0$ and the plane, over a triangular region in the $xy$-plane.",
+        "The projection onto the $xy$-plane is where the height is nonnegative with $x,y\\ge0$. Find its bounds for $y$ in terms of $x$ and the range of $x$.",
+        "The base region is bounded by the axes and the trace of the plane in $z=0$; for the order $dz\\,dy\\,dx$, the limits of $y$ may depend on $x$ but those of $x$ are constants."
+      ],
+      "steps": [
+        "Set $z=0$: the trace in the $xy$-plane is $x+2y=7$, so $y$ runs from $0$ to $\\dfrac{7-x}{2}$.",
+        "Then $x$ runs from $0$ to $7$.",
+        "For each $(x,y)$, $z$ runs from $0$ to $7-x-2y$.",
+        "So $V=\\int_0^7\\int_0^{(7-x)/2}\\int_0^{7-x-2y}dz\\,dy\\,dx$ (which equals $\\tfrac{343}{12}$)."
+      ],
+      "brief": "Base triangle $x+2y\\le7$: $\\int_0^7\\int_0^{(7-x)/2}\\int_0^{7-x-2y}dz\\,dy\\,dx$."
+    },
+    {
+      "sec": "11.7",
+      "q": "The rectangular equation $x^2+y^2+z^2-3z=0$ in spherical coordinates is",
+      "opts": [
+        "$\\rho=3\\cos\\phi$",
+        "$\\rho=3\\sin\\phi$",
+        "$\\rho=\\sqrt3\\cos\\phi$",
+        "$\\rho=\\sqrt3\\sin\\phi$",
+        "$\\rho=\\sqrt3$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Convert using the spherical coordinate formulas.",
+        "Replace $x^2+y^2+z^2$ by $\\rho^2$ and $z$ by $\\rho\\cos\\phi$, then simplify.",
+        "$x^2+y^2+z^2=\\rho^2$ and $z=\\rho\\cos\\phi$."
+      ],
+      "steps": [
+        "$\\rho^2-3\\rho\\cos\\phi=0$.",
+        "Factor: $\\rho(\\rho-3\\cos\\phi)=0$.",
+        "The solution $\\rho=0$ is contained in $\\rho=3\\cos\\phi$ (at $\\phi=\\pi/2$), so $\\rho=3\\cos\\phi$."
+      ],
+      "brief": "$\\rho^2=3\\rho\\cos\\phi\\Rightarrow\\rho=3\\cos\\phi$."
+    },
+    {
+      "sec": "11.7",
+      "q": "An equation in rectangular coordinates for the surface represented by the cylindrical equation $r^2\\cos 2\\theta-z^2+1=0$ is",
+      "opts": [
+        "$-x^2+y^2+z^2=1$",
+        "$x^2-y^2-z^2=1$",
+        "$x^2-y^2+z^2=1$",
+        "$x^2+y^2+z^2=1$",
+        "$x^2+y^2-z^2=1$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Convert cylindrical to rectangular coordinates.",
+        "Expand $\\cos2\\theta$ with a double-angle identity so that $r\\cos\\theta$ and $r\\sin\\theta$ appear.",
+        "$\\cos2\\theta=\\cos^2\\theta-\\sin^2\\theta$, $x=r\\cos\\theta$, $y=r\\sin\\theta$."
+      ],
+      "steps": [
+        "$r^2\\cos2\\theta=r^2\\cos^2\\theta-r^2\\sin^2\\theta=x^2-y^2$.",
+        "The equation becomes $x^2-y^2-z^2+1=0$.",
+        "Equivalently $-x^2+y^2+z^2=1$."
+      ],
+      "brief": "$r^2\\cos2\\theta=x^2-y^2$, so $x^2-y^2-z^2+1=0$, i.e. $-x^2+y^2+z^2=1$."
+    },
+    {
+      "sec": "14.7",
+      "q": "Using cylindrical coordinates, we find that \\[ \\int_0^4\\int_{-\\sqrt{16-x^2}}^{\\sqrt{16-x^2}}\\int_{x^2+y^2}^{16}y\\,dz\\,dy\\,dx= \\]",
+      "opts": [
+        "$0$",
+        "$4\\pi$",
+        "$2\\pi$",
+        "$8\\pi$",
+        "$16\\pi$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Identify the region and convert to cylindrical coordinates, then look at the symmetry of the integrand.",
+        "The $x,y$ region is the right half of the disc of radius $4$, so $-\\pi/2\\le\\theta\\le\\pi/2$; use $y=r\\sin\\theta$ and $dV=r\\,dz\\,dr\\,d\\theta$.",
+        "In cylindrical coordinates $x^2+y^2=r^2$, $y=r\\sin\\theta$, $dV=r\\,dz\\,dr\\,d\\theta$, and $\\int_{-\\pi/2}^{\\pi/2}\\sin\\theta\\,d\\theta=0$."
+      ],
+      "steps": [
+        "Cylindrical form: $\\int_{-\\pi/2}^{\\pi/2}\\int_0^4\\int_{r^2}^{16}(r\\sin\\theta)\\,r\\,dz\\,dr\\,d\\theta$.",
+        "The $\\theta$-integral separates: $\\int_{-\\pi/2}^{\\pi/2}\\sin\\theta\\,d\\theta=0$.",
+        "The remaining $r,z$ integral is finite, so the whole integral is $0$. (This also follows because the integrand $y$ is odd in $y$ over a region symmetric in $y$.)"
+      ],
+      "brief": "The integrand $y$ is odd and the region is symmetric about $y=0$, so the value is $0$."
+    },
+    {
+      "sec": "14.7",
+      "q": "In spherical coordinates, the integral \\[ \\int_{-1}^{1}\\int_{-\\sqrt{1-x^2}}^{\\sqrt{1-x^2}}\\int_{1-\\sqrt{1-x^2-y^2}}^{1+\\sqrt{1-x^2-y^2}}(x^2+y^2+z^2)^{3/2}\\,dz\\,dy\\,dx \\] is equal to",
+      "opts": [
+        "$\\int_0^{2\\pi}\\int_0^{\\pi/2}\\int_0^{2\\cos\\phi}\\rho^5\\sin\\phi\\,d\\rho\\,d\\phi\\,d\\theta$",
+        "$\\int_0^{2\\pi}\\int_0^{\\pi}\\int_0^{2\\cos\\phi}\\rho^5\\sin\\phi\\,d\\rho\\,d\\phi\\,d\\theta$",
+        "$\\int_0^{2\\pi}\\int_0^{\\pi/2}\\int_0^{\\cos\\phi}\\rho^5\\sin\\phi\\,d\\rho\\,d\\phi\\,d\\theta$",
+        "$\\int_0^{2\\pi}\\int_0^{\\pi/2}\\int_0^{2\\cos\\phi}\\rho^4\\sin\\phi\\,d\\rho\\,d\\phi\\,d\\theta$",
+        "$\\int_0^{2\\pi}\\int_0^{\\pi}\\int_0^{2\\cos\\phi}\\rho^4\\sin\\phi\\,d\\rho\\,d\\phi\\,d\\theta$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Identify the solid from the limits, then convert the boundary and the integrand to spherical coordinates.",
+        "The $z$-limits describe a sphere centred on the $z$-axis, not at the origin. Complete the square and write the sphere using $\\rho$ and $\\phi$.",
+        "$x^2+y^2+z^2=\\rho^2$, $z=\\rho\\cos\\phi$, $dV=\\rho^2\\sin\\phi\\,d\\rho\\,d\\phi\\,d\\theta$."
+      ],
+      "steps": [
+        "The $z$-limits $1\\pm\\sqrt{1-x^2-y^2}$ give the ball $x^2+y^2+(z-1)^2\\le1$, i.e. $x^2+y^2+z^2\\le2z$, so $\\rho\\le2\\cos\\phi$.",
+        "The ball lies above the $xy$-plane and touches the origin, so $0\\le\\phi\\le\\dfrac\\pi2$ and $0\\le\\theta\\le2\\pi$.",
+        "The integrand is $(\\rho^2)^{3/2}=\\rho^3$ and $dV=\\rho^2\\sin\\phi\\,d\\rho\\,d\\phi\\,d\\theta$, giving $\\rho^5\\sin\\phi$.",
+        "So the integral is $\\int_0^{2\\pi}\\int_0^{\\pi/2}\\int_0^{2\\cos\\phi}\\rho^5\\sin\\phi\\,d\\rho\\,d\\phi\\,d\\theta$."
+      ],
+      "brief": "Ball $\\rho\\le2\\cos\\phi$, $0\\le\\phi\\le\\frac\\pi2$; integrand $\\rho^3\\cdot\\rho^2\\sin\\phi=\\rho^5\\sin\\phi$."
+    },
+    {
+      "sec": "14.7",
+      "q": "The volume of the solid that lies within the sphere $x^2+y^2+z^2=4$, above the $xy$-plane and below the cone $z=\\sqrt{x^2+y^2}$ is equal to",
+      "opts": [
+        "$\\dfrac{8\\sqrt2\\,\\pi}{3}$",
+        "$\\dfrac{\\sqrt2\\,\\pi}{3}$",
+        "$\\dfrac{8\\pi}{3}$",
+        "$\\dfrac{5\\sqrt3\\,\\pi}{2}$",
+        "$\\dfrac{\\sqrt3\\,\\pi}{3}$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Sphere and cone: use spherical coordinates.",
+        "Find the angle $\\phi$ of the cone; the solid is between the cone and the $xy$-plane, inside the sphere of radius $2$.",
+        "$V=\\iiint\\rho^2\\sin\\phi\\,d\\rho\\,d\\phi\\,d\\theta$; a cone $z=\\sqrt{x^2+y^2}$ makes $\\phi=\\pi/4$ and the $xy$-plane is $\\phi=\\pi/2$."
+      ],
+      "steps": [
+        "The cone $z=\\sqrt{x^2+y^2}$ is $\\phi=\\dfrac\\pi4$; below the cone and above the plane means $\\dfrac\\pi4\\le\\phi\\le\\dfrac\\pi2$.",
+        "$V=\\int_0^{2\\pi}\\int_{\\pi/4}^{\\pi/2}\\int_0^2\\rho^2\\sin\\phi\\,d\\rho\\,d\\phi\\,d\\theta$.",
+        "$\\int_0^2\\rho^2d\\rho=\\dfrac83$ and $\\int_{\\pi/4}^{\\pi/2}\\sin\\phi\\,d\\phi=\\dfrac{\\sqrt2}{2}$.",
+        "$V=2\\pi\\cdot\\dfrac83\\cdot\\dfrac{\\sqrt2}{2}=\\dfrac{8\\sqrt2\\,\\pi}{3}$."
+      ],
+      "brief": "$V=2\\pi\\cdot\\frac83\\cdot\\frac{\\sqrt2}{2}=\\frac{8\\sqrt2\\pi}{3}$ with $\\frac\\pi4\\le\\phi\\le\\frac\\pi2$."
+    },
+    {
+      "sec": "10.3",
+      "q": "If the slope of the tangent line to the parametric curve $x=3t^2+1$, $y=t^3-1$ at the point $(a,b)$ is equal to $\\dfrac12$, then $a+b=$",
+      "opts": [
+        "$4$",
+        "$1$",
+        "$-1$",
+        "$\\dfrac12$",
+        "$0$"
+      ],
+      "ans": 0,
+      "hints": [
+        "For a parametric curve the slope is $dy/dx$ computed through the parameter.",
+        "Compute $\\dfrac{dy}{dx}=\\dfrac{dy/dt}{dx/dt}$, set it equal to the given slope, solve for $t$, then find the point.",
+        "$\\dfrac{dy}{dx}=\\dfrac{dy/dt}{dx/dt}$ when $dx/dt\\neq0$."
+      ],
+      "steps": [
+        "$\\dfrac{dy}{dx}=\\dfrac{3t^2}{6t}=\\dfrac t2$ for $t\\neq0$.",
+        "$\\dfrac t2=\\dfrac12$ gives $t=1$.",
+        "$(a,b)=(3+1,\\,1-1)=(4,0)$.",
+        "$a+b=4$."
+      ],
+      "brief": "$\\frac{dy}{dx}=\\frac t2=\\frac12\\Rightarrow t=1$, $(a,b)=(4,0)$, $a+b=4$."
+    },
+    {
+      "sec": "10.5",
+      "q": "The area of the region enclosed by the polar curve $r=4\\cos\\theta$ is equal to",
+      "opts": [
+        "$4\\pi$",
+        "$8\\pi$",
+        "$6\\pi$",
+        "$2\\pi$",
+        "$\\pi$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Use the area formula for polar curves; first decide the range of $\\theta$ that traces the curve once.",
+        "The curve $r=4\\cos\\theta$ is traced once for $-\\pi/2\\le\\theta\\le\\pi/2$ (or $0\\le\\theta\\le\\pi$). Square $r$ and use a half-angle identity.",
+        "$A=\\dfrac12\\int_\\alpha^\\beta r^2\\,d\\theta$ and $\\cos^2\\theta=\\dfrac{1+\\cos2\\theta}{2}$."
+      ],
+      "steps": [
+        "$A=\\dfrac12\\int_0^{\\pi}16\\cos^2\\theta\\,d\\theta=8\\int_0^\\pi\\cos^2\\theta\\,d\\theta$.",
+        "$\\int_0^\\pi\\cos^2\\theta\\,d\\theta=\\int_0^\\pi\\dfrac{1+\\cos2\\theta}{2}d\\theta=\\dfrac\\pi2$.",
+        "$A=8\\cdot\\dfrac\\pi2=4\\pi$ (the curve is a circle of radius $2$, area $\\pi\\cdot2^2$)."
+      ],
+      "brief": "Circle of radius $2$: $A=\\frac12\\int_0^\\pi16\\cos^2\\theta\\,d\\theta=4\\pi$."
+    },
+    {
+      "sec": "11.3",
+      "q": "The projection of the vector $\\vec u=\\langle0,3,3\\rangle$ onto the vector $\\vec v=\\langle-1,1,1\\rangle$ is",
+      "opts": [
+        "$\\langle-2,2,2\\rangle$",
+        "$\\langle-2,-2,2\\rangle$",
+        "$\\langle-2,2,-2\\rangle$",
+        "$\\langle2,2,-2\\rangle$",
+        "$\\langle2,2,2\\rangle$"
+      ],
+      "ans": 0,
+      "hints": [
+        "This is a vector projection.",
+        "Compute $\\vec u\\cdot\\vec v$ and $\\vec v\\cdot\\vec v$, then multiply the ratio by $\\vec v$.",
+        "$\\operatorname{proj}_{\\vec v}\\vec u=\\dfrac{\\vec u\\cdot\\vec v}{\\vec v\\cdot\\vec v}\\,\\vec v$."
+      ],
+      "steps": [
+        "$\\vec u\\cdot\\vec v=0\\cdot(-1)+3\\cdot1+3\\cdot1=6$.",
+        "$\\vec v\\cdot\\vec v=1+1+1=3$.",
+        "$\\operatorname{proj}_{\\vec v}\\vec u=\\dfrac63\\langle-1,1,1\\rangle=\\langle-2,2,2\\rangle$."
+      ],
+      "brief": "$\\frac{\\vec u\\cdot\\vec v}{\\vec v\\cdot\\vec v}=\\frac63=2$, so the projection is $2\\vec v=\\langle-2,2,2\\rangle$."
+    },
+    {
+      "sec": "11.4",
+      "q": "If the area of a triangle with vertices $(2,-1,-2)$, $(3,1,-2)$ and $(3,a,0)$ is equal to $3$, then the product of all possible values of $a$ is",
+      "opts": [
+        "$-15$",
+        "$15$",
+        "$9$",
+        "$-9$",
+        "$6$"
+      ],
+      "ans": 0,
+      "hints": [
+        "The area of a triangle in space comes from a cross product.",
+        "Form two edge vectors from one vertex, take their cross product, and set half its length equal to the given area.",
+        "Area $=\\dfrac12\\|\\overrightarrow{AB}\\times\\overrightarrow{AC}\\|$; the product of the roots of $a^2+pa+q=0$ is $q$."
+      ],
+      "steps": [
+        "Take $A=(2,-1,-2)$: $\\overrightarrow{AB}=\\langle1,2,0\\rangle$ and $\\overrightarrow{AC}=\\langle1,a+1,2\\rangle$.",
+        "$\\overrightarrow{AB}\\times\\overrightarrow{AC}=\\langle4,\\,-2,\\,a-1\\rangle$.",
+        "Area $=3$ means $\\|\\cdot\\|=6$: $16+4+(a-1)^2=36$, so $(a-1)^2=16$.",
+        "$a=5$ or $a=-3$, so the product is $-15$."
+      ],
+      "brief": "$\\overrightarrow{AB}\\times\\overrightarrow{AC}=\\langle4,-2,a-1\\rangle$, $(a-1)^2=16$, $a=5,-3$, product $-15$."
+    },
+    {
+      "sec": "11.5",
+      "q": "Suppose that the equation of the plane that passes through the point $(2,2,1)$ and contains the line $\\dfrac x2=\\dfrac{y-4}{-1}=z$ is given by $ax+by-2z=0$. Then $a+b=$",
+      "opts": [
+        "$1$",
+        "$0$",
+        "$3$",
+        "$-3$",
+        "$-6$"
+      ],
+      "ans": 0,
+      "hints": [
+        "A plane containing a line contains every point of that line, and its normal is perpendicular to the line's direction.",
+        "Read a point and the direction vector from the line, then require the plane equation to be satisfied by the two points and perpendicular to the direction.",
+        "A plane $ax+by+cz=0$ contains a point if its coordinates satisfy the equation, and contains a line with direction $\\mathbf d$ only if $\\langle a,b,c\\rangle\\cdot\\mathbf d=0$."
+      ],
+      "steps": [
+        "The line passes through $(0,4,0)$ with direction $\\langle2,-1,1\\rangle$.",
+        "The point $(0,4,0)$ in $ax+by-2z=0$ gives $4b=0$, so $b=0$.",
+        "The point $(2,2,1)$ gives $2a+2b-2=0$, so $a=1$.",
+        "Check the direction: $2a-b-2=0$ holds. So $a+b=1$."
+      ],
+      "brief": "Point $(0,4,0)$ gives $b=0$; point $(2,2,1)$ gives $a=1$; $a+b=1$."
+    },
+    {
+      "sec": "13.2",
+      "q": "$\\lim_{(x,y)\\to(0,0)}\\frac{x^4}{x^4+y^2}=$",
+      "opts": [
+        "does not exist",
+        "$0$",
+        "$1$",
+        "$-1$",
+        "$\\dfrac12$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Try approaching the origin along different paths and compare the limits.",
+        "Compare the limit along the $x$-axis ($y=0$) with the limit along the $y$-axis ($x=0$).",
+        "If two paths to $(a,b)$ give different limit values, the limit does not exist."
+      ],
+      "steps": [
+        "Along $y=0$: $\\dfrac{x^4}{x^4}=1$ for $x\\neq0$, so the limit is $1$.",
+        "Along $x=0$: $\\dfrac{0}{y^2}=0$, so the limit is $0$.",
+        "The two path limits differ, so the limit does not exist."
+      ],
+      "brief": "Along $y=0$ the value is $1$, along $x=0$ it is $0$, so the limit does not exist."
+    },
+    {
+      "sec": "13.3",
+      "q": "If $f(x,y,z)=z\\sin(xy^2+2z)$, then $\\dfrac{\\partial f}{\\partial z}(1,-1,-1)=$",
+      "opts": [
+        "$-2\\cos(1)-\\sin(1)$",
+        "$-2\\cos(1)+\\sin(1)$",
+        "$2\\cos(1)-\\sin(1)$",
+        "$2\\cos(1)+\\sin(1)$",
+        "$2\\cos(1)-2\\sin(1)$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Differentiate with respect to $z$, treating $x$ and $y$ as constants.",
+        "The function is a product of $z$ and a sine of an expression containing $z$, so use the product rule and the chain rule.",
+        "$\\dfrac{\\partial}{\\partial z}[u\\,v]=u_zv+uv_z$ and $\\dfrac{d}{dz}\\sin(g)=g'\\cos g$; also $\\sin(-a)=-\\sin a$ and $\\cos(-a)=\\cos a$."
+      ],
+      "steps": [
+        "$f_z=\\sin(xy^2+2z)+2z\\cos(xy^2+2z)$.",
+        "At $(1,-1,-1)$: $xy^2+2z=1-2=-1$.",
+        "$f_z=\\sin(-1)+2(-1)\\cos(-1)=-\\sin1-2\\cos1$."
+      ],
+      "brief": "$f_z=\\sin(xy^2+2z)+2z\\cos(xy^2+2z)=-\\sin1-2\\cos1$ at $(1,-1,-1)$."
+    },
+    {
+      "sec": "13.5",
+      "q": "If $z=e^{xy}$, $x=3s+t$ and $y=3s-t$, then the value of $\\dfrac{\\partial z}{\\partial s}$ when $s=\\dfrac13$ and $t=1$ is equal to",
+      "opts": [
+        "$6$",
+        "$9$",
+        "$18$",
+        "$3$",
+        "$12$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Use the chain rule for a function of two intermediate variables.",
+        "Compute $z_x$, $z_y$, $x_s$, $y_s$, then find $x$ and $y$ at the given $s$ and $t$.",
+        "$\\dfrac{\\partial z}{\\partial s}=\\dfrac{\\partial z}{\\partial x}\\dfrac{\\partial x}{\\partial s}+\\dfrac{\\partial z}{\\partial y}\\dfrac{\\partial y}{\\partial s}$."
+      ],
+      "steps": [
+        "$z_x=ye^{xy}$, $z_y=xe^{xy}$, $x_s=3$, $y_s=3$.",
+        "$z_s=3ye^{xy}+3xe^{xy}=3(x+y)e^{xy}$.",
+        "At $s=\\tfrac13$, $t=1$: $x=2$, $y=0$, so $e^{xy}=1$.",
+        "$z_s=3(2+0)\\cdot1=6$."
+      ],
+      "brief": "$z_s=3(x+y)e^{xy}$ with $(x,y)=(2,0)$ gives $6$."
+    }
+  ]
+}

@@ -1,0 +1,480 @@
+{
+  "course": "math201",
+  "term": "241",
+  "kind": "fx",
+  "date": "",
+  "minutes": 120,
+  "source": "math201-241-fx.pdf",
+  "note": "Date and exam length are not printed on the master pages (no cover page; page 1 starts with Q1). Date left blank; 120 minutes is an assumed usual Final Exam length. All 20 master keys were verified independently and agree. Q2: the count of 3 includes the pole (origin), which lies on both curves at different angles. Q5 is placed under 13.7 (tangent planes).",
+  "qs": [
+    {
+      "sec": "10.3",
+      "q": "The slope of the parametric curve $x=e^{t},\\ y=e^{-t}$ at $t=1$ is",
+      "opts": [
+        "$-\\dfrac{1}{e^{2}}$",
+        "$e^{2}$",
+        "$-\\dfrac{1}{e}$",
+        "$\\dfrac{1}{e}$",
+        "$e$"
+      ],
+      "ans": 0,
+      "hints": [
+        "This is the slope of a parametric curve, so use derivatives with respect to the parameter.",
+        "Differentiate $x$ and $y$ with respect to $t$, form the ratio, then substitute the given $t$.",
+        "For $x=x(t),\\ y=y(t)$: $\\dfrac{dy}{dx}=\\dfrac{dy/dt}{dx/dt}$ provided $dx/dt\\neq0$."
+      ],
+      "steps": [
+        "$\\dfrac{dx}{dt}=e^{t}$ and $\\dfrac{dy}{dt}=-e^{-t}$.",
+        "$\\dfrac{dy}{dx}=\\dfrac{-e^{-t}}{e^{t}}=-e^{-2t}$.",
+        "At $t=1$ the slope is $-e^{-2}=-\\dfrac1{e^2}$."
+      ],
+      "brief": "$\\frac{dy}{dx}=\\frac{-e^{-t}}{e^{t}}=-e^{-2t}$, so at $t=1$ it is $-\\frac1{e^2}$."
+    },
+    {
+      "sec": "10.5",
+      "q": "The number of intersection points of the two polar curves $r=1-\\cos\\theta$ and $r=1+\\sin\\theta$ over $[0,2\\pi)$ is",
+      "opts": [
+        "$3$",
+        "$2$",
+        "$4$",
+        "$1$",
+        "$0$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Intersections of polar curves come from equal $r$ at the same angle, but the pole needs separate treatment.",
+        "Set the two expressions for $r$ equal and solve for $\\theta$ in $[0,2\\pi)$, then check whether each curve passes through the pole.",
+        "Polar curves can meet at the pole even when no common $\\theta$ gives $r=0$ for both; the pole lies on a curve $r=f(\\theta)$ if $f(\\theta)=0$ for some $\\theta$."
+      ],
+      "steps": [
+        "$1-\\cos\\theta=1+\\sin\\theta$ gives $\\sin\\theta=-\\cos\\theta$, so $\\tan\\theta=-1$ and $\\theta=\\dfrac{3\\pi}{4},\\dfrac{7\\pi}{4}$: two points.",
+        "The first curve is at the pole when $\\cos\\theta=1$ ($\\theta=0$).",
+        "The second curve is at the pole when $\\sin\\theta=-1$ ($\\theta=\\tfrac{3\\pi}{2}$), so the pole is a common point not found above.",
+        "Total: $2+1=3$ intersection points."
+      ],
+      "brief": "$\\tan\\theta=-1$ gives 2 points, plus the pole (on both curves): 3 points."
+    },
+    {
+      "sec": "11.5",
+      "q": "Let $(a,b,c)$ be the intersection point of the plane $5x+3y=17$ and the line $\\dfrac{x-4}{2}=\\dfrac{y+1}{-3}=\\dfrac{z+2}{5}$. Then $a+b+c=$",
+      "opts": [
+        "$1$",
+        "$-2$",
+        "$4$",
+        "$-3$",
+        "$0$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Intersect a line with a plane by writing the line in parametric form.",
+        "Set each ratio equal to $t$, solve for $x,y,z$ in terms of $t$, and substitute into the plane equation.",
+        "A line through $(x_0,y_0,z_0)$ with direction $\\langle a,b,c\\rangle$ is $x=x_0+at,\\ y=y_0+bt,\\ z=z_0+ct$; substitute into the plane equation to find $t$."
+      ],
+      "steps": [
+        "Parametrize: $x=4+2t,\\ y=-1-3t,\\ z=-2+5t$.",
+        "Plane: $5(4+2t)+3(-1-3t)=17$, i.e. $17+t=17$, so $t=0$.",
+        "The point is $(4,-1,-2)$, so $a+b+c=4-1-2=1$."
+      ],
+      "brief": "Parametrize the line; the plane gives $t=0$, point $(4,-1,-2)$, sum $=1$."
+    },
+    {
+      "sec": "13.6",
+      "q": "The directional derivative of the function $f(x,y,z)=xy+yz+xz$ at the point $P(1,2,-1)$ in the direction of $\\vec v=\\langle 2,1,-1\\rangle$ is",
+      "opts": [
+        "$-\\dfrac{1}{\\sqrt6}$",
+        "$\\dfrac{2}{\\sqrt6}$",
+        "$-\\dfrac{2}{\\sqrt6}$",
+        "$\\dfrac{3}{\\sqrt6}$",
+        "$-\\dfrac{5}{\\sqrt6}$"
+      ],
+      "ans": 0,
+      "hints": [
+        "A directional derivative is the gradient dotted with a unit direction vector.",
+        "Compute the gradient of $f$ at $P$, and normalize the given direction vector.",
+        "$D_{\\mathbf u}f=\\nabla f\\cdot\\mathbf u$ where $\\mathbf u=\\dfrac{\\mathbf v}{|\\mathbf v|}$ is a unit vector."
+      ],
+      "steps": [
+        "$\\nabla f=\\langle y+z,\\ x+z,\\ x+y\\rangle$, which at $(1,2,-1)$ is $\\langle 1,0,3\\rangle$.",
+        "$|\\vec v|=\\sqrt{4+1+1}=\\sqrt6$.",
+        "$D_{\\mathbf u}f=\\dfrac{\\langle1,0,3\\rangle\\cdot\\langle2,1,-1\\rangle}{\\sqrt6}=\\dfrac{2-3}{\\sqrt6}=-\\dfrac1{\\sqrt6}$."
+      ],
+      "brief": "$\\nabla f(P)=\\langle1,0,3\\rangle$, so $D_{\\mathbf u}f=\\frac{2-3}{\\sqrt6}=-\\frac1{\\sqrt6}$."
+    },
+    {
+      "sec": "13.7",
+      "q": "The $x$-coordinate of the point on the surface \\[ z=4x^2+4xy-2y^2+8x-5y-4 \\] at which the tangent plane is horizontal is",
+      "opts": [
+        "$-\\dfrac14$",
+        "$-\\dfrac13$",
+        "$-1$",
+        "$\\dfrac1{12}$",
+        "$-\\dfrac5{12}$"
+      ],
+      "ans": 0,
+      "hints": [
+        "A horizontal tangent plane means the normal vector is vertical.",
+        "Set both partial derivatives $z_x$ and $z_y$ equal to zero and solve the resulting linear system.",
+        "For $z=f(x,y)$ the tangent plane at a point is horizontal exactly when $f_x=0$ and $f_y=0$ there."
+      ],
+      "steps": [
+        "$z_x=8x+4y+8=0$ and $z_y=4x-4y-5=0$.",
+        "Adding the equations: $12x+3=0$.",
+        "So $x=-\\dfrac14$ (and $y=-\\dfrac32$)."
+      ],
+      "brief": "$z_x=8x+4y+8=0,\\ z_y=4x-4y-5=0$; adding gives $x=-\\frac14$."
+    },
+    {
+      "sec": "13.6",
+      "q": "A normal vector to the level curve of $f(x,y)=y-\\sin x$ at the point $(\\pi,0)$ is",
+      "opts": [
+        "$\\langle1,1\\rangle$",
+        "$\\langle-1,1\\rangle$",
+        "$\\langle2,1\\rangle$",
+        "$\\langle1,2\\rangle$",
+        "$\\langle-1,2\\rangle$"
+      ],
+      "ans": 0,
+      "hints": [
+        "The gradient is related to level curves by a geometric fact.",
+        "Compute the gradient of $f$ and evaluate it at the given point.",
+        "The gradient $\\nabla f(x_0,y_0)$ is perpendicular (normal) to the level curve of $f$ through $(x_0,y_0)$."
+      ],
+      "steps": [
+        "$\\nabla f=\\langle f_x,f_y\\rangle=\\langle-\\cos x,\\ 1\\rangle$.",
+        "At $(\\pi,0)$: $-\\cos\\pi=1$, so $\\nabla f=\\langle1,1\\rangle$.",
+        "The gradient is normal to the level curve, so $\\langle1,1\\rangle$ is a normal vector."
+      ],
+      "brief": "$\\nabla f=\\langle-\\cos x,1\\rangle$, which at $(\\pi,0)$ is $\\langle1,1\\rangle$."
+    },
+    {
+      "sec": "11.4",
+      "q": "A vector orthogonal to both $\\mathbf u=-3\\mathbf i+2\\mathbf j-5\\mathbf k$ and $\\mathbf v=\\mathbf i-\\mathbf j+4\\mathbf k$ is",
+      "opts": [
+        "$-3\\mathbf i-7\\mathbf j-\\mathbf k$",
+        "$3\\mathbf i-7\\mathbf j-\\mathbf k$",
+        "$3\\mathbf i-\\mathbf j-3\\mathbf k$",
+        "$\\mathbf i+7\\mathbf j-3\\mathbf k$",
+        "$7\\mathbf i+\\mathbf j-3\\mathbf k$"
+      ],
+      "ans": 0,
+      "hints": [
+        "A vector perpendicular to two vectors can be found with the cross product.",
+        "Compute $\\mathbf u\\times\\mathbf v$ with a $3\\times3$ determinant; any nonzero scalar multiple also works.",
+        "$\\mathbf u\\times\\mathbf v$ is orthogonal to both $\\mathbf u$ and $\\mathbf v$, and two vectors are orthogonal when their dot product is $0$."
+      ],
+      "steps": [
+        "$\\mathbf u\\times\\mathbf v=\\begin{vmatrix}\\mathbf i&\\mathbf j&\\mathbf k\\\\-3&2&-5\\\\1&-1&4\\end{vmatrix}$.",
+        "$\\mathbf i(8-5)-\\mathbf j(-12+5)+\\mathbf k(3-2)=3\\mathbf i+7\\mathbf j+\\mathbf k$.",
+        "Its negative $-3\\mathbf i-7\\mathbf j-\\mathbf k$ is also orthogonal to both (check: dot with $\\mathbf u$ gives $9-14+5=0$)."
+      ],
+      "brief": "$\\mathbf u\\times\\mathbf v=3\\mathbf i+7\\mathbf j+\\mathbf k$; its negative $-3\\mathbf i-7\\mathbf j-\\mathbf k$ works."
+    },
+    {
+      "sec": "13.2",
+      "q": "$\\lim_{(x,y)\\to(0,0)}\\frac{x^2+2xy^2+y^2}{x^2+y^2}=$",
+      "opts": [
+        "$1$",
+        "$0$",
+        "$-1$",
+        "$2$",
+        "DNE"
+      ],
+      "ans": 0,
+      "hints": [
+        "Try splitting the fraction into a simple part and a part that can be bounded.",
+        "Write the numerator as $(x^2+y^2)+2xy^2$ and divide each part by $x^2+y^2$.",
+        "Squeeze idea: if $|g(x,y)|\\le h(x,y)$ and $h\\to0$, then $g\\to0$; also $y^2\\le x^2+y^2$."
+      ],
+      "steps": [
+        "$\\dfrac{x^2+2xy^2+y^2}{x^2+y^2}=1+\\dfrac{2xy^2}{x^2+y^2}$.",
+        "Since $y^2\\le x^2+y^2$, we get $\\left|\\dfrac{2xy^2}{x^2+y^2}\\right|\\le2|x|\\to0$.",
+        "So the limit is $1+0=1$."
+      ],
+      "brief": "$=1+\\frac{2xy^2}{x^2+y^2}$ and $\\left|\\frac{2xy^2}{x^2+y^2}\\right|\\le2|x|\\to0$, so the limit is $1$."
+    },
+    {
+      "sec": "13.8",
+      "q": "The function $f(x,y)=\\sqrt[3]{x^2+y^2}+2$ has",
+      "opts": [
+        "a relative minimum at $(0,0)$",
+        "a relative maximum at $(0,0)$",
+        "a saddle point at $(0,0)$",
+        "no extrema",
+        "a critical point at $(0,1)$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Think about the value of $f$ near the origin compared with its value at the origin.",
+        "Look at the partial derivatives near $(0,0)$ and compare $f(x,y)$ with $f(0,0)$ directly instead of using the second partials test.",
+        "A critical point is where both partials are zero or fail to exist; $f(a,b)$ is a relative minimum if $f(x,y)\\ge f(a,b)$ for all nearby points."
+      ],
+      "steps": [
+        "$f_x=\\dfrac{2x}{3(x^2+y^2)^{2/3}}$ and $f_y=\\dfrac{2y}{3(x^2+y^2)^{2/3}}$ do not exist at $(0,0)$, so $(0,0)$ is a critical point; they vanish nowhere else.",
+        "$f(0,0)=2$.",
+        "For $(x,y)\\neq(0,0)$, $\\sqrt[3]{x^2+y^2}>0$, so $f(x,y)>2=f(0,0)$.",
+        "Hence $f$ has a relative minimum at $(0,0)$."
+      ],
+      "brief": "$f\\ge2=f(0,0)$ with equality only at the origin, so a relative minimum at $(0,0)$."
+    },
+    {
+      "sec": "13.8",
+      "q": "Let $T$ be the triangular region in the $xy$-plane with vertices $(2,0)$, $(0,1)$, and $(1,2)$ respectively. If $M$ and $m$ represent respectively the absolute maximum and absolute minimum of the function $f(x,y)=(2x-y)^2$ over the region $T$, then $M+m=$",
+      "opts": [
+        "$16$",
+        "$17$",
+        "$18$",
+        "$19$",
+        "$14$"
+      ],
+      "ans": 0,
+      "hints": [
+        "This is an absolute extrema problem on a closed bounded region.",
+        "Find the critical points inside $T$, then examine $f$ along each edge and at the vertices.",
+        "For a continuous function on a closed bounded region, the absolute extrema occur at interior critical points or on the boundary (including the vertices); also $f\\ge0$ for a square."
+      ],
+      "steps": [
+        "$f_x=4(2x-y)$ and $f_y=-2(2x-y)$ vanish where $y=2x$, where $f=0$.",
+        "The line $y=2x$ passes through the vertex $(1,2)$, so $f(1,2)=0$, and since $f\\ge0$ the minimum is $m=0$.",
+        "Vertex values: $f(2,0)=16$, $f(0,1)=1$, $f(1,2)=0$.",
+        "Along each edge $2x-y$ is linear, so $f$ attains its extremes at the endpoints: $M=16$.",
+        "$M+m=16+0=16$."
+      ],
+      "brief": "$f\\ge0$ with $f(1,2)=0$, so $m=0$; vertex values $16,1,0$ give $M=16$; $M+m=16$."
+    },
+    {
+      "sec": "13.9",
+      "q": "A box without a top is to be made, where the material for the base costs twice as much per square unit as the material for the sides. If the sides cost $\\$4$ per square unit and the total cost of materials is $\\$600$, then the sum of length, width, and height of the largest possible box is:",
+      "opts": [
+        "$15$ units",
+        "$30$ units",
+        "$20$ units",
+        "$60$ units",
+        "$35$ units"
+      ],
+      "ans": 0,
+      "hints": [
+        "This is an optimization problem: maximize volume subject to a cost constraint.",
+        "Let the base be $x$ by $y$ and the height $h$; write the cost constraint using the base and side prices, and maximize $V=xyh$.",
+        "Use the constraint to eliminate a variable (or use Lagrange multipliers); the optimum occurs where the partial derivatives of $V$ vanish (or $\\nabla V=\\lambda\\nabla g$)."
+      ],
+      "steps": [
+        "Base costs $\\$8$ per unit area, sides $\\$4$: $8xy+4(2xh+2yh)=600$, i.e. $xy+xh+yh=75$.",
+        "Maximize $V=xyh$ with $h=\\dfrac{75-xy}{x+y}$; by symmetry $x=y$ and $\\nabla V=\\lambda\\nabla g$ gives $h=x$.",
+        "Then $3x^2=75$, so $x=y=h=5$.",
+        "The sum is $5+5+5=15$."
+      ],
+      "brief": "Cost: $xy+xh+yh=75$. Maximizing $xyh$ gives $x=y=h=5$, sum $15$."
+    },
+    {
+      "sec": "13.10",
+      "q": "The minimum value of $f(x,y)=e^{-xy/4}$ subject to the constraint $x^2+y^2=1$ is equal to",
+      "opts": [
+        "$e^{-\\frac18}$",
+        "$e^{\\frac18}$",
+        "$e^{-1}$",
+        "$e$",
+        "$1$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Constrained optimization: use Lagrange multipliers, or notice how $f$ depends on $xy$.",
+        "Since $e^{u}$ is increasing, minimizing $f$ means minimizing $-xy/4$, i.e. maximizing $xy$ on the circle.",
+        "Lagrange: $\\nabla f=\\lambda\\nabla g$ with $g=0$; or use $|xy|\\le\\dfrac{x^2+y^2}{2}$."
+      ],
+      "steps": [
+        "$f=e^{-xy/4}$ is smallest when $xy$ is as large as possible.",
+        "By Lagrange on $xy$ with $x^2+y^2=1$: $y=2\\lambda x,\\ x=2\\lambda y$, so $x^2=y^2=\\tfrac12$; or $xy\\le\\dfrac{x^2+y^2}{2}=\\dfrac12$.",
+        "The maximum of $xy$ is $\\dfrac12$ (at $x=y=\\tfrac1{\\sqrt2}$).",
+        "The minimum of $f$ is $e^{-\\frac12\\cdot\\frac14}=e^{-1/8}$."
+      ],
+      "brief": "Minimize $f$ by maximizing $xy=\\frac12$ on the circle: $f_{\\min}=e^{-1/8}$."
+    },
+    {
+      "sec": "14.1",
+      "q": "$\\int_0^{\\ln4}\\int_0^{\\ln3}e^{x+y}\\,dy\\,dx=$",
+      "opts": [
+        "$6$",
+        "$5$",
+        "$4$",
+        "$3$",
+        "$1$"
+      ],
+      "ans": 0,
+      "hints": [
+        "The integrand and the rectangular limits are separable.",
+        "Write $e^{x+y}=e^xe^y$ and integrate the inner variable first, treating $x$ as a constant.",
+        "For a rectangle, $\\int_a^b\\int_c^d f(x)g(y)\\,dy\\,dx=\\left(\\int_a^b f\\,dx\\right)\\left(\\int_c^d g\\,dy\\right)$, and $e^{\\ln k}=k$."
+      ],
+      "steps": [
+        "Inner integral: $\\int_0^{\\ln3}e^{x+y}\\,dy=e^x(3-1)=2e^x$.",
+        "Outer integral: $\\int_0^{\\ln4}2e^x\\,dx=2(4-1)$.",
+        "The value is $6$."
+      ],
+      "brief": "$\\int_0^{\\ln4}e^x\\,dx\\cdot\\int_0^{\\ln3}e^y\\,dy=(4-1)(3-1)=6$."
+    },
+    {
+      "sec": "14.2",
+      "q": "$\\int_0^1\\int_x^1\\cos(y^2)\\,dy\\,dx=$",
+      "opts": [
+        "$\\dfrac12\\sin(1)$",
+        "$\\sin(1)$",
+        "$\\cos(1)$",
+        "$\\dfrac12\\cos(1)$",
+        "$0$"
+      ],
+      "ans": 0,
+      "hints": [
+        "The inner integral $\\int\\cos(y^2)\\,dy$ has no elementary antiderivative, so change the order of integration.",
+        "Sketch the region $0\\le x\\le y\\le1$ and describe it with $y$ as the outer variable.",
+        "When swapping order, describe the same region with the other variable outermost; then $\\int y\\cos(y^2)\\,dy$ is a $u$-substitution."
+      ],
+      "steps": [
+        "The region is $0\\le x\\le y\\le1$ (a triangle).",
+        "Swap: $\\int_0^1\\int_0^y\\cos(y^2)\\,dx\\,dy=\\int_0^1y\\cos(y^2)\\,dy$.",
+        "With $u=y^2$: $\\dfrac12\\sin(y^2)\\Big|_0^1=\\dfrac12\\sin(1)$."
+      ],
+      "brief": "Swap order: $\\int_0^1y\\cos(y^2)\\,dy=\\frac12\\sin(1)$."
+    },
+    {
+      "sec": "14.3",
+      "q": "$\\int_0^{\\sqrt2}\\int_y^{\\sqrt{4-y^2}}\\sqrt{x^2+y^2}\\,dx\\,dy=$",
+      "opts": [
+        "$\\dfrac{2\\pi}{3}$",
+        "$\\dfrac{4\\pi}{3}$",
+        "$2\\pi$",
+        "$\\dfrac{5\\pi}{3}$",
+        "$\\dfrac{\\pi}{2}$"
+      ],
+      "ans": 0,
+      "hints": [
+        "The integrand $\\sqrt{x^2+y^2}$ and the circle in the limits suggest polar coordinates.",
+        "Sketch the region: $0\\le y\\le\\sqrt2$, $y\\le x\\le\\sqrt{4-y^2}$; find its range of $\\theta$ and $r$.",
+        "In polar form $dA=r\\,dr\\,d\\theta$ and $x^2+y^2=r^2$; the line $y=x$ is $\\theta=\\pi/4$."
+      ],
+      "steps": [
+        "The region lies between the line $y=x$, the $x$-axis ($y=0$) and the circle $x^2+y^2=4$; the line meets the circle at $y=\\sqrt2$.",
+        "So $0\\le\\theta\\le\\dfrac\\pi4$ and $0\\le r\\le2$.",
+        "$\\int_0^{\\pi/4}\\int_0^2 r\\cdot r\\,dr\\,d\\theta=\\dfrac\\pi4\\cdot\\dfrac83=\\dfrac{2\\pi}{3}$."
+      ],
+      "brief": "Polar: $\\theta\\in[0,\\frac\\pi4]$, $r\\in[0,2]$: $\\frac\\pi4\\cdot\\frac{8}{3}=\\frac{2\\pi}{3}$."
+    },
+    {
+      "sec": "14.2",
+      "q": "The volume of the solid bounded by $z=4-x-y$, $z=0$, $y=2$, $y=x$, and $x=0$ is equal to",
+      "opts": [
+        "$4$",
+        "$3$",
+        "$2$",
+        "$1$",
+        "$5$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Volume under a surface over a plane region is a double integral.",
+        "Sketch the base region in the $xy$-plane cut out by $y=2$, $y=x$ and $x=0$, then integrate $z=4-x-y$ over it.",
+        "$V=\\iint_R f(x,y)\\,dA$ for the solid between $z=0$ and $z=f(x,y)\\ge0$."
+      ],
+      "steps": [
+        "The base is the triangle $0\\le x\\le y,\\ 0\\le y\\le2$.",
+        "$V=\\int_0^2\\int_0^y(4-x-y)\\,dx\\,dy=\\int_0^2\\left(4y-\\dfrac{y^2}2-y^2\\right)dy$.",
+        "$=\\int_0^2\\left(4y-\\dfrac32y^2\\right)dy=8-4=4$."
+      ],
+      "brief": "$V=\\int_0^2\\int_0^y(4-x-y)\\,dx\\,dy=\\int_0^2(4y-\\frac32y^2)\\,dy=4$."
+    },
+    {
+      "sec": "14.6",
+      "q": "If \\[ \\int_0^4\\int_0^{(4-x)/2}\\int_0^{(12-3x-6y)/4}dz\\,dy\\,dx=\\int_0^a\\int_0^b\\int_0^c dy\\,dx\\,dz, \\] then",
+      "opts": [
+        "$a=3,\\ b=\\dfrac{12-4z}{3},\\ c=\\dfrac{12-4z-3x}{6}$",
+        "$a=\\dfrac{12-4z}{3},\\ b=3,\\ c=\\dfrac{12-4z-3x}{6}$",
+        "$a=\\dfrac{12-4z}{3},\\ b=\\dfrac{12-4z-3x}{6},\\ c=3$",
+        "$a=3,\\ b=\\dfrac{12-4z-3x}{6},\\ c=\\dfrac{12-4z}{3}$",
+        "$a=12,\\ b=4,\\ c=\\dfrac{12-4z}{3}$"
+      ],
+      "ans": 0,
+      "hints": [
+        "This is a change in the order of integration of a triple integral over a solid.",
+        "Identify the solid: it lies in the first octant under a plane. Find the intercepts of the plane.",
+        "For the new order $dy\\,dx\\,dz$: the outermost variable $z$ has constant limits; then $x$ limits depend on $z$; then $y$ limits depend on $x$ and $z$. Solve the plane equation for the variable in question."
+      ],
+      "steps": [
+        "The solid is the tetrahedron in the first octant under the plane $3x+6y+4z=12$ (intercepts $x=4,\\ y=2,\\ z=3$).",
+        "Outer variable $z$: $0\\le z\\le3$, so $a=3$.",
+        "For fixed $z$, set $y=0$: $3x+4z=12$, so $0\\le x\\le\\dfrac{12-4z}{3}=b$.",
+        "For fixed $x,z$: $0\\le y\\le\\dfrac{12-3x-4z}{6}=c$."
+      ],
+      "brief": "Plane $3x+6y+4z=12$: $z\\in[0,3]$, $x\\in[0,\\frac{12-4z}{3}]$, $y\\in[0,\\frac{12-4z-3x}{6}]$."
+    },
+    {
+      "sec": "11.7",
+      "q": "An equation in spherical coordinates for the surface $x^2+y^2-3z^2=0$ is",
+      "opts": [
+        "$\\phi=\\dfrac\\pi3$ or $\\phi=\\dfrac{2\\pi}3$",
+        "$\\phi=\\dfrac\\pi6$ or $\\phi=\\dfrac{5\\pi}6$",
+        "$\\phi=\\dfrac\\pi4$ or $\\phi=\\dfrac{3\\pi}4$",
+        "$\\phi=\\dfrac\\pi4$ or $\\phi=\\dfrac\\pi3$",
+        "$\\phi=\\dfrac\\pi2$ or $\\phi=\\dfrac{3\\pi}2$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Convert the equation using the spherical coordinate formulas.",
+        "Replace $x^2+y^2$ and $z$ by their spherical expressions and simplify, dividing by $\\rho^2$.",
+        "$x^2+y^2=\\rho^2\\sin^2\\phi$, $z=\\rho\\cos\\phi$, and $0\\le\\phi\\le\\pi$."
+      ],
+      "steps": [
+        "$\\rho^2\\sin^2\\phi-3\\rho^2\\cos^2\\phi=0$.",
+        "For $\\rho\\neq0$: $\\tan^2\\phi=3$, so $\\tan\\phi=\\pm\\sqrt3$.",
+        "With $0\\le\\phi\\le\\pi$: $\\phi=\\dfrac\\pi3$ or $\\phi=\\dfrac{2\\pi}3$ (a double cone)."
+      ],
+      "brief": "$\\rho^2\\sin^2\\phi=3\\rho^2\\cos^2\\phi\\Rightarrow\\tan^2\\phi=3$: $\\phi=\\frac\\pi3,\\frac{2\\pi}3$."
+    },
+    {
+      "sec": "14.7",
+      "q": "The volume of the solid inside $x^2+y^2+z^2=16$ and outside $z=\\sqrt{x^2+y^2}$ is equal to",
+      "opts": [
+        "$\\dfrac{64\\pi}{3}\\left(2+\\sqrt2\\right)$",
+        "$\\dfrac{32\\pi}{3}\\left(2+\\sqrt2\\right)$",
+        "$\\dfrac{64\\pi}{3}\\left(1+\\sqrt2\\right)$",
+        "$\\dfrac{32\\pi}{3}\\left(1+\\sqrt2\\right)$",
+        "$\\dfrac{\\pi}{3}$"
+      ],
+      "ans": 0,
+      "hints": [
+        "A sphere and a cone suggest spherical coordinates.",
+        "Find the angle $\\phi$ of the cone and decide which range of $\\phi$ lies outside it, with $\\rho$ from $0$ to the sphere's radius.",
+        "In spherical coordinates $dV=\\rho^2\\sin\\phi\\,d\\rho\\,d\\phi\\,d\\theta$, and the cone $z=\\sqrt{x^2+y^2}$ is $\\phi=\\pi/4$."
+      ],
+      "steps": [
+        "The sphere is $\\rho=4$ and the cone $z=\\sqrt{x^2+y^2}$ is $\\phi=\\dfrac\\pi4$. Outside the cone means $\\dfrac\\pi4\\le\\phi\\le\\pi$.",
+        "$V=\\int_0^{2\\pi}\\int_{\\pi/4}^{\\pi}\\int_0^4\\rho^2\\sin\\phi\\,d\\rho\\,d\\phi\\,d\\theta=2\\pi\\cdot\\dfrac{64}{3}\\cdot\\left[-\\cos\\phi\\right]_{\\pi/4}^{\\pi}$.",
+        "$-\\cos\\pi+\\cos\\dfrac\\pi4=1+\\dfrac{\\sqrt2}2$.",
+        "$V=\\dfrac{128\\pi}{3}\\left(1+\\dfrac{\\sqrt2}2\\right)=\\dfrac{64\\pi}{3}\\left(2+\\sqrt2\\right)$."
+      ],
+      "brief": "Spherical, $\\phi\\in[\\frac\\pi4,\\pi]$, $\\rho\\le4$: $V=\\frac{128\\pi}{3}(1+\\frac{\\sqrt2}{2})=\\frac{64\\pi}{3}(2+\\sqrt2)$."
+    },
+    {
+      "sec": "14.7",
+      "q": "If the volume of the solid region cut from the sphere $x^2+y^2+z^2=4$ by the cylinder $x^2+y^2-2y=0$ is given by \\[ \\int_0^{a\\pi}\\int_0^{b\\sin\\theta}\\int_{-\\sqrt{c-r^2}}^{\\sqrt{c-r^2}}r\\,dz\\,dr\\,d\\theta, \\] then $a+b+c=$",
+      "opts": [
+        "$7$",
+        "$8$",
+        "$5$",
+        "$6$",
+        "$10$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Use cylindrical coordinates to match the integral to the solid.",
+        "Convert the cylinder and sphere to cylindrical form, and find the range of $\\theta$ traced by the cylinder's circle.",
+        "In cylindrical coordinates $x^2+y^2=r^2$ and $y=r\\sin\\theta$; a circle $r=k\\sin\\theta$ through the origin is traced once for $0\\le\\theta\\le\\pi$."
+      ],
+      "steps": [
+        "Cylinder: $r^2=2r\\sin\\theta$, so $r=2\\sin\\theta$; this gives $b=2$.",
+        "The circle $r=2\\sin\\theta$ is traced once for $0\\le\\theta\\le\\pi$, so $a=1$.",
+        "Sphere: $r^2+z^2=4$, so $z=\\pm\\sqrt{4-r^2}$ and $c=4$.",
+        "$a+b+c=1+2+4=7$."
+      ],
+      "brief": "Cylinder $r=2\\sin\\theta$, $\\theta\\in[0,\\pi]$; sphere $z=\\pm\\sqrt{4-r^2}$: $1+2+4=7$."
+    }
+  ]
+}

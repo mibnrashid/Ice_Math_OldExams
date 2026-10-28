@@ -1,0 +1,343 @@
+{
+  "course": "math102",
+  "term": "233",
+  "kind": "e1",
+  "date": "",
+  "minutes": 90,
+  "source": "math102-233-e1.pdf",
+  "note": "Scan of the master version. Date and duration are not printed on the pages (the master has no cover); date left empty and 90 minutes assumed. The official key marks choice (a) for every master question and all 14 answers were verified with sympy; no disagreements. Q10 is printed with lower limit 3 and upper limit sqrt(3), so the value is negative, matching the key. Red handwritten hints were ignored.",
+  "qs": [
+    {
+      "sec": "5.8",
+      "q": "$\\int_0^3\\sqrt{9-x^2}\\,dx=$",
+      "opts": [
+        "$\\dfrac{9}{4}\\pi$",
+        "$\\dfrac{9}{2}\\pi$",
+        "$9\\pi$",
+        "$\\dfrac{9}{8}\\pi$",
+        "$18\\pi$"
+      ],
+      "ans": 0,
+      "hints": [
+        "The graph of $y=\\sqrt{a^2-x^2}$ is a semicircle, so this integral can be read as an area (or done by trigonometric or inverse-trig methods).",
+        "Identify the curve $y=\\sqrt{9-x^2}$ and the part of it lying over $0\\le x\\le3$.",
+        "The area of a circle of radius $r$ is $\\pi r^2$; $x^2+y^2=r^2$ with $y\\ge0$ is the upper semicircle. Alternatively $\\int\\sqrt{a^2-x^2}\\,dx=\\frac{x}{2}\\sqrt{a^2-x^2}+\\frac{a^2}{2}\\arcsin\\frac{x}{a}+C$."
+      ],
+      "steps": [
+        "$y=\\sqrt{9-x^2}$ is the upper half of the circle $x^2+y^2=9$, radius $3$.",
+        "Over $0\\le x\\le3$ we have the quarter of that disk lying in the first quadrant.",
+        "Area of the quarter disk: $\\dfrac14\\pi\\cdot3^2=\\dfrac{9}{4}\\pi$.",
+        "Check with the formula: $\\left[\\dfrac x2\\sqrt{9-x^2}+\\dfrac92\\arcsin\\dfrac x3\\right]_0^3=\\dfrac92\\cdot\\dfrac\\pi2=\\dfrac94\\pi$."
+      ],
+      "brief": "Quarter of a disk of radius 3: $\\frac14\\pi\\cdot9=\\frac94\\pi$."
+    },
+    {
+      "sec": "5.3",
+      "q": "If $a$ and $b$ are the real numbers that maximize $\\int_a^b(4-x^2)\\,dx$, then $a+2b=$ (Hint: Graph the function $f(x)=4-x^2$.)",
+      "opts": [
+        "$2$",
+        "$4$",
+        "$-4$",
+        "$0$",
+        "$-2$"
+      ],
+      "ans": 0,
+      "hints": [
+        "A definite integral counts area above the $x$-axis as positive and area below it as negative.",
+        "Sketch the graph and decide on which interval $[a,b]$ the function is nonnegative, so that no negative area is included and no positive area is missed.",
+        "If $f\\ge0$ on $[p,q]$ and $f<0$ just outside it, then $\\int_a^b f\\,dx$ is largest when $[a,b]=[p,q]$, where $p,q$ are the zeros of $f$."
+      ],
+      "steps": [
+        "$f(x)=4-x^2$ is a downward parabola with zeros $x=\\pm2$.",
+        "$f(x)\\ge0$ exactly for $-2\\le x\\le2$ and $f(x)<0$ outside.",
+        "The integral is maximized by taking all of the positive area and none of the negative area, so $a=-2$ and $b=2$.",
+        "$a+2b=-2+4=2$."
+      ],
+      "brief": "$f\\ge0$ only on $[-2,2]$, so $a=-2$, $b=2$ and $a+2b=2$."
+    },
+    {
+      "sec": "5.4",
+      "q": "The average value of the function \\[ f(x)=\\frac{4(x^2+1)}{x^2} \\] over the interval $[1,4]$ is",
+      "opts": [
+        "$5$",
+        "$6$",
+        "$10$",
+        "$12$",
+        "$14$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Use the formula for the average value of a function on an interval.",
+        "Simplify $f(x)$ by splitting the fraction into a sum of powers of $x$, then integrate over $[1,4]$ and divide by the length of the interval.",
+        "The average value of $f$ on $[a,b]$ is $\\dfrac{1}{b-a}\\int_a^b f(x)\\,dx$."
+      ],
+      "steps": [
+        "$f(x)=4+4x^{-2}$.",
+        "$\\int_1^4\\left(4+4x^{-2}\\right)dx=\\left[4x-\\dfrac4x\\right]_1^4=(16-1)-(4-4)=15$.",
+        "Average value $=\\dfrac{15}{4-1}=5$."
+      ],
+      "brief": "$\\frac13\\int_1^4(4+4x^{-2})dx=\\frac13\\cdot15=5$."
+    },
+    {
+      "sec": "5.4",
+      "q": "Let $f$ be a continuous function and $c$ be a positive real number such that \\[ \\int_c^x f(t)\\,dt=x^2+2x-3. \\] Then $f(c)=$",
+      "opts": [
+        "$4$",
+        "$3$",
+        "$2$",
+        "$5$",
+        "$6$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Two facts are available: the value of the integral when the limits are equal, and the second Fundamental Theorem of Calculus.",
+        "Put $x=c$ to find $c$, then differentiate both sides with respect to $x$ to find $f$.",
+        "$\\int_c^c f(t)\\,dt=0$ and, for continuous $f$, $\\dfrac{d}{dx}\\int_c^x f(t)\\,dt=f(x)$."
+      ],
+      "steps": [
+        "Set $x=c$: $0=c^2+2c-3=(c+3)(c-1)$, and $c>0$ gives $c=1$.",
+        "Differentiate: $f(x)=2x+2$.",
+        "$f(c)=f(1)=4$."
+      ],
+      "brief": "$x=c$ gives $c=1$; $f(x)=2x+2$, so $f(1)=4$."
+    },
+    {
+      "sec": "5.5",
+      "q": "$\\int_9^{16}\\dfrac{10}{\\sqrt{x}\\,(1+\\sqrt{x})^2}\\,dx=$",
+      "opts": [
+        "$1$",
+        "$2$",
+        "$3$",
+        "$4$",
+        "$0$"
+      ],
+      "ans": 0,
+      "hints": [
+        "The integrand contains $\\sqrt x$ and a factor $\\frac{1}{\\sqrt x}$, which is the derivative of $\\sqrt x$ up to a constant, so a substitution works.",
+        "Let $u=1+\\sqrt x$ and change the limits of integration as well.",
+        "If $u=g(x)$ then $du=g'(x)\\,dx$ and $\\int_a^b f(g(x))g'(x)\\,dx=\\int_{g(a)}^{g(b)}f(u)\\,du$; also $\\int u^{-2}\\,du=-u^{-1}+C$."
+      ],
+      "steps": [
+        "$u=1+\\sqrt x$, $du=\\dfrac{dx}{2\\sqrt x}$, so $\\dfrac{dx}{\\sqrt x}=2\\,du$.",
+        "Limits: $x=9\\Rightarrow u=4$; $x=16\\Rightarrow u=5$.",
+        "$\\int_4^5 \\dfrac{20}{u^2}\\,du=\\left[-\\dfrac{20}{u}\\right]_4^5=-4+5=1$."
+      ],
+      "brief": "$u=1+\\sqrt x$: $\\int_4^5 20u^{-2}du=\\left[-\\frac{20}{u}\\right]_4^5=1$."
+    },
+    {
+      "sec": "5.5",
+      "q": "$\\int 15x\\sqrt{1-x}\\,dx=$",
+      "opts": [
+        "$6(1-x)^{5/2}-10(1-x)^{3/2}+C$",
+        "$6(1-x)^{5/2}-4(1-x)^{3/2}+C$",
+        "$4(1-x)^{5/2}-10(1-x)^{3/2}+C$",
+        "$4(1-x)^{5/2}-6(1-x)^{3/2}+C$",
+        "$10(1-x)^{5/2}-6(1-x)^{3/2}+C$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Substitute for the expression under the root, and rewrite the leftover $x$ in terms of the new variable.",
+        "Let $u=1-x$, so $x=1-u$ and $dx=-du$, then expand into powers of $u$.",
+        "$\\int u^n\\,du=\\dfrac{u^{n+1}}{n+1}+C$ for $n\\ne-1$; remember to replace $u$ by $1-x$ at the end."
+      ],
+      "steps": [
+        "$u=1-x$: $x=1-u$, $dx=-du$.",
+        "$\\int15(1-u)\\sqrt u\\,(-du)=-15\\int\\left(u^{1/2}-u^{3/2}\\right)du$.",
+        "$=-15\\left(\\dfrac23u^{3/2}-\\dfrac25u^{5/2}\\right)+C=6u^{5/2}-10u^{3/2}+C$.",
+        "So the result is $6(1-x)^{5/2}-10(1-x)^{3/2}+C$."
+      ],
+      "brief": "$u=1-x$: $-15\\int(u^{1/2}-u^{3/2})du=6u^{5/2}-10u^{3/2}+C$."
+    },
+    {
+      "sec": "5.7",
+      "q": "$\\int_3^4\\dfrac{3x}{(x-2)^2}\\,dx=$",
+      "opts": [
+        "$3+3\\ln2$",
+        "$2+3\\ln2$",
+        "$2+2\\ln2$",
+        "$3+\\ln2$",
+        "$3+2\\ln2$"
+      ],
+      "ans": 0,
+      "hints": [
+        "The numerator has degree one less than the denominator; rewrite the numerator in terms of the base of the denominator.",
+        "Write the numerator as a multiple of $x-2$ plus a constant and split the fraction, or substitute $u=x-2$.",
+        "$\\int\\dfrac{du}{u}=\\ln|u|+C$ and $\\int u^{-2}\\,du=-\\dfrac1u+C$."
+      ],
+      "steps": [
+        "$\\dfrac{3x}{(x-2)^2}=\\dfrac{3}{x-2}+\\dfrac{6}{(x-2)^2}$.",
+        "Antiderivative: $3\\ln|x-2|-\\dfrac{6}{x-2}$.",
+        "At $x=4$: $3\\ln2-3$; at $x=3$: $0-6=-6$.",
+        "Difference: $3\\ln2-3-(-6)=3+3\\ln2$."
+      ],
+      "brief": "$\\frac{3x}{(x-2)^2}=\\frac3{x-2}+\\frac6{(x-2)^2}$, integral $=3+3\\ln2$."
+    },
+    {
+      "sec": "5.7",
+      "q": "$\\int_0^\\pi\\left(1-\\tan\\dfrac{\\theta}{4}\\right)d\\theta=$",
+      "opts": [
+        "$\\pi-2\\ln2$",
+        "$\\pi-4\\ln2$",
+        "$\\pi-\\ln2$",
+        "$\\pi+2\\ln2$",
+        "$\\pi+3\\ln2$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Integrate term by term; the tangent term needs the log rule for trigonometric functions.",
+        "Substitute $u=\\theta/4$ (or use the chain rule in reverse) for the tangent term.",
+        "$\\int\\tan u\\,du=-\\ln|\\cos u|+C=\\ln|\\sec u|+C$, and $\\int\\tan(k\\theta)\\,d\\theta=\\frac1k\\ln|\\sec k\\theta|+C$."
+      ],
+      "steps": [
+        "$\\int_0^\\pi1\\,d\\theta=\\pi$.",
+        "$\\int\\tan\\dfrac\\theta4\\,d\\theta=4\\ln\\left|\\sec\\dfrac\\theta4\\right|+C$.",
+        "From $0$ to $\\pi$: $4\\ln\\sec\\dfrac\\pi4-4\\ln\\sec0=4\\ln\\sqrt2-0=2\\ln2$.",
+        "Result: $\\pi-2\\ln2$."
+      ],
+      "brief": "$\\int\\tan\\frac\\theta4d\\theta=4\\ln\\sec\\frac\\theta4$, giving $\\pi-4\\ln\\sqrt2=\\pi-2\\ln2$."
+    },
+    {
+      "sec": "5.8",
+      "q": "$\\int_0^{1/\\sqrt2}\\dfrac{\\cos^{-1}(x)}{\\sqrt{1-x^2}}\\,dx=$",
+      "opts": [
+        "$\\dfrac{3\\pi^2}{32}$",
+        "$-\\dfrac{3\\pi^2}{32}$",
+        "$\\dfrac{3\\pi^2}{16}$",
+        "$-\\dfrac{3\\pi^2}{16}$",
+        "$\\dfrac{\\pi^2}{32}$"
+      ],
+      "ans": 0,
+      "hints": [
+        "The integrand is a function times its own derivative (up to sign), so use a substitution.",
+        "Let $u=\\cos^{-1}x$ and convert the limits.",
+        "$\\dfrac{d}{dx}\\cos^{-1}x=-\\dfrac{1}{\\sqrt{1-x^2}}$, and $\\int u\\,du=\\dfrac{u^2}{2}+C$."
+      ],
+      "steps": [
+        "$u=\\cos^{-1}x$, $du=-\\dfrac{dx}{\\sqrt{1-x^2}}$.",
+        "Limits: $x=0\\Rightarrow u=\\dfrac\\pi2$; $x=\\dfrac1{\\sqrt2}\\Rightarrow u=\\dfrac\\pi4$.",
+        "$-\\int_{\\pi/2}^{\\pi/4}u\\,du=\\int_{\\pi/4}^{\\pi/2}u\\,du=\\dfrac12\\left(\\dfrac{\\pi^2}{4}-\\dfrac{\\pi^2}{16}\\right)$.",
+        "$=\\dfrac12\\cdot\\dfrac{3\\pi^2}{16}=\\dfrac{3\\pi^2}{32}$."
+      ],
+      "brief": "$u=\\cos^{-1}x$: $\\int_{\\pi/4}^{\\pi/2}u\\,du=\\frac12\\left(\\frac{\\pi^2}4-\\frac{\\pi^2}{16}\\right)=\\frac{3\\pi^2}{32}$."
+    },
+    {
+      "sec": "5.8",
+      "q": "$\\int_3^{\\sqrt3}\\dfrac{dx}{x\\sqrt{4x^2-9}}=$",
+      "opts": [
+        "$-\\dfrac{\\pi}{18}$",
+        "$\\dfrac{\\pi}{9}$",
+        "$\\dfrac{\\pi}{6}$",
+        "$\\dfrac{\\pi}{18}$",
+        "$-\\dfrac{\\pi}{9}$"
+      ],
+      "ans": 0,
+      "hints": [
+        "This has the form $\\dfrac{du}{u\\sqrt{u^2-a^2}}$, which gives an inverse secant. Note the lower limit is larger than the upper limit.",
+        "Let $u=2x$ so that $4x^2-9=u^2-9$, and rewrite $x$ and $dx$ in terms of $u$.",
+        "$\\int\\dfrac{du}{u\\sqrt{u^2-a^2}}=\\dfrac1a\\operatorname{arcsec}\\dfrac{|u|}{a}+C$, and $\\int_p^q=-\\int_q^p$."
+      ],
+      "steps": [
+        "$u=2x$, $du=2\\,dx$: $\\dfrac{dx}{x\\sqrt{4x^2-9}}=\\dfrac{du}{u\\sqrt{u^2-9}}$.",
+        "Antiderivative: $\\dfrac13\\operatorname{arcsec}\\dfrac{u}{3}=\\dfrac13\\operatorname{arcsec}\\dfrac{2x}{3}$.",
+        "At $x=\\sqrt3$: $\\dfrac13\\operatorname{arcsec}\\dfrac{2}{\\sqrt3}=\\dfrac13\\cdot\\dfrac\\pi6$; at $x=3$: $\\dfrac13\\operatorname{arcsec}2=\\dfrac13\\cdot\\dfrac\\pi3$.",
+        "Upper minus lower: $\\dfrac{\\pi}{18}-\\dfrac{\\pi}{9}=-\\dfrac{\\pi}{18}$."
+      ],
+      "brief": "$\\frac13\\operatorname{arcsec}\\frac{2x}3$ from $3$ to $\\sqrt3$: $\\frac\\pi{18}-\\frac\\pi9=-\\frac\\pi{18}$."
+    },
+    {
+      "sec": "5.9",
+      "q": "$\\int_{-1}^{1}\\operatorname{sech}^3x\\,\\tanh x\\,dx=$",
+      "opts": [
+        "$0$",
+        "$\\dfrac{2e^3-16}{3e^3}$",
+        "$\\dfrac{2e^3+16}{3e^3}$",
+        "$\\dfrac{3e^3+16}{2e^3}$",
+        "$\\dfrac{3e^3-16}{2e^3}$"
+      ],
+      "ans": 0,
+      "hints": [
+        "The limits are symmetric about $0$, so check whether the integrand is even or odd.",
+        "Determine the parity of $\\operatorname{sech}x$ and $\\tanh x$, then the parity of the product.",
+        "If $f$ is odd then $\\int_{-a}^{a}f(x)\\,dx=0$; $\\operatorname{sech}$ is even and $\\tanh$ is odd."
+      ],
+      "steps": [
+        "$\\operatorname{sech}(-x)=\\operatorname{sech}x$ and $\\tanh(-x)=-\\tanh x$.",
+        "So $f(x)=\\operatorname{sech}^3x\\tanh x$ satisfies $f(-x)=-f(x)$: it is odd.",
+        "The interval $[-1,1]$ is symmetric, so $\\int_{-1}^1f(x)\\,dx=0$.",
+        "Check: an antiderivative is $-\\tfrac13\\operatorname{sech}^3x$, which is even, so its values at $\\pm1$ agree and the difference is $0$."
+      ],
+      "brief": "Odd integrand on $[-1,1]$, so the integral is $0$."
+    },
+    {
+      "sec": "7.1",
+      "q": "The area of the region bounded by the graphs of $x=4-y^2$ and $x=y+2$ is equal to",
+      "opts": [
+        "$\\dfrac92$",
+        "$\\dfrac94$",
+        "$\\dfrac72$",
+        "$\\dfrac{15}{4}$",
+        "$\\dfrac{15}{2}$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Both curves are given as $x$ in terms of $y$, so integrate with respect to $y$.",
+        "Find where the curves meet by setting the two expressions for $x$ equal, then decide which curve is on the right.",
+        "Area $=\\int_{c}^{d}\\left(x_{\\text{right}}-x_{\\text{left}}\\right)dy$ between the intersection values $y=c,d$."
+      ],
+      "steps": [
+        "$4-y^2=y+2\\Rightarrow y^2+y-2=0\\Rightarrow y=-2$ or $y=1$.",
+        "For $-2<y<1$ the parabola is on the right (at $y=0$: $4>2$).",
+        "$A=\\int_{-2}^{1}\\left(2-y-y^2\\right)dy=\\left[2y-\\dfrac{y^2}{2}-\\dfrac{y^3}{3}\\right]_{-2}^{1}$.",
+        "$=\\dfrac76-\\left(-\\dfrac{10}{3}\\right)=\\dfrac92$."
+      ],
+      "brief": "Meet at $y=-2,1$: $\\int_{-2}^1(2-y-y^2)dy=\\frac92$."
+    },
+    {
+      "sec": "7.2",
+      "q": "The volume of the solid generated by revolving the region bounded by the graphs of $y=x^2$ and $y=2x-x^2$ about the $x$-axis is",
+      "opts": [
+        "$\\dfrac\\pi3$",
+        "$\\dfrac\\pi2$",
+        "$2\\pi$",
+        "$6\\pi$",
+        "$3\\pi$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Revolving a region between two curves about the $x$-axis gives washers.",
+        "Find the intersection points, decide which curve is on top, and use outer radius minus inner radius.",
+        "Washer method: $V=\\pi\\int_a^b\\left(R(x)^2-r(x)^2\\right)dx$, with $R$ the outer and $r$ the inner radius."
+      ],
+      "steps": [
+        "$x^2=2x-x^2\\Rightarrow2x(x-1)=0$, so $x=0,1$; on $(0,1)$ the curve $y=2x-x^2$ is above $y=x^2$.",
+        "$V=\\pi\\int_0^1\\left[(2x-x^2)^2-x^4\\right]dx=\\pi\\int_0^1\\left(4x^2-4x^3\\right)dx$.",
+        "$=\\pi\\left[\\dfrac{4x^3}{3}-x^4\\right]_0^1=\\pi\\left(\\dfrac43-1\\right)=\\dfrac\\pi3$."
+      ],
+      "brief": "Washers on $[0,1]$: $\\pi\\int_0^1(4x^2-4x^3)dx=\\frac\\pi3$."
+    },
+    {
+      "sec": "7.2",
+      "q": "The volume of the solid generated by revolving the region bounded by the graphs of $x=y^2$ and $x=4$ about the line $x=5$ is given by the integral:",
+      "opts": [
+        "$2\\pi\\int_0^2(24-10y^2+y^4)\\,dy$",
+        "$2\\pi\\int_0^2(14-5y^2+y^4)\\,dy$",
+        "$2\\pi\\int_0^2(y^4-1)\\,dy$",
+        "$\\pi\\int_{-2}^2(y^2-4)\\,dy$",
+        "$\\pi\\int_{-2}^2(5-y^2)^2\\,dy$"
+      ],
+      "ans": 0,
+      "hints": [
+        "The axis $x=5$ is vertical, so slice horizontally (washers, integrating in $y$).",
+        "For each $y$ find the distances from the line $x=5$ to the two boundary curves: the farther is the outer radius and the nearer is the inner radius.",
+        "Washer method about a vertical line $x=k$: $V=\\pi\\int_c^d\\left(R(y)^2-r(y)^2\\right)dy$ with $R=|k-x_{\\text{far}}|$, $r=|k-x_{\\text{near}}|$; an even integrand on $[-a,a]$ gives twice the integral on $[0,a]$."
+      ],
+      "steps": [
+        "The curves meet where $y^2=4$, so $y=\\pm2$; the region is $y^2\\le x\\le4$.",
+        "Outer radius $R=5-y^2$ (to the parabola), inner radius $r=5-4=1$ (to the line $x=4$).",
+        "$V=\\pi\\int_{-2}^2\\left[(5-y^2)^2-1\\right]dy=\\pi\\int_{-2}^2\\left(24-10y^2+y^4\\right)dy$.",
+        "The integrand is even, so $V=2\\pi\\int_0^2\\left(24-10y^2+y^4\\right)dy$."
+      ],
+      "brief": "Washers: $R=5-y^2$, $r=1$; $V=2\\pi\\int_0^2(24-10y^2+y^4)dy$."
+    }
+  ]
+}

@@ -1,0 +1,340 @@
+{
+  "course": "stat201",
+  "term": "251",
+  "kind": "e1",
+  "date": "29 September 2025",
+  "minutes": 90,
+  "source": "stat201-251-e1.pdf",
+  "note": "No official key; answers derived and verified (each agrees with the usual master convention that choice (a) is correct). Date and 90 minutes are printed on the cover. Q13 uses the textbook quartile method (positions 3.5 and 9.5); the linear-interpolation method also gives only 535.49 as an outlier. Q5 asks which statement is NOT true, so the false statement (independence) is the answer.",
+  "qs": [
+    {
+      "sec": "2.2",
+      "q": "(Exercise 2-56) Orders for a computer are summarized by the optional features that are requested as follows: no optional features, proportion $0.18$; one optional feature, proportion $0.62$; more than one optional feature, proportion $0.20$. What is the probability that an order requests at least one optional feature?",
+      "opts": [
+        "$0.820$",
+        "$0.620$",
+        "$0.200$",
+        "$0.380$",
+        "$0.124$"
+      ],
+      "ans": 0,
+      "hints": [
+        "\"At least one\" is the complement of \"none\", and the three categories cover every order.",
+        "Decide which category (or categories) make up the event \"at least one feature\".",
+        "For events that partition the sample space, probabilities add to 1, and $P(E')=1-P(E)$."
+      ],
+      "steps": [
+        "The event is one optional feature or more than one optional feature.",
+        "These are mutually exclusive: $0.62+0.20=0.82$.",
+        "Check by complement: $1-P(\\text{none})=1-0.18=0.82$."
+      ],
+      "brief": "$1-0.18=0.62+0.20=0.820$."
+    },
+    {
+      "sec": "2.3",
+      "q": "(Exercise 2-79) The analysis of shafts for a compressor is summarized by conformance to specifications. \\[\\begin{array}{c|cc} & \\text{Roundness conforms} &  \\\\ \\text{Surface finish} & \\text{Yes} & \\text{No} \\\\ \\hline \\text{Yes} & 329 & 18 \\\\ \\text{No} & 17 & 12 \\end{array}\\] What is the probability that the selected shaft either conforms to surface finish requirements or does not conform to roundness requirements?",
+      "opts": [
+        "$0.9548$",
+        "$0.9234$",
+        "$0.0798$",
+        "$0.9069$",
+        "$0.1277$"
+      ],
+      "ans": 0,
+      "hints": [
+        "This is a union of two events that overlap, so use the addition rule.",
+        "Define $A$ = surface finish conforms and $B$ = roundness does not conform, and read $P(A)$, $P(B)$, $P(A\\cap B)$ from the table counts out of the total.",
+        "$P(A\\cup B)=P(A)+P(B)-P(A\\cap B)$."
+      ],
+      "steps": [
+        "Total shafts: $329+18+17+12=376$.",
+        "$P(A)=\\dfrac{329+18}{376}=\\dfrac{347}{376}$ and $P(B)=\\dfrac{18+12}{376}=\\dfrac{30}{376}$.",
+        "$P(A\\cap B)=\\dfrac{18}{376}$.",
+        "$P(A\\cup B)=\\dfrac{347+30-18}{376}=\\dfrac{359}{376}\\approx0.9548$."
+      ],
+      "brief": "$P(A\\cup B)=\\frac{347+30-18}{376}=\\frac{359}{376}\\approx0.9548$."
+    },
+    {
+      "sec": "2.4",
+      "q": "(Exercise 2-95) A lot of 40 semiconductor chips contains 5 that are defective. Two are selected randomly, without replacement, from the lot. What is the probability that the second one selected is defective given that the first one was defective?",
+      "opts": [
+        "$\\dfrac{4}{39}$",
+        "$\\dfrac{1}{8}$",
+        "$\\dfrac{5}{39}$",
+        "$\\dfrac{1}{10}$",
+        "$\\dfrac{1}{78}$"
+      ],
+      "ans": 0,
+      "hints": [
+        "This is a conditional probability when sampling without replacement.",
+        "After the first chip is removed, work out how many chips and how many defective chips remain.",
+        "$P(B\\mid A)=\\dfrac{\\text{favourable items left}}{\\text{items left}}$ once $A$ has happened."
+      ],
+      "steps": [
+        "Given the first chip was defective, 39 chips remain.",
+        "Of these, $5-1=4$ are defective.",
+        "$P=\\dfrac{4}{39}$."
+      ],
+      "brief": "After one defective is removed: $\\frac{4}{39}$."
+    },
+    {
+      "sec": "2.1",
+      "q": "(Suggested Problem 2-29) The rise time of a reactor is measured in minutes (and fractions of minutes). Let the sample space be positive, real numbers. Define the events $A$ and $B$ as follows: \\[A=\\{x\\mid x<45.5\\},\\qquad B=\\{x\\mid x>20.5\\}.\\] Which of the following best describes $A\\cap B$?",
+      "opts": [
+        "$\\{x\\mid 20.5<x<45.5\\}$",
+        "$\\{x\\mid x>0\\}$",
+        "$\\{x\\mid x\\ge45.5\\}$",
+        "$\\{x\\mid x\\le20.5\\}$",
+        "$\\{x\\mid 25.5<x<\\infty\\}$"
+      ],
+      "ans": 0,
+      "hints": [
+        "An intersection contains the outcomes that satisfy both conditions at once.",
+        "Place both inequalities on a number line and keep the overlap.",
+        "$A\\cap B=\\{x: x\\in A\\text{ and }x\\in B\\}$."
+      ],
+      "steps": [
+        "$A$ requires $x<45.5$ and $B$ requires $x>20.5$.",
+        "Both hold exactly when $20.5<x<45.5$.",
+        "All such $x$ are positive, so they lie in the sample space."
+      ],
+      "brief": "Overlap of $x<45.5$ and $x>20.5$ is $20.5<x<45.5$."
+    },
+    {
+      "sec": "2.6",
+      "q": "(Exercise 2-135) Disks of polycarbonate plastic from a supplier are analyzed for scratch and shock resistance. The results from 95 disks are summarized as follows: \\[\\begin{array}{c|cc} & \\text{Shock resistance} &  \\\\ \\text{Scratch resistance} & \\text{High} & \\text{Low} \\\\ \\hline \\text{High} & 73 & 7 \\\\ \\text{Low} & 10 & 5 \\end{array}\\] Let $A$ denote the event that a disk has high shock resistance, and let $B$ denote the event that a disk has high scratch resistance. Which one of the following statements is NOT true?",
+      "opts": [
+        "$A$ and $B$ are independent",
+        "$A$ and $B$ are not mutually exclusive",
+        "$P(A\\mid B)=\\dfrac{73}{80}$",
+        "$P(B\\mid A)=\\dfrac{73}{83}$",
+        "$P(A'\\mid B')=\\dfrac13$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Check each statement against the table; exactly one fails.",
+        "Find $P(A)$, $P(B)$, $P(A\\cap B)$ and the conditional probabilities from the counts.",
+        "$A$ and $B$ are independent iff $P(A\\cap B)=P(A)P(B)$ (equivalently $P(A\\mid B)=P(A)$); mutually exclusive means $P(A\\cap B)=0$."
+      ],
+      "steps": [
+        "$P(A)=\\dfrac{83}{95}$, $P(B)=\\dfrac{80}{95}$, $P(A\\cap B)=\\dfrac{73}{95}$.",
+        "$P(A)P(B)=\\dfrac{83\\cdot80}{95^2}\\approx0.736$ but $P(A\\cap B)\\approx0.768$, so $A$ and $B$ are not independent: this statement is false.",
+        "$P(A\\cap B)>0$, so they are not mutually exclusive (true).",
+        "$P(A\\mid B)=\\dfrac{73}{80}$ and $P(B\\mid A)=\\dfrac{73}{83}$ (true).",
+        "$P(A'\\mid B')=\\dfrac{5}{10+5}=\\dfrac13$ (true)."
+      ],
+      "brief": "$P(A)P(B)\\approx0.736\\neq0.768=P(A\\cap B)$, so independence is false."
+    },
+    {
+      "sec": "2.7",
+      "q": "(Suggested Problem 2-147) Customers are used to evaluate preliminary product designs. In the past, $90\\%$ of highly successful products received good reviews, $70\\%$ of moderately successful products received good reviews, and $20\\%$ of poor products received good reviews. In addition, $50\\%$ of products have been highly successful, $35\\%$ have been moderately successful, and $15\\%$ have been poor products. If a product does not attain a good review, what is the probability that it will be a highly successful product?",
+      "opts": [
+        "$0.1818$",
+        "$0.6207$",
+        "$0.3818$",
+        "$0.1001$",
+        "$0.5922$"
+      ],
+      "ans": 0,
+      "hints": [
+        "This is a Bayes' theorem problem: the review result is known and you want the probability of the product type.",
+        "Find the probability of a not-good review within each product type, then the total probability of a not-good review.",
+        "$P(H\\mid R')=\\dfrac{P(R'\\mid H)P(H)}{\\sum_i P(R'\\mid E_i)P(E_i)}$ and $P(R'\\mid E)=1-P(R\\mid E)$."
+      ],
+      "steps": [
+        "Not-good review rates: $0.10$ (highly), $0.30$ (moderately), $0.80$ (poor).",
+        "$P(R')=0.5(0.10)+0.35(0.30)+0.15(0.80)=0.05+0.105+0.12=0.275$.",
+        "$P(H\\mid R')=\\dfrac{0.05}{0.275}\\approx0.1818$."
+      ],
+      "brief": "$\\frac{0.5(0.1)}{0.5(0.1)+0.35(0.3)+0.15(0.8)}=\\frac{0.05}{0.275}\\approx0.1818$."
+    },
+    {
+      "sec": "3.6",
+      "q": "(Exercise 3-89) A particularly long traffic light on your morning commute is green $10\\%$ of the time that you approach it. Assume that each morning represents an independent trial. Over 30 mornings, what is the probability that the light is green on more than two days?",
+      "opts": [
+        "$0.5886$",
+        "$0.4114$",
+        "$0.2277$",
+        "$0$",
+        "$0.2361$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Count of green mornings out of a fixed number of independent trials with the same success probability: a binomial model.",
+        "\"More than two\" is easier through the complement $P(X\\le2)$.",
+        "$P(X=k)=\\binom nk p^k(1-p)^{n-k}$ and $P(X>2)=1-P(X=0)-P(X=1)-P(X=2)$."
+      ],
+      "steps": [
+        "$X\\sim\\text{Binomial}(n=30,\\,p=0.1)$.",
+        "$P(X=0)=0.9^{30}\\approx0.0424$, $P(X=1)=30(0.1)(0.9)^{29}\\approx0.1413$, $P(X=2)=435(0.1)^2(0.9)^{28}\\approx0.2277$.",
+        "$P(X\\le2)\\approx0.4114$.",
+        "$P(X>2)=1-0.4114=0.5886$."
+      ],
+      "brief": "Binomial(30, 0.1): $1-P(X\\le2)=1-0.4114=0.5886$."
+    },
+    {
+      "sec": "3.2",
+      "q": "(Exercise 3-29) An assembly consists of three mechanical components. Suppose that the probabilities that the first, second, and third components meet specifications are $0.92$, $0.88$, and $0.83$, respectively. Assume that the components are independent. Determine the probability mass function of $X$: the number of components in the assembly that meet specifications.",
+      "opts": [
+        "$\\begin{array}{c|cccc} x & 0 & 1 & 2 & 3 \\\\ \\hline P(X=x) & 0.001632 & 0.038704 & 0.287696 & 0.671968 \\end{array}$",
+        "$\\begin{array}{c|ccc} x & 1 & 2 & 3 \\\\ \\hline P(X=x) & 0.038016 & 0.278784 & 0.681472 \\end{array}$",
+        "$\\begin{array}{c|cccc} x & 0 & 1 & 2 & 3 \\\\ \\hline P(X=x) & 0.001632 & 0.287696 & 0.038704 & 0.671968 \\end{array}$",
+        "$\\begin{array}{c|ccc} x & 1 & 2 & 3 \\\\ \\hline P(X=x) & 0.034656 & 0.291744 & 0.671968 \\end{array}$",
+        "$\\begin{array}{c|cccc} x & 0 & 1 & 2 & 3 \\\\ \\hline P(X=x) & 0.004913 & 0.071961 & 0.351339 & 0.571787 \\end{array}$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Add up the probabilities of all outcomes giving each value of $X$.",
+        "List the ways to get $X=0,1,2,3$ and multiply the individual probabilities (independence); the values of $X$ run from 0 to 3.",
+        "For independent components with success probabilities $p_i$, $P(X=k)$ is the sum, over all choices of $k$ successes, of $\\prod p_i\\prod(1-p_j)$. The probabilities must sum to 1."
+      ],
+      "steps": [
+        "$P(X=0)=0.08(0.12)(0.17)=0.001632$.",
+        "$P(X=3)=0.92(0.88)(0.83)=0.671968$.",
+        "$P(X=1)=0.92(0.12)(0.17)+0.08(0.88)(0.17)+0.08(0.12)(0.83)=0.018768+0.011968+0.007968=0.038704$.",
+        "$P(X=2)=1-0.001632-0.038704-0.671968=0.287696$ (the direct sum of the three two-success cases agrees)."
+      ],
+      "brief": "$P(X=0)=0.001632$, $P(1)=0.038704$, $P(2)=0.287696$, $P(3)=0.671968$."
+    },
+    {
+      "sec": "3.3",
+      "q": "(Exercise 3-42) Errors in an experimental transmission channel are found when the transmission is checked by a certifier that detects missing pulses. The number of errors found in an eight-bit byte is a random variable with the following distribution: \\[F(x)=\\begin{cases}0, & x<0,\\\\ 0.45, & 0\\le x<3,\\\\ 0.62, & 3\\le x<5,\\\\ 0.90, & 5\\le x<8,\\\\ 1, & 8\\le x.\\end{cases}\\] What is the probability that there are 4 errors in an eight-bit byte, i.e., $P(X=4)$?",
+      "opts": [
+        "$0$",
+        "$0.45$",
+        "$0.62$",
+        "$0.28$",
+        "$0.17$"
+      ],
+      "ans": 0,
+      "hints": [
+        "For a discrete variable the CDF only jumps at the values the variable can take.",
+        "Look at whether the CDF changes at $x=4$.",
+        "$P(X=x)=F(x)-F(x^-)$, the size of the jump of $F$ at $x$."
+      ],
+      "steps": [
+        "The jumps of $F$ occur at $x=0,3,5,8$ only.",
+        "At $x=4$, $F(x)=0.62$ both just before and at 4, so there is no jump.",
+        "$P(X=4)=0.62-0.62=0$."
+      ],
+      "brief": "$F$ is flat at $x=4$ (no jump), so $P(X=4)=0$."
+    },
+    {
+      "sec": "3.8",
+      "q": "(Exercise 3-175) From 500 customers, a major appliance manufacturer will randomly select a sample without replacement. The company estimates that $30\\%$ of the customers will provide useful data. If this estimate is correct, what is the probability mass function of the number of customers that will provide useful data? Assume that the company samples 5 customers.",
+      "opts": [
+        "Hypergeometric with $n=5$, $K=150$ and $N=500$",
+        "Binomial with $n=5$ and $p=0.3$",
+        "Poisson with $\\lambda=1.5$",
+        "Hypergeometric with $n=150$, $K=5$ and $N=500$",
+        "Binomial with $n=500$ and $p=0.3$"
+      ],
+      "ans": 0,
+      "hints": [
+        "The sampling is without replacement from a finite population that has a known number of 'successes'.",
+        "Identify the population size, how many of them are 'useful', and how many are drawn.",
+        "Hypergeometric: $N$ = population size, $K$ = number of successes in it, $n$ = sample size, $P(X=x)=\\dfrac{\\binom Kx\\binom{N-K}{n-x}}{\\binom Nn}$."
+      ],
+      "steps": [
+        "Population $N=500$ customers.",
+        "Successes in the population: $K=0.30(500)=150$.",
+        "Sample size $n=5$, drawn without replacement, so $X$ is hypergeometric with $N=500$, $K=150$, $n=5$."
+      ],
+      "brief": "Without replacement: hypergeometric, $N=500$, $K=150$, $n=5$."
+    },
+    {
+      "sec": "3.9",
+      "q": "(Exercise 3-138) The number of flaws in bolts of cloth in textile manufacturing is assumed to be Poisson distributed with a mean of $0.22$ flaw per square meter. What is the probability that there is one flaw in $9$ square meters of cloth?",
+      "opts": [
+        "$0.273$",
+        "$0.177$",
+        "$0.244$",
+        "$0.862$",
+        "$1.589$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Counts of events over an area with a constant rate: a Poisson model.",
+        "Scale the rate to the area being examined to get the mean for this region.",
+        "$P(X=x)=\\dfrac{e^{-\\lambda}\\lambda^x}{x!}$ with $\\lambda=(\\text{rate})\\times(\\text{size of region})$."
+      ],
+      "steps": [
+        "Mean for 9 square meters: $\\lambda=0.22\\times9=1.98$.",
+        "$P(X=1)=\\dfrac{e^{-1.98}(1.98)^1}{1!}$.",
+        "$=1.98(0.1381)\\approx0.273$."
+      ],
+      "brief": "$\\lambda=0.22\\cdot9=1.98$; $P(X=1)=1.98e^{-1.98}\\approx0.273$."
+    },
+    {
+      "sec": "6.1",
+      "q": "(Exercise 6-6) Suppose that you add 7 to all of the observations in a sample. How does this change the sample mean? How does it change the sample standard deviation?",
+      "opts": [
+        "The sample mean increases by 7; the sample standard deviation is unchanged.",
+        "Both the sample mean and the sample standard deviation increase by 7.",
+        "The sample mean is unchanged; the sample standard deviation increases by 7.",
+        "The sample mean increases by 7; the sample standard deviation decreases by 7.",
+        "Both the sample mean and the sample standard deviation are unchanged."
+      ],
+      "ans": 0,
+      "hints": [
+        "Compare how location measures and spread measures react to shifting every value.",
+        "Write the new mean using the shifted observations, then look at the deviations from the new mean.",
+        "For $y_i=x_i+c$: $\\bar y=\\bar x+c$ and $y_i-\\bar y=x_i-\\bar x$, so $s_y=s_x$."
+      ],
+      "steps": [
+        "New observations $y_i=x_i+7$, so $\\bar y=\\bar x+7$.",
+        "Deviations: $y_i-\\bar y=(x_i+7)-(\\bar x+7)=x_i-\\bar x$.",
+        "Hence $s_y^2=\\dfrac{\\sum(y_i-\\bar y)^2}{n-1}=s_x^2$ and the standard deviation is unchanged."
+      ],
+      "brief": "Mean shifts by $+7$; deviations from the mean unchanged, so $s$ unchanged."
+    },
+    {
+      "sec": "6.4",
+      "q": "(Exercise 6-55) The twelve measurements that follow are furnace temperature recorded on successive batches in a semiconductor manufacturing process (units are $^\\circ\\text{C}$): 498.17, 504.23, 504.83, 510.30, 511.35, 511.36, 511.46, 514.20, 514.84, 518.37, 529.91, 535.49. Using the Interquartile Range (IQR) method, which one of the following statements about outliers in this dataset is correct?",
+      "opts": [
+        "535.49 is the only outlier.",
+        "498.17 and 535.49 are the two outliers.",
+        "498.17 is the only outlier.",
+        "There is no outlier.",
+        "529.91 and 535.49 are the two outliers."
+      ],
+      "ans": 0,
+      "hints": [
+        "Use the fences based on the quartiles.",
+        "Find $Q_1$ and $Q_3$ (the 25th and 75th percentiles) of the ordered data, then compute the IQR and both fences.",
+        "A point is an outlier if it is below $Q_1-1.5\\,\\text{IQR}$ or above $Q_3+1.5\\,\\text{IQR}$, where $\\text{IQR}=Q_3-Q_1$."
+      ],
+      "steps": [
+        "With $n=12$, $Q_1$ is the average of the 3rd and 4th values: $\\dfrac{504.83+510.30}{2}=507.565$.",
+        "$Q_3$ is the average of the 9th and 10th values: $\\dfrac{514.84+518.37}{2}=516.605$.",
+        "$\\text{IQR}=9.04$, so the fences are $507.565-13.56=494.005$ and $516.605+13.56=530.165$.",
+        "$498.17>494.005$ and $529.91<530.165$ are inside; only $535.49>530.165$ is outside."
+      ],
+      "brief": "$Q_1=507.565$, $Q_3=516.605$; upper fence $530.165$, so only $535.49$ is an outlier."
+    },
+    {
+      "sec": "6.3",
+      "img": "stat201-251-e1-q14.png",
+      "q": "(Exercise 6-47) The shear strengths of 100 spot welds in a titanium alloy are recorded. A histogram of these data is shown in the figure below. Which one of the following statements about this histogram is true?",
+      "opts": [
+        "The data is negatively skewed.",
+        "The data is positively skewed.",
+        "The data is symmetric.",
+        "The mean shear strength is around 5350.",
+        "The median shear strength is around 5350."
+      ],
+      "ans": 0,
+      "hints": [
+        "Judge the shape of the histogram: where is the bulk of the data and where is the longer tail?",
+        "Find where the tallest bars are and which side the tail extends toward; also locate where half the area lies for the centre.",
+        "A longer tail to the left (smaller values) means negatively (left) skewed, with the mean below the median; the median splits the data in half."
+      ],
+      "steps": [
+        "The tallest bars are around 5420 to 5450, on the right side.",
+        "A long tail extends to the left toward 5320 to 5360, so the distribution is negatively skewed.",
+        "The mean and median lie near 5420, far above 5350, so the statements about 5350 are false, and it is not symmetric."
+      ],
+      "brief": "Long tail to the left, bulk near 5420 to 5450: negatively skewed."
+    }
+  ]
+}

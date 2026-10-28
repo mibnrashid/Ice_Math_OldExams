@@ -1,0 +1,341 @@
+{
+  "course": "stat201",
+  "term": "241",
+  "kind": "e1",
+  "date": "30 September 2024",
+  "minutes": 90,
+  "source": "stat319-241-e1.pdf",
+  "note": "Original course STAT 319. Date (September 30, 2024) and 90 minutes are printed on the cover. Master key (red choice (a)) confirmed visually and every answer re-verified with Python; no disagreements. 14 questions. Q1 (Venn), Q12 (histogram) and Q14 (box plots) use cropped figures; Q14 answer read from the picture (male box is clearly taller). Q3 table rendered as a LaTeX array.",
+  "qs": [
+    {
+      "sec": "2.1",
+      "q": "(Q: 2-19(c), page 45) Three events are shown on the Venn diagram in the following figure. The shaded region corresponds to which of the following events?",
+      "opts": [
+        "$(E_1\\cap E_2)\\cup E_3$",
+        "$(E_1\\cup E_2)\\cup E_3$",
+        "$(E_1\\cup E_2)\\cap E_3$",
+        "$(E_1\\cap E_2)\\cap E_3$",
+        "$(E_1\\cup E_2)'\\cup E_3$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Describe the shaded region in words using unions, intersections and complements, then match it to a set expression.",
+        "Notice which parts of the picture are shaded: all of the circle $E_3$, plus one more piece that lies where two circles overlap.",
+        "$A\\cap B$ is the overlap of $A$ and $B$; $A\\cup B$ is everything in $A$ or $B$ or both; $A'$ is everything outside $A$."
+      ],
+      "steps": [
+        "The whole circle $E_3$ is shaded.",
+        "Outside $E_3$, the only shaded part is the overlap of $E_1$ and $E_2$.",
+        "So the shaded region is everything in $E_3$ together with $E_1\\cap E_2$, that is $(E_1\\cap E_2)\\cup E_3$.",
+        "The other choices shade too much (all of $E_1$ and $E_2$, or the outside of both circles) or too little (only the triple overlap or only the overlap with $E_3$)."
+      ],
+      "brief": "Shaded = all of $E_3$ plus $E_1\\cap E_2$: $(E_1\\cap E_2)\\cup E_3$.",
+      "img": "stat201-241-e1-q1.png"
+    },
+    {
+      "sec": "2.2",
+      "q": "(Q: 2-59(c), page 48) An injection-molded part is equally likely to be obtained from any one of the ten cavities on a mold. What is the probability that a part is from neither cavity 7 nor 8?",
+      "opts": [
+        "$8/10$",
+        "$10/12$",
+        "$2/10$",
+        "$8/12$",
+        "$2/8$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Equally likely outcomes: probability is a count of favourable outcomes over the total.",
+        "Count how many of the ten cavities are not 7 and not 8.",
+        "For equally likely outcomes, $P(E)=\\dfrac{\\text{number of outcomes in }E}{\\text{number of outcomes in the sample space}}$."
+      ],
+      "steps": [
+        "There are 10 equally likely cavities.",
+        "The cavities that are neither 7 nor 8 are 1 to 6, 9 and 10, which is 8 cavities.",
+        "$P=\\dfrac{8}{10}$."
+      ],
+      "brief": "Equally likely: $8$ favourable of $10$, so $P=8/10$."
+    },
+    {
+      "sec": "2.4",
+      "q": "(Q: 2-89(a), page 52) The analysis of results from a leaf transmutation experiment (turning a leaf into a petal) is summarized by type of transformation completed: \\[\\begin{array}{l|cc} & \\text{Total Textural Transformation} & \\\\ \\text{Total Color Transformation} & \\text{Yes} & \\text{No}\\\\ \\hline \\text{Yes} & 232 & 40\\\\ \\text{No} & 18 & 10 \\end{array}\\] If a leaf completes the color transformation, what is the probability that it will complete the textural transformation?",
+      "opts": [
+        "0.853",
+        "0.773",
+        "0.928",
+        "0.907",
+        "0.167"
+      ],
+      "ans": 0,
+      "hints": [
+        "This is a conditional probability read from a two-way table.",
+        "Restrict attention to the row of leaves that completed the color transformation and ask what fraction of that row completed the textural one.",
+        "$P(B\\mid A)=\\dfrac{P(A\\cap B)}{P(A)}$, equivalently the count in $A\\cap B$ divided by the count in $A$."
+      ],
+      "steps": [
+        "Let $C$ = color transformation completed, $T$ = textural transformation completed.",
+        "The number of leaves with $C$ is $232+40=272$, and with both it is $232$.",
+        "$P(T\\mid C)=\\dfrac{232}{272}=0.853$."
+      ],
+      "brief": "$P(T\\mid C)=\\frac{232}{232+40}=0.853$."
+    },
+    {
+      "sec": "2.6",
+      "q": "(Q: 2-129(c), page 55) The probability that a lab specimen contains high levels of contamination is 0.15. Four samples are checked, and the samples are independent. What is the probability that at least one contains high levels of contamination?",
+      "opts": [
+        "0.478",
+        "0.344",
+        "0.092",
+        "0.908",
+        "0.850"
+      ],
+      "ans": 0,
+      "hints": [
+        "\"At least one\" is best handled through the complement, using independence.",
+        "Find the probability that none of the four samples is highly contaminated, then subtract from 1.",
+        "For independent events $P(A_1\\cap\\cdots\\cap A_n)=\\prod P(A_i)$ and $P(\\text{at least one})=1-P(\\text{none})$."
+      ],
+      "steps": [
+        "The probability a sample is not highly contaminated is $1-0.15=0.85$.",
+        "By independence, $P(\\text{none})=0.85^4=0.5220$.",
+        "$P(\\text{at least one})=1-0.5220=0.478$."
+      ],
+      "brief": "$1-0.85^4=0.478$."
+    },
+    {
+      "sec": "2.7",
+      "q": "(Q: 2-148(a), page 56) An inspector working for a manufacturing company has a $99\\%$ (0.99) chance of correctly identifying defective items and a $0.5\\%$ (0.005) chance of incorrectly classifying a good item as defective. The company has evidence that $2\\%$ (0.02) of the items its line produces are nonconforming (i.e. defective). What is the probability that an item selected for inspection is classified as defective?",
+      "opts": [
+        "0.0247",
+        "0.0049",
+        "0.0148",
+        "0.0198",
+        "0.0050"
+      ],
+      "ans": 0,
+      "hints": [
+        "Split the event \"classified as defective\" according to whether the item is truly defective or good.",
+        "Add the probability of a defective item being classified defective and the probability of a good item being classified defective.",
+        "Total probability: $P(C)=P(C\\mid D)P(D)+P(C\\mid D')P(D')$."
+      ],
+      "steps": [
+        "Let $D$ = item is defective, $C$ = classified as defective. $P(D)=0.02$, $P(C\\mid D)=0.99$, $P(C\\mid D')=0.005$.",
+        "$P(C)=0.99(0.02)+0.005(0.98)$.",
+        "$=0.0198+0.0049=0.0247$."
+      ],
+      "brief": "Total probability: $0.99(0.02)+0.005(0.98)=0.0247$."
+    },
+    {
+      "sec": "3.2",
+      "q": "(Q: 3-28, page 94) An assembly consists of two mechanical components. Suppose that the probabilities that the first and second components meet specifications are 0.95 and 0.98, respectively. Assume that the components are independent. Which one of the following is the correct probability mass function of the number of components in the assembly that meet specifications?",
+      "opts": [
+        "$\\begin{cases} P(X=0)=0.001\\\\ P(X=1)=0.068\\\\ P(X=2)=0.931 \\end{cases}$",
+        "$\\begin{cases} P(X=0)=0.020\\\\ P(X=1)=0.060\\\\ P(X=2)=0.920 \\end{cases}$",
+        "$\\begin{cases} P(X=0)=0.002\\\\ P(X=1)=0.070\\\\ P(X=2)=0.928 \\end{cases}$",
+        "$\\begin{cases} P(X=0)=0.010\\\\ P(X=1)=0.080\\\\ P(X=2)=0.910 \\end{cases}$",
+        "$\\begin{cases} P(X=0)=0.005\\\\ P(X=1)=0.065\\\\ P(X=2)=0.930 \\end{cases}$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Let $X$ be the number of good components (0, 1 or 2) and find each probability with independence.",
+        "For $X=1$ either the first or the second component is good, not both: add two products.",
+        "For independent events $P(A\\cap B)=P(A)P(B)$; the pmf probabilities must sum to 1."
+      ],
+      "steps": [
+        "Let $G_1,G_2$ be the events that the components meet specifications, $P(G_1)=0.95$, $P(G_2)=0.98$.",
+        "$P(X=0)=0.05(0.02)=0.001$.",
+        "$P(X=1)=0.95(0.02)+0.05(0.98)=0.019+0.049=0.068$.",
+        "$P(X=2)=0.95(0.98)=0.931$. The three values sum to 1."
+      ],
+      "brief": "$P(0)=0.05(0.02)$, $P(1)=0.019+0.049$, $P(2)=0.95(0.98)$: $0.001, 0.068, 0.931$."
+    },
+    {
+      "sec": "3.4",
+      "q": "(Q: 3-57, page 95) The range of the random variable $X$ is $[1,2,4,7,x]$ where $x$ is unknown. If each value is equally likely and the mean of $X$ is 6, determine $x$. Note: The values $[1,2,4,7,x]$ represent all possible values of the discrete random variable $X$.",
+      "opts": [
+        "16",
+        "14",
+        "18",
+        "20",
+        "12"
+      ],
+      "ans": 0,
+      "hints": [
+        "Use the definition of the mean of a discrete random variable with equal probabilities.",
+        "Each of the five values has the same probability, so write the mean as an ordinary average and set it equal to 6.",
+        "$\\mu=E(X)=\\sum_x x\\,f(x)$; with $n$ equally likely values $f(x)=\\dfrac1n$."
+      ],
+      "steps": [
+        "Each of the 5 values has probability $\\dfrac15$.",
+        "$E(X)=\\dfrac{1+2+4+7+x}{5}=\\dfrac{14+x}{5}$.",
+        "Set $\\dfrac{14+x}{5}=6$, so $14+x=30$ and $x=16$."
+      ],
+      "brief": "$\\frac{14+x}{5}=6\\Rightarrow x=16$."
+    },
+    {
+      "sec": "3.6",
+      "q": "(Q: 3-88, page 97) A multiple-choice test contains 14 questions, each with five answers. Assume that a student just guesses on each question. What is the probability that the student answers fewer than 2 questions correctly?",
+      "opts": [
+        "0.1979",
+        "0.1539",
+        "0.0440",
+        "0.2501",
+        "0.4481"
+      ],
+      "ans": 0,
+      "hints": [
+        "Count correct guesses in a fixed number of independent trials with the same success probability.",
+        "Identify $n$ and $p$ for the binomial distribution, then rewrite \"fewer than 2\" as a sum of two probabilities.",
+        "$P(X=x)=\\binom{n}{x}p^x(1-p)^{n-x}$, and $P(X<2)=P(X=0)+P(X=1)$."
+      ],
+      "steps": [
+        "$X$ = number correct, $X\\sim\\text{Binomial}(n=14,\\ p=0.2)$.",
+        "$P(X<2)=P(X=0)+P(X=1)=0.8^{14}+14(0.2)(0.8)^{13}$.",
+        "$=0.0440+0.1539=0.1979$."
+      ],
+      "brief": "$X\\sim\\text{Bin}(14,0.2)$: $P(0)+P(1)=0.0440+0.1539=0.1979$."
+    },
+    {
+      "sec": "3.8",
+      "q": "(Q: 3-127(a), page 101) A slitter assembly contains 20 blades. Four blades are selected at random and evaluated each day for sharpness. If any dull blade is found, the assembly is replaced with a newly sharpened set of blades. If 3 of the blades in an assembly are dull, what is the probability that the assembly is replaced the first day it is evaluated?",
+      "opts": [
+        "0.5088",
+        "0.4672",
+        "0.5328",
+        "0.4816",
+        "0.4211"
+      ],
+      "ans": 0,
+      "hints": [
+        "The blades are sampled without replacement from a small group with a known number of dull ones: a hypergeometric setting.",
+        "Identify $N$, $K$ and $n$. \"Replaced\" means at least one dull blade, so use the complement of finding none.",
+        "$P(X=x)=\\dfrac{\\binom{K}{x}\\binom{N-K}{n-x}}{\\binom{N}{n}}$ and $P(X\\ge1)=1-P(X=0)$."
+      ],
+      "steps": [
+        "$X$ = number of dull blades in the sample: hypergeometric with $N=20$, $K=3$, $n=4$.",
+        "The assembly is replaced if $X\\ge1$, so $P=1-P(X=0)$.",
+        "$P(X=0)=\\dfrac{\\binom{3}{0}\\binom{17}{4}}{\\binom{20}{4}}=\\dfrac{2380}{4845}=0.4912$.",
+        "$P=1-0.4912=0.5088$."
+      ],
+      "brief": "Hypergeometric $N=20,K=3,n=4$: $1-\\binom{17}{4}/\\binom{20}{4}=0.5088$."
+    },
+    {
+      "sec": "3.9",
+      "q": "(Q: 3-143, page 102) The number of content changes to a Web site follows a Poisson distribution with a mean of 0.15 per day. What is the probability of no content changes in six days?",
+      "opts": [
+        "0.4066",
+        "0.3585",
+        "0.4275",
+        "0.3894",
+        "0.3916"
+      ],
+      "ans": 0,
+      "hints": [
+        "Counts of events at a constant rate: a Poisson model, but over a longer period than the rate is given for.",
+        "Scale the mean to the length of the period asked about, then find the probability of zero events.",
+        "$P(X=x)=\\dfrac{e^{-\\lambda}\\lambda^x}{x!}$, where $\\lambda$ is the mean for the whole period; $P(X=0)=e^{-\\lambda}$."
+      ],
+      "steps": [
+        "For six days the mean is $\\lambda=6(0.15)=0.9$.",
+        "$P(X=0)=e^{-0.9}$.",
+        "$=0.4066$."
+      ],
+      "brief": "$\\lambda=6(0.15)=0.9$: $P(X=0)=e^{-0.9}=0.4066$."
+    },
+    {
+      "sec": "6.1",
+      "q": "(Q: 6-17, page 219) The pH of a solution ($X$) is measured eight times by one operator using the same instrument. She obtains the following data: 7.05, 6.89, 7.14, 7.03, 7.20, 6.92, 7.07, and 7.11 with $\\sum_{i=1}^{8}X_i=56.41$ and $\\sum_{i=1}^{8}X_i^2=397.8385$. Calculate the sample standard deviation.",
+      "opts": [
+        "0.1052",
+        "0.0984",
+        "0.0111",
+        "0.2784",
+        "0.0775"
+      ],
+      "ans": 0,
+      "hints": [
+        "Use the computational form of the sample variance, since the sums are given.",
+        "Compute $S_{xx}=\\sum x_i^2-\\frac{(\\sum x_i)^2}{n}$ first, then divide by $n-1$ and take the square root.",
+        "$s^2=\\dfrac{\\sum x_i^2-\\left(\\sum x_i\\right)^2/n}{n-1}$ and $s=\\sqrt{s^2}$."
+      ],
+      "steps": [
+        "$\\dfrac{(56.41)^2}{8}=\\dfrac{3182.0881}{8}=397.7610$.",
+        "$S_{xx}=397.8385-397.7610=0.0775$.",
+        "$s^2=\\dfrac{0.0775}{7}=0.01107$.",
+        "$s=\\sqrt{0.01107}=0.1052$."
+      ],
+      "brief": "$s^2=\\frac{397.8385-56.41^2/8}{7}=0.0111$, so $s=0.1052$."
+    },
+    {
+      "sec": "6.3",
+      "q": "(Q: 6-50, page 222) Following is a histogram for energy consumption data. Which one of the following comments on the shape of the histogram is true?",
+      "opts": [
+        "The data is positively skewed.",
+        "The data is normally distributed.",
+        "The data is negatively skewed.",
+        "The data has a symmetric distribution.",
+        "The data has no skewness."
+      ],
+      "ans": 0,
+      "hints": [
+        "Look at where the bulk of the bars is and where the long tail goes.",
+        "Check which side of the histogram has the long, thin tail.",
+        "A long right tail means positively (right) skewed; a long left tail means negatively (left) skewed; a symmetric shape has matching tails on both sides."
+      ],
+      "steps": [
+        "The tallest bars are at the left (about 640 to 642).",
+        "The bars fall quickly and a long thin tail stretches to the right up to 650.",
+        "A long right tail means the data is positively skewed; it is not symmetric or normal."
+      ],
+      "brief": "Long tail to the right, so positively skewed.",
+      "img": "stat201-241-e1-q12.png"
+    },
+    {
+      "sec": "6.1",
+      "q": "(Q: 6-30, page 220) The students in an undergraduate engineering core course self-reported their heights to the nearest inch. The data follow. Calculate the sample median of height. \\[ 67,\\ 65,\\ 61,\\ 63,\\ 64,\\ 69,\\ 64,\\ 66,\\ 66,\\ 68,\\ 62,\\ 64,\\ 63,\\ 62,\\ 65,\\ 66,\\ 67,\\ 68,\\ 66,\\ 68. \\]",
+      "opts": [
+        "65.5",
+        "65",
+        "67.5",
+        "66",
+        "67"
+      ],
+      "ans": 0,
+      "hints": [
+        "The median is the middle value of the ordered data.",
+        "Count the observations, sort them in increasing order, and decide which position(s) are in the middle.",
+        "For $n$ even, the median is the average of the $\\frac n2$-th and $\\left(\\frac n2+1\\right)$-th ordered values; for $n$ odd it is the $\\frac{n+1}{2}$-th."
+      ],
+      "steps": [
+        "There are $n=20$ values. Sorted: 61, 62, 62, 63, 63, 64, 64, 64, 65, 65, 66, 66, 66, 66, 67, 67, 68, 68, 68, 69.",
+        "The 10th value is 65 and the 11th value is 66.",
+        "Median $=\\dfrac{65+66}{2}=65.5$."
+      ],
+      "brief": "$n=20$: average of 10th and 11th ordered values $=(65+66)/2=65.5$."
+    },
+    {
+      "sec": "6.4",
+      "q": "(Q: 6-63, page 223) Using the data on heights of female and male students, we constructed the following comparative box plots. Which one of the following is true about the above comparative boxplot?",
+      "opts": [
+        "Male students have a higher IQR.",
+        "Female students have a higher median.",
+        "Both genders have the same range.",
+        "Female students have a higher $Q_1$.",
+        "$Q_3$ is the same for both genders."
+      ],
+      "ans": 0,
+      "hints": [
+        "Read the key features of each box: box edges, middle line and whiskers.",
+        "Compare the two boxes: the width of each box, the position of its middle line, and the ends of the whiskers.",
+        "In a box plot the box runs from $Q_1$ to $Q_3$, the thick line is the median, $\\text{IQR}=Q_3-Q_1$, and the range is the distance between the whisker ends."
+      ],
+      "steps": [
+        "The male box is taller (about 66 to 73) than the female box (about 62 to 66), so the male IQR is larger (about 6.5 against 4).",
+        "The male median (about 68.5) is above the female median (about 63).",
+        "The male range (about 59 to 79) is much wider than the female range (about 60 to 71), and both $Q_1$ and $Q_3$ are higher for males.",
+        "So the only true statement is that male students have a higher IQR."
+      ],
+      "brief": "Male box is taller than the female box, so male IQR is higher.",
+      "img": "stat201-241-e1-q14.png"
+    }
+  ]
+}

@@ -1,0 +1,675 @@
+{
+  "course": "math101",
+  "term": "232",
+  "kind": "fx",
+  "date": "",
+  "minutes": 120,
+  "source": "math101-232-fx.pdf",
+  "note": "Date and exam length are not printed on the scan (no cover page; pages are headed '232, Math 101, Final Exam'). Date left empty; 120 minutes assumed as the usual final-exam length. All 28 questions are multiple choice; the master key is A for every question and my own working agrees for all 28. In Q24 the printed choices (b) and (e) are visually identical in the scan (both x^{3/2}+sqrt(x)+c); kept as printed. Q3 uses logarithmic differentiation and Q10 the derivative of arcsin (3.4/3.6 material).",
+  "qs": [
+    {
+      "sec": "3.1",
+      "q": "A point that lies on the tangent line to the curve $y=\\dfrac{1}{1-x}$ at the point $\\left(3,-\\dfrac12\\right)$ is",
+      "opts": [
+        "$(5,0)$",
+        "$(1,1)$",
+        "$(2,0)$",
+        "$(-3,2)$",
+        "$(-1,1)$"
+      ],
+      "ans": 0,
+      "hints": [
+        "This is a tangent line problem: you need the slope from the derivative.",
+        "Differentiate the function, evaluate the derivative at the given $x$, and write the line through the given point.",
+        "The tangent line to $y=f(x)$ at $(a,f(a))$ is $y-f(a)=f'(a)(x-a)$; a point lies on it when its coordinates satisfy this equation."
+      ],
+      "steps": [
+        "$y=(1-x)^{-1}$, so $y'=(1-x)^{-2}=\\dfrac{1}{(1-x)^2}$.",
+        "At $x=3$: $y'=\\dfrac14$.",
+        "Tangent line: $y+\\dfrac12=\\dfrac14(x-3)$.",
+        "Test $(5,0)$: left side $\\dfrac12$, right side $\\dfrac14\\cdot2=\\dfrac12$. It lies on the line."
+      ],
+      "brief": "$y'(3)=\\frac14$, line $y+\\frac12=\\frac14(x-3)$ contains $(5,0)$."
+    },
+    {
+      "sec": "3.1",
+      "q": "$\\lim_{\\Delta x\\to0}\\dfrac{(-2+\\Delta x)^3+8}{\\Delta x}=$",
+      "opts": [
+        "$12$",
+        "$-12$",
+        "$-2$",
+        "$8$",
+        "$-8$"
+      ],
+      "ans": 0,
+      "hints": [
+        "The expression looks like the limit definition of a derivative.",
+        "Identify the function $f$ and the point $a$ for which the numerator is $f(a+\\Delta x)-f(a)$.",
+        "$f'(a)=\\lim_{\\Delta x\\to0}\\dfrac{f(a+\\Delta x)-f(a)}{\\Delta x}$ and $(x^n)'=nx^{n-1}$."
+      ],
+      "steps": [
+        "Take $f(x)=x^3$ and $a=-2$, so $f(a)=-8$ and the numerator is $f(-2+\\Delta x)-f(-2)$.",
+        "The limit is $f'(-2)$.",
+        "$f'(x)=3x^2$, so $f'(-2)=3\\cdot4=12$."
+      ],
+      "brief": "Derivative of $x^3$ at $-2$: $3(-2)^2=12$."
+    },
+    {
+      "sec": "3.4",
+      "q": "If $y=x^{\\ln x}$, then $y'(e)=$",
+      "opts": [
+        "$2$",
+        "$e$",
+        "$1$",
+        "$0$",
+        "$\\dfrac1e$"
+      ],
+      "ans": 0,
+      "hints": [
+        "The variable appears in both the base and the exponent, so use logarithmic differentiation.",
+        "Take $\\ln$ of both sides, differentiate implicitly, and then solve for $y'$.",
+        "If $y=u^v$ then $\\ln y=v\\ln u$ and $\\dfrac{y'}{y}=(v\\ln u)'$, so $y'=y\\,(v\\ln u)'$."
+      ],
+      "steps": [
+        "$\\ln y=(\\ln x)^2$.",
+        "Differentiate: $\\dfrac{y'}{y}=\\dfrac{2\\ln x}{x}$, so $y'=x^{\\ln x}\\cdot\\dfrac{2\\ln x}{x}$.",
+        "At $x=e$: $y(e)=e^{1}=e$ and $\\dfrac{2\\ln e}{e}=\\dfrac2e$.",
+        "So $y'(e)=e\\cdot\\dfrac2e=2$."
+      ],
+      "brief": "$\\ln y=(\\ln x)^2$, $y'=y\\cdot\\frac{2\\ln x}{x}$, so $y'(e)=e\\cdot\\frac2e=2$."
+    },
+    {
+      "sec": "4.5",
+      "q": "The limit $\\lim_{x\\to\\infty}\\left(\\sqrt{4x^2+x}-2x\\right)=$",
+      "opts": [
+        "$\\dfrac14$",
+        "$\\infty$",
+        "$-\\infty$",
+        "$\\dfrac12$",
+        "$2$"
+      ],
+      "ans": 0,
+      "hints": [
+        "This is an $\\infty-\\infty$ form with a square root, so rationalize.",
+        "Multiply and divide by the conjugate, then divide numerator and denominator by the highest power of $x$.",
+        "$(A-B)(A+B)=A^2-B^2$, and for $x>0$, $\\sqrt{x^2}=x$; terms like $\\dfrac1x$ tend to $0$ as $x\\to\\infty$."
+      ],
+      "steps": [
+        "Multiply by $\\dfrac{\\sqrt{4x^2+x}+2x}{\\sqrt{4x^2+x}+2x}$: the numerator becomes $4x^2+x-4x^2=x$.",
+        "So the expression is $\\dfrac{x}{\\sqrt{4x^2+x}+2x}$.",
+        "Divide by $x$ (with $x>0$): $\\dfrac{1}{\\sqrt{4+\\frac1x}+2}$.",
+        "As $x\\to\\infty$ this tends to $\\dfrac{1}{2+2}=\\dfrac14$."
+      ],
+      "brief": "Conjugate: $\\frac{x}{\\sqrt{4x^2+x}+2x}\\to\\frac{1}{2+2}=\\frac14$."
+    },
+    {
+      "sec": "3.5",
+      "q": "The equation of the tangent line to the curve $9x^2+4y^2=13$ at the point $(1,1)$ is given by:",
+      "opts": [
+        "$9x+4y=13$",
+        "$9x+4y=8$",
+        "$9x-4y=9$",
+        "$9x-4y=7$",
+        "$9x+4y=11$"
+      ],
+      "ans": 0,
+      "hints": [
+        "The curve is given implicitly, so use implicit differentiation to find the slope.",
+        "Differentiate both sides with respect to $x$, solve for $y'$, and evaluate at the given point.",
+        "The tangent line at $(x_0,y_0)$ with slope $m$ is $y-y_0=m(x-x_0)$."
+      ],
+      "steps": [
+        "Differentiate: $18x+8yy'=0$, so $y'=-\\dfrac{9x}{4y}$.",
+        "At $(1,1)$: $y'=-\\dfrac94$.",
+        "Line: $y-1=-\\dfrac94(x-1)$, so $4y-4=-9x+9$.",
+        "Hence $9x+4y=13$."
+      ],
+      "brief": "$y'=-\\frac{9x}{4y}=-\\frac94$ at $(1,1)$, so $9x+4y=13$."
+    },
+    {
+      "sec": "3.1",
+      "q": "If $y=-2x+3$ is the tangent line to the curve of $f(x)=kx^2$, then $k=$",
+      "opts": [
+        "$-\\dfrac13$",
+        "$-3$",
+        "$-2$",
+        "$-\\dfrac12$",
+        "$0$"
+      ],
+      "ans": 0,
+      "hints": [
+        "At the point of tangency the line and the curve share both the same $y$-value and the same slope.",
+        "Let the point of tangency have $x$-coordinate $a$ and write two equations: slopes equal, and values equal.",
+        "If a line $y=mx+n$ is tangent to $y=f(x)$ at $x=a$, then $f'(a)=m$ and $f(a)=ma+n$."
+      ],
+      "steps": [
+        "Let the tangency be at $x=a$. Slopes: $f'(a)=2ka=-2$, so $ka=-1$.",
+        "Values: $ka^2=-2a+3$.",
+        "Since $ka^2=(ka)a=-a$, we get $-a=-2a+3$, so $a=3$.",
+        "Then $k=-\\dfrac1a=-\\dfrac13$."
+      ],
+      "brief": "$2ka=-2$ and $ka^2=-2a+3$ give $a=3$, $k=-\\frac13$."
+    },
+    {
+      "sec": "4.2",
+      "q": "The sum of all values of $c$ that satisfy the Mean Value Theorem for $f(x)=\\dfrac{x}{x-5}$ on $[1,4]$ is",
+      "opts": [
+        "$3$",
+        "$7$",
+        "$10$",
+        "$5$",
+        "$9$"
+      ],
+      "ans": 0,
+      "hints": [
+        "This is the Mean Value Theorem: find where the instantaneous slope equals the average slope.",
+        "Compute the average rate of change over the interval, then solve $f'(c)=$ that value, keeping only solutions inside the open interval.",
+        "MVT: if $f$ is continuous on $[a,b]$ and differentiable on $(a,b)$, there is $c\\in(a,b)$ with $f'(c)=\\dfrac{f(b)-f(a)}{b-a}$."
+      ],
+      "steps": [
+        "$f$ is continuous on $[1,4]$ since $x=5$ is outside the interval. $f(1)=-\\dfrac14$, $f(4)=-4$.",
+        "Average slope: $\\dfrac{-4+\\frac14}{3}=-\\dfrac54$.",
+        "$f'(x)=\\dfrac{(x-5)-x}{(x-5)^2}=\\dfrac{-5}{(x-5)^2}$.",
+        "$\\dfrac{-5}{(c-5)^2}=-\\dfrac54$ gives $(c-5)^2=4$, so $c=3$ or $c=7$.",
+        "Only $c=3$ lies in $(1,4)$, so the sum is $3$."
+      ],
+      "brief": "$f'(c)=-\\frac54$ gives $c=3$ or $7$; only $c=3\\in(1,4)$, sum $=3$."
+    },
+    {
+      "sec": "3.7",
+      "q": "A man 2 meters tall walks at a rate of 1.5 meters per second away from a light that is 5 meters above the ground. The rate at which the length of his shadow is changing when he is 3 meters from the base of the light is equal to",
+      "opts": [
+        "$1$ m/sec",
+        "$2$ m/sec",
+        "$1.5$ m/sec",
+        "$0.5$ m/sec",
+        "$2.5$ m/sec"
+      ],
+      "ans": 0,
+      "hints": [
+        "This is a related rates problem with similar triangles.",
+        "Let $x$ be his distance from the base of the light and $s$ the shadow length; use similar triangles to relate $s$ and $x$, then differentiate with respect to time.",
+        "Similar triangles give equal ratios of corresponding sides; then differentiate the relation with respect to $t$, using $\\dfrac{dx}{dt}$ as given."
+      ],
+      "steps": [
+        "Similar triangles: $\\dfrac{5}{x+s}=\\dfrac{2}{s}$, so $5s=2x+2s$ and $s=\\dfrac{2x}{3}$.",
+        "Differentiate: $\\dfrac{ds}{dt}=\\dfrac23\\dfrac{dx}{dt}$.",
+        "With $\\dfrac{dx}{dt}=1.5$: $\\dfrac{ds}{dt}=\\dfrac23\\cdot1.5=1$ m/sec (independent of the position $x=3$)."
+      ],
+      "brief": "$s=\\frac{2x}{3}$, so $\\frac{ds}{dt}=\\frac23(1.5)=1$ m/sec."
+    },
+    {
+      "sec": "4.3",
+      "q": "The number $x$ at which the function $f(x)=2x+\\dfrac1x$ has a relative minimum is",
+      "opts": [
+        "$\\dfrac{1}{\\sqrt2}$",
+        "$-\\dfrac{1}{\\sqrt2}$",
+        "$0$",
+        "$\\sqrt2$",
+        "$-\\sqrt2$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Find critical points, then classify them with the first or second derivative test.",
+        "Set $f'(x)=0$, solve, and check the sign of $f''$ (or of $f'$ on each side) at each critical number in the domain.",
+        "If $f'(c)=0$ and $f''(c)>0$, then $f$ has a relative minimum at $c$."
+      ],
+      "steps": [
+        "$f'(x)=2-\\dfrac{1}{x^2}=0$ gives $x^2=\\dfrac12$, so $x=\\pm\\dfrac{1}{\\sqrt2}$ ($x=0$ is not in the domain).",
+        "$f''(x)=\\dfrac{2}{x^3}$.",
+        "At $x=\\dfrac1{\\sqrt2}$: $f''>0$, a relative minimum. At $x=-\\dfrac1{\\sqrt2}$: $f''<0$, a relative maximum.",
+        "So the relative minimum is at $x=\\dfrac{1}{\\sqrt2}$."
+      ],
+      "brief": "$f'=2-\\frac1{x^2}=0$, $x=\\pm\\frac1{\\sqrt2}$; $f''=\\frac2{x^3}>0$ only at $+\\frac1{\\sqrt2}$."
+    },
+    {
+      "sec": "4.3",
+      "q": "Which of the following statements is true about the function \\[ f(x)=x-\\arcsin x \\]",
+      "opts": [
+        "$f$ is decreasing on $(-1,1)$",
+        "$f$ has a relative minimum at $0$",
+        "$f$ has a relative maximum at $0$",
+        "$f$ is increasing on $(-1,1)$",
+        "$f$ is increasing on $(-1,0)$ and decreasing on $(0,1)$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Study the sign of the first derivative on the domain.",
+        "Differentiate $f$ and decide whether $f'$ is positive or negative on $(-1,1)$.",
+        "$\\dfrac{d}{dx}\\arcsin x=\\dfrac{1}{\\sqrt{1-x^2}}$; if $f'<0$ on an interval then $f$ is decreasing there."
+      ],
+      "steps": [
+        "$f'(x)=1-\\dfrac{1}{\\sqrt{1-x^2}}$.",
+        "For $-1<x<1$, $0<\\sqrt{1-x^2}\\le1$, so $\\dfrac{1}{\\sqrt{1-x^2}}\\ge1$.",
+        "Thus $f'(x)\\le0$, with equality only at $x=0$, so $f'$ does not change sign: no extremum at $0$.",
+        "Hence $f$ is decreasing on $(-1,1)$."
+      ],
+      "brief": "$f'=1-\\frac1{\\sqrt{1-x^2}}\\le0$ on $(-1,1)$, so $f$ is decreasing."
+    },
+    {
+      "sec": "4.4",
+      "q": "Which of the following statements is true about the graph of $f(x)=e^{-(x-3)^2}$?",
+      "opts": [
+        "It is concave up on $\\left(3+\\dfrac{1}{\\sqrt2},\\infty\\right)$.",
+        "It is concave up on $(3,\\infty)$.",
+        "It is concave up on $\\left(3-\\dfrac{1}{\\sqrt2},3+\\dfrac{1}{\\sqrt2}\\right)$.",
+        "It is concave down on $(-\\infty,\\infty)$.",
+        "It is concave down on $\\left(-\\infty,3-\\dfrac{1}{\\sqrt2}\\right)$."
+      ],
+      "ans": 0,
+      "hints": [
+        "Concavity is determined by the sign of the second derivative.",
+        "Compute $f'$ and $f''$ with the chain and product rules, find where $f''=0$, and test the sign on each interval.",
+        "$f''>0$ means concave up and $f''<0$ means concave down; $\\dfrac{d}{dx}e^{u}=u'e^{u}$."
+      ],
+      "steps": [
+        "$f'(x)=-2(x-3)e^{-(x-3)^2}$.",
+        "$f''(x)=\\left[-2+4(x-3)^2\\right]e^{-(x-3)^2}=2\\left[2(x-3)^2-1\\right]e^{-(x-3)^2}$.",
+        "$f''=0$ when $(x-3)^2=\\dfrac12$, i.e. $x=3\\pm\\dfrac1{\\sqrt2}$.",
+        "$f''>0$ for $x<3-\\frac1{\\sqrt2}$ and $x>3+\\frac1{\\sqrt2}$, and $f''<0$ between them.",
+        "So the graph is concave up on $\\left(3+\\frac1{\\sqrt2},\\infty\\right)$."
+      ],
+      "brief": "$f''=2[2(x-3)^2-1]e^{-(x-3)^2}>0$ for $x>3+\\frac1{\\sqrt2}$ (and $x<3-\\frac1{\\sqrt2}$)."
+    },
+    {
+      "sec": "4.4",
+      "q": "The number of inflection points the function $f(x)=\\sin x$ has in the interval $\\left[-\\dfrac{5\\pi}{2},\\dfrac{5\\pi}{2}\\right]$ is",
+      "opts": [
+        "$5$",
+        "$4$",
+        "$3$",
+        "$2$",
+        "$1$"
+      ],
+      "ans": 0,
+      "hints": [
+        "An inflection point is where the concavity changes.",
+        "Compute $f''$, find where it is zero, and check that it changes sign at each such point.",
+        "Inflection points occur where $f''$ changes sign; $\\sin x=0$ exactly when $x=n\\pi$ for integers $n$."
+      ],
+      "steps": [
+        "$f''(x)=-\\sin x$.",
+        "$f''(x)=0$ at $x=n\\pi$, and $\\sin x$ changes sign at each of these.",
+        "Multiples of $\\pi$ in $\\left[-\\frac{5\\pi}2,\\frac{5\\pi}2\\right]$: $-2\\pi,-\\pi,0,\\pi,2\\pi$.",
+        "That gives $5$ inflection points."
+      ],
+      "brief": "$f''=-\\sin x$ changes sign at $x=n\\pi$: $-2\\pi,-\\pi,0,\\pi,2\\pi$, so $5$."
+    },
+    {
+      "sec": "5.6",
+      "q": "$\\lim_{x\\to\\infty}\\left(1-\\dfrac1x\\right)^x=$",
+      "opts": [
+        "$\\dfrac1e$",
+        "$e$",
+        "$1$",
+        "$0$",
+        "$\\infty$"
+      ],
+      "ans": 0,
+      "hints": [
+        "This is a $1^\\infty$ indeterminate form.",
+        "Set $y$ equal to the expression, take $\\ln$, rewrite the product as a quotient, and apply L'Hopital's rule.",
+        "If $\\lim \\ln y=M$ then $\\lim y=e^{M}$; and L'Hopital's rule: for a $\\frac00$ form, $\\lim\\frac fg=\\lim\\frac{f'}{g'}$."
+      ],
+      "steps": [
+        "Let $y=\\left(1-\\frac1x\\right)^x$. Then $\\ln y=x\\ln\\left(1-\\frac1x\\right)=\\dfrac{\\ln(1-1/x)}{1/x}$, a $\\frac00$ form.",
+        "L'Hopital: numerator derivative $\\dfrac{1/x^2}{1-1/x}$, denominator derivative $-\\dfrac1{x^2}$.",
+        "The quotient is $\\dfrac{-1}{1-1/x}\\to-1$.",
+        "So $\\ln y\\to-1$ and $y\\to e^{-1}=\\dfrac1e$."
+      ],
+      "brief": "$\\ln y=\\frac{\\ln(1-1/x)}{1/x}\\to-1$ by L'Hopital, so the limit is $e^{-1}$."
+    },
+    {
+      "sec": "5.6",
+      "q": "$\\lim_{x\\to0}\\dfrac{4x-2\\sin2x}{2x^3}=$",
+      "opts": [
+        "$\\dfrac43$",
+        "$0$",
+        "$\\infty$",
+        "$\\dfrac23$",
+        "$\\dfrac12$"
+      ],
+      "ans": 0,
+      "hints": [
+        "This is a $\\frac00$ form, so use L'Hopital's rule (repeatedly if needed).",
+        "Differentiate the numerator and the denominator, and check again whether the form is still $\\frac00$.",
+        "L'Hopital's rule: if $\\frac fg$ is $\\frac00$ at the limit point, then $\\lim\\frac fg=\\lim\\frac{f'}{g'}$ when the right side exists; $\\lim_{x\\to0}\\cos kx=1$."
+      ],
+      "steps": [
+        "At $x=0$ the form is $\\frac00$. Differentiate: $\\dfrac{4-4\\cos2x}{6x^2}$, again $\\frac00$.",
+        "Differentiate again: $\\dfrac{8\\sin2x}{12x}$, still $\\frac00$.",
+        "Differentiate again: $\\dfrac{16\\cos2x}{12}$.",
+        "At $x=0$ this is $\\dfrac{16}{12}=\\dfrac43$."
+      ],
+      "brief": "L'Hopital three times: $\\frac{16\\cos2x}{12}\\to\\frac43$."
+    },
+    {
+      "sec": "4.6",
+      "q": "Let $b$ and $c$ be positive numbers, and $f(x)=\\dfrac{x^2+bx+c}{x+b}$. Then",
+      "opts": [
+        "$y=x$ is a slant asymptote.",
+        "$y=-b$ is a vertical asymptote.",
+        "$y=\\dfrac cb$ is an $x$-intercept.",
+        "$f$ has one horizontal asymptote.",
+        "$f$ has two horizontal asymptotes."
+      ],
+      "ans": 0,
+      "hints": [
+        "Compare the degrees of the numerator and denominator to see which kind of asymptote exists.",
+        "Divide the numerator by the denominator (polynomial division) and look at the quotient and remainder.",
+        "If the numerator degree is one more than the denominator degree, the quotient (a line) is the slant asymptote; a vertical asymptote is a vertical line $x=a$ where the denominator vanishes and the numerator does not."
+      ],
+      "steps": [
+        "Rewrite $x^2+bx+c=x(x+b)+c$, so $f(x)=x+\\dfrac{c}{x+b}$.",
+        "As $x\\to\\pm\\infty$, $\\dfrac{c}{x+b}\\to0$, so $y=x$ is a slant asymptote.",
+        "There are no horizontal asymptotes since $f(x)\\to\\pm\\infty$.",
+        "$y=-b$ is a horizontal line, not a vertical asymptote ($x=-b$ is). An $x$-intercept is a point with $y=0$, not $y=\\frac cb$.",
+        "So the true statement is that $y=x$ is a slant asymptote."
+      ],
+      "brief": "$f(x)=x+\\frac{c}{x+b}$, so $y=x$ is a slant asymptote."
+    },
+    {
+      "sec": "4.6",
+      "q": "The curve $f(x)=\\dfrac{x-1}{e^x}$ intersects its horizontal asymptote at $x=$",
+      "opts": [
+        "$1$",
+        "$0$",
+        "$e^{-1}$",
+        "$e^{-2}$",
+        "$e$"
+      ],
+      "ans": 0,
+      "hints": [
+        "First find the horizontal asymptote using a limit at infinity.",
+        "Evaluate the limits as $x\\to\\infty$ and $x\\to-\\infty$, then solve $f(x)=$ the asymptote value.",
+        "An exponential $e^{x}$ grows faster than any polynomial, so $\\dfrac{x^n}{e^x}\\to0$ as $x\\to\\infty$ (L'Hopital's rule can show this)."
+      ],
+      "steps": [
+        "As $x\\to\\infty$, $\\dfrac{x-1}{e^x}\\to0$ (L'Hopital: $\\frac{1}{e^x}\\to0$), so $y=0$ is a horizontal asymptote.",
+        "As $x\\to-\\infty$, $(x-1)e^{-x}\\to-\\infty$, so there is no other horizontal asymptote.",
+        "Solve $\\dfrac{x-1}{e^x}=0$: $x-1=0$.",
+        "So the curve meets the asymptote at $x=1$."
+      ],
+      "brief": "Horizontal asymptote $y=0$; $\\frac{x-1}{e^x}=0$ gives $x=1$."
+    },
+    {
+      "sec": "4.7",
+      "q": "If we have two positive numbers such that the sum of the first number squared and the second number is 108 and the product of the two numbers is a maximum, then their sum is equal to",
+      "opts": [
+        "$78$",
+        "$66$",
+        "$52$",
+        "$36$",
+        "$88$"
+      ],
+      "ans": 0,
+      "hints": [
+        "This is an optimization problem with one constraint.",
+        "Call the numbers $a$ and $b$, use the constraint to write $b$ in terms of $a$, and maximize the product as a function of $a$.",
+        "To maximize $P(a)$ on an open interval, solve $P'(a)=0$ and confirm with the first or second derivative test."
+      ],
+      "steps": [
+        "Let the numbers be $a,b>0$ with $a^2+b=108$, so $b=108-a^2$ (need $0<a<\\sqrt{108}$).",
+        "$P(a)=ab=108a-a^3$, $P'(a)=108-3a^2=0$ gives $a=6$.",
+        "$P''(a)=-6a<0$, so this is a maximum.",
+        "$b=108-36=72$, so $a+b=78$."
+      ],
+      "brief": "$P=108a-a^3$, $a=6$, $b=72$, sum $=78$."
+    },
+    {
+      "sec": "4.7",
+      "q": "If a manufacturer wants to design an open box having a square base and a surface area of $192\\,\\text{m}^2$, then the side length of the square base that will produce a box with maximum volume is",
+      "opts": [
+        "$8$",
+        "$6$",
+        "$9$",
+        "$4$",
+        "$10$"
+      ],
+      "ans": 0,
+      "hints": [
+        "This is an optimization problem with a surface area constraint.",
+        "Let the base side be $x$ and the height $h$; use the surface area (open top) to eliminate $h$, then maximize the volume.",
+        "For an open box with square base: $V=x^2h$ and $S=x^2+4xh$. Maximize $V(x)$ by solving $V'(x)=0$."
+      ],
+      "steps": [
+        "$S=x^2+4xh=192$, so $h=\\dfrac{192-x^2}{4x}$.",
+        "$V=x^2h=\\dfrac{192x-x^3}{4}$.",
+        "$V'(x)=\\dfrac{192-3x^2}{4}=0$ gives $x^2=64$, so $x=8$.",
+        "$V''=-\\dfrac{6x}{4}<0$, so this is a maximum. The side is $8$."
+      ],
+      "brief": "$h=\\frac{192-x^2}{4x}$, $V=\\frac{192x-x^3}{4}$, $V'=0$ gives $x=8$."
+    },
+    {
+      "sec": "4.7",
+      "q": "A point on the graph of $y=4-x^2$ that is closest to the point $(0,0)$ is",
+      "opts": [
+        "$\\left(\\sqrt{\\dfrac72},\\dfrac12\\right)$",
+        "$(0,4)$",
+        "$\\left(\\sqrt{\\dfrac32},\\dfrac52\\right)$",
+        "$(1,3)$",
+        "$\\left(\\sqrt{\\dfrac12},\\dfrac72\\right)$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Minimize the distance from a point on the curve to the origin.",
+        "Write the squared distance in terms of $x$ using $y=4-x^2$; minimizing the squared distance gives the same point.",
+        "The distance from $(x,y)$ to $(0,0)$ is $\\sqrt{x^2+y^2}$; it is smallest where its square is smallest, found by setting the derivative to $0$."
+      ],
+      "steps": [
+        "$D^2=x^2+(4-x^2)^2$. Let $u=x^2\\ge0$: $g(u)=u+(4-u)^2$.",
+        "$g'(u)=1-2(4-u)=0$ gives $u=\\dfrac72$.",
+        "$g''(u)=2>0$, so this is a minimum. (Compare $u=0$: $g=16>g(\\frac72)=\\frac{15}4$.)",
+        "$x=\\pm\\sqrt{\\dfrac72}$ and $y=4-\\dfrac72=\\dfrac12$, giving the point $\\left(\\sqrt{\\frac72},\\frac12\\right)$."
+      ],
+      "brief": "Minimize $u+(4-u)^2$ with $u=x^2$: $u=\\frac72$, $y=\\frac12$."
+    },
+    {
+      "sec": "4.8",
+      "q": "Let $\\Delta x=0.1$, the differential of $f(x)=\\dfrac1x$ at $x=-1$ is",
+      "opts": [
+        "$-\\dfrac{1}{10}$",
+        "$-\\dfrac19$",
+        "$\\dfrac{1}{10}$",
+        "$\\dfrac19$",
+        "$-\\dfrac{1}{11}$"
+      ],
+      "ans": 0,
+      "hints": [
+        "This asks for the differential $dy$, not the exact change $\\Delta y$.",
+        "Compute $f'(x)$, evaluate at the given $x$, and multiply by $dx=\\Delta x$.",
+        "The differential of $y=f(x)$ is $dy=f'(x)\\,dx$, with $dx=\\Delta x$."
+      ],
+      "steps": [
+        "$f'(x)=-\\dfrac{1}{x^2}$, so $f'(-1)=-1$.",
+        "$dy=f'(-1)\\,dx=(-1)(0.1)=-\\dfrac{1}{10}$."
+      ],
+      "brief": "$dy=-\\frac1{x^2}dx=-1\\cdot0.1=-\\frac1{10}$."
+    },
+    {
+      "sec": "4.8",
+      "q": "The tangent line approximation of the function $f(x)=\\dfrac{1}{1+e^{-x}}$ at $x=0$ is",
+      "opts": [
+        "$y=\\dfrac14x+\\dfrac12$",
+        "$y=\\dfrac12x+\\dfrac14$",
+        "$y=\\dfrac12x-\\dfrac14$",
+        "$y=\\dfrac14x-\\dfrac12$",
+        "$y=\\dfrac14x$"
+      ],
+      "ans": 0,
+      "hints": [
+        "The tangent line approximation is the linearization of $f$ at the given point.",
+        "Compute $f(0)$ and $f'(0)$ (use the chain rule or the quotient rule).",
+        "The linearization at $x=a$ is $L(x)=f(a)+f'(a)(x-a)$."
+      ],
+      "steps": [
+        "$f(0)=\\dfrac{1}{1+1}=\\dfrac12$.",
+        "$f'(x)=\\dfrac{e^{-x}}{(1+e^{-x})^2}$, so $f'(0)=\\dfrac{1}{4}$.",
+        "$L(x)=\\dfrac12+\\dfrac14x$."
+      ],
+      "brief": "$f(0)=\\frac12$, $f'(0)=\\frac14$: $y=\\frac14x+\\frac12$."
+    },
+    {
+      "sec": "5.1",
+      "q": "If $f$ is a function such that \\[ f''(x)=2,\\quad f'(2)=5,\\quad f(2)=10 \\] then $f(1)=$",
+      "opts": [
+        "$6$",
+        "$8$",
+        "$15$",
+        "$17$",
+        "$7$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Recover $f$ by antidifferentiating twice and using the given conditions.",
+        "Integrate $f''$ to get $f'$ with a constant, use $f'(2)$, then integrate again and use $f(2)$.",
+        "$\\int k\\,dx=kx+C$ and $\\int x^n\\,dx=\\dfrac{x^{n+1}}{n+1}+C$ for $n\\neq-1$."
+      ],
+      "steps": [
+        "$f'(x)=2x+C_1$ and $f'(2)=4+C_1=5$, so $C_1=1$.",
+        "$f(x)=x^2+x+C_2$ and $f(2)=6+C_2=10$, so $C_2=4$.",
+        "$f(x)=x^2+x+4$, so $f(1)=1+1+4=6$."
+      ],
+      "brief": "$f'=2x+1$, $f=x^2+x+4$, so $f(1)=6$."
+    },
+    {
+      "sec": "5.1",
+      "q": "$\\int\\left(\\dfrac2x+\\sec^2x\\right)dx=$",
+      "opts": [
+        "$2\\ln|x|+\\tan x+c$",
+        "$2\\ln|x|+\\sec x+c$",
+        "$2\\ln|x|+\\sec x\\tan x+c$",
+        "$2+2\\sec x+c$",
+        "$\\dfrac{-2}{x^2}+\\tan x+c$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Integrate term by term using basic antiderivatives.",
+        "Pull out the constant factor $2$ and recall the antiderivatives of $\\dfrac1x$ and $\\sec^2x$.",
+        "$\\int\\dfrac1x\\,dx=\\ln|x|+C$ and $\\int\\sec^2x\\,dx=\\tan x+C$, because $\\dfrac{d}{dx}\\tan x=\\sec^2x$."
+      ],
+      "steps": [
+        "$\\int\\dfrac2x\\,dx=2\\ln|x|$.",
+        "$\\int\\sec^2x\\,dx=\\tan x$.",
+        "So the integral is $2\\ln|x|+\\tan x+c$."
+      ],
+      "brief": "$2\\ln|x|+\\tan x+c$."
+    },
+    {
+      "sec": "5.1",
+      "q": "$\\int\\dfrac{x+1}{\\sqrt x}\\,dx=$",
+      "opts": [
+        "$\\dfrac23x^{3/2}+2\\sqrt x+c$",
+        "$x^{\\frac32}+\\sqrt x+c$",
+        "$2(x+1)^2\\sqrt x+c$",
+        "$\\dfrac12(x+1)^2+2\\sqrt x+c$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Split the fraction into separate power terms before integrating.",
+        "Write $\\dfrac{x+1}{\\sqrt x}$ as a sum of powers of $x$ with fractional exponents.",
+        "$\\dfrac{a+b}{c}=\\dfrac ac+\\dfrac bc$, and $\\int x^n\\,dx=\\dfrac{x^{n+1}}{n+1}+C$ for $n\\neq-1$."
+      ],
+      "steps": [
+        "$\\dfrac{x+1}{\\sqrt x}=x^{1/2}+x^{-1/2}$.",
+        "$\\int x^{1/2}\\,dx=\\dfrac23x^{3/2}$ and $\\int x^{-1/2}\\,dx=2x^{1/2}$.",
+        "So the integral is $\\dfrac23x^{3/2}+2\\sqrt x+c$."
+      ],
+      "brief": "$\\int(x^{1/2}+x^{-1/2})dx=\\frac23x^{3/2}+2\\sqrt x+c$.",
+      "note": "Choices (b) and (e) print identically in the source (x^{3/2}+sqrt(x)+c, checked at 300 dpi); the duplicate (e) was dropped, so 4 choices."
+    },
+    {
+      "sec": "5.9",
+      "q": "$\\dfrac{\\cosh^2 0.1-\\sinh^2 0.1}{\\tanh^2 0.2+\\operatorname{sech}^2 0.2}=$",
+      "opts": [
+        "$1$",
+        "$0.5$",
+        "$2$",
+        "$-0.5$",
+        "$-1$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Use the basic hyperbolic identities rather than evaluating numerically.",
+        "Recognize the numerator and denominator as standard identities.",
+        "$\\cosh^2u-\\sinh^2u=1$ and $\\tanh^2u+\\operatorname{sech}^2u=1$ (divide the first identity by $\\cosh^2u$)."
+      ],
+      "steps": [
+        "Numerator: $\\cosh^2 0.1-\\sinh^2 0.1=1$.",
+        "Denominator: $\\tanh^2 0.2+\\operatorname{sech}^2 0.2=1$.",
+        "The ratio is $\\dfrac11=1$."
+      ],
+      "brief": "Both numerator and denominator equal $1$, so the value is $1$."
+    },
+    {
+      "sec": "5.9",
+      "q": "$\\dfrac{d^2}{dx^2}\\left(2\\cosh(\\ln x)\\right)=$",
+      "opts": [
+        "$\\dfrac{2}{x^3}$",
+        "$1-\\dfrac{1}{x^3}$",
+        "$1+\\dfrac{1}{x^2}$",
+        "$1+\\dfrac{2}{x^3}$",
+        "$1-\\dfrac{2}{x^3}$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Rewrite the hyperbolic cosine using its exponential definition, which simplifies a lot here.",
+        "Substitute $\\cosh u=\\dfrac{e^u+e^{-u}}2$ with $u=\\ln x$, then differentiate twice.",
+        "$\\cosh u=\\dfrac{e^u+e^{-u}}{2}$ and $e^{\\ln x}=x$, $e^{-\\ln x}=\\dfrac1x$."
+      ],
+      "steps": [
+        "$2\\cosh(\\ln x)=e^{\\ln x}+e^{-\\ln x}=x+\\dfrac1x$.",
+        "First derivative: $1-\\dfrac{1}{x^2}$.",
+        "Second derivative: $\\dfrac{2}{x^3}$."
+      ],
+      "brief": "$2\\cosh(\\ln x)=x+\\frac1x$, second derivative $\\frac2{x^3}$."
+    },
+    {
+      "sec": "4.8",
+      "q": "Using differential, the value of $\\sqrt[3]{999.4}$ approximately equals",
+      "opts": [
+        "$9.998$",
+        "$9.98$",
+        "$9.994$",
+        "$9.94$",
+        "$9.996$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Use a linear approximation near a nearby perfect cube.",
+        "Take $f(x)=\\sqrt[3]{x}$ near a convenient value $a$ and a small change $dx$.",
+        "$f(a+dx)\\approx f(a)+f'(a)\\,dx$, and $\\dfrac{d}{dx}x^{1/3}=\\dfrac13x^{-2/3}$."
+      ],
+      "steps": [
+        "Let $f(x)=x^{1/3}$, $a=1000$, $dx=-0.6$; $f(1000)=10$.",
+        "$f'(x)=\\dfrac13x^{-2/3}$, so $f'(1000)=\\dfrac{1}{3\\cdot100}=\\dfrac1{300}$.",
+        "$\\sqrt[3]{999.4}\\approx10+\\dfrac{-0.6}{300}=10-0.002=9.998$."
+      ],
+      "brief": "$10+\\frac{1}{300}(-0.6)=9.998$."
+    },
+    {
+      "sec": "4.3",
+      "q": "The number of the relative extrema of the function $f(x)=-3x^5+5x^3$ is",
+      "opts": [
+        "$2$",
+        "$3$",
+        "$4$",
+        "$1$",
+        "$0$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Find the critical numbers and use the first derivative test to see where the sign of $f'$ changes.",
+        "Factor $f'(x)$ and make a sign chart around each critical number.",
+        "A critical number gives a relative extremum only if $f'$ changes sign there."
+      ],
+      "steps": [
+        "$f'(x)=-15x^4+15x^2=15x^2(1-x^2)$, with critical numbers $x=0,\\pm1$.",
+        "$f'$ has the sign of $1-x^2$ (the factor $x^2$ is nonnegative): negative for $x<-1$, positive on $(-1,0)$ and $(0,1)$, negative for $x>1$.",
+        "$f'$ changes sign at $x=-1$ (minimum) and $x=1$ (maximum), but not at $x=0$.",
+        "So there are $2$ relative extrema."
+      ],
+      "brief": "$f'=15x^2(1-x^2)$ changes sign only at $\\pm1$, so $2$ extrema."
+    }
+  ]
+}

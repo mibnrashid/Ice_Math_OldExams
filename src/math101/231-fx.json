@@ -1,0 +1,682 @@
+{
+  "course": "math101",
+  "term": "231",
+  "kind": "fx",
+  "date": "",
+  "minutes": 120,
+  "source": "math101-231-fx.pdf",
+  "note": "Date and exam length are not printed on the scanned master (no cover page; page 1 is question 1). Date left empty; 120 minutes assumed (the usual final length). Master key is A for every question and all of it agrees with my own solutions (checked with sympy). Handwritten solution work and red section labels on the scan were ignored. Q22 figure is a printed figure, cropped to math101-231-fx-q22.png with faint blue handwritten x and y labels removed. Section numbers were chosen by me from the syllabus.",
+  "qs": [
+    {
+      "sec": "3.2",
+      "q": "An equation of the tangent line to the graph of $f(x)=-2x^4+5x^2-3$ at the point $(1,0)$ is given by",
+      "opts": [
+        "$y=2x-2$",
+        "$y=-2x+2$",
+        "$y=\\dfrac12x-\\dfrac12$",
+        "$y=3x-3$",
+        "$y=2x-3$"
+      ],
+      "ans": 0,
+      "hints": [
+        "This is a tangent line problem: you need a slope and a point.",
+        "Differentiate $f$ and evaluate the derivative at the given $x$-value to get the slope.",
+        "The tangent line at $(a,f(a))$ is $y-f(a)=f'(a)(x-a)$, and $\\dfrac{d}{dx}x^n=nx^{n-1}$."
+      ],
+      "steps": [
+        "$f'(x)=-8x^3+10x$.",
+        "Slope: $f'(1)=-8+10=2$.",
+        "Line through $(1,0)$: $y-0=2(x-1)$.",
+        "So $y=2x-2$."
+      ],
+      "brief": "$f'(1)=2$, so $y=2(x-1)=2x-2$."
+    },
+    {
+      "sec": "3.3",
+      "q": "The slope of the tangent line to the graph of $f(x)=\\dfrac{5}{x^3-2}$ at the point $\\left(-2,-\\dfrac12\\right)$ is equal to",
+      "opts": [
+        "$-\\dfrac35$",
+        "$-\\dfrac52$",
+        "$-\\dfrac{3}{10}$",
+        "$-\\dfrac{15}{2}$",
+        "$-1$"
+      ],
+      "ans": 0,
+      "hints": [
+        "The slope of the tangent line is the value of the derivative at the point.",
+        "Differentiate with the quotient rule (or the chain rule on $5(x^3-2)^{-1}$), then substitute the $x$-value.",
+        "$\\left(\\dfrac uv\\right)'=\\dfrac{u'v-uv'}{v^2}$."
+      ],
+      "steps": [
+        "$f'(x)=\\dfrac{0\\cdot(x^3-2)-5\\cdot3x^2}{(x^3-2)^2}=\\dfrac{-15x^2}{(x^3-2)^2}$.",
+        "At $x=-2$: numerator $-15\\cdot4=-60$.",
+        "Denominator: $(-8-2)^2=100$.",
+        "Slope $=-\\dfrac{60}{100}=-\\dfrac35$."
+      ],
+      "brief": "$f'(x)=\\frac{-15x^2}{(x^3-2)^2}$, $f'(-2)=-\\frac{60}{100}=-\\frac35$."
+    },
+    {
+      "sec": "2.5",
+      "q": "$\\lim_{x\\to(1/2)^+}\\dfrac{x}{2x-1}=$",
+      "opts": [
+        "$\\infty$",
+        "$-\\infty$",
+        "$\\dfrac12$",
+        "$0$",
+        "$-1$"
+      ],
+      "ans": 0,
+      "hints": [
+        "This is a one-sided infinite limit: the denominator tends to zero.",
+        "Check the sign of the numerator and of the denominator for $x$ slightly bigger than the limit point.",
+        "If the numerator tends to a nonzero number and the denominator tends to $0$ through positive values, the quotient tends to $\\infty$ (if the numerator is positive); through negative values it tends to $-\\infty$."
+      ],
+      "steps": [
+        "As $x\\to\\frac12^+$, the numerator $x\\to\\frac12>0$.",
+        "The denominator $2x-1\\to0$ with $2x-1>0$ for $x>\\frac12$.",
+        "Positive over small positive gives a large positive value.",
+        "So the limit is $\\infty$."
+      ],
+      "brief": "Numerator $\\to\\frac12>0$, denominator $\\to0^+$, so the limit is $\\infty$."
+    },
+    {
+      "sec": "3.1",
+      "q": "If $f(x)=\\begin{cases}x^2+1 & x\\le2\\\\ 4x-3 & x>2,\\end{cases}$ then $f'(2)=$",
+      "opts": [
+        "$4$",
+        "$2$",
+        "$1$",
+        "$0$",
+        "does not exist"
+      ],
+      "ans": 0,
+      "hints": [
+        "This is the derivative of a piecewise function at the point where the formula changes.",
+        "Use the definition of the derivative and compute the left-hand and right-hand limits of the difference quotient separately.",
+        "$f'(a)$ exists exactly when $\\lim_{h\\to0^-}\\dfrac{f(a+h)-f(a)}{h}=\\lim_{h\\to0^+}\\dfrac{f(a+h)-f(a)}{h}$."
+      ],
+      "steps": [
+        "$f(2)=2^2+1=5$.",
+        "Left: $\\lim_{x\\to2^-}\\dfrac{x^2+1-5}{x-2}=\\lim(x+2)=4$.",
+        "Right: $\\lim_{x\\to2^+}\\dfrac{4x-3-5}{x-2}=\\lim\\dfrac{4(x-2)}{x-2}=4$.",
+        "Both are equal, so $f'(2)=4$."
+      ],
+      "brief": "Left and right difference quotients both give $4$, so $f'(2)=4$."
+    },
+    {
+      "sec": "2.4",
+      "q": "If $(a,b)$ is the interval on which $f(x)=\\dfrac{\\ln(2-x)}{\\sqrt{2x-3}}$ is continuous, then $ab=$",
+      "opts": [
+        "$3$",
+        "$\\dfrac92$",
+        "$\\dfrac52$",
+        "$4$",
+        "$2$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Continuity on the domain: find where every part of the formula is defined.",
+        "List the conditions: the argument of the logarithm must be positive and the expression under the square root in the denominator must be positive.",
+        "$\\ln u$ needs $u>0$, $\\sqrt{v}$ needs $v\\ge0$, and a denominator cannot be $0$. Elementary functions are continuous on their domains."
+      ],
+      "steps": [
+        "$\\ln(2-x)$ needs $2-x>0$, so $x<2$.",
+        "$\\sqrt{2x-3}$ in the denominator needs $2x-3>0$, so $x>\\frac32$.",
+        "Interval of continuity: $\\left(\\frac32,2\\right)$.",
+        "$ab=\\frac32\\cdot2=3$."
+      ],
+      "brief": "Domain $\\left(\\frac32,2\\right)$, so $ab=3$."
+    },
+    {
+      "sec": "3.3",
+      "q": "Which one of the following statements is TRUE?",
+      "opts": [
+        "If $f(x)=\\dfrac{1}{g(x)}$ and $g(c)=g'(c)=-1$, then $f'(c)=1$.",
+        "If $y=(x+1)(x+2)(x+3)$, then $\\dfrac{d^3y}{dx^3}=0$.",
+        "If $f'(x)=g'(x)$, then $f(x)=g(x)$.",
+        "If $h(x)=f(x)g(x)$ and $f'(c)=g'(c)=1$, then $h'(c)=1$.",
+        "If $f(x)=\\pi^3$, then $f'(x)=3\\pi^2$."
+      ],
+      "ans": 0,
+      "hints": [
+        "Test each statement against the basic differentiation rules.",
+        "Check the statements one at a time: use the quotient (reciprocal) rule, the product rule, the derivative of a constant, and the degree of a polynomial.",
+        "$\\left(\\dfrac1g\\right)'=-\\dfrac{g'}{g^2}$, $(fg)'=f'g+fg'$, the derivative of a constant is $0$, and differentiating a polynomial of degree $n$ a total of $n$ times gives a nonzero constant."
+      ],
+      "steps": [
+        "$f'(x)=-\\dfrac{g'(x)}{g(x)^2}$, so $f'(c)=-\\dfrac{-1}{(-1)^2}=1$: this statement is true.",
+        "$y$ is a cubic with leading coefficient $1$, so $y'''=6\\neq0$.",
+        "Two functions with the same derivative can differ by a constant.",
+        "$h'(c)=f'(c)g(c)+f(c)g'(c)$ depends on $f(c)$ and $g(c)$, so it need not equal $1$.",
+        "$\\pi^3$ is a constant, so its derivative is $0$, not $3\\pi^2$."
+      ],
+      "brief": "Only the reciprocal-rule statement holds: $f'(c)=-\\frac{g'}{g^2}=1$."
+    },
+    {
+      "sec": "3.5",
+      "q": "If $y$ is defined implicitly as a differentiable function of $x$ by the equation $x^3y^3-y=x$, then $\\dfrac{dy}{dx}=$",
+      "opts": [
+        "$\\dfrac{1-3x^2y^3}{3x^3y^2-1}$",
+        "$\\dfrac{3x^2y^3}{3x^3y^2-1}$",
+        "$\\dfrac{1-x^2y^3}{x^3y^2-1}$",
+        "$\\dfrac{x-y}{x^2y^2-1}$",
+        "$\\dfrac{1-3x^2y^3}{3x^3y^2}$"
+      ],
+      "ans": 0,
+      "hints": [
+        "This is implicit differentiation.",
+        "Differentiate both sides with respect to $x$, using the product rule on $x^3y^3$ and remembering that $y$ depends on $x$.",
+        "$\\dfrac{d}{dx}y^n=ny^{n-1}\\dfrac{dy}{dx}$; collect all terms containing $\\dfrac{dy}{dx}$ on one side and factor."
+      ],
+      "steps": [
+        "Differentiate: $3x^2y^3+x^3\\cdot3y^2y'-y'=1$.",
+        "Collect $y'$: $y'(3x^3y^2-1)=1-3x^2y^3$.",
+        "Divide: $y'=\\dfrac{1-3x^2y^3}{3x^3y^2-1}$."
+      ],
+      "brief": "$3x^2y^3+3x^3y^2y'-y'=1$, so $y'=\\frac{1-3x^2y^3}{3x^3y^2-1}$."
+    },
+    {
+      "sec": "3.5",
+      "q": "If $f(x)=\\dfrac{x^2\\sqrt{3x-2}}{(x+1)^2}$, then $f'(1)=$",
+      "opts": [
+        "$\\dfrac58$",
+        "$\\dfrac54$",
+        "$\\dfrac56$",
+        "$\\dfrac38$",
+        "$\\dfrac34$"
+      ],
+      "ans": 0,
+      "hints": [
+        "The function is a product and quotient of powers, so logarithmic differentiation is convenient.",
+        "Take $\\ln$ of both sides, expand with the log laws, differentiate, then multiply back by $f$.",
+        "$\\ln\\dfrac{ab}{c}=\\ln a+\\ln b-\\ln c$, $\\ln a^k=k\\ln a$, and $\\dfrac{f'}{f}=(\\ln f)'$."
+      ],
+      "steps": [
+        "$\\ln f=2\\ln x+\\frac12\\ln(3x-2)-2\\ln(x+1)$.",
+        "$\\dfrac{f'}{f}=\\dfrac2x+\\dfrac{3}{2(3x-2)}-\\dfrac{2}{x+1}$.",
+        "At $x=1$: $f(1)=\\dfrac{1\\cdot1}{4}=\\dfrac14$ and $\\dfrac{f'}{f}=2+\\dfrac32-1=\\dfrac52$.",
+        "$f'(1)=\\dfrac14\\cdot\\dfrac52=\\dfrac58$."
+      ],
+      "brief": "Log differentiation: $f'/f=2+\\frac32-1=\\frac52$ at $1$, $f(1)=\\frac14$, so $f'(1)=\\frac58$."
+    },
+    {
+      "sec": "4.1",
+      "q": "If $f(x)=3x^4-4x^3$ has an absolute minimum at the point $(a,b)$ on the interval $[-1,2]$, then $ab=$",
+      "opts": [
+        "$-1$",
+        "$0$",
+        "$-7$",
+        "$32$",
+        "$10$"
+      ],
+      "ans": 0,
+      "hints": [
+        "This is an absolute extremum problem on a closed interval.",
+        "Find the critical points inside the interval and then compare the function values there and at both endpoints.",
+        "Closed interval method: the absolute extrema of a continuous $f$ on $[a,b]$ occur at critical points in $(a,b)$ or at the endpoints; the smallest value is the absolute minimum."
+      ],
+      "steps": [
+        "$f'(x)=12x^3-12x^2=12x^2(x-1)$, so the critical points are $x=0$ and $x=1$.",
+        "$f(0)=0$, $f(1)=3-4=-1$.",
+        "Endpoints: $f(-1)=3+4=7$ and $f(2)=48-32=16$.",
+        "The smallest value is $-1$ at $x=1$, so $(a,b)=(1,-1)$ and $ab=-1$."
+      ],
+      "brief": "Values $0,-1,7,16$: minimum $-1$ at $x=1$, so $ab=-1$."
+    },
+    {
+      "sec": "3.1",
+      "q": "The slope of the tangent line to the graph of $f(x)=\\dfrac1x$, $x>0$, that passes through the point $(1,-3)$ is equal to",
+      "opts": [
+        "$-9$",
+        "$-4$",
+        "$-\\dfrac94$",
+        "$-\\dfrac{25}{4}$",
+        "$-25$"
+      ],
+      "ans": 0,
+      "hints": [
+        "The point $(1,-3)$ is not on the curve, so first find where the tangent touches the curve.",
+        "Let the point of tangency be $\\left(t,\\frac1t\\right)$ and write that the slope between it and $(1,-3)$ equals $f'(t)$.",
+        "The slope of the line through $(x_1,y_1)$ and $(x_2,y_2)$ is $\\dfrac{y_2-y_1}{x_2-x_1}$, and $\\dfrac{d}{dx}x^{-1}=-x^{-2}$."
+      ],
+      "steps": [
+        "Tangency point $\\left(t,\\frac1t\\right)$, slope $f'(t)=-\\frac1{t^2}$.",
+        "Slope through $(1,-3)$: $\\dfrac{\\frac1t+3}{t-1}=-\\dfrac1{t^2}$, so $t+3t^2=-t+1$.",
+        "$3t^2+2t-1=0$, so $(3t-1)(t+1)=0$ and, since $t>0$, $t=\\frac13$.",
+        "Slope $=-\\dfrac1{t^2}=-9$."
+      ],
+      "brief": "Tangency at $t=\\frac13$ ($3t^2+2t-1=0$), slope $-1/t^2=-9$."
+    },
+    {
+      "sec": "5.9",
+      "q": "If $\\sinh x=-\\dfrac12$, then $\\tanh x=$",
+      "opts": [
+        "$-\\dfrac{\\sqrt5}{5}$",
+        "$\\dfrac{\\sqrt5}{5}$",
+        "$-\\dfrac{\\sqrt3}{3}$",
+        "$-\\sqrt5$",
+        "$\\dfrac{\\sqrt5}{2}$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Use a hyperbolic identity to find $\\cosh x$ first.",
+        "Use $\\cosh^2x-\\sinh^2x=1$ and remember that $\\cosh x$ is always positive.",
+        "$\\tanh x=\\dfrac{\\sinh x}{\\cosh x}$ and $\\cosh^2x-\\sinh^2x=1$ with $\\cosh x>0$."
+      ],
+      "steps": [
+        "$\\cosh^2x=1+\\sinh^2x=1+\\frac14=\\frac54$.",
+        "$\\cosh x>0$, so $\\cosh x=\\frac{\\sqrt5}{2}$.",
+        "$\\tanh x=\\dfrac{-1/2}{\\sqrt5/2}=-\\dfrac1{\\sqrt5}$.",
+        "Rationalise: $-\\dfrac{\\sqrt5}{5}$."
+      ],
+      "brief": "$\\cosh x=\\frac{\\sqrt5}{2}$, so $\\tanh x=-\\frac1{\\sqrt5}=-\\frac{\\sqrt5}{5}$."
+    },
+    {
+      "sec": "5.9",
+      "q": "If $f(x)=\\dfrac12\\ln(\\sinh(x^2))$, then $f'(x)=$",
+      "opts": [
+        "$x\\coth(x^2)$",
+        "$x\\tanh(x^2)$",
+        "$\\dfrac12x\\cosh(x^2)$",
+        "$\\dfrac12x\\operatorname{csch}(x^2)$",
+        "$2x\\operatorname{sech}(x^2)$"
+      ],
+      "ans": 0,
+      "hints": [
+        "This is a composition of three functions, so use the chain rule.",
+        "Differentiate the outer $\\ln$, then $\\sinh$, then $x^2$, and simplify using the definition of the hyperbolic cotangent.",
+        "$\\dfrac{d}{du}\\ln u=\\dfrac1u$, $\\dfrac{d}{du}\\sinh u=\\cosh u$, and $\\coth u=\\dfrac{\\cosh u}{\\sinh u}$."
+      ],
+      "steps": [
+        "$f'(x)=\\dfrac12\\cdot\\dfrac{1}{\\sinh(x^2)}\\cdot\\cosh(x^2)\\cdot2x$.",
+        "The factors $\\frac12$ and $2$ cancel.",
+        "$f'(x)=x\\,\\dfrac{\\cosh(x^2)}{\\sinh(x^2)}=x\\coth(x^2)$."
+      ],
+      "brief": "Chain rule: $\\frac12\\cdot\\frac{\\cosh(x^2)}{\\sinh(x^2)}\\cdot2x=x\\coth(x^2)$."
+    },
+    {
+      "sec": "5.6",
+      "q": "$\\lim_{x\\to\\infty}\\dfrac{(\\ln x)^2}{x^3}=$",
+      "opts": [
+        "$0$",
+        "$1$",
+        "$\\infty$",
+        "$\\dfrac23$",
+        "$\\dfrac29$"
+      ],
+      "ans": 0,
+      "hints": [
+        "This is an indeterminate form $\\dfrac\\infty\\infty$.",
+        "Apply L'Hopital's rule and simplify; repeat if it is still indeterminate.",
+        "L'Hopital: if $\\dfrac{f}{g}$ is $\\dfrac00$ or $\\dfrac\\infty\\infty$, then $\\lim\\dfrac fg=\\lim\\dfrac{f'}{g'}$ when the latter exists."
+      ],
+      "steps": [
+        "Both numerator and denominator tend to $\\infty$.",
+        "L'Hopital: $\\lim\\dfrac{2\\ln x\\cdot\\frac1x}{3x^2}=\\lim\\dfrac23\\cdot\\dfrac{\\ln x}{x^3}$, still $\\frac\\infty\\infty$.",
+        "L'Hopital again: $\\lim\\dfrac23\\cdot\\dfrac{1/x}{3x^2}=\\lim\\dfrac29\\cdot\\dfrac1{x^3}$.",
+        "As $x\\to\\infty$ this is $0$."
+      ],
+      "brief": "Two applications of L'Hopital give $\\frac29\\lim\\frac1{x^3}=0$."
+    },
+    {
+      "sec": "4.8",
+      "q": "The differential $dy$ of the function $y=x(1-\\cos x)$ is",
+      "opts": [
+        "$dy=(1-\\cos x+x\\sin x)\\,dx$",
+        "$dy=(1+\\cos x-x\\sin x)\\,dx$",
+        "$dy=(x-\\cos x+x\\sin x)\\,dx$",
+        "$dy=(\\cos x-x\\sin x)\\,dx$",
+        "$dy=(1-x\\sin x)\\,dx$"
+      ],
+      "ans": 0,
+      "hints": [
+        "A differential is the derivative times $dx$.",
+        "Differentiate $y$ with the product rule.",
+        "$dy=f'(x)\\,dx$ and $(uv)'=u'v+uv'$, with $\\dfrac{d}{dx}\\cos x=-\\sin x$."
+      ],
+      "steps": [
+        "$y'=1\\cdot(1-\\cos x)+x\\cdot\\sin x$.",
+        "So $y'=1-\\cos x+x\\sin x$.",
+        "$dy=(1-\\cos x+x\\sin x)\\,dx$."
+      ],
+      "brief": "$y'=(1-\\cos x)+x\\sin x$, so $dy=(1-\\cos x+x\\sin x)\\,dx$."
+    },
+    {
+      "sec": "4.3",
+      "q": "The function $f(x)=x^3-6x^2+10$ is decreasing on the interval(s)",
+      "opts": [
+        "$(0,4)$",
+        "$(0,\\infty)$",
+        "$(-\\infty,0)$ and $(4,\\infty)$",
+        "$(-\\infty,4)$",
+        "$(-\\infty,\\infty)$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Use the first derivative test for increasing and decreasing.",
+        "Find where $f'$ is zero and test the sign of $f'$ on each interval.",
+        "$f$ is decreasing on an interval where $f'(x)<0$ and increasing where $f'(x)>0$."
+      ],
+      "steps": [
+        "$f'(x)=3x^2-12x=3x(x-4)$.",
+        "$f'=0$ at $x=0$ and $x=4$.",
+        "Signs: $f'>0$ on $(-\\infty,0)$, $f'<0$ on $(0,4)$, $f'>0$ on $(4,\\infty)$.",
+        "So $f$ is decreasing on $(0,4)$."
+      ],
+      "brief": "$f'=3x(x-4)<0$ exactly on $(0,4)$."
+    },
+    {
+      "sec": "4.3",
+      "q": "If the function $f(x)=2x+\\dfrac1x$ has a relative maximum at the point $(a,b)$, then $a=$",
+      "opts": [
+        "$-\\dfrac{\\sqrt2}{2}$",
+        "$\\dfrac{\\sqrt2}{2}$",
+        "$0$",
+        "$-\\dfrac12$",
+        "$\\dfrac12$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Find the critical points and classify them with the first derivative test.",
+        "Set $f'(x)=0$, note that $x=0$ is not in the domain, and check the sign of $f'$ around each critical point.",
+        "A relative maximum occurs where $f'$ changes from positive to negative."
+      ],
+      "steps": [
+        "$f'(x)=2-\\dfrac1{x^2}=\\dfrac{2x^2-1}{x^2}$, zero at $x=\\pm\\dfrac1{\\sqrt2}$ ($x=0$ is not in the domain).",
+        "Signs of $f'$: positive for $x<-\\frac1{\\sqrt2}$, negative on $\\left(-\\frac1{\\sqrt2},0\\right)$ and $\\left(0,\\frac1{\\sqrt2}\\right)$, positive for $x>\\frac1{\\sqrt2}$.",
+        "$f'$ changes from $+$ to $-$ at $x=-\\frac1{\\sqrt2}$, a relative maximum.",
+        "$a=-\\dfrac1{\\sqrt2}=-\\dfrac{\\sqrt2}{2}$."
+      ],
+      "brief": "$f'=\\frac{2x^2-1}{x^2}$ changes $+\\to-$ at $x=-\\frac{1}{\\sqrt2}=-\\frac{\\sqrt2}{2}$."
+    },
+    {
+      "sec": "4.4",
+      "q": "The number of inflection points of the graph of $f(x)=e^{-x^2}$ is",
+      "opts": [
+        "$2$",
+        "$1$",
+        "$0$",
+        "$3$",
+        "$4$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Inflection points are where the concavity changes, so study the second derivative.",
+        "Compute $f''$, find where it is zero, and check whether its sign changes there.",
+        "A point is an inflection point if $f''$ changes sign there (concavity changes)."
+      ],
+      "steps": [
+        "$f'(x)=-2xe^{-x^2}$.",
+        "$f''(x)=-2e^{-x^2}+4x^2e^{-x^2}=-2e^{-x^2}(1-2x^2)$.",
+        "$f''=0$ when $x^2=\\frac12$, so $x=\\pm\\frac{\\sqrt2}{2}$.",
+        "$f''>0$ for $|x|>\\frac{\\sqrt2}{2}$ and $f''<0$ between, so the sign changes at both: $2$ inflection points."
+      ],
+      "brief": "$f''=-2e^{-x^2}(1-2x^2)$ changes sign at $x=\\pm\\frac{\\sqrt2}{2}$: two points."
+    },
+    {
+      "sec": "4.4",
+      "q": "The graph of $f(x)=x\\sqrt{x+2}$ is concave upward on the interval(s)",
+      "opts": [
+        "$(-2,\\infty)$",
+        "$\\left(-\\dfrac83,\\infty\\right)$",
+        "$\\left(-\\dfrac83,-2\\right)$",
+        "$\\left(-\\infty,-\\dfrac83\\right)$ and $(-2,\\infty)$",
+        "$(-\\infty,\\infty)$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Concavity is determined by the sign of $f''$, within the domain of $f$.",
+        "Find the domain, differentiate twice with the product and quotient rules, and combine into a single fraction.",
+        "$f$ is concave upward where $f''(x)>0$; only $x$-values in the domain of $f$ count."
+      ],
+      "steps": [
+        "The domain is $[-2,\\infty)$.",
+        "$f'(x)=\\dfrac{x}{2\\sqrt{x+2}}+\\sqrt{x+2}=\\dfrac{3x+4}{2\\sqrt{x+2}}$.",
+        "$f''(x)=\\dfrac{3x+8}{4(x+2)\\sqrt{x+2}}=\\dfrac{3x+8}{4(x+2)^{3/2}}$.",
+        "For $x>-2$ we have $3x+8>2>0$, so $f''>0$: concave up on $(-2,\\infty)$ (the zero $-\\frac83$ lies outside the domain)."
+      ],
+      "brief": "$f''=\\frac{3x+8}{4(x+2)^{3/2}}>0$ for all $x>-2$."
+    },
+    {
+      "sec": "4.6",
+      "q": "The slant asymptote of the graph of the function $f(x)=\\dfrac{4x^3+x}{2x^2+1}$ is given by",
+      "opts": [
+        "$y=2x$",
+        "$y=2x-\\dfrac12$",
+        "$y=\\dfrac12x+1$",
+        "$y=4x$",
+        "$y=-2x+1$"
+      ],
+      "ans": 0,
+      "hints": [
+        "A rational function with numerator degree one more than the denominator has a slant asymptote.",
+        "Divide the numerator by the denominator with polynomial long division.",
+        "If $f=\\dfrac{P}{Q}=(mx+b)+\\dfrac{R}{Q}$ with $\\deg R<\\deg Q$, then $y=mx+b$ is the slant asymptote."
+      ],
+      "steps": [
+        "Divide: $4x^3+x=2x(2x^2+1)-x$.",
+        "So $f(x)=2x-\\dfrac{x}{2x^2+1}$.",
+        "The remainder term $\\dfrac{x}{2x^2+1}\\to0$ as $x\\to\\pm\\infty$.",
+        "The slant asymptote is $y=2x$."
+      ],
+      "brief": "$f=2x-\\frac{x}{2x^2+1}$, so the slant asymptote is $y=2x$."
+    },
+    {
+      "sec": "4.8",
+      "q": "The tangent line approximation of the function $f(x)=\\sqrt x+\\dfrac{2}{\\sqrt x}$ at the point $(1,3)$ is",
+      "opts": [
+        "$y=-\\dfrac12x+\\dfrac72$",
+        "$y=\\dfrac12x+\\dfrac52$",
+        "$y=-x+4$",
+        "$y=-\\dfrac13x+\\dfrac{10}3$",
+        "$y=-\\dfrac32x+\\dfrac92$"
+      ],
+      "ans": 0,
+      "hints": [
+        "The tangent line approximation is the linearization of $f$ at the given point.",
+        "Rewrite $f$ with fractional powers, differentiate, and evaluate $f'$ at the given $x$-value.",
+        "The linear approximation at $x=a$ is $y=f(a)+f'(a)(x-a)$, and $\\dfrac{d}{dx}x^n=nx^{n-1}$."
+      ],
+      "steps": [
+        "$f(x)=x^{1/2}+2x^{-1/2}$.",
+        "$f'(x)=\\frac12x^{-1/2}-x^{-3/2}$, so $f'(1)=\\frac12-1=-\\frac12$.",
+        "$y=3-\\frac12(x-1)$.",
+        "$y=-\\dfrac12x+\\dfrac72$."
+      ],
+      "brief": "$f'(1)=-\\frac12$, $y=3-\\frac12(x-1)=-\\frac12x+\\frac72$."
+    },
+    {
+      "sec": "4.8",
+      "q": "The measurement of the edge of a cube is found to be $8\\,cm$, with a possible error of $0.02\\,cm$. Using differentials, the possible propagated error in computing the volume of the cube is approximately equal to",
+      "opts": [
+        "$3.84\\,cm^3$",
+        "$1.92\\,cm^3$",
+        "$1.28\\,cm^3$",
+        "$3.33\\,cm^3$",
+        "$2.54\\,cm^3$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Propagated error is approximated by a differential.",
+        "Write the volume as a function of the edge length and compute $dV$ with $dx$ equal to the possible error.",
+        "$\\Delta V\\approx dV=V'(x)\\,dx$."
+      ],
+      "steps": [
+        "$V=x^3$, so $dV=3x^2\\,dx$.",
+        "With $x=8$ and $dx=0.02$: $dV=3(64)(0.02)$.",
+        "$dV=3.84$.",
+        "The propagated error is about $3.84\\,cm^3$."
+      ],
+      "brief": "$dV=3x^2dx=3(64)(0.02)=3.84\\,cm^3$."
+    },
+    {
+      "sec": "4.7",
+      "q": "A rectangle is to be constructed in such away that it will be bounded by the $x$-axis, $y$-axis, and the graph of the line $y=1-2x$ (as shown in the figure). What is the maximum possible area of such a rectangle?",
+      "opts": [
+        "$\\dfrac18$",
+        "$\\dfrac14$",
+        "$\\dfrac34$",
+        "$\\dfrac53$",
+        "$\\dfrac23$"
+      ],
+      "ans": 0,
+      "hints": [
+        "This is an optimisation problem with one constraint.",
+        "Write the area $xy$ and use the line to express $y$ in terms of $x$, giving a function of one variable on its allowed interval.",
+        "Maximise by solving $A'(x)=0$ and checking with the second derivative test or the endpoints."
+      ],
+      "steps": [
+        "$A=xy=x(1-2x)=x-2x^2$ for $0\\le x\\le\\frac12$.",
+        "$A'(x)=1-4x=0$ gives $x=\\frac14$.",
+        "$A''=-4<0$, so this is a maximum (endpoints give $A=0$).",
+        "$A\\left(\\frac14\\right)=\\frac14-\\frac18=\\frac18$."
+      ],
+      "brief": "$A=x-2x^2$, $A'=0$ at $x=\\frac14$, $A_{\\max}=\\frac18$.",
+      "img": "math101-231-fx-q22.png"
+    },
+    {
+      "sec": "4.7",
+      "q": "If $(a,b)$ is the point on the curve $y=\\sqrt x$ that is closest to the point $(1,0)$, then $ab=$",
+      "opts": [
+        "$\\dfrac{\\sqrt2}{4}$",
+        "$\\sqrt2$",
+        "$\\dfrac{\\sqrt2}{2}$",
+        "$2\\sqrt2$",
+        "$\\dfrac{\\sqrt2}{3}$"
+      ],
+      "ans": 0,
+      "hints": [
+        "This is an optimisation problem: minimise a distance.",
+        "Write the squared distance from a point $(x,\\sqrt x)$ on the curve to $(1,0)$ as a function of $x$; minimising the square is enough.",
+        "Distance formula $d^2=(x-x_0)^2+(y-y_0)^2$; set the derivative to zero and check with the second derivative test."
+      ],
+      "steps": [
+        "$d^2=(x-1)^2+(\\sqrt x)^2=(x-1)^2+x=:F(x)$.",
+        "$F'(x)=2(x-1)+1=2x-1=0$, so $x=\\frac12$.",
+        "$F''=2>0$, so this is a minimum.",
+        "$a=\\frac12$, $b=\\sqrt{\\frac12}=\\frac1{\\sqrt2}$, so $ab=\\dfrac{1}{2\\sqrt2}=\\dfrac{\\sqrt2}{4}$."
+      ],
+      "brief": "Minimise $(x-1)^2+x$: $x=\\frac12$, $y=\\frac1{\\sqrt2}$, $ab=\\frac{\\sqrt2}{4}$."
+    },
+    {
+      "sec": "4.6",
+      "q": "Which one of the following statements is FALSE about the graph of the function $g(x)=2x\\ln x$?",
+      "opts": [
+        "The line $x=0$ is a vertical asymptote for the graph.",
+        "The graph is increasing on $(e^{-1},\\infty)$.",
+        "The graph has no horizontal asymptote.",
+        "The graph is concave up on $(0,\\infty)$.",
+        "The graph has one local minimum."
+      ],
+      "ans": 0,
+      "hints": [
+        "Check each statement with the tools of curve sketching: limits, first derivative and second derivative.",
+        "The domain is $x>0$. Test the one-sided limit at $0$, the limit at $\\infty$, and the signs of $g'$ and $g''$.",
+        "A vertical asymptote at $x=a$ needs a one-sided limit equal to $\\pm\\infty$; a limit of the form $0\\cdot\\infty$ can be rewritten as $\\dfrac{\\infty}{\\infty}$ and handled with L'Hopital's rule."
+      ],
+      "steps": [
+        "$\\lim_{x\\to0^+}2x\\ln x=2\\lim\\dfrac{\\ln x}{1/x}=2\\lim\\dfrac{1/x}{-1/x^2}=2\\lim(-x)=0$, so there is no vertical asymptote: this statement is false.",
+        "$g'(x)=2(1+\\ln x)$ is positive for $x>e^{-1}$, so $g$ increases there.",
+        "$g(x)\\to\\infty$ as $x\\to\\infty$, so there is no horizontal asymptote.",
+        "$g''(x)=\\frac2x>0$ for $x>0$, so the graph is concave up.",
+        "$g'$ changes from $-$ to $+$ only at $x=e^{-1}$: exactly one local minimum."
+      ],
+      "brief": "$\\lim_{x\\to0^+}2x\\ln x=0$, so $x=0$ is not a vertical asymptote (false statement)."
+    },
+    {
+      "sec": "5.6",
+      "q": "If $f(x)=\\begin{cases}(e^x+2x)^{1/x} & x\\neq0\\\\ c & x=0\\end{cases}$ is continuous at $x=0$, then $c=$",
+      "opts": [
+        "$e^3$",
+        "$1$",
+        "$e^2$",
+        "$e$",
+        "$e^{-2}$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Continuity at $0$ means $c$ equals the limit of the formula as $x\\to0$.",
+        "The limit has the form $1^\\infty$: take the natural logarithm and apply L'Hopital's rule.",
+        "If $\\ln L=\\lim\\ln f$, then $L=e^{\\ln L}$; for $\\dfrac00$ use $\\lim\\dfrac fg=\\lim\\dfrac{f'}{g'}$."
+      ],
+      "steps": [
+        "Need $c=\\lim_{x\\to0}(e^x+2x)^{1/x}$, form $1^\\infty$.",
+        "$\\ln y=\\dfrac{\\ln(e^x+2x)}{x}$, form $\\frac00$.",
+        "L'Hopital: $\\lim\\dfrac{e^x+2}{e^x+2x}=\\dfrac{1+2}{1+0}=3$.",
+        "So the limit is $e^3$ and $c=e^3$."
+      ],
+      "brief": "$\\ln y\\to\\lim\\frac{e^x+2}{e^x+2x}=3$, so $c=e^3$."
+    },
+    {
+      "sec": "5.6",
+      "q": "$\\lim_{x\\to3^+}\\left(\\dfrac{18}{x^2-9}-\\dfrac{x}{x-3}\\right)=$",
+      "opts": [
+        "$-\\dfrac32$",
+        "$0$",
+        "$\\infty$",
+        "$-\\dfrac16$",
+        "$1$"
+      ],
+      "ans": 0,
+      "hints": [
+        "This is an $\\infty-\\infty$ form.",
+        "Combine the fractions over the common denominator and look for cancellation or use L'Hopital's rule.",
+        "$x^2-9=(x-3)(x+3)$; the combined fraction is of the form $\\dfrac00$, so L'Hopital applies, or factor and cancel."
+      ],
+      "steps": [
+        "Common denominator: $\\dfrac{18-x(x+3)}{x^2-9}=\\dfrac{18-x^2-3x}{x^2-9}$, form $\\frac00$.",
+        "Factor: $18-x^2-3x=-(x+6)(x-3)$.",
+        "Cancel $x-3$: $\\dfrac{-(x+6)}{x+3}$.",
+        "At $x=3$: $-\\dfrac{9}{6}=-\\dfrac32$."
+      ],
+      "brief": "Combine: $\\frac{-(x+6)(x-3)}{(x-3)(x+3)}\\to-\\frac96=-\\frac32$."
+    },
+    {
+      "sec": "5.1",
+      "q": "If $f''(x)=x^{-3/2}$, $f'(4)=2$, $f(1)=1$, then $f(9)=$",
+      "opts": [
+        "$17$",
+        "$15$",
+        "$13$",
+        "$11$",
+        "$9$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Antidifferentiate twice and use the two conditions to fix the constants.",
+        "Integrate $f''$ to get $f'$ with a constant and use $f'(4)$; integrate again and use $f(1)$.",
+        "$\\int x^n\\,dx=\\dfrac{x^{n+1}}{n+1}+C$ for $n\\neq-1$."
+      ],
+      "steps": [
+        "$f'(x)=-2x^{-1/2}+C$; $f'(4)=-1+C=2$ gives $C=3$.",
+        "$f(x)=-4x^{1/2}+3x+D$.",
+        "$f(1)=-4+3+D=1$ gives $D=2$.",
+        "$f(9)=-4\\cdot3+27+2=17$."
+      ],
+      "brief": "$f'=-2x^{-1/2}+3$, $f=-4\\sqrt x+3x+2$, so $f(9)=17$."
+    },
+    {
+      "sec": "5.1",
+      "q": "$\\int(2x^3-\\sec^2x)\\,dx=$",
+      "opts": [
+        "$\\dfrac12x^4-\\tan x+c$",
+        "$\\dfrac12x^4+\\tan x+c$",
+        "$2x^4-\\tan x+c$",
+        "$x^4+\\tan x+c$",
+        "$2x^4-\\cot x+c$"
+      ],
+      "ans": 0,
+      "hints": [
+        "This is a basic indefinite integral; integrate term by term.",
+        "Use the power rule for the first term and a trigonometric antiderivative for the second.",
+        "$\\int x^n\\,dx=\\dfrac{x^{n+1}}{n+1}+C$ and $\\dfrac{d}{dx}\\tan x=\\sec^2x$."
+      ],
+      "steps": [
+        "$\\int2x^3\\,dx=2\\cdot\\frac{x^4}{4}=\\frac12x^4$.",
+        "$\\int\\sec^2x\\,dx=\\tan x$.",
+        "Combine: $\\frac12x^4-\\tan x+c$."
+      ],
+      "brief": "$\\int2x^3=\\frac12x^4$, $\\int\\sec^2x=\\tan x$: $\\frac12x^4-\\tan x+c$."
+    }
+  ]
+}

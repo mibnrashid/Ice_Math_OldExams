@@ -1,0 +1,482 @@
+{
+  "course": "math102",
+  "term": "253",
+  "kind": "fx",
+  "date": "",
+  "minutes": 120,
+  "source": "math102-253-fx.pdf",
+  "note": "The source PDF has no cover page: the date and exam length are not printed (the file starts at question 1 of the master version). Date left empty; 120 minutes is an assumed standard final-exam length. Q10 asks for the coefficient of x^2 in the nth degree Maclaurin polynomial; it equals 1/120 for every n>=2, so the key 1/120 is kept. All 20 master keys were verified independently and agree.",
+  "qs": [
+    {
+      "sec": "8.8",
+      "q": "Evaluate \\[ \\int_0^\\infty \\frac{dx}{\\sqrt{x}\\,(x+9)}. \\]",
+      "opts": [
+        "converges to $\\dfrac{\\pi}{3}$",
+        "converges to $\\dfrac{\\pi}{9}$",
+        "converges to $\\pi$",
+        "diverges",
+        "converges to $0$"
+      ],
+      "ans": 0,
+      "hints": [
+        "This is an improper integral that is infinite in two ways: an infinite limit and an infinite discontinuity at $x=0$.",
+        "Remove the square root with the substitution $u=\\sqrt{x}$, then rewrite the integral as a limit.",
+        "$\\int\\frac{du}{u^2+a^2}=\\frac1a\\arctan\\frac ua+C$, with $\\arctan u\\to\\frac{\\pi}{2}$ as $u\\to\\infty$ and $\\arctan 0=0$."
+      ],
+      "steps": [
+        "Let $u=\\sqrt{x}$, so $x=u^2$, $dx=2u\\,du$ and $u$ runs from $0$ to $\\infty$.",
+        "$\\int_0^\\infty\\frac{dx}{\\sqrt{x}(x+9)}=\\int_0^\\infty\\frac{2u\\,du}{u(u^2+9)}=2\\int_0^\\infty\\frac{du}{u^2+9}$.",
+        "$=2\\lim_{b\\to\\infty}\\dfrac13\\arctan\\dfrac b3=\\dfrac23\\cdot\\dfrac{\\pi}{2}$.",
+        "So the integral converges to $\\dfrac{\\pi}{3}$."
+      ],
+      "brief": "$u=\\sqrt{x}$: $2\\int_0^\\infty\\frac{du}{u^2+9}=\\frac23\\cdot\\frac{\\pi}{2}=\\frac{\\pi}{3}$."
+    },
+    {
+      "sec": "8.8",
+      "q": "Evaluate \\[ \\int_0^2 \\frac{dx}{(x-1)^2}. \\]",
+      "opts": [
+        "diverges",
+        "converges to $-2$",
+        "converges to $2$",
+        "converges to $1$",
+        "converges to $-1$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Check where the integrand is undefined inside the interval of integration.",
+        "The integrand blows up at an interior point, so split the integral there and treat each piece as a limit.",
+        "If $f$ has an infinite discontinuity at an interior point $c$, then $\\int_a^b f=\\int_a^c f+\\int_c^b f$, and the integral converges only if both pieces converge. Also $\\int_0^1 \\frac{dx}{x^p}$ diverges for $p\\ge1$."
+      ],
+      "steps": [
+        "The integrand is undefined at $x=1$, which lies inside $[0,2]$, so split: $\\int_0^1+\\int_1^2$.",
+        "$\\int_0^1\\frac{dx}{(x-1)^2}=\\lim_{b\\to1^-}\\left[-\\frac{1}{x-1}\\right]_0^b=\\lim_{b\\to1^-}\\left(-\\frac{1}{b-1}-1\\right)=\\infty$.",
+        "One piece diverges, so the whole integral diverges. (Applying the Fundamental Theorem directly would give the false value $-2$.)"
+      ],
+      "brief": "Infinite discontinuity at $x=1$: $\\int_0^1\\frac{dx}{(x-1)^2}=\\infty$, so it diverges."
+    },
+    {
+      "sec": "9.1",
+      "q": "Consider the convergent sequence $\\{a_n\\}$, where $a_1=\\sqrt6$, $a_{n+1}=\\sqrt{6+a_n}$ for $n\\ge1$. The sequence converges to",
+      "opts": [
+        "$3$",
+        "$6$",
+        "$-2$",
+        "$1$",
+        "$-1$"
+      ],
+      "ans": 0,
+      "hints": [
+        "The sequence is given recursively and is known to converge, so its limit satisfies an equation.",
+        "Let $L=\\lim a_n$. Then $a_{n+1}$ also tends to $L$; take the limit on both sides of the recursion.",
+        "If $a_n\\to L$ and $a_{n+1}=g(a_n)$ with $g$ continuous, then $L=g(L)$. Also a limit of nonnegative terms cannot be negative."
+      ],
+      "steps": [
+        "Let $L=\\lim a_n$. Then $L=\\sqrt{6+L}$.",
+        "Square: $L^2=6+L$, so $L^2-L-6=(L-3)(L+2)=0$.",
+        "All terms are positive, so $L\\ge0$, which rules out $L=-2$.",
+        "Hence $L=3$."
+      ],
+      "brief": "$L=\\sqrt{6+L}\\Rightarrow L^2-L-6=0$, and $L\\ge0$, so $L=3$."
+    },
+    {
+      "sec": "9.2",
+      "q": "\\[ \\sum_{n=1}^{\\infty}\\left(e^{-n}+e^{-2n}\\right)= \\]",
+      "opts": [
+        "$\\dfrac{e+2}{e^2-1}$",
+        "$\\dfrac{e+1}{e^2+1}$",
+        "$\\dfrac{1}{e-1}$",
+        "$\\dfrac{1}{e+1}$",
+        "$\\dfrac{e^2+2}{e^2+1}$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Each part is a geometric series.",
+        "Split the sum into $\\sum e^{-n}$ and $\\sum e^{-2n}$ and find the first term and ratio of each.",
+        "$\\sum_{n=1}^\\infty ar^{n-1}=\\frac{a}{1-r}$ for $|r|<1$."
+      ],
+      "steps": [
+        "$\\sum_{n=1}^\\infty e^{-n}$ is geometric with $a=e^{-1}$, $r=e^{-1}$: sum $=\\dfrac{e^{-1}}{1-e^{-1}}=\\dfrac{1}{e-1}$.",
+        "$\\sum_{n=1}^\\infty e^{-2n}$ has $a=r=e^{-2}$: sum $=\\dfrac{e^{-2}}{1-e^{-2}}=\\dfrac{1}{e^2-1}$.",
+        "Add: $\\dfrac{1}{e-1}+\\dfrac{1}{e^2-1}=\\dfrac{(e+1)+1}{e^2-1}=\\dfrac{e+2}{e^2-1}$."
+      ],
+      "brief": "$\\frac{1}{e-1}+\\frac{1}{e^2-1}=\\frac{e+2}{e^2-1}$ (two geometric series)."
+    },
+    {
+      "sec": "9.3",
+      "q": "Which of the following series is/are convergent? \\[ \\text{I. }\\sum_{n=2}^{\\infty}\\frac{1}{n(\\ln n)^2}\\qquad \\text{II. }\\sum_{n=1}^{\\infty}\\frac{1}{n^{2025/2026}}\\qquad \\text{III. }\\sum_{n=1}^{\\infty}\\frac{1}{(n+1)(n+2)} \\]",
+      "opts": [
+        "I and III only",
+        "I and II only",
+        "II and III only",
+        "I only",
+        "II only"
+      ],
+      "ans": 0,
+      "hints": [
+        "Test the three series separately: an integral test, a $p$-series and a telescoping series.",
+        "For I use the integral test with the substitution $u=\\ln x$; for II compare $p$ with $1$; for III use partial fractions.",
+        "$\\sum 1/n^p$ converges iff $p>1$; $\\int_2^\\infty\\frac{dx}{x(\\ln x)^p}$ behaves like $\\int u^{-p}\\,du$; and $\\frac{1}{(n+a)(n+a+1)}=\\frac1{n+a}-\\frac1{n+a+1}$."
+      ],
+      "steps": [
+        "I: $\\int_2^\\infty\\frac{dx}{x(\\ln x)^2}=\\lim_{b\\to\\infty}\\left[-\\frac1{\\ln x}\\right]_2^b=\\frac{1}{\\ln2}$, finite, so I converges.",
+        "II: a $p$-series with $p=\\frac{2025}{2026}<1$, so II diverges.",
+        "III: $\\frac{1}{(n+1)(n+2)}=\\frac1{n+1}-\\frac1{n+2}$, a telescoping series with sum $\\frac12$, so III converges.",
+        "Hence I and III converge, and II does not."
+      ],
+      "brief": "I: integral test gives $\\frac1{\\ln 2}$; II: $p<1$ diverges; III telescopes to $\\frac12$."
+    },
+    {
+      "sec": "9.4",
+      "q": "Consider the series \\[ \\sum_{n=1}^{\\infty}\\frac{4n^2+7}{n^{5/2}+5n+1}. \\]",
+      "opts": [
+        "The series diverges by the limit comparison test with $\\sum_{n=1}^{\\infty}\\dfrac{1}{\\sqrt n}$",
+        "The series converges by the comparison test with $\\sum_{n=1}^{\\infty}\\dfrac{1}{n^2}$",
+        "The series converges as $\\lim_{n\\to\\infty}\\dfrac{4n^2+7}{n^{5/2}+5n+1}=0$",
+        "The series converges by the limit comparison test with $\\sum_{n=1}^{\\infty}\\dfrac{1}{n^2}$",
+        "The series converges by the limit comparison test with $\\sum_{n=1}^{\\infty}\\dfrac{1}{n^{5/2}}$"
+      ],
+      "ans": 0,
+      "hints": [
+        "The terms are a rational-type expression in $n$, so compare with a $p$-series.",
+        "Find the highest powers of $n$ in the numerator and denominator and decide which $p$-series the terms resemble.",
+        "Limit comparison: if $a_n,b_n>0$ and $\\lim a_n/b_n=L$ with $0<L<\\infty$, both series converge or both diverge. The nth-term test only proves divergence, never convergence. A $p$-series converges iff $p>1$."
+      ],
+      "steps": [
+        "For large $n$ the terms behave like $\\dfrac{4n^2}{n^{5/2}}=\\dfrac{4}{\\sqrt n}$, so take $b_n=\\dfrac{1}{\\sqrt n}$.",
+        "$\\lim\\frac{a_n}{b_n}=\\lim\\frac{(4n^2+7)\\sqrt n}{n^{5/2}+5n+1}=4$, which is finite and positive.",
+        "$\\sum\\frac1{\\sqrt n}$ is a $p$-series with $p=\\frac12\\le1$, so it diverges.",
+        "By limit comparison the given series diverges."
+      ],
+      "brief": "Terms $\\sim\\frac{4}{\\sqrt n}$; limit comparison with $\\sum\\frac1{\\sqrt n}$ (ratio $\\to4$) gives divergence."
+    },
+    {
+      "sec": "9.5",
+      "q": "The least number of terms required to approximate the sum of the series $\\sum_{n=1}^{\\infty}\\dfrac{(-1)^{n+1}}{n!}$ with an error of less than $0.001$ is",
+      "opts": [
+        "$6$",
+        "$5$",
+        "$4$",
+        "$3$",
+        "$7$"
+      ],
+      "ans": 0,
+      "hints": [
+        "This is an alternating series, so use the alternating series remainder estimate.",
+        "The error after $N$ terms is at most the first omitted term; find the smallest $N$ making it below $0.001$.",
+        "For a convergent alternating series with decreasing terms, $|S-S_N|\\le a_{N+1}$."
+      ],
+      "steps": [
+        "The series is alternating with $a_n=\\dfrac1{n!}$ decreasing to $0$, so $|S-S_N|\\le a_{N+1}=\\dfrac{1}{(N+1)!}$.",
+        "Need $\\dfrac{1}{(N+1)!}<0.001$, i.e. $(N+1)!>1000$.",
+        "$6!=720<1000$ but $7!=5040>1000$, so $N+1=7$.",
+        "Hence $N=6$ terms are needed."
+      ],
+      "brief": "$|S-S_N|\\le\\frac1{(N+1)!}<0.001$ needs $(N+1)!>1000$: $7!=5040$, so $N=6$."
+    },
+    {
+      "sec": "9.5",
+      "q": "The series $\\sum_{n=1}^{\\infty}\\dfrac{(-1)^{n+1}\\,n^2}{n^3+1}$",
+      "opts": [
+        "converges conditionally",
+        "diverges",
+        "converges absolutely",
+        "diverges by the Alternating series test",
+        "converges absolutely by the Integral test"
+      ],
+      "ans": 0,
+      "hints": [
+        "Decide separately whether the series converges and whether it converges absolutely.",
+        "Check the alternating series test conditions on $a_n=\\frac{n^2}{n^3+1}$, then test $\\sum a_n$ by limit comparison.",
+        "Alternating series test: $a_n\\ge0$ decreasing with $a_n\\to0$ gives convergence. A series is conditionally convergent if it converges but $\\sum|a_n|$ diverges."
+      ],
+      "steps": [
+        "Let $a_n=\\dfrac{n^2}{n^3+1}$. Then $a_n\\to0$.",
+        "$f(x)=\\dfrac{x^2}{x^3+1}$ has $f'(x)=\\dfrac{x(2-x^3)}{(x^3+1)^2}<0$ for $x\\ge2$, so $a_n$ is decreasing from $n=2$ on, which is enough. The alternating series converges.",
+        "$\\sum a_n$: limit comparison with $\\sum\\frac1n$ gives $\\lim\\frac{n^3}{n^3+1}=1$, so $\\sum a_n$ diverges.",
+        "The series converges but not absolutely: it converges conditionally."
+      ],
+      "brief": "Alternating series test gives convergence; $\\sum|a_n|\\sim\\sum\\frac1n$ diverges: conditional."
+    },
+    {
+      "sec": "9.6",
+      "q": "Which of the following series is/are convergent? \\[ \\text{I. }\\sum_{n=1}^{\\infty}\\frac{99^n}{n!}\\qquad \\text{II. }\\sum_{n=1}^{\\infty}\\left(\\frac1e-e^{-n}\\right)^n\\qquad \\text{III. }\\sum_{n=2}^{\\infty}\\frac{n}{\\ln n} \\]",
+      "opts": [
+        "I and II only",
+        "II only",
+        "III only",
+        "II and III only",
+        "I only"
+      ],
+      "ans": 0,
+      "hints": [
+        "Use the ratio test for the factorial series, the root test for the series raised to the power $n$, and a term test for the last.",
+        "For I compute $\\lim a_{n+1}/a_n$; for II compute $\\lim\\sqrt[n]{a_n}$; for III look at $\\lim a_n$.",
+        "Ratio test: $\\lim|a_{n+1}/a_n|<1$ gives convergence. Root test: $\\lim\\sqrt[n]{|a_n|}<1$ gives convergence. If $a_n\\not\\to0$ the series diverges."
+      ],
+      "steps": [
+        "I: $\\dfrac{a_{n+1}}{a_n}=\\dfrac{99}{n+1}\\to0<1$, so I converges.",
+        "II: $\\sqrt[n]{a_n}=\\dfrac1e-e^{-n}\\to\\dfrac1e<1$, so II converges by the root test.",
+        "III: $\\dfrac{n}{\\ln n}\\to\\infty$, so the terms do not tend to $0$ and III diverges.",
+        "Hence I and II converge."
+      ],
+      "brief": "I: ratio $\\to0$; II: root $\\to\\frac1e<1$; III: terms $\\to\\infty$ diverges."
+    },
+    {
+      "sec": "9.10",
+      "q": "The coefficient of $x^2$ in the $n^{th}$ degree Maclaurin polynomial of $f(x)=\\dfrac{-x+\\sin x}{x^3}$ is",
+      "opts": [
+        "$\\dfrac{1}{120}$",
+        "$-\\dfrac16$",
+        "$\\dfrac1{20}$",
+        "$-\\dfrac15$",
+        "$-\\dfrac1{80}$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Use the known Maclaurin series of $\\sin x$ and divide term by term.",
+        "Write out the first few terms of $\\sin x$, cancel the $-x$, and divide by $x^3$.",
+        "$\\sin x=x-\\dfrac{x^3}{3!}+\\dfrac{x^5}{5!}-\\dfrac{x^7}{7!}+\\cdots$. The Maclaurin polynomial of degree $n$ keeps the terms of the series up to $x^n$."
+      ],
+      "steps": [
+        "$-x+\\sin x=-\\dfrac{x^3}{3!}+\\dfrac{x^5}{5!}-\\dfrac{x^7}{7!}+\\cdots$.",
+        "Divide by $x^3$: $f(x)=-\\dfrac16+\\dfrac{x^2}{120}-\\dfrac{x^4}{5040}+\\cdots$.",
+        "The coefficient of $x^2$ is $\\dfrac{1}{5!}=\\dfrac1{120}$ (for every degree $n\\ge2$)."
+      ],
+      "brief": "$f(x)=-\\frac16+\\frac{x^2}{5!}-\\cdots$, so the $x^2$ coefficient is $\\frac1{120}$."
+    },
+    {
+      "sec": "9.8",
+      "q": "The interval of convergence of $\\sum_{n=2}^{\\infty}\\dfrac{(x-1)^n}{2^n\\sqrt n}$ is",
+      "opts": [
+        "$[-1,3)$",
+        "$[-1,3]$",
+        "$(-1,3)$",
+        "$(-1,3]$",
+        "$(-\\infty,\\infty)$"
+      ],
+      "ans": 0,
+      "hints": [
+        "This is a power series, so find its radius with the ratio test and then test the endpoints.",
+        "Compute $\\lim|a_{n+1}/a_n|$ to get the radius about the center $x=1$, then substitute each endpoint.",
+        "For $\\sum c_n(x-a)^n$, the series converges for $|x-a|<R$ where $\\frac1R=\\lim|c_{n+1}/c_n|$; endpoints are checked separately (alternating series test, $p$-series)."
+      ],
+      "steps": [
+        "Ratio: $\\left|\\dfrac{a_{n+1}}{a_n}\\right|=\\dfrac{|x-1|}{2}\\sqrt{\\dfrac{n}{n+1}}\\to\\dfrac{|x-1|}{2}$, so $|x-1|<2$, i.e. $-1<x<3$.",
+        "At $x=3$: $\\sum\\frac{1}{\\sqrt n}$, a $p$-series with $p=\\frac12$, diverges.",
+        "At $x=-1$: $\\sum\\frac{(-1)^n}{\\sqrt n}$ converges by the alternating series test.",
+        "The interval is $[-1,3)$."
+      ],
+      "brief": "$R=2$ about $1$; $x=3$ gives $\\sum\\frac1{\\sqrt n}$ (diverges), $x=-1$ alternating (converges): $[-1,3)$."
+    },
+    {
+      "sec": "9.9",
+      "q": "A power series representation for $f(x)=\\dfrac{1}{(5-x)^2}$ centered at $c=2$ is",
+      "opts": [
+        "$\\sum_{n=0}^{\\infty}\\dfrac{n+1}{3^{n+2}}(x-2)^n$",
+        "$\\sum_{n=0}^{\\infty}5^{1-n}(x-2)^n$",
+        "$\\sum_{n=0}^{\\infty}5^{2-n}(x-2)^n$",
+        "$\\sum_{n=0}^{\\infty}\\dfrac{n}{3^{n+2}}(x-2)^n$",
+        "$\\sum_{n=0}^{\\infty}\\dfrac{n+2}{5^{n+2}}(x-2)^n$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Notice that $\\frac1{(5-x)^2}$ is the derivative of $\\frac{1}{5-x}$, which is a geometric-series form.",
+        "Rewrite $5-x$ in terms of $x-2$, expand $\\frac1{5-x}$ as a geometric series in $(x-2)$, then differentiate term by term.",
+        "$\\dfrac{1}{1-r}=\\sum_{n=0}^\\infty r^n$ for $|r|<1$, and $\\dfrac{d}{dx}\\dfrac1{5-x}=\\dfrac{1}{(5-x)^2}$."
+      ],
+      "steps": [
+        "$5-x=3-(x-2)$, so $\\dfrac1{5-x}=\\dfrac13\\cdot\\dfrac{1}{1-\\frac{x-2}{3}}=\\sum_{n=0}^\\infty\\dfrac{(x-2)^n}{3^{n+1}}$.",
+        "Differentiate: $\\dfrac1{(5-x)^2}=\\sum_{n=1}^\\infty\\dfrac{n(x-2)^{n-1}}{3^{n+1}}$.",
+        "Shift the index ($n\\to n+1$): $\\sum_{n=0}^\\infty\\dfrac{n+1}{3^{n+2}}(x-2)^n$."
+      ],
+      "brief": "$\\frac1{5-x}=\\sum\\frac{(x-2)^n}{3^{n+1}}$; differentiate: $\\sum_{n=0}^\\infty\\frac{n+1}{3^{n+2}}(x-2)^n$."
+    },
+    {
+      "sec": "9.10",
+      "q": "A Maclaurin series for $\\int_0^x\\cos(t^2)\\,dt$ is",
+      "opts": [
+        "$\\sum_{n=0}^{\\infty}(-1)^n\\dfrac{x^{4n+1}}{(4n+1)(2n)!}$",
+        "$\\sum_{n=0}^{\\infty}(-1)^n\\dfrac{x^{4n+1}}{(4n+1)(2n+1)!}$",
+        "$\\sum_{n=0}^{\\infty}(-1)^n\\dfrac{x^{2n+1}}{(2n+1)(2n)!}$",
+        "$\\sum_{n=0}^{\\infty}(-1)^n\\dfrac{x^{4n}}{(2n)!}$",
+        "$\\sum_{n=0}^{\\infty}(-1)^n\\dfrac{x^{2n+1}}{(4n+1)(2n)!}$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Start from the Maclaurin series of cosine and substitute, then integrate term by term.",
+        "Replace $x$ by $t^2$ in the series for $\\cos x$, simplify the power of $t$, and integrate from $0$ to $x$.",
+        "$\\cos u=\\sum_{n=0}^\\infty(-1)^n\\dfrac{u^{2n}}{(2n)!}$, and $\\int_0^x t^k\\,dt=\\dfrac{x^{k+1}}{k+1}$."
+      ],
+      "steps": [
+        "$\\cos(t^2)=\\sum_{n=0}^\\infty(-1)^n\\dfrac{t^{4n}}{(2n)!}$.",
+        "Integrate term by term: $\\int_0^x t^{4n}\\,dt=\\dfrac{x^{4n+1}}{4n+1}$.",
+        "So the series is $\\sum_{n=0}^\\infty(-1)^n\\dfrac{x^{4n+1}}{(4n+1)(2n)!}$."
+      ],
+      "brief": "$\\cos t^2=\\sum(-1)^n\\frac{t^{4n}}{(2n)!}$; integrate: $\\sum(-1)^n\\frac{x^{4n+1}}{(4n+1)(2n)!}$."
+    },
+    {
+      "sec": "5.7",
+      "q": "Evaluate \\[ \\int_0^1\\frac{e^x-e^{-x}}{e^x+e^{-x}}\\,dx. \\]",
+      "opts": [
+        "$\\ln\\dfrac{e^2+1}{2e}$",
+        "$\\ln\\dfrac{e^2-1}{2e}$",
+        "$\\ln\\dfrac{e^2-1}{e}$",
+        "$\\ln\\dfrac{e^2+1}{e}$",
+        "$\\ln\\dfrac{e^2+1}{e^2-1}$"
+      ],
+      "ans": 0,
+      "hints": [
+        "The numerator looks like the derivative of the denominator.",
+        "Substitute $u$ equal to the denominator and use the log rule.",
+        "$\\int\\frac{u'}{u}\\,dx=\\ln|u|+C$."
+      ],
+      "steps": [
+        "Let $u=e^x+e^{-x}$, so $du=(e^x-e^{-x})\\,dx$.",
+        "The integral becomes $\\int\\frac{du}{u}=\\ln|u|$, so it equals $\\left[\\ln(e^x+e^{-x})\\right]_0^1$.",
+        "$=\\ln(e+e^{-1})-\\ln2=\\ln\\dfrac{e+e^{-1}}{2}=\\ln\\dfrac{e^2+1}{2e}$."
+      ],
+      "brief": "$u=e^x+e^{-x}$: $\\left[\\ln(e^x+e^{-x})\\right]_0^1=\\ln\\frac{e^2+1}{2e}$."
+    },
+    {
+      "sec": "5.5",
+      "q": "Evaluate \\[ \\int_0^1\\frac{\\sqrt{\\arctan x}}{1+x^2}\\,dx. \\]",
+      "opts": [
+        "$\\dfrac{\\pi\\sqrt\\pi}{12}$",
+        "$\\dfrac{\\pi\\sqrt\\pi}{6}$",
+        "$\\dfrac{\\pi\\sqrt\\pi}{4}$",
+        "$\\dfrac{\\pi\\sqrt\\pi}{3}$",
+        "$\\dfrac{\\pi\\sqrt\\pi}{2}$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Look for a function whose derivative also appears in the integrand.",
+        "Substitute $u=\\arctan x$ and change the limits of integration.",
+        "$\\dfrac{d}{dx}\\arctan x=\\dfrac1{1+x^2}$, and $\\int u^{1/2}\\,du=\\dfrac23u^{3/2}$."
+      ],
+      "steps": [
+        "Let $u=\\arctan x$, so $du=\\dfrac{dx}{1+x^2}$; $x=0\\to u=0$ and $x=1\\to u=\\dfrac\\pi4$.",
+        "$\\int_0^{\\pi/4}u^{1/2}\\,du=\\frac23\\left(\\frac\\pi4\\right)^{3/2}$.",
+        "$\\left(\\dfrac\\pi4\\right)^{3/2}=\\dfrac{\\pi\\sqrt\\pi}{8}$, so the value is $\\dfrac{\\pi\\sqrt\\pi}{12}$."
+      ],
+      "brief": "$u=\\arctan x$: $\\int_0^{\\pi/4}\\sqrt u\\,du=\\frac23(\\frac\\pi4)^{3/2}=\\frac{\\pi\\sqrt\\pi}{12}$."
+    },
+    {
+      "sec": "8.5",
+      "q": "Evaluate \\[ \\int_1^2\\frac{1+x-x^2}{x^2+x^3}\\,dx. \\]",
+      "opts": [
+        "$\\dfrac12-\\ln\\dfrac32$",
+        "$\\dfrac12+\\ln\\dfrac32$",
+        "$\\dfrac32+\\ln2$",
+        "$\\dfrac32-\\ln2$",
+        "$\\dfrac23-\\ln2$"
+      ],
+      "ans": 0,
+      "hints": [
+        "The integrand is a rational function whose denominator factors, so use partial fractions.",
+        "Factor the denominator and write the integrand as a sum with one term for each power of each factor.",
+        "For a repeated linear factor include a term for each power; $\\int\\frac{dx}{x^2}=-\\frac1x$ and $\\int\\frac{dx}{x+a}=\\ln|x+a|$."
+      ],
+      "steps": [
+        "Factor $x^2+x^3=x^2(1+x)$: $\\dfrac{1+x-x^2}{x^2(1+x)}=\\dfrac Ax+\\dfrac B{x^2}+\\dfrac C{1+x}$, so $1+x-x^2=Ax(1+x)+B(1+x)+Cx^2$.",
+        "$x=0$: $B=1$. $x=-1$: $-1=C$. Compare $x^2$ coefficients: $-1=A+C$, so $A=0$.",
+        "So the integrand is $\\dfrac1{x^2}-\\dfrac1{1+x}$.",
+        "$\\int_1^2\\left(\\frac1{x^2}-\\frac1{1+x}\\right)dx=\\left[-\\frac1x-\\ln(1+x)\\right]_1^2=\\left(-\\frac12-\\ln3\\right)-(-1-\\ln2)=\\frac12-\\ln\\frac32$."
+      ],
+      "brief": "$\\frac{1+x-x^2}{x^2(1+x)}=\\frac1{x^2}-\\frac1{1+x}$; integral $=\\frac12-\\ln\\frac32$."
+    },
+    {
+      "sec": "7.3",
+      "q": "The volume of the solid generated by revolving the region bounded by the graphs of $y=\\dfrac1{x^2}$, $y=0$, $x=1$, and $x=2$ about the $y$-axis, is equal to",
+      "opts": [
+        "$2\\pi\\ln2$",
+        "$\\pi\\ln2$",
+        "$\\dfrac\\pi2\\ln2$",
+        "$\\dfrac{3\\pi}{2}\\ln2$",
+        "$4\\pi\\ln2$"
+      ],
+      "ans": 0,
+      "hints": [
+        "The region is revolved about a vertical axis and is described naturally as a function of $x$, so the shell method is convenient.",
+        "Each vertical strip at $x$ sweeps a cylindrical shell of radius $x$ and height equal to the height of the region at $x$.",
+        "Shell method about the $y$-axis: $V=2\\pi\\int_a^b x\\,h(x)\\,dx$, where $h(x)$ is the height of the region at $x$."
+      ],
+      "steps": [
+        "Shell radius $x$, height $h(x)=\\dfrac1{x^2}-0$, for $1\\le x\\le2$.",
+        "$V=2\\pi\\int_1^2x\\cdot\\frac1{x^2}\\,dx=2\\pi\\int_1^2\\frac{dx}{x}$.",
+        "$=2\\pi\\left[\\ln x\\right]_1^2=2\\pi\\ln2$."
+      ],
+      "brief": "Shells: $V=2\\pi\\int_1^2 x\\cdot\\frac1{x^2}\\,dx=2\\pi\\ln2$."
+    },
+    {
+      "sec": "7.1",
+      "q": "The area of the region bounded by the graph of $f(x)=x^3-2x^2+2x$ and its tangent line at the point $P(1,1)$, is equal to",
+      "opts": [
+        "$\\dfrac1{12}$",
+        "$\\dfrac18$",
+        "$\\dfrac16$",
+        "$\\dfrac14$",
+        "$\\dfrac12$"
+      ],
+      "ans": 0,
+      "hints": [
+        "First find the tangent line, then the other point(s) where it meets the curve, and integrate the difference.",
+        "Compute $f'(1)$ for the slope, write the tangent line, and solve $f(x)=\\text{line}$ to find the limits of integration.",
+        "Tangent line at $x=a$: $y=f(a)+f'(a)(x-a)$. Area between curves $=\\int_a^b|f(x)-g(x)|\\,dx$."
+      ],
+      "steps": [
+        "$f'(x)=3x^2-4x+2$, so $f'(1)=1$ and the tangent line is $y=1+(x-1)=x$.",
+        "Intersections: $x^3-2x^2+2x=x\\Rightarrow x^3-2x^2+x=x(x-1)^2=0$, so $x=0$ and $x=1$ (double root at the tangent point).",
+        "On $[0,1]$, $f(x)-x=x(x-1)^2\\ge0$.",
+        "Area $=\\int_0^1(x^3-2x^2+x)\\,dx=\\frac14-\\frac23+\\frac12=\\frac1{12}$."
+      ],
+      "brief": "Tangent $y=x$; $f(x)-x=x(x-1)^2$; area $=\\int_0^1(x^3-2x^2+x)\\,dx=\\frac1{12}$."
+    },
+    {
+      "sec": "5.4",
+      "q": "If $f(x)=\\int_x^{x^2-1}\\sin\\!\\left(\\dfrac\\pi2t^2\\right)dt$, then $f'(2)=$",
+      "opts": [
+        "$4$",
+        "$1$",
+        "$2$",
+        "$3$",
+        "$0$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Both limits of integration depend on $x$, so use the Second Fundamental Theorem with the chain rule.",
+        "Differentiate by taking the integrand at the upper limit times the derivative of the upper limit, minus the same for the lower limit.",
+        "$\\dfrac{d}{dx}\\int_{u(x)}^{v(x)}g(t)\\,dt=g(v(x))\\,v'(x)-g(u(x))\\,u'(x)$."
+      ],
+      "steps": [
+        "$f'(x)=\\sin\\!\\left(\\dfrac\\pi2(x^2-1)^2\\right)\\cdot2x-\\sin\\!\\left(\\dfrac\\pi2x^2\\right)\\cdot1$.",
+        "At $x=2$: $(x^2-1)^2=9$, so the first term is $\\sin\\!\\left(\\dfrac{9\\pi}2\\right)\\cdot4=1\\cdot4=4$.",
+        "The second term is $\\sin(2\\pi)=0$.",
+        "So $f'(2)=4$."
+      ],
+      "brief": "$f'(x)=2x\\sin(\\frac\\pi2(x^2-1)^2)-\\sin(\\frac\\pi2x^2)$; $f'(2)=4\\cdot1-0=4$."
+    },
+    {
+      "sec": "8.2",
+      "q": "Evaluate \\[ \\int_0^{\\pi^2}\\sin\\sqrt x\\,dx. \\]",
+      "opts": [
+        "$2\\pi$",
+        "$6\\pi$",
+        "$\\pi$",
+        "$4\\pi$",
+        "$8\\pi$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Remove the square root with a substitution, then integrate by parts.",
+        "Let $u=\\sqrt x$, so $dx=2u\\,du$ and the limits become $0$ to $\\pi$; then integrate $u\\sin u$ by parts.",
+        "Integration by parts: $\\int p\\,dq=pq-\\int q\\,dp$."
+      ],
+      "steps": [
+        "With $u=\\sqrt x$: $x=u^2$, $dx=2u\\,du$, limits $0$ to $\\pi$, giving $2\\int_0^\\pi u\\sin u\\,du$.",
+        "By parts with $p=u$, $dq=\\sin u\\,du$: $\\int u\\sin u\\,du=-u\\cos u+\\sin u$.",
+        "$2\\left[-u\\cos u+\\sin u\\right]_0^\\pi=2\\left(\\pi+0\\right)-0=2\\pi$."
+      ],
+      "brief": "$u=\\sqrt x$: $2\\int_0^\\pi u\\sin u\\,du=2[-u\\cos u+\\sin u]_0^\\pi=2\\pi$."
+    }
+  ]
+}

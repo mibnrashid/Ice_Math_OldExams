@@ -1,0 +1,337 @@
+{
+  "course": "math102",
+  "term": "241",
+  "kind": "e2",
+  "date": "6 November 2024",
+  "minutes": 90,
+  "source": "math102-241-e2.pdf",
+  "note": "Date and 90 minutes (net time allowed) taken from the cover. Master key marks (a) correct for every question; all 14 verified independently with sympy, no disagreements. Question 5 has no printed equals sign in the source.",
+  "qs": [
+    {
+      "sec": "8.7",
+      "q": "$\\int_0^{\\pi/2}\\dfrac{d\\theta}{3-2\\cos\\theta}=$",
+      "opts": [
+        "$\\dfrac{2}{\\sqrt5}\\arctan\\sqrt5$",
+        "$\\dfrac{1}{\\sqrt5}\\arctan\\sqrt5$",
+        "$\\dfrac{2}{\\sqrt5}\\arctan 5$",
+        "$\\dfrac{1}{\\sqrt5}\\arctan 5$",
+        "$\\sqrt5\\arctan\\sqrt5$"
+      ],
+      "ans": 0,
+      "hints": [
+        "The integrand is a rational function of $\\cos\\theta$, so use the half-angle substitution $u=\\tan(\\theta/2)$.",
+        "Replace $\\cos\\theta$ and $d\\theta$ in terms of $u$ and change the limits of integration.",
+        "For $u=\\tan\\dfrac\\theta2$: $\\cos\\theta=\\dfrac{1-u^2}{1+u^2}$, $d\\theta=\\dfrac{2\\,du}{1+u^2}$, and $\\int\\dfrac{du}{a^2+u^2}=\\dfrac1a\\arctan\\dfrac ua+C$."
+      ],
+      "steps": [
+        "Let $u=\\tan(\\theta/2)$. Then $\\cos\\theta=\\dfrac{1-u^2}{1+u^2}$, $d\\theta=\\dfrac{2\\,du}{1+u^2}$; $\\theta=0\\to u=0$, $\\theta=\\pi/2\\to u=1$.",
+        "$3-2\\cos\\theta=\\dfrac{3(1+u^2)-2(1-u^2)}{1+u^2}=\\dfrac{1+5u^2}{1+u^2}$.",
+        "The integral becomes $\\int_0^1\\dfrac{2\\,du}{1+5u^2}=\\dfrac{2}{5}\\int_0^1\\dfrac{du}{u^2+\\frac15}$.",
+        "$=\\dfrac25\\cdot\\sqrt5\\left[\\arctan(\\sqrt5\\,u)\\right]_0^1=\\dfrac{2}{\\sqrt5}\\arctan\\sqrt5$."
+      ],
+      "brief": "$u=\\tan\\frac\\theta2$: $\\int_0^1\\frac{2\\,du}{1+5u^2}=\\frac{2}{\\sqrt5}\\arctan\\sqrt5$."
+    },
+    {
+      "sec": "8.5",
+      "q": "$\\int\\dfrac{3-x}{3x^2-2x-1}\\,dx=$",
+      "opts": [
+        "$\\dfrac{-5}{6}\\ln|3x+1|+\\dfrac12\\ln|x-1|+c$",
+        "$\\dfrac{-5}{3}\\ln|3x+1|+\\dfrac12\\ln|x-1|+c$",
+        "$\\dfrac{-5}{6}\\ln|3x+1|-\\dfrac12\\ln|x-1|+c$",
+        "$\\dfrac{-5}{3}\\ln|3x+1|-\\dfrac12\\ln|x-1|+c$",
+        "$\\ln|3x+1|-\\ln|x-1|+c$"
+      ],
+      "ans": 0,
+      "hints": [
+        "The integrand is a proper rational function, so use partial fractions.",
+        "Factor the denominator into linear factors and write the fraction as a sum of two simple fractions with unknown numerators.",
+        "For distinct linear factors, $\\dfrac{P(x)}{(ax+b)(cx+d)}=\\dfrac{A}{ax+b}+\\dfrac{B}{cx+d}$, and $\\int\\dfrac{dx}{ax+b}=\\dfrac1a\\ln|ax+b|+C$."
+      ],
+      "steps": [
+        "$3x^2-2x-1=(3x+1)(x-1)$.",
+        "Set $\\dfrac{3-x}{(3x+1)(x-1)}=\\dfrac{A}{3x+1}+\\dfrac{B}{x-1}$, so $3-x=A(x-1)+B(3x+1)$.",
+        "$x=1$: $2=4B$, so $B=\\tfrac12$. $x=-\\tfrac13$: $\\tfrac{10}{3}=-\\tfrac43A$, so $A=-\\tfrac52$.",
+        "Integrate: $-\\dfrac52\\cdot\\dfrac13\\ln|3x+1|+\\dfrac12\\ln|x-1|+c=-\\dfrac56\\ln|3x+1|+\\dfrac12\\ln|x-1|+c$."
+      ],
+      "brief": "$\\frac{3-x}{(3x+1)(x-1)}=\\frac{-5/2}{3x+1}+\\frac{1/2}{x-1}$, giving $-\\frac56\\ln|3x+1|+\\frac12\\ln|x-1|$."
+    },
+    {
+      "sec": "8.5",
+      "q": "If $\\dfrac{2x^3-4x-8}{x(x-1)(x^2+4)}=\\dfrac2x-\\dfrac{2}{x-1}+\\dfrac{Cx+D}{x^2+4}$, then $C+D=$",
+      "opts": [
+        "$6$",
+        "$8$",
+        "$2$",
+        "$4$",
+        "$0$"
+      ],
+      "ans": 0,
+      "hints": [
+        "This is a partial fraction decomposition with a linear and an irreducible quadratic factor.",
+        "Multiply both sides by the common denominator and compare the numerators, or subtract the two known fractions from the left side.",
+        "Two rational expressions with the same denominator are equal exactly when their numerators are equal as polynomials; compare coefficients of like powers."
+      ],
+      "steps": [
+        "Multiply by $x(x-1)(x^2+4)$: $2x^3-4x-8=2(x-1)(x^2+4)-2x(x^2+4)+(Cx+D)\\,x(x-1)$.",
+        "$2(x-1)(x^2+4)=2x^3-2x^2+8x-8$ and $-2x(x^2+4)=-2x^3-8x$, which sum to $-2x^2-8$.",
+        "So $(Cx+D)(x^2-x)=2x^3-4x-8+2x^2+8=2x^3+2x^2-4x=2x(x^2+x-2)$.",
+        "Dividing by $x$: $(Cx+D)(x-1)=2(x+2)(x-1)$, so $Cx+D=2x+4$: $C=2$, $D=4$ and $C+D=6$."
+      ],
+      "brief": "Comparing numerators gives $Cx+D=2x+4$, so $C+D=6$."
+    },
+    {
+      "sec": "8.4",
+      "q": "$\\int\\dfrac{1}{(16-x^2)^{3/2}}\\,dx=$",
+      "opts": [
+        "$\\dfrac1{16}\\left(\\dfrac{x}{\\sqrt{16-x^2}}\\right)+c$",
+        "$\\dfrac14\\left(\\dfrac{x}{\\sqrt{16-x^2}}\\right)+c$",
+        "$\\dfrac12\\left(\\dfrac{x}{\\sqrt{16-x^2}}\\right)+c$",
+        "$\\dfrac18\\left(\\dfrac{x}{\\sqrt{16-x^2}}\\right)+c$",
+        "$\\dfrac{x}{\\sqrt{16-x^2}}+c$"
+      ],
+      "ans": 0,
+      "hints": [
+        "The expression $a^2-x^2$ under a power suggests a trigonometric substitution.",
+        "Substitute $x=a\\sin\\theta$ with $a$ the square root of the constant, and simplify the denominator.",
+        "For $x=a\\sin\\theta$: $dx=a\\cos\\theta\\,d\\theta$, $\\sqrt{a^2-x^2}=a\\cos\\theta$, $\\int\\sec^2\\theta\\,d\\theta=\\tan\\theta+C$, and $\\tan\\theta=\\dfrac{x}{\\sqrt{a^2-x^2}}$."
+      ],
+      "steps": [
+        "Let $x=4\\sin\\theta$, $dx=4\\cos\\theta\\,d\\theta$, and $(16-x^2)^{3/2}=(4\\cos\\theta)^3=64\\cos^3\\theta$.",
+        "The integral is $\\int\\dfrac{4\\cos\\theta}{64\\cos^3\\theta}\\,d\\theta=\\dfrac1{16}\\int\\sec^2\\theta\\,d\\theta=\\dfrac1{16}\\tan\\theta+c$.",
+        "From the triangle, $\\tan\\theta=\\dfrac{x}{\\sqrt{16-x^2}}$.",
+        "So the integral is $\\dfrac1{16}\\cdot\\dfrac{x}{\\sqrt{16-x^2}}+c$."
+      ],
+      "brief": "$x=4\\sin\\theta$: $\\frac1{16}\\int\\sec^2\\theta\\,d\\theta=\\frac1{16}\\frac{x}{\\sqrt{16-x^2}}+c$."
+    },
+    {
+      "sec": "8.4",
+      "q": "$\\int\\dfrac{dx}{(x^2+1)^{3/2}}$",
+      "opts": [
+        "$\\dfrac{x}{\\sqrt{x^2+1}}+c$",
+        "$\\dfrac{\\sqrt{x^2+1}}{x}+c$",
+        "$\\sqrt{x^2+1}+c$",
+        "$\\dfrac{1}{\\sqrt{x^2+1}}+c$",
+        "$\\dfrac{3x}{\\sqrt{x^2+1}}+c$"
+      ],
+      "ans": 0,
+      "hints": [
+        "The expression $x^2+a^2$ under a power suggests a trigonometric substitution.",
+        "Substitute $x=a\\tan\\theta$ and simplify the denominator with a Pythagorean identity.",
+        "For $x=a\\tan\\theta$: $dx=a\\sec^2\\theta\\,d\\theta$, $\\sqrt{x^2+a^2}=a\\sec\\theta$, and $\\sin\\theta=\\dfrac{x}{\\sqrt{x^2+a^2}}$."
+      ],
+      "steps": [
+        "Let $x=\\tan\\theta$, $dx=\\sec^2\\theta\\,d\\theta$, and $(x^2+1)^{3/2}=\\sec^3\\theta$.",
+        "The integral is $\\int\\dfrac{\\sec^2\\theta}{\\sec^3\\theta}\\,d\\theta=\\int\\cos\\theta\\,d\\theta=\\sin\\theta+c$.",
+        "From the triangle, $\\sin\\theta=\\dfrac{x}{\\sqrt{x^2+1}}$, so the integral is $\\dfrac{x}{\\sqrt{x^2+1}}+c$."
+      ],
+      "brief": "$x=\\tan\\theta$: $\\int\\cos\\theta\\,d\\theta=\\sin\\theta=\\frac{x}{\\sqrt{x^2+1}}+c$."
+    },
+    {
+      "sec": "8.3",
+      "q": "$\\int_0^{\\pi/2}\\cos^3x\\,dx=$",
+      "opts": [
+        "$\\dfrac23$",
+        "$\\dfrac43$",
+        "$1$",
+        "$\\dfrac13$",
+        "$\\dfrac53$"
+      ],
+      "ans": 0,
+      "hints": [
+        "This is an odd power of cosine.",
+        "Split off one factor of $\\cos x$ and rewrite the remaining even power using $\\sin$.",
+        "For odd powers of cosine: $\\cos^{2k+1}x=(1-\\sin^2x)^k\\cos x$, then substitute $u=\\sin x$."
+      ],
+      "steps": [
+        "$\\cos^3x=(1-\\sin^2x)\\cos x$.",
+        "Let $u=\\sin x$, $du=\\cos x\\,dx$; $x=0\\to u=0$, $x=\\pi/2\\to u=1$.",
+        "$\\int_0^1(1-u^2)\\,du=\\left[u-\\dfrac{u^3}{3}\\right]_0^1=1-\\dfrac13=\\dfrac23$."
+      ],
+      "brief": "$\\int_0^1(1-u^2)\\,du=\\frac23$ with $u=\\sin x$."
+    },
+    {
+      "sec": "8.3",
+      "q": "$\\int\\sec^6 4x\\,\\tan 4x\\,dx=$",
+      "opts": [
+        "$\\dfrac{\\sec^6 4x}{24}+c$",
+        "$\\dfrac{\\sec^7 4x}{12}+c$",
+        "$\\dfrac{\\sec^6 4x}{12}+c$",
+        "$\\dfrac{\\sec^6 4x}{6}+c$",
+        "$\\dfrac{\\sec^6 4x}{4}+c$"
+      ],
+      "ans": 0,
+      "hints": [
+        "The integrand contains $\\sec$ times $\\tan$, which is the derivative of $\\sec$.",
+        "Save one factor $\\sec 4x\\tan 4x$ and let $u=\\sec 4x$.",
+        "$\\dfrac{d}{dx}\\sec(kx)=k\\sec(kx)\\tan(kx)$ and $\\int u^n\\,du=\\dfrac{u^{n+1}}{n+1}+C$."
+      ],
+      "steps": [
+        "Write $\\sec^6 4x\\tan 4x=\\sec^5 4x\\cdot\\sec 4x\\tan 4x$.",
+        "Let $u=\\sec 4x$, $du=4\\sec 4x\\tan 4x\\,dx$.",
+        "$\\dfrac14\\int u^5\\,du=\\dfrac{u^6}{24}+c=\\dfrac{\\sec^6 4x}{24}+c$."
+      ],
+      "brief": "$u=\\sec4x$: $\\frac14\\int u^5\\,du=\\frac{\\sec^6 4x}{24}+c$."
+    },
+    {
+      "sec": "8.2",
+      "q": "$\\int\\dfrac{5x}{e^{2x}}\\,dx=$",
+      "opts": [
+        "$\\dfrac{-5}{4}e^{-2x}(2x+1)+c$",
+        "$\\dfrac{5}{4}e^{-2x}(2x+1)+c$",
+        "$\\dfrac{-5}{2}e^{-2x}(2x+1)+c$",
+        "$\\dfrac{-5}{4}e^{2x}(2x+1)+c$",
+        "$\\dfrac{-5}{4}e^{-2x}(2x-1)+c$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Rewrite the integrand as a product of $x$ and an exponential, then use integration by parts.",
+        "Take $u=x$ and $dv$ equal to the exponential factor times $dx$.",
+        "$\\int u\\,dv=uv-\\int v\\,du$ and $\\int e^{kx}\\,dx=\\dfrac{e^{kx}}{k}+C$."
+      ],
+      "steps": [
+        "$\\int 5xe^{-2x}\\,dx$ with $u=x$, $dv=e^{-2x}dx$, so $du=dx$, $v=-\\tfrac12e^{-2x}$.",
+        "$=5\\left[-\\dfrac x2e^{-2x}+\\dfrac12\\int e^{-2x}\\,dx\\right]=5\\left[-\\dfrac x2e^{-2x}-\\dfrac14e^{-2x}\\right]+c$.",
+        "Factor: $-\\dfrac54e^{-2x}(2x+1)+c$."
+      ],
+      "brief": "By parts, $u=x$, $dv=e^{-2x}dx$: $-\\frac54e^{-2x}(2x+1)+c$."
+    },
+    {
+      "sec": "8.2",
+      "q": "$\\int 4\\arccos x\\,dx=$",
+      "opts": [
+        "$4x\\arccos x-4\\sqrt{1-x^2}+c$",
+        "$x\\arccos x-\\sqrt{1-x^2}+c$",
+        "$4\\arcsin x+c$",
+        "$4x\\arccos x+\\sqrt{1-x^2}+c$",
+        "$x\\arccos x-2\\sqrt{1-x^2}+c$"
+      ],
+      "ans": 0,
+      "hints": [
+        "An inverse trigonometric function alone is integrated by parts.",
+        "Take $u=\\arccos x$ and $dv=dx$, then finish with a substitution.",
+        "$\\dfrac{d}{dx}\\arccos x=-\\dfrac1{\\sqrt{1-x^2}}$ and $\\int u\\,dv=uv-\\int v\\,du$."
+      ],
+      "steps": [
+        "Let $u=\\arccos x$, $dv=dx$; $du=-\\dfrac{dx}{\\sqrt{1-x^2}}$, $v=x$.",
+        "$\\int\\arccos x\\,dx=x\\arccos x+\\int\\dfrac{x}{\\sqrt{1-x^2}}\\,dx$.",
+        "With $w=1-x^2$: $\\int\\dfrac{x\\,dx}{\\sqrt{1-x^2}}=-\\sqrt{1-x^2}$.",
+        "Multiply by 4: $4x\\arccos x-4\\sqrt{1-x^2}+c$."
+      ],
+      "brief": "By parts: $\\int\\arccos x\\,dx=x\\arccos x-\\sqrt{1-x^2}$; times 4."
+    },
+    {
+      "sec": "8.1",
+      "q": "$\\int(\\cot x)\\ln(\\sin x)\\,dx=$",
+      "opts": [
+        "$\\dfrac12[\\ln(\\sin x)]^2+c$",
+        "$[\\ln(\\sin x)]^2+c$",
+        "$\\dfrac12\\ln(\\sin x)+c$",
+        "$\\ln(\\sin x)+c$",
+        "$[\\ln(\\cos x)]^2+c$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Look for a function whose derivative also appears in the integrand, which suggests substitution.",
+        "Let $u$ be the logarithmic factor and compute $du$.",
+        "$\\dfrac{d}{dx}\\ln(f(x))=\\dfrac{f'(x)}{f(x)}$ and $\\int u\\,du=\\dfrac{u^2}2+C$."
+      ],
+      "steps": [
+        "Let $u=\\ln(\\sin x)$; $du=\\dfrac{\\cos x}{\\sin x}\\,dx=\\cot x\\,dx$.",
+        "The integral is $\\int u\\,du=\\dfrac{u^2}{2}+c=\\dfrac12[\\ln(\\sin x)]^2+c$."
+      ],
+      "brief": "$u=\\ln(\\sin x)$, $du=\\cot x\\,dx$: $\\frac12u^2+c$."
+    },
+    {
+      "sec": "7.4",
+      "q": "The arc length of the graph of the function $y=\\dfrac23(x^2+1)^{3/2}$ over the interval $[0,1]$ is",
+      "opts": [
+        "$\\dfrac53$",
+        "$\\dfrac54$",
+        "$\\dfrac23$",
+        "$\\dfrac43$",
+        "$\\dfrac45$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Use the arc length formula for a graph $y=f(x)$.",
+        "Compute $y'$, then simplify $1+(y')^2$; it should become a perfect square.",
+        "$L=\\int_a^b\\sqrt{1+\\left(f'(x)\\right)^2}\\,dx$."
+      ],
+      "steps": [
+        "$y'=\\dfrac23\\cdot\\dfrac32(x^2+1)^{1/2}\\cdot2x=2x\\sqrt{x^2+1}$.",
+        "$1+(y')^2=1+4x^2(x^2+1)=4x^4+4x^2+1=(2x^2+1)^2$.",
+        "$L=\\int_0^1(2x^2+1)\\,dx=\\left[\\dfrac{2x^3}3+x\\right]_0^1=\\dfrac23+1=\\dfrac53$."
+      ],
+      "brief": "$1+(y')^2=(2x^2+1)^2$, so $L=\\int_0^1(2x^2+1)\\,dx=\\frac53$."
+    },
+    {
+      "sec": "7.4",
+      "q": "The area of the surface generated by revolving the curve $y=\\dfrac13x^3$ on the interval $[0,3]$ about the $x$-axis is",
+      "opts": [
+        "$\\dfrac\\pi9\\left(82\\sqrt{82}-1\\right)$",
+        "$\\dfrac\\pi3\\left(82\\sqrt{82}-1\\right)$",
+        "$\\dfrac\\pi9\\left(82\\sqrt{82}+1\\right)$",
+        "$\\dfrac\\pi9\\left(26\\sqrt{26}-1\\right)$",
+        "$\\dfrac\\pi3\\left(26\\sqrt{26}-1\\right)$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Use the surface area of revolution formula about the $x$-axis.",
+        "Compute $y'$ and form $\\sqrt{1+(y')^2}$, then substitute for the expression under the root.",
+        "$S=2\\pi\\int_a^b f(x)\\sqrt{1+\\left(f'(x)\\right)^2}\\,dx$ for revolution about the $x$-axis."
+      ],
+      "steps": [
+        "$y'=x^2$, so $S=2\\pi\\int_0^3\\dfrac{x^3}{3}\\sqrt{1+x^4}\\,dx$.",
+        "Let $u=1+x^4$, $du=4x^3\\,dx$; $x=0\\to u=1$, $x=3\\to u=82$.",
+        "$S=\\dfrac{2\\pi}{3}\\cdot\\dfrac14\\int_1^{82}u^{1/2}\\,du=\\dfrac\\pi6\\cdot\\dfrac23\\left[u^{3/2}\\right]_1^{82}$.",
+        "$S=\\dfrac\\pi9\\left(82\\sqrt{82}-1\\right)$."
+      ],
+      "brief": "$S=2\\pi\\int_0^3\\frac{x^3}3\\sqrt{1+x^4}\\,dx=\\frac\\pi9(82\\sqrt{82}-1)$."
+    },
+    {
+      "sec": "7.3",
+      "q": "The volume of the solid formed by revolving the region bounded by the graphs of $y=x^2+1$, $y=0$, $x=0$, and $x=1$ about the $y$-axis is",
+      "opts": [
+        "$\\dfrac{3\\pi}2$",
+        "$\\dfrac\\pi2$",
+        "$\\dfrac{5\\pi}2$",
+        "$2\\pi$",
+        "$\\pi$"
+      ],
+      "ans": 0,
+      "hints": [
+        "The region is revolved about the $y$-axis and described by $y$ as a function of $x$, so the shell method is convenient.",
+        "Each vertical strip at $x$ has radius $x$ and height given by the top curve.",
+        "Shell method about the $y$-axis: $V=2\\pi\\int_a^b x\\,h(x)\\,dx$."
+      ],
+      "steps": [
+        "$V=2\\pi\\int_0^1x(x^2+1)\\,dx$.",
+        "$=2\\pi\\int_0^1(x^3+x)\\,dx=2\\pi\\left[\\dfrac{x^4}4+\\dfrac{x^2}2\\right]_0^1$.",
+        "$=2\\pi\\cdot\\dfrac34=\\dfrac{3\\pi}2$."
+      ],
+      "brief": "Shells: $V=2\\pi\\int_0^1x(x^2+1)\\,dx=\\frac{3\\pi}2$."
+    },
+    {
+      "sec": "7.2",
+      "q": "The volume of the solid formed by revolving the region bounded by the graphs of $y=\\sqrt x$, $y=0$, $x=1$ and $x=4$, about the $x$-axis is:",
+      "opts": [
+        "$\\dfrac{15\\pi}2$",
+        "$\\dfrac{13\\pi}2$",
+        "$\\dfrac{11\\pi}2$",
+        "$\\dfrac{9\\pi}2$",
+        "$\\dfrac{17\\pi}2$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Revolving about the $x$-axis a region that touches the axis gives disks.",
+        "The radius of each disk is the height of the curve.",
+        "Disk method: $V=\\pi\\int_a^b\\left[R(x)\\right]^2\\,dx$."
+      ],
+      "steps": [
+        "Radius $R=\\sqrt x$, so $V=\\pi\\int_1^4x\\,dx$.",
+        "$=\\pi\\left[\\dfrac{x^2}2\\right]_1^4=\\pi\\left(8-\\dfrac12\\right)=\\dfrac{15\\pi}2$."
+      ],
+      "brief": "Disks: $V=\\pi\\int_1^4x\\,dx=\\frac{15\\pi}2$."
+    }
+  ]
+}

@@ -1,0 +1,477 @@
+{
+  "course": "math201",
+  "term": "232",
+  "kind": "e2",
+  "date": "",
+  "minutes": 90,
+  "source": "math201-232-e2.pdf",
+  "note": "Master version, 20 questions; all master answers (all marked (correct); key table shows A for every master question) agree with independent sympy verification. Scan has handwritten annotations, ignored. Date and exam length are not printed on the scanned pages (no cover page); date left blank and 90 minutes assumed as the usual major-exam length.",
+  "qs": [
+    {
+      "sec": "11.5",
+      "q": "A set of parametric equations for the line passing through the points $P(2,0,1)$ and $Q(1,-1,2)$ is given by",
+      "opts": [
+        "$x=2-t,\\ y=-t,\\ z=1+t$",
+        "$x=2-t,\\ y=-2t,\\ z=1+t$",
+        "$x=2+t,\\ y=-t,\\ z=1-t$",
+        "$x=2-2t,\\ y=1-t,\\ z=1+t$",
+        "$x=-t,\\ y=2-t,\\ z=t$"
+      ],
+      "ans": 0,
+      "hints": [
+        "A line is determined by a point on it and a direction vector.",
+        "Form the vector from one given point to the other to get a direction, and use one of the points as the base point.",
+        "The line through $(x_0,y_0,z_0)$ with direction $\\langle a,b,c\\rangle$ is $x=x_0+at,\\ y=y_0+bt,\\ z=z_0+ct$."
+      ],
+      "steps": [
+        "Direction vector: $\\overrightarrow{PQ}=\\langle 1-2,\\,-1-0,\\,2-1\\rangle=\\langle -1,-1,1\\rangle$.",
+        "Use $P(2,0,1)$ as the base point.",
+        "$x=2-t,\\ y=0-t,\\ z=1+t$."
+      ],
+      "brief": "$\\overrightarrow{PQ}=\\langle-1,-1,1\\rangle$ from $P(2,0,1)$: $x=2-t,\\ y=-t,\\ z=1+t$."
+    },
+    {
+      "sec": "11.6",
+      "q": "The graph of the equation \\[ 4x^2-3y^2+12z^2+12=0 \\] is",
+      "opts": [
+        "a hyperboloid of two sheets",
+        "a hyperboloid of one sheet",
+        "an elliptic cone",
+        "an ellipsoid",
+        "an elliptic paraboloid"
+      ],
+      "ans": 0,
+      "hints": [
+        "Rewrite the equation in a standard quadric form and look at the signs of the squared terms.",
+        "Move the constant to the right side and divide so that the right side equals $1$.",
+        "For a quadric with right side $1$: one negative square term gives a hyperboloid of one sheet, two negative square terms give a hyperboloid of two sheets, and no negative terms gives an ellipsoid."
+      ],
+      "steps": [
+        "Move the constant: $-4x^2+3y^2-12z^2=12$.",
+        "Divide by $12$: $-\\dfrac{x^2}{3}+\\dfrac{y^2}{4}-z^2=1$.",
+        "Two negative squared terms and one positive, with right side $1$: a hyperboloid of two sheets (opening along the $y$-axis)."
+      ],
+      "brief": "$-\\frac{x^2}{3}+\\frac{y^2}{4}-z^2=1$: two minus signs, hyperboloid of two sheets."
+    },
+    {
+      "sec": "11.5",
+      "q": "The distance between the point $(1,3,-1)$ and the plane $3x-4y+5z=6$ is equal to",
+      "opts": [
+        "$2\\sqrt2$",
+        "$4\\sqrt2$",
+        "$6\\sqrt2$",
+        "$\\dfrac{\\sqrt2}{3}$",
+        "$\\dfrac{\\sqrt2}{4}$"
+      ],
+      "ans": 0,
+      "hints": [
+        "This is a point-to-plane distance problem.",
+        "Write the plane as $Ax+By+Cz+D=0$ and substitute the point into the left side.",
+        "The distance from $(x_0,y_0,z_0)$ to $Ax+By+Cz+D=0$ is $\\dfrac{|Ax_0+By_0+Cz_0+D|}{\\sqrt{A^2+B^2+C^2}}$."
+      ],
+      "steps": [
+        "Plane: $3x-4y+5z-6=0$.",
+        "Numerator: $|3(1)-4(3)+5(-1)-6|=|3-12-5-6|=20$.",
+        "Denominator: $\\sqrt{9+16+25}=\\sqrt{50}=5\\sqrt2$.",
+        "$d=\\dfrac{20}{5\\sqrt2}=\\dfrac{4}{\\sqrt2}=2\\sqrt2$."
+      ],
+      "brief": "$d=\\frac{|3-12-5-6|}{\\sqrt{50}}=\\frac{20}{5\\sqrt2}=2\\sqrt2$."
+    },
+    {
+      "sec": "11.5",
+      "q": "If $ax+by+cz=4$ is an equation for the plane that passes through the point $(2,2,1)$ and contains the line $x=y-4=z$, then $abc=$",
+      "opts": [
+        "$-12$",
+        "$-4$",
+        "$3$",
+        "$10$",
+        "$-15$"
+      ],
+      "ans": 0,
+      "hints": [
+        "A plane is found from a point on it and a normal vector; the normal is perpendicular to two vectors lying in the plane.",
+        "Find a point and the direction vector of the given line, then form a vector from that point to $(2,2,1)$ and cross it with the direction vector.",
+        "The cross product of two non-parallel vectors in a plane is a normal $\\langle A,B,C\\rangle$, and the plane through $(x_0,y_0,z_0)$ is $A(x-x_0)+B(y-y_0)+C(z-z_0)=0$."
+      ],
+      "steps": [
+        "The line $x=y-4=z$ passes through $(0,4,0)$ with direction $\\mathbf v=\\langle1,1,1\\rangle$.",
+        "Vector in the plane: $\\langle 2-0,\\,2-4,\\,1-0\\rangle=\\langle2,-2,1\\rangle$.",
+        "Normal: $\\langle2,-2,1\\rangle\\times\\langle1,1,1\\rangle=\\langle-3,-1,4\\rangle$.",
+        "Plane: $-3(x-2)-(y-2)+4(z-1)=0$, i.e. $-3x-y+4z=-4$, or $3x+y-4z=4$.",
+        "So $a=3,\\ b=1,\\ c=-4$ and $abc=-12$."
+      ],
+      "brief": "Normal $\\langle-3,-1,4\\rangle$ gives $3x+y-4z=4$, so $abc=3\\cdot1\\cdot(-4)=-12$."
+    },
+    {
+      "sec": "13.1",
+      "q": "The domain $D$ and the range $R$ of the function \\[ f(x,y)=6-2x-3y \\] are",
+      "opts": [
+        "$D=\\{(x,y):-\\infty<x<\\infty,\\ -\\infty<y<\\infty\\}$, $R=(-\\infty,\\infty)$",
+        "$D=\\{(x,y):-\\infty<x<\\infty,\\ -\\infty<y<\\infty\\}$, $R=(-\\infty,6)$",
+        "$D=\\{(x,y):-\\infty<x<\\infty,\\ -\\infty<y<\\infty\\}$, $R=(6,\\infty)$",
+        "$D=\\{(x,y):x\\ge0,\\ y\\ge0\\}$, $R=[0,\\infty)$",
+        "$D=\\{(x,y):x\\ge0,\\ y\\le0\\}$, $R=(-\\infty,0)$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Think about which $(x,y)$ are allowed and which output values can occur.",
+        "A polynomial has no restrictions on $x$ and $y$. For the range, ask whether the output can be made arbitrarily large and arbitrarily small.",
+        "A non-constant linear function $ax+by+c$ with $a$ or $b$ nonzero takes every real value."
+      ],
+      "steps": [
+        "$f$ is a polynomial, so it is defined for all real $x$ and $y$.",
+        "Fix $y=0$: $f=6-2x$ takes every real value as $x$ varies over $\\mathbb R$.",
+        "So the range is all real numbers, $(-\\infty,\\infty)$."
+      ],
+      "brief": "Polynomial: $D=\\mathbb R^2$; $f(x,0)=6-2x$ covers all reals, so $R=(-\\infty,\\infty)$."
+    },
+    {
+      "sec": "13.1",
+      "q": "The level surface of \\[ f(x,y,z)=4x^2-y^2+z^2 \\] that passes through the point $(0,1,1)$ is",
+      "opts": [
+        "an elliptic cone",
+        "an elliptic paraboloid",
+        "a hyperbolic paraboloid",
+        "a hyperboloid of one sheet",
+        "a hyperboloid of two sheets"
+      ],
+      "ans": 0,
+      "hints": [
+        "A level surface of $f$ is the set $f(x,y,z)=c$ for a constant $c$.",
+        "Substitute the given point into $f$ to find $c$, then identify the quadric.",
+        "The level surface through $(x_0,y_0,z_0)$ is $f(x,y,z)=f(x_0,y_0,z_0)$; a quadric with no constant term and all squared terms (mixed signs) is a cone."
+      ],
+      "steps": [
+        "$c=f(0,1,1)=0-1+1=0$.",
+        "The surface is $4x^2-y^2+z^2=0$, i.e. $y^2=4x^2+z^2$.",
+        "This has the form $y^2=\\dfrac{x^2}{a^2}+\\dfrac{z^2}{b^2}$: an elliptic cone."
+      ],
+      "brief": "$c=f(0,1,1)=0$, so $y^2=4x^2+z^2$: an elliptic cone."
+    },
+    {
+      "sec": "13.2",
+      "q": "$\\lim_{(x,y)\\to(0,0)}\\dfrac{2x-y^2}{x^3+y}$",
+      "opts": [
+        "does not exist",
+        "is equal to $2$",
+        "is equal to $-1$",
+        "is equal to $0$",
+        "is equal to $1$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Direct substitution gives $0/0$, so try approaching the origin along different paths.",
+        "Compare the limit along a coordinate axis with the limit along a line through the origin.",
+        "If two paths to $(a,b)$ give different limits, the two-variable limit does not exist."
+      ],
+      "steps": [
+        "Along $x=0$: $\\dfrac{-y^2}{y}=-y\\to0$.",
+        "Along $y=x$: $\\dfrac{2x-x^2}{x^3+x}=\\dfrac{2-x}{x^2+1}\\to2$.",
+        "The two path limits differ, so the limit does not exist."
+      ],
+      "brief": "Along $x=0$ the limit is $0$, along $y=x$ it is $2$: does not exist."
+    },
+    {
+      "sec": "13.2",
+      "q": "$\\lim_{(x,y)\\to(0,0)}\\dfrac{\\sin(2x^2+2y^2)}{4x^2+4y^2}=$",
+      "opts": [
+        "$\\dfrac12$",
+        "$1$",
+        "$0$",
+        "$2$",
+        "$\\dfrac14$"
+      ],
+      "ans": 0,
+      "hints": [
+        "The expression depends only on $x^2+y^2$, so a polar change or a one-variable limit helps.",
+        "Put $u=2x^2+2y^2$ so that $u\\to0$, and rewrite the denominator in terms of $u$.",
+        "$\\lim_{u\\to0}\\dfrac{\\sin u}{u}=1$."
+      ],
+      "steps": [
+        "Let $u=2x^2+2y^2$, so $u\\to0^+$ and $4x^2+4y^2=2u$.",
+        "The limit becomes $\\lim_{u\\to0^+}\\dfrac{\\sin u}{2u}=\\dfrac12\\lim_{u\\to0^+}\\dfrac{\\sin u}{u}$.",
+        "This equals $\\dfrac12\\cdot1=\\dfrac12$."
+      ],
+      "brief": "With $u=2x^2+2y^2$: $\\frac{\\sin u}{2u}\\to\\frac12$."
+    },
+    {
+      "sec": "13.2",
+      "q": "Which one of the following statements is True about the function \\[ f(x,y)=\\begin{cases}\\dfrac{x^4-y^4}{x^2+y^2}, & (x,y)\\neq(0,0)\\\\[2mm] 1, & (x,y)=(0,0)\\end{cases} \\]",
+      "opts": [
+        "$f$ is not continuous at $(0,0)$",
+        "$f$ is continuous at $(0,0)$",
+        "$\\lim_{(x,y)\\to(0,0)}f(x,y)$ does not exist",
+        "$\\lim_{(x,y)\\to(0,0)}f(x,y)=1$",
+        "$\\lim_{(x,y)\\to(0,0)}f(x,y)=-1$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Continuity at a point requires that the limit exists and equals the function value.",
+        "Simplify the expression for $(x,y)\\neq(0,0)$ by factoring the numerator, then compute the limit and compare with $f(0,0)$.",
+        "$a^4-b^4=(a^2-b^2)(a^2+b^2)$; $f$ is continuous at $P$ iff $\\lim_{(x,y)\\to P}f(x,y)=f(P)$."
+      ],
+      "steps": [
+        "For $(x,y)\\neq(0,0)$: $\\dfrac{x^4-y^4}{x^2+y^2}=\\dfrac{(x^2-y^2)(x^2+y^2)}{x^2+y^2}=x^2-y^2$.",
+        "So $\\lim_{(x,y)\\to(0,0)}f(x,y)=\\lim(x^2-y^2)=0$.",
+        "But $f(0,0)=1\\neq0$, so $f$ is not continuous at $(0,0)$."
+      ],
+      "brief": "Limit is $\\lim(x^2-y^2)=0\\neq f(0,0)=1$, so $f$ is not continuous at $(0,0)$."
+    },
+    {
+      "sec": "13.3",
+      "q": "If $f(x,y)=e^{-2y}\\sin(\\pi xy)$, then $f_y\\left(1,\\dfrac12\\right)=$",
+      "opts": [
+        "$-\\dfrac2e$",
+        "$\\dfrac1e$",
+        "$\\pi$",
+        "$-\\dfrac{\\pi}{2}$",
+        "$e\\pi$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Differentiate with respect to $y$ only, treating $x$ as a constant.",
+        "Use the product rule, with the chain rule on each factor.",
+        "$\\dfrac{d}{dy}\\left(uv\\right)=u'v+uv'$, $\\dfrac{d}{dy}e^{ky}=ke^{ky}$, $\\dfrac{d}{dy}\\sin(cy)=c\\cos(cy)$."
+      ],
+      "steps": [
+        "$f_y=-2e^{-2y}\\sin(\\pi xy)+e^{-2y}\\pi x\\cos(\\pi xy)$.",
+        "At $\\left(1,\\frac12\\right)$: $\\sin\\frac\\pi2=1$ and $\\cos\\frac\\pi2=0$.",
+        "$f_y=-2e^{-1}\\cdot1+e^{-1}\\pi\\cdot0=-\\dfrac2e$."
+      ],
+      "brief": "$f_y=-2e^{-2y}\\sin(\\pi xy)+\\pi xe^{-2y}\\cos(\\pi xy)$, at $(1,\\frac12)$ equals $-\\frac2e$."
+    },
+    {
+      "sec": "13.3",
+      "q": "If $f(x,y,z)=\\dfrac{z^2}{x+2y}$, then $f_{xyz}(x,y,z)=$",
+      "opts": [
+        "$\\dfrac{8z}{(x+2y)^3}$",
+        "$-\\dfrac{4z}{(x+2y)^3}$",
+        "$\\dfrac{2z}{(x+2y)^2}$",
+        "$\\dfrac{z}{(x+2y)^3}$",
+        "$\\dfrac{2z+x}{(x+2y)^2}$"
+      ],
+      "ans": 0,
+      "hints": [
+        "$f_{xyz}$ means differentiate first in $x$, then in $y$, then in $z$.",
+        "Write $f=z^2(x+2y)^{-1}$ and differentiate one variable at a time with the chain rule.",
+        "$\\dfrac{d}{dx}(x+ky)^n=n(x+ky)^{n-1}$ and $\\dfrac{d}{dy}(x+ky)^n=nk(x+ky)^{n-1}$."
+      ],
+      "steps": [
+        "$f_x=-z^2(x+2y)^{-2}$.",
+        "$f_{xy}=-z^2\\cdot(-2)(x+2y)^{-3}\\cdot2=4z^2(x+2y)^{-3}$.",
+        "$f_{xyz}=8z(x+2y)^{-3}=\\dfrac{8z}{(x+2y)^3}$."
+      ],
+      "brief": "$f_x=-z^2(x+2y)^{-2}$, $f_{xy}=4z^2(x+2y)^{-3}$, $f_{xyz}=\\frac{8z}{(x+2y)^3}$."
+    },
+    {
+      "sec": "13.4",
+      "q": "Using differentials, the quantity \\[ (2.01)^2(9.02)-2^2\\cdot9 \\] is approximately equal to",
+      "opts": [
+        "$0.44$",
+        "$0.24$",
+        "$0.48$",
+        "$0.39$",
+        "$0.36$"
+      ],
+      "ans": 0,
+      "hints": [
+        "The expression is a change $\\Delta f$ of a function of two variables, which a differential approximates.",
+        "Take $f(x,y)=x^2y$ at $(2,9)$ with $dx=0.01$ and $dy=0.02$.",
+        "$\\Delta f\\approx df=f_x\\,dx+f_y\\,dy$."
+      ],
+      "steps": [
+        "Let $f(x,y)=x^2y$; the point changes from $(2,9)$ to $(2.01,9.02)$, so $dx=0.01$, $dy=0.02$.",
+        "$f_x=2xy=36$ and $f_y=x^2=4$ at $(2,9)$.",
+        "$df=36(0.01)+4(0.02)=0.36+0.08=0.44$."
+      ],
+      "brief": "$f=x^2y$: $df=2xy\\,dx+x^2dy=36(0.01)+4(0.02)=0.44$."
+    },
+    {
+      "sec": "13.5",
+      "q": "Let $z=e^{xy}$, $x=\\ln\\left(\\dfrac st\\right)$, $y=s^2-t^2$. The value of $\\dfrac{\\partial z}{\\partial t}$ when $s=2$ and $t=1$ is equal to",
+      "opts": [
+        "$-24-16\\ln2$",
+        "$-8-8\\ln2$",
+        "$16-16\\ln2$",
+        "$16-8\\ln2$",
+        "$12+16\\ln2$"
+      ],
+      "ans": 0,
+      "hints": [
+        "$z$ depends on $t$ through both $x$ and $y$, so use the chain rule.",
+        "Compute the values of $x$ and $y$ at $s=2$, $t=1$, then the partial derivatives $\\partial x/\\partial t$ and $\\partial y/\\partial t$.",
+        "$\\dfrac{\\partial z}{\\partial t}=\\dfrac{\\partial z}{\\partial x}\\dfrac{\\partial x}{\\partial t}+\\dfrac{\\partial z}{\\partial y}\\dfrac{\\partial y}{\\partial t}$."
+      ],
+      "steps": [
+        "At $s=2,t=1$: $x=\\ln2$, $y=3$, and $e^{xy}=e^{3\\ln2}=8$.",
+        "$\\dfrac{\\partial z}{\\partial x}=ye^{xy}=24$, $\\dfrac{\\partial z}{\\partial y}=xe^{xy}=8\\ln2$.",
+        "$x=\\ln s-\\ln t$ gives $\\dfrac{\\partial x}{\\partial t}=-\\dfrac1t=-1$; $\\dfrac{\\partial y}{\\partial t}=-2t=-2$.",
+        "$\\dfrac{\\partial z}{\\partial t}=24(-1)+8\\ln2(-2)=-24-16\\ln2$."
+      ],
+      "brief": "Chain rule at $(2,1)$: $24(-1)+8\\ln2\\,(-2)=-24-16\\ln2$."
+    },
+    {
+      "sec": "13.5",
+      "q": "If $x\\ln y+y^2z+z^2=8$, then $\\dfrac{\\partial z}{\\partial y}=$",
+      "opts": [
+        "$-\\dfrac{x+2y^2z}{y^3+2yz}$",
+        "$-\\dfrac{x+2y^2z}{y^2+2z}$",
+        "$-\\dfrac{\\ln y}{y^2+2z}$",
+        "$\\dfrac{x-2y^2z}{y^3+2yz}$",
+        "$\\dfrac{x-2y^2z}{y^3-2yz}$"
+      ],
+      "ans": 0,
+      "hints": [
+        "$z$ is defined implicitly as a function of $x$ and $y$, so use implicit differentiation.",
+        "Move everything to one side to define $F(x,y,z)=0$ and compute $F_y$ and $F_z$.",
+        "If $F(x,y,z)=0$ defines $z=z(x,y)$, then $\\dfrac{\\partial z}{\\partial y}=-\\dfrac{F_y}{F_z}$."
+      ],
+      "steps": [
+        "Let $F=x\\ln y+y^2z+z^2-8$.",
+        "$F_y=\\dfrac xy+2yz$ and $F_z=y^2+2z$.",
+        "$\\dfrac{\\partial z}{\\partial y}=-\\dfrac{\\frac xy+2yz}{y^2+2z}$; multiply top and bottom by $y$: $-\\dfrac{x+2y^2z}{y^3+2yz}$."
+      ],
+      "brief": "$F=x\\ln y+y^2z+z^2-8$: $-\\frac{F_y}{F_z}=-\\frac{x/y+2yz}{y^2+2z}=-\\frac{x+2y^2z}{y^3+2yz}$."
+    },
+    {
+      "sec": "13.6",
+      "q": "The directional derivative of $f(x,y)=3x-4xy+9y$ at $(1,2)$ in the direction of $\\vec v=3\\vec i+4\\vec j$ is equal to",
+      "opts": [
+        "$1$",
+        "$-1$",
+        "$-8$",
+        "$3$",
+        "$\\dfrac{13}{5}$"
+      ],
+      "ans": 0,
+      "hints": [
+        "A directional derivative is the dot product of the gradient with a unit direction vector.",
+        "Compute $\\nabla f$ at $(1,2)$ and normalize $\\vec v$ (it is not a unit vector).",
+        "$D_{\\mathbf u}f=\\nabla f\\cdot\\mathbf u$ with $\\mathbf u=\\dfrac{\\vec v}{\\|\\vec v\\|}$."
+      ],
+      "steps": [
+        "$\\nabla f=\\langle3-4y,\\,-4x+9\\rangle$, so $\\nabla f(1,2)=\\langle-5,5\\rangle$.",
+        "$\\|\\vec v\\|=5$, so $\\mathbf u=\\left\\langle\\frac35,\\frac45\\right\\rangle$.",
+        "$D_{\\mathbf u}f=-5\\cdot\\frac35+5\\cdot\\frac45=-3+4=1$."
+      ],
+      "brief": "$\\nabla f(1,2)=\\langle-5,5\\rangle$, $\\mathbf u=\\langle\\frac35,\\frac45\\rangle$: $D_{\\mathbf u}f=1$."
+    },
+    {
+      "sec": "13.6",
+      "q": "The maximum value of the directional derivative of \\[ f(x,y,z)=\\sqrt{x^2+y^2+z^2} \\] at the point $(1,4,2)$ is equal to",
+      "opts": [
+        "$1$",
+        "$2$",
+        "$\\dfrac14$",
+        "$\\dfrac32$",
+        "$\\dfrac12$"
+      ],
+      "ans": 0,
+      "hints": [
+        "The directional derivative is largest in the direction of the gradient.",
+        "Compute $\\nabla f$ at the given point and find its length.",
+        "The maximum value of $D_{\\mathbf u}f$ at a point is $\\|\\nabla f\\|$, attained in the direction of $\\nabla f$."
+      ],
+      "steps": [
+        "$\\nabla f=\\left\\langle\\dfrac{x}{\\sqrt{x^2+y^2+z^2}},\\dfrac{y}{\\sqrt{x^2+y^2+z^2}},\\dfrac{z}{\\sqrt{x^2+y^2+z^2}}\\right\\rangle$.",
+        "At $(1,4,2)$ the root is $\\sqrt{21}$, so $\\nabla f=\\dfrac{1}{\\sqrt{21}}\\langle1,4,2\\rangle$.",
+        "$\\|\\nabla f\\|=\\dfrac{\\sqrt{1+16+4}}{\\sqrt{21}}=1$."
+      ],
+      "brief": "$\\nabla f(1,4,2)=\\frac{1}{\\sqrt{21}}\\langle1,4,2\\rangle$, so the maximum is $\\|\\nabla f\\|=1$."
+    },
+    {
+      "sec": "13.6",
+      "q": "The direction of minimum increase of \\[ f(x,y,z)=e^{2y}\\cos(x+z^3) \\] at the point $\\left(\\dfrac\\pi2,\\dfrac12,0\\right)$ is given by",
+      "opts": [
+        "$e\\vec i$",
+        "$e\\vec j$",
+        "$e\\vec i-e\\vec j$",
+        "$-e\\vec i+2e\\vec j+e\\vec k$",
+        "$-e\\vec i+e\\vec k$"
+      ],
+      "ans": 0,
+      "hints": [
+        "The function decreases fastest in the direction opposite to the gradient.",
+        "Compute the gradient at the given point, then negate it.",
+        "The direction of minimum increase of $f$ at $P$ is $-\\nabla f(P)$."
+      ],
+      "steps": [
+        "$f_x=-e^{2y}\\sin(x+z^3)$, $f_y=2e^{2y}\\cos(x+z^3)$, $f_z=-3z^2e^{2y}\\sin(x+z^3)$.",
+        "At $\\left(\\frac\\pi2,\\frac12,0\\right)$: $\\sin\\frac\\pi2=1$, $\\cos\\frac\\pi2=0$, $z=0$, so $\\nabla f=\\langle-e,0,0\\rangle$.",
+        "$-\\nabla f=\\langle e,0,0\\rangle=e\\vec i$."
+      ],
+      "brief": "$\\nabla f=\\langle-e,0,0\\rangle$, so the direction of minimum increase is $-\\nabla f=e\\vec i$."
+    },
+    {
+      "sec": "13.7",
+      "q": "An equation of the tangent plane to the surface $z=x^2+y^2+3$ at the point $(2,1,8)$ is",
+      "opts": [
+        "$4x+2y-z=2$",
+        "$3x+y-z=-1$",
+        "$4x+y+z=17$",
+        "$2x+2y-z=-2$",
+        "$4x-2y-z=-2$"
+      ],
+      "ans": 0,
+      "hints": [
+        "The surface is the graph $z=f(x,y)$, so use the tangent plane formula for a graph.",
+        "Compute $f_x$ and $f_y$ at $(2,1)$.",
+        "The tangent plane to $z=f(x,y)$ at $(x_0,y_0,z_0)$ is $f_x(x_0,y_0)(x-x_0)+f_y(x_0,y_0)(y-y_0)-(z-z_0)=0$."
+      ],
+      "steps": [
+        "$f_x=2x=4$ and $f_y=2y=2$ at $(2,1)$.",
+        "$4(x-2)+2(y-1)-(z-8)=0$.",
+        "$4x-8+2y-2-z+8=0$, so $4x+2y-z=2$."
+      ],
+      "brief": "$f_x=4$, $f_y=2$: $4(x-2)+2(y-1)-(z-8)=0\\Rightarrow4x+2y-z=2$."
+    },
+    {
+      "sec": "13.7",
+      "q": "If $(a,b,c)$ is a point on the surface \\[ z=x^2-xy+y^2-2x-2y \\] at which the tangent plane is horizontal, then $a^2+b^2+c^2=$",
+      "opts": [
+        "$24$",
+        "$28$",
+        "$32$",
+        "$36$",
+        "$20$"
+      ],
+      "ans": 0,
+      "hints": [
+        "A horizontal tangent plane means the normal is vertical, so both partial derivatives vanish.",
+        "Set $f_x=0$ and $f_y=0$, solve the pair of linear equations, then find $z$ from the surface.",
+        "For $z=f(x,y)$ the tangent plane at $(a,b)$ is horizontal exactly when $f_x(a,b)=0$ and $f_y(a,b)=0$."
+      ],
+      "steps": [
+        "$f_x=2x-y-2=0$ and $f_y=-x+2y-2=0$.",
+        "Adding $2\\times$ the second to the first gives $3y-6=0$, so $y=2$ and then $x=2$.",
+        "$z=4-4+4-4-4=-4$, so $(a,b,c)=(2,2,-4)$.",
+        "$a^2+b^2+c^2=4+4+16=24$."
+      ],
+      "brief": "$f_x=f_y=0$ gives $(2,2,-4)$, so $a^2+b^2+c^2=4+4+16=24$."
+    },
+    {
+      "sec": "13.7",
+      "q": "If $(a,b,c)$ is a point on the ellipsoid $3x^2+y^2+3z^2=1$ where the tangent plane is parallel to the plane $-6x+y+3z=0$, then $a+b+c=$",
+      "opts": [
+        "$0$",
+        "$1$",
+        "$\\dfrac12$",
+        "$-1$",
+        "$-\\dfrac14$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Parallel planes have parallel normal vectors, and the gradient is normal to a level surface.",
+        "Compute the gradient of $F(x,y,z)=3x^2+y^2+3z^2$ and set it equal to a scalar multiple of the normal of the given plane.",
+        "The normal of the tangent plane to $F=c$ at $P$ is $\\nabla F(P)$; the normal of $Ax+By+Cz=D$ is $\\langle A,B,C\\rangle$."
+      ],
+      "steps": [
+        "$\\nabla F=\\langle6x,2y,6z\\rangle=k\\langle-6,1,3\\rangle$, so $x=-k$, $y=\\dfrac k2$, $z=\\dfrac k2$.",
+        "Substitute into the ellipsoid: $3k^2+\\dfrac{k^2}{4}+\\dfrac{3k^2}{4}=4k^2=1$, so $k=\\pm\\dfrac12$.",
+        "$k=\\frac12$: $(a,b,c)=\\left(-\\frac12,\\frac14,\\frac14\\right)$; $k=-\\frac12$: $\\left(\\frac12,-\\frac14,-\\frac14\\right)$.",
+        "In both cases $a+b+c=0$."
+      ],
+      "brief": "$\\nabla F\\parallel\\langle-6,1,3\\rangle$ gives $(a,b,c)=\\pm(-\\frac12,\\frac14,\\frac14)$, so $a+b+c=0$."
+    }
+  ]
+}

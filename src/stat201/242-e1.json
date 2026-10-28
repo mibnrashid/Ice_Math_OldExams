@@ -1,0 +1,335 @@
+{
+  "course": "stat201",
+  "term": "242",
+  "kind": "e1",
+  "date": "15 February 2025",
+  "minutes": 90,
+  "source": "stat319-242-e1.pdf",
+  "note": "Original course STAT 319 (now part of STAT 201). Date and 90 minutes printed on the cover. All keys are marked (correct) in the master and agree with my own computation. Q12 uses the (n+1)p percentile position, which matches the key 2.9725. Q14 histogram cropped to img/stat201-242-e1-q14.png. Q3 (mutually exclusive events) tagged 2.1.",
+  "qs": [
+    {
+      "sec": "2.2",
+      "q": "Orders for a computer are summarized by the optional features that are requested as follows: \\[\\begin{array}{|c|c|}\\hline \\text{Number of Operational Features} & \\text{Proportion of Orders}\\\\\\hline \\text{No optional features} & 0.3\\\\ \\text{One optional feature} & 0.5\\\\ \\text{More than one optional feature} & 0.2\\\\\\hline\\end{array}\\] What is the probability that an order does not request more than one optional feature?",
+      "opts": [
+        "$0.8$",
+        "$0.5$",
+        "$0.3$",
+        "$0.2$",
+        "$0.7$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Think about the complement of an event, or about adding probabilities of disjoint categories.",
+        "Translate 'does not request more than one' into which table categories are included.",
+        "For mutually exclusive events $P(A\\cup B)=P(A)+P(B)$, and $P(A')=1-P(A)$."
+      ],
+      "steps": [
+        "'Not more than one optional feature' means no features or exactly one feature.",
+        "These categories are mutually exclusive, so add: $0.3+0.5=0.8$.",
+        "Check with the complement: $1-0.2=0.8$."
+      ],
+      "brief": "$P=0.3+0.5=1-0.2=0.8$."
+    },
+    {
+      "sec": "2.1",
+      "q": "The rise time of a reactor is measured in minutes (and fractions of minutes). Let the sample space be positive, real numbers. We define the events $A$ and $B$ as: $A=\\{x\\mid x<72.5\\}$ and $B=\\{x\\mid x>52.5\\}$. Describe the event $A\\cup B$.",
+      "opts": [
+        "$\\{x\\mid x>0\\}$",
+        "$\\{x\\mid 52.5<x<72.5\\}$",
+        "$\\{x\\mid x\\le 52.5\\}$",
+        "$\\{x\\mid x\\ge 72.5\\}$",
+        "$\\{x\\mid x<0\\}$"
+      ],
+      "ans": 0,
+      "hints": [
+        "This is about the union of two events described by intervals on a number line.",
+        "Draw both intervals on a line, remembering the sample space only contains positive numbers.",
+        "$A\\cup B$ contains every outcome that is in $A$, in $B$, or in both."
+      ],
+      "steps": [
+        "$A$ is every positive $x$ below $72.5$ and $B$ is every $x$ above $52.5$.",
+        "The two intervals overlap on $52.5<x<72.5$.",
+        "Any positive $x$ is either $<72.5$ or $\\ge 72.5>52.5$, so it lies in $A$ or $B$.",
+        "Hence $A\\cup B=\\{x\\mid x>0\\}$, the whole sample space."
+      ],
+      "brief": "$A$ and $B$ overlap and together cover all positive reals: $\\{x\\mid x>0\\}$."
+    },
+    {
+      "sec": "2.1",
+      "q": "If $A$, $B$, and $C$ are mutually exclusive events with $P(A)=0.2$, $P(B)=0.3$, and $P(C)=0.4$. Determine $P(A\\cap B\\cap C)$.",
+      "opts": [
+        "$0.0$",
+        "$1.0$",
+        "$0.9$",
+        "$0.024$",
+        "$0.976$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Think about what 'mutually exclusive' says about the intersection of events.",
+        "Decide whether the three events can happen together.",
+        "Events $E_1,E_2$ are mutually exclusive when $E_1\\cap E_2=\\emptyset$, and $P(\\emptyset)=0$."
+      ],
+      "steps": [
+        "Mutually exclusive events cannot occur at the same time.",
+        "So $A\\cap B\\cap C=\\emptyset$.",
+        "Therefore $P(A\\cap B\\cap C)=0$. The given probabilities are not needed."
+      ],
+      "brief": "Mutually exclusive, so $A\\cap B\\cap C=\\emptyset$ and the probability is $0$."
+    },
+    {
+      "sec": "2.4",
+      "q": "Suppose that $P(A\\mid B)=0.4$ and $P(B)=0.5$. Determine $P(A'\\cap B)$.",
+      "opts": [
+        "$0.3$",
+        "$0.2$",
+        "$0.5$",
+        "$0.1$",
+        "$0.9$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Use conditional probability and split $B$ into the part inside $A$ and the part outside $A$.",
+        "First find $P(A\\cap B)$ from the conditional probability, then subtract it from $P(B)$.",
+        "$P(A\\cap B)=P(A\\mid B)P(B)$ and $P(B)=P(A\\cap B)+P(A'\\cap B)$."
+      ],
+      "steps": [
+        "$P(A\\cap B)=P(A\\mid B)P(B)=0.4(0.5)=0.2$.",
+        "$B$ is the disjoint union of $A\\cap B$ and $A'\\cap B$.",
+        "$P(A'\\cap B)=0.5-0.2=0.3$."
+      ],
+      "brief": "$P(A\\cap B)=0.2$, so $P(A'\\cap B)=0.5-0.2=0.3$."
+    },
+    {
+      "sec": "2.5",
+      "q": "Computer keyboard failures are due to faulty electrical connects ($12\\%$) or mechanical defects ($88\\%$). Mechanical defects are related to loose keys ($27\\%$) or improper assembly ($73\\%$). Electrical connect defects are caused by defective wires ($35\\%$), improper connections ($13\\%$), or poorly welded wires ($52\\%$). Find the probability that a failure is due to loose keys.",
+      "opts": [
+        "$0.2376$",
+        "$0.27$",
+        "$0.88$",
+        "$0.73$",
+        "$0.724$"
+      ],
+      "ans": 0,
+      "hints": [
+        "This is a two-stage (tree) situation: the type of failure, then the cause within that type.",
+        "Loose keys can only happen under one of the two failure types. Identify which one.",
+        "Multiplication rule: $P(A\\cap B)=P(B)\\,P(A\\mid B)$."
+      ],
+      "steps": [
+        "Loose keys is a cause only within mechanical defects.",
+        "$P(\\text{mechanical})=0.88$ and $P(\\text{loose keys}\\mid\\text{mechanical})=0.27$.",
+        "$P(\\text{loose keys})=0.88\\times0.27=0.2376$."
+      ],
+      "brief": "$P=P(\\text{mech})P(\\text{loose}\\mid\\text{mech})=0.88(0.27)=0.2376$."
+    },
+    {
+      "sec": "2.7",
+      "q": "Two web colors are used for a site advertisement. If a site visitor arrives from an affiliate, the probabilities of the blue or green colors are $0.8$ and $0.2$, respectively. If the site visitor arrives from a search site, the blue and green colors are $0.4$ and $0.6$, respectively. The proportions of visitors from affiliates and search sites are $0.3$ and $0.7$, respectively. What is the probability that a visitor is from a search site given that the blue ad was viewed?",
+      "opts": [
+        "$0.54$",
+        "$0.28$",
+        "$0.24$",
+        "$0.52$",
+        "$0.50$"
+      ],
+      "ans": 0,
+      "hints": [
+        "This asks for a reversed conditional probability, so think Bayes' theorem.",
+        "First compute the probability that the blue ad is viewed, adding over the two sources.",
+        "Bayes: $P(B_i\\mid A)=\\dfrac{P(A\\mid B_i)P(B_i)}{\\sum_j P(A\\mid B_j)P(B_j)}$."
+      ],
+      "steps": [
+        "Blue and search: $0.4\\times0.7=0.28$. Blue and affiliate: $0.8\\times0.3=0.24$.",
+        "$P(\\text{blue})=0.28+0.24=0.52$.",
+        "$P(\\text{search}\\mid\\text{blue})=\\dfrac{0.28}{0.52}\\approx0.54$."
+      ],
+      "brief": "$\\dfrac{0.4(0.7)}{0.4(0.7)+0.8(0.3)}=\\dfrac{0.28}{0.52}\\approx0.54$."
+    },
+    {
+      "sec": "3.3",
+      "q": "For a discrete random variable $X$, the cumulative distribution function is given as: \\[F(x)=\\begin{cases}0,& x<-2\\\\ 0.2,& -2\\le x<0\\\\ 0.7,& 0\\le x<2\\\\ 1,& x\\ge 2\\end{cases}\\] What is the probability that $x$ is exactly equal to $2$?",
+      "opts": [
+        "$0.3$",
+        "$0.2$",
+        "$0.5$",
+        "$0.1$",
+        "$1.0$"
+      ],
+      "ans": 0,
+      "hints": [
+        "For a discrete variable the CDF jumps at each possible value, and the jump size is the probability.",
+        "Look at how much $F$ increases at $x=2$.",
+        "$P(X=a)=F(a)-F(a^-)$, the size of the jump of $F$ at $a$."
+      ],
+      "steps": [
+        "Just before $x=2$ the CDF is $0.7$.",
+        "At $x=2$ the CDF becomes $1$.",
+        "$P(X=2)=1-0.7=0.3$."
+      ],
+      "brief": "$P(X=2)=F(2)-F(2^-)=1-0.7=0.3$."
+    },
+    {
+      "sec": "3.4",
+      "q": "Two new product designs are to be compared on the basis of revenue potential. Marketing feels that the revenue from design $A$ can be predicted quite accurately to be $\\$3$ million. The revenue potential of design $B$ is more difficult to assess. Marketing concludes that there is a probability of $0.3$ that the revenue from design B will be $\\$7$ million, but there is a $0.7$ probability that the revenue will be only $\\$2$ million. What is expected value of the revenue from design B (in millions of dollars)?",
+      "opts": [
+        "$3.50$",
+        "$3.00$",
+        "$5.25$",
+        "$2.29$",
+        "$6.50$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Compute the mean of a discrete random variable.",
+        "List the possible revenues of design B with their probabilities.",
+        "$E(X)=\\sum x\\,f(x)$."
+      ],
+      "steps": [
+        "Revenues: $7$ with probability $0.3$ and $2$ with probability $0.7$.",
+        "$E=7(0.3)+2(0.7)=2.1+1.4$.",
+        "$E=3.5$ million dollars."
+      ],
+      "brief": "$E(B)=7(0.3)+2(0.7)=3.5$."
+    },
+    {
+      "sec": "3.6",
+      "q": "A manufacturing process has 100 customer orders to fill. Each order requires one component part that is purchased from a supplier. However, typically, $2\\%$ of the components are identified as defective, and the components can be assumed to be independent. If the manufacturer stocks 100 components, what is the probability that the 100 orders can be filled without reordering components?",
+      "opts": [
+        "$0.13262$",
+        "$0.86738$",
+        "$0.0000$",
+        "$0.0885$",
+        "$0.98$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Count defective components among 100 independent trials: a binomial setting.",
+        "No reordering is needed only if every one of the 100 components is usable. State this in terms of the number of defectives.",
+        "Binomial: $P(X=x)=\\binom nx p^x(1-p)^{n-x}$."
+      ],
+      "steps": [
+        "Let $X$ be the number of defective components, $X\\sim\\text{Bin}(100,0.02)$.",
+        "All 100 orders can be filled exactly when $X=0$.",
+        "$P(X=0)=(0.98)^{100}\\approx0.13262$."
+      ],
+      "brief": "$X\\sim\\text{Bin}(100,0.02)$: $P(X=0)=0.98^{100}\\approx0.13262$."
+    },
+    {
+      "sec": "3.9",
+      "q": "Contamination is a problem in the manufacture of optical storage disks (CDs). The number of particles of contamination that occur on an optical disk has a Poisson distribution, and the average number of particles per centimeter squared of media surface is $0.1$. The area of a disk under study is $100$ squared centimeters. Find the probability that $12$ particles occur in the area of a disk under study.",
+      "opts": [
+        "$0.095$",
+        "$0.905$",
+        "$0.792$",
+        "$0.208$",
+        "$0.001$"
+      ],
+      "ans": 0,
+      "hints": [
+        "This is a Poisson probability, but the mean must match the area studied.",
+        "Scale the rate per square centimeter by the area to get the mean for the whole disk.",
+        "Poisson: $P(X=x)=\\dfrac{e^{-\\lambda}\\lambda^x}{x!}$, and the mean grows in proportion to the size of the region."
+      ],
+      "steps": [
+        "Mean for the disk: $\\lambda=0.1\\times100=10$.",
+        "$P(X=12)=\\dfrac{e^{-10}10^{12}}{12!}$.",
+        "This equals $0.0948\\approx0.095$."
+      ],
+      "brief": "$\\lambda=10$: $P(X=12)=e^{-10}10^{12}/12!\\approx0.095$."
+    },
+    {
+      "sec": "6.1",
+      "q": "Suppose that the mean of a sample data is $4$, and all the data values are same as the sample mean. What is the computed value of sample standard deviation?",
+      "opts": [
+        "$0.0$",
+        "$1.0$",
+        "$4.0$",
+        "$16.0$",
+        "$2.0$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Think about what the standard deviation measures.",
+        "Compute each deviation from the sample mean.",
+        "$s=\\sqrt{\\dfrac{\\sum(x_i-\\bar x)^2}{n-1}}$."
+      ],
+      "steps": [
+        "Every value equals $\\bar x=4$, so each deviation $x_i-\\bar x$ is $0$.",
+        "The sum of squared deviations is $0$.",
+        "So $s=0$."
+      ],
+      "brief": "All deviations from the mean are $0$, so $s=0$."
+    },
+    {
+      "sec": "6.1",
+      "q": "The \"cold ignition time\" of an automobile engine is being investigated by a gasoline manufacturer. The following times (in seconds) were obtained for a test vehicle: $1.75,1.92,2.62,2.35,3.09,3.15,2.53,1.91$. What is the value of upper quartile (Q3) of the data?",
+      "opts": [
+        "$2.9725$",
+        "$1.9125$",
+        "$1.060$",
+        "$0.750$",
+        "$2.685$"
+      ],
+      "ans": 0,
+      "hints": [
+        "This is a percentile (quartile) computation, so order the data first.",
+        "Sort the 8 values and find the position of the 75th percentile.",
+        "The $100p$-th percentile is at position $p(n+1)$, interpolating linearly between neighbouring ordered values when the position is not an integer."
+      ],
+      "steps": [
+        "Sorted: $1.75,\\,1.91,\\,1.92,\\,2.35,\\,2.53,\\,2.62,\\,3.09,\\,3.15$.",
+        "Position of $Q_3$: $0.75(8+1)=6.75$, between the 6th ($2.62$) and 7th ($3.09$) values.",
+        "$Q_3=2.62+0.75(3.09-2.62)=2.62+0.3525=2.9725$."
+      ],
+      "brief": "Sorted data, position $0.75(9)=6.75$: $Q_3=2.62+0.75(0.47)=2.9725$."
+    },
+    {
+      "sec": "6.2",
+      "q": "The given figure provides the stem-and-leaf diagram for 25 observations on batch yields from a chemical process. If stem: Tens digits. Leaf: Ones digits, then what is the maximum value of the data? \\[\\begin{array}{c|l} \\text{Stem} & \\text{Leaf}\\\\\\hline 6 & 1\\ 3\\ 4\\ 5\\ 5\\ 6\\\\ 7 & 0\\ 1\\ 1\\ 3\\ 5\\ 7\\ 8\\ 8\\ 9\\\\ 8 & 1\\ 3\\ 4\\ 4\\ 7\\ 8\\ 8\\\\ 9 & 2\\ 3\\ 5\\end{array}\\]",
+      "opts": [
+        "$95.0$",
+        "$9.50$",
+        "$0.95$",
+        "$90.5$",
+        "$905$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Read the largest entry of a stem-and-leaf diagram using the stated key.",
+        "The largest value is on the last stem, with its largest leaf.",
+        "Value $=10\\times(\\text{stem})+(\\text{leaf})$ when the stem is the tens digit and the leaf is the ones digit."
+      ],
+      "steps": [
+        "The last stem is $9$, with leaves $2,3,5$.",
+        "The largest leaf is $5$.",
+        "Maximum $=90+5=95.0$."
+      ],
+      "brief": "Largest stem 9, largest leaf 5: maximum is $95.0$."
+    },
+    {
+      "sec": "6.3",
+      "q": "What statement is true for the histogram given here for a dataset?",
+      "opts": [
+        "Mean $<$ Median",
+        "Mean $>$ Median",
+        "Mean $=$ Median",
+        "Mean $=2\\times$ Median",
+        "None"
+      ],
+      "ans": 0,
+      "hints": [
+        "Identify the shape of the distribution (symmetric, left-skewed or right-skewed).",
+        "Check on which side the long tail is, and recall which way the mean is pulled by a tail.",
+        "The mean is pulled toward the long tail: for left-skewed data mean $<$ median, for right-skewed data mean $>$ median, for symmetric data they are about equal."
+      ],
+      "steps": [
+        "The bars peak near the right end and a long tail stretches to the left.",
+        "So the distribution is skewed to the left (negatively skewed).",
+        "Small values in the left tail pull the mean below the median, so Mean $<$ Median."
+      ],
+      "brief": "Left-skewed histogram (long left tail), so Mean $<$ Median.",
+      "img": "stat201-242-e1-q14.png"
+    }
+  ]
+}

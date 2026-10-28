@@ -1,0 +1,489 @@
+{
+  "course": "stat201",
+  "term": "251",
+  "kind": "fx",
+  "date": "21 December 2025",
+  "minutes": 120,
+  "source": "stat201-251-fx.pdf",
+  "note": "Master has no (correct) marks (cover says USE THIS AS A TEMPLATE); no official key; answers derived and verified with scipy (all 20 come out as choice (a), the usual master convention). Date and 120 minutes are printed on the cover. Q7: exact beta is 0.85122; choice (a) 0.85083 is the table value with z=1.04, other choices are far away. Q1 circuit, Q17-Q19 R output and Q20 residual plot are cropped images; the same R-output image is used by Q17-Q19. Q16: exact p-value 0.0152 lies in (0.01, 0.02). Q7 is type II error (9.2.2), not in the pacing list but asked on the exam.",
+  "qs": [
+    {
+      "sec": "2.6",
+      "img": "stat201-251-fx-q1.png",
+      "q": "(Suggested Problem 2-180) The circuit in the figure operates if and only if there is a path of functional devices from left to right. Assume devices fail independently and that the probability of failure of each device is as shown. The left block has two parallel branches (the top branch has two devices in series with failure probabilities 0.05 and 0.05; the bottom branch has one device with failure probability 0.08). The right block has two parallel branches with one device each (failure probabilities 0.17 and 0.23). The two blocks are in series. What is the probability that the circuit operates?",
+      "opts": [
+        "$0.9534$",
+        "$0.9970$",
+        "$0.5306$",
+        "$0.5953$",
+        "$0.6341$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Break the circuit into blocks: series parts multiply, parallel parts use the complement of all branches failing.",
+        "First find the probability that each branch works, then the probability that each parallel block works, and finally multiply the two blocks.",
+        "For independent branches, series: $P(\\text{works})=\\prod p_i$; parallel: $P(\\text{works})=1-\\prod(1-p_i)$, where $p_i$ is the probability that branch $i$ works."
+      ],
+      "steps": [
+        "Top branch of the left block works if both devices work: $0.95\\cdot0.95=0.9025$. Bottom branch works with probability $0.92$.",
+        "Left block works unless both branches fail: $1-(1-0.9025)(1-0.92)=1-0.0975\\cdot0.08=0.9922$.",
+        "Right block works unless both devices fail: $1-0.17\\cdot0.23=0.9609$.",
+        "The blocks are in series: $0.9922\\cdot0.9609=0.9534$."
+      ],
+      "brief": "Left block $0.9922$, right block $0.9609$, product $0.9534$."
+    },
+    {
+      "sec": "3.9",
+      "q": "(Suggested Problem 3-133) Suppose that the number of customers who enter a bank in an hour is a Poisson random variable, and suppose that $P(X=0)=0.0655$. Determine the variance of $X$.",
+      "opts": [
+        "$2.7257$",
+        "$1.6510$",
+        "$0.0655$",
+        "$1.1838$",
+        "$7.4295$"
+      ],
+      "ans": 0,
+      "hints": [
+        "For a Poisson variable the mean and the variance are the same number.",
+        "Write $P(X=0)$ using the Poisson pmf and solve for the parameter.",
+        "Poisson: $P(X=x)=\\dfrac{e^{-\\lambda}\\lambda^x}{x!}$ and $E(X)=V(X)=\\lambda$."
+      ],
+      "steps": [
+        "$P(X=0)=e^{-\\lambda}=0.0655$.",
+        "Take logs: $\\lambda=-\\ln(0.0655)=2.7257$.",
+        "For a Poisson variable $V(X)=\\lambda=2.7257$."
+      ],
+      "brief": "$e^{-\\lambda}=0.0655\\Rightarrow\\lambda=2.7257=V(X)$."
+    },
+    {
+      "sec": "4.4",
+      "q": "(Exercise 4-35) The thickness of a conductive coating in micrometers has a density function of $400x^{-2}$ for $80\\ \\mu\\text{m}<x<100\\ \\mu\\text{m}$. If the coating costs $\\$\\,0.40$ per micrometer of thickness on each part, what is the average cost of the coating per part?",
+      "opts": [
+        "$\\$\\,35.7$",
+        "$\\$\\,40.0$",
+        "$\\$\\,32.0$",
+        "$\\$\\,89.3$",
+        "$\\$\\,44.6$"
+      ],
+      "ans": 0,
+      "hints": [
+        "The average cost is the cost rate times the mean thickness.",
+        "Compute the mean thickness $E(X)$ from the density, then multiply by the cost per micrometer.",
+        "$E(X)=\\int x f(x)\\,dx$ over the support, and $\\int \\dfrac{1}{x}\\,dx=\\ln|x|$."
+      ],
+      "steps": [
+        "$E(X)=\\int_{80}^{100}x\\cdot400x^{-2}\\,dx=400\\int_{80}^{100}\\dfrac1x\\,dx$.",
+        "$=400\\ln\\dfrac{100}{80}=400(0.22314)=89.26$ micrometers.",
+        "Average cost $=0.40\\cdot89.26=35.7$ dollars."
+      ],
+      "brief": "$E(X)=400\\ln(100/80)=89.26$; cost $=0.40\\cdot89.26=\\$35.7$."
+    },
+    {
+      "sec": "6.2",
+      "q": "(Exercise 6-24) A dataset on the percentage of cotton in material used to manufacture men's shirts is available. A stem-and-leaf display for these data is shown below.\\[ \\begin{array}{r|l} 30 & 6\\ 8\\\\ 31 & 2\\ 9\\ 9\\\\ 32 & 6\\ 8\\\\ 33 & 1\\ 2\\ 3\\ 3\\ 4\\ 4\\ 7\\ 8\\\\ 34 & 2\\ 3\\ 4\\ 7\\ 8\\ 8\\\\ 35 & 0\\ 0\\ 3\\ 5\\ 6\\\\ 36 & 6\\ 7\\ 7\\ 8 \\end{array} \\]Stem Unit $=1.0$, Leaf Unit $=0.1$. What is the median percentage of cotton?",
+      "opts": [
+        "$34.0$",
+        "$33.8$",
+        "$34.2$",
+        "$3.40$",
+        "$33.5$"
+      ],
+      "ans": 0,
+      "hints": [
+        "The median is the middle value of the ordered data, and the stem-and-leaf display is already ordered.",
+        "Count the total number of leaves, then count along the display to the middle position(s).",
+        "For $n$ ordered values: if $n$ is even, the median is the average of the $\\frac n2$-th and $(\\frac n2+1)$-th values."
+      ],
+      "steps": [
+        "Leaves per stem: $2,3,2,8,6,5,4$, so $n=30$.",
+        "The median is the average of the 15th and 16th values.",
+        "Cumulative counts are $2,5,7,15,\\dots$, so the 15th value is the last leaf of stem 33, namely $33.8$.",
+        "The 16th value is the first leaf of stem 34, namely $34.2$. Median $=\\dfrac{33.8+34.2}{2}=34.0$."
+      ],
+      "brief": "$n=30$; median $=\\frac{33.8+34.2}{2}=34.0$."
+    },
+    {
+      "sec": "7.2",
+      "q": "(Exercise 7-5) A synthetic fiber used in manufacturing carpet has tensile strength that is normally distributed with mean $74.0$ psi and standard deviation $4.0$ psi. Find the probability that a random sample of $n=9$ fiber specimens will have sample mean tensile strength that exceeds $75.0$ psi given that the sample mean tensile strength is less than $76.0$ psi.",
+      "opts": [
+        "$0.17126$",
+        "$0.22663$",
+        "$0.77337$",
+        "$0.93319$",
+        "$0.13414$"
+      ],
+      "ans": 0,
+      "hints": [
+        "This is a conditional probability about a sample mean, which is normal.",
+        "Find the mean and standard deviation of $\\bar X$, then write $P(\\bar X>75\\mid \\bar X<76)$ as a ratio of two probabilities.",
+        "$\\bar X\\sim N(\\mu,\\sigma^2/n)$, $Z=\\dfrac{\\bar X-\\mu}{\\sigma/\\sqrt n}$, and $P(A\\mid B)=\\dfrac{P(A\\cap B)}{P(B)}$."
+      ],
+      "steps": [
+        "$\\bar X\\sim N(74,\\ (4/3)^2)$, so $\\sigma_{\\bar X}=4/3$.",
+        "$P(\\bar X<76)=P(Z<1.5)=0.93319$.",
+        "$P(75<\\bar X<76)=P(0.75<Z<1.5)=0.93319-0.77337=0.15982$.",
+        "Ratio: $\\dfrac{0.15982}{0.93319}=0.17126$."
+      ],
+      "brief": "$\\dfrac{P(0.75<Z<1.5)}{P(Z<1.5)}=\\dfrac{0.15982}{0.93319}=0.17126$."
+    },
+    {
+      "sec": "8.4",
+      "q": "(Exercise 8-53) The fraction of defective integrated circuits produced in a photolithography process is being studied. A random sample of 400 circuits is tested, revealing 54 defectives. Calculate a $99.52\\%$ two-sided CI on the fraction of defective circuits produced by this particular tool. What is the upper limit of this confidence interval?",
+      "opts": [
+        "$0.18318$",
+        "$0.16849$",
+        "$0.08682$",
+        "$0.13582$",
+        "$0.17925$"
+      ],
+      "ans": 0,
+      "hints": [
+        "This is a large-sample confidence interval for a proportion.",
+        "Compute $\\hat p$, find the critical value for the stated confidence level (half of the leftover area goes in each tail), then the margin of error.",
+        "$\\hat p\\pm z_{\\alpha/2}\\sqrt{\\dfrac{\\hat p(1-\\hat p)}{n}}$."
+      ],
+      "steps": [
+        "$\\hat p=54/400=0.135$.",
+        "$\\alpha=0.0048$, so $z_{\\alpha/2}=z_{0.0024}=2.8202$.",
+        "Standard error: $\\sqrt{0.135\\cdot0.865/400}=0.017086$.",
+        "Upper limit $=0.135+2.8202\\cdot0.017086=0.18318$."
+      ],
+      "brief": "$\\hat p=0.135$, $z=2.8202$: upper limit $=0.135+0.04818=0.18318$."
+    },
+    {
+      "sec": "9.2",
+      "q": "(Exercise 9-15) A consumer products company is formulating a new shampoo and is interested in foam height (in millimeters). Foam height is approximately normally distributed and has a standard deviation of 12 millimeters. The company wishes to test $H_0:\\mu=180$ millimeters versus $H_1:\\mu>180$ millimeters, using the results of $n=25$ samples. Using the critical region $\\bar x>186$, what is the probability of type II error if the true mean foam height is $183.5$ millimeters?",
+      "opts": [
+        "$0.85083$",
+        "$0.14917$",
+        "$0.58317$",
+        "$0.99379$",
+        "$0.00621$"
+      ],
+      "ans": 0,
+      "hints": [
+        "A type II error means failing to reject $H_0$ even though the true mean is different.",
+        "Express the non-rejection region as $\\bar X\\le 186$ and compute its probability when the mean is the true value.",
+        "$\\beta=P(\\text{do not reject }H_0\\mid \\mu=\\mu_{\\text{true}})$, with $\\bar X\\sim N(\\mu_{\\text{true}},\\sigma^2/n)$."
+      ],
+      "steps": [
+        "Do not reject when $\\bar X\\le186$; here $\\bar X\\sim N(183.5,\\ (12/5)^2)$.",
+        "$\\beta=P\\left(Z\\le\\dfrac{186-183.5}{2.4}\\right)=P(Z\\le1.04)$.",
+        "Using the table value for $z=1.04$, $\\beta=0.85083$."
+      ],
+      "brief": "$\\beta=P(Z\\le\\frac{186-183.5}{2.4})=P(Z\\le1.04)=0.85083$."
+    },
+    {
+      "sec": "9.2.1",
+      "q": "(Exercise 9-42) A melting point test of $n=20$ samples of a binder used in manufacturing a rocket propellant resulted in $\\bar x=148.9\\,^\\circ\\text{F}$. Assume that the melting point is normally distributed with $\\sigma=2.0\\,^\\circ\\text{F}$. Test $H_0:\\mu=150$ versus $H_1:\\mu\\ne150$ using $\\alpha=0.01$. The $p$-value is",
+      "opts": [
+        "$0.01389$",
+        "$0.00695$",
+        "$0.58232$",
+        "$0.98611$",
+        "$0.41768$"
+      ],
+      "ans": 0,
+      "hints": [
+        "This is a two-sided z test for a mean with known variance.",
+        "Compute the test statistic, then double the tail probability beyond it.",
+        "$z_0=\\dfrac{\\bar x-\\mu_0}{\\sigma/\\sqrt n}$ and for $H_1:\\mu\\ne\\mu_0$, $p=2\\,[1-\\Phi(|z_0|)]$."
+      ],
+      "steps": [
+        "$z_0=\\dfrac{148.9-150}{2/\\sqrt{20}}=\\dfrac{-1.1}{0.44721}=-2.46$.",
+        "$P(Z<-2.46)=0.00695$.",
+        "Two-sided: $p=2(0.00695)=0.01389$."
+      ],
+      "brief": "$z_0=-2.46$; $p=2\\,P(Z<-2.46)=0.01389$."
+    },
+    {
+      "sec": "9.3.1",
+      "q": "(Exercise 9-61) The sodium content of nine 300-gram boxes of organic cornflakes was determined. The data (in milligrams) are as follows: 130.41, 128.98, 131.43, 129.69, 128.08, 129.49, 128.43, 128.85, 129.15. The sums are $\\sum x_i=1164.51$ and $\\sum x_i^2=150684.4059$. To test the claim that mean sodium content of this brand of cornflakes exceeds 130 milligrams, which one of the following statements is true?",
+      "opts": [
+        "$0.90<p-\\text{value}<0.95$",
+        "$0.05<p-\\text{value}<0.10$",
+        "$0.95<p-\\text{value}<0.99$",
+        "$0.75<p-\\text{value}<0.90$",
+        "$0.01<p-\\text{value}<0.05$"
+      ],
+      "ans": 0,
+      "hints": [
+        "This is a one-sided t test for a mean with unknown variance, and you must pick the correct tail.",
+        "Compute $\\bar x$ and $s$ from the sums, form the t statistic with $H_1:\\mu>130$, and note its sign before looking at the upper tail.",
+        "$s^2=\\dfrac{\\sum x_i^2-(\\sum x_i)^2/n}{n-1}$, $t_0=\\dfrac{\\bar x-\\mu_0}{s/\\sqrt n}$ with $n-1$ degrees of freedom; for $H_1:\\mu>\\mu_0$, $p=P(T>t_0)$."
+      ],
+      "steps": [
+        "$\\bar x=1164.51/9=129.39$ and $s=1.02817$.",
+        "$t_0=\\dfrac{129.39-130}{1.02817/3}=-1.78$ with 8 degrees of freedom.",
+        "$H_1:\\mu>130$, so $p=P(T_8>-1.78)=1-P(T_8<-1.78)\\approx0.9435$.",
+        "So $0.90<p<0.95$."
+      ],
+      "brief": "$t_0=-1.78$, df $=8$; $p=P(T_8>-1.78)=0.9435$."
+    },
+    {
+      "sec": "9.4.1",
+      "q": "(Exercise 9-81) A tire engineer for a tire manufacturer is investigating tire life for a new rubber component and has built 20 tires and tested them to end-of-life in a road test. The engineer wants to test the hypothesis that the standard deviation of tire life is less than 4000 km. At the $5\\%$ significance level, which of the following is the correct critical region for the Test Statistic (TS)?",
+      "opts": [
+        "We reject $H_0$ if TS $<10.117$.",
+        "We reject $H_0$ if TS $<8.907$.",
+        "We reject $H_0$ if TS $<32.852$.",
+        "We reject $H_0$ if TS $<1.729$.",
+        "We reject $H_0$ if TS $<30.144$."
+      ],
+      "ans": 0,
+      "hints": [
+        "This is a chi-square test on a variance (standard deviation).",
+        "The alternative is $\\sigma<\\sigma_0$, so the rejection region is in the lower tail; find the degrees of freedom from the sample size.",
+        "$\\chi_0^2=\\dfrac{(n-1)S^2}{\\sigma_0^2}$; for $H_1:\\sigma^2<\\sigma_0^2$ reject if $\\chi_0^2<\\chi^2_{1-\\alpha,\\,n-1}$."
+      ],
+      "steps": [
+        "$H_0:\\sigma=4000$, $H_1:\\sigma<4000$; $\\chi_0^2=\\dfrac{19S^2}{4000^2}$ with $n-1=19$ degrees of freedom.",
+        "Lower-tail test: reject if $\\chi_0^2<\\chi^2_{0.95,19}$.",
+        "$\\chi^2_{0.95,19}=10.117$ (the value with area $0.05$ below it)."
+      ],
+      "brief": "Lower-tail $\\chi^2$ test, df $=19$: reject if TS $<\\chi^2_{0.95,19}=10.117$."
+    },
+    {
+      "sec": "9.5.1",
+      "q": "(Suggested Problem 9-92) An article in Fortune (September 21, 1992) claimed that nearly one-half of all engineers continue academic studies beyond the B.S. degree, ultimately receiving either an M.S. or a Ph.D. degree. Data from an article in Engineering Horizons (Spring 1990) indicated that 229 of 500 new engineering graduates were planning graduate study. For testing the hypothesis that the data from Engineering Horizons is consistent with the claim reported by Fortune, which one of the following is true? (Use $\\alpha=0.05$.)",
+      "opts": [
+        "$z_0\\approx-1.88$ and we fail to reject $H_0$.",
+        "$z_0\\approx-1.88$ and we reject $H_0$.",
+        "$z_0\\approx-2.24$ and we reject $H_0$.",
+        "$z_0\\approx-1.64$ and we reject $H_0$.",
+        "$z_0\\approx1.88$ and we fail to reject $H_0$."
+      ],
+      "ans": 0,
+      "hints": [
+        "This is a test on a population proportion; 'consistent with the claim' means a two-sided test of $p=0.5$.",
+        "Compute the sample proportion and the z statistic using the hypothesized proportion in the standard error, then compare with the two-sided critical value.",
+        "$z_0=\\dfrac{\\hat p-p_0}{\\sqrt{p_0(1-p_0)/n}}$; reject $H_0:p=p_0$ against $p\\ne p_0$ if $|z_0|>z_{\\alpha/2}$."
+      ],
+      "steps": [
+        "$H_0:p=0.5$ versus $H_1:p\\ne0.5$; $\\hat p=229/500=0.458$.",
+        "$z_0=\\dfrac{0.458-0.5}{\\sqrt{0.25/500}}=\\dfrac{-0.042}{0.022361}=-1.88$.",
+        "Critical value $z_{0.025}=1.96$, and $|-1.88|<1.96$ (p-value $\\approx0.060$).",
+        "So we fail to reject $H_0$."
+      ],
+      "brief": "$z_0=-1.88$, $|z_0|<1.96$: fail to reject $H_0$."
+    },
+    {
+      "sec": "9.1",
+      "q": "(Example Page 311) Suppose a researcher tests a null hypothesis $H_0$ versus an alternative hypothesis $H_1$ and obtains a $p$-value of $0.03$. Which one of the following statements gives a correct interpretation of this $p$-value?",
+      "opts": [
+        "If $H_0$ is true, the probability of observing a test statistic at least as extreme as the one obtained in this sample is $0.03$.",
+        "The probability that the null hypothesis $H_0$ is true is $0.03$.",
+        "The probability that the alternative hypothesis $H_1$ is true is $0.97$.",
+        "The probability of making a type II error in this test is $0.03$.",
+        "There is a $3\\%$ chance that the sample was chosen incorrectly."
+      ],
+      "ans": 0,
+      "hints": [
+        "Recall the definition of a $p$-value.",
+        "Decide which statements treat $H_0$ as given and which wrongly assign a probability to a hypothesis.",
+        "The $p$-value is the smallest level of significance at which $H_0$ would be rejected; it is $P(\\text{test statistic at least as extreme as observed}\\mid H_0\\text{ true})$."
+      ],
+      "steps": [
+        "The $p$-value is computed assuming $H_0$ is true.",
+        "It is the probability of a test statistic at least as extreme as the observed one, under $H_0$.",
+        "It is not the probability that $H_0$ (or $H_1$) is true, is not a type II error probability, and says nothing about the sample being chosen incorrectly.",
+        "So the correct interpretation is the statement about the extreme test statistic under $H_0$."
+      ],
+      "brief": "$p$-value $=P(\\text{at least as extreme}\\mid H_0\\text{ true})$."
+    },
+    {
+      "sec": "11.2",
+      "q": "Note: For this question, round your calculations to at least 5 decimal places. (Exercise 11-9) An article in Wear (1992, Vol. 152, pp. 171-181) presents data on the fretting wear of mild steel and oil viscosity. Representative data follow with $x=$ oil viscosity and $y=$ wear volume ($10^{-4}$ cubic millimeters).\\[ \\begin{array}{c|ccccccccc} y & 240 & 181 & 193 & 155 & 172 & 110 & 113 & 75 & 94 \\\\ x & 1.6 & 9.4 & 15.5 & 20 & 22 & 35.5 & 43 & 40.5 & 33 \\end{array} \\]\\[ \\sum y_i=1333,\\ \\sum x_i=220.5,\\ \\sum y_i^2=220549,\\ \\sum x_i^2=7053.67,\\ \\sum x_iy_i=26864.4. \\]Fit the simple linear regression model using least squares. For every one unit increase in oil viscosity,",
+      "opts": [
+        "wear volume decrease, on average, by approximately $3.51\\times10^{-4}$ cubic millimeters.",
+        "wear volume increases, on average, by approximately $3.51\\times10^{-4}$ cubic millimeters.",
+        "wear volume decrease, on average, by approximately $234.07\\times10^{-4}$ cubic millimeters.",
+        "wear volume increases, on average, by approximately $234.07\\times10^{-4}$ cubic millimeters.",
+        "wear volume decrease, on average, by approximately $5794.1\\times10^{-4}$ cubic millimeters."
+      ],
+      "ans": 0,
+      "hints": [
+        "The change in $y$ per unit change in $x$ is the slope of the least-squares line.",
+        "Compute $S_{xx}$ and $S_{xy}$ from the given sums and divide; pay attention to the sign.",
+        "$S_{xx}=\\sum x_i^2-\\dfrac{(\\sum x_i)^2}{n}$, $S_{xy}=\\sum x_iy_i-\\dfrac{\\sum x_i\\sum y_i}{n}$, $\\hat\\beta_1=\\dfrac{S_{xy}}{S_{xx}}$."
+      ],
+      "steps": [
+        "$n=9$: $S_{xx}=7053.67-\\dfrac{220.5^2}{9}=1651.42$.",
+        "$S_{xy}=26864.4-\\dfrac{220.5\\cdot1333}{9}=-5794.1$.",
+        "$\\hat\\beta_1=\\dfrac{-5794.1}{1651.42}=-3.5086$.",
+        "The slope is negative, so wear volume decreases by about $3.51\\times10^{-4}$ cubic millimeters per unit of viscosity."
+      ],
+      "brief": "$S_{xy}=-5794.1$, $S_{xx}=1651.42$: $\\hat\\beta_1=-3.51$ (decrease)."
+    },
+    {
+      "sec": "11.2",
+      "q": "Note: For this question, round your calculations to at least 5 decimal places. (Exercise 11-9) An article in Wear (1992, Vol. 152, pp. 171-181) presents data on the fretting wear of mild steel and oil viscosity. Representative data follow with $x=$ oil viscosity and $y=$ wear volume ($10^{-4}$ cubic millimeters).\\[ \\begin{array}{c|ccccccccc} y & 240 & 181 & 193 & 155 & 172 & 110 & 113 & 75 & 94 \\\\ x & 1.6 & 9.4 & 15.5 & 20 & 22 & 35.5 & 43 & 40.5 & 33 \\end{array} \\]\\[ \\sum y_i=1333,\\ \\sum x_i=220.5,\\ \\sum y_i^2=220549,\\ \\sum x_i^2=7053.67,\\ \\sum x_iy_i=26864.4. \\]Fit the simple linear regression model using least squares. An estimate of $\\sigma^2$ is",
+      "opts": [
+        "$398.28$",
+        "$19.96$",
+        "$234.07$",
+        "$2787.94$",
+        "$-3.51$"
+      ],
+      "ans": 0,
+      "hints": [
+        "The estimate of $\\sigma^2$ is the mean square error of the fitted line.",
+        "Find $SS_E$ from $S_{yy}$ and the slope times $S_{xy}$, then divide by the error degrees of freedom.",
+        "$SS_E=S_{yy}-\\hat\\beta_1S_{xy}$ and $\\hat\\sigma^2=\\dfrac{SS_E}{n-2}$."
+      ],
+      "steps": [
+        "$S_{yy}=220549-\\dfrac{1333^2}{9}=23116.8889$.",
+        "$S_{xx}=1651.42$, $S_{xy}=-5794.1$, $\\hat\\beta_1=-3.50856$.",
+        "$SS_E=23116.8889-(-3.50856)(-5794.1)=2787.96$.",
+        "$\\hat\\sigma^2=\\dfrac{2787.96}{9-2}=398.28$."
+      ],
+      "brief": "$SS_E=2787.96$, $\\hat\\sigma^2=SS_E/7=398.28$."
+    },
+    {
+      "sec": "11.5",
+      "q": "Note: For this question, round your calculations to at least 5 decimal places. (Exercise 11-47) An article in Wear (1992, Vol. 152, pp. 171-181) presents data on the fretting wear of mild steel and oil viscosity. Representative data follow with $x=$ oil viscosity and $y=$ wear volume ($10^{-4}$ cubic millimeters).\\[ \\begin{array}{c|ccccccccc} y & 240 & 181 & 193 & 155 & 172 & 110 & 113 & 75 & 94 \\\\ x & 1.6 & 9.4 & 15.5 & 20 & 22 & 35.5 & 43 & 40.5 & 33 \\end{array} \\]\\[ \\sum y_i=1333,\\ \\sum x_i=220.5,\\ \\sum y_i^2=220549,\\ \\sum x_i^2=7053.67,\\ \\sum x_iy_i=26864.4. \\]Fit the simple linear regression model using least squares. Find a $99\\%$ interval estimate on the mean wear when oil viscosity is 36. The upper limit is",
+      "opts": [
+        "$138.30$",
+        "$130.24$",
+        "$183.98$",
+        "$159.28$",
+        "$234.07$"
+      ],
+      "ans": 0,
+      "hints": [
+        "This is a confidence interval on the mean response at a given $x_0$.",
+        "Find the fitted line, evaluate it at $x_0$, compute $\\hat\\sigma^2$ and the standard error, and use the t critical value with $n-2$ degrees of freedom.",
+        "$\\hat\\mu_{Y|x_0}\\pm t_{\\alpha/2,n-2}\\sqrt{\\hat\\sigma^2\\left[\\dfrac1n+\\dfrac{(x_0-\\bar x)^2}{S_{xx}}\\right]}$."
+      ],
+      "steps": [
+        "$\\hat\\beta_1=-3.50856$, $\\hat\\beta_0=148.1111-(-3.50856)(24.5)=234.0707$.",
+        "At $x_0=36$: $\\hat y=234.0707-3.50856(36)=107.7627$.",
+        "$\\hat\\sigma^2=398.28$, $S_{xx}=1651.42$, so SE $=\\sqrt{398.28\\left[\\frac19+\\frac{(36-24.5)^2}{1651.42}\\right]}=8.7263$.",
+        "$t_{0.005,7}=3.4995$, so the upper limit is $107.7627+3.4995(8.7263)=138.30$."
+      ],
+      "brief": "$\\hat y(36)=107.76$, SE $=8.726$, $t_{0.005,7}=3.4995$: upper $=138.30$."
+    },
+    {
+      "sec": "11.8",
+      "q": "(Exercise 11-66) Suppose that data are obtained from 25 pairs of $(x,y)$ and the sample correlation coefficient is $0.48$. To test the presence of linear association between $x$ and $y$ at $5\\%$ level of significance, which one of the following is true?",
+      "opts": [
+        "$0.01<p-\\text{value}<0.02$",
+        "Test Statistics $=2.68$",
+        "We reject $H_0$ if the value of test statistic is greater than $1.714$.",
+        "$0.005<p-\\text{value}<0.01$",
+        "We conclude that there is no significant linear association between $x$ and $y$."
+      ],
+      "ans": 0,
+      "hints": [
+        "Testing for linear association means testing $H_0:\\rho=0$ against $H_1:\\rho\\ne0$ using the correlation coefficient.",
+        "Compute the t statistic from $r$ and $n$, and decide whether the test is two-sided.",
+        "$T_0=\\dfrac{R\\sqrt{n-2}}{\\sqrt{1-R^2}}$ with $n-2$ degrees of freedom; for a two-sided test, $p=2P(T>|t_0|)$ and reject if $|t_0|>t_{\\alpha/2,n-2}$."
+      ],
+      "steps": [
+        "$t_0=\\dfrac{0.48\\sqrt{23}}{\\sqrt{1-0.48^2}}=2.62$ with 23 degrees of freedom.",
+        "The test is two-sided; $t_{0.025,23}=2.069<2.62$, so reject $H_0$ (the cut-off $1.714$ is a one-sided $5\\%$ value).",
+        "Table values $t_{0.01,23}=2.500$ and $t_{0.005,23}=2.807$ give $0.005<P(T>2.62)<0.01$.",
+        "Doubling: $0.01<p<0.02$ (exact $p\\approx0.0152$). There is significant linear association."
+      ],
+      "brief": "$t_0=2.62$, df $=23$, two-sided: $0.01<p<0.02$ ($p\\approx0.015$)."
+    },
+    {
+      "sec": "12.2",
+      "img": "stat201-251-fx-q17.png",
+      "q": "(Exercise 12-26) The electric power consumed each month by a chemical plant is thought to be related to the average ambient temperature ($x_1$), the number of days in the month ($x_2$), the average product purity ($x_3$), and the tons of product produced ($x_4$). The past year's historical data are available and the R output for the fitted regression model is given in the figure. At $10\\%$ level of significance, how many regressors are contributing significantly to the model?",
+      "opts": [
+        "$1$",
+        "$2$",
+        "$0$",
+        "$3$",
+        "$4$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Each t test in the coefficient table tests whether one regressor contributes given the others.",
+        "Compare each regressor's p-value in the last column with the significance level.",
+        "Reject $H_0:\\beta_j=0$ (regressor is significant) when the $p$-value is smaller than $\\alpha$."
+      ],
+      "steps": [
+        "$\\alpha=0.10$.",
+        "$x_1$: $p=0.030<0.10$, significant.",
+        "$x_2$: $p=0.103>0.10$; $x_3$: $p=0.212$; $x_4$: $p=0.415$. None of these is below $0.10$.",
+        "Exactly one regressor is significant."
+      ],
+      "brief": "Only $x_1$ has $p<0.10$ ($0.030$); $x_2$ has $0.103$."
+    },
+    {
+      "sec": "12.1",
+      "img": "stat201-251-fx-q17.png",
+      "q": "(Exercise 12-44) The electric power consumed each month by a chemical plant is thought to be related to the average ambient temperature ($x_1$), the number of days in the month ($x_2$), the average product purity ($x_3$), and the tons of product produced ($x_4$). The past year's historical data are available and the R output for the fitted regression model is given in the figure. What is the estimated mean monthly electric power consumption for a month in which the average ambient temperature is 73, the number of days in the month is 29, the average product purity is 91, and the tons of product produced is 100?",
+      "opts": [
+        "$328.05$",
+        "$451.18$",
+        "$424.27$",
+        "$150.20$",
+        "$123.13$"
+      ],
+      "ans": 0,
+      "hints": [
+        "The estimated mean response is the fitted regression equation evaluated at the given values.",
+        "Read the coefficient estimates from the output and form the fitted equation.",
+        "$\\hat y=\\hat\\beta_0+\\hat\\beta_1x_1+\\hat\\beta_2x_2+\\hat\\beta_3x_3+\\hat\\beta_4x_4$."
+      ],
+      "steps": [
+        "Fitted model: $\\hat y=-123.1312+0.7573x_1+7.5188x_2+2.4831x_3-0.4811x_4$.",
+        "Substitute $x_1=73$, $x_2=29$, $x_3=91$, $x_4=100$.",
+        "$-123.1312+55.2829+218.0452+225.9621-48.11=328.05$."
+      ],
+      "brief": "$\\hat y=-123.1312+0.7573(73)+7.5188(29)+2.4831(91)-0.4811(100)=328.05$."
+    },
+    {
+      "sec": "12.2",
+      "img": "stat201-251-fx-q17.png",
+      "q": "(Exercise 12-26) The electric power consumed each month by a chemical plant is thought to be related to the average ambient temperature ($x_1$), the number of days in the month ($x_2$), the average product purity ($x_3$), and the tons of product produced ($x_4$). The past year's historical data are available and the R output for the fitted regression model is given in the figure. For testing the significance of regression using $\\alpha=0.1$, the decision rule is to reject $H_0$ if",
+      "opts": [
+        "$f_0>2.96$",
+        "$f_0>3.98$",
+        "$f_0<2.96$",
+        "$f_0>4.12$",
+        "$f_0<6.09$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Significance of regression is the overall F test of all slopes being zero.",
+        "Read the numerator and denominator degrees of freedom from the output, and note the test is upper-tailed.",
+        "Reject $H_0:\\beta_1=\\dots=\\beta_k=0$ if $f_0>f_{\\alpha,k,n-k-1}$, where $f_0=\\dfrac{SS_R/k}{SS_E/(n-k-1)}$."
+      ],
+      "steps": [
+        "$H_0:\\beta_1=\\beta_2=\\beta_3=\\beta_4=0$; the F statistic has $4$ and $7$ degrees of freedom (from the output).",
+        "The test is upper-tailed with $\\alpha=0.10$: reject if $f_0>f_{0.10,4,7}$.",
+        "$f_{0.10,4,7}=2.96$, so reject $H_0$ if $f_0>2.96$."
+      ],
+      "brief": "Reject if $f_0>f_{0.10,4,7}=2.96$."
+    },
+    {
+      "sec": "12.5.1",
+      "img": "stat201-251-fx-q20.png",
+      "q": "(Example 12-10, Page 490) The figure shows a residuals versus fitted-values plot ($e_i$ against $\\hat y_i$) from a multiple linear regression model with response $Y$ and three predictors $x_1$, $x_2$, and $x_3$. Based on this plot, which of the following statements best describes the model assumptions?",
+      "opts": [
+        "Linearity assumption is violated.",
+        "Independence assumption is violated.",
+        "Constant variance (homoscedasticity) assumption is violated.",
+        "Normality assumption is violated.",
+        "Normality and independence are both violated."
+      ],
+      "ans": 0,
+      "hints": [
+        "A residual plot should show a patternless random scatter around zero if the model assumptions hold.",
+        "Describe the overall shape of the points relative to the zero line: is it a funnel, a curve, or a random band?",
+        "A curved (systematic) pattern in $e_i$ versus $\\hat y_i$ indicates that the mean function is not linear; a funnel shape indicates non-constant variance."
+      ],
+      "steps": [
+        "Residuals are positive for small fitted values, mostly negative for middle fitted values, and positive again for large fitted values.",
+        "This U-shaped (curved) pattern means the residuals are not centred at zero across the range of $\\hat y$.",
+        "The spread is roughly similar across the range (no funnel), so the problem is the model form.",
+        "Linearity is violated."
+      ],
+      "brief": "U-shaped residual pattern: linearity violated."
+    }
+  ]
+}

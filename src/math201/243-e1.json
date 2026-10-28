@@ -1,0 +1,364 @@
+{
+  "course": "math201",
+  "term": "243",
+  "kind": "e1",
+  "date": "2 July 2025",
+  "minutes": 90,
+  "source": "math201-243-e1.pdf",
+  "note": "Date and net time (90 minutes) are printed on the cover. All 15 master keys were checked and agree with my own work (sympy used for Q1, Q3, Q4, Q5, Q8, Q9). Q8 (surface area for a polar curve revolved about theta = pi/2) and Q9 are in 10.5 by textbook location.",
+  "qs": [
+    {
+      "sec": "10.2",
+      "q": "A rectangular equation of the parametric curve \\[ x=2\\cot\\theta \\ \\text{ and } \\ y=4\\sin\\theta\\cos\\theta, \\qquad 0<\\theta<\\pi \\] is",
+      "opts": [
+        "$y(4+x^2)=8x$",
+        "$y(4+x^2)=16x$",
+        "$y(4-x^2)=-8x$",
+        "$4+x^2=y^2$",
+        "$4+y^2=x^2$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Eliminate the parameter by writing $y$ in terms of $\\cot\\theta$ only.",
+        "Divide $\\sin\\theta\\cos\\theta$ by $\\sin^2\\theta+\\cos^2\\theta=1$, then divide top and bottom by $\\sin^2\\theta$.",
+        "$\\sin\\theta\\cos\\theta=\\dfrac{\\sin\\theta\\cos\\theta}{\\sin^2\\theta+\\cos^2\\theta}=\\dfrac{\\cot\\theta}{1+\\cot^2\\theta}$."
+      ],
+      "steps": [
+        "$\\sin\\theta\\cos\\theta=\\dfrac{\\cot\\theta}{1+\\cot^2\\theta}$ (divide numerator and denominator by $\\sin^2\\theta$).",
+        "Since $x=2\\cot\\theta$, $\\cot\\theta=\\dfrac x2$, so $y=4\\cdot\\dfrac{x/2}{1+x^2/4}$.",
+        "$y=\\dfrac{2x}{1+x^2/4}=\\dfrac{8x}{4+x^2}$.",
+        "Hence $y(4+x^2)=8x$."
+      ],
+      "brief": "$\\sin\\theta\\cos\\theta=\\frac{\\cot\\theta}{1+\\cot^2\\theta}$ gives $y=\\frac{8x}{4+x^2}$, i.e. $y(4+x^2)=8x$."
+    },
+    {
+      "sec": "10.2",
+      "q": "A set of parametric equations of the line passing through $(-3,1)$ and $(1,9)$ is",
+      "opts": [
+        "$x=-3+t,\\ y=1+2t$",
+        "$x=-3+2t,\\ y=1+t$",
+        "$x=1+4t,\\ y=9+t$",
+        "$x=1-t,\\ y=9+2t$",
+        "$x=-3t,\\ y=t$"
+      ],
+      "ans": 0,
+      "hints": [
+        "A line is described by a point on it and a direction vector.",
+        "Find the direction from the difference of the two given points, then check that each choice passes through one of the points with a parallel direction.",
+        "A line through $(x_1,y_1)$ and $(x_2,y_2)$ is $x=x_1+t(x_2-x_1)$, $y=y_1+t(y_2-y_1)$; any direction vector parallel to $(x_2-x_1,\\,y_2-y_1)$ works."
+      ],
+      "steps": [
+        "Direction vector: $(1-(-3),\\,9-1)=(4,8)$, which is parallel to $(1,2)$.",
+        "A line through $(-3,1)$ with direction $(1,2)$ is $x=-3+t$, $y=1+2t$.",
+        "Check: at $t=4$ we get $(1,9)$, the second point.",
+        "The other choices have the wrong direction (slope not $2$) or do not pass through the points."
+      ],
+      "brief": "Direction $(4,8)\\parallel(1,2)$ through $(-3,1)$: $x=-3+t,\\ y=1+2t$."
+    },
+    {
+      "sec": "10.3",
+      "q": "The slope of the parametric curve \\[ x=-4\\cos\\theta,\\quad y=4\\sin\\theta \\] at $\\theta=\\dfrac{\\pi}{4}$ is",
+      "opts": [
+        "$1$",
+        "$-1$",
+        "$4$",
+        "$-4$",
+        "$\\dfrac{\\sqrt2}{2}$"
+      ],
+      "ans": 0,
+      "hints": [
+        "The slope of a parametric curve comes from the derivatives of $x$ and $y$ with respect to the parameter.",
+        "Compute $dx/d\\theta$ and $dy/d\\theta$, divide, then substitute the given angle.",
+        "$\\dfrac{dy}{dx}=\\dfrac{dy/d\\theta}{dx/d\\theta}$ whenever $dx/d\\theta\\neq0$."
+      ],
+      "steps": [
+        "$\\dfrac{dx}{d\\theta}=4\\sin\\theta$ and $\\dfrac{dy}{d\\theta}=4\\cos\\theta$.",
+        "$\\dfrac{dy}{dx}=\\dfrac{4\\cos\\theta}{4\\sin\\theta}=\\cot\\theta$.",
+        "At $\\theta=\\dfrac\\pi4$: $\\cot\\dfrac\\pi4=1$."
+      ],
+      "brief": "$\\frac{dy}{dx}=\\frac{4\\cos\\theta}{4\\sin\\theta}=\\cot\\theta=1$ at $\\theta=\\frac\\pi4$."
+    },
+    {
+      "sec": "10.3",
+      "q": "The parametric curve $x=\\cos\\theta+\\theta\\sin\\theta,\\ y=\\sin\\theta-\\theta\\cos\\theta$ has",
+      "opts": [
+        "a horizontal tangent at $\\theta=\\pi$",
+        "a vertical tangent at $\\theta=-\\dfrac{\\pi}{4}$",
+        "a horizontal tangent at $\\theta=\\dfrac{\\pi}{2}$",
+        "a vertical tangent at $\\theta=\\dfrac{\\pi}{4}$",
+        "a horizontal tangent at $\\theta=\\dfrac{3\\pi}{2}$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Horizontal and vertical tangents are found from where $dy/d\\theta$ or $dx/d\\theta$ is zero.",
+        "Differentiate $x$ and $y$ with respect to $\\theta$, simplify, and test each given angle.",
+        "A horizontal tangent needs $dy/d\\theta=0$ with $dx/d\\theta\\neq0$; a vertical tangent needs $dx/d\\theta=0$ with $dy/d\\theta\\neq0$."
+      ],
+      "steps": [
+        "$\\dfrac{dx}{d\\theta}=-\\sin\\theta+\\sin\\theta+\\theta\\cos\\theta=\\theta\\cos\\theta$.",
+        "$\\dfrac{dy}{d\\theta}=\\cos\\theta-\\cos\\theta+\\theta\\sin\\theta=\\theta\\sin\\theta$.",
+        "At $\\theta=\\pi$: $dy/d\\theta=0$ and $dx/d\\theta=-\\pi\\neq0$, so the tangent is horizontal.",
+        "At $\\pm\\frac\\pi4$ both derivatives are nonzero, and at $\\frac\\pi2$, $\\frac{3\\pi}{2}$ we have $dy/d\\theta\\neq0$, so none of those statements holds."
+      ],
+      "brief": "$x'=\\theta\\cos\\theta$, $y'=\\theta\\sin\\theta$: at $\\theta=\\pi$, $y'=0$, $x'\\neq0$, horizontal."
+    },
+    {
+      "sec": "10.3",
+      "q": "The length of the parametric curve \\[ x=e^{-t}\\cos t,\\quad y=e^{-t}\\sin t,\\qquad 0\\le t\\le1 \\] is equal to",
+      "opts": [
+        "$\\sqrt2\\,(1-e^{-1})$",
+        "$2\\sqrt2\\,e^{-1}$",
+        "$1+e$",
+        "$1-e^{-1}$",
+        "$1+e^{-1}$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Use the arc length formula for a parametric curve.",
+        "Differentiate $x$ and $y$, square, add, and simplify using $\\sin^2t+\\cos^2t=1$ before integrating.",
+        "$L=\\int_a^b\\sqrt{\\left(\\dfrac{dx}{dt}\\right)^2+\\left(\\dfrac{dy}{dt}\\right)^2}\\,dt$."
+      ],
+      "steps": [
+        "$x'=-e^{-t}\\cos t-e^{-t}\\sin t$ and $y'=-e^{-t}\\sin t+e^{-t}\\cos t$.",
+        "$(x')^2+(y')^2=e^{-2t}\\left[(\\cos t+\\sin t)^2+(\\cos t-\\sin t)^2\\right]=2e^{-2t}$.",
+        "$L=\\int_0^1\\sqrt2\\,e^{-t}\\,dt=\\sqrt2\\left[-e^{-t}\\right]_0^1$.",
+        "$L=\\sqrt2\\,(1-e^{-1})$."
+      ],
+      "brief": "$(x')^2+(y')^2=2e^{-2t}$, so $L=\\sqrt2\\int_0^1e^{-t}dt=\\sqrt2(1-e^{-1})$."
+    },
+    {
+      "sec": "10.4",
+      "q": "The polar curve $r=5\\cos\\theta$ is a circle with center $C(a,b)$ and radius $c$. Then $a+b+c=$",
+      "opts": [
+        "$5$",
+        "$\\dfrac52$",
+        "$10$",
+        "$\\dfrac{15}{2}$",
+        "$20$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Convert the polar equation to a rectangular equation and complete the square.",
+        "Multiply both sides by $r$ and replace $r^2$ and $r\\cos\\theta$ by rectangular expressions.",
+        "$x=r\\cos\\theta$, $y=r\\sin\\theta$, $r^2=x^2+y^2$; a circle is $(x-a)^2+(y-b)^2=c^2$."
+      ],
+      "steps": [
+        "Multiply by $r$: $r^2=5r\\cos\\theta$, so $x^2+y^2=5x$.",
+        "Complete the square: $\\left(x-\\dfrac52\\right)^2+y^2=\\dfrac{25}{4}$.",
+        "Center $\\left(\\dfrac52,0\\right)$ and radius $\\dfrac52$, so $a=\\dfrac52$, $b=0$, $c=\\dfrac52$.",
+        "$a+b+c=5$."
+      ],
+      "brief": "$x^2+y^2=5x$: center $(\\frac52,0)$, radius $\\frac52$, so $a+b+c=5$."
+    },
+    {
+      "sec": "10.4",
+      "q": "A rectangular equation of the polar curve $\\theta=\\dfrac{3\\pi}{4}$ is",
+      "opts": [
+        "$y=-x$",
+        "$y=x$",
+        "$y=\\dfrac{\\sqrt2}{2}x$",
+        "$y=-\\dfrac{\\sqrt2}{2}x$",
+        "$y=-x+1$"
+      ],
+      "ans": 0,
+      "hints": [
+        "A polar equation $\\theta=$ constant describes a line through the origin.",
+        "Use the relation between $\\theta$, $x$ and $y$ and evaluate the tangent of the given angle.",
+        "$\\tan\\theta=\\dfrac yx$, so $\\theta=\\theta_0$ gives the line $y=(\\tan\\theta_0)\\,x$."
+      ],
+      "steps": [
+        "$\\tan\\theta=\\dfrac yx$, so $\\dfrac yx=\\tan\\dfrac{3\\pi}{4}$.",
+        "$\\tan\\dfrac{3\\pi}{4}=-1$.",
+        "Therefore $y=-x$."
+      ],
+      "brief": "$\\frac yx=\\tan\\frac{3\\pi}{4}=-1$, so $y=-x$."
+    },
+    {
+      "sec": "10.5",
+      "q": "The area of the surface formed by revolving the circle $r=2\\cos\\theta$, $\\theta\\in[0,\\pi]$ about the line $\\theta=\\dfrac{\\pi}{2}$ is",
+      "opts": [
+        "$4\\pi^2$",
+        "$\\pi^2$",
+        "$\\pi$",
+        "$2\\pi$",
+        "$4\\pi$"
+      ],
+      "ans": 0,
+      "hints": [
+        "This is the surface area of revolution for a polar curve about the line $\\theta=\\pi/2$ (the $y$-axis).",
+        "Find the distance from a point of the curve to the axis, and the arc length element $\\sqrt{r^2+(r')^2}\\,d\\theta$.",
+        "For revolution about $\\theta=\\frac\\pi2$: $S=2\\pi\\int_\\alpha^\\beta r\\cos\\theta\\,\\sqrt{r^2+\\left(\\dfrac{dr}{d\\theta}\\right)^2}\\,d\\theta$."
+      ],
+      "steps": [
+        "$r'=-2\\sin\\theta$, so $r^2+(r')^2=4\\cos^2\\theta+4\\sin^2\\theta=4$ and the square root is $2$.",
+        "$r\\cos\\theta=2\\cos^2\\theta\\ge0$, so $S=2\\pi\\int_0^\\pi 2\\cos^2\\theta\\cdot2\\,d\\theta=8\\pi\\int_0^\\pi\\cos^2\\theta\\,d\\theta$.",
+        "$\\int_0^\\pi\\cos^2\\theta\\,d\\theta=\\dfrac\\pi2$.",
+        "$S=8\\pi\\cdot\\dfrac\\pi2=4\\pi^2$."
+      ],
+      "brief": "$S=2\\pi\\int_0^\\pi r\\cos\\theta\\sqrt{r^2+r'^2}\\,d\\theta=8\\pi\\int_0^\\pi\\cos^2\\theta\\,d\\theta=4\\pi^2$."
+    },
+    {
+      "sec": "10.5",
+      "q": "The area of the inner loop of $r=1+2\\sin\\theta$ is",
+      "opts": [
+        "$\\int_{7\\pi/6}^{3\\pi/2}(1+2\\sin\\theta)^2\\,d\\theta$",
+        "$\\int_{\\pi/6}^{\\pi/2}(1+2\\sin\\theta)^2\\,d\\theta$",
+        "$\\dfrac12\\int_{\\pi/6}^{5\\pi/6}(1+2\\sin\\theta)^2\\,d\\theta$",
+        "$\\dfrac12\\int_{-\\pi/6}^{\\pi/6}(1+2\\sin\\theta)^2\\,d\\theta$",
+        "$\\dfrac12\\int_{0}^{2\\pi}(1+2\\sin\\theta)^2\\,d\\theta$"
+      ],
+      "ans": 0,
+      "hints": [
+        "The inner loop of this limacon is traced while $r$ is negative.",
+        "Find the angles where $r=0$ to get the limits of the inner loop, then use the polar area formula and symmetry about the vertical axis.",
+        "$A=\\dfrac12\\int_\\alpha^\\beta r^2\\,d\\theta$; if the loop is symmetric about its middle angle, the full area is twice the half-loop integral."
+      ],
+      "steps": [
+        "$r=0$ when $\\sin\\theta=-\\dfrac12$, i.e. $\\theta=\\dfrac{7\\pi}{6}$ and $\\dfrac{11\\pi}{6}$; the inner loop is for $\\dfrac{7\\pi}{6}\\le\\theta\\le\\dfrac{11\\pi}{6}$.",
+        "$A=\\dfrac12\\int_{7\\pi/6}^{11\\pi/6}(1+2\\sin\\theta)^2\\,d\\theta$.",
+        "The loop is symmetric about $\\theta=\\dfrac{3\\pi}{2}$, so $A=2\\cdot\\dfrac12\\int_{7\\pi/6}^{3\\pi/2}(1+2\\sin\\theta)^2\\,d\\theta$.",
+        "This is $\\int_{7\\pi/6}^{3\\pi/2}(1+2\\sin\\theta)^2\\,d\\theta$."
+      ],
+      "brief": "Inner loop $\\frac{7\\pi}{6}\\le\\theta\\le\\frac{11\\pi}{6}$; by symmetry $A=\\int_{7\\pi/6}^{3\\pi/2}r^2\\,d\\theta$."
+    },
+    {
+      "sec": "11.1",
+      "q": "Which one of the following vectors is perpendicular to the tangent to the graph of $f(x)=\\sqrt{25-x^2}$ at the point $(4,3)$?",
+      "opts": [
+        "$\\langle 4,3\\rangle$",
+        "$\\langle -4,3\\rangle$",
+        "$\\langle 3,4\\rangle$",
+        "$\\langle -3,4\\rangle$",
+        "$\\langle 4,4\\rangle$"
+      ],
+      "ans": 0,
+      "hints": [
+        "First find the direction of the tangent line, then use the condition for perpendicular vectors.",
+        "Compute $f'(4)$ to get the slope, write a tangent direction vector $\\langle 1,m\\rangle$, and test the choices with the dot product.",
+        "Two vectors are perpendicular if and only if their dot product is $0$; a line of slope $m$ has direction vector $\\langle 1,m\\rangle$."
+      ],
+      "steps": [
+        "$f'(x)=\\dfrac{-x}{\\sqrt{25-x^2}}$, so $f'(4)=-\\dfrac43$.",
+        "A tangent direction vector is $\\langle 1,-\\tfrac43\\rangle$, or $\\langle 3,-4\\rangle$.",
+        "Dot products with $\\langle3,-4\\rangle$: $\\langle4,3\\rangle$ gives $12-12=0$.",
+        "The others give $-24$, $-7$, $-25$ and $-4$, so only $\\langle4,3\\rangle$ is perpendicular."
+      ],
+      "brief": "Tangent direction $\\langle3,-4\\rangle$ (slope $-\\frac43$); only $\\langle4,3\\rangle$ has dot product $0$."
+    },
+    {
+      "sec": "11.1",
+      "q": "Let $\\vec u=\\langle a,b\\rangle$ be the vector of magnitude $2$ in the same direction as $\\langle\\sqrt3,3\\rangle$. Then $a+b^2=$",
+      "opts": [
+        "$4$",
+        "$3$",
+        "$2$",
+        "$1$",
+        "$\\sqrt3$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Build a unit vector in the given direction and scale it.",
+        "Compute the length of $\\langle\\sqrt3,3\\rangle$, divide by it, then multiply by the required magnitude.",
+        "The vector of magnitude $m$ in the direction of $\\mathbf v$ is $m\\,\\dfrac{\\mathbf v}{\\|\\mathbf v\\|}$."
+      ],
+      "steps": [
+        "$\\|\\langle\\sqrt3,3\\rangle\\|=\\sqrt{3+9}=2\\sqrt3$.",
+        "$\\vec u=2\\cdot\\dfrac{\\langle\\sqrt3,3\\rangle}{2\\sqrt3}=\\langle1,\\sqrt3\\rangle$.",
+        "So $a=1$, $b=\\sqrt3$, and $a+b^2=1+3=4$."
+      ],
+      "brief": "$\\vec u=2\\frac{\\langle\\sqrt3,3\\rangle}{2\\sqrt3}=\\langle1,\\sqrt3\\rangle$, so $a+b^2=4$."
+    },
+    {
+      "sec": "11.2",
+      "q": "If $R(a,b,c)$ is the point that lies one-third of the way from $P(1,2,5)$ to $Q(6,8,2)$, then $3a+b+c=$",
+      "opts": [
+        "$16$",
+        "$\\dfrac83$",
+        "$0$",
+        "$\\dfrac43$",
+        "$8$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Move from $P$ toward $Q$ by a fraction of the displacement vector.",
+        "Compute $\\overrightarrow{PQ}$, take one-third of it, and add it to the coordinates of $P$.",
+        "The point a fraction $t$ of the way from $P$ to $Q$ is $P+t\\,\\overrightarrow{PQ}$."
+      ],
+      "steps": [
+        "$\\overrightarrow{PQ}=\\langle5,6,-3\\rangle$.",
+        "$R=P+\\dfrac13\\overrightarrow{PQ}=\\left(1+\\dfrac53,\\,2+2,\\,5-1\\right)=\\left(\\dfrac83,4,4\\right)$.",
+        "$3a+b+c=8+4+4=16$."
+      ],
+      "brief": "$R=P+\\frac13\\overrightarrow{PQ}=(\\frac83,4,4)$, so $3a+b+c=16$."
+    },
+    {
+      "sec": "11.3",
+      "q": "Let $\\langle a,b,c\\rangle$ be the vector projection of $\\vec u=\\langle3,-5,2\\rangle$ onto $\\vec v=\\langle7,1,-2\\rangle$. Then $a+b+c=$",
+      "opts": [
+        "$\\dfrac43$",
+        "$\\dfrac79$",
+        "$\\dfrac{14}{9}$",
+        "$\\dfrac19$",
+        "$-\\dfrac53$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Use the vector projection formula from the dot product section.",
+        "Compute $\\vec u\\cdot\\vec v$ and $\\|\\vec v\\|^2$, form the scalar, and multiply it by $\\vec v$.",
+        "$\\operatorname{proj}_{\\mathbf v}\\mathbf u=\\dfrac{\\mathbf u\\cdot\\mathbf v}{\\mathbf v\\cdot\\mathbf v}\\,\\mathbf v$."
+      ],
+      "steps": [
+        "$\\vec u\\cdot\\vec v=21-5-4=12$ and $\\vec v\\cdot\\vec v=49+1+4=54$.",
+        "$\\operatorname{proj}_{\\vec v}\\vec u=\\dfrac{12}{54}\\langle7,1,-2\\rangle=\\dfrac29\\langle7,1,-2\\rangle$.",
+        "$a+b+c=\\dfrac29(7+1-2)=\\dfrac{12}{9}=\\dfrac43$."
+      ],
+      "brief": "$\\frac{u\\cdot v}{v\\cdot v}=\\frac{12}{54}=\\frac29$; sum of components of $\\frac29 v$ is $\\frac{12}{9}=\\frac43$."
+    },
+    {
+      "sec": "11.4",
+      "q": "Consider the following three vectors \\[ \\vec u=\\langle b,-5,1\\rangle,\\quad \\vec v=\\langle0,1,-1\\rangle,\\quad \\vec w=\\langle3,1,1\\rangle. \\] If $\\vec u\\cdot(\\vec v\\times\\vec w)=36$, then $b=$",
+      "opts": [
+        "$12$",
+        "$6$",
+        "$10$",
+        "$3$",
+        "$4$"
+      ],
+      "ans": 0,
+      "hints": [
+        "This is a scalar triple product, which can be written as a determinant.",
+        "Compute $\\vec v\\times\\vec w$ first, then take the dot product with $\\vec u$ and set it equal to the given value.",
+        "$\\mathbf u\\cdot(\\mathbf v\\times\\mathbf w)$ equals the determinant of the matrix with rows $\\mathbf u,\\mathbf v,\\mathbf w$; and $\\mathbf v\\times\\mathbf w=\\begin{vmatrix}\\mathbf i&\\mathbf j&\\mathbf k\\\\v_1&v_2&v_3\\\\w_1&w_2&w_3\\end{vmatrix}$."
+      ],
+      "steps": [
+        "$\\vec v\\times\\vec w=\\langle(1)(1)-(-1)(1),\\ (-1)(3)-(0)(1),\\ (0)(1)-(1)(3)\\rangle=\\langle2,-3,-3\\rangle$.",
+        "$\\vec u\\cdot(\\vec v\\times\\vec w)=2b+15-3=2b+12$.",
+        "$2b+12=36$, so $b=12$."
+      ],
+      "brief": "$\\vec v\\times\\vec w=\\langle2,-3,-3\\rangle$, so $2b+12=36$ and $b=12$."
+    },
+    {
+      "sec": "11.4",
+      "q": "A vector orthogonal to both $\\vec u=\\langle-3,2,-5\\rangle$ and $\\vec v=\\langle1,-1,4\\rangle$ is",
+      "opts": [
+        "$\\langle3,7,1\\rangle$",
+        "$\\langle-3,-2,1\\rangle$",
+        "$\\langle3,7,3\\rangle$",
+        "$\\langle-1,1,1\\rangle$",
+        "$\\langle-4,0,1\\rangle$"
+      ],
+      "ans": 0,
+      "hints": [
+        "The cross product of two vectors is orthogonal to both of them.",
+        "Compute $\\vec u\\times\\vec v$ with the determinant formula.",
+        "$\\mathbf u\\times\\mathbf v=\\begin{vmatrix}\\mathbf i&\\mathbf j&\\mathbf k\\\\u_1&u_2&u_3\\\\v_1&v_2&v_3\\end{vmatrix}$, and any nonzero multiple of it is also orthogonal to both."
+      ],
+      "steps": [
+        "$\\vec u\\times\\vec v=\\langle(2)(4)-(-5)(-1),\\ (-5)(1)-(-3)(4),\\ (-3)(-1)-(2)(1)\\rangle$.",
+        "$=\\langle8-5,\\ -5+12,\\ 3-2\\rangle=\\langle3,7,1\\rangle$.",
+        "Check: $\\langle3,7,1\\rangle\\cdot\\vec u=-9+14-5=0$ and $\\cdot\\vec v=3-7+4=0$."
+      ],
+      "brief": "$\\vec u\\times\\vec v=\\langle3,7,1\\rangle$, and both dot products with $\\vec u,\\vec v$ are $0$."
+    }
+  ]
+}

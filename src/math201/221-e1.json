@@ -1,0 +1,481 @@
+{
+  "course": "math201",
+  "term": "221",
+  "kind": "e1",
+  "date": "",
+  "minutes": 90,
+  "source": "math201-221-e1.pdf",
+  "note": "The scan has no cover page, so the date and exam length are not printed; date left empty and 90 minutes assumed as the usual major exam length. The master key is (a) for all 20 questions (consistent with the handwritten solutions on the master and with sympy checks). The handwritten solutions and textbook references on the scan were not transcribed. Q8: the tangent at the pole (0,pi/2) is vertical, and (3,pi/2) is not on the curve; the other vertical-tangent point (3,0) is not offered. Q3: theta=pi/2 and 3pi/2 are singular points (dx and dy both vanish) but the limiting slope is infinite there, giving the vertical line x=0.",
+  "qs": [
+    {
+      "sec": "10.2",
+      "q": "A particle moves three times, counterclockwise, along the circle \\[ x^2+(y-1)^2=9. \\] If the particle starts at the point $(3,1)$, then the parametric equations of the path of the particle are",
+      "opts": [
+        "$x=3\\cos t,\\ y=1+3\\sin t,\\ 0\\le t\\le 6\\pi$",
+        "$x=3\\cos t,\\ y=1-3\\sin t,\\ 0\\le t\\le 6\\pi$",
+        "$x=3\\sin t,\\ y=1+3\\cos t,\\ 0\\le t\\le 6\\pi$",
+        "$x=3\\cos(3t),\\ y=1-3\\sin(3t),\\ 0\\le t\\le 2\\pi$",
+        "$x=3\\sin(3t),\\ y=1+3\\cos(3t),\\ 0\\le t\\le 2\\pi$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Parametrize a circle with cosine and sine, then check the starting point, the direction and the number of turns.",
+        "Write the circle with centre and radius read from the equation, evaluate at the first parameter value to check the start, and see whether the angle increases or decreases.",
+        "A circle with centre $(h,k)$ and radius $r$ is $x=h+r\\cos t,\\ y=k+r\\sin t$; it is traced counterclockwise as $t$ increases, one full turn per length $2\\pi$ of the parameter interval."
+      ],
+      "steps": [
+        "The circle has centre $(0,1)$ and radius $3$, so $x=3\\cos t$, $y=1+3\\sin t$ is a parametrization.",
+        "At $t=0$ this gives $(3,1)$, the required starting point.",
+        "As $t$ increases, $(\\cos t,\\sin t)$ moves counterclockwise.",
+        "Three full turns need $t$ to run over a length $3\\cdot2\\pi$, so $0\\le t\\le 6\\pi$."
+      ],
+      "brief": "Centre $(0,1)$, $r=3$: $x=3\\cos t,\\ y=1+3\\sin t$, $0\\le t\\le6\\pi$ (three turns)."
+    },
+    {
+      "sec": "10.2",
+      "q": "The curve given parametrically by \\[ x=\\tan\\theta,\\quad y=2\\sec\\theta,\\quad -\\pi/2<\\theta<\\pi/2 \\] is",
+      "opts": [
+        "a hyperbola",
+        "an ellipse",
+        "a parabola with horizontal axis of symmetry",
+        "a parabola with vertical axis of symmetry",
+        "a straight line"
+      ],
+      "ans": 0,
+      "hints": [
+        "Eliminate the parameter using a trigonometric identity.",
+        "Solve each equation for $\\tan\\theta$ and $\\sec\\theta$ and substitute into an identity relating them.",
+        "The identity $1+\\tan^2\\theta=\\sec^2\\theta$; the equation $\\dfrac{y^2}{a^2}-\\dfrac{x^2}{b^2}=1$ is a hyperbola, while a sum of two positive squares equal to a constant gives an ellipse."
+      ],
+      "steps": [
+        "$\\tan\\theta=x$ and $\\sec\\theta=\\dfrac y2$.",
+        "Use $1+\\tan^2\\theta=\\sec^2\\theta$: $1+x^2=\\dfrac{y^2}{4}$.",
+        "So $\\dfrac{y^2}{4}-x^2=1$, which is a hyperbola (here only the branch with $y>0$ since $\\sec\\theta>0$)."
+      ],
+      "brief": "$1+x^2=y^2/4$, i.e. $\\frac{y^2}{4}-x^2=1$: a hyperbola."
+    },
+    {
+      "sec": "10.3",
+      "q": "The curve given by the parametric equations \\[ x=2\\cos^3\\theta,\\qquad y=2\\sin^3\\theta,\\quad 0\\le\\theta<\\frac{7\\pi}{4} \\] has",
+      "opts": [
+        "only one horizontal and only one vertical tangent lines",
+        "only one horizontal tangent line and no vertical tangent line",
+        "no horizontal tangent line and only one vertical tangent line",
+        "two horizontal and one vertical tangent lines",
+        "one horizontal and two vertical tangent lines"
+      ],
+      "ans": 0,
+      "hints": [
+        "Horizontal and vertical tangents come from $dy/d\\theta$ and $dx/d\\theta$, but be careful where both vanish.",
+        "Compute $dy/dx$ as a function of $\\theta$, find where it is $0$ and where it is infinite in the given range, then see which values give the same line.",
+        "For $x(\\theta),y(\\theta)$: $\\dfrac{dy}{dx}=\\dfrac{dy/d\\theta}{dx/d\\theta}$; the tangent is horizontal where the slope is $0$ and vertical where the slope is infinite. Count distinct lines, not parameter values."
+      ],
+      "steps": [
+        "$\\dfrac{dx}{d\\theta}=-6\\cos^2\\theta\\sin\\theta$ and $\\dfrac{dy}{d\\theta}=6\\sin^2\\theta\\cos\\theta$, so $\\dfrac{dy}{dx}=-\\tan\\theta$.",
+        "Slope $0$: $\\theta=0,\\pi$. Both points have $y=0$, so they give the single line $y=0$.",
+        "Slope infinite: $\\theta=\\dfrac{\\pi}{2},\\dfrac{3\\pi}{2}$ (both in $[0,7\\pi/4)$). Both points have $x=0$, so they give the single line $x=0$.",
+        "So there is one horizontal and one vertical tangent line."
+      ],
+      "brief": "$dy/dx=-\\tan\\theta$: slope $0$ gives only $y=0$, slope $\\infty$ gives only $x=0$."
+    },
+    {
+      "sec": "10.3",
+      "q": "The curve given by the parametric equations \\[ x=t^3-3t\\quad\\text{and}\\quad y=t^2 \\] is",
+      "opts": [
+        "concave up when $-1<t<1$",
+        "concave down when $t<0$",
+        "concave up when $t>0$",
+        "concave down when $-\\dfrac12<t<\\dfrac12$",
+        "concave up when $t>1$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Concavity is decided by the sign of $d^2y/dx^2$.",
+        "Find $dy/dx$ as a function of $t$, then differentiate it with respect to $t$ and divide by $dx/dt$.",
+        "$\\dfrac{d^2y}{dx^2}=\\dfrac{\\frac{d}{dt}\\left(\\frac{dy}{dx}\\right)}{dx/dt}$; the curve is concave up where this is positive and concave down where it is negative."
+      ],
+      "steps": [
+        "$\\dfrac{dy}{dx}=\\dfrac{2t}{3t^2-3}=\\dfrac{2t}{3(t^2-1)}$.",
+        "$\\dfrac{d}{dt}\\left(\\dfrac{dy}{dx}\\right)=\\dfrac{2(t^2-1)-4t^2}{3(t^2-1)^2}=\\dfrac{-2(t^2+1)}{3(t^2-1)^2}$.",
+        "Divide by $dx/dt=3(t^2-1)$: $\\dfrac{d^2y}{dx^2}=\\dfrac{-2(t^2+1)}{9(t^2-1)^3}$.",
+        "The numerator is always negative, so the sign is that of $-(t^2-1)^3$: positive when $-1<t<1$ (concave up), negative when $|t|>1$."
+      ],
+      "brief": "$y''=\\frac{-2(t^2+1)}{9(t^2-1)^3}>0$ exactly for $-1<t<1$: concave up there."
+    },
+    {
+      "sec": "10.3",
+      "q": "The area of the region enclosed by the curve that is given by the parametric equations $x=2\\cos\\theta,\\ y=\\dfrac12\\sin\\theta,\\ 0\\le\\theta\\le2\\pi$, is",
+      "opts": [
+        "$\\pi$",
+        "$3\\pi$",
+        "$0$",
+        "$2\\pi$",
+        "$4\\pi$"
+      ],
+      "ans": 0,
+      "hints": [
+        "The curve is symmetric about both axes, so the area is a multiple of the area in one quadrant.",
+        "Use the symmetry to integrate over the first quadrant, and change the variable of integration from $x$ to $\\theta$.",
+        "For a parametric curve the area under it is $\\int y\\,dx=\\int y(\\theta)\\,x'(\\theta)\\,d\\theta$ (with limits matching the $x$-limits), and $\\sin^2\\theta=\\dfrac{1-\\cos2\\theta}{2}$."
+      ],
+      "steps": [
+        "The curve is an ellipse; area $=4\\int_{0}^{2}y\\,dx$, and $x:0\\to2$ corresponds to $\\theta:\\dfrac\\pi2\\to0$.",
+        "$A=4\\int_{\\pi/2}^{0}\\dfrac12\\sin\\theta\\,(-2\\sin\\theta)\\,d\\theta=4\\int_0^{\\pi/2}\\sin^2\\theta\\,d\\theta$.",
+        "$=4\\cdot\\dfrac{\\pi}{4}=\\pi$."
+      ],
+      "brief": "Ellipse $\\frac{x^2}{4}+4y^2=1$: $A=4\\int_0^{\\pi/2}\\sin^2\\theta\\,d\\theta=\\pi$."
+    },
+    {
+      "sec": "10.3",
+      "q": "The surface area of the solid generated by rotating the curve given by the parametric equations \\[ x=6t,\\quad y=3t^2,\\quad 0\\le t\\le1, \\] about the $y$-axis is",
+      "opts": [
+        "$24\\pi\\left[2\\sqrt2-1\\right]$",
+        "$12\\pi\\left[\\sqrt2-1\\right]$",
+        "$9\\pi\\left[1-2\\sqrt2\\right]$",
+        "$6\\pi\\left[\\sqrt2+1\\right]$",
+        "$3\\pi\\left[2-\\sqrt2\\right]$"
+      ],
+      "ans": 0,
+      "hints": [
+        "This is a surface of revolution for a parametric curve.",
+        "Rotating about the $y$-axis, the radius is $x$. Compute $\\sqrt{(dx/dt)^2+(dy/dt)^2}$ first.",
+        "Surface area about the $y$-axis: $S=\\int 2\\pi\\,x\\sqrt{\\left(\\frac{dx}{dt}\\right)^2+\\left(\\frac{dy}{dt}\\right)^2}\\,dt$."
+      ],
+      "steps": [
+        "$\\dfrac{dx}{dt}=6$, $\\dfrac{dy}{dt}=6t$, so $ds=6\\sqrt{1+t^2}\\,dt$.",
+        "$S=\\int_0^1 2\\pi(6t)\\,6\\sqrt{1+t^2}\\,dt=36\\pi\\int_0^1 2t\\sqrt{1+t^2}\\,dt$.",
+        "Let $u=1+t^2$: $S=36\\pi\\left[\\dfrac23(1+t^2)^{3/2}\\right]_0^1=24\\pi\\left(2^{3/2}-1\\right)$.",
+        "So $S=24\\pi\\left[2\\sqrt2-1\\right]$."
+      ],
+      "brief": "$ds=6\\sqrt{1+t^2}dt$: $S=36\\pi\\int_0^1 2t\\sqrt{1+t^2}dt=24\\pi(2\\sqrt2-1)$."
+    },
+    {
+      "sec": "10.4",
+      "q": "The polar equation $r=\\tan\\theta\\sec\\theta$ represents a",
+      "opts": [
+        "Parabola",
+        "Circle",
+        "Line",
+        "Ellipse",
+        "Hyperbola"
+      ],
+      "ans": 0,
+      "hints": [
+        "Convert to rectangular coordinates.",
+        "Rewrite with sine and cosine, clear the denominators, and use $x=r\\cos\\theta$, $y=r\\sin\\theta$.",
+        "Conversion: $x=r\\cos\\theta,\\ y=r\\sin\\theta,\\ r^2=x^2+y^2$. An equation like $x^2=ky$ is a parabola."
+      ],
+      "steps": [
+        "$r=\\dfrac{\\sin\\theta}{\\cos^2\\theta}$, so $r\\cos^2\\theta=\\sin\\theta$.",
+        "Multiply by $r$: $r^2\\cos^2\\theta=r\\sin\\theta$.",
+        "That is $x^2=y$, a parabola."
+      ],
+      "brief": "$r\\cos^2\\theta=\\sin\\theta\\Rightarrow x^2=y$: a parabola."
+    },
+    {
+      "sec": "10.4",
+      "q": "The graph of the polar curve $r=3\\cos\\theta$ has a vertical tangent line when $(r,\\theta)=$",
+      "opts": [
+        "$(0,\\pi/2)$",
+        "$(0,\\pi)$",
+        "$(0,\\pi/4)$",
+        "$(3,\\pi/2)$",
+        "$(0,2\\pi)$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Write $x$ as a function of $\\theta$; a vertical tangent occurs where $dx/d\\theta=0$ (with $dy/d\\theta\\neq0$, or at the pole as the tangent direction).",
+        "Use $x=r\\cos\\theta$ and differentiate, then solve for $\\theta$ and compute the corresponding $r$.",
+        "For $r=f(\\theta)$: $x=f(\\theta)\\cos\\theta$, $y=f(\\theta)\\sin\\theta$; vertical tangent where $dx/d\\theta=0$, horizontal where $dy/d\\theta=0$. Also $\\sin2\\theta=2\\sin\\theta\\cos\\theta$."
+      ],
+      "steps": [
+        "$x=3\\cos^2\\theta$, so $\\dfrac{dx}{d\\theta}=-6\\cos\\theta\\sin\\theta=-3\\sin2\\theta$.",
+        "$dx/d\\theta=0$ gives $\\theta=0$ or $\\theta=\\dfrac\\pi2$ in $[0,\\pi]$.",
+        "At $\\theta=0$: $r=3$, the point $(3,0)$. At $\\theta=\\dfrac\\pi2$: $r=0$, the pole, where the tangent line is the vertical line $\\theta=\\dfrac\\pi2$.",
+        "Among the listed choices, $(r,\\theta)=(0,\\pi/2)$ is the one on the curve with a vertical tangent."
+      ],
+      "brief": "$x=3\\cos^2\\theta$, $x'=-3\\sin2\\theta=0$: vertical tangent at $(r,\\theta)=(0,\\pi/2)$."
+    },
+    {
+      "sec": "10.4",
+      "q": "The slope of tangent line to the polar curve $r=\\dfrac1\\theta$ at $\\theta=\\pi$ is given by",
+      "opts": [
+        "$-\\pi$",
+        "$\\pi$",
+        "$0$",
+        "$-2$",
+        "$2$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Treat the polar curve as a parametric curve with parameter $\\theta$.",
+        "Write $x=r\\cos\\theta$, $y=r\\sin\\theta$ with $r=1/\\theta$, differentiate both, and evaluate the ratio at $\\theta=\\pi$.",
+        "For $r=f(\\theta)$: $\\dfrac{dy}{dx}=\\dfrac{f'(\\theta)\\sin\\theta+f(\\theta)\\cos\\theta}{f'(\\theta)\\cos\\theta-f(\\theta)\\sin\\theta}$."
+      ],
+      "steps": [
+        "$f(\\theta)=\\dfrac1\\theta$, $f'(\\theta)=-\\dfrac1{\\theta^2}$.",
+        "$\\dfrac{dy}{dx}=\\dfrac{-\\frac{1}{\\theta^2}\\sin\\theta+\\frac1\\theta\\cos\\theta}{-\\frac1{\\theta^2}\\cos\\theta-\\frac1\\theta\\sin\\theta}=\\dfrac{-\\sin\\theta+\\theta\\cos\\theta}{-\\cos\\theta-\\theta\\sin\\theta}$.",
+        "At $\\theta=\\pi$: numerator $=0-\\pi=-\\pi$, denominator $=1-0=1$.",
+        "So the slope is $-\\pi$."
+      ],
+      "brief": "$\\frac{dy}{dx}=\\frac{-\\sin\\theta+\\theta\\cos\\theta}{-\\cos\\theta-\\theta\\sin\\theta}$ at $\\theta=\\pi$ equals $-\\pi$."
+    },
+    {
+      "sec": "10.5",
+      "q": "The area of the region enclosed by the polar curve $r=2-\\cos\\theta$ is",
+      "opts": [
+        "$\\dfrac{9\\pi}{2}$",
+        "$\\dfrac{7\\pi}{2}$",
+        "$\\dfrac{5\\pi}{2}$",
+        "$\\dfrac{3\\pi}{2}$",
+        "$\\dfrac{11\\pi}{2}$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Use the polar area formula; the curve is a limacon symmetric about the $x$-axis.",
+        "Square $r$, use $\\cos^2\\theta=\\frac{1+\\cos2\\theta}{2}$, and integrate over a full period (or double the half from $0$ to $\\pi$).",
+        "Area enclosed by $r=f(\\theta)$: $A=\\dfrac12\\int_\\alpha^\\beta f(\\theta)^2\\,d\\theta$."
+      ],
+      "steps": [
+        "$A=2\\cdot\\dfrac12\\int_0^\\pi(2-\\cos\\theta)^2\\,d\\theta=\\int_0^\\pi\\left(4-4\\cos\\theta+\\cos^2\\theta\\right)d\\theta$.",
+        "$=\\int_0^\\pi\\left(\\dfrac92-4\\cos\\theta+\\dfrac{\\cos2\\theta}{2}\\right)d\\theta$.",
+        "$=\\left[\\dfrac92\\theta-4\\sin\\theta+\\dfrac{\\sin2\\theta}{4}\\right]_0^\\pi=\\dfrac{9\\pi}{2}$."
+      ],
+      "brief": "$A=\\int_0^\\pi(2-\\cos\\theta)^2d\\theta=\\frac{9\\pi}{2}$."
+    },
+    {
+      "sec": "10.5",
+      "q": "The area of the region that lies inside the curve $r=1-\\sin\\theta$ and outside the curve $r=1$ is",
+      "opts": [
+        "$\\dfrac\\pi4+2$",
+        "$\\pi+\\dfrac12$",
+        "$\\pi-2$",
+        "$\\dfrac\\pi2+2$",
+        "$\\pi+2$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Find where the two curves intersect, then integrate the difference of the squared radii over the angles where the cardioid is outside the circle.",
+        "Solve $1-\\sin\\theta=1$, and decide on which interval $1-\\sin\\theta>1$ (that is where the cardioid is farther out than the circle).",
+        "Area between $r=f(\\theta)$ (outer) and $r=g(\\theta)$ (inner): $A=\\dfrac12\\int_\\alpha^\\beta\\left(f^2-g^2\\right)d\\theta$."
+      ],
+      "steps": [
+        "$1-\\sin\\theta=1$ gives $\\sin\\theta=0$, so $\\theta=0,\\pi,2\\pi$. The cardioid is outside $r=1$ when $\\sin\\theta<0$, i.e. $\\pi<\\theta<2\\pi$.",
+        "$A=\\dfrac12\\int_\\pi^{2\\pi}\\left[(1-\\sin\\theta)^2-1\\right]d\\theta=\\dfrac12\\int_\\pi^{2\\pi}\\left(\\sin^2\\theta-2\\sin\\theta\\right)d\\theta$.",
+        "$\\sin^2\\theta=\\dfrac{1-\\cos2\\theta}{2}$, so $A=\\dfrac14\\int_\\pi^{2\\pi}(1-\\cos2\\theta-4\\sin\\theta)\\,d\\theta=\\dfrac14\\left[\\theta-\\dfrac{\\sin2\\theta}{2}+4\\cos\\theta\\right]_\\pi^{2\\pi}$.",
+        "$=\\dfrac14\\left[(2\\pi+4)-(\\pi-4)\\right]=\\dfrac{\\pi+8}{4}=\\dfrac\\pi4+2$."
+      ],
+      "brief": "Outside $r=1$ for $\\pi<\\theta<2\\pi$: $\\frac12\\int_\\pi^{2\\pi}(\\sin^2\\theta-2\\sin\\theta)d\\theta=\\frac\\pi4+2$."
+    },
+    {
+      "sec": "10.5",
+      "q": "The exact length of the polar curve \\[ r=2\\theta^2,\\quad \\theta\\in[0,\\pi] \\] is",
+      "opts": [
+        "$\\dfrac23\\left((\\pi^2+4)^{3/2}-8\\right)$",
+        "$\\dfrac23\\left(\\pi^3-8\\right)$",
+        "$(\\pi^2+4)^{3/2}$",
+        "$8$",
+        "$16$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Use the arc length formula for polar curves.",
+        "Compute $r^2+(dr/d\\theta)^2$ and simplify the expression under the root; then a substitution finishes the integral.",
+        "Arc length of $r=f(\\theta)$: $L=\\int_\\alpha^\\beta\\sqrt{r^2+\\left(\\dfrac{dr}{d\\theta}\\right)^2}\\,d\\theta$."
+      ],
+      "steps": [
+        "$r=2\\theta^2$, $\\dfrac{dr}{d\\theta}=4\\theta$, so $r^2+r'^2=4\\theta^4+16\\theta^2=4\\theta^2(\\theta^2+4)$.",
+        "$L=\\int_0^\\pi2\\theta\\sqrt{\\theta^2+4}\\,d\\theta$ (since $\\theta\\ge0$).",
+        "Let $u=\\theta^2+4$, $du=2\\theta\\,d\\theta$: $L=\\left[\\dfrac23(\\theta^2+4)^{3/2}\\right]_0^\\pi$.",
+        "$L=\\dfrac23\\left((\\pi^2+4)^{3/2}-8\\right)$."
+      ],
+      "brief": "$L=\\int_0^\\pi2\\theta\\sqrt{\\theta^2+4}\\,d\\theta=\\frac23\\left((\\pi^2+4)^{3/2}-8\\right)$."
+    },
+    {
+      "sec": "11.2",
+      "q": "If $M$ is the distance from the point $P(3,-2,4)$ to the $xz$-plane and $m$ is the distance from $P(3,-2,4)$ to the $y$-axis, then $M+m$ is equal to",
+      "opts": [
+        "$7$",
+        "$6$",
+        "$8$",
+        "$4$",
+        "$3$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Distances to a coordinate plane and to a coordinate axis come from the coordinates of the point.",
+        "The $xz$-plane is $y=0$; the $y$-axis is the set where $x=z=0$.",
+        "Distance from $(a,b,c)$ to the $xz$-plane is $|b|$; to the $y$-axis is $\\sqrt{a^2+c^2}$."
+      ],
+      "steps": [
+        "$M=|-2|=2$.",
+        "$m=\\sqrt{3^2+4^2}=5$.",
+        "$M+m=7$."
+      ],
+      "brief": "$M=|y|=2$, $m=\\sqrt{x^2+z^2}=5$, so $M+m=7$."
+    },
+    {
+      "sec": "11.1",
+      "q": "The unit vectors that are parallel to the tangent line to the curve $y=2x^2-x-1$ at the point $(1,0)$ are",
+      "opts": [
+        "$\\left\\langle\\dfrac1{\\sqrt{10}},\\dfrac3{\\sqrt{10}}\\right\\rangle$ and $\\left\\langle\\dfrac{-1}{\\sqrt{10}},\\dfrac{-3}{\\sqrt{10}}\\right\\rangle$",
+        "$\\left\\langle\\dfrac3{\\sqrt{10}},\\dfrac1{\\sqrt{10}}\\right\\rangle$ and $\\left\\langle\\dfrac{-3}{\\sqrt{10}},\\dfrac{-1}{\\sqrt{10}}\\right\\rangle$",
+        "$\\langle1,0\\rangle$ and $\\langle-1,0\\rangle$",
+        "$\\langle0,1\\rangle$ and $\\langle0,-1\\rangle$",
+        "$\\left\\langle\\dfrac{-1}{\\sqrt2},\\dfrac1{\\sqrt2}\\right\\rangle$ and $\\left\\langle\\dfrac{-1}{\\sqrt2},\\dfrac{-1}{\\sqrt2}\\right\\rangle$"
+      ],
+      "ans": 0,
+      "hints": [
+        "A tangent line to a graph has direction given by the slope.",
+        "Find the slope of the curve at the given point and write a direction vector with that slope.",
+        "A line of slope $m$ has direction vector $\\langle1,m\\rangle$; the unit vectors parallel to a vector $\\mathbf v$ are $\\pm\\dfrac{\\mathbf v}{\\|\\mathbf v\\|}$."
+      ],
+      "steps": [
+        "$y'=4x-1$, so the slope at $x=1$ is $3$.",
+        "A direction vector is $\\langle1,3\\rangle$ with length $\\sqrt{10}$.",
+        "The unit vectors are $\\pm\\dfrac{1}{\\sqrt{10}}\\langle1,3\\rangle$."
+      ],
+      "brief": "Slope $y'(1)=3$, direction $\\langle1,3\\rangle$: $\\pm\\frac{1}{\\sqrt{10}}\\langle1,3\\rangle$."
+    },
+    {
+      "sec": "11.3",
+      "q": "If $\\vec a=\\langle3,0,-1\\rangle$, then a vector $\\vec b=\\langle0,u,v\\rangle$ such that $\\operatorname{comp}_{\\vec a}\\vec b=2$ is",
+      "opts": [
+        "$\\langle0,10,-2\\sqrt{10}\\rangle$",
+        "$\\langle0,1,-\\sqrt{10}\\rangle$",
+        "$\\langle0,-1,2\\sqrt{10}\\rangle$",
+        "$\\langle10,10,3\\sqrt{10}\\rangle$",
+        "$\\langle0,0,3\\sqrt{10}\\rangle$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Use the scalar component of one vector along another.",
+        "Write $\\vec a\\cdot\\vec b$ in terms of $u,v$, and set the formula for the component equal to $2$; note which unknown the dot product involves.",
+        "$\\operatorname{comp}_{\\vec a}\\vec b=\\dfrac{\\vec a\\cdot\\vec b}{\\|\\vec a\\|}$."
+      ],
+      "steps": [
+        "$\\|\\vec a\\|=\\sqrt{9+0+1}=\\sqrt{10}$ and $\\vec a\\cdot\\vec b=3\\cdot0+0\\cdot u-v=-v$.",
+        "$\\dfrac{-v}{\\sqrt{10}}=2$, so $v=-2\\sqrt{10}$, while $u$ is free.",
+        "The choice with $v=-2\\sqrt{10}$ and first entry $0$ is $\\langle0,10,-2\\sqrt{10}\\rangle$."
+      ],
+      "brief": "$\\operatorname{comp}=\\frac{-v}{\\sqrt{10}}=2\\Rightarrow v=-2\\sqrt{10}$ ($u$ free): $\\langle0,10,-2\\sqrt{10}\\rangle$."
+    },
+    {
+      "sec": "11.3",
+      "q": "If the angle between the vectors $\\langle2,1,-1\\rangle$ and $\\langle1,x,0\\rangle$ is $\\dfrac\\pi4$, then $x=$",
+      "opts": [
+        "$1\\pm\\sqrt6/2$",
+        "$1\\pm\\sqrt6$",
+        "$2\\pm\\sqrt6$",
+        "$1\\pm\\sqrt3$",
+        "$-1\\pm\\sqrt3/2$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Use the dot product formula for the angle between two vectors.",
+        "Compute the dot product and the two lengths in terms of $x$, then set up the equation with $\\cos\\frac\\pi4$ and solve for $x$.",
+        "$\\mathbf a\\cdot\\mathbf b=\\|\\mathbf a\\|\\|\\mathbf b\\|\\cos\\theta$; squaring an equation can add solutions, so check that the dot product has the right sign."
+      ],
+      "steps": [
+        "$\\langle2,1,-1\\rangle\\cdot\\langle1,x,0\\rangle=2+x$, lengths $\\sqrt6$ and $\\sqrt{1+x^2}$.",
+        "$2+x=\\sqrt6\\sqrt{1+x^2}\\cdot\\dfrac1{\\sqrt2}=\\sqrt3\\sqrt{1+x^2}$.",
+        "Square: $4+4x+x^2=3+3x^2$, so $2x^2-4x-1=0$.",
+        "$x=\\dfrac{4\\pm\\sqrt{24}}{4}=1\\pm\\dfrac{\\sqrt6}{2}$; both satisfy $2+x>0$."
+      ],
+      "brief": "$2+x=\\sqrt3\\sqrt{1+x^2}\\Rightarrow 2x^2-4x-1=0$, $x=1\\pm\\frac{\\sqrt6}{2}$."
+    },
+    {
+      "sec": "11.3",
+      "q": "The vector component of $\\vec v=\\langle1,1,1\\rangle$ orthogonal to $\\vec b=\\langle2,2,0\\rangle$ is",
+      "opts": [
+        "$\\hat k$",
+        "$-\\hat j$",
+        "$\\hat j$",
+        "$\\hat i$",
+        "$-\\hat i$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Split $\\vec v$ into a part parallel to $\\vec b$ and a part orthogonal to it.",
+        "Find the projection of $\\vec v$ onto $\\vec b$ first, then subtract it from $\\vec v$.",
+        "$\\operatorname{proj}_{\\vec b}\\vec v=\\dfrac{\\vec v\\cdot\\vec b}{\\|\\vec b\\|^2}\\vec b$, and the orthogonal component is $\\vec v-\\operatorname{proj}_{\\vec b}\\vec v$."
+      ],
+      "steps": [
+        "$\\vec v\\cdot\\vec b=4$ and $\\|\\vec b\\|^2=8$.",
+        "$\\operatorname{proj}_{\\vec b}\\vec v=\\dfrac48\\langle2,2,0\\rangle=\\langle1,1,0\\rangle$.",
+        "Orthogonal part: $\\langle1,1,1\\rangle-\\langle1,1,0\\rangle=\\langle0,0,1\\rangle=\\hat k$."
+      ],
+      "brief": "$\\operatorname{proj}=\\langle1,1,0\\rangle$, so $\\vec v-\\operatorname{proj}=\\langle0,0,1\\rangle=\\hat k$."
+    },
+    {
+      "sec": "11.4",
+      "q": "Suppose that two vectors $\\vec a,\\vec b$ satisfy \\[ \\vec a\\cdot\\vec b=\\sqrt{15},\\qquad \\vec a\\times\\vec b=\\langle-2,0,-1\\rangle. \\] Then the angle between $\\vec a$ and $\\vec b$ is",
+      "opts": [
+        "$\\dfrac\\pi6$",
+        "$\\dfrac\\pi3$",
+        "$\\dfrac\\pi2$",
+        "$\\dfrac\\pi4$",
+        "$\\dfrac{2\\pi}{5}$"
+      ],
+      "ans": 0,
+      "hints": [
+        "The dot product gives $\\|a\\|\\|b\\|\\cos\\theta$ and the cross product gives $\\|a\\|\\|b\\|\\sin\\theta$.",
+        "Find the length of the cross product and divide it by the dot product to cancel $\\|a\\|\\|b\\|$.",
+        "$\\vec a\\cdot\\vec b=\\|\\vec a\\|\\|\\vec b\\|\\cos\\theta$, $\\|\\vec a\\times\\vec b\\|=\\|\\vec a\\|\\|\\vec b\\|\\sin\\theta$, so $\\tan\\theta=\\dfrac{\\|\\vec a\\times\\vec b\\|}{\\vec a\\cdot\\vec b}$ for $0\\le\\theta\\le\\pi$ (with positive dot product)."
+      ],
+      "steps": [
+        "$\\|\\vec a\\times\\vec b\\|=\\sqrt{4+0+1}=\\sqrt5$.",
+        "$\\tan\\theta=\\dfrac{\\sqrt5}{\\sqrt{15}}=\\dfrac1{\\sqrt3}$.",
+        "The dot product is positive, so $\\theta$ is acute: $\\theta=\\dfrac\\pi6$."
+      ],
+      "brief": "$\\tan\\theta=\\frac{\\|a\\times b\\|}{a\\cdot b}=\\frac{\\sqrt5}{\\sqrt{15}}=\\frac1{\\sqrt3}$, so $\\theta=\\frac\\pi6$."
+    },
+    {
+      "sec": "11.4",
+      "q": "Consider for $a\\ge0$ the following three points \\[ A(-2,0,0),\\quad B(-1,1,3),\\quad C(-2,a,2). \\] Assume that the area of the triangle $\\triangle ABC=\\sqrt6$. Then $a=$",
+      "opts": [
+        "$2$",
+        "$0$",
+        "$\\dfrac35$",
+        "$1$",
+        "$\\dfrac15$"
+      ],
+      "ans": 0,
+      "hints": [
+        "The area of a triangle in space comes from a cross product.",
+        "Form $\\overrightarrow{AB}$ and $\\overrightarrow{AC}$, take their cross product in terms of $a$, and set half its length equal to the given area.",
+        "Area of $\\triangle ABC=\\dfrac12\\|\\overrightarrow{AB}\\times\\overrightarrow{AC}\\|$."
+      ],
+      "steps": [
+        "$\\overrightarrow{AB}=\\langle1,1,3\\rangle$, $\\overrightarrow{AC}=\\langle0,a,2\\rangle$, and $\\overrightarrow{AB}\\times\\overrightarrow{AC}=\\langle2-3a,-2,a\\rangle$.",
+        "$\\|\\overrightarrow{AB}\\times\\overrightarrow{AC}\\|^2=(2-3a)^2+4+a^2=10a^2-12a+8$.",
+        "Area $=\\sqrt6$ gives $\\|\\overrightarrow{AB}\\times\\overrightarrow{AC}\\|^2=24$, so $5a^2-6a-8=0$, i.e. $(5a+4)(a-2)=0$.",
+        "Since $a\\ge0$, $a=2$."
+      ],
+      "brief": "$\\overrightarrow{AB}\\times\\overrightarrow{AC}=\\langle2-3a,-2,a\\rangle$; $10a^2-12a+8=24\\Rightarrow a=2$."
+    },
+    {
+      "sec": "11.4",
+      "q": "Consider the four points $A(0,3,-4)$, $B(2,2,-3)$, $C(0,6,-6)$ and $D(-2,10,a)$. Suppose these four points lie in the same plane. Then $a=$",
+      "opts": [
+        "$-9$",
+        "$-8$",
+        "$7$",
+        "$-10$",
+        "$3$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Four points are coplanar exactly when three vectors between them are coplanar.",
+        "Form $\\overrightarrow{AB},\\overrightarrow{AC},\\overrightarrow{AD}$ and set their triple product equal to zero.",
+        "Three vectors are coplanar iff the determinant of the matrix with them as rows is $0$ (the volume of the parallelepiped is $0$)."
+      ],
+      "steps": [
+        "$\\overrightarrow{AB}=\\langle2,-1,1\\rangle$, $\\overrightarrow{AC}=\\langle0,3,-2\\rangle$, $\\overrightarrow{AD}=\\langle-2,7,a+4\\rangle$.",
+        "$\\begin{vmatrix}2&-1&1\\\\0&3&-2\\\\-2&7&a+4\\end{vmatrix}=2(3a+12+14)+1(0-4)+1(0+6)=6a+54$.",
+        "Setting it to $0$ gives $a=-9$."
+      ],
+      "brief": "Triple product $=6a+54=0$, so $a=-9$."
+    }
+  ]
+}

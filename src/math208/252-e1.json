@@ -1,0 +1,365 @@
+{
+  "course": "math208",
+  "term": "252",
+  "kind": "e1",
+  "date": "16 February 2026",
+  "minutes": 90,
+  "source": "math208-252-e1.pdf",
+  "qs": [
+    {
+      "sec": "1.6",
+      "q": "The sum of all real values of $m$ that make the equation \\[ \\left(mx^2y+2xy-y^3\\right)dx+\\left(x^2-3xy^2+\\frac{1}{3}m^3x^3\\right)dy=0 \\] an exact differential equation is equal to",
+      "opts": [
+        "$0$",
+        "$1$",
+        "$-1$",
+        "$2$",
+        "$-2$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Use the test for exactness of $M\\,dx+N\\,dy=0$.",
+        "Compute $\\partial M/\\partial y$ and $\\partial N/\\partial x$ and set them equal for all $x$ and $y$.",
+        "$M\\,dx+N\\,dy=0$ is exact if and only if $M_y=N_x$; two polynomials in $x$ and $y$ are equal for all $x,y$ only when the coefficients of matching terms are equal."
+      ],
+      "steps": [
+        "$M_y=mx^2+2x-3y^2$ and $N_x=2x-3y^2+m^3x^2$.",
+        "$M_y=N_x$ for all $x,y$ requires the $x^2$ coefficients to agree: $m=m^3$.",
+        "$m^3-m=m(m-1)(m+1)=0$, so $m=0$, $m=1$ or $m=-1$.",
+        "The sum is $0+1+(-1)=0$."
+      ],
+      "brief": "$M_y=N_x\\Rightarrow m=m^3$, so $m=0,\\pm1$ and the sum is $0$."
+    },
+    {
+      "sec": "1.6",
+      "q": "The general solution of the exact differential equation \\[ \\left(2x+y^2e^{xy}\\right)dx+\\left(e^{xy}+xye^{xy}\\right)dy=0 \\] is",
+      "opts": [
+        "$ye^{xy}+x^2=c$",
+        "$xe^{xy}+x^2=c$",
+        "$ye^{xy}+y^2=c$",
+        "$xe^{xy}+y^2=c$",
+        "$ye^{xy}+x^3=c$"
+      ],
+      "ans": 0,
+      "hints": [
+        "The equation is exact, so look for a potential function $F(x,y)$.",
+        "Integrate $M$ with respect to $x$, treating $y$ as a constant, and add an unknown function $g(y)$.",
+        "If $M_y=N_x$, then $F=\\int M\\,dx+g(y)$ with $F_y=N$, and the general solution is $F(x,y)=C$."
+      ],
+      "steps": [
+        "Check: $M_y=2ye^{xy}+xy^2e^{xy}$ and $N_x=ye^{xy}+\\left(ye^{xy}+xy^2e^{xy}\\right)=2ye^{xy}+xy^2e^{xy}$.",
+        "$F=\\int\\left(2x+y^2e^{xy}\\right)dx=x^2+ye^{xy}+g(y)$.",
+        "$F_y=e^{xy}+xye^{xy}+g'(y)=N$, so $g'(y)=0$.",
+        "The general solution is $ye^{xy}+x^2=c$."
+      ],
+      "brief": "Exact: $F=\\int M\\,dx=x^2+ye^{xy}+g(y)$, $g'=0$, so $ye^{xy}+x^2=c$."
+    },
+    {
+      "sec": "1.6",
+      "q": "The general solution of the differential equation \\[ x\\frac{dy}{dx}=y+4x\\,e^{-2y/x} \\] for $x\\neq0$ is given by",
+      "opts": [
+        "$e^{2y/x}-8\\ln|x|=c$",
+        "$e^{2y/x}-4\\ln|x|=c$",
+        "$e^{2x/y}+4\\ln|x|=c$",
+        "$e^{2x/y}+8\\ln|x|=c$",
+        "$e^{2y/x}-\\ln|x|=c$"
+      ],
+      "ans": 0,
+      "hints": [
+        "After dividing by $x$, the right side depends only on $y/x$, so the equation is homogeneous.",
+        "Divide by $x$, then substitute $v=y/x$.",
+        "With $v=\\dfrac yx$: $y=vx$ and $y'=v+xv'$, which gives a separable equation in $v$ and $x$; also $\\int e^{av}\\,dv=\\dfrac1ae^{av}+C$."
+      ],
+      "steps": [
+        "Divide by $x$: $y'=\\dfrac yx+4e^{-2y/x}$.",
+        "Put $y=vx$, $y'=v+xv'$: $v+xv'=v+4e^{-2v}$, so $xv'=4e^{-2v}$.",
+        "Separate: $e^{2v}\\,dv=\\dfrac{4}{x}\\,dx$, so $\\dfrac12e^{2v}=4\\ln|x|+C$.",
+        "Multiply by 2 and use $v=\\dfrac yx$: $e^{2y/x}-8\\ln|x|=c$."
+      ],
+      "brief": "Homogeneous, $v=y/x$: $e^{2v}dv=\\frac4x dx$, $\\frac12e^{2v}=4\\ln|x|+C$: $e^{2y/x}-8\\ln|x|=c$."
+    },
+    {
+      "sec": "1.6",
+      "q": "By using a suitable substitution, we can transform the differential equation \\[ y'+\\frac{2}{x}y=4x^3y^4 \\] into the linear differential equation",
+      "opts": [
+        "$\\dfrac{dw}{dx}-\\dfrac{6}{x}w=-12x^3$",
+        "$\\dfrac{dw}{dx}-\\dfrac{3}{x}w=-12x^3$",
+        "$\\dfrac{dw}{dx}-\\dfrac{6}{x}w=6x^3$",
+        "$\\dfrac{dw}{dx}-\\dfrac{3}{x}w=6x^3$",
+        "$\\dfrac{dw}{dx}-\\dfrac{2}{x}w=4x^3$"
+      ],
+      "ans": 0,
+      "hints": [
+        "The equation has the form $y'+P(x)y=Q(x)y^n$, so it is a Bernoulli equation.",
+        "Identify $n$, substitute $w=y^{1-n}$, and express $y'$ in terms of $w'$.",
+        "For $y'+Py=Qy^n$, the substitution $w=y^{1-n}$ gives $w'=(1-n)y^{-n}y'$; multiplying the equation by $(1-n)y^{-n}$ gives $w'+(1-n)Pw=(1-n)Q$."
+      ],
+      "steps": [
+        "Here $n=4$, so let $w=y^{1-4}=y^{-3}$; then $w'=-3y^{-4}y'$.",
+        "Multiply the equation by $-3y^{-4}$: $-3y^{-4}y'-\\dfrac{6}{x}y^{-3}=-12x^3$.",
+        "Replace $-3y^{-4}y'$ by $w'$ and $y^{-3}$ by $w$: $\\dfrac{dw}{dx}-\\dfrac{6}{x}w=-12x^3$."
+      ],
+      "brief": "Bernoulli $n=4$, $w=y^{-3}$: multiply by $-3y^{-4}$ to get $w'-\\frac6xw=-12x^3$."
+    },
+    {
+      "sec": "1.5",
+      "q": "The solution of the initial-value problem \\[ (2-\\cos x)\\,y'+y\\sin x=2+\\cos x, \\qquad y(0)=0 \\] is",
+      "opts": [
+        "$y=\\dfrac{2x+\\sin x}{2-\\cos x}$",
+        "$y=\\dfrac{x+\\sin x}{2-\\cos x}$",
+        "$y=\\dfrac{2x+\\cos x}{2+\\cos x}$",
+        "$y=\\dfrac{x+\\cos x}{2+\\cos x}$",
+        "$y=\\dfrac{2x+\\sin x}{2x-\\cos x}$"
+      ],
+      "ans": 0,
+      "hints": [
+        "This is a first-order linear equation in $y$.",
+        "Divide by $2-\\cos x$ to get the form $y'+P(x)y=Q(x)$ and find the integrating factor.",
+        "$\\rho=e^{\\int P\\,dx}$ and $(\\rho y)'=\\rho Q$; also $\\int\\dfrac{g'(x)}{g(x)}\\,dx=\\ln|g(x)|$."
+      ],
+      "steps": [
+        "Standard form: $y'+\\dfrac{\\sin x}{2-\\cos x}y=\\dfrac{2+\\cos x}{2-\\cos x}$.",
+        "$\\rho=e^{\\int\\frac{\\sin x}{2-\\cos x}dx}=e^{\\ln(2-\\cos x)}=2-\\cos x$ (since $2-\\cos x>0$).",
+        "Then $\\left((2-\\cos x)y\\right)'=2+\\cos x$, so $(2-\\cos x)y=2x+\\sin x+C$.",
+        "$y(0)=0$: $(2-1)\\cdot0=0+0+C$, so $C=0$ and $y=\\dfrac{2x+\\sin x}{2-\\cos x}$."
+      ],
+      "brief": "$\\rho=2-\\cos x$: $((2-\\cos x)y)'=2+\\cos x$, $C=0$, so $y=\\frac{2x+\\sin x}{2-\\cos x}$."
+    },
+    {
+      "sec": "1.1",
+      "q": "The order of the differential equation \\[ y'''+2x(y'')^4+x^2(y')^6=0 \\] is",
+      "opts": [
+        "$3$",
+        "$4$",
+        "$6$",
+        "$10$",
+        "$1$"
+      ],
+      "ans": 0,
+      "hints": [
+        "The order of a differential equation is about which derivatives appear, not about their powers.",
+        "List the derivatives of $y$ that appear in the equation and find the highest one.",
+        "The order of a differential equation is the order of the highest derivative of the unknown function that appears in it; exponents on the derivatives do not change the order."
+      ],
+      "steps": [
+        "The derivatives appearing are $y'$, $y''$ and $y'''$.",
+        "The powers $4$ and $6$ on $y''$ and $y'$ do not affect the order.",
+        "The highest derivative is $y'''$, so the order is $3$."
+      ],
+      "brief": "Highest derivative present is $y'''$, so the order is $3$."
+    },
+    {
+      "sec": "1.4",
+      "q": "The general solution of the differential equation \\[ \\frac{dy}{dx}=x\\sqrt{\\frac{1-y^2}{1-x^2}} \\] for $|x|<1$ and $|y|<1$ is given by",
+      "opts": [
+        "$y=\\sin\\left(c-\\sqrt{1-x^2}\\right)$",
+        "$y=2\\sin\\left(c-\\sqrt{1-x^2}\\right)$",
+        "$y=\\dfrac12\\sin\\left(c-\\sqrt{1-x^2}\\right)$",
+        "$y=3\\sin\\left(c-\\sqrt{1-x^2}\\right)$",
+        "$y=\\dfrac13\\sin\\left(c-\\sqrt{1-x^2}\\right)$"
+      ],
+      "ans": 0,
+      "hints": [
+        "The right side is a function of $x$ times a function of $y$, so the equation is separable.",
+        "Move the $y$ factor to the side with $dy$ and the $x$ factors to the side with $dx$, then integrate both sides.",
+        "$\\int\\dfrac{dy}{\\sqrt{1-y^2}}=\\sin^{-1}y+C$, and a substitution $u=g(x)$ turns $\\int h(g(x))\\,g'(x)\\,dx$ into $\\int h(u)\\,du$."
+      ],
+      "steps": [
+        "Separate: $\\dfrac{dy}{\\sqrt{1-y^2}}=\\dfrac{x\\,dx}{\\sqrt{1-x^2}}$.",
+        "Left side: $\\int\\dfrac{dy}{\\sqrt{1-y^2}}=\\sin^{-1}y$.",
+        "Right side with $u=1-x^2$, $du=-2x\\,dx$: $\\int\\dfrac{x\\,dx}{\\sqrt{1-x^2}}=-\\dfrac12\\int u^{-1/2}\\,du=-\\sqrt{1-x^2}$.",
+        "$\\sin^{-1}y=c-\\sqrt{1-x^2}$, so $y=\\sin\\left(c-\\sqrt{1-x^2}\\right)$."
+      ],
+      "brief": "Separable: $\\sin^{-1}y=-\\sqrt{1-x^2}+c$, so $y=\\sin(c-\\sqrt{1-x^2})$."
+    },
+    {
+      "sec": "1.6",
+      "q": "By using a suitable substitution, we can transform the differential equation \\[ yy''+(y')^2=0 \\] into the separable differential equation",
+      "opts": [
+        "$\\dfrac{dp}{p}+\\dfrac{dy}{y}=0$",
+        "$\\dfrac{dp}{p}+\\dfrac{dy}{2y}=0$",
+        "$\\dfrac{dp}{p}-\\dfrac{dy}{3y}=0$",
+        "$\\dfrac{dp}{2p}-\\dfrac{dy}{y}=0$",
+        "$\\dfrac{dp}{2p}+\\dfrac{dy}{y}=0$"
+      ],
+      "ans": 0,
+      "hints": [
+        "The independent variable $x$ does not appear, so this is a reducible second-order equation with $x$ missing.",
+        "Set $p=y'$ and write $y''$ in terms of $p$ and $\\dfrac{dp}{dy}$, then substitute.",
+        "With $x$ missing, set $p=y'$ and $y''=\\dfrac{dp}{dx}=\\dfrac{dp}{dy}\\dfrac{dy}{dx}=p\\dfrac{dp}{dy}$; then separate $p$ and $y$."
+      ],
+      "steps": [
+        "Let $p=y'$, so $y''=p\\dfrac{dp}{dy}$.",
+        "Substitute: $yp\\dfrac{dp}{dy}+p^2=0$.",
+        "Divide by $yp^2$ (for $p\\neq0$, $y\\neq0$): $\\dfrac1p\\dfrac{dp}{dy}+\\dfrac1y=0$, i.e. $\\dfrac{dp}{p}+\\dfrac{dy}{y}=0$."
+      ],
+      "brief": "$p=y'$, $y''=p\\frac{dp}{dy}$: $yp\\frac{dp}{dy}+p^2=0$, so $\\frac{dp}{p}+\\frac{dy}{y}=0$."
+    },
+    {
+      "sec": "1.1",
+      "q": "All values of $m$ such that $y=e^{mx}$ is a solution of the differential equation \\[ y''-6y'-7y=0 \\] are",
+      "opts": [
+        "$m=7$ and $m=-1$",
+        "$m=7$ and $m=2$",
+        "$m=-7$ and $m=2$",
+        "$m=7$ and $m=1$",
+        "$m=7$ and $m=-2$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Substituting an exponential $y=e^{mx}$ into the equation gives an equation for $m$.",
+        "Compute $y'$ and $y''$ for $y=e^{mx}$, substitute, and divide by $e^{mx}$.",
+        "Substituting $y=e^{rx}$ into $ay''+by'+cy=0$ gives the characteristic equation $ar^2+br+c=0$, since $e^{rx}\\neq0$."
+      ],
+      "steps": [
+        "With $y=e^{mx}$: $y'=me^{mx}$ and $y''=m^2e^{mx}$.",
+        "Substitute: $\\left(m^2-6m-7\\right)e^{mx}=0$, so $m^2-6m-7=0$.",
+        "$(m-7)(m+1)=0$, so $m=7$ and $m=-1$."
+      ],
+      "brief": "$m^2-6m-7=(m-7)(m+1)=0$, so $m=7$ and $m=-1$."
+    },
+    {
+      "sec": "4.4",
+      "q": "The sum of all real values of $k$ for which the vectors \\[ \\mathbf{v}_1=(2,3,0),\\quad \\mathbf{v}_2=(4,k,4),\\quad \\mathbf{v}_3=(-1,1,k) \\] do not form a basis for $\\mathbb{R}^3$ is",
+      "opts": [
+        "$6$",
+        "$5$",
+        "$4$",
+        "$-12$",
+        "$12$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Three vectors in $\\mathbb{R}^3$ form a basis exactly when they are linearly independent.",
+        "Put the three vectors as the rows of a $3\\times3$ matrix and compute its determinant as a function of $k$.",
+        "$n$ vectors in $\\mathbb{R}^n$ form a basis if and only if the matrix having them as rows (or columns) has nonzero determinant."
+      ],
+      "steps": [
+        "Expand along the first row: \\[ \\begin{vmatrix}2&3&0\\\\4&k&4\\\\-1&1&k\\end{vmatrix}=2\\left(k^2-4\\right)-3\\left(4k+4\\right)+0. \\]",
+        "$=2k^2-8-12k-12=2k^2-12k-20$.",
+        "They fail to be a basis when $2k^2-12k-20=0$, i.e. $k^2-6k-10=0$, so $k=3\\pm\\sqrt{19}$ (both real).",
+        "The sum is $\\left(3+\\sqrt{19}\\right)+\\left(3-\\sqrt{19}\\right)=6$."
+      ],
+      "brief": "$\\det=2k^2-12k-20=0\\Rightarrow k=3\\pm\\sqrt{19}$, sum $=6$."
+    },
+    {
+      "sec": "1.2",
+      "q": "A particle is moving in a straight line with acceleration $a(t)=\\ln(5t)$ and an initial velocity $v\\left(\\dfrac15\\right)=\\dfrac45$. The velocity at any time $t>\\dfrac15$ is given by",
+      "opts": [
+        "$v(t)=t\\ln(5t)-t+1$",
+        "$v(t)=2t\\ln(5t)-t+1$",
+        "$v(t)=3t\\ln(5t)-t+1$",
+        "$v(t)=t\\ln(5t)-2t+\\dfrac65$",
+        "$v(t)=t\\ln(5t)+2t+\\dfrac25$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Acceleration is the derivative of velocity, so integrate $a(t)$ once.",
+        "Integrate $\\ln(5t)$ by parts, then use the given value of $v$ to find the constant.",
+        "$v(t)=\\int a(t)\\,dt+C$; integration by parts is $\\int u\\,dv=uv-\\int v\\,du$, and $\\dfrac{d}{dt}\\ln(bt)=\\dfrac1t$."
+      ],
+      "steps": [
+        "By parts with $u=\\ln(5t)$, $dv=dt$: $\\int\\ln(5t)\\,dt=t\\ln(5t)-\\int t\\cdot\\dfrac1t\\,dt=t\\ln(5t)-t$.",
+        "So $v(t)=t\\ln(5t)-t+C$.",
+        "$v\\left(\\dfrac15\\right)=\\dfrac15\\ln1-\\dfrac15+C=\\dfrac45$, so $C=1$.",
+        "Therefore $v(t)=t\\ln(5t)-t+1$."
+      ],
+      "brief": "$v=\\int\\ln(5t)\\,dt=t\\ln(5t)-t+C$, and $v(\\frac15)=\\frac45$ gives $C=1$."
+    },
+    {
+      "sec": "4.2",
+      "q": "Which one of the following statements is true about the subset $V$ of $\\mathbb{R}^3$ defined by \\[ V=\\{(x_1,x_2,x_3): x_3=x_1+x_2\\}\\,? \\]",
+      "opts": [
+        "$V$ is a subspace of $\\mathbb{R}^3$",
+        "$V$ is not closed under addition",
+        "$V$ is not closed under addition but not closed under multiplication by scalars",
+        "$V$ is closed under addition but not closed under multiplication by scalars",
+        "$V$ is not closed under addition but closed under multiplication by scalar"
+      ],
+      "ans": 0,
+      "hints": [
+        "A subset is a subspace when it contains $\\mathbf{0}$ and is closed under addition and scalar multiplication.",
+        "Take two general vectors of $V$ and a scalar, and check whether their sum and the scalar multiple still satisfy the defining condition.",
+        "The solution set of a homogeneous linear equation (or system) in $x_1,\\dots,x_n$ is always a subspace of $\\mathbb{R}^n$."
+      ],
+      "steps": [
+        "Vectors in $V$ have the form $(a,b,a+b)$; with $a=b=0$, $\\mathbf{0}\\in V$.",
+        "Sum: $(a,b,a+b)+(c,d,c+d)=(a+c,\\,b+d,\\,(a+c)+(b+d))\\in V$, so $V$ is closed under addition.",
+        "Scalar multiple: $r(a,b,a+b)=(ra,rb,ra+rb)\\in V$, so $V$ is closed under multiplication by scalars.",
+        "Hence $V$ is a subspace of $\\mathbb{R}^3$."
+      ],
+      "brief": "$x_3-x_1-x_2=0$ is homogeneous linear: $V$ is closed under both operations, a subspace."
+    },
+    {
+      "sec": "Ch. 3",
+      "q": "The solution of the system \\[ \\begin{aligned} x_1+3x_2+3x_3+3x_4&=0\\\\ 2x_1+7x_2+5x_3-x_4&=0\\\\ 2x_1+7x_2+4x_3-4x_4&=0 \\end{aligned} \\] is the set of all scalar multiples of a vector $\\mathbf{u}$, where $\\mathbf{u}=(a,b,c,d)$. Then $\\dfrac{a}{c}=$",
+      "opts": [
+        "$2$",
+        "$4$",
+        "$-2$",
+        "$-4$",
+        "$0$"
+      ],
+      "ans": 0,
+      "hints": [
+        "This is a homogeneous linear system with one free variable; every nonzero solution gives the same ratio $a/c$.",
+        "Row reduce the coefficient matrix to echelon form using the first row to clear the first column.",
+        "In echelon form, set the free variable equal to a parameter $t$ and back-substitute to express every variable as a multiple of $t$."
+      ],
+      "steps": [
+        "$R_2-2R_1$ gives $(0,1,-1,-7)$ and $R_3-2R_1$ gives $(0,1,-2,-10)$.",
+        "Then $R_3-R_2$ gives $(0,0,-1,-3)$, so $x_3=-3x_4$.",
+        "Let $x_4=t$: $x_3=-3t$, $x_2=x_3+7x_4=4t$, $x_1=-3x_2-3x_3-3x_4=-12t+9t-3t=-6t$.",
+        "$\\mathbf{u}=(-6,4,-3,1)$, so $\\dfrac ac=\\dfrac{-6}{-3}=2$."
+      ],
+      "brief": "Row reduce: solutions $t(-6,4,-3,1)$, so $\\frac ac=\\frac{-6}{-3}=2$."
+    },
+    {
+      "sec": "1.6",
+      "q": "The general solution of the differential equation \\[ \\frac{dy}{dx}=\\frac{x+y+2}{2x+2y-1} \\] is given by",
+      "opts": [
+        "$2y-x-\\dfrac53\\ln|3x+3y+1|=c$",
+        "$2y+x-\\dfrac53\\ln|3x+3y+1|=c$",
+        "$2x+y+\\dfrac53\\ln|3x+3y-1|=c$",
+        "$x+y+\\dfrac53\\ln|3x+3y-1|=c$",
+        "$2x+2y-\\dfrac53\\ln|2x+2y-1|=c$"
+      ],
+      "ans": 0,
+      "hints": [
+        "The right side depends on $x$ and $y$ only through $x+y$, so use a substitution $v=ax+by$.",
+        "Let $v$ be the sum $x+y$, write $\\dfrac{dv}{dx}$ in terms of $v$ only, and separate.",
+        "With $v=ax+by+c$, $v'=a+by'$, so the equation becomes separable; split an improper rational fraction by division before integrating, and $\\int\\dfrac{dv}{pv+q}=\\dfrac1p\\ln|pv+q|+C$."
+      ],
+      "steps": [
+        "Let $v=x+y$: $\\dfrac{dv}{dx}=1+\\dfrac{v+2}{2v-1}=\\dfrac{3v+1}{2v-1}$.",
+        "Separate: $\\dfrac{2v-1}{3v+1}\\,dv=dx$, where $\\dfrac{2v-1}{3v+1}=\\dfrac23-\\dfrac{5/3}{3v+1}$.",
+        "Integrate: $\\dfrac23v-\\dfrac59\\ln|3v+1|=x+C$.",
+        "Multiply by 3: $2v-\\dfrac53\\ln|3v+1|-3x=c$; with $v=x+y$: $2y-x-\\dfrac53\\ln|3x+3y+1|=c$."
+      ],
+      "brief": "$v=x+y$: $v'=\\frac{3v+1}{2v-1}$, $\\frac23v-\\frac59\\ln|3v+1|=x+C$, times 3."
+    },
+    {
+      "sec": "1.4",
+      "q": "A certain radioactive substance decomposes at a rate directly proportional to the quantity of the substance present. If $50\\%$ of a certain quantity has decomposed in 20 years, how many years will it take for $80\\%$ of the original quantity to decompose?",
+      "opts": [
+        "$\\dfrac{20\\ln5}{\\ln2}$",
+        "$\\dfrac{30\\ln5}{\\ln2}$",
+        "$\\dfrac{15\\ln5}{\\ln2}$",
+        "$\\dfrac{40\\ln5}{\\ln2}$",
+        "$\\dfrac{24\\ln5}{\\ln2}$"
+      ],
+      "ans": 0,
+      "hints": [
+        "A rate proportional to the amount present means natural exponential decay.",
+        "Use the 20-year information to find the decay constant, then find when the remaining fraction reaches the required level.",
+        "Natural decay gives $A(t)=A_0e^{-kt}$; if a fraction $r$ of the original amount remains at time $t$, then $e^{-kt}=r$, so $t=\\dfrac{\\ln(1/r)}{k}$."
+      ],
+      "steps": [
+        "$A(t)=A_0e^{-kt}$. After 20 years half remains: $e^{-20k}=\\dfrac12$, so $k=\\dfrac{\\ln2}{20}$.",
+        "If $80\\%$ has decomposed, $20\\%$ remains: $e^{-kt}=\\dfrac15$, so $kt=\\ln5$.",
+        "$t=\\dfrac{\\ln5}{k}=\\dfrac{20\\ln5}{\\ln2}$ years."
+      ],
+      "brief": "$k=\\frac{\\ln2}{20}$; $20\\%$ remains: $e^{-kt}=\\frac15$, so $t=\\frac{20\\ln5}{\\ln2}$."
+    }
+  ]
+}

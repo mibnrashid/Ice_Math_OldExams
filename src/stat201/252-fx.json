@@ -1,0 +1,476 @@
+{
+  "course": "stat201",
+  "term": "252",
+  "kind": "fx",
+  "date": "13 May 2026",
+  "minutes": 120,
+  "source": "stat201-252-fx.pdf",
+  "note": "Date and minutes printed on the cover (May 13, 2026; net time 120 minutes). The master key marks the correct choice (a) in every question. Q13-Q17 each use a different dataset (printed 'different dataset' note), so they do not share a stem; Q18-Q20 share one R output, stored once as stat201-252-fx-q18.png and used by all three. Q10 key (0.04006) uses normal approximation without continuity correction; see its note.",
+  "qs": [
+    {
+      "sec": "2.4",
+      "q": "(Suggested Problem 2-163) A researcher receives 20 containers of oxygen. Of those containers, 8 have oxygen that is not ionized, and the rest are ionized. Two samples are randomly selected, without replacement, from the lot. What is the probability that the second one selected is not ionized given that the first one was ionized?",
+      "opts": [
+        "$0.4211$",
+        "$0.4000$",
+        "$0.3684$",
+        "$0.5789$",
+        "$0.4444$"
+      ],
+      "ans": 0,
+      "hints": [
+        "This is a conditional probability for sampling without replacement.",
+        "After the first container is removed, count how many containers remain and how many of them are not ionized.",
+        "$P(B\\mid A)=\\dfrac{P(A\\cap B)}{P(A)}$, or directly: the number of favourable items left divided by the total number left."
+      ],
+      "steps": [
+        "The first container was ionized, so $20-1=19$ containers remain.",
+        "The number of non-ionized containers is still $8$.",
+        "$P(\\text{second not ionized}\\mid\\text{first ionized})=\\dfrac{8}{19}=0.4211$."
+      ],
+      "brief": "After one ionized container is removed, $\\frac{8}{19}=0.4211$ remain non-ionized."
+    },
+    {
+      "sec": "3.2",
+      "q": "(Problem 3-16) $f(x)=\\left(\\dfrac{8}{7}\\right)\\left(\\dfrac{1}{2}\\right)^{x}$, $x=1,2,3$. Determine $P(X\\le 1\\ \\text{or}\\ X>1)$.",
+      "opts": [
+        "$1.0$",
+        "$0.0$",
+        "$0.5$",
+        "$0.25$",
+        "$0.75$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Look at the event inside the probability: what outcomes does it contain?",
+        "The two parts $X\\le1$ and $X>1$ together cover every real value, so no calculation with $f$ is needed beyond checking it is a pmf.",
+        "The probability of the whole sample space is $1$, and $\\sum_x f(x)=1$ for a valid pmf."
+      ],
+      "steps": [
+        "Every value of $X$ is either $\\le 1$ or $>1$, so the event is the whole sample space.",
+        "Check: $\\sum f(x)=\\frac87\\left(\\frac12+\\frac14+\\frac18\\right)=\\frac87\\cdot\\frac78=1$.",
+        "Hence $P(X\\le1\\ \\text{or}\\ X>1)=1.0$."
+      ],
+      "brief": "The event is the whole sample space, so the probability is $1.0$."
+    },
+    {
+      "sec": "6.1",
+      "q": "(Problem 6-6) Suppose that you add 5 to all of the observations in a sample. How does it change the sample standard deviation?",
+      "opts": [
+        "The standard deviation is not changed.",
+        "The standard deviation is decreased by 5.",
+        "The standard deviation is increased by 5.",
+        "The standard deviation is increased by 2.5.",
+        "The standard deviation is increased by 25."
+      ],
+      "ans": 0,
+      "hints": [
+        "Think about what the standard deviation measures: spread around the mean, not location.",
+        "Write the new observations as $y_i=x_i+c$ and compare $y_i-\\bar y$ with $x_i-\\bar x$.",
+        "$\\bar y=\\bar x+c$, so $y_i-\\bar y=x_i-\\bar x$ and $s_y^2=\\dfrac{\\sum (y_i-\\bar y)^2}{n-1}=s_x^2$."
+      ],
+      "steps": [
+        "Let the new data be $y_i=x_i+5$; then $\\bar y=\\bar x+5$.",
+        "So $y_i-\\bar y=(x_i+5)-(\\bar x+5)=x_i-\\bar x$.",
+        "All deviations are unchanged, so $s$ is unchanged."
+      ],
+      "brief": "Adding a constant shifts the mean but not the deviations, so $s$ is unchanged."
+    },
+    {
+      "sec": "4.6",
+      "q": "(Problem 4-60) Cholesterol is a fatty substance that is an important part of the outer lining (membrane) of cells in the body of animals. The Food and Nutrition Institute of the Philippines found that the total cholesterol level for Filipino adults has a mean of 160 mg/dl and $84.13\\%$ of adults have a cholesterol level less than 180 mg/dl. Suppose that the total cholesterol level is normally distributed. An adult is at moderate risk if cholesterol level is more than one but less than two standard deviations above the mean. What proportion of the population is at moderate risk according to this criterion?",
+      "opts": [
+        "$0.1359$",
+        "$0.1587$",
+        "$0.0228$",
+        "$0.8413$",
+        "$0.9772$"
+      ],
+      "ans": 0,
+      "hints": [
+        "First use the given percentage to find the standard deviation, then convert the risk band to $z$-values.",
+        "Since $P(X<180)=0.8413$, find the $z$-value with that cumulative probability and solve for $\\sigma$. Notice what the risk band looks like in $z$-units.",
+        "$z=\\dfrac{x-\\mu}{\\sigma}$, and $P(a<Z<b)=\\Phi(b)-\\Phi(a)$."
+      ],
+      "steps": [
+        "$P(X<180)=0.8413=\\Phi(1)$, so $\\dfrac{180-160}{\\sigma}=1$ and $\\sigma=20$.",
+        "Moderate risk means $\\mu+\\sigma<X<\\mu+2\\sigma$, i.e. $1<Z<2$.",
+        "$P(1<Z<2)=\\Phi(2)-\\Phi(1)=0.9772-0.8413=0.1359$."
+      ],
+      "brief": "$\\sigma=20$; $P(1<Z<2)=0.9772-0.8413=0.1359$."
+    },
+    {
+      "sec": "4.8",
+      "q": "(Problem 4-114) Suppose that $X$ has an exponential distribution with a mean of 10. Which of the following statements is true?",
+      "opts": [
+        "$P(X<15\\mid X>10)=P(X<5)$",
+        "$P(X<15\\mid X>10)>P(X<5)$",
+        "$P(X<15\\mid X>10)<P(X<5)$",
+        "$P(X<15\\mid X>10)=P(X>5)$",
+        "$P(X<15\\mid X>10)=P(X<15)$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Recall the special property of the exponential distribution about waiting times.",
+        "Rewrite the conditional event $X<15$ given $X>10$ as a statement about the additional time beyond 10.",
+        "Memoryless property: $P(X>t_1+t_2\\mid X>t_1)=P(X>t_2)$, equivalently $P(X<t_1+t_2\\mid X>t_1)=P(X<t_2)$."
+      ],
+      "steps": [
+        "Given $X>10$, the event $X<15$ means the extra time beyond 10 is less than $5$.",
+        "By the memoryless property, $P(X<15\\mid X>10)=P(X<10+5\\mid X>10)=P(X<5)$.",
+        "Check: both equal $1-e^{-5/10}=0.3935$, so the two probabilities are equal."
+      ],
+      "brief": "Memoryless: $P(X<15\\mid X>10)=P(X<5)=1-e^{-0.5}$."
+    },
+    {
+      "sec": "7.2",
+      "q": "(Suggested Problem 7-12) The amount of time that a customer spends waiting at an airport check-in counter is a random variable with mean 8.3 minutes and standard deviation 1.8 minutes. Suppose that a random sample of $n=36$ customers is observed. Approximate the probability that the average time waiting in line for these customers is between 8.0 and 8.6 minutes.",
+      "opts": [
+        "$0.68268$",
+        "$0.34134$",
+        "$0.15866$",
+        "$0.84134$",
+        "$0.13236$"
+      ],
+      "ans": 0,
+      "hints": [
+        "With $n=36$ the central limit theorem makes $\\bar X$ approximately normal.",
+        "Find the mean and standard deviation of $\\bar X$, then standardise the two endpoints.",
+        "$\\bar X\\approx N\\left(\\mu,\\dfrac{\\sigma^2}{n}\\right)$, so $Z=\\dfrac{\\bar X-\\mu}{\\sigma/\\sqrt n}$."
+      ],
+      "steps": [
+        "$\\mu_{\\bar X}=8.3$ and $\\sigma_{\\bar X}=\\dfrac{1.8}{\\sqrt{36}}=0.3$.",
+        "$z$-values: $\\dfrac{8.0-8.3}{0.3}=-1$ and $\\dfrac{8.6-8.3}{0.3}=1$.",
+        "$P(-1<Z<1)=0.8413-0.1587=0.6827$, i.e. $0.68268$."
+      ],
+      "brief": "$\\sigma_{\\bar X}=0.3$; $P(-1<Z<1)=0.68268$."
+    },
+    {
+      "sec": "8.2",
+      "q": "(Problem 8-28) An Izod impact test was performed on 20 specimens of PVC pipe. The sample mean is 1.25 and the sample standard deviation is 0.25. Compute a $98\\%$ confidence interval on average Izod impact strength, and use it to test the hypothesis $H_0:\\mu=1.0$. Which one of the following statements is correct?",
+      "opts": [
+        "Reject $H_0$, as 1.0 falls outside the confidence interval",
+        "Reject $H_0$, as 1.0 falls inside the confidence interval",
+        "Do not Reject $H_0$, as 1.0 falls inside the confidence interval",
+        "Do not Reject $H_0$, as 1.0 falls outside the confidence interval",
+        "Using the computed confidence interval, we can not reach a valid decision"
+      ],
+      "ans": 0,
+      "hints": [
+        "A two-sided confidence interval can be used to carry out a two-sided test at the matching level.",
+        "Build the $t$ interval with the right degrees of freedom and compare the hypothesised value with its endpoints.",
+        "$\\bar x\\pm t_{\\alpha/2,\\,n-1}\\dfrac{s}{\\sqrt n}$; reject $H_0:\\mu=\\mu_0$ at level $\\alpha$ exactly when $\\mu_0$ is outside this $(1-\\alpha)$ interval."
+      ],
+      "steps": [
+        "$98\\%$ interval: $\\alpha/2=0.01$, $df=19$, $t_{0.01,19}=2.539$.",
+        "Margin $=2.539\\cdot\\dfrac{0.25}{\\sqrt{20}}=0.142$, so the interval is $(1.108,\\ 1.392)$.",
+        "The value $1.0$ is below $1.108$, so it lies outside the interval, and $H_0$ is rejected."
+      ],
+      "brief": "$1.25\\pm2.539(0.25/\\sqrt{20})=(1.108,1.392)$; $1.0$ is outside, so reject $H_0$."
+    },
+    {
+      "sec": "9.1",
+      "q": "(Problem 9-1) Which of the following hypotheses refer to a correctly stated hypothesis testing problem?",
+      "opts": [
+        "$H_0:\\mu=50,\\quad H_1:\\mu\\neq 50$",
+        "$H_0:\\sigma>10,\\quad H_1:\\sigma=10$",
+        "$H_0:\\bar x=50,\\quad H_1:\\bar x\\neq 50$",
+        "$H_0:p\\neq 0.1,\\quad H_1:p=0.1$",
+        "$H_0:s=30,\\quad H_1:s>30$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Recall the rules for how hypotheses must be written.",
+        "Check two things in each pair: is it about a population parameter, and does the null contain the equality?",
+        "Hypotheses are statements about population parameters ($\\mu,\\sigma,p$), never about sample statistics ($\\bar x,s$), and $H_0$ always contains the equality ($=,\\le,\\ge$)."
+      ],
+      "steps": [
+        "$H_0:\\sigma>10$ and $H_0:p\\neq0.1$ put an inequality in the null hypothesis, which is not allowed.",
+        "$H_0:\\bar x=50$ and $H_0:s=30$ are about sample statistics, not parameters.",
+        "Only $H_0:\\mu=50$ versus $H_1:\\mu\\neq50$ is a parameter statement with equality in $H_0$."
+      ],
+      "brief": "Only $\\mu=50$ vs $\\mu\\neq50$ uses a parameter with equality in $H_0$."
+    },
+    {
+      "sec": "9.2",
+      "q": "(Problem 9-20) A manufacturer is interested in the output voltage of a power supply used in a PC. Output voltage is assumed to be normally distributed, with standard deviation 0.24 volt, and the manufacturer wishes to test $H_0:\\mu=5$ volts against $H_1:\\mu\\neq5$, using $n=16$ units. The acceptance region is $4.88\\le\\bar X\\le5.12$. Find the value of $\\alpha$.",
+      "opts": [
+        "$0.04550$",
+        "$0.02275$",
+        "$0.95450$",
+        "$0.97725$",
+        "$0.05000$"
+      ],
+      "ans": 0,
+      "hints": [
+        "$\\alpha$ is the probability of rejecting $H_0$ when $H_0$ is true.",
+        "Under $H_0$, find the distribution of $\\bar X$ and the probability that it falls outside the acceptance region (both tails).",
+        "$\\alpha=P(\\bar X\\ \\text{in rejection region}\\mid\\mu_0)$ with $\\bar X\\sim N(\\mu_0,\\sigma^2/n)$ and $Z=\\dfrac{\\bar X-\\mu_0}{\\sigma/\\sqrt n}$."
+      ],
+      "steps": [
+        "Under $H_0$: $\\bar X\\sim N(5,\\ 0.24^2/16)$, $\\sigma_{\\bar X}=0.06$.",
+        "Boundaries: $z=\\dfrac{4.88-5}{0.06}=-2$ and $z=\\dfrac{5.12-5}{0.06}=2$.",
+        "$\\alpha=P(Z<-2)+P(Z>2)=2(0.02275)=0.04550$."
+      ],
+      "brief": "$\\sigma_{\\bar X}=0.06$, $z=\\pm2$: $\\alpha=2(0.02275)=0.04550$."
+    },
+    {
+      "sec": "9.5",
+      "q": "(Problem 9-26) The proportion of residents in Phoenix favoring the building of toll roads to complete the freeway system is believed to be $p=0.4$. If a random sample of 100 residents shows that 27 or fewer favor this proposal, we will conclude that $p<0.4$. Find the probability of committing a type II error with this procedure if $p=0.2$.",
+      "opts": [
+        "$0.04006$",
+        "$0.95994$",
+        "$0.07640$",
+        "$0.99598$",
+        "$0.22750$"
+      ],
+      "ans": 0,
+      "hints": [
+        "A type II error means failing to reject $H_0$ when the true proportion is $p=0.2$.",
+        "State the non-rejection region in terms of the count $X$, then compute its probability under $p=0.2$ using the normal approximation to the binomial.",
+        "$\\beta=P(\\text{do not reject}\\mid p\\ \\text{true})$, with $X\\approx N\\big(np,\\ np(1-p)\\big)$ and $Z=\\dfrac{X-np}{\\sqrt{np(1-p)}}$."
+      ],
+      "steps": [
+        "We reject $H_0$ when $X\\le27$, so a type II error occurs when $X>27$ (that is, $X\\ge28$).",
+        "With $p=0.2$: $np=20$ and $\\sqrt{np(1-p)}=\\sqrt{16}=4$.",
+        "$\\beta\\approx P\\left(Z>\\dfrac{27-20}{4}\\right)=P(Z>1.75)=1-0.95994=0.04006$ (the official key uses the normal approximation without a continuity correction)."
+      ],
+      "brief": "$X>27$, $X\\approx N(20,16)$: $\\beta=P(Z>1.75)=0.04006$.",
+      "note": "Key kept. The value 0.04006 comes from the normal approximation without continuity correction (z=1.75). Exact binomial P(X>=28 | p=0.2)=0.0342; with continuity correction 0.0304. The normal approximation to the binomial (4-7) is not in the pacing list but is how the key is obtained."
+    },
+    {
+      "sec": "9.2",
+      "q": "(Problem 9-40) The mean water temperature downstream from a power plant cooling tower discharge pipe should be no more than $38.11^\\circ\\text{F}$. Past experience has indicated that the standard deviation of temperature is $1.55^\\circ\\text{F}$. The water temperature is measured on 25 randomly chosen days, and the average temperature is found to be $37.4^\\circ\\text{F}$. What is the $p$-value for testing \\[ H_0:\\mu\\le 38.11 \\quad\\text{vs.}\\quad H_1:\\mu>38.11 \\]",
+      "opts": [
+        "$0.98899$",
+        "$0.01101$",
+        "$0.02202$",
+        "$0.67724$",
+        "$0.32276$"
+      ],
+      "ans": 0,
+      "hints": [
+        "This is a one-sided $z$-test for a mean with known $\\sigma$, and the alternative points to the right.",
+        "Compute the test statistic, then take the right-tail area for the $p$-value.",
+        "$z_0=\\dfrac{\\bar x-\\mu_0}{\\sigma/\\sqrt n}$; for $H_1:\\mu>\\mu_0$, $p\\text{-value}=P(Z>z_0)=1-\\Phi(z_0)$."
+      ],
+      "steps": [
+        "$z_0=\\dfrac{37.4-38.11}{1.55/\\sqrt{25}}=\\dfrac{-0.71}{0.31}=-2.29$.",
+        "The alternative is $\\mu>38.11$, so the $p$-value is the upper tail.",
+        "$p=P(Z>-2.29)=1-0.01101=0.98899$."
+      ],
+      "brief": "$z_0=-2.29$; $p=P(Z>-2.29)=0.98899$."
+    },
+    {
+      "sec": "9.3",
+      "q": "(Problem 9-56) Consider the computer output shown in the figure below.\n\nAt what level of significance can the null hypothesis be rejected?",
+      "opts": [
+        "We can reject the null hypothesis at significance levels greater than or equal to $0.012$.",
+        "We can reject the null hypothesis at significance levels less than or equal to $0.012$.",
+        "We can reject the null hypothesis at significance levels less than or equal to $0.988$.",
+        "We can reject the null hypothesis only at significance level $0.05$.",
+        "We can reject the null hypothesis only at significance level $0.012$."
+      ],
+      "ans": 0,
+      "hints": [
+        "Think about what the $p$-value tells you about the levels at which $H_0$ is rejected.",
+        "Read the $p$-value from the output and recall the rejection rule comparing it with $\\alpha$.",
+        "Reject $H_0$ at level $\\alpha$ if and only if $p\\text{-value}\\le\\alpha$; the $p$-value is the smallest level at which $H_0$ can be rejected."
+      ],
+      "steps": [
+        "From the output, $p\\text{-value}=0.012$ (two-sided alternative, $t=2.858$, $df=15$).",
+        "$H_0$ is rejected whenever $\\alpha\\ge p$-value.",
+        "So $H_0$ can be rejected at all significance levels greater than or equal to $0.012$."
+      ],
+      "brief": "Reject iff $\\alpha\\ge p=0.012$.",
+      "img": "stat201-252-fx-q12.png"
+    },
+    {
+      "sec": "11.2",
+      "q": "(Problem 11-1) An article in Concrete Research presented data on compressive strength ($x$) and intrinsic permeability ($y$) of various concrete mixes and cures. Summary quantities are $n=11$, $\\sum y_i=404.91$, $\\sum y_i^2=15156.6811$, $\\sum x_i=47$, $\\sum x_i^2=225.3286$, and $\\sum x_iy_i=1653.7781$. Also, \\[ S_{XX}=24.51042,\\quad S_{YY}=251.944,\\quad S_{XY}=-76.2919,\\quad SSR=237.46857,\\quad SSE=14.47543. \\] Assume that the two variables are related according to the simple linear regression model. The fitted regression line is $\\hat y=50.10942-3.11263\\,x$. Suppose that the observed value of permeability at $x=3.00$ is $38.62$. Calculate the value of the corresponding residual.",
+      "opts": [
+        "$-2.15153$",
+        "$2.15153$",
+        "$40.77153$",
+        "$38.62000$",
+        "$-3.11263$"
+      ],
+      "ans": 0,
+      "hints": [
+        "A residual is the observed value minus the fitted value.",
+        "First compute the fitted value of $y$ at the given $x$ from the regression line.",
+        "$e_i=y_i-\\hat y_i$ with $\\hat y_i=\\hat\\beta_0+\\hat\\beta_1x_i$."
+      ],
+      "steps": [
+        "Fitted value: $\\hat y=50.10942-3.11263(3.00)=40.77153$.",
+        "Residual $=y-\\hat y=38.62-40.77153$.",
+        "$e=-2.15153$."
+      ],
+      "brief": "$\\hat y(3)=40.77153$, so $e=38.62-40.77153=-2.15153$."
+    },
+    {
+      "sec": "11.4",
+      "q": "(Problem 11-1) An article in Concrete Research presented data on compressive strength ($x$) and intrinsic permeability ($y$) of various concrete mixes and cures. Summary quantities are $n=13$, $\\sum y_i=490.13$, $\\sum y_i^2=18706.8045$, $\\sum x_i=54.86$, $\\sum x_i^2=257.1384$, and $\\sum x_iy_i=1995.477$. Also, \\[ S_{XX}=25.6292,\\quad S_{YY}=227.77243,\\quad S_{XY}=-72.8716,\\quad SSR=207.19609,\\quad SSE=20.57634. \\] Assume that the two variables are related according to the simple linear regression model. The fitted regression line is $\\hat y=49.70105-2.84330\\,x$. What is the standard error of the slope coefficient?",
+      "opts": [
+        "$0.27016$",
+        "$0.89602$",
+        "$1.36769$",
+        "$0.07299$",
+        "$0.24851$"
+      ],
+      "ans": 0,
+      "hints": [
+        "The standard error of the slope uses the error variance estimate and $S_{XX}$.",
+        "Estimate $\\sigma^2$ from $SSE$ with the correct degrees of freedom, then divide by $S_{XX}$.",
+        "$\\hat\\sigma^2=\\dfrac{SSE}{n-2}$ and $se(\\hat\\beta_1)=\\sqrt{\\dfrac{\\hat\\sigma^2}{S_{XX}}}$."
+      ],
+      "steps": [
+        "$\\hat\\sigma^2=\\dfrac{20.57634}{13-2}=1.870576$.",
+        "$se(\\hat\\beta_1)=\\sqrt{\\dfrac{1.870576}{25.6292}}=\\sqrt{0.072984}$.",
+        "$se(\\hat\\beta_1)=0.27016$."
+      ],
+      "brief": "$\\hat\\sigma^2=20.57634/11$; $se=\\sqrt{\\hat\\sigma^2/S_{XX}}=0.27016$."
+    },
+    {
+      "sec": "11.2",
+      "q": "(Problem 11-1) An article in Concrete Research presented data on compressive strength ($x$) and intrinsic permeability ($y$) of various concrete mixes and cures. Summary quantities are $n=12$, $\\sum y_i=443.99$, $\\sum y_i^2=16679.1943$, $\\sum x_i=50.39$, $\\sum x_i^2=235.1413$, and $\\sum x_iy_i=1788.0105$. Also, \\[ S_{XX}=23.54529,\\quad S_{YY}=251.93429,\\quad S_{XY}=-76.37751,\\quad SSR=247.75755,\\quad SSE=4.17674. \\] Assume that the two variables are related according to the simple linear regression model. The fitted regression line is $\\hat y=50.62066-3.24386\\,x$. What is the estimate of the error variance $\\sigma^2$?",
+      "opts": [
+        "$0.41767$",
+        "$0.34806$",
+        "$0.37970$",
+        "$0.64627$",
+        "$4.17674$"
+      ],
+      "ans": 0,
+      "hints": [
+        "The error variance is estimated from the residual sum of squares.",
+        "Divide $SSE$ by its degrees of freedom; in simple linear regression two parameters are estimated.",
+        "$\\hat\\sigma^2=MSE=\\dfrac{SSE}{n-2}$."
+      ],
+      "steps": [
+        "$n=12$, so the degrees of freedom are $n-2=10$.",
+        "$\\hat\\sigma^2=\\dfrac{4.17674}{10}$.",
+        "$\\hat\\sigma^2=0.41767$."
+      ],
+      "brief": "$\\hat\\sigma^2=SSE/(n-2)=4.17674/10=0.41767$."
+    },
+    {
+      "sec": "11.2",
+      "q": "(Problem 11-1) An article in Concrete Research presented data on compressive strength ($x$) and intrinsic permeability ($y$) of various concrete mixes and cures. Summary quantities are $n=14$, $\\sum y_i=530.24$, $\\sum y_i^2=20338.755$, $\\sum x_i=60.16$, $\\sum x_i^2=285.3356$, and $\\sum x_iy_i=2198.5732$. Also, \\[ S_{XX}=26.81949,\\quad S_{YY}=256.29374,\\quad S_{XY}=-79.94383,\\quad SSR=238.29748,\\quad SSE=17.99627. \\] Assume that the two variables are related according to the simple linear regression model. The fitted regression line is $\\hat y=50.68326-2.98081\\,x$. Which of the following is the correct interpretation of the estimated slope?",
+      "opts": [
+        "For each unit increase in compressive strength, mean permeability decreases by about $2.98081$ units.",
+        "For each unit increase in compressive strength, mean permeability increases by about $2.98081$ units.",
+        "A $2.98081$-unit increase in permeability causes compressive strength to decrease by one unit.",
+        "Permeability is independent of compressive strength.",
+        "When compressive strength is zero, mean permeability decreases by $2.98081$ units."
+      ],
+      "ans": 0,
+      "hints": [
+        "Interpret the slope: it is the change in the mean response per unit change in the predictor.",
+        "Identify which variable is $x$ and which is $y$, and note the sign of the slope.",
+        "In $\\hat y=\\hat\\beta_0+\\hat\\beta_1x$, $\\hat\\beta_1$ is the estimated change in the mean of $y$ for a one-unit increase in $x$; a negative sign means a decrease."
+      ],
+      "steps": [
+        "Here $x$ is compressive strength and $y$ is permeability.",
+        "The slope is $-2.98081$, so each unit increase in $x$ changes the mean of $y$ by $-2.98081$.",
+        "That is, mean permeability decreases by about $2.98081$ units per unit of compressive strength."
+      ],
+      "brief": "Slope $-2.98081$: mean permeability falls by about $2.98081$ per unit of strength."
+    },
+    {
+      "sec": "11.2",
+      "q": "(Problem 11-1) An article in Concrete Research presented data on compressive strength ($x$) and intrinsic permeability ($y$) of various concrete mixes and cures. Summary quantities are $n=12$, $\\sum y_i=457.24$, $\\sum y_i^2=17561.7924$, $\\sum x_i=50.57$, $\\sum x_i^2=236.4425$, and $\\sum x_iy_i=1879.9483$. Also, \\[ S_{XX}=23.33209,\\quad S_{YY}=139.42427,\\quad S_{XY}=-46.93727,\\quad SSR=94.42390,\\quad SSE=45.00037. \\] Assume that the two variables are related according to the simple linear regression model. In the fitted simple linear regression model, approximately what percentage of the total variation in the response variable remains unexplained?",
+      "opts": [
+        "$32.27585\\%$",
+        "$67.72400\\%$",
+        "$45.00037\\%$",
+        "$22.77600\\%$",
+        "$4.50004\\%$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Unexplained variation is the complement of the coefficient of determination.",
+        "Compare the error sum of squares with the total sum of squares of $y$.",
+        "$R^2=\\dfrac{SSR}{SST}=1-\\dfrac{SSE}{SST}$ with $SST=S_{YY}$, so the unexplained fraction is $\\dfrac{SSE}{SST}$."
+      ],
+      "steps": [
+        "$SST=S_{YY}=139.42427$ (also $SSR+SSE=94.42390+45.00037$).",
+        "Unexplained fraction $=\\dfrac{SSE}{SST}=\\dfrac{45.00037}{139.42427}=0.3227585$.",
+        "As a percentage: $32.27585\\%$."
+      ],
+      "brief": "$SSE/S_{YY}=45.00037/139.42427=32.27585\\%$."
+    },
+    {
+      "sec": "12.2",
+      "q": "(Problem 12-21) Consider the R output shown in the figure below for a multiple linear regression model (15 observations, two predictors $x_1$ and $x_2$). Entries marked ?? are missing. What is the value of the test statistic used to test whether at least one predictor is significant in the regression model?",
+      "opts": [
+        "$2465.4820$",
+        "$1366.2880$",
+        "$683.1440$",
+        "$7.1398$",
+        "$3.4793$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Testing whether at least one predictor matters is the overall (significance of regression) $F$-test.",
+        "Use the ANOVA table: find the residual sum of squares by subtraction, then its mean square.",
+        "$F_0=\\dfrac{MSR}{MSE}$ with $MSR=\\dfrac{SSR}{k}$, $MSE=\\dfrac{SSE}{n-k-1}$ and $SST=SSR+SSE$."
+      ],
+      "steps": [
+        "$SSE=SST-SSR=1369.613-1366.288=3.325$, with $14-2=12$ degrees of freedom.",
+        "$MSE=\\dfrac{3.325}{12}=0.27708$.",
+        "$F_0=\\dfrac{683.144}{0.27708}=2465.48$."
+      ],
+      "brief": "$SSE=3.325$, $MSE=0.27708$; $F=683.144/0.27708=2465.48$.",
+      "img": "stat201-252-fx-q18.png"
+    },
+    {
+      "sec": "12.2",
+      "q": "(Problem 12-21) Consider the R output shown in the figure below for a multiple linear regression model (15 observations, two predictors $x_1$ and $x_2$). Entries marked ?? are missing. For the test used to test whether at least one predictor is significant in the regression model, what are the degrees of freedom for numerator and denominator respectively?",
+      "opts": [
+        "$2,\\ 12$",
+        "$2,\\ 14$",
+        "$14,\\ 12$",
+        "$12,\\ 2$",
+        "$1,\\ 12$"
+      ],
+      "ans": 0,
+      "hints": [
+        "The overall $F$-test compares the regression mean square with the error mean square.",
+        "The numerator degrees of freedom count the predictors; the denominator degrees of freedom belong to the residuals.",
+        "For $k$ predictors and $n$ observations: numerator $df=k$, denominator $df=n-k-1$ (and total $df=n-1$)."
+      ],
+      "steps": [
+        "Total $df=14$ means $n=15$ observations; there are $k=2$ predictors.",
+        "Numerator $df=k=2$ (the Regression row).",
+        "Denominator $df=n-k-1=15-2-1=12$ (also stated in the output as 12 residual degrees of freedom)."
+      ],
+      "brief": "Numerator $k=2$, denominator $n-k-1=12$.",
+      "img": "stat201-252-fx-q18.png"
+    },
+    {
+      "sec": "12.1",
+      "q": "(Problem 12-21) Consider the R output shown in the figure below for a multiple linear regression model (15 observations, two predictors $x_1$ and $x_2$). Entries marked ?? are missing. What is the value of the standard deviation of the residuals (standard error of estimate)?",
+      "opts": [
+        "$0.5264$",
+        "$0.2771$",
+        "$0.7666$",
+        "$0.4709$",
+        "$3.4793$"
+      ],
+      "ans": 0,
+      "hints": [
+        "This is the residual standard error, the square root of the error mean square.",
+        "Get $SSE$ from the ANOVA table by subtraction and divide by the error degrees of freedom before taking the root.",
+        "$\\hat\\sigma=\\sqrt{MSE}=\\sqrt{\\dfrac{SSE}{n-k-1}}$."
+      ],
+      "steps": [
+        "$SSE=SST-SSR=1369.613-1366.288=3.325$.",
+        "$MSE=\\dfrac{3.325}{12}=0.27708$.",
+        "$\\hat\\sigma=\\sqrt{0.27708}=0.5264$."
+      ],
+      "brief": "$MSE=3.325/12=0.27708$; $\\hat\\sigma=\\sqrt{MSE}=0.5264$.",
+      "img": "stat201-252-fx-q18.png"
+    }
+  ]
+}

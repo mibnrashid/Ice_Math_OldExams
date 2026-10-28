@@ -1,0 +1,430 @@
+{
+  "course": "math101",
+  "term": "222",
+  "kind": "e2",
+  "date": "",
+  "minutes": 90,
+  "source": "math101-222-ex2.pdf",
+  "note": "Date and exam length are not printed on the master; date left empty and 90 minutes assumed. All 18 master keys verified with sympy and agree.",
+  "qs": [
+    {
+      "sec": "3.8",
+      "q": "Starting with $x_1=2$, the second approximation $x_2$ to the root of the equation $x^3-2x-5=0$ is",
+      "opts": [
+        "$2.10$",
+        "$1.99$",
+        "$1.98$",
+        "$2.01$",
+        "$2.21$"
+      ],
+      "ans": 0,
+      "hints": [
+        "This is a Newton's method problem: one iteration from the starting value.",
+        "Compute $f(x_1)$ and $f'(x_1)$ for the given function, then apply the iteration formula once.",
+        "Newton's method: $x_{n+1}=x_n-\\dfrac{f(x_n)}{f'(x_n)}$."
+      ],
+      "steps": [
+        "$f(x)=x^3-2x-5$ and $f'(x)=3x^2-2$.",
+        "$f(2)=8-4-5=-1$ and $f'(2)=12-2=10$.",
+        "$x_2=2-\\dfrac{-1}{10}=2.1$."
+      ],
+      "brief": "$x_2=2-\\frac{f(2)}{f'(2)}=2+\\frac1{10}=2.10$."
+    },
+    {
+      "sec": "4.1",
+      "q": "If the maximum value for $f(x)=2\\sin x-\\cos 2x$ on $[0,2\\pi]$ happens at $x=a$ and the minimum value of $f(x)$ is $b$, then $a+b$ is equal to",
+      "opts": [
+        "$\\dfrac{\\pi-3}{2}$",
+        "$1+\\pi$",
+        "$1-\\pi$",
+        "$\\dfrac{\\pi-1}{2}$",
+        "$\\dfrac{\\pi}{3}$"
+      ],
+      "ans": 0,
+      "hints": [
+        "This is an absolute extrema problem on a closed interval.",
+        "Find $f'(x)$, set it equal to $0$, list the critical numbers in $[0,2\\pi]$, and compare $f$ at them and at the endpoints.",
+        "Closed Interval Method: the absolute extrema of a continuous $f$ on $[a,b]$ occur at critical numbers or endpoints. Useful identity: $\\sin 2x=2\\sin x\\cos x$."
+      ],
+      "steps": [
+        "$f'(x)=2\\cos x+2\\sin 2x=2\\cos x\\,(1+2\\sin x)$.",
+        "$f'=0$: $\\cos x=0$ gives $x=\\frac{\\pi}{2},\\frac{3\\pi}{2}$; $\\sin x=-\\frac12$ gives $x=\\frac{7\\pi}{6},\\frac{11\\pi}{6}$.",
+        "Values: $f(0)=f(2\\pi)=-1$, $f(\\frac{\\pi}{2})=3$, $f(\\frac{3\\pi}{2})=-1$, $f(\\frac{7\\pi}{6})=f(\\frac{11\\pi}{6})=-\\frac32$.",
+        "Maximum $3$ at $a=\\frac{\\pi}{2}$; minimum $b=-\\frac32$.",
+        "$a+b=\\dfrac{\\pi}{2}-\\dfrac32=\\dfrac{\\pi-3}{2}$."
+      ],
+      "brief": "Max $3$ at $a=\\frac{\\pi}{2}$, min $b=-\\frac32$, so $a+b=\\frac{\\pi-3}{2}$."
+    },
+    {
+      "sec": "4.1",
+      "q": "$f(x)=x^{4/5}(x-4)^2$ has",
+      "opts": [
+        "3 critical numbers",
+        "2 critical numbers",
+        "1 critical number",
+        "4 critical numbers",
+        "no critical numbers"
+      ],
+      "ans": 0,
+      "hints": [
+        "Critical numbers include points where $f'=0$ and points in the domain where $f'$ does not exist.",
+        "Differentiate with the product rule, factor out the lowest power of $x$, and examine both the numerator and the denominator.",
+        "A critical number is a number $c$ in the domain of $f$ with $f'(c)=0$ or $f'(c)$ undefined."
+      ],
+      "steps": [
+        "$f'(x)=\\frac45x^{-1/5}(x-4)^2+2x^{4/5}(x-4)=x^{-1/5}(x-4)\\left[\\frac45(x-4)+2x\\right]$.",
+        "This simplifies to $f'(x)=\\dfrac{2(x-4)(7x-8)}{5x^{1/5}}$.",
+        "$f'=0$ at $x=4$ and $x=\\frac87$; $f'$ is undefined at $x=0$, which is in the domain of $f$.",
+        "So there are 3 critical numbers: $0,\\ \\frac87,\\ 4$."
+      ],
+      "brief": "$f'=\\frac{2(x-4)(7x-8)}{5x^{1/5}}$: critical at $0,\\frac87,4$, so 3."
+    },
+    {
+      "sec": "4.3",
+      "q": "If the maximum value of $f(x)=x-\\tan^{-1}(x)$ over $[0,4]$ is $A$, then",
+      "opts": [
+        "$A>0$",
+        "$A<0$",
+        "$A=0$",
+        "$|A|>4$",
+        "$\\pi|A|<4$"
+      ],
+      "ans": 0,
+      "hints": [
+        "This is an absolute maximum on a closed interval; check whether $f$ is monotonic.",
+        "Compute $f'(x)$ and decide its sign on $[0,4]$, then evaluate $f$ at the relevant endpoint.",
+        "If $f'\\ge0$ on an interval, $f$ is increasing there, so the maximum is at the right endpoint. Also $\\dfrac{d}{dx}\\tan^{-1}x=\\dfrac1{1+x^2}$ and $\\tan^{-1}x<\\dfrac{\\pi}{2}$."
+      ],
+      "steps": [
+        "$f'(x)=1-\\dfrac{1}{1+x^2}=\\dfrac{x^2}{1+x^2}\\ge0$, so $f$ is increasing on $[0,4]$.",
+        "The maximum is $A=f(4)=4-\\tan^{-1}4$.",
+        "Since $\\tan^{-1}4<\\frac{\\pi}{2}<2$, we get $A>2>0$."
+      ],
+      "brief": "$f'=\\frac{x^2}{1+x^2}\\ge0$, so $A=4-\\tan^{-1}4>0$."
+    },
+    {
+      "sec": "4.3",
+      "q": "$f(x)=x^{-2}\\ln x$ is increasing on",
+      "opts": [
+        "$(0,\\sqrt e)$",
+        "$(e,\\infty)$",
+        "$(\\sqrt e,\\infty)$",
+        "$(0,\\infty)$",
+        "$\\left(\\dfrac12e,\\ e^2\\right)$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Use the first derivative test for increasing and decreasing intervals.",
+        "Differentiate with the product (or quotient) rule, factor, and find where $f'>0$ within the domain $x>0$.",
+        "$f$ is increasing on an interval where $f'(x)>0$. Also $\\dfrac{d}{dx}\\ln x=\\dfrac1x$."
+      ],
+      "steps": [
+        "$f'(x)=-2x^{-3}\\ln x+x^{-2}\\cdot\\frac1x=\\dfrac{1-2\\ln x}{x^3}$.",
+        "For $x>0$ the denominator is positive, so $f'>0\\iff 1-2\\ln x>0\\iff \\ln x<\\frac12$.",
+        "That gives $0<x<\\sqrt e$, so $f$ is increasing on $(0,\\sqrt e)$."
+      ],
+      "brief": "$f'=\\frac{1-2\\ln x}{x^3}>0\\iff 0<x<\\sqrt e$."
+    },
+    {
+      "sec": "4.3",
+      "q": "$f(x)=(3-x)e^{x-3}$ is decreasing over",
+      "opts": [
+        "$(2,\\infty)$",
+        "$(-3,\\infty)$",
+        "$(\\sqrt3,\\infty)$",
+        "$(-\\infty,3)$",
+        "$(-\\infty,\\sqrt3)$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Use the first derivative test for increasing and decreasing intervals.",
+        "Differentiate with the product rule and factor out the exponential.",
+        "$f$ is decreasing where $f'(x)<0$; note $e^{u}>0$ for every $u$."
+      ],
+      "steps": [
+        "$f'(x)=-e^{x-3}+(3-x)e^{x-3}=(2-x)e^{x-3}$.",
+        "Since $e^{x-3}>0$, $f'<0\\iff 2-x<0\\iff x>2$.",
+        "So $f$ is decreasing on $(2,\\infty)$."
+      ],
+      "brief": "$f'=(2-x)e^{x-3}<0\\iff x>2$."
+    },
+    {
+      "sec": "4.2",
+      "q": "The constant $c$ that satisfies Rolle's Theorem for $f(x)=\\dfrac{x^2-2x-3}{x+2}$ over $[-1,3]$ is equal to:",
+      "opts": [
+        "$-2+\\sqrt5$",
+        "$-2-\\sqrt5$",
+        "$0$",
+        "$2\\sqrt5-1$",
+        "$1-2\\sqrt5$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Rolle's Theorem gives a point $c$ in the open interval where $f'(c)=0$.",
+        "Differentiate with the quotient rule, set the numerator equal to $0$, and keep only the solution that lies in $(-1,3)$.",
+        "Rolle's Theorem: if $f$ is continuous on $[a,b]$, differentiable on $(a,b)$ and $f(a)=f(b)$, then $f'(c)=0$ for some $c$ in $(a,b)$. Quotient rule: $\\left(\\dfrac uv\\right)'=\\dfrac{u'v-uv'}{v^2}$."
+      ],
+      "steps": [
+        "$f(-1)=\\frac{1+2-3}{1}=0$ and $f(3)=\\frac{9-6-3}{5}=0$; $f$ is continuous and differentiable on the interval since $x+2\\neq0$ there.",
+        "$f'(x)=\\dfrac{(2x-2)(x+2)-(x^2-2x-3)}{(x+2)^2}=\\dfrac{x^2+4x-1}{(x+2)^2}$.",
+        "$x^2+4x-1=0$ gives $x=-2\\pm\\sqrt5$.",
+        "Only $-2+\\sqrt5\\approx0.236$ lies in $(-1,3)$ (the other is about $-4.24$)."
+      ],
+      "brief": "$f'=\\frac{x^2+4x-1}{(x+2)^2}=0\\Rightarrow c=-2+\\sqrt5\\in(-1,3)$."
+    },
+    {
+      "sec": "4.2",
+      "q": "If $f(x)=Ax^2+Bx+C$ is any polynomial over any closed interval $[a,b]$, then the value of $c$ that guarantees the mean value theorem is equal to:",
+      "opts": [
+        "$\\dfrac{a+b}{2}$",
+        "$\\dfrac{b-a}{2}$",
+        "$\\dfrac{a+b+c}{b-a}$",
+        "$\\dfrac{a-c}{b-a}$",
+        "$\\dfrac{b^2-a^2}{a+b+c}$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Apply the Mean Value Theorem to a quadratic and solve for $c$ in general.",
+        "Compute $\\dfrac{f(b)-f(a)}{b-a}$, simplify it, and set it equal to $f'(c)$.",
+        "Mean Value Theorem: $f'(c)=\\dfrac{f(b)-f(a)}{b-a}$ for some $c\\in(a,b)$; also $b^2-a^2=(b-a)(b+a)$."
+      ],
+      "steps": [
+        "$\\dfrac{f(b)-f(a)}{b-a}=\\dfrac{A(b^2-a^2)+B(b-a)}{b-a}=A(a+b)+B$.",
+        "$f'(c)=2Ac+B$.",
+        "Set $2Ac+B=A(a+b)+B$, so (for $A\\neq0$) $c=\\dfrac{a+b}{2}$."
+      ],
+      "brief": "$2Ac+B=A(a+b)+B$ gives $c=\\frac{a+b}{2}$, the midpoint."
+    },
+    {
+      "sec": "4.3",
+      "q": "One statement only is True about $f(x)=e^{\\tan^{-1}x}$",
+      "opts": [
+        "$f$ is increasing on its domain",
+        "$f$ is decreasing over $\\left(-\\dfrac{\\pi}{2},\\dfrac{\\pi}{2}\\right)$",
+        "The domain of $f$ is $(-e,e)$",
+        "The range of $f(x)$ is $(0,\\infty)$",
+        "$f$ passes through the origin"
+      ],
+      "ans": 0,
+      "hints": [
+        "Check each statement separately using the domain, range and derivative of the function.",
+        "Find $f'(x)$ and its sign, and recall the domain and range of $\\tan^{-1}x$.",
+        "$\\dfrac{d}{dx}e^{u}=e^{u}u'$ and $\\dfrac{d}{dx}\\tan^{-1}x=\\dfrac1{1+x^2}$; $\\tan^{-1}x$ has domain $\\mathbb R$ and range $\\left(-\\frac{\\pi}{2},\\frac{\\pi}{2}\\right)$."
+      ],
+      "steps": [
+        "$f'(x)=\\dfrac{e^{\\tan^{-1}x}}{1+x^2}>0$ for all $x$, so $f$ is increasing on its whole domain.",
+        "The domain is $\\mathbb R$ (not $(-e,e)$), so that statement is false; $f$ is not decreasing anywhere.",
+        "The range is $\\left(e^{-\\pi/2},e^{\\pi/2}\\right)$, not $(0,\\infty)$.",
+        "$f(0)=e^0=1\\neq0$, so the graph does not pass through the origin."
+      ],
+      "brief": "$f'=\\frac{e^{\\tan^{-1}x}}{1+x^2}>0$: $f$ is increasing on $\\mathbb R$."
+    },
+    {
+      "sec": "3.4",
+      "q": "$y=\\ln|\\csc x+\\cot x|$, then $\\dfrac{dy}{dx}=$",
+      "opts": [
+        "$-\\csc x$",
+        "$\\csc x$",
+        "$\\sec x$",
+        "$-\\sec x$",
+        "$\\tan x$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Differentiate a logarithm of a trigonometric expression with the chain rule.",
+        "Use $\\dfrac{d}{dx}\\ln|u|=\\dfrac{u'}{u}$ and differentiate $\\csc x+\\cot x$, then look for a common factor.",
+        "$\\dfrac{d}{dx}\\csc x=-\\csc x\\cot x$ and $\\dfrac{d}{dx}\\cot x=-\\csc^2x$."
+      ],
+      "steps": [
+        "$y'=\\dfrac{-\\csc x\\cot x-\\csc^2x}{\\csc x+\\cot x}$.",
+        "Factor the numerator: $-\\csc x(\\cot x+\\csc x)$.",
+        "Cancel $\\csc x+\\cot x$: $y'=-\\csc x$."
+      ],
+      "brief": "$y'=\\frac{-\\csc x(\\cot x+\\csc x)}{\\csc x+\\cot x}=-\\csc x$."
+    },
+    {
+      "sec": "3.4",
+      "q": "$f(x)=\\sqrt{25-x^2}$, then the slope of the tangent line at the point $(4,3)$ is",
+      "opts": [
+        "$\\dfrac{-4}{3}$",
+        "$\\dfrac43$",
+        "$\\dfrac{-2}{5}$",
+        "$\\dfrac25$",
+        "$0$"
+      ],
+      "ans": 0,
+      "hints": [
+        "The slope of the tangent line is the derivative at the given point.",
+        "Differentiate with the chain rule, then substitute the $x$-value of the point.",
+        "$\\dfrac{d}{dx}\\sqrt{u}=\\dfrac{u'}{2\\sqrt u}$; the tangent slope at $x=x_0$ is $f'(x_0)$."
+      ],
+      "steps": [
+        "$f'(x)=\\dfrac{-2x}{2\\sqrt{25-x^2}}=\\dfrac{-x}{\\sqrt{25-x^2}}$.",
+        "At $x=4$: $f'(4)=\\dfrac{-4}{\\sqrt{9}}=-\\dfrac43$."
+      ],
+      "brief": "$f'(x)=\\frac{-x}{\\sqrt{25-x^2}}$, so $f'(4)=-\\frac43$."
+    },
+    {
+      "sec": "3.4",
+      "q": "If $F(x)=\\sqrt{g(x^2)}$, and $g(4)=4$, $g'(4)=3$ then $F'(2)=$",
+      "opts": [
+        "$3$",
+        "$4$",
+        "$\\dfrac32$",
+        "$\\dfrac34$",
+        "$\\dfrac38$"
+      ],
+      "ans": 0,
+      "hints": [
+        "This is a composition of three functions, so use the chain rule repeatedly.",
+        "Differentiate the square root first, then $g$, then $x^2$, and substitute $x=2$.",
+        "Chain rule: $\\dfrac{d}{dx}\\sqrt{u}=\\dfrac{u'}{2\\sqrt u}$ and $\\dfrac{d}{dx}g(h(x))=g'(h(x))\\,h'(x)$."
+      ],
+      "steps": [
+        "$F'(x)=\\dfrac{g'(x^2)\\cdot 2x}{2\\sqrt{g(x^2)}}$.",
+        "At $x=2$, $x^2=4$: $F'(2)=\\dfrac{g'(4)\\cdot4}{2\\sqrt{g(4)}}$.",
+        "$F'(2)=\\dfrac{3\\cdot4}{2\\cdot2}=3$."
+      ],
+      "brief": "$F'(x)=\\frac{2x\\,g'(x^2)}{2\\sqrt{g(x^2)}}$, so $F'(2)=\\frac{12}{4}=3$."
+    },
+    {
+      "sec": "3.4",
+      "q": "$y=(\\ln x)^{x^2}$, then $\\dfrac{dy}{dx}\\Big|_{x=e}=$",
+      "opts": [
+        "$e$",
+        "$e^2$",
+        "$\\dfrac1e$",
+        "$2e$",
+        "$\\dfrac1{e^2}$"
+      ],
+      "ans": 0,
+      "hints": [
+        "The variable appears in both the base and the exponent, so use logarithmic differentiation.",
+        "Take $\\ln$ of both sides, differentiate implicitly, then solve for $y'$ and substitute $x=e$ (find $y(e)$ too).",
+        "If $y=u^v$, then $\\ln y=v\\ln u$ and $\\dfrac{y'}{y}=v'\\ln u+v\\dfrac{u'}{u}$."
+      ],
+      "steps": [
+        "$\\ln y=x^2\\ln(\\ln x)$.",
+        "$\\dfrac{y'}{y}=2x\\ln(\\ln x)+x^2\\cdot\\dfrac{1}{x\\ln x}$.",
+        "At $x=e$: $\\ln e=1$, $\\ln(\\ln e)=0$, and $y(e)=1^{e^2}=1$.",
+        "$\\dfrac{y'}{y}=0+\\dfrac{e^2}{e\\cdot1}=e$, so $y'(e)=e$."
+      ],
+      "brief": "Log differentiation: $\\frac{y'}{y}=2x\\ln\\ln x+\\frac{x}{\\ln x}$; at $x=e$, $y'=e$."
+    },
+    {
+      "sec": "3.5",
+      "q": "$x^2+y^2=4$, then $\\dfrac{d^2y}{dx^2}=$",
+      "opts": [
+        "$\\dfrac{-4}{y^3}$",
+        "$\\dfrac{-4}{y^2}$",
+        "$\\dfrac{-x}{y^3}$",
+        "$\\dfrac{x^2}{y^2}$",
+        "$\\dfrac{-4}{y}$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Use implicit differentiation twice.",
+        "Differentiate once to find $y'$, then differentiate $y'$ again (treating $y$ as a function of $x$) and substitute $y'$ back.",
+        "For an implicit curve, differentiate both sides with respect to $x$, using $\\dfrac{d}{dx}y^n=ny^{n-1}y'$ and the quotient rule for $y''$; then use the original equation to simplify."
+      ],
+      "steps": [
+        "$2x+2yy'=0$, so $y'=-\\dfrac xy$.",
+        "$y''=-\\dfrac{y-xy'}{y^2}=-\\dfrac{y+x^2/y}{y^2}=-\\dfrac{y^2+x^2}{y^3}$.",
+        "Since $x^2+y^2=4$: $y''=-\\dfrac{4}{y^3}$."
+      ],
+      "brief": "$y'=-\\frac xy$, $y''=-\\frac{x^2+y^2}{y^3}=-\\frac{4}{y^3}$."
+    },
+    {
+      "sec": "3.6",
+      "q": "Let $f(x)=\\dfrac{x+6}{x-2}$, $x>2$, then $(f^{-1})'(3)=$",
+      "opts": [
+        "$-2$",
+        "$-\\dfrac18$",
+        "$2$",
+        "$8$",
+        "$-\\dfrac12$"
+      ],
+      "ans": 0,
+      "hints": [
+        "This asks for the derivative of an inverse function at a point.",
+        "First find the $x$ with $f(x)=3$, then compute $f'$ there.",
+        "$(f^{-1})'(b)=\\dfrac{1}{f'(a)}$ where $f(a)=b$."
+      ],
+      "steps": [
+        "Solve $f(a)=3$: $a+6=3(a-2)$, so $a=6$.",
+        "$f'(x)=\\dfrac{(x-2)-(x+6)}{(x-2)^2}=\\dfrac{-8}{(x-2)^2}$, so $f'(6)=\\dfrac{-8}{16}=-\\dfrac12$.",
+        "$(f^{-1})'(3)=\\dfrac{1}{-1/2}=-2$."
+      ],
+      "brief": "$f(6)=3$, $f'(6)=-\\frac12$, so $(f^{-1})'(3)=-2$."
+    },
+    {
+      "sec": "3.6",
+      "q": "Let $y=x\\tan^{-1}(2x)-\\dfrac14\\ln(1+4x^2)$, then $\\dfrac{dy}{dx}=$",
+      "opts": [
+        "$\\tan^{-1}(2x)$",
+        "$x\\tan^{-1}(2x)$",
+        "$\\tan^{-1}(2x)-\\dfrac{1}{1+4x^2}$",
+        "$\\tan^{-1}(2x)+\\dfrac{1}{1+4x^2}$",
+        "$\\tan^{-1}\\left(\\dfrac{x}{1+4x^2}\\right)$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Use the product rule on the first term and the chain rule on both terms.",
+        "Differentiate $x\\tan^{-1}(2x)$ and $\\frac14\\ln(1+4x^2)$ separately, then see which pieces cancel.",
+        "$\\dfrac{d}{dx}\\tan^{-1}u=\\dfrac{u'}{1+u^2}$ and $\\dfrac{d}{dx}\\ln u=\\dfrac{u'}{u}$."
+      ],
+      "steps": [
+        "$\\dfrac{d}{dx}\\left[x\\tan^{-1}(2x)\\right]=\\tan^{-1}(2x)+\\dfrac{2x}{1+4x^2}$.",
+        "$\\dfrac{d}{dx}\\left[\\dfrac14\\ln(1+4x^2)\\right]=\\dfrac14\\cdot\\dfrac{8x}{1+4x^2}=\\dfrac{2x}{1+4x^2}$.",
+        "Subtract: $y'=\\tan^{-1}(2x)$."
+      ],
+      "brief": "The $\\frac{2x}{1+4x^2}$ terms cancel, leaving $y'=\\tan^{-1}(2x)$."
+    },
+    {
+      "sec": "3.7",
+      "q": "All edges of a cube are expanding at a rate $4$ centimeters per second. How fast is the volume changing when each edge is $1$ centimeter?",
+      "opts": [
+        "$12$ centimeter$^3$ per second",
+        "$3$ centimeter$^3$ per second",
+        "$4$ centimeter$^3$ per second",
+        "$1$ centimeter$^3$ per second",
+        "$8$ centimeter$^3$ per second"
+      ],
+      "ans": 0,
+      "hints": [
+        "This is a related rates problem: volume and edge length both change with time.",
+        "Write $V$ in terms of the edge $s$, differentiate with respect to $t$, then substitute the given values.",
+        "For a cube of edge $s$: $V=s^3$, so $\\dfrac{dV}{dt}=3s^2\\dfrac{ds}{dt}$ (chain rule)."
+      ],
+      "steps": [
+        "$V=s^3$, so $\\dfrac{dV}{dt}=3s^2\\dfrac{ds}{dt}$.",
+        "With $s=1$ and $\\dfrac{ds}{dt}=4$: $\\dfrac{dV}{dt}=3(1)^2(4)=12$ centimeter$^3$ per second."
+      ],
+      "brief": "$V=s^3$, $V'=3s^2s'=3(1)(4)=12$ cm$^3$/s."
+    },
+    {
+      "sec": "3.7",
+      "q": "A water tank has the shape of an inverted circular cone with base radius $2\\,m$ and height $4\\,m$. If water is being pumped into the tank at a rate $2\\,m^3/\\text{min}$, at which rate the water level is rising when the water is $3\\,m$ deep. $\\left(v=\\dfrac13\\pi r^2h\\right)$",
+      "opts": [
+        "$\\dfrac{8}{9\\pi}\\ m/\\text{min}$",
+        "$\\dfrac83\\pi\\ m/\\text{min}$",
+        "$\\dfrac{\\pi}{9}\\ m/\\text{min}$",
+        "$8\\pi\\ m/\\text{min}$",
+        "$9\\pi\\ m/\\text{min}$"
+      ],
+      "ans": 0,
+      "hints": [
+        "This is a related rates problem for a cone: eliminate the radius using similar triangles.",
+        "Use the ratio of the tank's base radius to its height to write $r$ in terms of $h$, rewrite $V$ in terms of $h$ only, and differentiate with respect to $t$.",
+        "For water in a cone, $\\dfrac rh=\\dfrac{R}{H}$ (similar triangles) and $\\dfrac{dV}{dt}=\\dfrac{dV}{dh}\\cdot\\dfrac{dh}{dt}$."
+      ],
+      "steps": [
+        "Similar triangles: $\\dfrac rh=\\dfrac24$, so $r=\\dfrac h2$.",
+        "$V=\\dfrac13\\pi\\left(\\dfrac h2\\right)^2h=\\dfrac{\\pi}{12}h^3$, so $\\dfrac{dV}{dt}=\\dfrac{\\pi}{4}h^2\\dfrac{dh}{dt}$.",
+        "With $h=3$ and $\\dfrac{dV}{dt}=2$: $2=\\dfrac{9\\pi}{4}\\dfrac{dh}{dt}$.",
+        "$\\dfrac{dh}{dt}=\\dfrac{8}{9\\pi}$ m/min."
+      ],
+      "brief": "$r=\\frac h2$, $V=\\frac{\\pi}{12}h^3$: $2=\\frac{9\\pi}{4}h'$, so $h'=\\frac{8}{9\\pi}$ m/min."
+    }
+  ]
+}

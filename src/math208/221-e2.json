@@ -1,0 +1,279 @@
+{
+  "course": "math208",
+  "term": "221",
+  "kind": "e2",
+  "date": "",
+  "minutes": 90,
+  "source": "math208-221-e2.pdf",
+  "note": "Date and exam length are not printed in the scan; date is left empty and 90 minutes is the usual length of a major exam (assumed). The official key is printed (master = A for Q1 to Q8) and agrees with my own solutions. Q9 to Q12 are written questions (11 points each) taken from the master; each 'answer' is the final answer of the official handwritten solution and was checked with sympy. Q12 is printed with the remark that no method other than undetermined coefficients is accepted.",
+  "qs": [
+    {
+      "sec": "4.3",
+      "q": "Given that vectors $\\vec t=(2,-7,9)$, $\\vec u=(1,-2,2)$, $\\vec v=(3,0,1)$ and $\\vec w=(1,-1,2)$. If $\\vec t=a\\vec u+b\\vec v+c\\vec w$, then $a^2+b^2+c^2=$",
+      "opts": [
+        "$14$",
+        "$12$",
+        "$16$",
+        "$13$",
+        "$10$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Writing a vector as a linear combination of other vectors leads to a linear system.",
+        "Compare components of $\\vec t=a\\vec u+b\\vec v+c\\vec w$ to get three equations in $a,b,c$, then row reduce the augmented matrix.",
+        "The vector equation $a\\mathbf{u}+b\\mathbf{v}+c\\mathbf{w}=\\mathbf{t}$ is the system whose augmented matrix has columns $\\mathbf{u},\\mathbf{v},\\mathbf{w},\\mathbf{t}$."
+      ],
+      "steps": [
+        "Component equations: $a+3b+c=2$, $-2a-c=-7$, $2a+b+2c=9$.",
+        "Augmented matrix with columns $\\vec u,\\vec v,\\vec w,\\vec t$; apply $2R_1+R_2$ and $-2R_1+R_3$: rows $(1,3,1\\,|\\,2)$, $(0,6,1\\,|\\,-3)$, $(0,-5,0\\,|\\,5)$.",
+        "The last row gives $b=-1$; then $6b+c=-3$ gives $c=3$; then $a=2-3b-c=2$.",
+        "$a^2+b^2+c^2=4+1+9=14$."
+      ],
+      "brief": "Row reduce: $a=2$, $b=-1$, $c=3$, so $a^2+b^2+c^2=14$."
+    },
+    {
+      "sec": "4.2",
+      "q": "Let $S=\\{(x_1,x_2,x_3)\\in\\mathbb{R}^3\\mid x_3=0\\}$. Which one of the following is true",
+      "opts": [
+        "$S$ is a subspace of $\\mathbb{R}^3$",
+        "$S$ is not closed under vector additions but closed under multiplication by scalar",
+        "$S$ is closed under vector addition but not closed under multiplication by scalar",
+        "$S$ is neither closed under vector addition or closed under multiplication by scalar",
+        "The vector $(0,1,2)\\in S$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Test the set against the subspace conditions.",
+        "Take two general vectors of the set and check whether their sum and a scalar multiple still satisfy the defining condition.",
+        "A subset is a subspace when it contains $\\mathbf{0}$, is closed under addition, and is closed under scalar multiplication."
+      ],
+      "steps": [
+        "Take $(x_1,x_2,0)$ and $(y_1,y_2,0)$ in $S$.",
+        "Their sum is $(x_1+y_1,x_2+y_2,0)\\in S$, so $S$ is closed under addition.",
+        "For a scalar $c$: $c(x_1,x_2,0)=(cx_1,cx_2,0)\\in S$, so $S$ is closed under scalar multiplication.",
+        "Also $\\mathbf{0}\\in S$, so $S$ is a subspace of $\\mathbb{R}^3$. The vector $(0,1,2)$ has $x_3=2\\neq0$, so it is not in $S$."
+      ],
+      "brief": "$S$ contains $\\mathbf{0}$ and is closed under addition and scalars: a subspace."
+    },
+    {
+      "sec": "4.4",
+      "q": "The values of $k$ for which the three vectors \\[ v_1=(1,0,1),\\quad v_2=(2,-3,4),\\quad v_3=(3,5,k) \\] form a basis for $\\mathbb{R}^3$ are",
+      "opts": [
+        "$k\\neq-\\dfrac13$",
+        "$k\\neq2$",
+        "$k\\neq0$",
+        "$k\\neq1$",
+        "$k\\neq5$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Three vectors in $\\mathbb{R}^3$ form a basis exactly when they are linearly independent.",
+        "Place the vectors as columns (or rows) of a $3\\times3$ matrix and compute its determinant in terms of $k$.",
+        "$n$ vectors in $\\mathbb{R}^n$ form a basis if and only if the matrix having them as columns has nonzero determinant."
+      ],
+      "steps": [
+        "Form $\\det\\begin{bmatrix}1&2&3\\\\0&-3&5\\\\1&4&k\\end{bmatrix}$.",
+        "Expand along the first column: $1\\cdot(-3k-20)+1\\cdot(10+9)=-3k-1$.",
+        "A basis requires $-3k-1\\neq0$.",
+        "So $k\\neq-\\dfrac13$."
+      ],
+      "brief": "$\\det=-3k-1\\neq0$, so $k\\neq-\\frac13$."
+    },
+    {
+      "sec": "4.5",
+      "q": "The rank of the matrix $A=\\begin{bmatrix}1&3&3&9\\\\2&7&4&8\\\\2&7&5&12\\\\2&8&3&2\\end{bmatrix}$ is",
+      "opts": [
+        "$3$",
+        "$4$",
+        "$2$",
+        "$1$",
+        "$0$"
+      ],
+      "ans": 0,
+      "hints": [
+        "The rank is the number of nonzero rows after row reduction (the number of pivots).",
+        "Use the first row to clear the entries below the first pivot, then continue column by column.",
+        "Row operations do not change the rank; the rank equals the number of nonzero rows in an echelon form."
+      ],
+      "steps": [
+        "Apply $-2R_1+R_2$, $-2R_1+R_3$, $-2R_1+R_4$: rows $(0,1,-2,-10)$, $(0,1,-1,-6)$, $(0,2,-3,-16)$.",
+        "Apply $-R_2+R_3$ and $-2R_2+R_4$: the new rows are $(0,0,1,4)$ and $(0,0,1,4)$.",
+        "Apply $-R_3+R_4$: the last row becomes zero.",
+        "There are three nonzero rows, so the rank is $3$."
+      ],
+      "brief": "Row reduction leaves 3 nonzero rows, so the rank is $3$."
+    },
+    {
+      "sec": "5.2",
+      "q": "The Wronskian of the functions \\[ f(x)=1,\\quad g(x)=x,\\quad h(x)=x^2 \\] is",
+      "opts": [
+        "$2$",
+        "$2x$",
+        "$x^2$",
+        "$4$",
+        "$0$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Use the definition of the Wronskian of three functions.",
+        "Build the $3\\times3$ determinant with the functions in the first row and their first and second derivatives below.",
+        "$W(f,g,h)=\\begin{vmatrix}f&g&h\\\\f'&g'&h'\\\\f''&g''&h''\\end{vmatrix}$."
+      ],
+      "steps": [
+        "$W=\\begin{vmatrix}1&x&x^2\\\\0&1&2x\\\\0&0&2\\end{vmatrix}$.",
+        "The matrix is upper triangular, so the determinant is the product of the diagonal entries.",
+        "$W=1\\cdot1\\cdot2=2$."
+      ],
+      "brief": "Triangular determinant: $W=1\\cdot1\\cdot2=2$."
+    },
+    {
+      "sec": "5.3",
+      "q": "Let $y(x)$ be the solution of the initial value problem \\[ y''-4y'+3y=0;\\quad y(0)=7,\\ y'(0)=11. \\] Then $y(\\ln 2)=$",
+      "opts": [
+        "$26$",
+        "$24$",
+        "$22$",
+        "$20$",
+        "$18$"
+      ],
+      "ans": 0,
+      "hints": [
+        "This is a second-order linear homogeneous equation with constant coefficients.",
+        "Solve the characteristic equation, write the general solution, then use the two initial conditions to find the constants.",
+        "For $ay''+by'+cy=0$ with distinct real roots $r_1,r_2$ of $ar^2+br+c=0$, $y=c_1e^{r_1x}+c_2e^{r_2x}$."
+      ],
+      "steps": [
+        "Characteristic equation: $m^2-4m+3=(m-1)(m-3)=0$, so $m=1,3$.",
+        "$y=c_1e^x+c_2e^{3x}$ and $y'=c_1e^x+3c_2e^{3x}$.",
+        "$c_1+c_2=7$ and $c_1+3c_2=11$, so $c_2=2$ and $c_1=5$.",
+        "$y(\\ln2)=5\\cdot2+2\\cdot2^3=10+16=26$."
+      ],
+      "brief": "$y=5e^x+2e^{3x}$, so $y(\\ln2)=10+16=26$."
+    },
+    {
+      "sec": "5.3",
+      "q": "A linear homogeneous constant-coefficient equation whose general solution is \\[ y(x)=Ae^{2x}+B\\cos(2x)+C\\sin(2x) \\] is",
+      "opts": [
+        "$y'''-2y''+4y'-8y=0$",
+        "$y'''+3y''-4y'+5y=0$",
+        "$y'''-3y''+4y'-5y=0$",
+        "$y'''-4y''+5y'-8y=0$",
+        "$y'''-5y''+4y'+8y=0$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Read the characteristic roots off the given general solution.",
+        "Each solution term corresponds to a root of the characteristic equation; multiply out the factors to get the polynomial.",
+        "A real root $r_1$ gives the factor $(r-r_1)$ and a pair $a\\pm bi$ gives the factor $(r-a)^2+b^2$; the coefficients of the product are those of the equation."
+      ],
+      "steps": [
+        "$e^{2x}$ gives the root $m=2$; $\\cos2x$ and $\\sin2x$ give the roots $m=\\pm2i$.",
+        "Characteristic polynomial: $(m-2)(m^2+4)$.",
+        "Expand: $m^3+4m-2m^2-8=m^3-2m^2+4m-8$.",
+        "The equation is $y'''-2y''+4y'-8y=0$."
+      ],
+      "brief": "Roots $2,\\pm2i$: $(m-2)(m^2+4)=m^3-2m^2+4m-8$."
+    },
+    {
+      "sec": "5.5",
+      "q": "An appropriate form of a particular solution $y_p$ for the non-homogeneous differential equation \\[ y'''-y''-12y'=x-2xe^{-3x} \\] is given by",
+      "opts": [
+        "$y_p(x)=Ax+Bx^2+(Cx+Dx^2)e^{-3x}$",
+        "$y_p(x)=A+Bx+(Cx+Dx^2)e^{-3x}$",
+        "$y_p(x)=Ax+Bx^2+(C+Dx^2)e^{-3x}$",
+        "$y_p(x)=A+Bx+(C+Dx^2)e^{-3x}$",
+        "$y_p(x)=A+Bx^2+(Cx+D)e^{-3x}$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Find the complementary solution first, then compare it with the trial forms for each part of the right side.",
+        "Solve the characteristic equation of the homogeneous equation, then write the basic trial function for $x$ and for $xe^{-3x}$.",
+        "If a trial group duplicates a term of $y_c$, multiply that whole group by the smallest power $x^s$ that removes all duplication."
+      ],
+      "steps": [
+        "Characteristic equation: $m^3-m^2-12m=m(m-4)(m+3)=0$, so $y_c=c_1+c_2e^{4x}+c_3e^{-3x}$.",
+        "For the right-side term $x$, the basic trial $A+Bx$ contains the constant $A$, which duplicates $c_1$; multiply by $x$ to get $Ax+Bx^2$.",
+        "For $-2xe^{-3x}$, the basic trial $(C+Dx)e^{-3x}$ duplicates $e^{-3x}$ in $y_c$; multiply by $x$ to get $(Cx+Dx^2)e^{-3x}$.",
+        "So $y_p=Ax+Bx^2+(Cx+Dx^2)e^{-3x}$."
+      ],
+      "brief": "$y_c$ contains $1$ and $e^{-3x}$, so multiply both trial groups by $x$."
+    },
+    {
+      "sec": "4.4",
+      "written": true,
+      "q": "Find a basis for the solution space of the given homogeneous system \\[ \\begin{cases} x_1-4x_2-3x_3-7x_4=0\\\\ 2x_1-x_2+x_3+7x_4=0\\\\ x_1+2x_2+3x_3+11x_4=0 \\end{cases} \\]",
+      "answer": "A basis is $\\{\\langle -1,-1,1,0\\rangle,\\ \\langle -5,-3,0,1\\rangle\\}$",
+      "hints": [
+        "The solution space of a homogeneous system is the null space of its coefficient matrix; a basis comes from the free variables.",
+        "Row reduce the augmented matrix, then name the free variables as parameters and solve for the leading variables.",
+        "For a homogeneous system, each free variable contributes one basis vector (set that parameter to 1 and the others to 0), so the dimension of the solution space equals the number of free variables."
+      ],
+      "steps": [
+        "Augmented matrix: rows $(1,-4,-3,-7\\,|\\,0)$, $(2,-1,1,7\\,|\\,0)$, $(1,2,3,11\\,|\\,0)$.",
+        "$-2R_1+R_2$ and $-R_1+R_3$: rows $(1,-4,-3,-7)$, $(0,7,7,21)$, $(0,6,6,18)$.",
+        "$\\tfrac17R_2$ then $-6R_2+R_3$: rows $(1,-4,-3,-7)$, $(0,1,1,3)$, $(0,0,0,0)$. Only two leading variables, so $x_3,x_4$ are free.",
+        "Let $x_3=s$, $x_4=t$. Then $x_2=-x_3-3x_4=-s-3t$ and $x_1=4x_2+3x_3+7x_4=-4s-12t+3s+7t=-s-5t$.",
+        "$\\langle x_1,x_2,x_3,x_4\\rangle=s\\langle-1,-1,1,0\\rangle+t\\langle-5,-3,0,1\\rangle$, and these two vectors are independent.",
+        "So a basis is $\\{\\langle-1,-1,1,0\\rangle,\\langle-5,-3,0,1\\rangle\\}$."
+      ],
+      "brief": "Row reduction leaves $x_3=s$, $x_4=t$ free; a basis is $\\{\\langle-1,-1,1,0\\rangle,\\langle-5,-3,0,1\\rangle\\}$."
+    },
+    {
+      "sec": "5.3",
+      "written": true,
+      "q": "Find the general solution of the differential equation \\[ (D-1)(D-2)^2(D^2+1)(D^2+6D+13)^2y=0 \\]",
+      "answer": "$y=c_1e^{x}+(c_2+c_3x)e^{2x}+c_4\\cos x+c_5\\sin x+(c_6+c_7x)e^{-3x}\\cos 2x+(c_8+c_9x)e^{-3x}\\sin 2x$",
+      "hints": [
+        "Replace $D$ by $m$ to get the characteristic equation and read off the roots with their multiplicities.",
+        "Factor each piece: $D^2+6D+13$ has complex roots, found by the quadratic formula.",
+        "A real root $r$ of multiplicity $k$ gives $e^{rx},xe^{rx},\\dots,x^{k-1}e^{rx}$; a complex pair $a\\pm bi$ of multiplicity $k$ gives $x^je^{ax}\\cos bx$ and $x^je^{ax}\\sin bx$ for $j=0,\\dots,k-1$."
+      ],
+      "steps": [
+        "Characteristic equation: $(m-1)(m-2)^2(m^2+1)(m^2+6m+13)^2=0$ (degree 9).",
+        "Roots: $m=1$; $m=2$ (multiplicity 2); $m=\\pm i$; and from $m^2+6m+13=0$, $m=-3\\pm2i$ (multiplicity 2).",
+        "$m=1$ gives $c_1e^{x}$; $m=2$ twice gives $(c_2+c_3x)e^{2x}$; $m=\\pm i$ gives $c_4\\cos x+c_5\\sin x$.",
+        "$m=-3\\pm2i$ twice gives $(c_6+c_7x)e^{-3x}\\cos2x+(c_8+c_9x)e^{-3x}\\sin2x$.",
+        "Nine constants for a ninth-order equation, as expected."
+      ],
+      "brief": "Roots $1$, $2$ (double), $\\pm i$, $-3\\pm2i$ (double): $y=c_1e^{x}+(c_2+c_3x)e^{2x}+c_4\\cos x+c_5\\sin x+(c_6+c_7x)e^{-3x}\\cos2x+(c_8+c_9x)e^{-3x}\\sin2x$."
+    },
+    {
+      "sec": "5.5",
+      "written": true,
+      "q": "Use the method of variation of parameters to find a particular solution of the differential equation \\[ y''+9y=2\\sec(3x). \\]",
+      "answer": "$y_p=-\\dfrac{2}{9}\\cos(3x)\\ln|\\sec(3x)|+\\dfrac{2}{3}x\\sin(3x)$",
+      "hints": [
+        "Find the complementary solution, then let its constants become functions of $x$.",
+        "Solve $m^2+9=0$ to get $y_1,y_2$, then compute the Wronskian and the determinants $W_1,W_2$.",
+        "For $y''+p y'+q y=g$ with solutions $y_1,y_2$: $y_p=u_1y_1+u_2y_2$ where $u_1'=\\dfrac{-y_2g}{W}$, $u_2'=\\dfrac{y_1g}{W}$ and $W=y_1y_2'-y_1'y_2$."
+      ],
+      "steps": [
+        "$m^2+9=0$ gives $m=\\pm3i$, so $y_c=c_1\\cos3x+c_2\\sin3x$; take $y_1=\\cos3x$, $y_2=\\sin3x$.",
+        "$W=\\begin{vmatrix}\\cos3x&\\sin3x\\\\-3\\sin3x&3\\cos3x\\end{vmatrix}=3\\cos^23x+3\\sin^23x=3$.",
+        "$W_1=\\begin{vmatrix}0&\\sin3x\\\\2\\sec3x&3\\cos3x\\end{vmatrix}=-2\\tan3x$ and $W_2=\\begin{vmatrix}\\cos3x&0\\\\-3\\sin3x&2\\sec3x\\end{vmatrix}=2$.",
+        "$u_1=\\int\\frac{W_1}{W}dx=-\\frac23\\int\\tan3x\\,dx=-\\frac29\\ln|\\sec3x|$ and $u_2=\\int\\frac{W_2}{W}dx=\\frac23x$.",
+        "$y_p=u_1\\cos3x+u_2\\sin3x=-\\frac29\\cos3x\\ln|\\sec3x|+\\frac23x\\sin3x$."
+      ],
+      "brief": "$W=3$, $u_1=-\\frac29\\ln|\\sec3x|$, $u_2=\\frac23x$, so $y_p=-\\frac29\\cos3x\\ln|\\sec3x|+\\frac23x\\sin3x$."
+    },
+    {
+      "sec": "5.5",
+      "written": true,
+      "q": "Use the method of undetermined coefficients to find the general solution of the differential equation \\[ 4y''+4y'+y=3xe^{x} \\] (No other method is accepted).",
+      "answer": "$y=c_1e^{-x/2}+c_2xe^{-x/2}+\\left(\\dfrac{1}{3}x-\\dfrac{4}{9}\\right)e^{x}$",
+      "hints": [
+        "Solve the homogeneous equation first, then guess a particular solution shaped like the right side.",
+        "Solve $4m^2+4m+1=0$ for $y_c$; the right side $3xe^{x}$ suggests $y_p=(A+Bx)e^{x}$, and $e^{x}$ does not appear in $y_c$.",
+        "For a right side $P(x)e^{rx}$ with $P$ of degree $n$, try $y_p=x^s Q(x)e^{rx}$ with $Q$ of degree $n$, where $s$ is the multiplicity of $r$ as a root of the characteristic equation (here $s=0$ if $r$ is not a root)."
+      ],
+      "steps": [
+        "$4m^2+4m+1=(2m+1)^2=0$ gives $m=-\\frac12$ (double), so $y_c=c_1e^{-x/2}+c_2xe^{-x/2}$.",
+        "Since $1$ is not a root, try $y_p=(A+Bx)e^{x}$. Then $y_p'=(A+B+Bx)e^{x}$ and $y_p''=(A+2B+Bx)e^{x}$.",
+        "Substitute: $4(A+2B+Bx)+4(A+B+Bx)+(A+Bx)=9A+12B+9Bx$, so $(9A+12B+9Bx)e^{x}=3xe^{x}$.",
+        "Match coefficients: $9B=3$ gives $B=\\frac13$; $9A+12B=0$ gives $A=-\\frac49$.",
+        "$y_p=\\left(\\frac13x-\\frac49\\right)e^{x}$, and $y=y_c+y_p$."
+      ],
+      "brief": "$y_p=(\\frac13x-\\frac49)e^{x}$, so $y=c_1e^{-x/2}+c_2xe^{-x/2}+(\\frac13x-\\frac49)e^{x}$."
+    }
+  ]
+}

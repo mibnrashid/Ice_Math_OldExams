@@ -1,0 +1,485 @@
+{
+  "course": "math102",
+  "term": "243",
+  "kind": "fx",
+  "date": "5 August 2025",
+  "minutes": 120,
+  "source": "math102-243-fx.pdf",
+  "note": "Date and 120 minutes printed on the cover. All 20 questions are multiple choice and the master key (choice (a) marked correct on every question) agreed with my own sympy checks. Typos fixed in the transcription: 'Reminder Theorem' to 'Remainder Theorem' (Q7) and 'interval of converges' to 'interval of convergence' (Q11). In Q2 the cube root is taken as the real cube root.",
+  "qs": [
+    {
+      "sec": "8.8",
+      "q": "\\[ \\int_0^\\infty \\frac{e^x}{1+e^x}\\,dx \\]",
+      "opts": [
+        "diverges",
+        "converges to $1$",
+        "converges to $0$",
+        "converges to $e$",
+        "converges to $\\dfrac1e$"
+      ],
+      "ans": 0,
+      "hints": [
+        "This is an improper integral with an infinite limit, so write it as a limit.",
+        "Find an antiderivative with a substitution, then take the limit of the definite integral as the upper bound grows.",
+        "$\\int_a^\\infty f\\,dx=\\lim_{b\\to\\infty}\\int_a^b f\\,dx$, and $\\int \\frac{u'}{u}\\,dx=\\ln|u|+C$."
+      ],
+      "steps": [
+        "$\\int_0^\\infty \\frac{e^x}{1+e^x}dx=\\lim_{b\\to\\infty}\\int_0^b \\frac{e^x}{1+e^x}dx$.",
+        "With $u=1+e^x$, $du=e^x dx$, an antiderivative is $\\ln(1+e^x)$.",
+        "$\\lim_{b\\to\\infty}\\left[\\ln(1+e^b)-\\ln 2\\right]=\\infty$.",
+        "The limit is infinite, so the integral diverges."
+      ],
+      "brief": "$\\int=\\ln(1+e^x)\\to\\infty$, so it diverges."
+    },
+    {
+      "sec": "8.8",
+      "q": "\\[ \\int_0^2 \\frac{dx}{\\sqrt[3]{x-1}} \\]",
+      "opts": [
+        "converges to $0$",
+        "diverges",
+        "converges to $1$",
+        "converges to $2$",
+        "converges to $3$"
+      ],
+      "ans": 0,
+      "hints": [
+        "The integrand is unbounded at a point inside the interval, so this is an improper integral of the second kind.",
+        "Locate the discontinuity, split the integral there, and evaluate each piece as a one-sided limit.",
+        "If $f$ is discontinuous at an interior point $c$, then $\\int_a^b f=\\int_a^c f+\\int_c^b f$, and each piece must converge. Also $\\int (x-c)^{p}\\,dx=\\frac{(x-c)^{p+1}}{p+1}$ for $p\\ne-1$."
+      ],
+      "steps": [
+        "The integrand is undefined at $x=1$, so split: $\\int_0^1+\\int_1^2$.",
+        "An antiderivative is $\\int (x-1)^{-1/3}dx=\\tfrac32(x-1)^{2/3}$.",
+        "$\\int_0^1=\\lim_{t\\to1^-}\\tfrac32\\left[(t-1)^{2/3}-(-1)^{2/3}\\right]=0-\\tfrac32=-\\tfrac32$.",
+        "$\\int_1^2=\\tfrac32\\left[1-0\\right]=\\tfrac32$. Both converge, and the sum is $0$."
+      ],
+      "brief": "Split at $x=1$: $-\\frac32+\\frac32=0$, converges."
+    },
+    {
+      "sec": "9.1",
+      "q": "The sequence whose $n$th term is $a_n=\\dfrac{\\sin n}{n}$ converges to",
+      "opts": [
+        "$0$",
+        "$2\\pi$",
+        "$\\pi$",
+        "$\\dfrac{\\pi}{2}$",
+        "$2$"
+      ],
+      "ans": 0,
+      "hints": [
+        "The numerator is bounded while the denominator grows, so think of the Squeeze Theorem.",
+        "Bound $|\\sin n|$ above and below by constants and divide by $n$.",
+        "Squeeze Theorem: if $b_n\\le a_n\\le c_n$ and $b_n,c_n\\to L$, then $a_n\\to L$; also $-1\\le\\sin n\\le1$."
+      ],
+      "steps": [
+        "Since $-1\\le \\sin n\\le 1$, we have $-\\dfrac1n\\le\\dfrac{\\sin n}{n}\\le\\dfrac1n$.",
+        "Both $-\\frac1n$ and $\\frac1n$ tend to $0$.",
+        "By the Squeeze Theorem, $a_n\\to0$."
+      ],
+      "brief": "$-\\frac1n\\le\\frac{\\sin n}{n}\\le\\frac1n$, squeeze: limit $0$."
+    },
+    {
+      "sec": "9.2",
+      "q": "\\[ \\sum_{n=0}^\\infty\\left[(0.3)^n+(0.8)^n\\right]= \\]",
+      "opts": [
+        "$\\dfrac{45}{7}$",
+        "$\\dfrac{44}{7}$",
+        "$\\dfrac{43}{7}$",
+        "$\\dfrac{46}{7}$",
+        "$\\dfrac{47}{7}$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Each part is a geometric series.",
+        "Split the sum into two geometric series and identify the first term and ratio of each.",
+        "$\\sum_{n=0}^\\infty ar^n=\\dfrac{a}{1-r}$ when $|r|<1$."
+      ],
+      "steps": [
+        "Both series converge since $0.3<1$ and $0.8<1$, so split the sum.",
+        "$\\sum (0.3)^n=\\dfrac{1}{1-0.3}=\\dfrac{10}{7}$.",
+        "$\\sum (0.8)^n=\\dfrac{1}{1-0.8}=5$.",
+        "Total: $\\dfrac{10}{7}+5=\\dfrac{45}{7}$."
+      ],
+      "brief": "$\\frac{1}{0.7}+\\frac{1}{0.2}=\\frac{10}{7}+5=\\frac{45}{7}$."
+    },
+    {
+      "sec": "9.3",
+      "q": "Which one of the following series is/are divergent? \\[ \\text{I) }\\sum_{n=2}^\\infty\\frac{1}{n\\sqrt{\\ln n}}\\qquad \\text{II) }\\sum_{n=1}^\\infty e^{-n}\\qquad \\text{III) }\\sum_{n=1}^\\infty\\frac{1}{n^{\\pi}} \\]",
+      "opts": [
+        "I only",
+        "I and II only",
+        "II and III only",
+        "I, II and III",
+        "I and III only"
+      ],
+      "ans": 0,
+      "hints": [
+        "Decide each series separately: the integral test, a geometric series and a $p$-series.",
+        "For the first, try the integral test with a substitution $u=\\ln x$; the other two match standard families.",
+        "$\\sum ar^n$ converges iff $|r|<1$; $\\sum \\frac1{n^p}$ converges iff $p>1$; $\\int u^{-1/2}du=2u^{1/2}$ grows without bound."
+      ],
+      "steps": [
+        "I: $\\int_2^\\infty \\frac{dx}{x\\sqrt{\\ln x}}$, with $u=\\ln x$, becomes $\\int \\frac{du}{\\sqrt u}=2\\sqrt{\\ln x}\\to\\infty$, so I diverges.",
+        "II: $e^{-n}=(1/e)^n$ is geometric with ratio $1/e<1$, so it converges.",
+        "III: $p$-series with $p=\\pi>1$, so it converges.",
+        "Only I diverges."
+      ],
+      "brief": "I diverges (integral test, $2\\sqrt{\\ln x}\\to\\infty$); II geometric, III $p=\\pi>1$ converge."
+    },
+    {
+      "sec": "9.4",
+      "q": "Which one of the following series is/are convergent? \\[ \\text{I) }\\sum_{n=1}^\\infty\\frac{\\sin^2 n}{n^3}\\qquad \\text{II) }\\sum_{n=1}^\\infty\\frac{6^n+n}{5^n-1}\\qquad \\text{III) }\\sum_{n=1}^\\infty\\frac{n}{(n+1)2^{n-1}} \\]",
+      "opts": [
+        "I and III only",
+        "I and II only",
+        "II and III only",
+        "II only",
+        "I only"
+      ],
+      "ans": 0,
+      "hints": [
+        "Compare each series with a simpler one (direct or limit comparison), or check the terms.",
+        "For each, find the dominant behaviour of the general term and pick a geometric or $p$-series to compare with.",
+        "Direct comparison: if $0\\le a_n\\le b_n$ and $\\sum b_n$ converges then $\\sum a_n$ converges. A series diverges if $a_n\\not\\to0$ (nth-term test)."
+      ],
+      "steps": [
+        "I: $0\\le \\frac{\\sin^2 n}{n^3}\\le\\frac1{n^3}$, a convergent $p$-series, so I converges.",
+        "II: the terms behave like $(6/5)^n\\to\\infty$, so $a_n\\not\\to0$ and II diverges.",
+        "III: $\\frac{n}{n+1}<1$, so $a_n<\\frac1{2^{n-1}}$, a convergent geometric series, so III converges.",
+        "I and III converge."
+      ],
+      "brief": "I: $\\le 1/n^3$; II: terms $\\to\\infty$; III: $\\le (1/2)^{n-1}$. I and III converge."
+    },
+    {
+      "sec": "9.5",
+      "q": "The least number of terms required to approximate the sum of the series $\\sum_{n=1}^\\infty\\frac{(-1)^{n+1}}{n^3}$ with an error of less than $0.001$ is (Hint: Use the Remainder Theorem)",
+      "opts": [
+        "$10$",
+        "$12$",
+        "$14$",
+        "$16$",
+        "$18$"
+      ],
+      "ans": 0,
+      "hints": [
+        "This is an alternating series, so use the alternating series remainder estimate.",
+        "Bound the error after $N$ terms by the first omitted term and require it to be below $0.001$.",
+        "For a convergent alternating series with decreasing terms, $|S-S_N|\\le a_{N+1}$."
+      ],
+      "steps": [
+        "The terms $a_n=\\frac1{n^3}$ decrease to $0$, so $|S-S_N|\\le a_{N+1}=\\frac1{(N+1)^3}$.",
+        "Need $\\frac{1}{(N+1)^3}<0.001$, i.e. $(N+1)^3>1000$, so $N+1>10$.",
+        "$N=9$ gives $a_{10}=0.001$, not less than $0.001$; $N=10$ gives $\\frac1{1331}<0.001$.",
+        "The least number of terms is $10$."
+      ],
+      "brief": "$\\frac1{(N+1)^3}<0.001\\Rightarrow N+1>10$, so $N=10$."
+    },
+    {
+      "sec": "9.5",
+      "q": "The series $\\sum_{n=0}^\\infty\\frac{\\cos n\\pi}{n+1}$",
+      "opts": [
+        "converges conditionally",
+        "diverges",
+        "converges absolutely",
+        "diverges by the Alternating Series Test",
+        "converges absolutely by the Integral Test"
+      ],
+      "ans": 0,
+      "hints": [
+        "Simplify $\\cos n\\pi$ first to see what kind of series this is.",
+        "Test the series itself with the alternating series test, then test the series of absolute values.",
+        "Alternating series test: if $b_n\\ge0$ decreases to $0$, then $\\sum(-1)^nb_n$ converges. A series is conditionally convergent if it converges but $\\sum|a_n|$ diverges."
+      ],
+      "steps": [
+        "$\\cos n\\pi=(-1)^n$, so the series is $\\sum\\frac{(-1)^n}{n+1}$.",
+        "$\\frac1{n+1}$ decreases to $0$, so the series converges by the Alternating Series Test.",
+        "$\\sum\\left|\\frac{(-1)^n}{n+1}\\right|=\\sum\\frac1{n+1}$ is the harmonic series (shifted), which diverges.",
+        "So the series converges conditionally."
+      ],
+      "brief": "$\\sum\\frac{(-1)^n}{n+1}$ converges (AST), $\\sum\\frac1{n+1}$ diverges: conditional."
+    },
+    {
+      "sec": "9.6",
+      "q": "Which one of the following series is/are convergent? \\[ \\text{I) }\\sum_{n=1}^\\infty\\frac{(n-1)!}{4^n}\\qquad \\text{II) }\\sum_{n=1}^\\infty n^2\\left(\\frac56\\right)^n\\qquad \\text{III) }\\sum_{n=1}^\\infty\\left(\\frac{n-2}{5n+1}\\right)^n \\]",
+      "opts": [
+        "II and III only",
+        "II only",
+        "III only",
+        "I and II only",
+        "I and III only"
+      ],
+      "ans": 0,
+      "hints": [
+        "Use the ratio test for terms with factorials or exponentials, and the root test for $n$th powers.",
+        "Apply the ratio test to the first two series and the root test to the third.",
+        "Ratio test: $L=\\lim\\left|\\frac{a_{n+1}}{a_n}\\right|$; root test: $L=\\lim\\sqrt[n]{|a_n|}$. The series converges if $L<1$ and diverges if $L>1$."
+      ],
+      "steps": [
+        "I: $\\frac{a_{n+1}}{a_n}=\\frac{n!/4^{n+1}}{(n-1)!/4^n}=\\frac n4\\to\\infty$, so I diverges.",
+        "II: $\\frac{(n+1)^2}{n^2}\\cdot\\frac56\\to\\frac56<1$, so II converges.",
+        "III: $\\sqrt[n]{a_n}=\\frac{n-2}{5n+1}\\to\\frac15<1$, so III converges.",
+        "II and III converge."
+      ],
+      "brief": "I: ratio $n/4\\to\\infty$; II: ratio $\\to5/6$; III: root $\\to1/5$. II and III converge."
+    },
+    {
+      "sec": "9.7",
+      "q": "Using a third degree Maclaurin polynomial of the function $f(x)=\\tan x$, the approximation of the value $\\tan 1$ is equal to",
+      "opts": [
+        "$\\dfrac43$",
+        "$\\dfrac53$",
+        "$\\dfrac73$",
+        "$\\dfrac23$",
+        "$\\dfrac83$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Build the Maclaurin polynomial from the derivatives at $0$.",
+        "Compute $f(0),f'(0),f''(0),f'''(0)$ for $\\tan x$ (use $(\\tan x)'=\\sec^2x$), then evaluate the polynomial at the requested point.",
+        "$P_3(x)=f(0)+f'(0)x+\\dfrac{f''(0)}{2!}x^2+\\dfrac{f'''(0)}{3!}x^3$."
+      ],
+      "steps": [
+        "$f=\\tan x$, $f'=\\sec^2x$, $f''=2\\sec^2x\\tan x$, $f'''=2\\sec^4x+4\\sec^2x\\tan^2x$.",
+        "At $0$: $f(0)=0$, $f'(0)=1$, $f''(0)=0$, $f'''(0)=2$.",
+        "$P_3(x)=x+\\dfrac{2}{6}x^3=x+\\dfrac{x^3}{3}$.",
+        "$\\tan1\\approx P_3(1)=1+\\dfrac13=\\dfrac43$."
+      ],
+      "brief": "$P_3(x)=x+\\frac{x^3}{3}$, so $\\tan1\\approx\\frac43$."
+    },
+    {
+      "sec": "9.8",
+      "q": "The interval of convergence for the series $\\sum_{n=1}^\\infty\\frac{(x-3)^{n+1}}{(n+1)4^{n+1}}$ is",
+      "opts": [
+        "$[-1,7)$",
+        "$(-1,7)$",
+        "$[-1,7]$",
+        "$(-1,7]$",
+        "$(-\\infty,\\infty)$"
+      ],
+      "ans": 0,
+      "hints": [
+        "This is a power series, so find its radius with the ratio test and then test the endpoints.",
+        "Apply the ratio test to find where $|x-3|$ is small enough, then substitute each endpoint into the series.",
+        "For $\\sum a_n(x-c)^n$, the series converges when $\\lim\\left|\\frac{a_{n+1}(x-c)^{n+1}}{a_n(x-c)^n}\\right|<1$; endpoints must be checked separately."
+      ],
+      "steps": [
+        "Ratio: $\\left|\\frac{(x-3)^{n+2}(n+1)4^{n+1}}{(n+2)4^{n+2}(x-3)^{n+1}}\\right|\\to\\frac{|x-3|}{4}<1$, so $-1<x<7$.",
+        "At $x=7$: the series is $\\sum\\frac1{n+1}$, the harmonic series, which diverges.",
+        "At $x=-1$: $\\sum\\frac{(-1)^{n+1}}{n+1}$ converges by the Alternating Series Test.",
+        "The interval is $[-1,7)$."
+      ],
+      "brief": "$R=4$ about $3$; $x=7$ harmonic (diverges), $x=-1$ alternating (converges): $[-1,7)$."
+    },
+    {
+      "sec": "9.9",
+      "q": "A power series representation for the function $f(x)=\\arctan(2x)$ centered at $c=0$ is",
+      "opts": [
+        "$2\\sum_{n=0}^\\infty\\frac{(-1)^n4^nx^{2n+1}}{2n+1}$",
+        "$\\sum_{n=0}^\\infty\\frac{(-1)^n4^nx^{2n+1}}{2n+1}$",
+        "$2\\sum_{n=0}^\\infty\\frac{(-1)^n2^nx^{2n+1}}{2n+1}$",
+        "$\\sum_{n=0}^\\infty\\frac{(-1)^n2^nx^{2n+1}}{2n+1}$",
+        "$2\\sum_{n=0}^\\infty(-1)^n4^nx^{2n+1}$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Start from the known power series of arctan and substitute.",
+        "Replace the variable in the series of $\\arctan u$ by $2x$ and simplify the powers of $2$.",
+        "$\\arctan u=\\sum_{n=0}^\\infty\\frac{(-1)^nu^{2n+1}}{2n+1}$ for $|u|\\le1$."
+      ],
+      "steps": [
+        "Put $u=2x$: $\\arctan(2x)=\\sum\\frac{(-1)^n(2x)^{2n+1}}{2n+1}$.",
+        "$(2x)^{2n+1}=2\\cdot 2^{2n}x^{2n+1}=2\\cdot4^nx^{2n+1}$.",
+        "So $\\arctan(2x)=2\\sum_{n=0}^\\infty\\frac{(-1)^n4^nx^{2n+1}}{2n+1}$."
+      ],
+      "brief": "Substitute $u=2x$ in $\\arctan u$: $2\\sum\\frac{(-1)^n4^nx^{2n+1}}{2n+1}$."
+    },
+    {
+      "sec": "9.10",
+      "q": "The coefficient of $x^9$ in the Maclaurin series for the function $f(x)=2\\sin x^3$ is",
+      "opts": [
+        "$-\\dfrac13$",
+        "$\\dfrac13$",
+        "$\\dfrac12$",
+        "$-\\dfrac12$",
+        "$\\dfrac16$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Use the known Maclaurin series of sine and substitute.",
+        "Write the series of $\\sin u$ with $u=x^3$ and find which term gives $x^9$.",
+        "$\\sin u=u-\\dfrac{u^3}{3!}+\\dfrac{u^5}{5!}-\\cdots$"
+      ],
+      "steps": [
+        "$\\sin x^3=x^3-\\dfrac{(x^3)^3}{3!}+\\cdots=x^3-\\dfrac{x^9}{6}+\\cdots$.",
+        "The $x^9$ term of $\\sin x^3$ is $-\\dfrac16x^9$.",
+        "Multiply by $2$: the coefficient is $-\\dfrac13$."
+      ],
+      "brief": "$2\\sin x^3=2x^3-\\frac{2x^9}{6}+\\cdots$, coefficient $-\\frac13$."
+    },
+    {
+      "sec": "5.7",
+      "q": "\\[ \\int_1^4\\frac{2x+1}{2x}\\,dx= \\]",
+      "opts": [
+        "$3+\\ln 2$",
+        "$2+\\ln 3$",
+        "$3-\\ln 2$",
+        "$2-\\ln 3$",
+        "$3+\\ln 3$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Split the fraction into simpler terms.",
+        "Divide each term of the numerator by $2x$, then integrate term by term.",
+        "$\\int 1\\,dx=x$ and $\\int\\frac{1}{x}dx=\\ln|x|+C$; also $a\\ln b=\\ln b^a$."
+      ],
+      "steps": [
+        "$\\frac{2x+1}{2x}=1+\\frac1{2x}$.",
+        "$\\int_1^4\\left(1+\\frac1{2x}\\right)dx=\\left[x+\\tfrac12\\ln x\\right]_1^4$.",
+        "$=(4+\\tfrac12\\ln4)-(1+0)=3+\\tfrac12\\ln 4$.",
+        "Since $\\tfrac12\\ln4=\\ln2$, the value is $3+\\ln2$."
+      ],
+      "brief": "$\\int(1+\\frac1{2x})dx=[x+\\frac12\\ln x]_1^4=3+\\ln2$."
+    },
+    {
+      "sec": "8.4",
+      "q": "\\[ \\int e^x\\sqrt{1-e^{2x}}\\,dx= \\]",
+      "opts": [
+        "$\\dfrac12\\left(\\arcsin(e^x)+e^x\\sqrt{1-e^{2x}}\\right)+C$",
+        "$\\arcsin(e^x)+e^x\\sqrt{1-e^{2x}}+C$",
+        "$\\dfrac12\\left(\\arccos(e^x)+e^x\\sqrt{1-e^{2x}}\\right)+C$",
+        "$\\arccos(e^x)+e^x\\sqrt{1-e^{2x}}+C$",
+        "$\\dfrac12\\left(\\arcsin(e^x)-e^x\\sqrt{1-e^{2x}}\\right)+C$"
+      ],
+      "ans": 0,
+      "hints": [
+        "A substitution $u=e^x$ turns this into an integral involving $\\sqrt{1-u^2}$.",
+        "Let $u=e^x$ (so $du=e^xdx$), then use the trigonometric substitution $u=\\sin\\theta$.",
+        "For $\\sqrt{a^2-u^2}$ use $u=a\\sin\\theta$; then $\\cos^2\\theta=\\frac{1+\\cos2\\theta}{2}$ and $\\sin2\\theta=2\\sin\\theta\\cos\\theta$."
+      ],
+      "steps": [
+        "Let $u=e^x$: the integral is $\\int\\sqrt{1-u^2}\\,du$.",
+        "Let $u=\\sin\\theta$, $du=\\cos\\theta\\,d\\theta$: $\\int\\cos^2\\theta\\,d\\theta=\\frac12\\left(\\theta+\\sin\\theta\\cos\\theta\\right)+C$.",
+        "Back-substitute: $\\theta=\\arcsin u$, $\\sin\\theta=u$, $\\cos\\theta=\\sqrt{1-u^2}$.",
+        "Result: $\\dfrac12\\left(\\arcsin(e^x)+e^x\\sqrt{1-e^{2x}}\\right)+C$."
+      ],
+      "brief": "$u=e^x=\\sin\\theta$: $\\int\\cos^2\\theta\\,d\\theta=\\frac12(\\arcsin e^x+e^x\\sqrt{1-e^{2x}})+C$."
+    },
+    {
+      "sec": "8.5",
+      "q": "\\[ \\int_0^2\\frac{3}{4x^2+5x+1}\\,dx= \\]",
+      "opts": [
+        "$\\ln 3$",
+        "$\\ln 2$",
+        "$\\ln 4$",
+        "$\\ln 5$",
+        "$\\ln 6$"
+      ],
+      "ans": 0,
+      "hints": [
+        "The integrand is a rational function whose denominator factors, so use partial fractions.",
+        "Factor the denominator into two linear factors and decompose into $\\frac{A}{\\cdot}+\\frac{B}{\\cdot}$.",
+        "$\\int\\frac{a}{px+q}dx=\\frac{a}{p}\\ln|px+q|+C$, and $\\ln a-\\ln b=\\ln\\frac ab$."
+      ],
+      "steps": [
+        "$4x^2+5x+1=(4x+1)(x+1)$, so $\\frac{3}{(4x+1)(x+1)}=\\frac{A}{4x+1}+\\frac{B}{x+1}$.",
+        "$3=A(x+1)+B(4x+1)$: $x=-1$ gives $B=-1$; $x=-\\frac14$ gives $A=4$.",
+        "$\\int_0^2\\left(\\frac4{4x+1}-\\frac1{x+1}\\right)dx=\\left[\\ln(4x+1)-\\ln(x+1)\\right]_0^2$.",
+        "$=(\\ln9-\\ln3)-(0-0)=\\ln3$."
+      ],
+      "brief": "$\\frac{3}{(4x+1)(x+1)}=\\frac4{4x+1}-\\frac1{x+1}$, integral $=\\ln9-\\ln3=\\ln3$."
+    },
+    {
+      "sec": "7.2",
+      "q": "The volume of the solid generated by revolving the region bounded by the graphs of $y=2x^2$, $y=0$, and $x=2$ about the $x$-axis is",
+      "opts": [
+        "$\\dfrac{128\\pi}{5}$",
+        "$\\dfrac{64\\pi}{5}$",
+        "$\\dfrac{32\\pi}{5}$",
+        "$\\dfrac{16\\pi}{5}$",
+        "$\\dfrac{8\\pi}{5}$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Revolving about the $x$-axis a region that touches the axis gives disks.",
+        "Find the limits of integration from the boundary curves, then integrate the squared radius.",
+        "Disk method: $V=\\pi\\int_a^b [R(x)]^2\\,dx$."
+      ],
+      "steps": [
+        "The region lies between $x=0$ (where $y=2x^2$ meets $y=0$) and $x=2$, with radius $R=2x^2$.",
+        "$V=\\pi\\int_0^2(2x^2)^2dx=4\\pi\\int_0^2x^4dx$.",
+        "$=4\\pi\\cdot\\dfrac{2^5}{5}=\\dfrac{128\\pi}{5}$."
+      ],
+      "brief": "Disks: $V=\\pi\\int_0^2 4x^4dx=\\frac{128\\pi}{5}$."
+    },
+    {
+      "sec": "7.1",
+      "q": "The area of the region bounded by the graphs of the equations \\[ y=\\frac{-4}{x^3},\\ y=0,\\ x=-3\\ \\text{and}\\ x=-1 \\] is",
+      "opts": [
+        "$\\dfrac{16}{9}$",
+        "$\\dfrac{14}{9}$",
+        "$\\dfrac{13}{9}$",
+        "$\\dfrac{17}{9}$",
+        "$\\dfrac{19}{9}$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Area between a curve and the $x$-axis: check the sign of the function on the interval.",
+        "For $x<0$, decide whether $-4/x^3$ is positive or negative, then integrate the top curve minus the bottom curve.",
+        "Area $=\\int_a^b|f(x)-g(x)|\\,dx$, and $\\int x^{-3}dx=-\\frac{1}{2x^2}+C$."
+      ],
+      "steps": [
+        "For $x\\in[-3,-1]$, $x^3<0$, so $y=-4/x^3>0$ and the curve lies above $y=0$.",
+        "Area $=\\int_{-3}^{-1}\\frac{-4}{x^3}dx=\\left[\\frac{2}{x^2}\\right]_{-3}^{-1}$.",
+        "$=2-\\dfrac29=\\dfrac{16}{9}$."
+      ],
+      "brief": "$y>0$ on $[-3,-1]$: $\\int\\frac{-4}{x^3}dx=[2/x^2]_{-3}^{-1}=\\frac{16}{9}$."
+    },
+    {
+      "sec": "5.8",
+      "q": "\\[ \\int\\frac{dx}{e^{2x}+e^{-2x}}= \\]",
+      "opts": [
+        "$\\dfrac12\\arctan(e^{2x})+C$",
+        "$\\arctan(e^{2x})+C$",
+        "$\\dfrac12\\arctan(e^{-2x})+C$",
+        "$\\arctan(e^{-2x})+C$",
+        "$\\ln(e^{2x}+e^{-2x})+C$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Rewrite the integrand so that an inverse-tangent form appears.",
+        "Multiply the numerator and denominator by $e^{2x}$, then substitute $u=e^{2x}$.",
+        "$\\int\\frac{du}{u^2+a^2}=\\frac1a\\arctan\\frac ua+C$."
+      ],
+      "steps": [
+        "Multiply top and bottom by $e^{2x}$: $\\int\\frac{e^{2x}}{e^{4x}+1}dx$.",
+        "Let $u=e^{2x}$, $du=2e^{2x}dx$: $\\frac12\\int\\frac{du}{u^2+1}$.",
+        "$=\\frac12\\arctan u+C=\\dfrac12\\arctan(e^{2x})+C$."
+      ],
+      "brief": "Multiply by $e^{2x}$, $u=e^{2x}$: $\\frac12\\int\\frac{du}{1+u^2}=\\frac12\\arctan(e^{2x})+C$."
+    },
+    {
+      "sec": "8.2",
+      "q": "\\[ \\int_0^2x^2e^{-2x}\\,dx= \\]",
+      "opts": [
+        "$\\dfrac{-13+e^4}{4e^4}$",
+        "$\\dfrac{13+e^4}{4e^4}$",
+        "$\\dfrac{13-e^4}{4e^4}$",
+        "$\\dfrac{-13-e^4}{4e^4}$",
+        "$\\dfrac{-13+e^4}{e^4}$"
+      ],
+      "ans": 0,
+      "hints": [
+        "A polynomial times an exponential suggests integration by parts, repeated.",
+        "Take $u=x^2$ and $dv=e^{-2x}dx$, then repeat (or use the tabular method) until the polynomial disappears.",
+        "$\\int u\\,dv=uv-\\int v\\,du$; the tabular method alternates signs down the derivatives of $u$ and integrals of $dv$."
+      ],
+      "steps": [
+        "Tabular method: derivatives of $x^2$: $x^2,\\,2x,\\,2,\\,0$; integrals of $e^{-2x}$: $-\\frac12e^{-2x},\\,\\frac14e^{-2x},\\,-\\frac18e^{-2x}$.",
+        "$\\int x^2e^{-2x}dx=-\\frac12x^2e^{-2x}-\\frac12xe^{-2x}-\\frac14e^{-2x}+C$.",
+        "At $x=2$: $-2e^{-4}-e^{-4}-\\frac14e^{-4}=-\\frac{13}{4}e^{-4}$. At $x=0$: $-\\frac14$.",
+        "Value $=-\\frac{13}{4e^4}+\\frac14=\\dfrac{-13+e^4}{4e^4}$."
+      ],
+      "brief": "Parts twice: $\\left[-\\frac{e^{-2x}}{4}(2x^2+2x+1)\\right]_0^2=\\frac{-13+e^4}{4e^4}$."
+    }
+  ]
+}

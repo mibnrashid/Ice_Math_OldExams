@@ -1,0 +1,655 @@
+{
+  "course": "math101",
+  "term": "223",
+  "kind": "fx",
+  "date": "15 August 2023",
+  "minutes": 180,
+  "source": "math101-223-fx.pdf",
+  "note": "Date (15 August 2023) and 180 net minutes are printed on the cover. All 28 official keys (a) were checked independently with sympy and agree.",
+  "qs": [
+    {
+      "sec": "4.8",
+      "q": "If $L(x)$ is the tangent line approximation to the graph of $f(x)=3^x$ at the point $(2,9)$, then $L(1)=$",
+      "opts": [
+        "$9-9\\ln 3$",
+        "$8-8\\ln 3$",
+        "$9+27\\ln 3$",
+        "$9$",
+        "$9+9\\ln 3$"
+      ],
+      "ans": 0,
+      "hints": [
+        "This is a linear (tangent line) approximation problem.",
+        "Find $f'(x)$, evaluate it at the given point, and write the tangent line there.",
+        "$L(x)=f(a)+f'(a)(x-a)$ and $\\dfrac{d}{dx}b^x=b^x\\ln b$."
+      ],
+      "steps": [
+        "$f'(x)=3^x\\ln 3$, so $f'(2)=9\\ln 3$.",
+        "$L(x)=9+9\\ln 3\\,(x-2)$.",
+        "$L(1)=9+9\\ln 3\\,(-1)=9-9\\ln 3$."
+      ],
+      "brief": "$L(x)=9+9\\ln3\\,(x-2)$, so $L(1)=9-9\\ln 3$."
+    },
+    {
+      "sec": "5.1",
+      "q": "$\\int (4t^2+3)^2\\,dt=$",
+      "opts": [
+        "$\\dfrac{16t^5}{5}+8t^3+9t+c$",
+        "$\\dfrac{16t^5}{5}+8t^3+9t$",
+        "$3t^5+8t^3+9t$",
+        "$\\dfrac{16t^5}{5}+6t^3+9t+c$",
+        "$\\dfrac{16t^5}{5}+8t^3+6t+c$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Expand the integrand first, then integrate term by term.",
+        "Square the binomial to get a polynomial in $t$.",
+        "$(a+b)^2=a^2+2ab+b^2$, $\\int t^n\\,dt=\\dfrac{t^{n+1}}{n+1}+c$ for $n\\neq-1$."
+      ],
+      "steps": [
+        "$(4t^2+3)^2=16t^4+24t^2+9$.",
+        "$\\int 16t^4\\,dt=\\dfrac{16t^5}{5}$, $\\int 24t^2\\,dt=8t^3$, $\\int 9\\,dt=9t$.",
+        "The result is $\\dfrac{16t^5}{5}+8t^3+9t+c$."
+      ],
+      "brief": "Expand: $16t^4+24t^2+9$, integrate: $\\frac{16t^5}{5}+8t^3+9t+c$."
+    },
+    {
+      "sec": "4.2",
+      "q": "The value of $c$ which satisfies the conclusion of the Mean Value Theorem for the function $f(x)=\\sin x$ on $[0,\\pi]$ is",
+      "opts": [
+        "$\\dfrac{\\pi}{2}$",
+        "$\\dfrac{\\pi}{4}$",
+        "$\\dfrac{\\pi}{3}$",
+        "$\\dfrac{\\pi}{6}$",
+        "$\\dfrac{\\pi}{5}$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Use the conclusion of the Mean Value Theorem.",
+        "Compute the average rate of change of $f$ over the interval, then solve $f'(c)=$ that value inside the interval.",
+        "MVT: $f'(c)=\\dfrac{f(b)-f(a)}{b-a}$ for some $c$ in $(a,b)$."
+      ],
+      "steps": [
+        "$\\dfrac{f(\\pi)-f(0)}{\\pi-0}=\\dfrac{0-0}{\\pi}=0$.",
+        "$f'(c)=\\cos c=0$.",
+        "In $(0,\\pi)$ the only solution is $c=\\dfrac{\\pi}{2}$."
+      ],
+      "brief": "Average slope $0$, $\\cos c=0$ on $(0,\\pi)$, so $c=\\pi/2$."
+    },
+    {
+      "sec": "2.3",
+      "q": "$\\lim_{x\\to0}\\frac{\\cos x-\\sin x-1}{2x}=$",
+      "opts": [
+        "$-\\dfrac12$",
+        "$\\dfrac12$",
+        "$-\\dfrac14$",
+        "$\\dfrac14$",
+        "$-1$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Split the fraction and use the standard trigonometric limits.",
+        "Write $\\cos x-\\sin x-1=(\\cos x-1)-\\sin x$ and divide each part by $2x$.",
+        "$\\lim_{x\\to0}\\frac{\\sin x}{x}=1$ and $\\lim_{x\\to0}\\frac{\\cos x-1}{x}=0$."
+      ],
+      "steps": [
+        "$\\dfrac{\\cos x-\\sin x-1}{2x}=\\dfrac12\\cdot\\dfrac{\\cos x-1}{x}-\\dfrac12\\cdot\\dfrac{\\sin x}{x}$.",
+        "As $x\\to0$ the first part tends to $\\frac12\\cdot0=0$ and the second to $\\frac12\\cdot1$.",
+        "So the limit is $-\\dfrac12$."
+      ],
+      "brief": "$\\frac12\\frac{\\cos x-1}{x}-\\frac12\\frac{\\sin x}{x}\\to0-\\frac12=-\\frac12$."
+    },
+    {
+      "sec": "4.3",
+      "q": "The function $f(x)=12x-x^3$ is increasing on the interval",
+      "opts": [
+        "$(-2,2)$",
+        "$(-\\infty,-2)$",
+        "$(2,\\infty)$",
+        "$(-\\infty,\\infty)$",
+        "$(-\\infty,2)$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Use the sign of the first derivative.",
+        "Compute $f'(x)$, find its zeros, and test the sign on each interval.",
+        "$f$ is increasing where $f'(x)>0$ and decreasing where $f'(x)<0$."
+      ],
+      "steps": [
+        "$f'(x)=12-3x^2=3(4-x^2)$.",
+        "$f'(x)=0$ at $x=\\pm2$.",
+        "$f'(x)>0$ exactly when $-2<x<2$."
+      ],
+      "brief": "$f'=3(4-x^2)>0$ for $-2<x<2$."
+    },
+    {
+      "sec": "4.4",
+      "q": "The graph of the function $f(x)=\\dfrac{24}{x^2+12}$ is concave downward on the interval:",
+      "opts": [
+        "$(-2,2)$",
+        "$(-\\infty,-2)$",
+        "$(2,\\infty)$",
+        "$(-12,-2)$",
+        "$(-12,12)$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Concavity is determined by the sign of the second derivative.",
+        "Differentiate twice (write $f=24(x^2+12)^{-1}$) and find where $f''<0$.",
+        "The graph is concave downward where $f''(x)<0$."
+      ],
+      "steps": [
+        "$f'(x)=-48x(x^2+12)^{-2}$.",
+        "$f''(x)=\\dfrac{144(x^2-4)}{(x^2+12)^3}$.",
+        "The denominator is positive, so $f''<0$ exactly when $x^2<4$, i.e. $-2<x<2$."
+      ],
+      "brief": "$f''=\\frac{144(x^2-4)}{(x^2+12)^3}<0$ for $-2<x<2$."
+    },
+    {
+      "sec": "4.4",
+      "q": "The number of inflection points for the graph of the function $f(x)=\\dfrac{6-x}{\\sqrt x}$ is:",
+      "opts": [
+        "$0$",
+        "$1$",
+        "$2$",
+        "$3$",
+        "$4$"
+      ],
+      "ans": 0,
+      "hints": [
+        "An inflection point needs a sign change of $f''$ at a point of the domain.",
+        "Rewrite $f$ as a sum of powers of $x$, find $f''$, and check its sign on the domain.",
+        "Inflection points occur where $f''$ changes sign (and $f$ is defined)."
+      ],
+      "steps": [
+        "$f(x)=6x^{-1/2}-x^{1/2}$, domain $x>0$.",
+        "$f'(x)=-3x^{-3/2}-\\frac12x^{-1/2}$.",
+        "$f''(x)=\\frac92x^{-5/2}+\\frac14x^{-3/2}=\\dfrac{x+18}{4x^{5/2}}>0$ for all $x>0$, so there is no sign change."
+      ],
+      "brief": "$f''=\\frac{x+18}{4x^{5/2}}>0$ on the domain, so no inflection points."
+    },
+    {
+      "sec": "4.6",
+      "q": "If $y=Ax+B$ is the slant asymptote for the graph of the function $f(x)=\\dfrac{x^3-3x^2+2}{x(x-3)}$, then $A+B=$",
+      "opts": [
+        "$1$",
+        "$0$",
+        "$-1$",
+        "$2$",
+        "$-2$"
+      ],
+      "ans": 0,
+      "hints": [
+        "A slant asymptote comes from the quotient in polynomial long division.",
+        "Expand the denominator and divide the numerator by it.",
+        "If $f=\\dfrac{P}{Q}$ with $\\deg P=\\deg Q+1$, then $P=(Ax+B)Q+R$ with $\\deg R<\\deg Q$, and $y=Ax+B$ is the slant asymptote."
+      ],
+      "steps": [
+        "$x(x-3)=x^2-3x$.",
+        "$x^3-3x^2+2=x(x^2-3x)+2$.",
+        "So $f(x)=x+\\dfrac{2}{x^2-3x}$, giving $y=x$, $A=1$, $B=0$, and $A+B=1$."
+      ],
+      "brief": "$f=x+\\frac{2}{x^2-3x}$, slant asymptote $y=x$, $A+B=1$."
+    },
+    {
+      "sec": "4.8",
+      "q": "The measurement of the side of a square floor tile is $10$ inches, with a possible error of $\\dfrac1{32}$ inch. The percent error in computing the area of the square is:",
+      "opts": [
+        "$\\dfrac58\\%$",
+        "$\\dfrac85\\%$",
+        "$\\dfrac38\\%$",
+        "$\\dfrac83\\%$",
+        "$1\\%$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Use differentials to estimate the propagated error.",
+        "Write $A=x^2$ and find $dA$; the percent error is $\\dfrac{dA}{A}\\times100$.",
+        "$dA=A'(x)\\,dx$, and for $A=x^2$ the relative error is $\\dfrac{dA}{A}=\\dfrac{2\\,dx}{x}$."
+      ],
+      "steps": [
+        "$A=x^2$, $dA=2x\\,dx=2(10)\\left(\\frac1{32}\\right)=\\frac58$.",
+        "$A=100$, so $\\dfrac{dA}{A}=\\dfrac{5/8}{100}=\\dfrac{1}{160}$.",
+        "Percent error $=\\dfrac1{160}\\times100\\%=\\dfrac58\\%$."
+      ],
+      "brief": "$\\frac{dA}{A}=\\frac{2dx}{x}=\\frac{1}{160}$, i.e. $\\frac58\\%$."
+    },
+    {
+      "sec": "5.1",
+      "q": "A ball is thrown upward with an initial velocity of $64$ feet per second from an initial height of $80$ feet. Assume the acceleration is $a(t)=-32$ feet per second per second. The ball will hit the ground after",
+      "opts": [
+        "$5$ seconds",
+        "$4$ seconds",
+        "$6$ seconds",
+        "$3$ seconds",
+        "$7$ seconds"
+      ],
+      "ans": 0,
+      "hints": [
+        "Integrate the acceleration twice to get the position function.",
+        "Use the initial velocity and initial height to fix the two constants, then set the height to $0$.",
+        "$v(t)=\\int a\\,dt$, $s(t)=\\int v\\,dt$, with $v(0)=v_0$ and $s(0)=s_0$; the ball hits the ground when $s(t)=0$ with $t>0$."
+      ],
+      "steps": [
+        "$v(t)=-32t+C_1$ and $v(0)=64$, so $v(t)=-32t+64$.",
+        "$s(t)=-16t^2+64t+C_2$ and $s(0)=80$, so $s(t)=-16t^2+64t+80$.",
+        "$s(t)=0$: $t^2-4t-5=(t-5)(t+1)=0$, so $t=5$ (reject $t=-1$)."
+      ],
+      "brief": "$s=-16t^2+64t+80=0\\Rightarrow t=5$ seconds."
+    },
+    {
+      "sec": "5.6",
+      "q": "$\\lim_{x\\to\\infty}\\frac{e^{x^2}}{1-x^3}=$",
+      "opts": [
+        "$-\\infty$",
+        "$\\infty$",
+        "$0$",
+        "$1$",
+        "$e$"
+      ],
+      "ans": 0,
+      "hints": [
+        "This is an indeterminate form of the type $\\infty/-\\infty$; compare growth rates or use L'Hopital.",
+        "Apply L'Hopital's rule, or compare how fast the numerator and denominator grow.",
+        "L'Hopital: if $\\dfrac{f}{g}$ is of the form $\\dfrac{\\infty}{\\infty}$ then $\\lim\\dfrac fg=\\lim\\dfrac{f'}{g'}$ when the latter exists; an exponential beats any polynomial."
+      ],
+      "steps": [
+        "Numerator $e^{x^2}\\to\\infty$ and denominator $1-x^3\\to-\\infty$.",
+        "Differentiate: $\\dfrac{2xe^{x^2}}{-3x^2}=-\\dfrac{2e^{x^2}}{3x}$, still of the form $\\infty/\\infty$; again: $-\\dfrac{4xe^{x^2}}{3}\\to-\\infty$.",
+        "So the limit is $-\\infty$."
+      ],
+      "brief": "Exponential beats polynomial; L'Hopital twice gives $-\\infty$."
+    },
+    {
+      "sec": "5.6",
+      "q": "$\\lim_{x\\to0^+}3x^{x/2}=$",
+      "opts": [
+        "$3$",
+        "$2$",
+        "$1$",
+        "$0$",
+        "$\\ln 2$"
+      ],
+      "ans": 0,
+      "hints": [
+        "This is an indeterminate form of the type $0^0$.",
+        "Set $y=x^{x/2}$, take $\\ln$ of both sides and find the limit of $\\ln y$.",
+        "If $\\ln y\\to L$, then $y\\to e^L$; and $\\lim_{x\\to0^+}x\\ln x=0$ (write it as $\\dfrac{\\ln x}{1/x}$ and use L'Hopital)."
+      ],
+      "steps": [
+        "Let $y=x^{x/2}$; $\\ln y=\\dfrac x2\\ln x$.",
+        "$\\lim_{x\\to0^+}x\\ln x=\\lim\\frac{\\ln x}{1/x}=\\lim\\frac{1/x}{-1/x^2}=\\lim(-x)=0$.",
+        "So $\\ln y\\to0$, $y\\to1$, and the limit is $3\\cdot1=3$."
+      ],
+      "brief": "$\\ln y=\\frac x2\\ln x\\to0$, so $x^{x/2}\\to1$ and the limit is $3$."
+    },
+    {
+      "sec": "5.6",
+      "q": "$\\lim_{x\\to2^+}\\left(\\frac{1}{x^2-4}-\\frac{\\sqrt{x-1}}{x^2-4}\\right)=$",
+      "opts": [
+        "$-\\dfrac18$",
+        "$\\dfrac18$",
+        "$-\\dfrac14$",
+        "$\\dfrac14$",
+        "$1$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Combine the two fractions into one; it becomes a $0/0$ form.",
+        "Write it as $\\dfrac{1-\\sqrt{x-1}}{x^2-4}$ and apply L'Hopital's rule.",
+        "L'Hopital: if $\\dfrac fg$ is $\\dfrac00$ then $\\lim\\dfrac fg=\\lim\\dfrac{f'}{g'}$; also $\\dfrac{d}{dx}\\sqrt u=\\dfrac{u'}{2\\sqrt u}$."
+      ],
+      "steps": [
+        "The expression equals $\\dfrac{1-\\sqrt{x-1}}{x^2-4}$, which is $\\dfrac00$ at $x=2$.",
+        "Differentiate: $\\dfrac{-\\frac{1}{2\\sqrt{x-1}}}{2x}$.",
+        "At $x=2$: $\\dfrac{-1/2}{4}=-\\dfrac18$."
+      ],
+      "brief": "$\\frac{1-\\sqrt{x-1}}{x^2-4}$, L'Hopital: $\\frac{-1/(2\\sqrt{x-1})}{2x}\\to-\\frac18$."
+    },
+    {
+      "sec": "5.9",
+      "q": "If $y=\\ln\\left(\\tanh\\dfrac x2\\right)$, then $y'(\\ln 2)=$",
+      "opts": [
+        "$\\dfrac43$",
+        "$\\dfrac34$",
+        "$\\dfrac25$",
+        "$\\dfrac35$",
+        "$\\dfrac45$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Use the chain rule with the derivative of $\\tanh$.",
+        "Differentiate $\\ln u$ with $u=\\tanh\\frac x2$, then simplify with hyperbolic identities before substituting.",
+        "$\\dfrac{d}{dx}\\tanh u=\\operatorname{sech}^2u\\cdot u'$, $\\sinh 2u=2\\sinh u\\cosh u$, and $\\sinh x=\\dfrac{e^x-e^{-x}}2$."
+      ],
+      "steps": [
+        "$y'=\\dfrac{\\frac12\\operatorname{sech}^2\\frac x2}{\\tanh\\frac x2}=\\dfrac{1}{2\\sinh\\frac x2\\cosh\\frac x2}$.",
+        "Since $2\\sinh\\frac x2\\cosh\\frac x2=\\sinh x$, $y'=\\dfrac1{\\sinh x}$.",
+        "$\\sinh(\\ln2)=\\dfrac{2-\\frac12}{2}=\\dfrac34$, so $y'(\\ln2)=\\dfrac43$."
+      ],
+      "brief": "$y'=\\frac{1}{\\sinh x}$, and $\\sinh(\\ln2)=\\frac34$, so $y'(\\ln2)=\\frac43$."
+    },
+    {
+      "sec": "5.9",
+      "q": "The equation of the tangent line to the graph of the function $f(x)=(\\cosh x-\\sinh x)^2$ at the point $(0,1)$ is $y=$",
+      "opts": [
+        "$-2x+1$",
+        "$2x+1$",
+        "$-2x-1$",
+        "$2x-1$",
+        "$-x+1$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Simplify the function using a hyperbolic identity before differentiating.",
+        "Rewrite $\\cosh x-\\sinh x$ using the exponential definitions, then find the slope at $x=0$.",
+        "$\\cosh x=\\dfrac{e^x+e^{-x}}2$, $\\sinh x=\\dfrac{e^x-e^{-x}}2$; tangent line: $y=f(a)+f'(a)(x-a)$."
+      ],
+      "steps": [
+        "$\\cosh x-\\sinh x=e^{-x}$, so $f(x)=e^{-2x}$.",
+        "$f'(x)=-2e^{-2x}$, so $f'(0)=-2$.",
+        "Tangent line: $y=1-2x$."
+      ],
+      "brief": "$f=e^{-2x}$, $f'(0)=-2$, so $y=-2x+1$."
+    },
+    {
+      "sec": "4.1",
+      "q": "The absolute maximum of the function $f(x)=\\arctan(x^2)$ on the interval $[-2,1]$ is:",
+      "opts": [
+        "$\\arctan 4$",
+        "$\\dfrac\\pi4$",
+        "$0$",
+        "$\\arctan 3$",
+        "$\\arctan 2$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Use the closed interval method: compare $f$ at the critical points and the endpoints.",
+        "Find $f'(x)$, locate the critical points in the interval, then evaluate $f$ there and at both endpoints.",
+        "$\\dfrac{d}{dx}\\arctan u=\\dfrac{u'}{1+u^2}$; the absolute maximum is the largest of the values of $f$ at critical points and endpoints."
+      ],
+      "steps": [
+        "$f'(x)=\\dfrac{2x}{1+x^4}$, which is $0$ only at $x=0$.",
+        "$f(0)=0$, $f(1)=\\arctan1=\\frac\\pi4$, $f(-2)=\\arctan4$.",
+        "$\\arctan$ is increasing and $4>1>0$, so the largest value is $\\arctan4$."
+      ],
+      "brief": "Critical point $x=0$; values $0,\\ \\frac\\pi4,\\ \\arctan4$; maximum $\\arctan4$."
+    },
+    {
+      "sec": "3.6",
+      "q": "The equation of the tangent line to the graph of the equation $\\arctan(xy)=\\arcsin(x+y)$ at the point $(0,0)$ is",
+      "opts": [
+        "$y=-x$",
+        "$y=-2x$",
+        "$y=x$",
+        "$y=2x$",
+        "$y=\\dfrac12x$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Differentiate implicitly to find the slope at the point.",
+        "Differentiate both sides with respect to $x$ (product rule on $xy$), then substitute $x=0$, $y=0$ and solve for $y'$.",
+        "$\\dfrac{d}{dx}\\arctan u=\\dfrac{u'}{1+u^2}$ and $\\dfrac{d}{dx}\\arcsin u=\\dfrac{u'}{\\sqrt{1-u^2}}$."
+      ],
+      "steps": [
+        "$\\dfrac{y+xy'}{1+x^2y^2}=\\dfrac{1+y'}{\\sqrt{1-(x+y)^2}}$.",
+        "At $(0,0)$: $\\dfrac{0}{1}=\\dfrac{1+y'}{1}$, so $y'=-1$.",
+        "The tangent line is $y=-x$."
+      ],
+      "brief": "Implicit differentiation at $(0,0)$: $0=1+y'$, so $y'=-1$ and $y=-x$."
+    },
+    {
+      "sec": "3.5",
+      "q": "If $4xy+\\ln(x^2y)=7$, then $\\dfrac{dy}{dx}=$",
+      "opts": [
+        "$\\dfrac{-4xy^2-2y}{4x^2y+x}$",
+        "$\\dfrac{4xy^2-2y}{4x^2y-x}$",
+        "$\\dfrac{2y-4xy^2}{4x^2y+x}$",
+        "$\\dfrac{-4xy^2+2y}{4x^2y+x}$",
+        "$\\dfrac{-2xy^2-y}{4x^2y+x}$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Differentiate implicitly with respect to $x$.",
+        "Use the product rule on $4xy$ and the chain rule on $\\ln(x^2y)$, then collect the $y'$ terms.",
+        "$\\dfrac{d}{dx}\\ln u=\\dfrac{u'}{u}$; collect all terms containing $y'$ on one side and factor."
+      ],
+      "steps": [
+        "$4y+4xy'+\\dfrac{2xy+x^2y'}{x^2y}=0$, i.e. $4y+4xy'+\\dfrac2x+\\dfrac{y'}{y}=0$.",
+        "$y'\\left(4x+\\dfrac1y\\right)=-4y-\\dfrac2x$.",
+        "Multiply top and bottom by $xy$: $y'=\\dfrac{-4xy^2-2y}{4x^2y+x}$."
+      ],
+      "brief": "$y'(4x+\\frac1y)=-4y-\\frac2x$, so $y'=\\frac{-4xy^2-2y}{4x^2y+x}$."
+    },
+    {
+      "sec": "3.4",
+      "q": "If $y=\\ln\\left(\\dfrac{1+e^x}{1-e^x}\\right)$, then $y'=$",
+      "opts": [
+        "$\\dfrac{2e^x}{1-e^{2x}}$",
+        "$\\dfrac{2e^x}{1+e^{2x}}$",
+        "$\\dfrac{e^{2x}}{1+e^x}$",
+        "$\\dfrac{e^{2x}}{1-e^x}$",
+        "$\\dfrac{2e^{2x}}{1-e^{2x}}$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Use a logarithm law to split the quotient, then the chain rule.",
+        "Write $y=\\ln(1+e^x)-\\ln(1-e^x)$ and differentiate each term.",
+        "$\\ln\\dfrac ab=\\ln a-\\ln b$ and $\\dfrac d{dx}\\ln u=\\dfrac{u'}{u}$."
+      ],
+      "steps": [
+        "$y=\\ln(1+e^x)-\\ln(1-e^x)$.",
+        "$y'=\\dfrac{e^x}{1+e^x}+\\dfrac{e^x}{1-e^x}$.",
+        "Common denominator: $\\dfrac{e^x(1-e^x)+e^x(1+e^x)}{1-e^{2x}}=\\dfrac{2e^x}{1-e^{2x}}$."
+      ],
+      "brief": "$y=\\ln(1+e^x)-\\ln(1-e^x)$, $y'=\\frac{2e^x}{1-e^{2x}}$."
+    },
+    {
+      "sec": "3.2",
+      "q": "The graph of the function $f(x)=3x+\\sin x+2$",
+      "opts": [
+        "does not have a horizontal tangent line",
+        "has one horizontal tangent line",
+        "has two horizontal tangent lines",
+        "has three horizontal tangent lines",
+        "has infinitely many horizontal tangent lines"
+      ],
+      "ans": 0,
+      "hints": [
+        "A horizontal tangent line occurs where the derivative is zero.",
+        "Compute $f'(x)$ and decide whether it can ever equal $0$ using the range of cosine.",
+        "$\\dfrac d{dx}\\sin x=\\cos x$ and $-1\\le\\cos x\\le1$ for all $x$."
+      ],
+      "steps": [
+        "$f'(x)=3+\\cos x$.",
+        "Since $\\cos x\\ge-1$, $f'(x)\\ge2$ for all $x$.",
+        "So $f'(x)=0$ has no solution and there is no horizontal tangent line."
+      ],
+      "brief": "$f'=3+\\cos x\\ge2>0$, so no horizontal tangent."
+    },
+    {
+      "sec": "3.3",
+      "q": "The slope of the graph of the function $f(t)=\\dfrac{\\sec t}{t}$ at the point $\\left(\\pi,\\dfrac{-1}{\\pi}\\right)$ is:",
+      "opts": [
+        "$\\dfrac1{\\pi^2}$",
+        "$\\dfrac1\\pi$",
+        "$\\dfrac{-1}{\\pi^2}$",
+        "$\\dfrac{-1}{\\pi}$",
+        "$1$"
+      ],
+      "ans": 0,
+      "hints": [
+        "The slope is the derivative at the point; use the quotient rule.",
+        "Differentiate $\\dfrac{\\sec t}{t}$ and substitute $t=\\pi$.",
+        "Quotient rule $\\left(\\dfrac uv\\right)'=\\dfrac{u'v-uv'}{v^2}$ and $\\dfrac d{dt}\\sec t=\\sec t\\tan t$."
+      ],
+      "steps": [
+        "$f'(t)=\\dfrac{t\\sec t\\tan t-\\sec t}{t^2}$.",
+        "At $t=\\pi$: $\\sec\\pi=-1$, $\\tan\\pi=0$.",
+        "$f'(\\pi)=\\dfrac{0-(-1)}{\\pi^2}=\\dfrac1{\\pi^2}$."
+      ],
+      "brief": "$f'=\\frac{t\\sec t\\tan t-\\sec t}{t^2}$, $f'(\\pi)=\\frac{1}{\\pi^2}$."
+    },
+    {
+      "sec": "3.1",
+      "q": "If the function $f(x)=\\begin{cases}x^2+1,&x\\le A\\\\4x-3,&x>A\\end{cases}$ is differentiable everywhere, then $A=$",
+      "opts": [
+        "$2$",
+        "$1$",
+        "$-1$",
+        "$-2$",
+        "$0$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Differentiable implies continuous, and the one-sided derivatives must match.",
+        "Set the two pieces equal at $x=A$ and also set their derivatives equal at $x=A$.",
+        "If $f$ is differentiable at $A$, then $f(A^-)=f(A^+)$ and $f'(A^-)=f'(A^+)$."
+      ],
+      "steps": [
+        "Derivatives must match: $2A=4$, so $A=2$.",
+        "Check continuity: $A^2+1=5$ and $4A-3=5$ at $A=2$; they agree.",
+        "So $A=2$."
+      ],
+      "brief": "Matching slopes $2A=4$ gives $A=2$; values agree ($5=5$)."
+    },
+    {
+      "sec": "2.5",
+      "q": "The number of vertical asymptotes of the graph of the function $f(x)=\\dfrac{x^2-9}{x^3+3x^2-x-3}$ is",
+      "opts": [
+        "$2$",
+        "$3$",
+        "$4$",
+        "$1$",
+        "$0$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Vertical asymptotes occur at zeros of the denominator that are not cancelled by the numerator.",
+        "Factor the numerator and the denominator (the denominator by grouping) and cancel common factors.",
+        "At a zero $a$ of the denominator, $x=a$ is a vertical asymptote unless the factor $(x-a)$ cancels completely."
+      ],
+      "steps": [
+        "$x^3+3x^2-x-3=x^2(x+3)-(x+3)=(x+3)(x-1)(x+1)$.",
+        "$x^2-9=(x-3)(x+3)$, so $f(x)=\\dfrac{x-3}{(x-1)(x+1)}$ for $x\\neq-3$.",
+        "The factor $x+3$ cancels (a hole at $x=-3$); the asymptotes are $x=1$ and $x=-1$, so there are $2$."
+      ],
+      "brief": "$f=\\frac{x-3}{(x-1)(x+1)}$ after cancelling $x+3$: asymptotes $x=\\pm1$, so $2$."
+    },
+    {
+      "sec": "2.4",
+      "q": "The function $f(x)=\\sec\\dfrac{\\pi x}{4}$ is continuous when",
+      "opts": [
+        "$x\\neq2+4n$ where $n$ is an integer",
+        "$x\\neq1+4n$ where $n$ is an integer",
+        "$x\\neq4+2n$ where $n$ is an integer",
+        "$x\\neq4+4n$ where $n$ is an integer",
+        "$x\\neq1+n$ where $n$ is an integer"
+      ],
+      "ans": 0,
+      "hints": [
+        "$\\sec$ is continuous wherever it is defined, so find where $\\cos$ vanishes.",
+        "Write $\\sec\\theta=\\dfrac1{\\cos\\theta}$ and solve $\\cos\\frac{\\pi x}4=0$ for $x$.",
+        "$\\cos\\theta=0$ exactly when $\\theta=\\dfrac\\pi2+n\\pi$, $n$ an integer."
+      ],
+      "steps": [
+        "$f(x)=\\dfrac1{\\cos(\\pi x/4)}$ is discontinuous where $\\cos\\dfrac{\\pi x}{4}=0$.",
+        "$\\dfrac{\\pi x}{4}=\\dfrac\\pi2+n\\pi$.",
+        "Multiply by $\\dfrac4\\pi$: $x=2+4n$. So $f$ is continuous for $x\\neq2+4n$."
+      ],
+      "brief": "$\\cos\\frac{\\pi x}{4}=0\\iff x=2+4n$; continuous for $x\\neq2+4n$."
+    },
+    {
+      "sec": "2.3",
+      "q": "$\\lim_{\\Delta x\\to0}\\frac{(x+\\Delta x)^3-x^3}{\\Delta x}=$",
+      "opts": [
+        "$3x^2$",
+        "$x^2$",
+        "$2x^2$",
+        "$2x^3$",
+        "$-3x^2$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Expand the cube and simplify before taking the limit.",
+        "Expand $(x+\\Delta x)^3$, cancel $x^3$, and divide by $\\Delta x$.",
+        "$(a+b)^3=a^3+3a^2b+3ab^2+b^3$."
+      ],
+      "steps": [
+        "$(x+\\Delta x)^3=x^3+3x^2\\Delta x+3x(\\Delta x)^2+(\\Delta x)^3$.",
+        "The quotient becomes $3x^2+3x\\Delta x+(\\Delta x)^2$.",
+        "As $\\Delta x\\to0$ the limit is $3x^2$."
+      ],
+      "brief": "Expand: quotient $=3x^2+3x\\Delta x+(\\Delta x)^2\\to3x^2$."
+    },
+    {
+      "sec": "4.7",
+      "q": "Let $x$ and $y$ be two positive numbers such that the sum of the first number cubed and the second number is $500$ and the product is a maximum. Then $x+y=$",
+      "opts": [
+        "$380$",
+        "$360$",
+        "$340$",
+        "$400$",
+        "$420$"
+      ],
+      "ans": 0,
+      "hints": [
+        "This is an optimization problem with one constraint.",
+        "Use the constraint to write $y$ in terms of $x$, then maximize the product $xy$ as a function of $x$.",
+        "Maximize $P(x)$ by solving $P'(x)=0$ and checking that it gives a maximum on the allowed domain."
+      ],
+      "steps": [
+        "$x^3+y=500$, so $y=500-x^3$ and $P=xy=500x-x^4$ for $0<x<500^{1/3}$.",
+        "$P'=500-4x^3=0$, so $x^3=125$ and $x=5$.",
+        "$P''=-12x^2<0$, a maximum. Then $y=500-125=375$ and $x+y=380$."
+      ],
+      "brief": "$P=500x-x^4$, $x=5$, $y=375$, so $x+y=380$."
+    },
+    {
+      "sec": "4.7",
+      "q": "A manufacturer wants to design an open box having a square base and a surface area of $108$ square inches. If we want to produce a box with maximum volume, then the volume in cubic inches is",
+      "opts": [
+        "$108$",
+        "$72$",
+        "$144$",
+        "$36$",
+        "$180$"
+      ],
+      "ans": 0,
+      "hints": [
+        "This is an optimization problem with one constraint.",
+        "Let the base side be $x$ and the height $h$; use the surface area to write $h$ in terms of $x$, then write $V$ in terms of $x$.",
+        "An open box with square base has surface area $x^2+4xh$ and volume $V=x^2h$; maximize by solving $V'(x)=0$."
+      ],
+      "steps": [
+        "$x^2+4xh=108$, so $h=\\dfrac{108-x^2}{4x}$.",
+        "$V=x^2h=\\dfrac{108x-x^3}{4}$, $V'=\\dfrac{108-3x^2}{4}=0$, so $x=6$ (second derivative $-\\frac{3x}{2}<0$, a maximum).",
+        "$h=\\dfrac{108-36}{24}=3$, so $V=36\\cdot3=108$."
+      ],
+      "brief": "$V=\\frac{108x-x^3}{4}$, $x=6$, $h=3$, $V=108$."
+    },
+    {
+      "sec": "3.7",
+      "q": "The volume of oil in a cylindrical container is increasing at a rate of $150$ cubic inches per second. The height of the cylinder is ten times the radius. At what rate (in inches per second) is the height of the oil changing when the oil is $35$ inches high? (Hint: The volume of the cylinder is $V=\\pi r^2h$)",
+      "opts": [
+        "$\\dfrac{200}{49\\pi}$",
+        "$\\dfrac{200}{9\\pi}$",
+        "$\\dfrac{100}{49\\pi}$",
+        "$\\dfrac{200}{7\\pi}$",
+        "$\\dfrac{100}{7\\pi}$"
+      ],
+      "ans": 0,
+      "hints": [
+        "This is a related rates problem.",
+        "Use $h=10r$ to write $V$ in terms of $h$ alone, then differentiate with respect to $t$.",
+        "Differentiate $V(h)$ using the chain rule: $\\dfrac{dV}{dt}=\\dfrac{dV}{dh}\\cdot\\dfrac{dh}{dt}$."
+      ],
+      "steps": [
+        "$r=\\dfrac h{10}$, so $V=\\pi\\dfrac{h^2}{100}h=\\dfrac{\\pi h^3}{100}$.",
+        "$\\dfrac{dV}{dt}=\\dfrac{3\\pi h^2}{100}\\dfrac{dh}{dt}$.",
+        "$150=\\dfrac{3\\pi(35)^2}{100}\\dfrac{dh}{dt}$, so $\\dfrac{dh}{dt}=\\dfrac{15000}{3675\\pi}=\\dfrac{200}{49\\pi}$."
+      ],
+      "brief": "$V=\\frac{\\pi h^3}{100}$, $150=\\frac{3\\pi h^2}{100}h'$, so $h'=\\frac{200}{49\\pi}$ at $h=35$."
+    }
+  ]
+}

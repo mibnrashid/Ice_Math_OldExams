@@ -1,0 +1,509 @@
+{
+  "course": "math208",
+  "term": "253",
+  "kind": "fx",
+  "date": "5 August 2026",
+  "minutes": 120,
+  "source": "math208-253-fx.pdf",
+  "qs": [
+    {
+      "sec": "1.6",
+      "q": "The solution of the exact differential equation \\[ \\left(\\sin y+y\\sin x+\\frac{1}{x}\\right)dx+\\left(\\frac{1}{y}+x\\cos y-\\cos x\\right)dy=0 \\] is given by",
+      "opts": [
+        "$\\ln|x|+\\ln|y|+x\\sin y-y\\cos x=C$",
+        "$\\ln|x|+\\ln|y|+x\\cos y-y\\cos x=C$",
+        "$\\ln|x|-\\ln|y|-x\\cos y-y\\cos x=C$",
+        "$\\ln|x|-\\ln|y|+x\\sin y-y\\cos x=C$",
+        "$\\ln|x|+\\ln|y|+y\\sin y-x\\cos x=C$"
+      ],
+      "ans": 0,
+      "hints": [
+        "The equation is stated to be exact, so look for a potential function $F(x,y)$.",
+        "Integrate $M$ with respect to $x$, adding an unknown function $g(y)$, then use $F_y=N$ to find $g$.",
+        "If $M_y=N_x$, then $F=\\int M\\,dx+g(y)$ with $F_y=N$, and the solution is $F(x,y)=C$."
+      ],
+      "steps": [
+        "Check: $M_y=\\cos y+\\sin x=N_x$, so the equation is exact.",
+        "$F=\\int\\left(\\sin y+y\\sin x+\\dfrac1x\\right)dx=x\\sin y-y\\cos x+\\ln|x|+g(y)$.",
+        "$F_y=x\\cos y-\\cos x+g'(y)=\\dfrac1y+x\\cos y-\\cos x$, so $g'(y)=\\dfrac1y$ and $g(y)=\\ln|y|$.",
+        "The solution is $\\ln|x|+\\ln|y|+x\\sin y-y\\cos x=C$."
+      ],
+      "brief": "$F=\\int M\\,dx+g(y)=x\\sin y-y\\cos x+\\ln|x|+g$, $g=\\ln|y|$."
+    },
+    {
+      "sec": "1.6",
+      "q": "A general solution of the differential equation $\\dfrac{dy}{dx}+\\dfrac{2}{x}y=4x^3y^4$ is given by",
+      "opts": [
+        "$y^{-3}=6x^4+Cx^6$",
+        "$y^{-3}=2x^4+Cx^6$",
+        "$y^{-3}=4x^4+Cx^6$",
+        "$y^{-3}=3x^4+Cx^6$",
+        "$y^{-3}=5x^4+Cx^6$"
+      ],
+      "ans": 0,
+      "hints": [
+        "The equation has the form $y'+P(x)y=Q(x)y^n$, so it is a Bernoulli equation.",
+        "Identify $n$, substitute $v=y^{1-n}$, and rewrite the equation as a linear equation in $v$.",
+        "For $y'+Py=Qy^n$, $v=y^{1-n}$ gives $v'=(1-n)y^{-n}y'$; then solve the linear equation with $\\rho=e^{\\int P\\,dx}$ and $(\\rho v)'=\\rho Q$."
+      ],
+      "steps": [
+        "Here $n=4$, so let $v=y^{-3}$, giving $v'=-3y^{-4}y'$.",
+        "Multiply the equation by $-3y^{-4}$: $v'-\\dfrac{6}{x}v=-12x^3$.",
+        "$\\rho=e^{\\int -6/x\\,dx}=x^{-6}$, so $\\left(x^{-6}v\\right)'=-12x^{-3}$.",
+        "Integrate: $x^{-6}v=6x^{-2}+C$, so $y^{-3}=6x^4+Cx^6$."
+      ],
+      "brief": "Bernoulli $n=4$, $v=y^{-3}$: $v'-\\frac6xv=-12x^3$, $\\rho=x^{-6}$, $v=6x^4+Cx^6$."
+    },
+    {
+      "sec": "1.4",
+      "q": "The solution of the initial-value problem \\[ xe^y\\,dy+\\left(\\frac{x^2+1}{y}\\right)dx=0, \\qquad y(1)=1, \\] is given by",
+      "opts": [
+        "$2(y-1)e^y+x^2+2\\ln|x|=1$",
+        "$3(y-1)e^y+x^2+2\\ln|x|=1$",
+        "$4(y-1)e^y+x^2+3\\ln|x|=1$",
+        "$5(y-1)e^y+x^2-2\\ln|x|=1$",
+        "$(y-1)e^y+x^2+2\\ln|x|=1$"
+      ],
+      "ans": 0,
+      "hints": [
+        "The $x$ and $y$ factors can be split onto different sides, so the equation is separable.",
+        "Multiply the equation by $\\dfrac{y}{x}$ to put all $y$ terms with $dy$ and all $x$ terms with $dx$, then integrate.",
+        "For a separable equation, $\\int f(y)\\,dy=\\int g(x)\\,dx+C$; integration by parts gives $\\int ye^y\\,dy=(y-1)e^y+C$."
+      ],
+      "steps": [
+        "Multiply by $\\dfrac yx$: $ye^y\\,dy=-\\left(x+\\dfrac1x\\right)dx$.",
+        "Integrate: $(y-1)e^y=-\\dfrac{x^2}{2}-\\ln|x|+C$.",
+        "At $x=1$, $y=1$: $0=-\\dfrac12+C$, so $C=\\dfrac12$.",
+        "Multiply by 2: $2(y-1)e^y+x^2+2\\ln|x|=1$."
+      ],
+      "brief": "Separable: $(y-1)e^y=-\\frac{x^2}{2}-\\ln|x|+\\frac12$, times 2."
+    },
+    {
+      "sec": "11.3",
+      "q": "The sum of the indicial roots at $x=0$ for the differential equation \\[ x(4-x)y''+(2-x)y'+4y=0 \\] is",
+      "opts": [
+        "$\\dfrac12$",
+        "$0$",
+        "$-\\dfrac12$",
+        "$\\dfrac14$",
+        "$-\\dfrac14$"
+      ],
+      "ans": 0,
+      "hints": [
+        "$x=0$ is a regular singular point, so use the indicial equation of the Frobenius method.",
+        "Write the equation as $y''+P(x)y'+Q(x)y=0$ and find $p_0=\\lim_{x\\to0}xP(x)$ and $q_0=\\lim_{x\\to0}x^2Q(x)$.",
+        "The indicial equation at a regular singular point $x=0$ is $r(r-1)+p_0r+q_0=0$, with $p_0=\\lim_{x\\to0}xP(x)$ and $q_0=\\lim_{x\\to0}x^2Q(x)$."
+      ],
+      "steps": [
+        "$P(x)=\\dfrac{2-x}{x(4-x)}$ and $Q(x)=\\dfrac{4}{x(4-x)}$.",
+        "$p_0=\\lim_{x\\to0}\\dfrac{2-x}{4-x}=\\dfrac12$ and $q_0=\\lim_{x\\to0}\\dfrac{4x}{4-x}=0$.",
+        "Indicial equation: $r(r-1)+\\dfrac12r=0$, i.e. $r^2-\\dfrac12r=0$, so $r=0$ or $r=\\dfrac12$.",
+        "The sum of the indicial roots is $\\dfrac12$."
+      ],
+      "brief": "$p_0=\\frac12$, $q_0=0$: $r^2-\\frac12r=0$, roots $0,\\frac12$, sum $\\frac12$."
+    },
+    {
+      "sec": "4.5",
+      "q": "If the rank of the matrix $A=\\begin{bmatrix}1&-2&3&1\\\\2&-3&5&4\\\\3&-5&8&5\\\\1&-1&2&k^2-6\\end{bmatrix}$ is equal to 2, then $k=$",
+      "opts": [
+        "$\\pm3$",
+        "$3$ only",
+        "$-3$ only",
+        "$\\pm\\sqrt{6}$",
+        "$0$"
+      ],
+      "ans": 0,
+      "hints": [
+        "The rank is the number of nonzero rows (pivots) in an echelon form of the matrix.",
+        "Row reduce $A$ using the first row, then the second row, and see which entry depends on $k$.",
+        "$\\operatorname{rank}(A)$ equals the number of pivots in a row echelon form of $A$; a row that reduces to all zeros adds nothing to the rank."
+      ],
+      "steps": [
+        "$R_2-2R_1$, $R_3-3R_1$, $R_4-R_1$ give rows $(0,1,-1,2)$, $(0,1,-1,2)$, $(0,1,-1,k^2-7)$.",
+        "$R_3-R_2$ gives a zero row, and $R_4-R_2$ gives $(0,0,0,k^2-9)$.",
+        "The rank is 2 exactly when this last row is also zero: $k^2-9=0$.",
+        "So $k=\\pm3$."
+      ],
+      "brief": "Echelon form has rows $(1,-2,3,1)$, $(0,1,-1,2)$, $(0,0,0,k^2-9)$: $k=\\pm3$."
+    },
+    {
+      "sec": "6.2",
+      "q": "Suppose that a $2\\times2$ matrix $A$ has the eigenvalues $\\lambda_1=2$ and $\\lambda_2=1$, with corresponding eigenvectors $v_1=\\begin{bmatrix}2\\\\1\\end{bmatrix}$, and $v_2=\\begin{bmatrix}3\\\\2\\end{bmatrix}$, respectively. If $A^2=\\begin{bmatrix}x&y\\\\z&w\\end{bmatrix}$, then $x+y+z+w=$ (Hint: Find a diagonalizing matrix $P$ and write $A=PDP^{-1}$.)",
+      "opts": [
+        "$-7$",
+        "$-6$",
+        "$-5$",
+        "$-9$",
+        "$-10$"
+      ],
+      "ans": 0,
+      "hints": [
+        "A matrix with a full set of eigenvectors can be diagonalized, and powers of a diagonal matrix are easy.",
+        "Put the eigenvectors as the columns of $P$ and the matching eigenvalues on the diagonal of $D$, then find $P^{-1}$.",
+        "If $A=PDP^{-1}$ then $A^2=PD^2P^{-1}$, and $\\begin{bmatrix}a&b\\\\c&d\\end{bmatrix}^{-1}=\\dfrac{1}{ad-bc}\\begin{bmatrix}d&-b\\\\-c&a\\end{bmatrix}$."
+      ],
+      "steps": [
+        "$P=\\begin{bmatrix}2&3\\\\1&2\\end{bmatrix}$, $D=\\begin{bmatrix}2&0\\\\0&1\\end{bmatrix}$, and $\\det P=1$, so $P^{-1}=\\begin{bmatrix}2&-3\\\\-1&2\\end{bmatrix}$.",
+        "$PD^2=\\begin{bmatrix}2&3\\\\1&2\\end{bmatrix}\\begin{bmatrix}4&0\\\\0&1\\end{bmatrix}=\\begin{bmatrix}8&3\\\\4&2\\end{bmatrix}$.",
+        "$A^2=PD^2P^{-1}=\\begin{bmatrix}8&3\\\\4&2\\end{bmatrix}\\begin{bmatrix}2&-3\\\\-1&2\\end{bmatrix}=\\begin{bmatrix}13&-18\\\\6&-8\\end{bmatrix}$.",
+        "$x+y+z+w=13-18+6-8=-7$."
+      ],
+      "brief": "$A^2=PD^2P^{-1}=\\begin{bmatrix}13&-18\\\\6&-8\\end{bmatrix}$, entry sum $-7$."
+    },
+    {
+      "sec": "11.3",
+      "q": "The number of irregular singular points of the differential equation \\[ x^2(1-x^2)y''+y'+xy=0 \\] is",
+      "opts": [
+        "$1$",
+        "$2$",
+        "$3$",
+        "$0$",
+        "$4$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Find the singular points first, then classify each one as regular or irregular.",
+        "Write the equation as $y''+P(x)y'+Q(x)y=0$; the singular points are where the coefficient of $y''$ is zero.",
+        "A singular point $x_0$ is regular if $(x-x_0)P(x)$ and $(x-x_0)^2Q(x)$ are both analytic at $x_0$; otherwise it is irregular."
+      ],
+      "steps": [
+        "$x^2(1-x^2)=0$ gives the singular points $x=0$, $x=1$, $x=-1$.",
+        "$P(x)=\\dfrac{1}{x^2(1-x^2)}$ and $Q(x)=\\dfrac{1}{x(1-x^2)}$.",
+        "At $x=0$: $xP(x)=\\dfrac{1}{x(1-x^2)}$ is not analytic at $0$, so $x=0$ is irregular.",
+        "At $x=\\pm1$: $(x\\mp1)P(x)$ and $(x\\mp1)^2Q(x)$ have no factor $x\\mp1$ left in the denominator, so both points are regular.",
+        "So there is exactly 1 irregular singular point."
+      ],
+      "brief": "Singular at $0,\\pm1$; only $x=0$ fails ($xP=\\frac{1}{x(1-x^2)}$): one irregular point."
+    },
+    {
+      "sec": "11.2",
+      "q": "If $y=\\sum_{n=0}^{\\infty}c_nx^n$ is a power-series solution of the differential equation $(x^2+1)y''-4xy'+6y=0$ about the ordinary point $x=0$, then the constants $c_n$ satisfy the recurrence relation",
+      "opts": [
+        "$c_n=\\dfrac{(4-n)(n-5)}{n(n-1)}c_{n-2},\\quad n\\ge2$",
+        "$c_n=\\dfrac{(4+n)(n-5)}{n(n-1)}c_{n-2},\\quad n\\ge2$",
+        "$c_n=\\dfrac{(4-n)(n+5)}{n(n-1)}c_{n-2},\\quad n\\ge2$",
+        "$c_n=\\dfrac{(4+n)(n+5)}{n(n-1)}c_{n-2},\\quad n\\ge2$",
+        "$c_n=\\dfrac{(2+n)(n-5)}{n(n+1)}c_{n-2},\\quad n\\ge2$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Substitute the power series into the equation and match coefficients of each power of $x$.",
+        "Write $y'$ and $y''$ as series, shift indices so every sum has $x^k$, and collect the coefficient of $x^k$.",
+        "With $y=\\sum c_nx^n$: $y'=\\sum nc_nx^{n-1}$, $y''=\\sum n(n-1)c_nx^{n-2}$, and $\\sum n(n-1)c_nx^{n-2}=\\sum (k+2)(k+1)c_{k+2}x^k$."
+      ],
+      "steps": [
+        "$x^2y''$, $-4xy'$ and $6y$ contribute $k(k-1)c_k$, $-4kc_k$ and $6c_k$ to the coefficient of $x^k$; $y''$ contributes $(k+2)(k+1)c_{k+2}$.",
+        "So $(k+2)(k+1)c_{k+2}+(k^2-5k+6)c_k=0$, and $k^2-5k+6=(k-2)(k-3)$.",
+        "$c_{k+2}=-\\dfrac{(k-2)(k-3)}{(k+2)(k+1)}c_k$.",
+        "Put $n=k+2$: $c_n=-\\dfrac{(n-4)(n-5)}{n(n-1)}c_{n-2}=\\dfrac{(4-n)(n-5)}{n(n-1)}c_{n-2}$, $n\\ge2$."
+      ],
+      "brief": "Coefficient of $x^k$: $(k+2)(k+1)c_{k+2}+(k-2)(k-3)c_k=0$; shift $n=k+2$."
+    },
+    {
+      "sec": "7.3",
+      "q": "Consider the system \\[ X'=AX, \\qquad X(0)=\\begin{bmatrix}1\\\\2\\end{bmatrix}, \\] where $A$ is a $2\\times2$ matrix with real entries. If $A$ has the eigenvalue $\\lambda=1+i$ with corresponding eigenvector $K=\\begin{bmatrix}-1-i\\\\1\\end{bmatrix}$, then $X(\\pi)=$",
+      "opts": [
+        "$e^{\\pi}\\begin{bmatrix}-1\\\\-2\\end{bmatrix}$",
+        "$e^{\\pi}\\begin{bmatrix}1\\\\-2\\end{bmatrix}$",
+        "$e^{\\pi}\\begin{bmatrix}1\\\\2\\end{bmatrix}$",
+        "$e^{\\pi}\\begin{bmatrix}2\\\\1\\end{bmatrix}$",
+        "$e^{\\pi}\\begin{bmatrix}-2\\\\-1\\end{bmatrix}$"
+      ],
+      "ans": 0,
+      "hints": [
+        "A complex eigenvalue and eigenvector give two real solutions: the real and imaginary parts of $Ke^{\\lambda t}$.",
+        "Split $K$ into real and imaginary parts, build the two real solutions, and use $X(0)$ to find $c_1$ and $c_2$.",
+        "For $\\lambda=a+bi$ and $K=B_1+iB_2$: $X_1=e^{at}\\left(B_1\\cos bt-B_2\\sin bt\\right)$ and $X_2=e^{at}\\left(B_2\\cos bt+B_1\\sin bt\\right)$."
+      ],
+      "steps": [
+        "$K=\\begin{bmatrix}-1\\\\1\\end{bmatrix}+i\\begin{bmatrix}-1\\\\0\\end{bmatrix}$, so $X_1=e^t\\begin{bmatrix}-\\cos t+\\sin t\\\\\\cos t\\end{bmatrix}$ and $X_2=e^t\\begin{bmatrix}-\\cos t-\\sin t\\\\\\sin t\\end{bmatrix}$.",
+        "$X(0)=c_1\\begin{bmatrix}-1\\\\1\\end{bmatrix}+c_2\\begin{bmatrix}-1\\\\0\\end{bmatrix}=\\begin{bmatrix}1\\\\2\\end{bmatrix}$ gives $c_1=2$ and $c_2=-3$.",
+        "At $t=\\pi$: $X_1(\\pi)=e^{\\pi}\\begin{bmatrix}1\\\\-1\\end{bmatrix}$ and $X_2(\\pi)=e^{\\pi}\\begin{bmatrix}1\\\\0\\end{bmatrix}$.",
+        "$X(\\pi)=e^{\\pi}\\left(2\\begin{bmatrix}1\\\\-1\\end{bmatrix}-3\\begin{bmatrix}1\\\\0\\end{bmatrix}\\right)=e^{\\pi}\\begin{bmatrix}-1\\\\-2\\end{bmatrix}$."
+      ],
+      "brief": "Real/imag parts of $Ke^{(1+i)t}$, $c_1=2$, $c_2=-3$: $X(\\pi)=e^{\\pi}(-1,-2)^T$."
+    },
+    {
+      "sec": "6.1",
+      "q": "If $K=\\begin{bmatrix}\\alpha\\\\1\\\\1\\end{bmatrix}$ is an eigenvector with eigenvalue $\\lambda=-2$ of the matrix $A=\\begin{bmatrix}0&1&-1\\\\-3&1&-3\\\\1&-4&2\\end{bmatrix}$, then $\\alpha=$",
+      "opts": [
+        "$0$",
+        "$-1$",
+        "$1$",
+        "$2$",
+        "$-2$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Use the definition of an eigenvector.",
+        "Compute $AK$ and set it equal to $-2K$ component by component.",
+        "$K$ is an eigenvector of $A$ for $\\lambda$ exactly when $K\\neq\\mathbf{0}$ and $AK=\\lambda K$."
+      ],
+      "steps": [
+        "$AK=\\begin{bmatrix}0\\cdot\\alpha+1-1\\\\-3\\alpha+1-3\\\\\\alpha-4+2\\end{bmatrix}=\\begin{bmatrix}0\\\\-3\\alpha-2\\\\\\alpha-2\\end{bmatrix}$.",
+        "Second component: $-3\\alpha-2=-2$, so $\\alpha=0$.",
+        "Check: first component $0=-2\\alpha=0$ and third component $\\alpha-2=-2$. So $\\alpha=0$."
+      ],
+      "brief": "$AK=(0,\\,-3\\alpha-2,\\,\\alpha-2)^T=-2(\\alpha,1,1)^T$ gives $\\alpha=0$."
+    },
+    {
+      "sec": "8.1",
+      "q": "A fundamental matrix of the system $X'=\\begin{bmatrix}1&2\\\\2&1\\end{bmatrix}X$ is",
+      "opts": [
+        "$\\begin{bmatrix}-e^{-t}&e^{3t}\\\\e^{-t}&e^{3t}\\end{bmatrix}$",
+        "$\\begin{bmatrix}e^{-t}&e^{3t}\\\\e^{-t}&e^{3t}\\end{bmatrix}$",
+        "$\\begin{bmatrix}2e^{-t}&e^{3t}\\\\-e^{-t}&e^{3t}\\end{bmatrix}$",
+        "$\\begin{bmatrix}e^{-t}&3e^{3t}\\\\-e^{-t}&e^{3t}\\end{bmatrix}$",
+        "$\\begin{bmatrix}e^{-t}&0\\\\0&e^{3t}\\end{bmatrix}$"
+      ],
+      "ans": 0,
+      "hints": [
+        "A fundamental matrix has two linearly independent solutions of the system as its columns.",
+        "Find the eigenvalues and eigenvectors of the coefficient matrix, and form the solutions $\\mathbf{v}e^{\\lambda t}$.",
+        "The eigenvalues solve $\\det(A-\\lambda I)=0$; each eigenpair gives a solution $\\mathbf{v}e^{\\lambda t}$, and these are the columns of a fundamental matrix."
+      ],
+      "steps": [
+        "$\\det(A-\\lambda I)=(1-\\lambda)^2-4=0$ gives $\\lambda=3$ and $\\lambda=-1$.",
+        "$\\lambda=-1$: $(A+I)\\mathbf{v}=\\mathbf{0}$ gives $2v_1+2v_2=0$, so $\\mathbf{v}=\\begin{bmatrix}-1\\\\1\\end{bmatrix}$.",
+        "$\\lambda=3$: $(A-3I)\\mathbf{v}=\\mathbf{0}$ gives $-2v_1+2v_2=0$, so $\\mathbf{v}=\\begin{bmatrix}1\\\\1\\end{bmatrix}$.",
+        "Columns $\\begin{bmatrix}-1\\\\1\\end{bmatrix}e^{-t}$ and $\\begin{bmatrix}1\\\\1\\end{bmatrix}e^{3t}$ give $\\begin{bmatrix}-e^{-t}&e^{3t}\\\\e^{-t}&e^{3t}\\end{bmatrix}$."
+      ],
+      "brief": "$\\lambda=-1$: $(-1,1)^T$; $\\lambda=3$: $(1,1)^T$; columns $\\mathbf{v}e^{\\lambda t}$."
+    },
+    {
+      "sec": "4.3",
+      "q": "If the three vectors $v_1=(1,2,3)$, $v_2=(-1,0,4)$, and $v_3=(3,2,k)$ of $\\mathbb{R}^3$ are linearly dependent, then $k=$",
+      "opts": [
+        "$-5$",
+        "$-\\dfrac23$",
+        "$\\dfrac52$",
+        "$-2$",
+        "$7$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Three vectors in $\\mathbb{R}^3$ are dependent exactly when the matrix built from them is not invertible.",
+        "Put the vectors as the rows (or columns) of a $3\\times3$ matrix and compute its determinant in terms of $k$.",
+        "$n$ vectors in $\\mathbb{R}^n$ are linearly dependent if and only if the matrix having them as columns (or rows) has determinant $0$."
+      ],
+      "steps": [
+        "Take $\\det\\begin{bmatrix}1&2&3\\\\-1&0&4\\\\3&2&k\\end{bmatrix}$ and expand along the first row.",
+        "$=1(0-8)-2(-k-12)+3(-2-0)=-8+2k+24-6=2k+10$.",
+        "Dependence needs $2k+10=0$, so $k=-5$."
+      ],
+      "brief": "$\\det=2k+10=0$, so $k=-5$."
+    },
+    {
+      "sec": "8.2",
+      "q": "Consider the non-homogeneous system \\[ X'=AX+\\begin{bmatrix}0\\\\3\\end{bmatrix}. \\] If the general solution of the associated homogeneous system is $X_c=c_1\\begin{bmatrix}1\\\\1\\end{bmatrix}e^t+c_2\\begin{bmatrix}1\\\\2\\end{bmatrix}e^{3t}$, then a particular solution $X_p$ is",
+      "opts": [
+        "$\\begin{bmatrix}2\\\\1\\end{bmatrix}$",
+        "$\\begin{bmatrix}1\\\\2\\end{bmatrix}$",
+        "$\\begin{bmatrix}-2\\\\1\\end{bmatrix}$",
+        "$\\begin{bmatrix}0\\\\3\\end{bmatrix}$",
+        "$\\begin{bmatrix}2\\\\-1\\end{bmatrix}$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Use variation of parameters with a fundamental matrix built from $X_c$.",
+        "Form the fundamental matrix $\\Phi(t)$ from the two homogeneous solutions and compute $\\Phi^{-1}(t)$.",
+        "Variation of parameters: $X_p=\\Phi(t)\\int\\Phi^{-1}(t)F(t)\\,dt$, where the columns of $\\Phi$ are independent solutions of $X'=AX$."
+      ],
+      "steps": [
+        "$\\Phi=\\begin{bmatrix}e^t&e^{3t}\\\\e^t&2e^{3t}\\end{bmatrix}$, $\\det\\Phi=e^{4t}$, so $\\Phi^{-1}=\\begin{bmatrix}2e^{-t}&-e^{-t}\\\\-e^{-3t}&e^{-3t}\\end{bmatrix}$.",
+        "$\\Phi^{-1}F=\\begin{bmatrix}-3e^{-t}\\\\3e^{-3t}\\end{bmatrix}$, and $\\int\\Phi^{-1}F\\,dt=\\begin{bmatrix}3e^{-t}\\\\-e^{-3t}\\end{bmatrix}$.",
+        "$X_p=\\Phi\\begin{bmatrix}3e^{-t}\\\\-e^{-3t}\\end{bmatrix}=\\begin{bmatrix}3-1\\\\3-2\\end{bmatrix}=\\begin{bmatrix}2\\\\1\\end{bmatrix}$."
+      ],
+      "brief": "$\\Phi^{-1}F=(-3e^{-t},3e^{-3t})^T$, integrate, $X_p=\\Phi(3e^{-t},-e^{-3t})^T=(2,1)^T$."
+    },
+    {
+      "sec": "5.5",
+      "q": "By using the method of undetermined coefficients, a particular solution of the differential equation \\[ y''-2y'=6e^{2x}+5\\cos x \\] is given by $y_p=Axe^{2x}+B\\cos x+C\\sin x$. Then $5B+2A+5C=$",
+      "opts": [
+        "$-9$",
+        "$5$",
+        "$-3$",
+        "$7$",
+        "$0$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Substitute the given form of $y_p$ into the equation and match coefficients.",
+        "Treat the $Axe^{2x}$ part and the $B\\cos x+C\\sin x$ part separately, matching them with $6e^{2x}$ and $5\\cos x$.",
+        "Derivatives needed: $(xe^{ax})'=(1+ax)e^{ax}$, $(xe^{ax})''=(2a+a^2x)e^{ax}$, $(\\cos x)'=-\\sin x$, $(\\sin x)'=\\cos x$; equate coefficients of like terms."
+      ],
+      "steps": [
+        "For $Axe^{2x}$: $y'=A(1+2x)e^{2x}$, $y''=A(4+4x)e^{2x}$, so $y''-2y'=2Ae^{2x}=6e^{2x}$ and $A=3$.",
+        "For $B\\cos x+C\\sin x$: $y''-2y'=(-B-2C)\\cos x+(2B-C)\\sin x$.",
+        "Match: $-B-2C=5$ and $2B-C=0$, so $C=2B$, $-5B=5$, $B=-1$, $C=-2$.",
+        "$5B+2A+5C=-5+6-10=-9$."
+      ],
+      "brief": "$A=3$, $B=-1$, $C=-2$: $5B+2A+5C=-5+6-10=-9$."
+    },
+    {
+      "sec": "5.5",
+      "q": "A particular solution of the differential equation $y''+4y=4\\sec(2x)$ is given by $y_p(x)=$",
+      "opts": [
+        "$\\cos(2x)\\ln|\\cos(2x)|+2x\\sin(2x)$",
+        "$-\\cos(2x)\\ln|\\sin(2x)|+x\\sin(2x)$",
+        "$\\sin(2x)\\ln|\\sec(2x)+\\tan(2x)|-1$",
+        "$\\cos(2x)\\ln|\\sec(2x)+\\tan(2x)|+x\\sin(2x)$",
+        "$2x\\cos(2x)+\\sin(2x)\\ln|\\cos(2x)|$"
+      ],
+      "ans": 0,
+      "hints": [
+        "The right side $\\sec(2x)$ has no undetermined-coefficients form, so use variation of parameters.",
+        "Find $y_1$, $y_2$ from the homogeneous equation, compute their Wronskian, and set up $u_1'$ and $u_2'$.",
+        "For $y''+Py'+Qy=f$: $y_p=u_1y_1+u_2y_2$ with $u_1'=-\\dfrac{y_2f}{W}$, $u_2'=\\dfrac{y_1f}{W}$, $W=y_1y_2'-y_1'y_2$; also $\\int\\tan u\\,du=-\\ln|\\cos u|+C$."
+      ],
+      "steps": [
+        "$r^2+4=0$ gives $y_1=\\cos 2x$, $y_2=\\sin 2x$, and $W=2\\cos^2 2x+2\\sin^2 2x=2$.",
+        "$u_1'=-\\dfrac{\\sin 2x\\cdot4\\sec 2x}{2}=-2\\tan 2x$, so $u_1=\\ln|\\cos 2x|$.",
+        "$u_2'=\\dfrac{\\cos 2x\\cdot4\\sec 2x}{2}=2$, so $u_2=2x$.",
+        "$y_p=\\cos(2x)\\ln|\\cos(2x)|+2x\\sin(2x)$."
+      ],
+      "brief": "Variation of parameters, $W=2$: $u_1=\\ln|\\cos2x|$, $u_2=2x$."
+    },
+    {
+      "sec": "11.2",
+      "q": "The minimum radius of convergence of a power-series solution of the differential equation \\[ (x^2-4x+13)y''+2xy'-y=0 \\] about the ordinary point $x=1$ is equal to",
+      "opts": [
+        "$\\sqrt{10}$",
+        "$3$",
+        "$\\sqrt{13}$",
+        "$2\\sqrt{13}$",
+        "$5$"
+      ],
+      "ans": 0,
+      "hints": [
+        "The radius of convergence is controlled by the singular points of the equation, including complex ones.",
+        "Find where the coefficient of $y''$ is zero, then measure the distance from $x=1$ to each such point in the complex plane.",
+        "A power series solution about an ordinary point $a$ has radius at least the distance from $a$ to the nearest (real or complex) singular point; $|(p+qi)-a|=\\sqrt{(p-a)^2+q^2}$."
+      ],
+      "steps": [
+        "$x^2-4x+13=0$ gives $x=\\dfrac{4\\pm\\sqrt{16-52}}{2}=2\\pm3i$.",
+        "Distance from $1$ to $2\\pm3i$: $\\sqrt{(2-1)^2+3^2}=\\sqrt{10}$.",
+        "So the minimum radius of convergence is $\\sqrt{10}$."
+      ],
+      "brief": "Singular points $2\\pm3i$; distance from $1$ is $\\sqrt{1+9}=\\sqrt{10}$."
+    },
+    {
+      "sec": "11.3",
+      "q": "If $c_0=1$, $c_k=\\dfrac{2k-7}{12k}c_{k-1}$, $k\\ge1$, is the recurrence relation corresponding to the indicial root $r=\\dfrac12$ in the series solution of a differential equation about the regular singular point $x=0$, then the solution is given by",
+      "opts": [
+        "$y=x^{1/2}\\left[1-\\dfrac{5}{12}x+\\dfrac{5}{96}x^2+\\cdots\\right]$",
+        "$y=x^{1/2}\\left[1+\\dfrac{5}{12}x+\\dfrac{5}{96}x^2+\\cdots\\right]$",
+        "$y=x^{1/2}\\left[1-\\dfrac{5}{12}x-\\dfrac{5}{96}x^2+\\cdots\\right]$",
+        "$y=x^{1/2}\\left[1-\\dfrac{5}{18}x+\\dfrac{5}{96}x^2+\\cdots\\right]$",
+        "$y=x^{1/2}\\left[1-\\dfrac{5}{12}x+\\dfrac{7}{96}x^2+\\cdots\\right]$"
+      ],
+      "ans": 0,
+      "hints": [
+        "The Frobenius solution for the root $r$ is $x^r$ times a power series whose coefficients come from the recurrence.",
+        "Use the recurrence with $k=1$ and then $k=2$ to get $c_1$ and $c_2$ from $c_0$.",
+        "A Frobenius solution has the form $y=x^r\\sum_{k=0}^{\\infty}c_kx^k=x^r\\left(c_0+c_1x+c_2x^2+\\cdots\\right)$."
+      ],
+      "steps": [
+        "$k=1$: $c_1=\\dfrac{2-7}{12}c_0=-\\dfrac{5}{12}$.",
+        "$k=2$: $c_2=\\dfrac{4-7}{24}c_1=-\\dfrac18\\cdot\\left(-\\dfrac{5}{12}\\right)=\\dfrac{5}{96}$.",
+        "With $r=\\dfrac12$: $y=x^{1/2}\\left[1-\\dfrac{5}{12}x+\\dfrac{5}{96}x^2+\\cdots\\right]$."
+      ],
+      "brief": "$c_1=-\\frac{5}{12}$, $c_2=-\\frac18c_1=\\frac{5}{96}$, times $x^{1/2}$."
+    },
+    {
+      "sec": "8.1",
+      "q": "If $A=\\begin{bmatrix}2&5\\\\0&2\\end{bmatrix}$, then $e^{At}=$",
+      "opts": [
+        "$\\begin{bmatrix}e^{2t}&5te^{2t}\\\\0&e^{2t}\\end{bmatrix}$",
+        "$\\begin{bmatrix}e^{2t}&5e^{2t}\\\\0&e^{2t}\\end{bmatrix}$",
+        "$\\begin{bmatrix}e^{2t}&e^{5t}\\\\0&e^{2t}\\end{bmatrix}$",
+        "$\\begin{bmatrix}e^{2t}&5te^{2t}\\\\0&2e^{2t}\\end{bmatrix}$",
+        "$\\begin{bmatrix}e^{2t}&2te^{2t}\\\\0&e^{2t}\\end{bmatrix}$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Split $A$ into a multiple of the identity plus a nilpotent matrix.",
+        "Write $A=2I+N$ and check what $N^2$ is.",
+        "If $AB=BA$ then $e^{(A+B)t}=e^{At}e^{Bt}$; $e^{aIt}=e^{at}I$, and if $N^2=0$ then $e^{Nt}=I+Nt$."
+      ],
+      "steps": [
+        "$A=2I+N$ with $N=\\begin{bmatrix}0&5\\\\0&0\\end{bmatrix}$, and $N^2=0$.",
+        "$2I$ commutes with $N$, so $e^{At}=e^{2t}e^{Nt}=e^{2t}(I+Nt)$.",
+        "$e^{At}=e^{2t}\\begin{bmatrix}1&5t\\\\0&1\\end{bmatrix}=\\begin{bmatrix}e^{2t}&5te^{2t}\\\\0&e^{2t}\\end{bmatrix}$."
+      ],
+      "brief": "$A=2I+N$, $N^2=0$: $e^{At}=e^{2t}(I+Nt)$."
+    },
+    {
+      "sec": "7.3",
+      "q": "The general solution of $X'=\\begin{bmatrix}1&1&2\\\\1&2&1\\\\2&1&1\\end{bmatrix}X$ can be written as \\[ X=c_1\\begin{bmatrix}1\\\\\\alpha\\\\1\\end{bmatrix}e^{4t}+c_2\\begin{bmatrix}1\\\\0\\\\\\beta\\end{bmatrix}e^{-t}+c_3\\begin{bmatrix}\\gamma\\\\-2\\\\1\\end{bmatrix}e^{t}. \\] Then $\\alpha+\\beta+\\gamma=$",
+      "opts": [
+        "$1$",
+        "$0$",
+        "$-2$",
+        "$3$",
+        "$-1$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Each vector in the general solution must be an eigenvector for the eigenvalue in its exponent.",
+        "For each term, multiply the coefficient matrix by the given vector and set it equal to the eigenvalue times that vector.",
+        "$\\mathbf{v}e^{\\lambda t}$ solves $X'=AX$ exactly when $A\\mathbf{v}=\\lambda\\mathbf{v}$."
+      ],
+      "steps": [
+        "$\\lambda=4$: $A(1,\\alpha,1)^T=(3+\\alpha,\\,2+2\\alpha,\\,3+\\alpha)^T=4(1,\\alpha,1)^T$ gives $\\alpha=1$.",
+        "$\\lambda=-1$: $A(1,0,\\beta)^T=(1+2\\beta,\\,1+\\beta,\\,2+\\beta)^T=-(1,0,\\beta)^T$ gives $\\beta=-1$.",
+        "$\\lambda=1$: $A(\\gamma,-2,1)^T=(\\gamma,\\,\\gamma-3,\\,2\\gamma-1)^T=(\\gamma,-2,1)^T$ gives $\\gamma=1$.",
+        "$\\alpha+\\beta+\\gamma=1-1+1=1$."
+      ],
+      "brief": "$A\\mathbf{v}=\\lambda\\mathbf{v}$ for each term: $\\alpha=1$, $\\beta=-1$, $\\gamma=1$; sum $1$."
+    },
+    {
+      "sec": "5.3",
+      "q": "A linear homogeneous differential equation with real constant coefficients having the solutions $xe^{2x}$ and $3e^{2x}\\sin(2x)$ is given by",
+      "opts": [
+        "$y^{(4)}-8y^{(3)}+28y''-48y'+32y=0$",
+        "$y^{(4)}-8y^{(3)}+29y''-52y'+40y=0$",
+        "$y^{(4)}+8y^{(3)}+29y''+52y'+40y=0$",
+        "$y^{(4)}-6y^{(3)}+20y''-40y'+32y=0$",
+        "$y^{(4)}-8y^{(3)}+29y''-40y'+16y=0$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Read off the roots of the characteristic equation from the given solutions.",
+        "List every root with its multiplicity, remembering that complex roots of a real equation come in conjugate pairs, then multiply the factors.",
+        "$x^ke^{rx}$ is a solution only if $r$ is a root of multiplicity at least $k+1$; $e^{ax}\\sin bx$ comes from the pair $a\\pm bi$, i.e. the factor $(r-a)^2+b^2$."
+      ],
+      "steps": [
+        "$xe^{2x}$ needs $r=2$ as a double root: factor $(r-2)^2=r^2-4r+4$.",
+        "$e^{2x}\\sin 2x$ needs $r=2\\pm2i$: factor $(r-2)^2+4=r^2-4r+8$.",
+        "$(r^2-4r+4)(r^2-4r+8)=r^4-8r^3+28r^2-48r+32$.",
+        "So $y^{(4)}-8y^{(3)}+28y''-48y'+32y=0$."
+      ],
+      "brief": "Roots $2,2,2\\pm2i$: $(r^2-4r+4)(r^2-4r+8)=r^4-8r^3+28r^2-48r+32$."
+    },
+    {
+      "sec": "7.6",
+      "q": "Consider the matrix $A=\\begin{bmatrix}2&1&0\\\\0&2&1\\\\0&0&2\\end{bmatrix}$, which has an eigenvalue $\\lambda=2$ of multiplicity 3 and defect 2. If we choose the generalized eigenvector $v_3=\\begin{bmatrix}0\\\\0\\\\1\\end{bmatrix}$ such that $(A-2I)^3v_3=0$ but $(A-2I)^2v_3\\neq0$, which of the following represents the general solution of the differential system $X'=AX$?",
+      "opts": [
+        "$X(t)=\\left(c_1\\begin{bmatrix}1\\\\0\\\\0\\end{bmatrix}+c_2\\begin{bmatrix}t\\\\1\\\\0\\end{bmatrix}+c_3\\begin{bmatrix}t^2/2\\\\t\\\\1\\end{bmatrix}\\right)e^{2t}$",
+        "$X(t)=\\left(c_1\\begin{bmatrix}1\\\\0\\\\0\\end{bmatrix}+c_2\\begin{bmatrix}t+1\\\\1\\\\0\\end{bmatrix}+c_3\\begin{bmatrix}t^2\\\\2t\\\\1\\end{bmatrix}\\right)e^{2t}$",
+        "$X(t)=\\left(c_1\\begin{bmatrix}0\\\\1\\\\0\\end{bmatrix}+c_2\\begin{bmatrix}1\\\\t\\\\0\\end{bmatrix}+c_3\\begin{bmatrix}t\\\\t^2/2\\\\1\\end{bmatrix}\\right)e^{2t}$",
+        "$X(t)=\\left(c_1\\begin{bmatrix}1\\\\1\\\\0\\end{bmatrix}+c_2\\begin{bmatrix}t\\\\t\\\\1\\end{bmatrix}+c_3\\begin{bmatrix}t^2\\\\t\\\\1\\end{bmatrix}\\right)e^{2t}$",
+        "$X(t)=\\left(c_1\\begin{bmatrix}0\\\\0\\\\1\\end{bmatrix}+c_2\\begin{bmatrix}0\\\\1\\\\t\\end{bmatrix}+c_3\\begin{bmatrix}1\\\\t\\\\t^2/2\\end{bmatrix}\\right)e^{2t}$"
+      ],
+      "ans": 0,
+      "hints": [
+        "A defective eigenvalue of multiplicity 3 with one eigenvector needs a chain of generalized eigenvectors of length 3.",
+        "Starting from $v_3$, compute $v_2=(A-2I)v_3$ and $v_1=(A-2I)v_2$.",
+        "For a chain $v_1=(A-\\lambda I)v_2$, $v_2=(A-\\lambda I)v_3$: the solutions are $v_1e^{\\lambda t}$, $(v_1t+v_2)e^{\\lambda t}$ and $\\left(\\tfrac12v_1t^2+v_2t+v_3\\right)e^{\\lambda t}$."
+      ],
+      "steps": [
+        "$A-2I=\\begin{bmatrix}0&1&0\\\\0&0&1\\\\0&0&0\\end{bmatrix}$, so $v_2=(A-2I)v_3=\\begin{bmatrix}0\\\\1\\\\0\\end{bmatrix}$ and $v_1=(A-2I)v_2=\\begin{bmatrix}1\\\\0\\\\0\\end{bmatrix}$.",
+        "$X_1=v_1e^{2t}=\\begin{bmatrix}1\\\\0\\\\0\\end{bmatrix}e^{2t}$ and $X_2=(v_1t+v_2)e^{2t}=\\begin{bmatrix}t\\\\1\\\\0\\end{bmatrix}e^{2t}$.",
+        "$X_3=\\left(\\tfrac12v_1t^2+v_2t+v_3\\right)e^{2t}=\\begin{bmatrix}t^2/2\\\\t\\\\1\\end{bmatrix}e^{2t}$.",
+        "So $X(t)=\\left(c_1\\begin{bmatrix}1\\\\0\\\\0\\end{bmatrix}+c_2\\begin{bmatrix}t\\\\1\\\\0\\end{bmatrix}+c_3\\begin{bmatrix}t^2/2\\\\t\\\\1\\end{bmatrix}\\right)e^{2t}$."
+      ],
+      "brief": "Chain $v_2=(0,1,0)^T$, $v_1=(1,0,0)^T$; solutions $v_1$, $v_1t+v_2$, $\\frac12v_1t^2+v_2t+v_3$."
+    }
+  ]
+}

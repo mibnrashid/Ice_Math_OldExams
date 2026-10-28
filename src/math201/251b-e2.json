@@ -1,0 +1,365 @@
+{
+  "course": "math201",
+  "term": "251b",
+  "kind": "e2",
+  "date": "12 November 2025",
+  "minutes": 90,
+  "source": "math201b-251-e2.pdf",
+  "note": "Master version B of the same exam (cover: '12 Novmber 2025', typo corrected; 90 minutes). Every master choice (a) is marked correct; all 15 keys were checked by hand and with sympy by the coordinator. Hints reused from version A where the question type is identical (the specific ones were rewritten).",
+  "qs": [
+    {
+      "sec": "11.5",
+      "q": "Which one of the following statements is FALSE about the plane \\[ 3x-2y+z=6? \\]",
+      "opts": [
+        "It is parallel to the plane $6x-4y-2z=10$",
+        "It has a normal vector $\\vec n=\\langle 3,-2,1\\rangle$",
+        "It passes through the point $(1,1,5)$",
+        "It intersects the $x$-axis at $(2,0,0)$",
+        "The point $(0,-3,0)$ lies in the plane"
+      ],
+      "ans": 0,
+      "hints": [
+        "Check each statement separately; only one of them fails.",
+        "Read the normal vector from the coefficients, and test points by substituting them into the equation.",
+        "Planes $ax+by+cz=d$ are parallel exactly when their normal vectors $\\langle a,b,c\\rangle$ are scalar multiples of each other; a point lies on a plane when its coordinates satisfy the equation."
+      ],
+      "steps": [
+        "A normal vector is $\\langle3,-2,1\\rangle$, so that statement is true.",
+        "$(1,1,5)$: $3-2+5=6$; $(2,0,0)$: $6=6$; $(0,-3,0)$: $6=6$. These three points lie on the plane.",
+        "The plane $6x-4y-2z=10$ has normal $\\langle6,-4,-2\\rangle$, which is not a multiple of $\\langle3,-2,1\\rangle$ (the $z$-component has the wrong sign).",
+        "So the planes are not parallel, and that statement is the false one."
+      ],
+      "brief": "Normals $\\langle3,-2,1\\rangle$ and $\\langle6,-4,-2\\rangle$ are not parallel; the other statements hold."
+    },
+    {
+      "sec": "13.5",
+      "q": "If $w=2x^2-y^2$, $x=s\\cos t$, $y=s\\sin t$, then $\\dfrac{\\partial w}{\\partial t}=$",
+      "opts": [
+        "$-3s^2\\sin(2t)$",
+        "$-2s^2\\sin(2t)$",
+        "$-3s^2\\cos(2t)$",
+        "$-6s^2\\sin(2t)$",
+        "$-4t^2\\cos(2t)$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Use the chain rule for a function of two intermediate variables.",
+        "Compute $w_x$, $w_y$, $x_t$ and $y_t$, then combine them (or substitute first and differentiate in $t$).",
+        "$\\dfrac{\\partial w}{\\partial t}=\\dfrac{\\partial w}{\\partial x}\\dfrac{\\partial x}{\\partial t}+\\dfrac{\\partial w}{\\partial y}\\dfrac{\\partial y}{\\partial t}$ and $\\sin 2t=2\\sin t\\cos t$."
+      ],
+      "steps": [
+        "$w_x=4x$, $w_y=-2y$, $x_t=-s\\sin t$, $y_t=s\\cos t$.",
+        "$w_t=4x(-s\\sin t)-2y(s\\cos t)=-4s^2\\cos t\\sin t-2s^2\\sin t\\cos t$.",
+        "$w_t=-6s^2\\sin t\\cos t$.",
+        "Using $\\sin 2t=2\\sin t\\cos t$: $w_t=-3s^2\\sin 2t$."
+      ],
+      "brief": "$w_t=4x(-s\\sin t)-2y(s\\cos t)=-6s^2\\sin t\\cos t=-3s^2\\sin 2t$."
+    },
+    {
+      "sec": "13.5",
+      "q": "If $z$ is defined implicitly as a differentiable function of $x$ and $y$ by the equation \\[ x\\ln y+y^2z+z^2=6, \\] then $\\dfrac{\\partial z}{\\partial y}$ at the point $(6,1,2)$ is equal to",
+      "opts": [
+        "$-2$",
+        "$\\dfrac95$",
+        "$\\dfrac{27}{19}$",
+        "$-\\dfrac53$",
+        "$-\\dfrac94$"
+      ],
+      "ans": 0,
+      "hints": [
+        "This is implicit differentiation of a function of three variables.",
+        "Move everything to one side, call it $F(x,y,z)=0$, and compute $F_y$ and $F_z$.",
+        "If $F(x,y,z)=0$ defines $z$ implicitly, then $\\dfrac{\\partial z}{\\partial y}=-\\dfrac{F_y}{F_z}$ (with $F_z\\neq0$)."
+      ],
+      "steps": [
+        "Let $F(x,y,z)=x\\ln y+y^2z+z^2-6$. The point satisfies $6\\ln1+2+4=6$.",
+        "$F_y=\\dfrac{x}{y}+2yz$, so $F_y(6,1,2)=6+4=10$.",
+        "$F_z=y^2+2z$, so $F_z(6,1,2)=1+4=5$.",
+        "$\\dfrac{\\partial z}{\\partial y}=-\\dfrac{F_y}{F_z}=-\\dfrac{10}{5}=-2$."
+      ],
+      "brief": "$F_y=10$, $F_z=5$, so $z_y=-F_y/F_z=-2$."
+    },
+    {
+      "sec": "13.1",
+      "q": "The domain of the function $f(x,y)=\\sqrt{16-x^2-4y^2}$ is the set of all points",
+      "opts": [
+        "lying on or inside the ellipse $\\dfrac{x^2}{16}+\\dfrac{y^2}{4}=1$",
+        "lying outside the ellipse $\\dfrac{x^2}{4}+\\dfrac{y^2}{16}=1$",
+        "lying on or inside the circle $x^2+y^2=16$",
+        "lying on or outside the circle $x^2+y^2=16$",
+        "lying on or inside the ellipse $\\dfrac{x^2}{16}+\\dfrac{y^2}{2}=1$"
+      ],
+      "ans": 0,
+      "hints": [
+        "A square root requires its radicand to be nonnegative.",
+        "Write the condition $16-x^2-4y^2\\ge0$ and rearrange it so that it compares with the standard form of an ellipse.",
+        "The ellipse $\\dfrac{x^2}{a^2}+\\dfrac{y^2}{b^2}=1$ bounds the region $\\dfrac{x^2}{a^2}+\\dfrac{y^2}{b^2}\\le1$ (its inside, including the boundary)."
+      ],
+      "steps": [
+        "We need $16-x^2-4y^2\\ge0$.",
+        "That is $x^2+4y^2\\le16$.",
+        "Dividing by $16$: $\\dfrac{x^2}{16}+\\dfrac{y^2}{4}\\le1$, the points on or inside this ellipse."
+      ],
+      "brief": "$16-x^2-4y^2\\ge0\\iff \\dfrac{x^2}{16}+\\dfrac{y^2}{4}\\le1$."
+    },
+    {
+      "sec": "13.7",
+      "q": "An equation of the tangent plane to the surface \\[ z=y\\,e^{2xy} \\] at the point $(0,2,2)$ is",
+      "opts": [
+        "$8x+y-z=0$",
+        "$y-8z=0$",
+        "$8x+y+z=0$",
+        "$32x+y-z=0$",
+        "$x+y-8z=0$"
+      ],
+      "ans": 0,
+      "hints": [
+        "The surface is the graph $z=f(x,y)$, so use the tangent plane formula for a graph.",
+        "Compute $f_x$ and $f_y$ with the product rule and evaluate them at the given $x,y$.",
+        "The tangent plane to $z=f(x,y)$ at $(x_0,y_0,z_0)$ is $z-z_0=f_x(x_0,y_0)(x-x_0)+f_y(x_0,y_0)(y-y_0)$."
+      ],
+      "steps": [
+        "$f_x=2y^2e^{2xy}$, so $f_x(0,2)=8$.",
+        "$f_y=e^{2xy}+2xy\\,e^{2xy}$, so $f_y(0,2)=1$.",
+        "$z-2=8(x-0)+1(y-2)$.",
+        "Simplifying: $8x+y-z=0$."
+      ],
+      "brief": "$f_x(0,2)=8$, $f_y(0,2)=1$: $z-2=8x+(y-2)$, i.e. $8x+y-z=0$."
+    },
+    {
+      "sec": "13.3",
+      "q": "If $f(x,y,z)=x^3-4xy+3y^3+xy^2z^2$, then \\[ f_{xyzz}(2,2,2)+f_{yzxz}(2,2,2)= \\]",
+      "opts": [
+        "$16$",
+        "$8$",
+        "$14$",
+        "$10$",
+        "$2$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Take the partial derivatives one at a time, in the order of the subscripts (left to right).",
+        "Only the term containing $x$, $y$ and $z$ together survives after differentiating in all of $x$, $y$, $z$, $z$.",
+        "$f_{xyzz}$ means differentiate with respect to $x$, then $y$, then $z$, then $z$ again; for such smooth functions the order of mixed partials does not matter."
+      ],
+      "steps": [
+        "$f_x=3x^2-4y+y^2z^2$, $f_{xy}=-4+2yz^2$, $f_{xyz}=4yz$, $f_{xyzz}=4y$.",
+        "So $f_{xyzz}(2,2,2)=8$.",
+        "$f_{yzxz}$ uses the same derivatives in another order, so it is also $4y=8$.",
+        "The sum is $8+8=16$."
+      ],
+      "brief": "$f_{xyzz}=4y=8$ and $f_{yzxz}=4y=8$; sum $16$."
+    },
+    {
+      "sec": "13.4",
+      "q": "Let $z=x^2+y^2$. If $(x,y)$ changes from $(1,1)$ to $(1.3,0.9)$, then using differentials, the change in $z$ is approximately equal to",
+      "opts": [
+        "$0.4$",
+        "$0.02$",
+        "$-0.1$",
+        "$0.05$",
+        "$0.2$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Use the total differential as a linear approximation to the change in $z$.",
+        "Find $dx$ and $dy$ from the change in $x$ and $y$, and evaluate the partial derivatives at the starting point.",
+        "$\\Delta z\\approx dz=z_x\\,dx+z_y\\,dy$, where $dx=\\Delta x$ and $dy=\\Delta y$ are the changes in the variables."
+      ],
+      "steps": [
+        "$dx=0.3$ and $dy=-0.1$.",
+        "$z_x=2x=2$ and $z_y=2y=2$ at $(1,1)$.",
+        "$dz=2(0.3)+2(-0.1)=0.6-0.2=0.4$."
+      ],
+      "brief": "$dz=2(0.3)+2(-0.1)=0.4$."
+    },
+    {
+      "sec": "13.2",
+      "q": "$\\lim_{(x,y)\\to(0,0)}\\dfrac{4x^3}{2x^2+2y^2}=$",
+      "opts": [
+        "$0$",
+        "$1$",
+        "$\\dfrac32$",
+        "DNE",
+        "$2$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Compare the degree of the numerator and denominator near the origin, or use polar coordinates.",
+        "Substitute $x=r\\cos\\theta$, $y=r\\sin\\theta$ and simplify; or bound $|x|/(x^2+y^2)^{1/2}$ by $1$.",
+        "In polar form $(x,y)\\to(0,0)$ means $r\\to0$; if the expression becomes $r\\cdot g(\\theta)$ with $g$ bounded, the limit is $0$."
+      ],
+      "steps": [
+        "In polar form, $\\dfrac{4r^3\\cos^3\\theta}{2r^2}=2r\\cos^3\\theta$.",
+        "$|2r\\cos^3\\theta|\\le2r\\to0$ as $r\\to0$.",
+        "So the limit is $0$."
+      ],
+      "brief": "Polar: $2r\\cos^3\\theta\\to0$."
+    },
+    {
+      "sec": "13.3",
+      "q": "If $z=\\ln(4x^2+y^2)$, then $x\\dfrac{\\partial z}{\\partial x}+y\\dfrac{\\partial z}{\\partial y}=$",
+      "opts": [
+        "$2$",
+        "$z$",
+        "$0$",
+        "$-z$",
+        "$z^2$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Compute both first partial derivatives of the logarithm, then form the combination.",
+        "Use the chain rule for $\\ln u$ with $u=4x^2+y^2$, multiply each partial by $x$ or $y$, and add.",
+        "$\\dfrac{\\partial}{\\partial x}\\ln u=\\dfrac{u_x}{u}$ and $\\dfrac{\\partial}{\\partial y}\\ln u=\\dfrac{u_y}{u}$."
+      ],
+      "steps": [
+        "$z_x=\\dfrac{8x}{4x^2+y^2}$ and $z_y=\\dfrac{2y}{4x^2+y^2}$.",
+        "$xz_x+yz_y=\\dfrac{8x^2+2y^2}{4x^2+y^2}$.",
+        "$=\\dfrac{2(4x^2+y^2)}{4x^2+y^2}=2$."
+      ],
+      "brief": "$xz_x+yz_y=\\dfrac{8x^2+2y^2}{4x^2+y^2}=2$."
+    },
+    {
+      "sec": "13.6",
+      "q": "The maximum value of the directional derivative of $f(x,y)=y^2-x\\sqrt y$ at the point $(4,4)$ is equal to",
+      "opts": [
+        "$\\sqrt{53}$",
+        "$\\sqrt{33}$",
+        "$7$",
+        "$3$",
+        "$4$"
+      ],
+      "ans": 0,
+      "hints": [
+        "The directional derivative is largest in the direction of the gradient.",
+        "Compute the gradient of $f$ and evaluate it at the given point.",
+        "The maximum value of $D_{\\mathbf u}f$ over unit vectors $\\mathbf u$ is $\\|\\nabla f\\|$, because $D_{\\mathbf u}f=\\nabla f\\cdot\\mathbf u$."
+      ],
+      "steps": [
+        "$f_x=-\\sqrt y$, so $f_x(4,4)=-2$.",
+        "$f_y=2y-\\dfrac{x}{2\\sqrt y}$, so $f_y(4,4)=8-1=7$.",
+        "The maximum is $\\|\\nabla f(4,4)\\|=\\sqrt{(-2)^2+7^2}=\\sqrt{53}$."
+      ],
+      "brief": "$\\nabla f(4,4)=\\langle-2,7\\rangle$, maximum $\\sqrt{53}$."
+    },
+    {
+      "sec": "13.1",
+      "q": "An equation for the level surface of $f(x,y,z)=4x^2+4y^2-z^2$ that passes through the point $(0,0,3)$ is given by",
+      "opts": [
+        "$z^2=4x^2+4y^2+9$",
+        "$z^2=4x^2+4y^2$",
+        "$z^2=4x^2+4y^2+81$",
+        "$z^2=x^2+y^2+3$",
+        "$z^2=x^2+y^2+9$"
+      ],
+      "ans": 0,
+      "hints": [
+        "A level surface of $f$ has the form $f(x,y,z)=c$ for a constant $c$.",
+        "Find $c$ by evaluating $f$ at the given point, then solve the equation for $z^2$.",
+        "The level surface through $(x_0,y_0,z_0)$ is $f(x,y,z)=f(x_0,y_0,z_0)$."
+      ],
+      "steps": [
+        "$f(0,0,3)=-9$.",
+        "The level surface is $4x^2+4y^2-z^2=-9$.",
+        "So $z^2=4x^2+4y^2+9$."
+      ],
+      "brief": "$f(0,0,3)=-9$, so $4x^2+4y^2-z^2=-9$."
+    },
+    {
+      "sec": "11.5",
+      "q": "If $(a,b,c)$ is the point of intersection between the lines \\[ L_1:\\ x=1+2t,\\ y=1-3t,\\ z=2-5t \\] \\[ L_2:\\ x=9-3s,\\ y=-10+4s,\\ z=-17+7s \\] then $abc=$",
+      "opts": [
+        "$18$",
+        "$9$",
+        "$12$",
+        "$-16$",
+        "$-15$"
+      ],
+      "ans": 0,
+      "hints": [
+        "At an intersection point both lines give the same $(x,y,z)$, with possibly different parameter values.",
+        "Equate the $x$-coordinates and the $y$-coordinates to get two equations in $t$ and $s$, then check the $z$-equation.",
+        "Two parametric lines meet when there are $t$ and $s$ satisfying all three coordinate equations; substitute either parameter back to get the point."
+      ],
+      "steps": [
+        "$x$: $1+2t=9-3s$, so $2t+3s=8$.",
+        "$y$: $1-3t=-10+4s$, so $3t+4s=11$.",
+        "Solving gives $t=1$, $s=2$; check $z$: $2-5=-3$ and $-17+14=-3$.",
+        "The point is $(3,-2,-3)$, so $abc=3(-2)(-3)=18$."
+      ],
+      "brief": "$t=1$, $s=2$: point $(3,-2,-3)$, $abc=18$."
+    },
+    {
+      "sec": "11.5",
+      "q": "If $ax+by+cz=8$ is an equation for the plane passing through the points $P(2,1,0)$ and $Q(3,0,4)$ and is perpendicular to the $yz$-plane, then $a+b+c=$",
+      "opts": [
+        "$10$",
+        "$8$",
+        "$3$",
+        "$4$",
+        "$6$"
+      ],
+      "ans": 0,
+      "hints": [
+        "A plane is perpendicular to the $yz$-plane exactly when their normal vectors are perpendicular.",
+        "Decide what this forces on one of the coefficients, then substitute the two points into the equation.",
+        "The $yz$-plane has normal $\\mathbf i=\\langle1,0,0\\rangle$; the plane $ax+by+cz=d$ has normal $\\langle a,b,c\\rangle$, and perpendicular normals have dot product zero."
+      ],
+      "steps": [
+        "The $yz$-plane has normal $\\langle1,0,0\\rangle$; perpendicular planes have perpendicular normals, so $a=0$.",
+        "$P(2,1,0)$ gives $b=8$.",
+        "$Q(3,0,4)$ gives $4c=8$, so $c=2$.",
+        "$a+b+c=0+8+2=10$."
+      ],
+      "brief": "$a=0$; $P$ gives $b=8$, $Q$ gives $c=2$; sum $10$."
+    },
+    {
+      "sec": "13.4",
+      "q": "Consider the unit vector $u=\\dfrac{1}{\\sqrt2}(i+j)$ and the two functions \\[ f(x,y)=\\begin{cases}\\dfrac{4xy}{x^2+y^2}, & (x,y)\\neq(0,0)\\\\ 2, & (x,y)=(0,0)\\end{cases}\\qquad g(x,y)=\\begin{cases}\\dfrac{4xy}{x^2+y^2}, & (x,y)\\neq(0,0)\\\\ 0, & (x,y)=(0,0)\\end{cases} \\] Which of the following is FALSE?",
+      "opts": [
+        "$f$ is differentiable at $(0,0)$",
+        "$g$ is not differentiable at $(0,0)$",
+        "$D_u f(0,0)=0$",
+        "$D_u g(0,0)$ does not exist",
+        "$g_x(0,0)=0$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Recall what differentiability requires, and test each statement with the definition of partial and directional derivatives.",
+        "Check continuity at the origin first (along the line $y=x$ and along an axis), then compute the directional derivative from its limit definition.",
+        "A function that is differentiable at a point must be continuous there; and $D_u f(0,0)=\\lim_{h\\to0}\\dfrac{f(hu_1,hu_2)-f(0,0)}{h}$."
+      ],
+      "steps": [
+        "Along $y=x$, $\\dfrac{4xy}{x^2+y^2}=2$; along $y=0$ it is $0$. So the limit at the origin does not exist.",
+        "Hence neither $f$ nor $g$ is continuous at $(0,0)$, so neither is differentiable: the statement about $f$ is false.",
+        "Check the others: $D_uf(0,0)=\\lim\\dfrac{2-2}{h}=0$; $D_ug(0,0)=\\lim\\dfrac{2-0}{h}$ does not exist; $g_x(0,0)=\\lim\\dfrac{0-0}{h}=0$.",
+        "So the only false statement is that $f$ is differentiable at $(0,0)$."
+      ],
+      "brief": "The limit at the origin does not exist, so $f$ is not continuous, hence not differentiable."
+    },
+    {
+      "sec": "11.6",
+      "q": "Which one of the following statements is FALSE?",
+      "opts": [
+        "The graph of $16x^2+y^2+16z^2=4$ is a cylinder",
+        "The graph of $16x^2-y^2+16z^2=0$ is an elliptic cone",
+        "The graph of $16x^2-y+16z^2=4$ is an elliptic paraboloid",
+        "The graph of $16x^2-y^2+16z^2=4$ is a hyperboloid of one sheet",
+        "The graph of $16x^2-y^2-16z^2=4$ is a hyperboloid of two sheets"
+      ],
+      "ans": 0,
+      "hints": [
+        "Identify each quadric from the signs of its squared terms and the right-hand side.",
+        "Count the squared variables and check their signs; a linear term means a paraboloid, and a zero right side with squares means a cone.",
+        "Three squares all with the same sign and a positive constant give an ellipsoid; one minus sign with a positive constant gives one sheet; two minus signs give two sheets; a cylinder is missing one variable altogether."
+      ],
+      "steps": [
+        "$16x^2+y^2+16z^2=4$ has all three squares positive with a positive constant: an ellipsoid, not a cylinder.",
+        "The cone, paraboloid and both hyperboloid statements match their standard forms.",
+        "So the false statement is the one calling the first surface a cylinder."
+      ],
+      "brief": "$16x^2+y^2+16z^2=4$ is an ellipsoid, not a cylinder."
+    }
+  ],
+  "version": "B"
+}

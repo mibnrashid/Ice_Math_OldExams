@@ -1,0 +1,349 @@
+{
+  "course": "math208",
+  "term": "223",
+  "kind": "e1",
+  "date": "",
+  "minutes": 90,
+  "source": "math208-223-ex1.pdf",
+  "note": "Scan with a MASTER version and an answer key (every master answer is A). Date and exam length are not printed on the pages; 90 minutes is the usual length of a major exam and is an assumption. All 14 master answers were checked independently and agree with the key.",
+  "qs": [
+    {
+      "sec": "1.6",
+      "q": "Which one of the following differential equations is Exact?",
+      "opts": [
+        "$(y\\cos x+\\ln y)\\,dx+\\left(\\sin x+\\dfrac{x}{y}\\right)dy=0$",
+        "$(6xy-y^3)\\,dx+(x^3-3xy^2)\\,dy=0$",
+        "$(x+\\tan^{-1}y)\\,dx+(y+\\tan^{-1}x)\\,dy=0$",
+        "$\\left(\\dfrac{y}{x}+y\\right)dx+\\left(\\dfrac{x}{y}+x\\right)dy=0$",
+        "$(xe^{y}+y^2)\\,dx+(ye^{x}+2xy)\\,dy=0$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Use the definition of an exact equation $M\\,dx+N\\,dy=0$ and test each choice.",
+        "For each choice identify $M$ (the coefficient of $dx$) and $N$ (the coefficient of $dy$), then compute $\\partial M/\\partial y$ and $\\partial N/\\partial x$.",
+        "$M\\,dx+N\\,dy=0$ is exact if and only if $M_y=N_x$."
+      ],
+      "steps": [
+        "First choice: $M_y=\\cos x+\\dfrac1y$ and $N_x=\\cos x+\\dfrac1y$, so $M_y=N_x$ and it is exact.",
+        "$(6xy-y^3)dx+(x^3-3xy^2)dy$: $M_y=6x-3y^2$, $N_x=3x^2-3y^2$, not equal.",
+        "$(x+\\tan^{-1}y)dx+(y+\\tan^{-1}x)dy$: $M_y=\\dfrac1{1+y^2}$, $N_x=\\dfrac1{1+x^2}$, not equal.",
+        "$\\left(\\frac yx+y\\right)dx+\\left(\\frac xy+x\\right)dy$: $M_y=\\frac1x+1$, $N_x=\\frac1y+1$, not equal.",
+        "$(xe^y+y^2)dx+(ye^x+2xy)dy$: $M_y=xe^y+2y$, $N_x=ye^x+2y$, not equal."
+      ],
+      "brief": "Only $M_y=N_x=\\cos x+\\frac1y$ holds for $(y\\cos x+\\ln y)dx+(\\sin x+\\frac xy)dy$."
+    },
+    {
+      "sec": "1.2",
+      "q": "A particle is moving in a straight line with acceleration \\[ a(t)=12(t+1)^2, \\] an initial position $x(0)=4$, and an initial velocity $v(0)=5$. Find $x(1)$ (the position of the particle at $t=1$).",
+      "opts": [
+        "$20$",
+        "$30$",
+        "$15$",
+        "$25$",
+        "$35$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Acceleration is the derivative of velocity, and velocity is the derivative of position, so integrate twice.",
+        "Integrate $a(t)$ to get $v(t)$ and use $v(0)=5$ for the first constant.",
+        "$v(t)=\\int a(t)\\,dt+C_1$ and $x(t)=\\int v(t)\\,dt+C_2$, with $\\int (t+1)^n\\,dt=\\dfrac{(t+1)^{n+1}}{n+1}$."
+      ],
+      "steps": [
+        "$v(t)=\\int 12(t+1)^2dt=4(t+1)^3+C_1$.",
+        "$v(0)=4+C_1=5$, so $C_1=1$ and $v(t)=4(t+1)^3+1$.",
+        "$x(t)=\\int\\left(4(t+1)^3+1\\right)dt=(t+1)^4+t+C_2$.",
+        "$x(0)=1+C_2=4$, so $C_2=3$ and $x(t)=(t+1)^4+t+3$.",
+        "$x(1)=16+1+3=20$."
+      ],
+      "brief": "$v=4(t+1)^3+1$, $x=(t+1)^4+t+3$, so $x(1)=20$."
+    },
+    {
+      "sec": "1.4",
+      "q": "Find a general solution of the differential equation \\[ \\sqrt{x}\\,\\frac{dy}{dx}=2\\cos^2 y. \\]",
+      "opts": [
+        "$y=\\tan^{-1}\\left(4\\sqrt{x}+C\\right)$",
+        "$\\tan\\sqrt{y}=2\\sqrt{x}+C$",
+        "$y=\\tan^{-1}\\left(\\dfrac{2}{\\sqrt{x}}+C\\right)$",
+        "$\\tan y^2=\\sqrt{x}+C$",
+        "$\\cos^2 y=3\\sqrt{x}+C$"
+      ],
+      "ans": 0,
+      "hints": [
+        "The equation is separable: one side depends only on $y$ and the other only on $x$ after rearranging.",
+        "Divide by $\\cos^2y$ and by $\\sqrt x$, put $dy$ with the $y$ terms and $dx$ with the $x$ terms, then integrate.",
+        "$\\dfrac{1}{\\cos^2y}=\\sec^2y$, $\\int\\sec^2y\\,dy=\\tan y$, and $\\int x^{-1/2}dx=2x^{1/2}$."
+      ],
+      "steps": [
+        "Separate: $\\sec^2y\\,dy=\\dfrac{2}{\\sqrt x}\\,dx$.",
+        "Integrate: $\\tan y=2\\cdot2\\sqrt x+C=4\\sqrt x+C$.",
+        "Hence $y=\\tan^{-1}\\left(4\\sqrt x+C\\right)$."
+      ],
+      "brief": "Separable: $\\sec^2y\\,dy=2x^{-1/2}dx$, $\\tan y=4\\sqrt x+C$."
+    },
+    {
+      "sec": "1.1",
+      "q": "Find all values of $r$ for which $y=xe^{rx}$ is a solution of the differential equation \\[ y''+4y'+4y=0. \\]",
+      "opts": [
+        "$r=-2$",
+        "$r=-2$ and $r=2$",
+        "$r=0$ and $r=1$",
+        "$r=-1$ and $r=1$",
+        "$r=-3$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Substitute the proposed function into the equation and see what condition on $r$ makes it hold for every $x$.",
+        "Compute $y'$ and $y''$ with the product rule, substitute, and factor out $e^{rx}$.",
+        "Since $e^{rx}\\neq0$, a polynomial in $x$ of the form $Ax+B$ is zero for all $x$ only if $A=0$ and $B=0$."
+      ],
+      "steps": [
+        "$y'=rxe^{rx}+e^{rx}$ and $y''=r^2xe^{rx}+2re^{rx}$.",
+        "Substitute and factor: $e^{rx}\\left[(r^2+4r+4)x+(2r+4)\\right]=0$.",
+        "Since $e^{rx}\\neq0$, both $r^2+4r+4=0$ and $2r+4=0$ must hold for all $x$.",
+        "$(r+2)^2=0$ and $2(r+2)=0$ both give $r=-2$."
+      ],
+      "brief": "Substitute: $(r+2)^2x+2(r+2)=0$ for all $x$, so $r=-2$."
+    },
+    {
+      "sec": "1.4",
+      "q": "A pizza is removed from a freezer at $-25^\\circ\\text{C}$, and left to rest at room temperature which is $20^\\circ\\text{C}$. After 30 minutes, the temperature of the pizza is $5^\\circ\\text{C}$. What is the temperature of the pizza after 60 minutes?",
+      "opts": [
+        "$15$",
+        "$20$",
+        "$25$",
+        "$18$",
+        "$22$"
+      ],
+      "ans": 0,
+      "hints": [
+        "This is Newton's law of cooling: the difference between the pizza and the room decays exponentially.",
+        "Write $T(t)=A+(T_0-A)e^{-kt}$ with the room and initial temperatures, then use the 30-minute reading to get the decay factor.",
+        "For a fixed time $t_1$, $e^{-kt}=\\left(e^{-kt_1}\\right)^{t/t_1}$, so doubling the time squares the factor."
+      ],
+      "steps": [
+        "$T(t)=20+(-25-20)e^{-kt}=20-45e^{-kt}$.",
+        "$T(30)=5$: $20-45e^{-30k}=5$, so $e^{-30k}=\\dfrac{15}{45}=\\dfrac13$.",
+        "$e^{-60k}=\\left(e^{-30k}\\right)^2=\\dfrac19$.",
+        "$T(60)=20-45\\cdot\\dfrac19=20-5=15$."
+      ],
+      "brief": "$T=20-45e^{-kt}$, $e^{-30k}=\\frac13$, so $T(60)=20-\\frac{45}{9}=15$."
+    },
+    {
+      "sec": "1.4",
+      "q": "A general solution of the differential equation $y'=3\\sqrt{xy}$ is $y=\\left(x^{3/2}+C\\right)^2$. Which one of the following statements is True?",
+      "opts": [
+        "$y=0$ is a singular solution",
+        "$y=1$ is a singular solution",
+        "$y=x^3$ is a singular solution",
+        "$y=\\left(x^{3/2}-1\\right)^2$ is a singular solution",
+        "there is no singular solution"
+      ],
+      "ans": 0,
+      "hints": [
+        "A singular solution is a solution of the differential equation that cannot be obtained from the general solution by any choice of the constant.",
+        "For each choice, first check whether it satisfies the differential equation, then check whether some value of $C$ produces it.",
+        "A particular solution comes from a specific value of $C$ in the general solution; a singular solution is a valid solution that is not of that form for any $C$."
+      ],
+      "steps": [
+        "$y=0$: $y'=0$ and $3\\sqrt{x\\cdot0}=0$, so it solves the equation.",
+        "$\\left(x^{3/2}+C\\right)^2=0$ for all $x$ is impossible for any $C$, so $y=0$ is not in the family: it is a singular solution.",
+        "$y=1$: $y'=0$ but $3\\sqrt{x}\\neq0$, so it is not a solution.",
+        "$y=x^3$ is the case $C=0$ and $y=\\left(x^{3/2}-1\\right)^2$ is the case $C=-1$, so both are particular solutions, not singular."
+      ],
+      "brief": "$y=0$ solves the ODE but no $C$ gives it, so it is singular."
+    },
+    {
+      "sec": "1.5",
+      "q": "Solve the initial-value problem \\[ y'-y\\tan x=\\sin x, \\qquad y\\left(\\frac{\\pi}{4}\\right)=\\sqrt2 \\] (assume $x\\in\\left(0,\\frac{\\pi}{2}\\right)$).",
+      "opts": [
+        "$y=-\\dfrac12\\cos x+\\dfrac54\\sec x$",
+        "$y=\\dfrac12\\cos x+\\dfrac34\\sec x$",
+        "$y=-\\cos x+\\dfrac32\\sec x$",
+        "$y=-\\dfrac12\\cos x\\cdot\\cot x+\\dfrac54\\csc x$",
+        "$y=\\dfrac12\\cos x\\cdot\\cot x+\\dfrac34\\csc x$"
+      ],
+      "ans": 0,
+      "hints": [
+        "This is a first-order linear equation in standard form.",
+        "Identify $P(x)$, compute the integrating factor, multiply through and integrate both sides.",
+        "$\\rho=e^{\\int P\\,dx}$ and $(\\rho y)'=\\rho Q$; for $x\\in(0,\\pi/2)$, $\\int\\tan x\\,dx=-\\ln|\\cos x|$ and $\\cos x>0$."
+      ],
+      "steps": [
+        "Here $P=-\\tan x$, so $\\rho=e^{-\\int\\tan x\\,dx}=e^{\\ln\\cos x}=\\cos x$.",
+        "$(\\cos x\\cdot y)'=\\sin x\\cos x$.",
+        "Integrate: $\\cos x\\cdot y=-\\dfrac12\\cos^2x+C$, so $y=-\\dfrac12\\cos x+C\\sec x$.",
+        "$y\\left(\\frac\\pi4\\right)=-\\dfrac{\\sqrt2}{4}+C\\sqrt2=\\sqrt2$, so $C=\\dfrac54$.",
+        "$y=-\\dfrac12\\cos x+\\dfrac54\\sec x$."
+      ],
+      "brief": "$\\rho=\\cos x$: $(y\\cos x)'=\\sin x\\cos x$, $y=-\\frac12\\cos x+\\frac54\\sec x$."
+    },
+    {
+      "sec": "1.6",
+      "q": "Find a general solution of the exact differential equation \\[ \\left(e^{x}+ye^{xy}\\right)dx+\\left(e^{y}+xe^{yx}\\right)dy=0. \\]",
+      "opts": [
+        "$e^{x}+e^{y}+e^{xy}=C$",
+        "$ye^{x}+xe^{y}=C$",
+        "$e^{xy}-e^{x}-e^{y}=C$",
+        "$e^{x}+e^{y}+2e^{xy}=C$",
+        "$e^{x}+e^{y}+xye^{xy}=C$"
+      ],
+      "ans": 0,
+      "hints": [
+        "For an exact equation there is a function $F(x,y)$ whose partial derivatives are the coefficients of $dx$ and $dy$.",
+        "Integrate the coefficient of $dx$ with respect to $x$, adding an unknown function of $y$, then match the $y$-derivative with the coefficient of $dy$.",
+        "$F_x=M$ and $F_y=N$; the solution is $F(x,y)=C$."
+      ],
+      "steps": [
+        "$F_x=e^x+ye^{xy}$ gives $F=e^x+e^{xy}+g(y)$.",
+        "$F_y=xe^{xy}+g'(y)$ must equal $e^y+xe^{xy}$, so $g'(y)=e^y$ and $g(y)=e^y$.",
+        "$F=e^x+e^{xy}+e^y$, so the solution is $e^x+e^y+e^{xy}=C$."
+      ],
+      "brief": "$F=e^x+e^{xy}+g(y)$, $g'=e^y$: $e^x+e^y+e^{xy}=C$."
+    },
+    {
+      "sec": "1.6",
+      "q": "Find a general solution of the differential equation \\[ y''=2(y')^2 \\] (assume $y'>0$).",
+      "opts": [
+        "$y=B-\\dfrac12\\ln|2x+A|$",
+        "$y=B+\\dfrac12\\ln|2x+A|$",
+        "$y=B-\\ln|2x+A|$",
+        "$y=B+2\\ln|2x+A|$",
+        "$y=B-2\\ln|2x+A|$"
+      ],
+      "ans": 0,
+      "hints": [
+        "The unknown $y$ itself does not appear, only $y'$ and $y''$, so this is a reducible second-order equation with $y$ missing.",
+        "Let $u=y'$, so $u'=y''$, and solve the resulting first-order separable equation for $u$.",
+        "With $y$ missing, put $u=y'$ and $u'=y''$; after solving for $u$, integrate once more to recover $y$."
+      ],
+      "steps": [
+        "Let $u=y'$: $u'=2u^2$.",
+        "Separate: $\\dfrac{du}{u^2}=2\\,dx$, so $-\\dfrac1u=2x+A$ and $u=-\\dfrac{1}{2x+A}$.",
+        "Then $y'=-\\dfrac{1}{2x+A}$.",
+        "Integrate: $y=-\\dfrac12\\ln|2x+A|+B$."
+      ],
+      "brief": "$u=y'$: $u'=2u^2$, $u=-\\frac{1}{2x+A}$, so $y=B-\\frac12\\ln|2x+A|$."
+    },
+    {
+      "sec": "1.6",
+      "q": "By making a suitable substitution, the differential equation \\[ x\\frac{dy}{dx}+6y=3xy^{4/3} \\] can be transformed into the differential equation",
+      "opts": [
+        "$\\dfrac{dv}{dx}-\\dfrac{2}{x}v=-1$",
+        "$\\dfrac{dv}{dx}-\\dfrac{3}{x}v=-1$",
+        "$\\dfrac{dv}{dx}-\\dfrac{6}{x}v=-x$",
+        "$\\dfrac{dv}{dx}-2v=x$",
+        "$\\dfrac{dv}{dx}-\\dfrac{2}{x}v=-2$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Divide by $x$ and compare with $y'+P(x)y=Q(x)y^n$: this is a Bernoulli equation.",
+        "Identify $n$, then substitute $v=y^{1-n}$ and multiply the equation by the factor that turns $y'$ into $v'$.",
+        "For $y'+Py=Qy^n$, put $v=y^{1-n}$, so $v'=(1-n)y^{-n}y'$; the equation becomes $v'+(1-n)Pv=(1-n)Q$."
+      ],
+      "steps": [
+        "Divide by $x$: $y'+\\dfrac6xy=3y^{4/3}$, so $n=\\dfrac43$.",
+        "Let $v=y^{1-n}=y^{-1/3}$, so $v'=-\\dfrac13y^{-4/3}y'$.",
+        "Multiply the equation by $-\\dfrac13y^{-4/3}$: $v'-\\dfrac2x\\,y^{-1/3}=-1$.",
+        "That is $\\dfrac{dv}{dx}-\\dfrac2xv=-1$."
+      ],
+      "brief": "$n=\\frac43$, $v=y^{-1/3}$: $v'-\\frac2xv=-1$."
+    },
+    {
+      "sec": "1.6",
+      "q": "Solve the differential equation \\[ \\frac{dy}{dx}=(2x+y)^2-2. \\]",
+      "opts": [
+        "$y=-\\dfrac{2x^2+2Cx+1}{x+C}$",
+        "$y=\\dfrac{2x^2+2x+1}{x+1}+C$",
+        "$y=\\dfrac{2x^2+x+1}{x+C}$",
+        "$y=-x\\ln|x+C|$",
+        "$y=-\\dfrac{x^2+Cx+2}{x+C}$"
+      ],
+      "ans": 0,
+      "hints": [
+        "The right side depends on $x$ and $y$ only through the combination $2x+y$, so use a linear substitution.",
+        "Let $u=2x+y$ and find $u'$ in terms of $u$; the new equation is separable.",
+        "With $u=ax+by+c$, $u'=a+by'$; the equation becomes $u'=f(u)$, so $\\int\\dfrac{du}{f(u)}=\\int dx$."
+      ],
+      "steps": [
+        "Let $u=2x+y$, so $u'=2+y'=2+u^2-2=u^2$.",
+        "Separate: $\\dfrac{du}{u^2}=dx$, so $-\\dfrac1u=x+C$ and $u=-\\dfrac1{x+C}$.",
+        "$y=u-2x=-\\dfrac{1}{x+C}-2x$.",
+        "Combine: $y=-\\dfrac{1+2x(x+C)}{x+C}=-\\dfrac{2x^2+2Cx+1}{x+C}$."
+      ],
+      "brief": "$u=2x+y$: $u'=u^2$, $u=-\\frac1{x+C}$, so $y=-\\frac{2x^2+2Cx+1}{x+C}$."
+    },
+    {
+      "sec": "4.1",
+      "q": "Let $u=(4,1)$, $v=(-2,-1)$, $w=(-3,1)$ be vectors in $\\mathbb{R}^2$. If $w=au+bv$, then $a+b=$",
+      "opts": [
+        "$-6$",
+        "$0$",
+        "$-\\dfrac32$",
+        "$-4$",
+        "$1$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Writing $w=au+bv$ component by component gives a linear system in $a$ and $b$.",
+        "Equate the first components and the second components to get two equations, then solve by substitution or elimination.",
+        "Two vectors are equal exactly when their corresponding components are equal."
+      ],
+      "steps": [
+        "$(-3,1)=(4a-2b,\\ a-b)$, so $4a-2b=-3$ and $a-b=1$.",
+        "From the second equation $a=b+1$.",
+        "Substitute: $4b+4-2b=-3$, so $b=-\\dfrac72$ and $a=-\\dfrac52$.",
+        "$a+b=-\\dfrac52-\\dfrac72=-6$."
+      ],
+      "brief": "$4a-2b=-3$, $a-b=1$ gives $a=-\\frac52$, $b=-\\frac72$, so $a+b=-6$."
+    },
+    {
+      "sec": "4.1",
+      "q": "Find all values of $k$ for which the vectors of $\\mathbb{R}^3$ \\[ u=(3,-4,5),\\quad v=(1,1,0),\\quad w=(k,k+1,-k) \\] are linearly independent.",
+      "opts": [
+        "$k\\neq\\dfrac57$",
+        "$k\\neq3$",
+        "$k\\neq1$",
+        "$k\\neq\\dfrac37$",
+        "$k\\neq\\dfrac12$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Three vectors in $\\mathbb{R}^3$ are independent exactly when the matrix formed from them is invertible.",
+        "Put $u$, $v$, $w$ as the columns (or rows) of a $3\\times3$ matrix and compute its determinant as a function of $k$.",
+        "$n$ vectors in $\\mathbb{R}^n$ are linearly independent if and only if the determinant of the matrix having them as columns (or rows) is nonzero."
+      ],
+      "steps": [
+        "Form $\\det\\begin{bmatrix}3&1&k\\\\-4&1&k+1\\\\5&0&-k\\end{bmatrix}$ with $u,v,w$ as columns.",
+        "Expand along the first row: $3(-k-0)-1\\left(4k-5(k+1)\\right)+k(0-5)$.",
+        "$=-3k-(-k-5)-5k=-7k+5$.",
+        "Independent exactly when $-7k+5\\neq0$, that is $k\\neq\\dfrac57$."
+      ],
+      "brief": "$\\det=5-7k\\neq0$, so $k\\neq\\frac57$."
+    },
+    {
+      "sec": "4.2",
+      "q": "Which one of the following statements is True about the following subsets of $\\mathbb{R}^4$. \\[ \\begin{aligned} U&=\\{(x_1,x_2,x_3,x_4):x_2x_3=0\\}\\\\ V&=\\{(x_1,x_2,x_3,x_4):x_1=1\\}\\\\ W&=\\{(x_1,x_2,x_3,x_4):x_4=2x_1\\} \\end{aligned} \\]",
+      "opts": [
+        "$W$ is a subspace of $\\mathbb{R}^4$",
+        "$U$ is a subspace of $\\mathbb{R}^4$",
+        "$V$ is a subspace of $\\mathbb{R}^4$",
+        "$U$, $V$ and $W$ are subspaces of $\\mathbb{R}^4$",
+        "none of $U$, $V$, and $W$ is a subspace of $\\mathbb{R}^4$"
+      ],
+      "ans": 0,
+      "lock": true,
+      "hints": [
+        "A subset is a subspace when it contains the zero vector and is closed under addition and scalar multiplication.",
+        "For each set, look for two vectors in it whose sum leaves the set, or check the zero vector.",
+        "The solution set of a homogeneous linear equation is a subspace; a condition such as $x_i=c$ with $c\\neq0$, or a product condition, usually fails closure."
+      ],
+      "steps": [
+        "$U$: $(1,1,0,1)$ and $(1,0,1,0)$ are in $U$, but their sum $(2,1,1,1)$ has $x_2x_3=1\\neq0$, so $U$ is not closed under addition.",
+        "$V$: $(1,0,0,0)$ and $(1,1,1,1)$ are in $V$, but their sum $(2,1,1,1)$ has $x_1=2\\neq1$, so $V$ is not a subspace (also $\\mathbf 0\\notin V$).",
+        "$W$: $x_4-2x_1=0$ is a homogeneous linear equation, so $\\mathbf0\\in W$ and $W$ is closed under sums and scalar multiples.",
+        "Only $W$ is a subspace."
+      ],
+      "brief": "$U$ and $V$ fail closure; $W$ ($x_4-2x_1=0$) is a subspace."
+    }
+  ]
+}

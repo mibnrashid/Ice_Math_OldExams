@@ -1,0 +1,339 @@
+{
+  "course": "stat201",
+  "term": "252",
+  "kind": "e1",
+  "date": "15 February 2026",
+  "minutes": 90,
+  "source": "stat201-252-e1.pdf",
+  "note": "Date and 90 minutes are printed on the cover. All 14 keys are marked (correct) and verified; no disagreements. Q12: stem-and-leaf data transcribed from the page (counts add to 64); the answer of 2 outliers (31.1 and 38.5) holds under the quartile conventions checked. Q10 is a hypergeometric question (N=50, K=2, n=15). Q3 and Q13 use cropped figures.",
+  "qs": [
+    {
+      "sec": "2.3",
+      "q": "(Exercise 2-82) A computer system uses passwords that are six characters, and each character is one of the 26 letters ($a-z$) or 10 integers ($0-9$). Uppercase letters are not used. Let $A$ denote the event that a password begins with a vowel (either $a,e,i,o,u$), and let $B$ denote the event that a password ends with a prime number (either 2, 3, 5, or 7). Suppose a hacker selects a password at random. Determine $P(A'\\cup B')$.",
+      "opts": [
+        "0.9846",
+        "0.7500",
+        "0.7654",
+        "0.8611",
+        "0.8889"
+      ],
+      "ans": 0,
+      "hints": [
+        "Combine the complement of a union or intersection with the idea of independent positions in the password.",
+        "Use De Morgan's law to rewrite $A'\\cup B'$ as the complement of one event, then find the probabilities of $A$ and $B$ separately.",
+        "De Morgan: $A'\\cup B'=(A\\cap B)'$, so $P(A'\\cup B')=1-P(A\\cap B)$. For independent events $P(A\\cap B)=P(A)P(B)$."
+      ],
+      "steps": [
+        "Each character has 36 equally likely possibilities, and the first and last characters are chosen independently.",
+        "$P(A)=\\dfrac{5}{36}$ (5 vowels) and $P(B)=\\dfrac{4}{36}$ (digits 2, 3, 5, 7).",
+        "$A'\\cup B'=(A\\cap B)'$, so $P(A'\\cup B')=1-P(A)P(B)=1-\\dfrac{5}{36}\\cdot\\dfrac{4}{36}$.",
+        "$=1-\\dfrac{20}{1296}=0.9846$."
+      ],
+      "brief": "$A'\\cup B'=(A\\cap B)'$: $1-\\frac{5}{36}\\cdot\\frac{4}{36}=0.9846$."
+    },
+    {
+      "sec": "2.4",
+      "q": "(Exercise 2-95) A lot of 11 semiconductor chips contains 4 that are defective. Two are selected randomly, with replacement (that is, the first chip is returned to the lot before the second selection), from the lot. What is the probability that the second one selected is defective given that the first one was defective?",
+      "opts": [
+        "0.3636",
+        "0.3000",
+        "0.1322",
+        "0.5950",
+        "0.6364"
+      ],
+      "ans": 0,
+      "hints": [
+        "Think about what replacement does to the second selection.",
+        "Decide whether the second draw depends on the outcome of the first when the chip is returned.",
+        "If $A$ and $B$ are independent, then $P(B\\mid A)=P(B)$; otherwise $P(B\\mid A)=\\dfrac{P(A\\cap B)}{P(A)}$."
+      ],
+      "steps": [
+        "With replacement the lot is restored before the second draw, so the two draws are independent.",
+        "Hence $P(\\text{2nd defective}\\mid\\text{1st defective})=P(\\text{2nd defective})$.",
+        "$=\\dfrac{4}{11}=0.3636$."
+      ],
+      "brief": "With replacement the draws are independent: $P=\\frac{4}{11}=0.3636$."
+    },
+    {
+      "sec": "2.4",
+      "q": "(Exercise 2-99) In the following Venn diagram, event $A$ is represented by the larger circle, and event $B$ is represented by the smaller circle contained entirely within $A$. Assuming $P(B)>0$, what is $P(A\\mid B)$?",
+      "opts": [
+        "1.00",
+        "0.00",
+        "0.50",
+        "0.25",
+        "0.75"
+      ],
+      "ans": 0,
+      "hints": [
+        "Read the picture to see how $B$ sits inside $A$, then use the definition of conditional probability.",
+        "Find $A\\cap B$ from the diagram and compare it with $B$.",
+        "$P(A\\mid B)=\\dfrac{P(A\\cap B)}{P(B)}$ for $P(B)>0$."
+      ],
+      "steps": [
+        "$B$ lies entirely inside $A$, so $B\\subset A$ and $A\\cap B=B$.",
+        "$P(A\\mid B)=\\dfrac{P(A\\cap B)}{P(B)}=\\dfrac{P(B)}{P(B)}=1.00$."
+      ],
+      "brief": "$B\\subset A$ gives $A\\cap B=B$, so $P(A\\mid B)=1$.",
+      "img": "stat201-252-e1-q3.png"
+    },
+    {
+      "sec": "2.7",
+      "q": "(Exercise 2-107) The probability is $3\\%$ that an electrical connector that is kept dry fails during the warranty period of a portable computer. If the connector is ever wet, the probability of a failure during the warranty period is $7\\%$. If $85\\%$ of the connectors are kept dry and $15\\%$ are wet, what proportion of connectors fail during the warranty period?",
+      "opts": [
+        "0.036",
+        "0.964",
+        "0.026",
+        "0.011",
+        "0.024"
+      ],
+      "ans": 0,
+      "hints": [
+        "Split the failures according to whether the connector is dry or wet.",
+        "Write $P(\\text{fail}\\mid\\text{dry})P(\\text{dry})$ and $P(\\text{fail}\\mid\\text{wet})P(\\text{wet})$ and add.",
+        "Total probability: $P(F)=\\sum_i P(F\\mid B_i)P(B_i)$ for a partition $B_1,\\dots,B_k$."
+      ],
+      "steps": [
+        "Let $F$ be failure. $P(F\\mid D)=0.03$, $P(D)=0.85$, $P(F\\mid W)=0.07$, $P(W)=0.15$.",
+        "$P(F)=0.03(0.85)+0.07(0.15)$.",
+        "$=0.0255+0.0105=0.036$."
+      ],
+      "brief": "Total probability: $0.03(0.85)+0.07(0.15)=0.036$."
+    },
+    {
+      "sec": "2.6",
+      "q": "(Exercise 2-124) If $P(A)=0.3$, $P(B)=0.3$, and $A$ and $B$ are mutually exclusive. Which statement is true for the two events $A$ and $B$?",
+      "opts": [
+        "The two events are not independent",
+        "The two events are independent",
+        "The two events are collectively exhaustive",
+        "The two events are complementary to each other",
+        "The two events are independent and collectively exhaustive"
+      ],
+      "ans": 0,
+      "hints": [
+        "Compare what mutual exclusivity says about $P(A\\cap B)$ with what independence requires.",
+        "Compute $P(A\\cap B)$ for mutually exclusive events and compare it with $P(A)P(B)$. Also check whether $P(A\\cup B)=1$.",
+        "$A,B$ independent iff $P(A\\cap B)=P(A)P(B)$; mutually exclusive means $P(A\\cap B)=0$; collectively exhaustive means $P(A\\cup B)=1$."
+      ],
+      "steps": [
+        "Mutually exclusive gives $P(A\\cap B)=0$.",
+        "But $P(A)P(B)=0.3(0.3)=0.09\\neq0$, so $A$ and $B$ are not independent.",
+        "$P(A\\cup B)=0.3+0.3=0.6\\neq1$, so they are neither collectively exhaustive nor complementary.",
+        "So the only true statement is that the events are not independent."
+      ],
+      "brief": "$P(A\\cap B)=0\\neq0.09=P(A)P(B)$, so not independent; $P(A\\cup B)=0.6$."
+    },
+    {
+      "sec": "3.2",
+      "q": "(Exercise 3-17) \\[ f(x)=\\frac{2x+1}{25},\\qquad x=0,1,2,3,4. \\] Determine $P(X<-10)$.",
+      "opts": [
+        "0.00",
+        "1.00",
+        "0.80",
+        "0.20",
+        "0.75"
+      ],
+      "ans": 0,
+      "hints": [
+        "Think about which values the random variable can take.",
+        "Check whether any possible value of $X$ is less than $-10$.",
+        "For a discrete variable, $P(X\\in S)=\\sum_{x\\in S}f(x)$, and an empty set has probability 0."
+      ],
+      "steps": [
+        "$X$ can only take the values $0,1,2,3,4$.",
+        "None of these is less than $-10$, so the event $\\{X<-10\\}$ is empty.",
+        "$P(X<-10)=0.00$."
+      ],
+      "brief": "No possible value is below $-10$: $P(X<-10)=0$."
+    },
+    {
+      "sec": "3.3",
+      "q": "(Exercise 3-43) \\[ F(x)=\\begin{cases}0, & x<-10\\\\ 0.1, & -10\\le x<30\\\\ 0.6, & 30\\le x<50\\\\ 1, & 50\\le x\\end{cases} \\] Determine $P(40<X<60)$.",
+      "opts": [
+        "0.4",
+        "1.0",
+        "0.1",
+        "0.0",
+        "0.5"
+      ],
+      "ans": 0,
+      "hints": [
+        "Use the cumulative distribution function to find the probability of an interval.",
+        "Write the probability as a difference of two values of $F$, taking care at the endpoints.",
+        "$P(a<X\\le b)=F(b)-F(a)$. For a discrete $X$, $P(X<b)=P(X\\le b)-P(X=b)$."
+      ],
+      "steps": [
+        "$F$ is a step function, so $X$ is discrete with jumps at $-10,30,50$ only; there is no probability mass at $60$.",
+        "$P(40<X<60)=P(X\\le60)-P(X\\le40)=F(60)-F(40)$.",
+        "$=1-0.6=0.4$."
+      ],
+      "brief": "$F(60)-F(40)=1-0.6=0.4$."
+    },
+    {
+      "sec": "3.4",
+      "q": "(Exercise 3-49) If the range of $X$ is the set $\\{0,1,2,3,4,5\\}$ and $P(X=x)=0.2$ for each $x\\in\\{2,3,4,5\\}$, and $P(X=0)=P(X=1)$. Determine the mean of the random variable $X$.",
+      "opts": [
+        "2.9",
+        "2.5",
+        "3.5",
+        "3.0",
+        "5.0"
+      ],
+      "ans": 0,
+      "hints": [
+        "Find the missing probabilities first, then compute the expected value.",
+        "The probabilities must add to 1; use that to find $P(X=0)=P(X=1)$.",
+        "$\\sum_x P(X=x)=1$ and $\\mu=E(X)=\\sum_x x\\,P(X=x)$."
+      ],
+      "steps": [
+        "$P(2)+P(3)+P(4)+P(5)=0.8$, so $P(0)+P(1)=0.2$ and $P(0)=P(1)=0.1$.",
+        "$\\mu=0(0.1)+1(0.1)+0.2(2+3+4+5)$.",
+        "$=0.1+2.8=2.9$."
+      ],
+      "brief": "$P(0)=P(1)=0.1$; $\\mu=0.1+0.2(14)=2.9$."
+    },
+    {
+      "sec": "3.6",
+      "q": "(Exercise 3-86) An electronic product contains 45 integrated circuits. The probability that any integrated circuit is defective is 0.015, and the integrated circuits are independent. The product operates only if there are no defective integrated circuits. What is the probability that the product operates?",
+      "opts": [
+        "0.5066",
+        "0.4934",
+        "0.8537",
+        "0.3250",
+        "0.9347"
+      ],
+      "ans": 0,
+      "hints": [
+        "Count the defective circuits among 45 independent trials.",
+        "The product operates when the number of defectives $X$ is 0; identify $n$ and $p$ for the binomial distribution.",
+        "$P(X=x)=\\binom{n}{x}p^x(1-p)^{n-x}$, so $P(X=0)=(1-p)^n$."
+      ],
+      "steps": [
+        "Let $X$ be the number of defective circuits; $X\\sim\\text{Binomial}(n=45,\\ p=0.015)$.",
+        "$P(\\text{operates})=P(X=0)=(1-0.015)^{45}$.",
+        "$=0.985^{45}=0.5066$."
+      ],
+      "brief": "$X\\sim\\text{Bin}(45,0.015)$: $P(X=0)=0.985^{45}=0.5066$."
+    },
+    {
+      "sec": "3.8",
+      "q": "(Suggested Problem 3-123) A company employs 50 men under the age of 55. Suppose that $4\\%$ (i.e. 2 out of 50 men) carry a marker on the male chromosome that indicates an increased risk for high blood pressure. If 15 men in the company are tested for the marker in this chromosome, what is the probability that more than one has the marker?",
+      "opts": [
+        "0.0857",
+        "0.4286",
+        "0.4857",
+        "0.5143",
+        "0.9143"
+      ],
+      "ans": 0,
+      "hints": [
+        "The 15 men are drawn without replacement from a small finite group with a known number of marker carriers.",
+        "Identify the population size $N$, the number of carriers $K$ and the sample size $n$. Only 2 carriers exist, so find which values of $X$ are possible.",
+        "Hypergeometric: $P(X=x)=\\dfrac{\\binom{K}{x}\\binom{N-K}{n-x}}{\\binom{N}{n}}$."
+      ],
+      "steps": [
+        "$X$ is hypergeometric with $N=50$, $K=2$, $n=15$.",
+        "Since only 2 carriers exist, $P(X>1)=P(X=2)$.",
+        "$P(X=2)=\\dfrac{\\binom{2}{2}\\binom{48}{13}}{\\binom{50}{15}}=\\dfrac{15\\cdot14}{50\\cdot49}$.",
+        "$=\\dfrac{210}{2450}=0.0857$."
+      ],
+      "brief": "Hypergeometric $N=50,K=2,n=15$: $P(X=2)=\\frac{15\\cdot14}{50\\cdot49}=0.0857$."
+    },
+    {
+      "sec": "3.9",
+      "q": "(Suggested Problem 3-135) Astronomers treat the number of stars in a given volume of space as a Poisson random variable. The density in the Milky Way Galaxy in the vicinity of our solar system is one star per 16 cubic light-years. What is the probability of three or more stars in 16 cubic light-years?",
+      "opts": [
+        "0.0803",
+        "0.9197",
+        "0.0613",
+        "0.2642",
+        "0.0500"
+      ],
+      "ans": 0,
+      "hints": [
+        "Count events in a fixed region with a known average rate: a Poisson model.",
+        "Find the mean number of stars in the given volume, then use the complement of $P(X\\le2)$.",
+        "$P(X=x)=\\dfrac{e^{-\\lambda}\\lambda^x}{x!}$ and $P(X\\ge3)=1-P(X\\le2)$."
+      ],
+      "steps": [
+        "The mean number of stars in 16 cubic light-years is $\\lambda=1$.",
+        "$P(X\\le2)=e^{-1}\\left(1+1+\\dfrac{1}{2}\\right)=2.5e^{-1}=0.9197$.",
+        "$P(X\\ge3)=1-0.9197=0.0803$."
+      ],
+      "brief": "$\\lambda=1$: $P(X\\ge3)=1-2.5e^{-1}=0.0803$."
+    },
+    {
+      "sec": "6.4",
+      "q": "(Exercise 6-24) A stem-and-leaf plot for the percentage of cotton in material used to manufacture men's shirts is given below (stem unit $=1.0$, leaf unit $=0.1$): \\[\\begin{array}{r|l} 31 & 1\\\\ 32 & 5\\ 5\\ 6\\ 9\\\\ 33 & 1\\ 1\\ 4\\ 4\\ 5\\ 6\\ 6\\ 6\\ 6\\ 6\\ 8\\ 8\\\\ 34 & 0\\ 1\\ 1\\ 1\\ 2\\ 3\\ 3\\ 4\\ 5\\ 5\\ 6\\ 6\\ 6\\ 6\\ 7\\ 7\\ 7\\ 7\\ 7\\ 7\\ 9\\\\ 35 & 0\\ 0\\ 1\\ 1\\ 1\\ 2\\ 3\\ 4\\ 5\\ 5\\ 6\\ 7\\ 8\\\\ 36 & 1\\ 2\\ 3\\ 4\\ 8\\ 8\\ 8\\ 8\\\\ 37 & 1\\ 3\\ 5\\ 6\\\\ 38 & 5 \\end{array}\\] There are $n=64$ observations in this data set. How many of them are outliers? Use the $1.5\\times\\text{IQR}$ rule.",
+      "opts": [
+        "2",
+        "0",
+        "3",
+        "5",
+        "6"
+      ],
+      "ans": 0,
+      "hints": [
+        "Use the fences of the box plot rule to flag outliers.",
+        "Find $Q_1$ and $Q_3$ from the ordered data (the plot is already ordered), then compute the IQR and the fences.",
+        "Outliers lie below $Q_1-1.5\\,\\text{IQR}$ or above $Q_3+1.5\\,\\text{IQR}$, where $\\text{IQR}=Q_3-Q_1$."
+      ],
+      "steps": [
+        "With $n=64$, $Q_1$ lies at the 16th/17th values (both $33.8$) and $Q_3$ at the 48th/49th values ($35.5$ and $35.6$), so $Q_1=33.8$ and $Q_3\\approx35.55$.",
+        "$\\text{IQR}\\approx1.75$, so the fences are about $33.8-2.6=31.2$ and $35.55+2.6=38.2$.",
+        "The smallest value $31.1$ is below the lower fence and the largest value $38.5$ is above the upper fence.",
+        "The next values, $32.5$ and $37.6$, are inside the fences. So there are 2 outliers."
+      ],
+      "brief": "$Q_1=33.8$, $Q_3\\approx35.55$: fences about $31.2$, $38.2$; $31.1$ and $38.5$ are outliers (2)."
+    },
+    {
+      "sec": "6.3",
+      "q": "(Suggested Problem 6-43) Following histogram is constructed for the numbers of cycles to failure of aluminum test coupons subjected to repeated alternating stress at 144,790 kN/m$^2$, 18 cycles per second. If the sample mean of this data is 1395, which of the following values could be the sample median?",
+      "opts": [
+        "1276",
+        "2395",
+        "1725",
+        "1491",
+        "1937"
+      ],
+      "ans": 0,
+      "hints": [
+        "Look at the shape of the histogram and how it relates the mean to the median.",
+        "Decide whether the distribution is symmetric or skewed, and in which direction the mean is pulled.",
+        "For a right-skewed distribution mean $>$ median; for a left-skewed one mean $<$ median; for a symmetric one they are about equal."
+      ],
+      "steps": [
+        "The histogram has a long tail to the right, so it is right-skewed.",
+        "In a right-skewed distribution the mean is pulled up, so the median is smaller than the mean $1395$.",
+        "Only the value below $1395$, namely $1276$, satisfies this."
+      ],
+      "brief": "Right-skewed, so median $<$ mean $=1395$: only 1276 works.",
+      "img": "stat201-252-e1-q13.png"
+    },
+    {
+      "sec": "6.1",
+      "q": "(Suggested Problem 6-1) Which one of the following is not necessarily true about the sample mean $\\bar x$?",
+      "opts": [
+        "It always corresponds to one of the observations in the data.",
+        "It always lies between the smallest and the largest observation in the sample.",
+        "If every observation is multiplied by 5, then the sample mean is multiplied by 5.",
+        "It can be larger than the sample standard deviation $s$.",
+        "If 5 is added to every observation, then the sample mean increases by 5."
+      ],
+      "ans": 0,
+      "hints": [
+        "Test each statement with the definition of the mean and a small example.",
+        "Try a tiny data set with two values to see whether the mean must be one of the data values.",
+        "$\\bar x=\\dfrac1n\\sum x_i$, so the mean of $ax_i+b$ is $a\\bar x+b$, and $\\bar x$ always lies between $\\min x_i$ and $\\max x_i$."
+      ],
+      "steps": [
+        "For the data $1,2$ the mean is $1.5$, which is not an observation, so the first statement can fail.",
+        "The mean always lies between the minimum and maximum, so the second statement is always true.",
+        "Multiplying by 5 multiplies the mean by 5, and adding 5 adds 5 to the mean: both always true.",
+        "The mean can exceed $s$ (for example $10,11,12$ has $\\bar x=11$, $s=1$), so that statement is possible. Only the first is not necessarily true."
+      ],
+      "brief": "Mean of $1,2$ is $1.5$, not an observation: the first statement is not necessarily true."
+    }
+  ]
+}

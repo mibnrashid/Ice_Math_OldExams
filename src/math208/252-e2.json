@@ -1,0 +1,371 @@
+{
+  "course": "math208",
+  "term": "252",
+  "kind": "e2",
+  "date": "13 April 2026",
+  "minutes": 90,
+  "source": "math208-252-e2.pdf",
+  "qs": [
+    {
+      "sec": "5.3",
+      "q": "Given that $y=\\cos(2x)$ is a solution of the differential equation \\[ y^{(4)}+4y'''+8y''+16y'+16y=0. \\] The general solution of the differential equation is",
+      "opts": [
+        "$y=(c_1+c_2x)e^{-2x}+c_3\\cos(2x)+c_4\\sin(2x)$",
+        "$y=(c_1+c_2x)e^{-2x}+c_3x\\cos(2x)+c_4\\sin(2x)$",
+        "$y=(c_1+c_2x)\\cos(2x)+(c_3+c_4x)\\sin(2x)$",
+        "$y=c_1e^{-2x}+c_2e^{2x}+c_3\\cos(2x)+c_4\\sin(2x)$",
+        "$y=c_1e^{-2x}+c_2e^{-x}+c_3\\cos(2x)+c_4\\sin(2x)$"
+      ],
+      "ans": 0,
+      "hints": [
+        "This is a homogeneous linear equation with constant coefficients, so everything comes from the roots of its characteristic equation.",
+        "Use the given solution to find two roots, then divide the characteristic polynomial by the matching quadratic factor.",
+        "If $\\cos(bx)$ is a solution, then $r=\\pm bi$ are roots, so $r^2+b^2$ is a factor. A root $r$ of multiplicity $k$ gives $e^{rx},xe^{rx},\\dots,x^{k-1}e^{rx}$, and $r=a\\pm bi$ gives $e^{ax}\\cos bx$, $e^{ax}\\sin bx$."
+      ],
+      "steps": [
+        "The characteristic equation is $r^4+4r^3+8r^2+16r+16=0$.",
+        "Since $\\cos(2x)$ is a solution, $r=\\pm2i$ are roots, so $r^2+4$ is a factor.",
+        "Dividing: $r^4+4r^3+8r^2+16r+16=(r^2+4)(r^2+4r+4)=(r^2+4)(r+2)^2$.",
+        "Roots: $r=-2$ (double) and $r=\\pm2i$, so $y=(c_1+c_2x)e^{-2x}+c_3\\cos(2x)+c_4\\sin(2x)$."
+      ],
+      "brief": "$(r^2+4)(r+2)^2=0$: $r=-2,-2,\\pm2i$, so $y=(c_1+c_2x)e^{-2x}+c_3\\cos2x+c_4\\sin2x$."
+    },
+    {
+      "sec": "4.3",
+      "q": "Which pair of vectors in $\\mathbb{R}^3$ are linearly independent?",
+      "opts": [
+        "$v_1=(2,1,4)$, $v_2=(4,2,5)$",
+        "$v_1=(0,0,0)$, $v_2=(1,1,1)$",
+        "$v_1=(3,5,2)$, $v_2=\\left(\\dfrac34,\\dfrac54,\\dfrac12\\right)$",
+        "$v_1=\\left(\\dfrac12,\\dfrac14,\\dfrac13\\right)$, $v_2=\\left(\\dfrac14,\\dfrac18,\\dfrac16\\right)$",
+        "$v_1=(1,0,5)$, $v_2=\\left(\\dfrac13,0,\\dfrac53\\right)$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Two vectors are linearly dependent exactly when one is a scalar multiple of the other.",
+        "For each pair, compare the ratios of matching components and see whether one vector is a constant times the other.",
+        "Two vectors $\\mathbf{u},\\mathbf{v}$ are linearly independent if and only if neither is a scalar multiple of the other; any set containing $\\mathbf{0}$ is linearly dependent."
+      ],
+      "steps": [
+        "$(0,0,0)$ and $(1,1,1)$: the set contains the zero vector, so it is dependent.",
+        "$\\left(\\frac34,\\frac54,\\frac12\\right)=\\frac14(3,5,2)$, $\\left(\\frac14,\\frac18,\\frac16\\right)=\\frac12\\left(\\frac12,\\frac14,\\frac13\\right)$ and $\\left(\\frac13,0,\\frac53\\right)=\\frac13(1,0,5)$, so these pairs are dependent.",
+        "For $(2,1,4)$ and $(4,2,5)$: the first two components need $k=2$, but $2\\cdot4=8\\neq5$.",
+        "So $(2,1,4)$ and $(4,2,5)$ are not multiples of each other, and this pair is linearly independent."
+      ],
+      "brief": "$(4,2,5)\\neq k(2,1,4)$ since $\\frac42=\\frac21\\neq\\frac54$; every other pair is a multiple or has $\\mathbf{0}$."
+    },
+    {
+      "sec": "5.3",
+      "q": "The general solution of the differential equation \\[ y^{(4)}-4y'''+3y''+4y'-4y=0 \\] is",
+      "opts": [
+        "$y=c_1e^{x}+c_2e^{-x}+(c_3+c_4x)e^{2x}$",
+        "$y=c_1e^{x}+c_2e^{-x}+c_3e^{2x}+c_4e^{4x}$",
+        "$y=c_1e^{x}+c_2e^{-2x}+(c_3+c_4x)e^{2x}$",
+        "$y=c_1e^{x}+c_2e^{2x}+(c_3+c_4x)e^{-x}$",
+        "$y=c_1e^{-x}+c_2e^{2x}+(c_3+c_4x)e^{x}$"
+      ],
+      "ans": 0,
+      "hints": [
+        "This is a homogeneous linear equation with constant coefficients; find the roots of its characteristic equation.",
+        "Write the quartic characteristic equation and test small integer roots such as $r=\\pm1$ and $r=\\pm2$, then factor.",
+        "Any integer root of a polynomial with integer coefficients divides its constant term. A root $r$ of multiplicity $k$ gives $e^{rx},xe^{rx},\\dots,x^{k-1}e^{rx}$."
+      ],
+      "steps": [
+        "The characteristic equation is $r^4-4r^3+3r^2+4r-4=0$.",
+        "$r=1$: $1-4+3+4-4=0$, and $r=-1$: $1+4+3-4-4=0$, so $r^2-1$ is a factor.",
+        "Dividing: $r^4-4r^3+3r^2+4r-4=(r^2-1)(r^2-4r+4)=(r-1)(r+1)(r-2)^2$.",
+        "Roots $1,-1,2,2$ give $y=c_1e^{x}+c_2e^{-x}+(c_3+c_4x)e^{2x}$."
+      ],
+      "brief": "$(r-1)(r+1)(r-2)^2=0$, so $y=c_1e^x+c_2e^{-x}+(c_3+c_4x)e^{2x}$."
+    },
+    {
+      "sec": "5.3",
+      "q": "A linear homogeneous differential equation with real coefficients, having the solutions: \\[ 2,\\quad 3x\\,e^{x}\\cos(3x) \\] is",
+      "opts": [
+        "$D(D^2-2D+10)^2\\,y=0$",
+        "$D(D^2-2D+10)\\,y=0$",
+        "$D(D^2+2D+10)^2\\,y=0$",
+        "$D(D^2+2D+10)\\,y=0$",
+        "$D(D^2-D+8)^2\\,y=0$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Work backwards: each given solution tells you a root of the characteristic equation and its multiplicity.",
+        "Find the root that gives a constant solution and the complex roots, with multiplicity, that give $xe^{x}\\cos(3x)$; remember complex roots come in conjugate pairs.",
+        "A constant solution comes from $r=0$. Roots $r=a\\pm bi$ give $e^{ax}\\cos bx$, they are the roots of $(r-a)^2+b^2=0$, and an extra factor $x$ means the pair is repeated."
+      ],
+      "steps": [
+        "The constant solution $2$ comes from the root $r=0$, giving the factor $r$.",
+        "$e^{x}\\cos(3x)$ comes from $r=1\\pm3i$, the roots of $(r-1)^2+9=r^2-2r+10$.",
+        "The factor $x$ in $xe^{x}\\cos(3x)$ means $1\\pm3i$ has multiplicity 2, giving $(r^2-2r+10)^2$.",
+        "The characteristic polynomial is $r(r^2-2r+10)^2$, so the equation is $D(D^2-2D+10)^2y=0$."
+      ],
+      "brief": "$r=0$ and $r=1\\pm3i$ twice: $r(r^2-2r+10)^2$, i.e. $D(D^2-2D+10)^2y=0$."
+    },
+    {
+      "sec": "4.5",
+      "q": "The rank of the matrix \\[ A=\\begin{bmatrix}1&2&-1&3\\\\-1&1&2&0\\\\2&1&-3&1\\\\1&5&0&6\\end{bmatrix} \\] is",
+      "opts": [
+        "$3$",
+        "$4$",
+        "$2$",
+        "$1$",
+        "$0$"
+      ],
+      "ans": 0,
+      "hints": [
+        "The rank is the number of nonzero rows (pivots) in an echelon form of the matrix.",
+        "Row reduce $A$: use the first row to clear the first column, then continue with the second column.",
+        "$\\operatorname{rank}(A)$ equals the number of nonzero rows in any echelon form of $A$, and elementary row operations do not change the rank."
+      ],
+      "steps": [
+        "$R_2+R_1$, $R_3-2R_1$, $R_4-R_1$ give rows $(1,2,-1,3)$, $(0,3,1,3)$, $(0,-3,-1,-5)$, $(0,3,1,3)$.",
+        "$R_3+R_2$ gives $(0,0,0,-2)$ and $R_4-R_2$ gives $(0,0,0,0)$.",
+        "The echelon form has nonzero rows $(1,2,-1,3)$, $(0,3,1,3)$, $(0,0,0,-2)$ and one zero row.",
+        "So $\\operatorname{rank}(A)=3$."
+      ],
+      "brief": "Echelon form has rows $(1,2,-1,3),(0,3,1,3),(0,0,0,-2),\\mathbf{0}$: rank $3$."
+    },
+    {
+      "sec": "4.4",
+      "q": "If the solution \\[ \\begin{cases} x_1+3x_2-2x_3+x_4=0\\\\ 2x_1+6x_2-x_3-7x_4=0\\\\ x_1+3x_2+x_3-8x_4=0 \\end{cases} \\] consists of all linear combinations of the vectors: $v_1=(a,b,0,0)$ and $v_2=(c,0,3,d)$, then $\\dfrac{a}{b}+\\dfrac{c}{d}=$",
+      "opts": [
+        "$2$",
+        "$-2$",
+        "$3$",
+        "$-3$",
+        "$0$"
+      ],
+      "ans": 0,
+      "hints": [
+        "The solution space of a homogeneous system is spanned by the vectors you get from the free variables.",
+        "Row reduce the coefficient matrix, identify the free variables, and write the general solution as a combination of vectors.",
+        "In the general solution of $A\\mathbf{x}=\\mathbf{0}$, write each leading variable in terms of the free variables; setting one free variable to 1 and the others to 0 gives one spanning vector. Any nonzero multiple of a spanning vector also works."
+      ],
+      "steps": [
+        "$R_2-2R_1$ and $R_3-R_1$ both give $(0,0,3,-9)$, so the system reduces to $x_1+3x_2-2x_3+x_4=0$ and $x_3=3x_4$.",
+        "Then $x_1=-3x_2+2x_3-x_4=-3x_2+5x_4$, with $x_2,x_4$ free.",
+        "$(x_1,x_2,x_3,x_4)=x_2(-3,1,0,0)+x_4(5,0,3,1)$.",
+        "Matching the shapes: $v_1$ is a multiple of $(-3,1,0,0)$, so $\\dfrac ab=-3$; $v_2=(5,0,3,1)$, so $c=5$, $d=1$.",
+        "$\\dfrac ab+\\dfrac cd=-3+5=2$."
+      ],
+      "brief": "$x_3=3x_4$, $x_1=-3x_2+5x_4$: $(-3,1,0,0)$, $(5,0,3,1)$, so $-3+5=2$."
+    },
+    {
+      "sec": "5.2",
+      "q": "If $W(x)$ is the Wronskian of the functions \\[ f_1(x)=e^{x},\\quad f_2(x)=\\cos(2x),\\quad\\text{and}\\quad f_3(x)=\\sin(2x), \\] then $W(0)=$",
+      "opts": [
+        "$10$",
+        "$8$",
+        "$-10$",
+        "$-8$",
+        "$0$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Use the definition of the Wronskian of three functions as a determinant.",
+        "Build the $3\\times3$ matrix of the functions and their first and second derivatives, then substitute $x=0$ before taking the determinant.",
+        "$W(f_1,f_2,f_3)=\\begin{vmatrix}f_1&f_2&f_3\\\\f_1'&f_2'&f_3'\\\\f_1''&f_2''&f_3''\\end{vmatrix}$."
+      ],
+      "steps": [
+        "Derivatives: $f_1'=f_1''=e^x$; $f_2'=-2\\sin 2x$, $f_2''=-4\\cos 2x$; $f_3'=2\\cos 2x$, $f_3''=-4\\sin 2x$.",
+        "At $x=0$: $W(0)=\\begin{vmatrix}1&1&0\\\\1&0&2\\\\1&-4&0\\end{vmatrix}$.",
+        "Expand along the first row: $1(0\\cdot0-2(-4))-1(1\\cdot0-2\\cdot1)+0=8+2$.",
+        "So $W(0)=10$."
+      ],
+      "brief": "$W(0)=\\det\\begin{bmatrix}1&1&0\\\\1&0&2\\\\1&-4&0\\end{bmatrix}=8+2=10$."
+    },
+    {
+      "sec": "5.3",
+      "q": "The solution of the initial value problem \\[ y''+y=0,\\qquad y(0)=3,\\quad y'(0)=0 \\] is given by",
+      "opts": [
+        "$y=3\\cos x$",
+        "$y=3\\cos x-\\sin x$",
+        "$y=3\\cos x+\\sin x$",
+        "$y=3\\sin x+3$",
+        "$y=3\\cos x+2\\sin x$"
+      ],
+      "ans": 0,
+      "hints": [
+        "This is a homogeneous second-order equation with constant coefficients and initial conditions.",
+        "Find the general solution from the characteristic equation, then apply $y(0)$ and $y'(0)$ to find the constants.",
+        "For $r=a\\pm bi$ the general solution is $y=e^{ax}(c_1\\cos bx+c_2\\sin bx)$."
+      ],
+      "steps": [
+        "$r^2+1=0$ gives $r=\\pm i$, so $y=c_1\\cos x+c_2\\sin x$.",
+        "$y(0)=c_1=3$.",
+        "$y'=-c_1\\sin x+c_2\\cos x$, so $y'(0)=c_2=0$.",
+        "Hence $y=3\\cos x$."
+      ],
+      "brief": "$r=\\pm i$: $y=c_1\\cos x+c_2\\sin x$, $c_1=3$, $c_2=0$, so $y=3\\cos x$."
+    },
+    {
+      "sec": "5.5",
+      "q": "If $y_p=A+Bx+Cx^2+De^{x}$ is a particular solution of the differential equation \\[ y''-6y'+9y=27x^2+4e^{x}, \\] then $A+B+C+D=$",
+      "opts": [
+        "$10$",
+        "$8$",
+        "$12$",
+        "$11$",
+        "$0$"
+      ],
+      "ans": 0,
+      "hints": [
+        "This is the method of undetermined coefficients with the trial form already given.",
+        "Compute $y_p'$ and $y_p''$, substitute into the left side, and match the coefficients of $x^2$, $x$, the constant and $e^x$.",
+        "After substituting $y_p$ into $ay''+by'+cy=f(x)$, the coefficients of each of the functions $1,x,x^2,e^x$ must agree on both sides."
+      ],
+      "steps": [
+        "$y_p'=B+2Cx+De^x$ and $y_p''=2C+De^x$.",
+        "Polynomial part: $9Cx^2+(9B-12C)x+(9A-6B+2C)=27x^2$, and the $e^x$ part: $(1-6+9)De^x=4De^x=4e^x$.",
+        "$9C=27$ gives $C=3$; $9B-36=0$ gives $B=4$; $9A-24+6=0$ gives $A=2$; $4D=4$ gives $D=1$.",
+        "$A+B+C+D=2+4+3+1=10$."
+      ],
+      "brief": "$C=3$, $B=4$, $A=2$, $D=1$ (from $4De^x=4e^x$): sum $=10$."
+    },
+    {
+      "sec": "5.5",
+      "q": "An appropriate form of a particular solution $y_p$ for the non-homogeneous differential equation \\[ (D+2)^3(D^2+4)y=e^{-2x}-\\sin(2x) \\] is given by $y_p(x)=$",
+      "opts": [
+        "$Ax^3e^{-2x}+Bx\\sin(2x)+Cx\\cos(2x)$",
+        "$Ax^2e^{-2x}+Bx\\sin(2x)+Cx\\cos(2x)$",
+        "$Axe^{-2x}+Bx\\sin(2x)+Cx\\cos(2x)$",
+        "$Ax^3e^{-2x}+B\\sin(2x)+Cx\\cos(2x)$",
+        "$Ax^3e^{-2x}+Bx\\sin(4x)+Cx\\sin(4x)$"
+      ],
+      "ans": 0,
+      "hints": [
+        "This is the method of undetermined coefficients; the trial terms must be adjusted when they duplicate solutions of the homogeneous equation.",
+        "Read the roots of the characteristic equation and their multiplicities from the factored operator, then write a trial term for each part of the right side.",
+        "For a term $e^{rx}$ (or $\\cos bx,\\ \\sin bx$ with $r=\\pm bi$) on the right side, multiply the usual trial form by $x^s$, where $s$ is the multiplicity of $r$ as a root of the characteristic equation."
+      ],
+      "steps": [
+        "The characteristic equation $(r+2)^3(r^2+4)=0$ has $r=-2$ (multiplicity 3) and $r=\\pm2i$ (multiplicity 1).",
+        "For $e^{-2x}$ the trial $Ae^{-2x}$ duplicates a root of multiplicity 3, so use $Ax^3e^{-2x}$.",
+        "For $\\sin(2x)$ the trial $B\\sin(2x)+C\\cos(2x)$ duplicates $r=\\pm2i$ once, so multiply by $x$.",
+        "So $y_p=Ax^3e^{-2x}+Bx\\sin(2x)+Cx\\cos(2x)$."
+      ],
+      "brief": "$r=-2$ (triple), $\\pm2i$ (simple): $y_p=Ax^3e^{-2x}+x(B\\sin2x+C\\cos2x)$."
+    },
+    {
+      "sec": "6.1",
+      "q": "The characteristic equation of the matrix \\[ \\begin{bmatrix}0&-2&-1\\\\-3&-1&-3\\\\2&2&-3\\end{bmatrix} \\] is",
+      "opts": [
+        "$\\lambda^3+4\\lambda^2+5\\lambda-34=0$",
+        "$\\lambda^3-4\\lambda^2+5\\lambda-34=0$",
+        "$\\lambda^3+4\\lambda^2-5\\lambda+34=0$",
+        "$\\lambda^3-2\\lambda^2-\\lambda-2=0$",
+        "$\\lambda^3+3\\lambda^2-\\lambda-2=0$"
+      ],
+      "ans": 0,
+      "hints": [
+        "The characteristic equation comes from a determinant involving $\\lambda$ and the identity matrix.",
+        "Form $\\lambda I-A$ (or $A-\\lambda I$) and expand its determinant along the first row.",
+        "The characteristic equation of $A$ is $\\det(\\lambda I-A)=0$; for a $3\\times3$ matrix this equals $-\\det(A-\\lambda I)=0$."
+      ],
+      "steps": [
+        "$\\lambda I-A=\\begin{bmatrix}\\lambda&2&1\\\\3&\\lambda+1&3\\\\-2&-2&\\lambda+3\\end{bmatrix}$.",
+        "Expand along row 1: $\\lambda\\left[(\\lambda+1)(\\lambda+3)+6\\right]-2\\left[3(\\lambda+3)+6\\right]+1\\left[-6+2(\\lambda+1)\\right]$.",
+        "$=\\lambda(\\lambda^2+4\\lambda+9)-(6\\lambda+30)+(2\\lambda-4)$.",
+        "$=\\lambda^3+4\\lambda^2+5\\lambda-34$, so the equation is $\\lambda^3+4\\lambda^2+5\\lambda-34=0$."
+      ],
+      "brief": "$\\det(\\lambda I-A)=\\lambda(\\lambda^2+4\\lambda+9)-(6\\lambda+30)+(2\\lambda-4)$."
+    },
+    {
+      "sec": "5.5",
+      "q": "A particular solution of the differential equation \\[ y''-4y'+4y=x^{-1}e^{2x} \\] is given by $y_p(x)=$",
+      "opts": [
+        "$xe^{2x}\\ln|x|$",
+        "$x^2e^{2x}\\ln|x|$",
+        "$xe^{3x}\\ln|x|$",
+        "$x^2e^{-2x}\\ln|x|$",
+        "$xe^{-2x}\\ln|x|$"
+      ],
+      "ans": 0,
+      "hints": [
+        "The right side $x^{-1}e^{2x}$ is not of a form that undetermined coefficients can handle, so use variation of parameters.",
+        "Find $y_1,y_2$ from the characteristic equation and compute their Wronskian.",
+        "For $y''+P(x)y'+Q(x)y=f(x)$: $y_p=-y_1\\int\\dfrac{y_2f}{W}\\,dx+y_2\\int\\dfrac{y_1f}{W}\\,dx$, with $W=y_1y_2'-y_1'y_2$."
+      ],
+      "steps": [
+        "$r^2-4r+4=(r-2)^2=0$, so $y_1=e^{2x}$, $y_2=xe^{2x}$ and $W=e^{4x}$.",
+        "$u_1=-\\int\\dfrac{xe^{2x}\\cdot x^{-1}e^{2x}}{e^{4x}}dx=-\\int1\\,dx=-x$.",
+        "$u_2=\\int\\dfrac{e^{2x}\\cdot x^{-1}e^{2x}}{e^{4x}}dx=\\int\\dfrac1x\\,dx=\\ln|x|$.",
+        "$y_p=-xe^{2x}+xe^{2x}\\ln|x|$; the term $-xe^{2x}$ solves the homogeneous equation, so $y_p=xe^{2x}\\ln|x|$ is also a particular solution."
+      ],
+      "brief": "Var. of parameters, $W=e^{4x}$: $u_1=-x$, $u_2=\\ln|x|$, so $y_p=xe^{2x}\\ln|x|$."
+    },
+    {
+      "sec": "6.2",
+      "q": "If the matrix $A=\\begin{bmatrix}1&2\\\\2&-2\\end{bmatrix}$ is diagonalizable with a diagonalizing matrix $P$ and a diagonal matrix $D=\\begin{bmatrix}2&0\\\\0&-3\\end{bmatrix}$ such that $P^{-1}AP=D$, then",
+      "opts": [
+        "$P=\\begin{bmatrix}2&1\\\\1&-2\\end{bmatrix}$",
+        "$P=\\begin{bmatrix}2&1\\\\-1&-2\\end{bmatrix}$",
+        "$P=\\begin{bmatrix}2&1\\\\2&-2\\end{bmatrix}$",
+        "$P=\\begin{bmatrix}2&1\\\\1&2\\end{bmatrix}$",
+        "$P=\\begin{bmatrix}2&-1\\\\1&-2\\end{bmatrix}$"
+      ],
+      "ans": 0,
+      "hints": [
+        "The columns of $P$ are eigenvectors of $A$, in the same order as the eigenvalues on the diagonal of $D$.",
+        "Find an eigenvector for the first diagonal entry of $D$ and one for the second by solving $(A-\\lambda I)\\mathbf{v}=\\mathbf{0}$.",
+        "$P^{-1}AP=D$ holds exactly when column $j$ of $P$ is an eigenvector of $A$ for the eigenvalue in position $j$ of $D$; eigenvectors for $\\lambda$ solve $(A-\\lambda I)\\mathbf{v}=\\mathbf{0}$."
+      ],
+      "steps": [
+        "$\\lambda=2$: $A-2I=\\begin{bmatrix}-1&2\\\\2&-4\\end{bmatrix}$ gives $-v_1+2v_2=0$, so $\\mathbf{v}=(2,1)$.",
+        "$\\lambda=-3$: $A+3I=\\begin{bmatrix}4&2\\\\2&1\\end{bmatrix}$ gives $2v_1+v_2=0$, so $\\mathbf{v}=(1,-2)$.",
+        "Place them as columns in the order of $D$ (first $2$, then $-3$).",
+        "$P=\\begin{bmatrix}2&1\\\\1&-2\\end{bmatrix}$."
+      ],
+      "brief": "$\\lambda=2$: $(2,1)$; $\\lambda=-3$: $(1,-2)$, so $P=\\begin{bmatrix}2&1\\\\1&-2\\end{bmatrix}$."
+    },
+    {
+      "sec": "5.5",
+      "q": "A particular solution of the differential equation \\[ y''-3y'+2y=\\cos\\left(e^{-x}\\right) \\] is given by $y_p(x)=$",
+      "opts": [
+        "$-e^{2x}\\cos\\left(e^{-x}\\right)$",
+        "$e^{x}\\cos\\left(e^{-x}\\right)$",
+        "$-e^{x}\\cos\\left(e^{-x}\\right)$",
+        "$e^{2x}\\cos\\left(e^{x}\\right)$",
+        "$e^{-2x}\\cos\\left(e^{-x}\\right)$"
+      ],
+      "ans": 0,
+      "hints": [
+        "The right side $\\cos(e^{-x})$ is not of a form that undetermined coefficients can handle, so use variation of parameters.",
+        "Find $y_1,y_2$ from the characteristic equation, compute $W$, and in the integrals substitute $u=e^{-x}$.",
+        "For $y''+P(x)y'+Q(x)y=f(x)$: $y_p=-y_1\\int\\dfrac{y_2f}{W}\\,dx+y_2\\int\\dfrac{y_1f}{W}\\,dx$, with $W=y_1y_2'-y_1'y_2$; also $\\int u\\cos u\\,du=u\\sin u+\\cos u+C$."
+      ],
+      "steps": [
+        "$r^2-3r+2=(r-1)(r-2)=0$, so $y_1=e^{x}$, $y_2=e^{2x}$ and $W=e^{3x}$.",
+        "With $u=e^{-x}$, $du=-e^{-x}dx$: $u_1=-\\int\\dfrac{e^{2x}\\cos(e^{-x})}{e^{3x}}dx=-\\int e^{-x}\\cos(e^{-x})\\,dx=\\sin(e^{-x})$.",
+        "$u_2=\\int\\dfrac{e^{x}\\cos(e^{-x})}{e^{3x}}dx=-\\int u\\cos u\\,du=-e^{-x}\\sin(e^{-x})-\\cos(e^{-x})$.",
+        "$y_p=u_1e^{x}+u_2e^{2x}=e^{x}\\sin(e^{-x})-e^{x}\\sin(e^{-x})-e^{2x}\\cos(e^{-x})=-e^{2x}\\cos(e^{-x})$."
+      ],
+      "brief": "Var. of parameters, $W=e^{3x}$, $u=e^{-x}$: $y_p=-e^{2x}\\cos(e^{-x})$."
+    },
+    {
+      "sec": "6.1",
+      "q": "Given the matrix $A=\\begin{bmatrix}2&1&-1\\\\0&1&1\\\\0&0&2\\end{bmatrix}$. A basis for the eigenspace that corresponds to the eigenvalue $\\lambda=2$ is $v_1=\\begin{bmatrix}0\\\\\\alpha\\\\1\\end{bmatrix}$, $v_2=\\begin{bmatrix}1\\\\\\beta\\\\0\\end{bmatrix}$, where $2\\alpha+\\beta=$",
+      "opts": [
+        "$2$",
+        "$1$",
+        "$-2$",
+        "$4$",
+        "$3$"
+      ],
+      "ans": 0,
+      "hints": [
+        "The eigenspace for $\\lambda$ is the solution space of a homogeneous system.",
+        "Row reduce $A-2I$, write the general solution, and match it with the given shapes of $v_1$ and $v_2$.",
+        "The eigenspace of $\\lambda$ is the set of solutions of $(A-\\lambda I)\\mathbf{v}=\\mathbf{0}$; a basis comes from setting each free variable to 1 in turn."
+      ],
+      "steps": [
+        "$A-2I=\\begin{bmatrix}0&1&-1\\\\0&-1&1\\\\0&0&0\\end{bmatrix}$, which reduces to the single equation $x_2-x_3=0$.",
+        "So $x_2=x_3$ with $x_1,x_3$ free: $\\mathbf{v}=x_1(1,0,0)+x_3(0,1,1)$.",
+        "Matching: $v_1=(0,1,1)$ gives $\\alpha=1$, and $v_2=(1,0,0)$ gives $\\beta=0$.",
+        "$2\\alpha+\\beta=2$."
+      ],
+      "brief": "$A-2I$: $x_2=x_3$, basis $(0,1,1),(1,0,0)$, so $\\alpha=1$, $\\beta=0$, $2\\alpha+\\beta=2$."
+    }
+  ]
+}

@@ -1,0 +1,339 @@
+{
+  "course": "math102",
+  "term": "252",
+  "kind": "e1",
+  "date": "17 February 2026",
+  "minutes": 90,
+  "source": "math102-252-e1.pdf",
+  "note": "Date and 90 minutes (net time) taken from the cover. Master key marked (correct) on choice (a) for every question; all 14 verified independently with sympy and agree.",
+  "qs": [
+    {
+      "sec": "5.2",
+      "q": "Use the right end points and 3 rectangles to find an approximation of the area of the region between the graph of the function $f(x)=2x^2-x-1$ and the $x$-axis over the interval $[2,5]$.",
+      "opts": [
+        "$85$",
+        "$86$",
+        "$87$",
+        "$88$",
+        "$84$"
+      ],
+      "ans": 0,
+      "hints": [
+        "This is a Riemann-sum (rectangle) approximation using right end points.",
+        "Find the width of each rectangle from the interval length and the number of rectangles, then list the right end points.",
+        "With $n$ rectangles on $[a,b]$: $\\Delta x=\\dfrac{b-a}{n}$, right end points $x_i=a+i\\,\\Delta x$, and the approximation is $\\sum_{i=1}^{n}f(x_i)\\,\\Delta x$."
+      ],
+      "steps": [
+        "$\\Delta x=\\dfrac{5-2}{3}=1$, so the right end points are $3,4,5$.",
+        "$f(3)=18-3-1=14$, $f(4)=32-4-1=27$, $f(5)=50-5-1=44$.",
+        "Area $\\approx(14+27+44)(1)=85$."
+      ],
+      "brief": "$\\Delta x=1$, right end points $3,4,5$: $14+27+44=85$."
+    },
+    {
+      "sec": "5.7",
+      "q": "$\\int \\dfrac{x^2-3x+2}{x+1}\\,dx=$",
+      "opts": [
+        "$\\dfrac{x^2}{2}-4x+6\\ln|x+1|+C$",
+        "$x^2-2x+6\\ln|x+1|+C$",
+        "$\\dfrac{x^2}{2}+4x-6\\ln|x+1|+C$",
+        "$\\dfrac{x^2}{2}+4x+3\\ln|x+1|+C$",
+        "$\\dfrac{x^2}{2}-4x-3\\ln|x+1|+C$"
+      ],
+      "ans": 0,
+      "hints": [
+        "The numerator has higher degree than the denominator, so divide first and then use the log rule.",
+        "Carry out polynomial long division of the numerator by the denominator.",
+        "Improper rational function: $\\dfrac{P(x)}{D(x)}=Q(x)+\\dfrac{R}{D(x)}$, and $\\int\\dfrac{du}{u}=\\ln|u|+C$."
+      ],
+      "steps": [
+        "Divide: $x^2-3x+2=(x+1)(x-4)+6$.",
+        "So $\\dfrac{x^2-3x+2}{x+1}=x-4+\\dfrac{6}{x+1}$.",
+        "Integrate: $\\dfrac{x^2}{2}-4x+6\\ln|x+1|+C$."
+      ],
+      "brief": "$\\frac{x^2-3x+2}{x+1}=x-4+\\frac{6}{x+1}$, giving $\\frac{x^2}{2}-4x+6\\ln|x+1|+C$."
+    },
+    {
+      "sec": "5.3",
+      "q": "If the interval $[0,8]$ is partitioned at $x_0=0$, $x_1=1$, $x_2=3$, $x_3=7$ and $x_4=8$ with $c_1=1$, $c_2=2$, $c_3=5$ and $c_4=8$ ($c_i$ is the sample point in the $i$th subinterval), then the Riemann sum of $f(x)=x^2+3x$ on $[0,8]$ is equal to",
+      "opts": [
+        "$272$",
+        "$274$",
+        "$276$",
+        "$278$",
+        "$270$"
+      ],
+      "ans": 0,
+      "hints": [
+        "This is a Riemann sum with unequal subinterval widths.",
+        "Compute each width $\\Delta x_i=x_i-x_{i-1}$ and the value of $f$ at each sample point.",
+        "The Riemann sum is $\\sum_{i=1}^{n}f(c_i)\\,\\Delta x_i$ with $\\Delta x_i=x_i-x_{i-1}$."
+      ],
+      "steps": [
+        "Widths: $\\Delta x_1=1$, $\\Delta x_2=2$, $\\Delta x_3=4$, $\\Delta x_4=1$.",
+        "Values: $f(1)=4$, $f(2)=10$, $f(5)=40$, $f(8)=88$.",
+        "Sum: $4(1)+10(2)+40(4)+88(1)=4+20+160+88=272$."
+      ],
+      "brief": "Widths $1,2,4,1$; $4+20+160+88=272$."
+    },
+    {
+      "sec": "5.4",
+      "q": "The average value of the function $f(x)=\\sin x$ over the interval $[0,\\pi]$ is",
+      "opts": [
+        "$\\dfrac{2}{\\pi}$",
+        "$-\\dfrac{2}{\\pi}$",
+        "$\\dfrac{1}{\\pi}$",
+        "$-\\dfrac{1}{\\pi}$",
+        "$0$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Use the formula for the average value of a function on an interval.",
+        "Set up the definite integral of $f$ over the interval and divide by the interval length.",
+        "The average value of $f$ on $[a,b]$ is $\\dfrac{1}{b-a}\\int_a^b f(x)\\,dx$."
+      ],
+      "steps": [
+        "Average $=\\dfrac{1}{\\pi-0}\\int_0^{\\pi}\\sin x\\,dx$.",
+        "$\\int_0^{\\pi}\\sin x\\,dx=\\left[-\\cos x\\right]_0^{\\pi}=1+1=2$.",
+        "So the average value is $\\dfrac{2}{\\pi}$."
+      ],
+      "brief": "$\\frac1\\pi\\int_0^\\pi\\sin x\\,dx=\\frac{2}{\\pi}$."
+    },
+    {
+      "sec": "5.3",
+      "q": "Possible values of $a$ and $b$ such that $\\int_a^b\\sin x\\,dx<0$ are:",
+      "opts": [
+        "$a=\\dfrac{\\pi}{2},\\ b=2\\pi$",
+        "$a=0,\\ b=\\dfrac{\\pi}{2}$",
+        "$a=\\dfrac{\\pi}{2},\\ b=\\dfrac{3\\pi}{2}$",
+        "$a=0,\\ b=\\dfrac{3\\pi}{2}$",
+        "$a=\\dfrac{\\pi}{2},\\ b=\\pi$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Think about where $\\sin x$ is positive and where it is negative, and how the areas combine.",
+        "Evaluate each integral with the antiderivative of $\\sin x$ and check the sign.",
+        "$\\int_a^b\\sin x\\,dx=\\cos a-\\cos b$; the integral is negative exactly when $\\cos a<\\cos b$."
+      ],
+      "steps": [
+        "$\\int_a^b\\sin x\\,dx=\\cos a-\\cos b$.",
+        "$[\\pi/2,2\\pi]$: $0-1=-1<0$.",
+        "The other pairs give $1-0=1$, $0-0=0$, $1-0=1$ and $0-(-1)=1$, none negative.",
+        "So only $a=\\pi/2$, $b=2\\pi$ works."
+      ],
+      "brief": "$\\int_a^b\\sin x\\,dx=\\cos a-\\cos b$; only $[\\pi/2,2\\pi]$ gives $-1<0$."
+    },
+    {
+      "sec": "5.4",
+      "q": "$\\int_0^5|2x-5|\\,dx=$",
+      "opts": [
+        "$\\dfrac{25}{2}$",
+        "$\\dfrac{23}{2}$",
+        "$\\dfrac{21}{2}$",
+        "$\\dfrac{19}{2}$",
+        "$\\dfrac{27}{2}$"
+      ],
+      "ans": 0,
+      "hints": [
+        "An integral of an absolute value must be split where the expression inside changes sign.",
+        "Find the point where the inside is zero and write the integrand without absolute value on each piece.",
+        "$|g|=g$ where $g\\ge0$ and $|g|=-g$ where $g<0$; then $\\int_a^b=\\int_a^c+\\int_c^b$."
+      ],
+      "steps": [
+        "$2x-5=0$ at $x=\\dfrac52$; $|2x-5|=5-2x$ on $[0,\\frac52]$ and $2x-5$ on $[\\frac52,5]$.",
+        "$\\int_0^{5/2}(5-2x)\\,dx=\\left[5x-x^2\\right]_0^{5/2}=\\dfrac{25}{2}-\\dfrac{25}{4}=\\dfrac{25}{4}$.",
+        "$\\int_{5/2}^{5}(2x-5)\\,dx=\\left[x^2-5x\\right]_{5/2}^{5}=0-\\left(-\\dfrac{25}{4}\\right)=\\dfrac{25}{4}$.",
+        "Total: $\\dfrac{25}{4}+\\dfrac{25}{4}=\\dfrac{25}{2}$."
+      ],
+      "brief": "Split at $x=\\frac52$: $\\frac{25}{4}+\\frac{25}{4}=\\frac{25}{2}$."
+    },
+    {
+      "sec": "5.4",
+      "q": "If $F(x)=\\int_0^{\\sin x}\\sqrt{t}\\,dt$, then $F'\\left(\\dfrac{\\pi}{6}\\right)=$",
+      "opts": [
+        "$\\dfrac{\\sqrt6}{4}$",
+        "$\\dfrac{\\sqrt6}{2}$",
+        "$\\dfrac{\\sqrt6}{3}$",
+        "$\\dfrac{\\sqrt3}{2}$",
+        "$\\dfrac{\\sqrt2}{2}$"
+      ],
+      "ans": 0,
+      "hints": [
+        "The upper limit is a function of $x$, so use the Fundamental Theorem of Calculus together with the chain rule.",
+        "Substitute the upper limit into the integrand and multiply by the derivative of the upper limit.",
+        "$\\dfrac{d}{dx}\\int_a^{g(x)}f(t)\\,dt=f(g(x))\\,g'(x)$."
+      ],
+      "steps": [
+        "$F'(x)=\\sqrt{\\sin x}\\cdot\\cos x$.",
+        "At $x=\\pi/6$: $\\sin x=\\dfrac12$, $\\cos x=\\dfrac{\\sqrt3}{2}$.",
+        "$F'(\\pi/6)=\\dfrac{1}{\\sqrt2}\\cdot\\dfrac{\\sqrt3}{2}=\\dfrac{\\sqrt3}{2\\sqrt2}=\\dfrac{\\sqrt6}{4}$."
+      ],
+      "brief": "$F'(x)=\\sqrt{\\sin x}\\cos x$, so $F'(\\pi/6)=\\frac{1}{\\sqrt2}\\cdot\\frac{\\sqrt3}{2}=\\frac{\\sqrt6}{4}$."
+    },
+    {
+      "sec": "7.1",
+      "q": "The area of the region bounded by the graphs of the equations $x=y^2$ and $x=y+2$ is",
+      "opts": [
+        "$\\dfrac92$",
+        "$\\dfrac72$",
+        "$\\dfrac52$",
+        "$\\dfrac32$",
+        "$\\dfrac{11}{2}$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Both curves are given as $x$ in terms of $y$, so integrate with respect to $y$.",
+        "Find the intersection points by setting the two expressions for $x$ equal, then decide which curve is on the right.",
+        "Area $=\\int_c^d\\left(x_{\\text{right}}(y)-x_{\\text{left}}(y)\\right)dy$ between the $y$-values of the intersection points."
+      ],
+      "steps": [
+        "$y^2=y+2\\Rightarrow(y-2)(y+1)=0$, so $y=-1$ and $y=2$.",
+        "On $(-1,2)$ the line $x=y+2$ is to the right of the parabola $x=y^2$ (e.g. at $y=0$: $2>0$).",
+        "Area $=\\int_{-1}^{2}(y+2-y^2)\\,dy=\\left[\\dfrac{y^2}{2}+2y-\\dfrac{y^3}{3}\\right]_{-1}^{2}$.",
+        "$=\\left(2+4-\\dfrac83\\right)-\\left(\\dfrac12-2+\\dfrac13\\right)=\\dfrac{10}{3}+\\dfrac76=\\dfrac92$."
+      ],
+      "brief": "Intersect at $y=-1,2$: $\\int_{-1}^{2}(y+2-y^2)\\,dy=\\frac92$."
+    },
+    {
+      "sec": "5.9",
+      "q": "$\\int_{1/2}^{1}\\operatorname{sech}^2(2x-1)\\,dx=$",
+      "opts": [
+        "$\\dfrac12\\tanh 1$",
+        "$\\tanh 1$",
+        "$\\dfrac12\\operatorname{sech}1$",
+        "$\\operatorname{sech}1$",
+        "$\\dfrac12\\coth 1$"
+      ],
+      "ans": 0,
+      "hints": [
+        "This is a hyperbolic integral; use the integral that matches $\\operatorname{sech}^2$ and a substitution for the inside.",
+        "Let $u$ be the inner linear expression and change the limits.",
+        "$\\int\\operatorname{sech}^2u\\,du=\\tanh u+C$."
+      ],
+      "steps": [
+        "Let $u=2x-1$, $du=2\\,dx$; $x=\\frac12\\Rightarrow u=0$ and $x=1\\Rightarrow u=1$.",
+        "$\\int_{1/2}^{1}\\operatorname{sech}^2(2x-1)\\,dx=\\dfrac12\\int_0^1\\operatorname{sech}^2u\\,du$.",
+        "$=\\dfrac12\\left[\\tanh u\\right]_0^1=\\dfrac12\\tanh1$."
+      ],
+      "brief": "$u=2x-1$: $\\frac12\\int_0^1\\operatorname{sech}^2u\\,du=\\frac12\\tanh1$."
+    },
+    {
+      "sec": "7.1",
+      "q": "The area of the region bounded by the graphs of $f(x)=\\dfrac{-4}{x^3}$, $y=0$, $x=-3$, and $x=-1$ is",
+      "opts": [
+        "$\\dfrac{16}{9}$",
+        "$\\dfrac{25}{9}$",
+        "$\\dfrac{9}{16}$",
+        "$\\dfrac{9}{25}$",
+        "$\\dfrac94$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Area between a curve and the $x$-axis: first decide the sign of $f$ on the interval.",
+        "Check the sign of $f$ for $x$ in $[-3,-1]$, then integrate $|f|$ (or $-f$ if $f$ is negative).",
+        "Area $=\\int_a^b|f(x)|\\,dx$, and $\\int x^{n}\\,dx=\\dfrac{x^{n+1}}{n+1}$ for $n\\ne-1$."
+      ],
+      "steps": [
+        "For $x<0$, $x^3<0$, so $f(x)=\\dfrac{-4}{x^3}>0$ on $[-3,-1]$.",
+        "Area $=\\int_{-3}^{-1}-4x^{-3}\\,dx=\\left[2x^{-2}\\right]_{-3}^{-1}$.",
+        "$=2-\\dfrac29=\\dfrac{16}{9}$."
+      ],
+      "brief": "$f>0$ on $[-3,-1]$: $\\left[2x^{-2}\\right]_{-3}^{-1}=2-\\frac29=\\frac{16}{9}$."
+    },
+    {
+      "sec": "5.2",
+      "q": "The lower sum (in terms of $n$, which is the number of equal subintervals), for the region bounded by the graph of the function $f(x)=9-x^2$ and the $x$-axis on the interval $[0,2]$ is:",
+      "opts": [
+        "$\\dfrac{46}{3}-\\dfrac4n-\\dfrac{4}{3n^2}$",
+        "$\\dfrac{46}{3}+\\dfrac4n-\\dfrac{4}{3n^2}$",
+        "$\\dfrac{46}{3}+\\dfrac4n+\\dfrac{2}{3n^2}$",
+        "$\\dfrac{46}{3}-\\dfrac4n+\\dfrac{2}{3n^2}$",
+        "$\\dfrac{23}{3}+\\dfrac4n+\\dfrac{2}{3n^2}$"
+      ],
+      "ans": 0,
+      "hints": [
+        "A lower sum uses the smallest function value on each subinterval; decide which end point that is for this function.",
+        "Check whether $f$ is increasing or decreasing on $[0,2]$, then write the sum with $\\Delta x=\\frac{b-a}{n}$ and the correct end points $x_i=a+i\\Delta x$.",
+        "$\\sum_{i=1}^{n}1=n$, $\\sum_{i=1}^{n}i^2=\\dfrac{n(n+1)(2n+1)}{6}$; a decreasing function has its minimum at the right end point of each subinterval."
+      ],
+      "steps": [
+        "$f(x)=9-x^2$ is decreasing on $[0,2]$, so the minimum is at the right end point $x_i=\\dfrac{2i}{n}$, with $\\Delta x=\\dfrac2n$.",
+        "$s(n)=\\sum_{i=1}^{n}\\left(9-\\dfrac{4i^2}{n^2}\\right)\\dfrac2n=18-\\dfrac{8}{n^3}\\sum_{i=1}^{n}i^2$.",
+        "$=18-\\dfrac{8}{n^3}\\cdot\\dfrac{n(n+1)(2n+1)}{6}=18-\\dfrac{4(2n^2+3n+1)}{3n^2}$.",
+        "$=18-\\dfrac83-\\dfrac4n-\\dfrac{4}{3n^2}=\\dfrac{46}{3}-\\dfrac4n-\\dfrac{4}{3n^2}$."
+      ],
+      "brief": "Decreasing, so right end points: $18-\\frac{8}{n^3}\\sum i^2=\\frac{46}{3}-\\frac4n-\\frac{4}{3n^2}$."
+    },
+    {
+      "sec": "5.7",
+      "q": "$\\int_{\\pi/8}^{\\pi/4}(\\csc2\\theta-\\cot2\\theta)\\,d\\theta=$",
+      "opts": [
+        "$\\dfrac12\\ln\\left(1+\\dfrac{\\sqrt2}{2}\\right)$",
+        "$\\ln\\left(1+\\dfrac{\\sqrt2}{2}\\right)$",
+        "$\\dfrac12\\ln\\left(1+\\sqrt2\\right)$",
+        "$\\ln(1+\\sqrt2)$",
+        "$\\dfrac12\\ln\\left(1+\\dfrac{\\sqrt2}{4}\\right)$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Use the integrals of $\\csc$ and $\\cot$ from the trig log rules, after substituting for the double angle.",
+        "Let $u=2\\theta$ and change the limits, then integrate each term.",
+        "$\\int\\csc u\\,du=\\ln|\\csc u-\\cot u|+C$ and $\\int\\cot u\\,du=\\ln|\\sin u|+C$."
+      ],
+      "steps": [
+        "Let $u=2\\theta$, $d\\theta=\\frac12du$; limits $\\theta=\\frac\\pi8\\to u=\\frac\\pi4$, $\\theta=\\frac\\pi4\\to u=\\frac\\pi2$.",
+        "Integral $=\\dfrac12\\left[\\ln|\\csc u-\\cot u|-\\ln|\\sin u|\\right]_{\\pi/4}^{\\pi/2}$.",
+        "At $\\frac\\pi2$: $\\ln(1-0)-\\ln1=0$. At $\\frac\\pi4$: $\\ln(\\sqrt2-1)-\\ln\\dfrac{\\sqrt2}{2}$.",
+        "$\\dfrac12\\left[0-\\ln\\dfrac{\\sqrt2-1}{\\sqrt2/2}\\right]=\\dfrac12\\ln\\dfrac{\\sqrt2/2}{\\sqrt2-1}=\\dfrac12\\ln\\dfrac{\\sqrt2(\\sqrt2+1)}{2}=\\dfrac12\\ln\\left(1+\\dfrac{\\sqrt2}{2}\\right)$."
+      ],
+      "brief": "$u=2\\theta$: $\\frac12\\left[\\ln|\\csc u-\\cot u|-\\ln\\sin u\\right]_{\\pi/4}^{\\pi/2}=\\frac12\\ln\\left(1+\\frac{\\sqrt2}{2}\\right)$."
+    },
+    {
+      "sec": "5.5",
+      "q": "$\\int x\\sqrt{x+6}\\,dx=$",
+      "opts": [
+        "$\\dfrac25(x+6)^{3/2}(x-4)+C$",
+        "$\\dfrac15(x+6)^{3/2}(x-4)+C$",
+        "$\\dfrac25(x+6)^{1/2}(x-4)+C$",
+        "$\\dfrac25(x+6)^{3/2}(x+4)+C$",
+        "$\\dfrac15(x+6)^{3/2}(x+4)+C$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Use substitution for the expression under the square root.",
+        "Let $u=x+6$, express $x$ in terms of $u$, and expand the integrand into powers of $u$.",
+        "$\\int u^{n}\\,du=\\dfrac{u^{n+1}}{n+1}+C$ for $n\\neq-1$; at the end substitute back and factor out the common power."
+      ],
+      "steps": [
+        "$u=x+6$, $x=u-6$, $dx=du$: $\\int(u-6)u^{1/2}\\,du=\\int\\left(u^{3/2}-6u^{1/2}\\right)du$.",
+        "$=\\dfrac25u^{5/2}-4u^{3/2}+C$.",
+        "Factor: $\\dfrac25u^{3/2}(u-10)+C$.",
+        "Back-substitute: $\\dfrac25(x+6)^{3/2}(x+6-10)+C=\\dfrac25(x+6)^{3/2}(x-4)+C$."
+      ],
+      "brief": "$u=x+6$: $\\frac25u^{5/2}-4u^{3/2}=\\frac25(x+6)^{3/2}(x-4)+C$."
+    },
+    {
+      "sec": "5.8",
+      "q": "$\\int\\dfrac{1}{\\sqrt{-x^2-4x}}\\,dx=$",
+      "opts": [
+        "$\\arcsin\\left(\\dfrac{x+2}{2}\\right)+C$",
+        "$\\arcsin\\left(\\dfrac{x+4}{2}\\right)+C$",
+        "$\\arccos\\left(\\dfrac{x+2}{2}\\right)+C$",
+        "$\\arccos\\left(\\dfrac{x+4}{2}\\right)+C$",
+        "$\\arcsin(x+2)+C$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Complete the square under the root to get a form matching an inverse trigonometric integral.",
+        "Rewrite $-x^2-4x$ as a constant minus a perfect square, then substitute for the square.",
+        "$\\int\\dfrac{du}{\\sqrt{a^2-u^2}}=\\arcsin\\dfrac ua+C$."
+      ],
+      "steps": [
+        "$-x^2-4x=-(x^2+4x+4)+4=4-(x+2)^2$.",
+        "Let $u=x+2$, $du=dx$, $a=2$.",
+        "$\\int\\dfrac{du}{\\sqrt{4-u^2}}=\\arcsin\\dfrac u2+C=\\arcsin\\left(\\dfrac{x+2}{2}\\right)+C$."
+      ],
+      "brief": "$-x^2-4x=4-(x+2)^2$, so the integral is $\\arcsin\\frac{x+2}{2}+C$."
+    }
+  ]
+}

@@ -1,0 +1,488 @@
+{
+  "course": "math208",
+  "term": "232",
+  "kind": "e1",
+  "date": "20 February 2024",
+  "minutes": 120,
+  "source": "math208-232-e1.pdf",
+  "note": "Date and net time (120 minutes) are printed on the cover. The master version does not mark the correct choice; the first choice (a) of every question is the key by the usual convention, and all 20 were verified independently to be correct.",
+  "qs": [
+    {
+      "sec": "1.1",
+      "q": "If $y=\\dfrac14x^5+bx^{-3}$ is a solution of the initial-value problem \\[ x\\frac{dy}{dx}+3y=2x^5,\\quad y(2)=1, \\] then $b=$",
+      "opts": [
+        "$-56$",
+        "$-57$",
+        "$-55$",
+        "$54$",
+        "$53$"
+      ],
+      "ans": 0,
+      "hints": [
+        "The initial condition fixes the unknown constant in the given formula for $y$.",
+        "Evaluate the given $y$ at the point named in the initial condition and set it equal to the given value.",
+        "If $y(x_0)=y_0$, substitute $x=x_0$ into the formula and solve the resulting equation for the unknown constant."
+      ],
+      "steps": [
+        "The formula is already stated to be a solution, so only $y(2)=1$ is needed.",
+        "$y(2)=\\dfrac14\\cdot 2^5+b\\cdot 2^{-3}=8+\\dfrac b8$.",
+        "Set $8+\\dfrac b8=1$, so $\\dfrac b8=-7$.",
+        "Hence $b=-56$."
+      ],
+      "brief": "$y(2)=8+\\frac b8=1$, so $b=-56$."
+    },
+    {
+      "sec": "1.1",
+      "q": "The order of the differential equation \\[ y^{(4)}+x^2y^{(3)}+x(y')^6=\\sin x \\] is equal to",
+      "opts": [
+        "$4$",
+        "$2$",
+        "$6$",
+        "$3$",
+        "$7$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Order is about derivatives, not about powers.",
+        "List the order of each derivative that appears and look at the highest one.",
+        "The order of a differential equation is the order of the highest derivative of $y$ appearing in it; exponents on a derivative do not change its order."
+      ],
+      "steps": [
+        "The derivatives present are $y^{(4)}$, $y^{(3)}$ and $y'$.",
+        "The power $6$ on $y'$ affects the degree, not the order.",
+        "The highest derivative is $y^{(4)}$, so the order is $4$."
+      ],
+      "brief": "Highest derivative is $y^{(4)}$, so the order is $4$."
+    },
+    {
+      "sec": "1.2",
+      "q": "If $y=y(x)$ is the solution of the initial-value problem \\[ \\frac{dy}{dx}=\\frac{1}{\\sqrt{1-x^2}},\\quad y(0)=0, \\] then $y\\left(\\dfrac12\\right)=$",
+      "opts": [
+        "$\\dfrac{\\pi}{6}$",
+        "$-\\dfrac{\\pi}{6}$",
+        "$\\dfrac{\\pi}{3}$",
+        "$-\\dfrac{\\pi}{3}$",
+        "$\\dfrac{\\pi}{4}$"
+      ],
+      "ans": 0,
+      "hints": [
+        "The right side depends only on $x$, so $y$ is found by a direct integration.",
+        "Recall which standard inverse trigonometric function has the given derivative, then fix the constant with $y(0)=0$.",
+        "$\\dfrac{d}{dx}\\sin^{-1}x=\\dfrac{1}{\\sqrt{1-x^2}}$, and $\\sin^{-1}$ takes values in $[-\\pi/2,\\pi/2]$."
+      ],
+      "steps": [
+        "Integrate: $y=\\sin^{-1}x+C$.",
+        "$y(0)=\\sin^{-1}0+C=C=0$, so $y=\\sin^{-1}x$.",
+        "$y\\left(\\dfrac12\\right)=\\sin^{-1}\\dfrac12=\\dfrac{\\pi}{6}$."
+      ],
+      "brief": "$y=\\sin^{-1}x$ (since $y(0)=0$), so $y(\\frac12)=\\frac{\\pi}{6}$."
+    },
+    {
+      "sec": "1.2",
+      "q": "If a particle is moving in a straight line with acceleration $a(t)=\\dfrac{1}{(t+1)^3}$, initial position $x(0)=0$, and an initial velocity $v(0)=0$, then the position of the particle at $t=\\dfrac12$ is",
+      "opts": [
+        "$\\dfrac{1}{12}$",
+        "$\\dfrac23$",
+        "$\\dfrac12$",
+        "$\\dfrac32$",
+        "$\\dfrac{1}{14}$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Acceleration is the derivative of velocity, and velocity is the derivative of position, so integrate twice.",
+        "Integrate $a(t)$ once and use $v(0)=0$ for the constant; then integrate $v(t)$ and use $x(0)=0$.",
+        "$v(t)=\\int a(t)\\,dt$, $x(t)=\\int v(t)\\,dt$, with $\\int (t+1)^n\\,dt=\\dfrac{(t+1)^{n+1}}{n+1}$ for $n\\neq-1$."
+      ],
+      "steps": [
+        "$v(t)=\\int (t+1)^{-3}dt=-\\dfrac{1}{2(t+1)^2}+C_1$.",
+        "$v(0)=-\\dfrac12+C_1=0$, so $v(t)=\\dfrac12-\\dfrac{1}{2(t+1)^2}$.",
+        "$x(t)=\\dfrac t2+\\dfrac{1}{2(t+1)}+C_2$, and $x(0)=\\dfrac12+C_2=0$ gives $C_2=-\\dfrac12$.",
+        "$x\\left(\\dfrac12\\right)=\\dfrac14+\\dfrac13-\\dfrac12=\\dfrac{1}{12}$."
+      ],
+      "brief": "$v=\\frac12-\\frac{1}{2(t+1)^2}$, $x=\\frac t2+\\frac{1}{2(t+1)}-\\frac12$, $x(\\frac12)=\\frac1{12}$."
+    },
+    {
+      "sec": "1.4",
+      "q": "The general solution of the differential equation $(x^2+1)(\\tan y)\\,y'=x$ is given by",
+      "opts": [
+        "$y(x)=\\sec^{-1}\\left(c\\sqrt{1+x^2}\\right)$",
+        "$y(x)=\\sec^{-1}\\left(c\\sqrt{2+x^2}\\right)$",
+        "$y(x)=\\tan^{-1}\\left(c\\sqrt{1+x^2}\\right)$",
+        "$y(x)=\\tan^{-1}\\left(c\\sqrt{2+x^2}\\right)$",
+        "$y(x)=\\sec^{-1}\\left(c\\sqrt{x^2-1}\\right)$"
+      ],
+      "ans": 0,
+      "hints": [
+        "The equation is separable: a function of $y$ times $y'$ equals a function of $x$.",
+        "Divide by $x^2+1$ and integrate $\\tan y\\,dy$ on one side and the $x$ expression on the other.",
+        "$\\int\\tan y\\,dy=-\\ln|\\cos y|+C=\\ln|\\sec y|+C$ and $\\int\\dfrac{x}{x^2+1}\\,dx=\\dfrac12\\ln(x^2+1)+C$."
+      ],
+      "steps": [
+        "Separate: $\\tan y\\,dy=\\dfrac{x}{x^2+1}\\,dx$.",
+        "Integrate: $\\ln|\\sec y|=\\dfrac12\\ln(x^2+1)+C_1$.",
+        "Exponentiate: $\\sec y=c\\sqrt{1+x^2}$, where $c$ is an arbitrary constant.",
+        "So $y(x)=\\sec^{-1}\\left(c\\sqrt{1+x^2}\\right)$."
+      ],
+      "brief": "$\\ln|\\sec y|=\\frac12\\ln(x^2+1)+C$, so $y=\\sec^{-1}\\left(c\\sqrt{1+x^2}\\right)$."
+    },
+    {
+      "sec": "1.4",
+      "q": "A pitcher of buttermilk initially at $25^\\circ\\text{C}$ is to be cooled by setting it on the front porch, where the temperature is $0^\\circ$. Suppose that the temperature of the buttermilk has dropped to $15^\\circ$ after 20 min. The temperature of the buttermilk will be $9^\\circ$ when $t=$",
+      "opts": [
+        "$40$",
+        "$30$",
+        "$20$",
+        "$25$",
+        "$28$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Use Newton's law of cooling: the temperature difference from the surroundings decays exponentially.",
+        "Write $T(t)$ with the surrounding and initial temperatures, then use the 20-minute reading to get the decay factor.",
+        "$T(t)=A+(T_0-A)e^{-kt}$, where $A$ is the surrounding temperature; compare the ratio $\\dfrac{T-A}{T_0-A}$ at the two times."
+      ],
+      "steps": [
+        "With $A=0$ and $T_0=25$: $T(t)=25e^{-kt}$.",
+        "$T(20)=15$ gives $e^{-20k}=\\dfrac{15}{25}=\\dfrac35$.",
+        "We want $T=9$: $e^{-kt}=\\dfrac{9}{25}=\\left(\\dfrac35\\right)^2=e^{-40k}$.",
+        "Therefore $t=40$ minutes."
+      ],
+      "brief": "$e^{-20k}=\\frac35$, and $\\frac9{25}=(\\frac35)^2$, so $t=40$."
+    },
+    {
+      "sec": "1.5",
+      "q": "The general solution of the linear differential equation $xy'=3y+x^4\\cos x$ is given by",
+      "opts": [
+        "$y=x^3(\\sin x+c)$",
+        "$y=x^2(\\sin x+c)$",
+        "$y=x^4(\\sin x+c)$",
+        "$y=x^3(\\cos x+c)$",
+        "$y=x^2(\\cos x+c)$"
+      ],
+      "ans": 0,
+      "hints": [
+        "This is a first-order linear equation in $y$.",
+        "Rewrite it as $y'+P(x)y=Q(x)$ by dividing by $x$ and moving the $y$ term, then find the integrating factor.",
+        "$\\rho=e^{\\int P\\,dx}$ and $(\\rho y)'=\\rho Q$."
+      ],
+      "steps": [
+        "Standard form (for $x>0$): $y'-\\dfrac3x\\,y=x^3\\cos x$.",
+        "$\\rho=e^{\\int(-3/x)\\,dx}=x^{-3}$.",
+        "$\\left(x^{-3}y\\right)'=\\cos x$, so $x^{-3}y=\\sin x+c$.",
+        "Hence $y=x^3(\\sin x+c)$."
+      ],
+      "brief": "$\\rho=x^{-3}$: $(x^{-3}y)'=\\cos x$, so $y=x^3(\\sin x+c)$."
+    },
+    {
+      "sec": "1.6",
+      "q": "The general solution of the differential equation $xy''=y'$ is given by",
+      "opts": [
+        "$y=Ax^2+B$",
+        "$y=Ax^3+B$",
+        "$y=Ax^4+B$",
+        "$y=Ax^2+Bx$",
+        "$y=Ax^3+Bx$"
+      ],
+      "ans": 0,
+      "hints": [
+        "The dependent variable $y$ does not appear, only $y'$ and $y''$.",
+        "Set $p=y'$ so that $y''=p'$, solve for $p$, then integrate once more.",
+        "With $y$ missing, put $p=y'$, $y''=\\dfrac{dp}{dx}$; the new first-order equation in $p$ is then solved and $y=\\int p\\,dx$."
+      ],
+      "steps": [
+        "Let $p=y'$, so $xp'=p$.",
+        "Separate: $\\dfrac{dp}{p}=\\dfrac{dx}{x}$, so $p=Cx$.",
+        "Integrate: $y=\\dfrac C2x^2+B$.",
+        "Renaming constants, $y=Ax^2+B$."
+      ],
+      "brief": "$p=y'$: $xp'=p$, $p=Cx$, so $y=Ax^2+B$."
+    },
+    {
+      "sec": "1.6",
+      "q": "A constant $K$ that makes the differential equation \\[ \\left(x^3+\\frac yx\\right)dx+(y^2+K\\ln x)\\,dy=0 \\] exact is",
+      "opts": [
+        "$1$",
+        "$2$",
+        "$3$",
+        "$4$",
+        "$5$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Use the test for exactness of $M\\,dx+N\\,dy=0$.",
+        "Compute $\\partial M/\\partial y$ and $\\partial N/\\partial x$ and set them equal.",
+        "$M\\,dx+N\\,dy=0$ is exact if and only if $M_y=N_x$."
+      ],
+      "steps": [
+        "$M=x^3+\\dfrac yx$, so $M_y=\\dfrac1x$.",
+        "$N=y^2+K\\ln x$, so $N_x=\\dfrac Kx$.",
+        "Exactness requires $\\dfrac1x=\\dfrac Kx$, so $K=1$."
+      ],
+      "brief": "$M_y=\\frac1x$, $N_x=\\frac Kx$, so $K=1$."
+    },
+    {
+      "sec": "1.6",
+      "q": "A general solution of the exact differential equation \\[ \\left(\\frac{2x}{y}-\\frac{3y^2}{x^4}\\right)dx+\\left(\\frac{2y}{x^3}-\\frac{x^2}{y^2}+\\frac{1}{\\sqrt y}\\right)dy=0 \\] is",
+      "opts": [
+        "$\\dfrac{x^2}{y}+\\dfrac{y^2}{x^3}+2\\sqrt y=c$",
+        "$\\dfrac{x}{y}+\\dfrac{y^2}{x^3}+4\\sqrt y=c$",
+        "$\\dfrac{y}{x^2}+\\dfrac{y^2}{x^3}+2\\sqrt y=c$",
+        "$\\dfrac{x^2}{y}-\\dfrac{x^3}{y^2}+3\\sqrt y=c$",
+        "$\\dfrac{x^2}{y}+\\dfrac{y^2}{x^3}-3\\sqrt y=c$"
+      ],
+      "ans": 0,
+      "hints": [
+        "The equation is stated to be exact, so look for a function $F(x,y)$ with $F_x=M$ and $F_y=N$.",
+        "Integrate $M$ with respect to $x$, then determine the leftover function of $y$ by comparing $F_y$ with $N$.",
+        "$F=\\int M\\,dx+g(y)$ with $F_y=N$; the solution is $F(x,y)=c$."
+      ],
+      "steps": [
+        "$F=\\int\\left(\\dfrac{2x}{y}-\\dfrac{3y^2}{x^4}\\right)dx=\\dfrac{x^2}{y}+\\dfrac{y^2}{x^3}+g(y)$.",
+        "$F_y=-\\dfrac{x^2}{y^2}+\\dfrac{2y}{x^3}+g'(y)$.",
+        "Compare with $N$: $g'(y)=\\dfrac{1}{\\sqrt y}$, so $g(y)=2\\sqrt y$.",
+        "$\\dfrac{x^2}{y}+\\dfrac{y^2}{x^3}+2\\sqrt y=c$."
+      ],
+      "brief": "$F=\\frac{x^2}{y}+\\frac{y^2}{x^3}+g(y)$, $g'=\\frac1{\\sqrt y}$, so $+2\\sqrt y=c$."
+    },
+    {
+      "sec": "1.6",
+      "q": "By making a suitable substitution, the differential equation $2xy'+y^3e^{-2x}=2xy$ can be transformed into a linear differential equation",
+      "opts": [
+        "$u'+2u=\\dfrac{e^{-2x}}{x}$",
+        "$u'-2u=\\dfrac{e^{-2x}}{x}$",
+        "$u'+3u=\\dfrac{e^{-2x}}{x}$",
+        "$u'-3u=\\dfrac{e^{-2x}}{x}$",
+        "$u'+2u=\\dfrac{e^{-2x}}{3x}$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Besides the linear terms there is a $y^3$ term, so this is a Bernoulli equation.",
+        "Divide by $2x$ to reach $y'+P(x)y=Q(x)y^n$, identify $n$, and substitute $u=y^{1-n}$.",
+        "For $y'+Py=Qy^n$, the substitution $u=y^{1-n}$ gives $u'=(1-n)y^{-n}y'$, which makes the equation linear in $u$."
+      ],
+      "steps": [
+        "Divide by $2x$: $y'-y=-\\dfrac{e^{-2x}}{2x}\\,y^3$, so $n=3$.",
+        "Let $u=y^{-2}$, so $u'=-2y^{-3}y'$.",
+        "Multiply the equation by $-2y^{-3}$: $-2y^{-3}y'+2y^{-2}=\\dfrac{e^{-2x}}{x}$.",
+        "That is $u'+2u=\\dfrac{e^{-2x}}{x}$."
+      ],
+      "brief": "Bernoulli $n=3$, $u=y^{-2}$: $u'+2u=\\frac{e^{-2x}}{x}$."
+    },
+    {
+      "sec": "1.6",
+      "q": "By making a suitable substitution, the differential equation $(x^2-y^2)y'=2xy$ can be transformed into a separable differential equation",
+      "opts": [
+        "$\\dfrac{dy}{y}+\\dfrac{2v}{v^2+1}\\,dv=0$",
+        "$\\dfrac{dy}{y}+\\dfrac{v}{v^2+1}\\,dv=0$",
+        "$\\dfrac{dy}{y}+\\dfrac{3v}{v^2+1}\\,dv=0$",
+        "$\\dfrac{dy}{y}-\\dfrac{v}{v^2+1}\\,dv=0$",
+        "$\\dfrac{dy}{y}-\\dfrac{2v}{v^2+1}\\,dv=0$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Every term is of the same degree in $x$ and $y$, so the equation is homogeneous.",
+        "The answers have $dy/y$, so $y$ is the independent variable: write $dx/dy$ and substitute $x=vy$.",
+        "With $x=vy$, $\\dfrac{dx}{dy}=v+y\\dfrac{dv}{dy}$; then separate the variables $v$ and $y$."
+      ],
+      "steps": [
+        "Write $\\dfrac{dx}{dy}=\\dfrac{x^2-y^2}{2xy}$ and put $x=vy$: $v+y\\dfrac{dv}{dy}=\\dfrac{v^2-1}{2v}$.",
+        "$y\\dfrac{dv}{dy}=\\dfrac{v^2-1}{2v}-v=\\dfrac{-v^2-1}{2v}$.",
+        "Separate: $\\dfrac{2v}{v^2+1}\\,dv=-\\dfrac{dy}{y}$.",
+        "That is $\\dfrac{dy}{y}+\\dfrac{2v}{v^2+1}\\,dv=0$, with $v=x/y$."
+      ],
+      "brief": "$x=vy$: $y\\frac{dv}{dy}=-\\frac{v^2+1}{2v}$, so $\\frac{dy}{y}+\\frac{2v}{v^2+1}dv=0$."
+    },
+    {
+      "sec": "1.5",
+      "q": "A general solution of the differential equation $y'+\\dfrac{1}{3x}\\,y=4$ is",
+      "opts": [
+        "$y=3x+\\dfrac{c}{\\sqrt[3]{x}}$",
+        "$y=x+\\dfrac{c}{\\sqrt[3]{x}}$",
+        "$y=3x+\\dfrac{c}{\\sqrt{x}}$",
+        "$y=x+\\dfrac{c}{\\sqrt{x}}$",
+        "$y=2x+\\dfrac{c}{\\sqrt{x}}$"
+      ],
+      "ans": 0,
+      "hints": [
+        "This is a first-order linear equation in standard form.",
+        "Read off $P(x)$, compute the integrating factor, and multiply through.",
+        "$\\rho=e^{\\int P\\,dx}$ and $(\\rho y)'=\\rho Q$."
+      ],
+      "steps": [
+        "$P=\\dfrac{1}{3x}$, so $\\rho=e^{\\frac13\\ln x}=x^{1/3}$ (for $x>0$).",
+        "$\\left(x^{1/3}y\\right)'=4x^{1/3}$.",
+        "Integrate: $x^{1/3}y=3x^{4/3}+c$.",
+        "So $y=3x+\\dfrac{c}{\\sqrt[3]{x}}$."
+      ],
+      "brief": "$\\rho=x^{1/3}$: $(x^{1/3}y)'=4x^{1/3}$, so $y=3x+c\\,x^{-1/3}$."
+    },
+    {
+      "sec": "4.1",
+      "q": "Let $\\mathbf a=2\\mathbf i-\\mathbf j$, $\\mathbf b=\\mathbf j-3\\mathbf k$. Then $|3\\mathbf a-4\\mathbf b|=$",
+      "opts": [
+        "$\\sqrt{229}$",
+        "$\\sqrt{227}$",
+        "$\\sqrt{231}$",
+        "$\\sqrt{226}$",
+        "$\\sqrt{224}$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Form the vector $3\\mathbf a-4\\mathbf b$ component by component, then find its length.",
+        "Write $\\mathbf a$ and $\\mathbf b$ as triples $(a_1,a_2,a_3)$ and combine them.",
+        "The length of $(x,y,z)$ is $\\sqrt{x^2+y^2+z^2}$."
+      ],
+      "steps": [
+        "$\\mathbf a=(2,-1,0)$ and $\\mathbf b=(0,1,-3)$.",
+        "$3\\mathbf a-4\\mathbf b=(6,-3,0)-(0,4,-12)=(6,-7,12)$.",
+        "$|3\\mathbf a-4\\mathbf b|=\\sqrt{36+49+144}=\\sqrt{229}$."
+      ],
+      "brief": "$3\\mathbf a-4\\mathbf b=(6,-7,12)$, length $\\sqrt{229}$."
+    },
+    {
+      "sec": "4.1",
+      "q": "The value of $k$ for which the vectors of $\\mathbb R^3$ \\[ \\mathbf u=(1,-1,2),\\quad \\mathbf v=(3k,0,k+1),\\quad \\mathbf w=(1,-2,2) \\] are linearly independent are",
+      "opts": [
+        "$k\\neq\\dfrac15$",
+        "$k\\neq\\dfrac14$",
+        "$k\\neq0$",
+        "$k\\neq\\dfrac16$",
+        "$k\\neq1$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Three vectors in $\\mathbb R^3$ are independent exactly when the matrix built from them is invertible.",
+        "Put the three vectors as the rows of a $3\\times3$ matrix and compute its determinant as a function of $k$.",
+        "$n$ vectors in $\\mathbb R^n$ are linearly independent if and only if the matrix having them as rows (or columns) has nonzero determinant."
+      ],
+      "steps": [
+        "Take $\\det\\begin{bmatrix}1&-1&2\\\\3k&0&k+1\\\\1&-2&2\\end{bmatrix}$ and expand along the first row.",
+        "$=1\\bigl(0+2(k+1)\\bigr)+1\\bigl(6k-(k+1)\\bigr)+2(-6k-0)$.",
+        "$=2k+2+5k-1-12k=1-5k$.",
+        "The vectors are independent exactly when $1-5k\\neq0$, that is $k\\neq\\dfrac15$."
+      ],
+      "brief": "$\\det=1-5k\\neq0$, so $k\\neq\\frac15$."
+    },
+    {
+      "sec": "4.1",
+      "q": "Let $\\mathbf u=(4,1)$, $\\mathbf v=(-2,-1)$, $\\mathbf w=(2,-2)$ be vectors in $\\mathbb R^2$. If $\\mathbf w=a\\mathbf u+b\\mathbf v$, then $a+b=$",
+      "opts": [
+        "$8$",
+        "$7$",
+        "$6$",
+        "$5$",
+        "$4$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Writing $\\mathbf w$ as a combination of $\\mathbf u$ and $\\mathbf v$ gives a linear system for $a$ and $b$.",
+        "Compare the first and second components of $a\\mathbf u+b\\mathbf v$ with those of $\\mathbf w$, giving two equations.",
+        "Two vectors are equal when their corresponding components are equal; solve the resulting $2\\times2$ system by elimination or substitution."
+      ],
+      "steps": [
+        "Components: $4a-2b=2$ and $a-b=-2$.",
+        "From the second, $a=b-2$. Substituting: $4b-8-2b=2$, so $b=5$.",
+        "Then $a=3$.",
+        "$a+b=8$."
+      ],
+      "brief": "$4a-2b=2$, $a-b=-2$ give $a=3$, $b=5$, so $a+b=8$."
+    },
+    {
+      "sec": "4.1",
+      "q": "Which one of the following statements is true about the subset $V$ of $\\mathbb R^3$ defined by \\[ V=\\{(x,y,z): x+y+z=0\\}? \\]",
+      "opts": [
+        "$V$ is a subspace of $\\mathbb R^3$",
+        "$V$ is not closed under addition",
+        "$V$ is not closed under multiplication by scalars",
+        "$V$ is closed under addition but not closed under multiplication by scalars",
+        "$V$ is not closed under addition but closed under multiplication by scalars"
+      ],
+      "ans": 0,
+      "hints": [
+        "A subset is a subspace when it contains $\\mathbf 0$ and is closed under addition and scalar multiplication.",
+        "Take two general vectors in $V$ and a scalar, and test whether the defining equation still holds.",
+        "The solution set of a homogeneous linear equation $A\\mathbf x=\\mathbf 0$ is always a subspace of $\\mathbb R^n$."
+      ],
+      "steps": [
+        "$\\mathbf 0=(0,0,0)$ satisfies $x+y+z=0$, so $V$ is nonempty.",
+        "If $(x_1,y_1,z_1),(x_2,y_2,z_2)\\in V$, the sum has coordinate sum $(x_1+y_1+z_1)+(x_2+y_2+z_2)=0$, so $V$ is closed under addition.",
+        "For a scalar $c$, $cx+cy+cz=c(x+y+z)=0$, so $V$ is closed under scalar multiplication.",
+        "Hence $V$ is a subspace of $\\mathbb R^3$."
+      ],
+      "brief": "Homogeneous linear equation: contains $\\mathbf 0$, closed under $+$ and scalars, a subspace."
+    },
+    {
+      "sec": "Ch. 3",
+      "q": "The solution of the system \\[ \\begin{aligned} x_1+3x_2+3x_3+3x_4&=0\\\\ 2x_1+7x_2+5x_3-x_4&=0\\\\ 2x_1+7x_2+4x_3-4x_4&=0 \\end{aligned} \\] is the set of all scalar multiples of a vector $\\mathbf u$ where $\\mathbf u=$",
+      "opts": [
+        "$(-6,4,-3,1)$",
+        "$(-6,-4,-3,1)$",
+        "$(6,4,-3,1)$",
+        "$(-6,4,3,1)$",
+        "$(-6,4,-3,-1)$"
+      ],
+      "ans": 0,
+      "hints": [
+        "This is a homogeneous linear system with one free variable.",
+        "Row reduce the coefficient matrix, then express the leading variables in terms of the free variable.",
+        "Gaussian elimination: after reaching row echelon form, back-substitute; the solution set is the span of the vector obtained by setting the free variable equal to $1$."
+      ],
+      "steps": [
+        "$R_2-2R_1$ and $R_3-2R_1$: rows become $(0,1,-1,-7)$ and $(0,1,-2,-10)$.",
+        "$R_3-R_2$: $(0,0,-1,-3)$, so $x_3=-3x_4$.",
+        "Then $x_2=x_3+7x_4=4x_4$.",
+        "$x_1=-3x_2-3x_3-3x_4=-12x_4+9x_4-3x_4=-6x_4$.",
+        "With $x_4=1$: $\\mathbf u=(-6,4,-3,1)$."
+      ],
+      "brief": "Row reduce: $x_3=-3x_4$, $x_2=4x_4$, $x_1=-6x_4$, so $\\mathbf u=(-6,4,-3,1)$."
+    },
+    {
+      "sec": "1.6",
+      "q": "A general solution of the differential equation $(x+y)\\,y'=1$ is",
+      "opts": [
+        "$y=\\ln(x+y+1)+c$",
+        "$y=\\ln(x+y+2)+c$",
+        "$y=\\ln(x+y+1)+cx$",
+        "$y=\\ln(x+y+2)+cx$",
+        "$y=\\ln(x+y-1)+cx$"
+      ],
+      "ans": 0,
+      "hints": [
+        "The right side after solving for $y'$ is a function of the single combination $x+y$, so use a linear substitution.",
+        "Let $v=x+y$ and compute $v'$ in terms of $v$, giving a separable equation.",
+        "With $v=ax+by+c$, $v'=a+by'$; the equation becomes $v'=f(v)$ and $\\int\\dfrac{dv}{f(v)}=\\int dx$."
+      ],
+      "steps": [
+        "$y'=\\dfrac{1}{x+y}$. Let $v=x+y$, so $v'=1+y'=1+\\dfrac1v=\\dfrac{v+1}{v}$.",
+        "Separate: $\\dfrac{v}{v+1}\\,dv=dx$, i.e. $\\left(1-\\dfrac{1}{v+1}\\right)dv=dx$.",
+        "Integrate: $v-\\ln|v+1|=x+C$.",
+        "Substitute $v=x+y$: $x+y-\\ln|x+y+1|=x+C$, so $y=\\ln|x+y+1|+C$."
+      ],
+      "brief": "$v=x+y$: $v'=\\frac{v+1}{v}$, so $v-\\ln|v+1|=x+C$, i.e. $y=\\ln(x+y+1)+c$."
+    },
+    {
+      "sec": "1.5",
+      "q": "Which one of the following differential equations is linear?",
+      "opts": [
+        "$e^xy'+(\\ln x)\\,y=\\tan x$",
+        "$yy'+(\\ln x)\\,y=e^x$",
+        "$(y')^2+xy=x^2$",
+        "$y'+xy^2=x^3$",
+        "$y'+x\\sin y=e^x$"
+      ],
+      "ans": 0,
+      "hints": [
+        "A first-order equation is linear when it can be written as $a_1(x)y'+a_0(x)y=b(x)$.",
+        "Check each equation for products or powers of $y$ and $y'$, or functions of $y$ other than $y$ itself.",
+        "In a linear equation, $y$ and $y'$ appear only to the first power and are only multiplied by functions of $x$."
+      ],
+      "steps": [
+        "$yy'+(\\ln x)y=e^x$ has the product $yy'$, so it is not linear.",
+        "$(y')^2+xy=x^2$ has $(y')^2$, so it is not linear.",
+        "$y'+xy^2=x^3$ has $y^2$, and $y'+x\\sin y=e^x$ has $\\sin y$, so neither is linear.",
+        "$e^xy'+(\\ln x)y=\\tan x$ has the form $a_1(x)y'+a_0(x)y=b(x)$, so it is linear."
+      ],
+      "brief": "Only $e^xy'+(\\ln x)y=\\tan x$ has $y,y'$ to the first power with coefficients in $x$."
+    }
+  ]
+}

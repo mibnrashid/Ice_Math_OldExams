@@ -1,0 +1,333 @@
+{
+  "course": "math102",
+  "term": "241",
+  "kind": "e1",
+  "date": "2 October 2024",
+  "minutes": 90,
+  "source": "math102-241-e1.pdf",
+  "note": "Date and net time (90 minutes) are printed on the cover. All 14 master keys were marked (a) and verified with sympy. Q9 is labelled Review Exercises Chapter 5 in the source; classified here as 5.9 (hyperbolic integration).",
+  "qs": [
+    {
+      "sec": "5.2",
+      "q": "Use the left end points and 3 rectangles to find an approximation of the area of the region between the graph of the function $f(x)=2x^2-x-1$ and the $x$-axis over the interval $[2,5]$.",
+      "opts": [
+        "$46$",
+        "$47$",
+        "$49$",
+        "$51$",
+        "$45$"
+      ],
+      "ans": 0,
+      "hints": [
+        "This is a left-endpoint Riemann sum approximation.",
+        "Find the width of each rectangle, then list the left endpoints of the subintervals.",
+        "For $n$ rectangles on $[a,b]$: $\\Delta x=\\dfrac{b-a}{n}$ and $L_n=\\sum_{i=0}^{n-1}f(a+i\\Delta x)\\,\\Delta x$."
+      ],
+      "steps": [
+        "$\\Delta x=\\dfrac{5-2}{3}=1$, so the left endpoints are $2,3,4$.",
+        "$f(2)=5$, $f(3)=14$, $f(4)=27$.",
+        "Area $\\approx(5+14+27)(1)=46$."
+      ],
+      "brief": "$\\Delta x=1$, endpoints $2,3,4$: $5+14+27=46$."
+    },
+    {
+      "sec": "5.2",
+      "q": "The lower sum (in terms of $n$, the number of subintervals), for the region bounded by the graph of the function $f(x)=9-x^2$ on the interval $[0,2]$ is:",
+      "opts": [
+        "$\\dfrac{46}{3}-\\dfrac4n-\\dfrac{4}{3n^2}$",
+        "$\\dfrac{64}{3}-\\dfrac4n+\\dfrac{4}{3n^2}$",
+        "$\\dfrac{46}{3}+\\dfrac4n-\\dfrac{4}{3n^2}$",
+        "$\\dfrac{46}{3}-\\dfrac4n+\\dfrac{4}{3n^2}$",
+        "$\\dfrac{46}{3}+\\dfrac4n+\\dfrac{4}{3n^2}$"
+      ],
+      "ans": 0,
+      "hints": [
+        "A lower sum uses the minimum of $f$ on each subinterval, so first decide where the minimum occurs.",
+        "Check whether $f$ is increasing or decreasing on $[0,2]$ to pick the correct endpoint, then write the sum with $x_i=\\frac{2i}{n}$.",
+        "$\\sum_{i=1}^n 1=n$, $\\sum_{i=1}^n i^2=\\dfrac{n(n+1)(2n+1)}{6}$, and $\\Delta x=\\dfrac{b-a}{n}$."
+      ],
+      "steps": [
+        "$f$ is decreasing on $[0,2]$, so the minimum on each subinterval is at the right endpoint $x_i=\\dfrac{2i}{n}$, with $\\Delta x=\\dfrac2n$.",
+        "$s(n)=\\sum_{i=1}^n\\left(9-\\dfrac{4i^2}{n^2}\\right)\\dfrac2n=18-\\dfrac{8}{n^3}\\cdot\\dfrac{n(n+1)(2n+1)}{6}$.",
+        "$=18-\\dfrac43\\left(2+\\dfrac3n+\\dfrac1{n^2}\\right)=\\dfrac{46}{3}-\\dfrac4n-\\dfrac{4}{3n^2}$."
+      ],
+      "brief": "Decreasing: right endpoints; $18-\\frac{4(n+1)(2n+1)}{3n^2}=\\frac{46}{3}-\\frac4n-\\frac4{3n^2}$."
+    },
+    {
+      "sec": "5.3",
+      "q": "On the interval $[0,\\pi]$, $\\lim_{\\|\\Delta\\|\\to0}\\sum_{i=1}^{n}\\left(2^{-c_i}\\sin c_i\\right)\\Delta x_i$, where $c_i$ is any point in the $i^{th}$ subinterval, can be written as:",
+      "opts": [
+        "$\\int_0^{\\pi}2^{-x}\\sin x\\,dx$",
+        "$\\int_{\\pi}^{0}2^{-x}\\sin x\\,dx$",
+        "$\\int_0^{2^{-\\pi}}\\sin x\\,dx$",
+        "$\\int_0^{\\pi}2^{x}\\sin x\\,dx$",
+        "$\\int_0^{\\pi}2^{-x}\\cos x\\,dx$"
+      ],
+      "ans": 0,
+      "hints": [
+        "This is the limit definition of the definite integral.",
+        "Identify the function $f(c_i)$ being evaluated at the sample points and the interval from the question.",
+        "$\\lim_{\\|\\Delta\\|\\to0}\\sum_{i=1}^n f(c_i)\\Delta x_i=\\int_a^b f(x)\\,dx$ on the interval $[a,b]$."
+      ],
+      "steps": [
+        "The summand is $f(c_i)\\Delta x_i$ with $f(x)=2^{-x}\\sin x$.",
+        "The interval is $[0,\\pi]$, so $a=0$ and $b=\\pi$.",
+        "Hence the limit is $\\int_0^{\\pi}2^{-x}\\sin x\\,dx$."
+      ],
+      "brief": "Riemann sum of $f(x)=2^{-x}\\sin x$ on $[0,\\pi]$ gives $\\int_0^\\pi 2^{-x}\\sin x\\,dx$."
+    },
+    {
+      "sec": "5.3",
+      "q": "$\\int_1^3 4\\,dx+\\int_{-2}^{2}\\sqrt{4-x^2}\\,dx=$",
+      "opts": [
+        "$8+2\\pi$",
+        "$4+2\\pi$",
+        "$8+\\pi$",
+        "$4+\\pi$",
+        "$8-\\pi$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Interpret each integral as an area of a simple geometric shape.",
+        "The first is a rectangle; for the second, recognise the graph of $y=\\sqrt{r^2-x^2}$.",
+        "$\\int_a^b c\\,dx=c(b-a)$, and $y=\\sqrt{r^2-x^2}$ is the upper half of a circle of radius $r$, with area $\\tfrac12\\pi r^2$."
+      ],
+      "steps": [
+        "$\\int_1^3 4\\,dx=4(3-1)=8$.",
+        "$y=\\sqrt{4-x^2}$ is the upper half of the circle of radius $2$, so $\\int_{-2}^2\\sqrt{4-x^2}\\,dx=\\tfrac12\\pi(2)^2=2\\pi$.",
+        "The sum is $8+2\\pi$."
+      ],
+      "brief": "Rectangle area $8$ plus semicircle area $2\\pi$: $8+2\\pi$."
+    },
+    {
+      "sec": "5.3",
+      "q": "Possible values of $a$ and $b$ that make the statement $\\int_a^b\\cos x\\,dx=0$ true, are:",
+      "opts": [
+        "$a=\\pi,\\ b=2\\pi$",
+        "$a=0,\\ b=\\dfrac{\\pi}{2}$",
+        "$a=\\dfrac{\\pi}{2},\\ b=\\dfrac{3\\pi}{2}$",
+        "$a=0,\\ b=\\dfrac{3\\pi}{2}$",
+        "$a=\\dfrac{\\pi}{2},\\ b=2\\pi$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Evaluate the integral with an antiderivative and test each pair.",
+        "Write the integral as $\\sin b-\\sin a$ and see which pair makes this zero.",
+        "$\\int_a^b\\cos x\\,dx=\\sin b-\\sin a$; the integral is zero when $\\sin a=\\sin b$."
+      ],
+      "steps": [
+        "$\\int_a^b\\cos x\\,dx=\\sin b-\\sin a$.",
+        "Check pairs: $0\\to\\frac\\pi2$ gives $1$; $\\frac\\pi2\\to\\frac{3\\pi}2$ gives $-2$; $0\\to\\frac{3\\pi}2$ gives $-1$; $\\frac\\pi2\\to2\\pi$ gives $-1$.",
+        "For $a=\\pi$, $b=2\\pi$: $\\sin2\\pi-\\sin\\pi=0$."
+      ],
+      "brief": "$\\sin b-\\sin a=0$ only for $a=\\pi$, $b=2\\pi$ among the pairs."
+    },
+    {
+      "sec": "5.4",
+      "q": "$\\int_0^2|2x-1|\\,dx=$",
+      "opts": [
+        "$\\dfrac52$",
+        "$\\dfrac72$",
+        "$\\dfrac92$",
+        "$\\dfrac32$",
+        "$\\dfrac{11}{2}$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Absolute value integrals are split where the expression inside changes sign.",
+        "Find where $2x-1=0$ and write the integral as two pieces without absolute value.",
+        "$|u|=u$ when $u\\ge0$ and $|u|=-u$ when $u<0$; then use the Fundamental Theorem of Calculus on each piece."
+      ],
+      "steps": [
+        "$2x-1=0$ at $x=\\tfrac12$, negative before and positive after.",
+        "$\\int_0^{1/2}(1-2x)\\,dx+\\int_{1/2}^{2}(2x-1)\\,dx$.",
+        "$\\left[x-x^2\\right]_0^{1/2}=\\tfrac14$ and $\\left[x^2-x\\right]_{1/2}^{2}=2+\\tfrac14=\\tfrac94$.",
+        "Total: $\\tfrac14+\\tfrac94=\\tfrac52$."
+      ],
+      "brief": "Split at $x=\\frac12$: $\\frac14+\\frac94=\\frac52$."
+    },
+    {
+      "sec": "5.4",
+      "q": "If $F(x)=\\int_2^{x^2}\\frac{1}{t^3}\\,dt$, then $F'(2)=$",
+      "opts": [
+        "$\\dfrac1{16}$",
+        "$\\dfrac1{32}$",
+        "$\\dfrac18$",
+        "$\\dfrac14$",
+        "$\\dfrac12$"
+      ],
+      "ans": 0,
+      "hints": [
+        "This is the Second Fundamental Theorem of Calculus with a non-trivial upper limit.",
+        "Differentiate using the chain rule: the integrand is evaluated at the upper limit and multiplied by the derivative of that limit.",
+        "$\\dfrac{d}{dx}\\int_a^{g(x)}f(t)\\,dt=f(g(x))\\,g'(x)$."
+      ],
+      "steps": [
+        "$F'(x)=\\dfrac{1}{(x^2)^3}\\cdot2x=\\dfrac{2}{x^5}$.",
+        "$F'(2)=\\dfrac{2}{32}=\\dfrac1{16}$."
+      ],
+      "brief": "$F'(x)=\\frac{1}{(x^2)^3}\\cdot 2x=\\frac{2}{x^5}$, so $F'(2)=\\frac1{16}$."
+    },
+    {
+      "sec": "7.1",
+      "q": "The area of the region bounded by the graphs of the equations $y=-x^2+3x+1$ and $y=-x+1$ is",
+      "opts": [
+        "$\\dfrac{32}{3}$",
+        "$\\dfrac{31}{3}$",
+        "$11$",
+        "$\\dfrac{34}{3}$",
+        "$\\dfrac{35}{3}$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Find where the two curves intersect, then integrate the top curve minus the bottom curve.",
+        "Set the two expressions equal to get the limits of integration, and decide which curve is on top between them.",
+        "$A=\\int_a^b\\left[f(x)-g(x)\\right]dx$ where $f\\ge g$ on $[a,b]$."
+      ],
+      "steps": [
+        "$-x^2+3x+1=-x+1\\Rightarrow -x^2+4x=0$, so $x=0$ or $x=4$.",
+        "On $(0,4)$ the parabola is above the line: $f-g=4x-x^2$.",
+        "$A=\\int_0^4(4x-x^2)\\,dx=\\left[2x^2-\\tfrac{x^3}{3}\\right]_0^4=32-\\tfrac{64}{3}=\\tfrac{32}{3}$."
+      ],
+      "brief": "Intersect at $x=0,4$: $\\int_0^4(4x-x^2)\\,dx=\\frac{32}{3}$."
+    },
+    {
+      "sec": "5.9",
+      "q": "$\\int_0^{\\sqrt[3]{\\ln 2}}x^2\\operatorname{sech}^2x^3\\,dx=$",
+      "opts": [
+        "$\\dfrac15$",
+        "$\\dfrac25$",
+        "$\\dfrac35$",
+        "$\\dfrac75$",
+        "$\\dfrac65$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Use a substitution; the integrand contains $x^2$, which is the derivative of the inside of $\\operatorname{sech}^2$ up to a constant.",
+        "Let $u$ be the inner power of $x$, change the limits, and integrate $\\operatorname{sech}^2u$.",
+        "$\\int\\operatorname{sech}^2u\\,du=\\tanh u+C$ and $\\tanh u=\\dfrac{e^u-e^{-u}}{e^u+e^{-u}}$."
+      ],
+      "steps": [
+        "Let $u=x^3$, $du=3x^2\\,dx$; $x=0\\to u=0$ and $x=\\sqrt[3]{\\ln2}\\to u=\\ln2$.",
+        "$\\tfrac13\\int_0^{\\ln2}\\operatorname{sech}^2u\\,du=\\tfrac13\\tanh(\\ln2)$.",
+        "$\\tanh(\\ln2)=\\dfrac{2-\\frac12}{2+\\frac12}=\\dfrac35$, so the value is $\\dfrac13\\cdot\\dfrac35=\\dfrac15$."
+      ],
+      "brief": "$u=x^3$: $\\frac13\\tanh(\\ln2)=\\frac13\\cdot\\frac35=\\frac15$."
+    },
+    {
+      "sec": "5.8",
+      "q": "$\\int_{-2}^{3}\\frac{dx}{x^2+4x+8}=$",
+      "opts": [
+        "$\\dfrac12\\arctan\\dfrac52$",
+        "$\\arctan\\dfrac52$",
+        "$\\arctan\\dfrac32$",
+        "$\\dfrac12\\arctan\\dfrac32$",
+        "$2\\arctan\\dfrac25$"
+      ],
+      "ans": 0,
+      "hints": [
+        "The denominator is an irreducible quadratic, so this leads to an arctangent.",
+        "Complete the square in the denominator and substitute for the linear expression.",
+        "$\\int\\frac{du}{u^2+a^2}=\\frac1a\\arctan\\frac ua+C$, and $x^2+bx+c=(x+\\tfrac b2)^2+\\left(c-\\tfrac{b^2}{4}\\right)$."
+      ],
+      "steps": [
+        "$x^2+4x+8=(x+2)^2+4$.",
+        "Let $u=x+2$: limits $-2\\to0$ and $3\\to5$, giving $\\int_0^5\\frac{du}{u^2+4}$.",
+        "$=\\left[\\tfrac12\\arctan\\tfrac u2\\right]_0^5=\\tfrac12\\arctan\\tfrac52$."
+      ],
+      "brief": "$(x+2)^2+4$, $u=x+2$: $\\frac12\\arctan\\frac u2$ from $0$ to $5$ gives $\\frac12\\arctan\\frac52$."
+    },
+    {
+      "sec": "5.7",
+      "q": "$\\int\\frac{x(x-2)}{(x-1)^3}\\,dx=$",
+      "opts": [
+        "$\\ln|x-1|+\\dfrac{1}{2(x-1)^2}+c$",
+        "$\\ln|x-1|+\\dfrac{1}{(x-1)^2}+c$",
+        "$\\ln|x-1|+\\dfrac{2}{(x-1)^2}+c$",
+        "$\\ln|x|+\\dfrac{1}{2(x-1)^2}+c$",
+        "$\\ln|x|+\\dfrac{1}{(x-1)^2}+c$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Rewrite the numerator in terms of $x-1$ so the fraction splits into simple powers.",
+        "Expand $x(x-2)=x^2-2x$ and complete the square to write it using $(x-1)^2$.",
+        "$\\int\\dfrac{du}{u}=\\ln|u|+C$ and $\\int u^n\\,du=\\dfrac{u^{n+1}}{n+1}+C$ for $n\\ne-1$."
+      ],
+      "steps": [
+        "$x(x-2)=x^2-2x=(x-1)^2-1$.",
+        "So the integrand is $\\dfrac{1}{x-1}-\\dfrac{1}{(x-1)^3}$.",
+        "With $u=x-1$: $\\ln|u|+\\dfrac{1}{2u^2}+c=\\ln|x-1|+\\dfrac{1}{2(x-1)^2}+c$."
+      ],
+      "brief": "$x(x-2)=(x-1)^2-1$: $\\int\\left[\\frac1{x-1}-\\frac1{(x-1)^3}\\right]dx$."
+    },
+    {
+      "sec": "5.7",
+      "q": "$\\int\\frac{\\sec x\\tan x}{\\sec x-1}\\,dx=$",
+      "opts": [
+        "$\\ln|\\sec x-1|+c$",
+        "$\\ln|\\tan x-1|+c$",
+        "$\\ln|\\sec x+1|+c$",
+        "$\\ln|\\tan x+1|+c$",
+        "$\\ln|\\sec x+\\tan x|+c$"
+      ],
+      "ans": 0,
+      "hints": [
+        "The numerator is the derivative of the expression in the denominator.",
+        "Substitute $u$ equal to the denominator and compute $du$.",
+        "$\\dfrac{d}{dx}\\sec x=\\sec x\\tan x$ and $\\int\\frac{du}{u}=\\ln|u|+C$."
+      ],
+      "steps": [
+        "Let $u=\\sec x-1$, so $du=\\sec x\\tan x\\,dx$.",
+        "The integral becomes $\\int\\frac{du}{u}=\\ln|u|+c$.",
+        "So the result is $\\ln|\\sec x-1|+c$."
+      ],
+      "brief": "$u=\\sec x-1$, $du=\\sec x\\tan x\\,dx$: $\\ln|\\sec x-1|+c$."
+    },
+    {
+      "sec": "5.5",
+      "q": "$\\int_{-\\pi/2}^{\\pi/2}(\\sin 4x+\\cos 4x)\\,dx=$",
+      "opts": [
+        "$0$",
+        "$1$",
+        "$2$",
+        "$-2$",
+        "$-1$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Use the symmetry of the interval about $0$ and even or odd behaviour, or integrate directly.",
+        "Split into the two integrals and check each for oddness or evaluate with an antiderivative.",
+        "For odd $f$, $\\int_{-a}^af=0$; also $\\int\\cos kx\\,dx=\\dfrac{\\sin kx}{k}+C$."
+      ],
+      "steps": [
+        "$\\sin4x$ is odd, so $\\int_{-\\pi/2}^{\\pi/2}\\sin4x\\,dx=0$.",
+        "$\\int_{-\\pi/2}^{\\pi/2}\\cos4x\\,dx=\\left[\\tfrac{\\sin4x}{4}\\right]_{-\\pi/2}^{\\pi/2}=\\tfrac{\\sin2\\pi-\\sin(-2\\pi)}{4}=0$.",
+        "The total is $0$."
+      ],
+      "brief": "$\\sin4x$ is odd (integral $0$); $\\frac14\\sin4x$ from $-\\frac\\pi2$ to $\\frac\\pi2$ is $0$."
+    },
+    {
+      "sec": "5.5",
+      "q": "$\\int_0^2\\frac{x\\,dx}{\\sqrt{1+2x^2}}=$",
+      "opts": [
+        "$1$",
+        "$2$",
+        "$3$",
+        "$4$",
+        "$5$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Use a substitution for the expression under the square root.",
+        "Let $u=1+2x^2$, find $du$, and change the limits.",
+        "$\\int u^{-1/2}\\,du=2\\sqrt u+C$, and when $u=g(x)$ the limits become $g(a)$ and $g(b)$."
+      ],
+      "steps": [
+        "$u=1+2x^2$, $du=4x\\,dx$, so $x\\,dx=\\tfrac14du$; limits $x=0\\to u=1$, $x=2\\to u=9$.",
+        "$\\tfrac14\\int_1^9u^{-1/2}\\,du=\\tfrac14\\left[2\\sqrt u\\right]_1^9$.",
+        "$=\\tfrac14(6-2)=1$."
+      ],
+      "brief": "$u=1+2x^2$: $\\frac14\\int_1^9u^{-1/2}du=\\frac14(6-2)=1$."
+    }
+  ]
+}

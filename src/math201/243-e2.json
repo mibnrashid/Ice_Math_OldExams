@@ -1,0 +1,365 @@
+{
+  "course": "math201",
+  "term": "243",
+  "kind": "e2",
+  "date": "",
+  "minutes": 90,
+  "source": "math201-243-e2.pdf",
+  "note": "The source has no cover page: the date is not printed (left empty) and the exam length is not printed; 90 minutes assumed (usual major-exam length). Q6 is printed as 2^2.6 and read as 2^2 times 6 (value 24). All keys were verified with sympy and agree with the master (correct) marks. Section numbers follow the printed tags.",
+  "qs": [
+    {
+      "sec": "11.5",
+      "q": "The line through the point $(-4,5,2)$ and perpendicular to the plane given by $-x+2y+z=5$ also passes through the point $(-3,a,b)$. Then $a+b=$",
+      "opts": [
+        "$4$",
+        "$7$",
+        "$12$",
+        "$11$",
+        "$10$"
+      ],
+      "ans": 0,
+      "hints": [
+        "A line perpendicular to a plane runs in the direction of the plane's normal vector.",
+        "Read the normal vector from the plane equation, write the parametric line through the given point, and use the known $x$-coordinate to find the parameter.",
+        "The line through $(x_0,y_0,z_0)$ with direction $\\langle A,B,C\\rangle$ is $x=x_0+At,\\ y=y_0+Bt,\\ z=z_0+Ct$; the plane $Ax+By+Cz=D$ has normal $\\langle A,B,C\\rangle$."
+      ],
+      "steps": [
+        "The normal is $\\langle -1,2,1\\rangle$, so the line is $x=-4-t,\\ y=5+2t,\\ z=2+t$.",
+        "$x=-3$ gives $-4-t=-3$, so $t=-1$.",
+        "Then $a=5+2(-1)=3$ and $b=2+(-1)=1$.",
+        "So $a+b=4$."
+      ],
+      "brief": "Direction $\\langle-1,2,1\\rangle$; $x=-3\\Rightarrow t=-1$, so $(a,b)=(3,1)$ and $a+b=4$."
+    },
+    {
+      "sec": "11.5",
+      "q": "The plane $ax+by+cz=21$ contains the points $(4,1,3)$ and $(2,-2,1)$ and is perpendicular to the plane $x+2y-z=2$. Then $a+b+c=$",
+      "opts": [
+        "$2$",
+        "$3$",
+        "$4$",
+        "$5$",
+        "$7$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Two planes are perpendicular exactly when their normal vectors are perpendicular.",
+        "Substitute each given point into $ax+by+cz=21$ and also write the condition that $\\langle a,b,c\\rangle$ is perpendicular to the other plane's normal. Solve the three linear equations.",
+        "Planes with normals $\\mathbf{n}_1,\\mathbf{n}_2$ are perpendicular iff $\\mathbf{n}_1\\cdot\\mathbf{n}_2=0$; a point lies on a plane iff its coordinates satisfy the equation."
+      ],
+      "steps": [
+        "Point $(4,1,3)$: $4a+b+3c=21$. Point $(2,-2,1)$: $2a-2b+c=21$.",
+        "Perpendicular planes: $\\langle a,b,c\\rangle\\cdot\\langle1,2,-1\\rangle=0$, so $a+2b-c=0$ and $c=a+2b$.",
+        "Substitute $c=a+2b$: $4a+b+3(a+2b)=21$ gives $7a+7b=21$, and $2a-2b+(a+2b)=21$ gives $3a=21$. So $a=7$, $b=-4$, $c=-1$.",
+        "So $a+b+c=7-4-1=2$."
+      ],
+      "brief": "Solve $4a+b+3c=21$, $2a-2b+c=21$, $a+2b-c=0$: $(a,b,c)=(7,-4,-1)$, sum $2$."
+    },
+    {
+      "sec": "11.5",
+      "q": "The distance between the point $(-2,1,3)$ and the line given by \\[ x=1-t,\\quad y=2+t,\\quad z=-2t \\] is equal to",
+      "opts": [
+        "$\\dfrac{7}{\\sqrt3}$",
+        "$\\dfrac{5}{\\sqrt3}$",
+        "$\\dfrac{1}{\\sqrt3}$",
+        "$\\dfrac{2}{\\sqrt3}$",
+        "$\\sqrt3$"
+      ],
+      "ans": 0,
+      "hints": [
+        "The distance from a point to a line can be found with a cross product.",
+        "Pick a point $Q$ on the line, form the vector $\\overrightarrow{QP}$ to the given point, and cross it with the direction vector of the line.",
+        "$D=\\dfrac{\\left|\\overrightarrow{QP}\\times\\mathbf{u}\\right|}{|\\mathbf{u}|}$, where $\\mathbf{u}$ is the direction vector of the line and $Q$ is any point on it."
+      ],
+      "steps": [
+        "The line passes through $Q(1,2,0)$ with direction $\\mathbf{u}=\\langle-1,1,-2\\rangle$.",
+        "$\\overrightarrow{QP}=\\langle-3,-1,3\\rangle$.",
+        "$\\overrightarrow{QP}\\times\\mathbf{u}=\\langle -1,-9,-4\\rangle$, with length $\\sqrt{98}=7\\sqrt2$; and $|\\mathbf{u}|=\\sqrt6$.",
+        "$D=\\dfrac{7\\sqrt2}{\\sqrt6}=\\dfrac{7}{\\sqrt3}$."
+      ],
+      "brief": "$D=\\frac{|\\overrightarrow{QP}\\times\\mathbf u|}{|\\mathbf u|}=\\frac{7\\sqrt2}{\\sqrt6}=\\frac{7}{\\sqrt3}$."
+    },
+    {
+      "sec": "11.5",
+      "q": "The distance between the skew lines \\[ L_1:\\ x=2t,\\ y=4t,\\ z=6t \\qquad\\text{and}\\qquad L_2:\\ x=1-s,\\ y=4+s,\\ z=-1+s \\] is equal to",
+      "opts": [
+        "$\\dfrac{20}{\\sqrt{26}}$",
+        "$\\dfrac{10}{\\sqrt{13}}$",
+        "$\\dfrac{5\\sqrt{26}}{13}$",
+        "$2\\sqrt{13}$",
+        "$\\sqrt{26}$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Skew lines are not parallel and do not meet; the shortest distance is measured along a vector perpendicular to both.",
+        "Find a vector perpendicular to both direction vectors with a cross product, then project the vector joining a point of $L_1$ to a point of $L_2$ onto it.",
+        "$D=\\dfrac{\\left|\\overrightarrow{P_1P_2}\\cdot(\\mathbf{u}_1\\times\\mathbf{u}_2)\\right|}{|\\mathbf{u}_1\\times\\mathbf{u}_2|}$, where $P_1,P_2$ lie on the two lines."
+      ],
+      "steps": [
+        "Directions: $\\mathbf{u}_1=\\langle2,4,6\\rangle$, $\\mathbf{u}_2=\\langle-1,1,1\\rangle$. Points: $P_1(0,0,0)$, $P_2(1,4,-1)$.",
+        "$\\mathbf{u}_1\\times\\mathbf{u}_2=\\langle-2,-8,6\\rangle$, with length $\\sqrt{104}=2\\sqrt{26}$.",
+        "$\\overrightarrow{P_1P_2}\\cdot(\\mathbf{u}_1\\times\\mathbf{u}_2)=-2-32-6=-40$.",
+        "$D=\\dfrac{40}{2\\sqrt{26}}=\\dfrac{20}{\\sqrt{26}}$."
+      ],
+      "brief": "$\\mathbf u_1\\times\\mathbf u_2=\\langle-2,-8,6\\rangle$; $D=\\frac{40}{2\\sqrt{26}}=\\frac{20}{\\sqrt{26}}$."
+    },
+    {
+      "sec": "11.6",
+      "q": "The graph of the equation \\[ 2x^2+4y^2+2z^2-8x+8y-4z=c \\] is an ellipsoid when $c=$",
+      "opts": [
+        "$-11$",
+        "$-15$",
+        "$-17$",
+        "$-19$",
+        "$-21$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Complete the square in each variable to put the equation in standard quadric form.",
+        "Group the $x$, $y$ and $z$ terms, factor out the coefficients of the squares, and complete each square. Move the constants to the right side.",
+        "A sum of positive multiples of squares, $A(x-h)^2+B(y-k)^2+C(z-l)^2=R$ with $A,B,C>0$, is an ellipsoid iff $R>0$ (a point if $R=0$, empty if $R<0$)."
+      ],
+      "steps": [
+        "$2(x-2)^2-8+4(y+1)^2-4+2(z-1)^2-2=c$.",
+        "So $2(x-2)^2+4(y+1)^2+2(z-1)^2=c+14$.",
+        "An ellipsoid needs the right side positive: $c+14>0$, i.e. $c>-14$.",
+        "Only $c=-11$ satisfies this."
+      ],
+      "brief": "Completing squares: right side $c+14$ must be positive, so $c>-14$: $c=-11$."
+    },
+    {
+      "sec": "13.4",
+      "q": "Using differentials, the quantity \\[ (2.01)^2(6.01)-2^2\\cdot 6 \\] is approximately equal to",
+      "opts": [
+        "$0.28$",
+        "$0.26$",
+        "$0.24$",
+        "$0.30$",
+        "$0.14$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Treat the expression as a change $\\Delta f$ of a function of two variables and approximate it by the total differential $df$.",
+        "Take a function of two variables whose values at the two points give the two terms, choose the base point and the small changes $dx$, $dy$, and compute the partial derivatives there.",
+        "$\\Delta f\\approx df=f_x\\,dx+f_y\\,dy$, evaluated at the base point."
+      ],
+      "steps": [
+        "Let $f(x,y)=x^2y$, so the quantity is $f(2.01,6.01)-f(2,6)=\\Delta f$, with $dx=dy=0.01$.",
+        "$f_x=2xy=24$ and $f_y=x^2=4$ at $(2,6)$.",
+        "$df=24(0.01)+4(0.01)=0.24+0.04$.",
+        "So the quantity is approximately $0.28$."
+      ],
+      "brief": "$f=x^2y$: $df=2xy\\,dx+x^2\\,dy=24(0.01)+4(0.01)=0.28$."
+    },
+    {
+      "sec": "13.5",
+      "q": "Let $w=\\sqrt{x-y}+\\sqrt{y-z}$. The value of $\\dfrac{\\partial w}{\\partial x}+\\dfrac{\\partial w}{\\partial y}+\\dfrac{\\partial w}{\\partial z}$ at $x=5$, $y=3$ and $z=1$ is",
+      "opts": [
+        "$0$",
+        "$\\dfrac{1}{\\sqrt2}$",
+        "$\\sqrt2$",
+        "$\\dfrac{3}{\\sqrt2}$",
+        "$-4\\sqrt2$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Compute the three partial derivatives separately, treating the other variables as constants.",
+        "Differentiate each square root with the chain rule, then add the three results before substituting the values.",
+        "$\\dfrac{\\partial}{\\partial x}\\sqrt{u}=\\dfrac{1}{2\\sqrt u}\\dfrac{\\partial u}{\\partial x}$."
+      ],
+      "steps": [
+        "$w_x=\\dfrac{1}{2\\sqrt{x-y}}$.",
+        "$w_y=-\\dfrac{1}{2\\sqrt{x-y}}+\\dfrac{1}{2\\sqrt{y-z}}$.",
+        "$w_z=-\\dfrac{1}{2\\sqrt{y-z}}$.",
+        "Adding, all terms cancel, so the sum is $0$ (at any point, in particular at $(5,3,1)$)."
+      ],
+      "brief": "$w_x+w_y+w_z=0$: the terms $\\pm\\frac{1}{2\\sqrt{x-y}}$ and $\\pm\\frac{1}{2\\sqrt{y-z}}$ cancel."
+    },
+    {
+      "sec": "13.1",
+      "q": "Let $D$ be the domain and $R$ be the range of $f(x,y)=\\arccos(x-y)$. Then",
+      "opts": [
+        "$D=\\{(x,y):\\ -1+x\\le y\\le 1+x\\}$ and $R=[0,\\pi]$",
+        "$D=\\{(x,y):\\ -1-x\\le y\\le 1+x\\}$ and $R=[0,\\pi]$",
+        "$D=\\{(x,y):\\ -x\\le y\\le 1-x\\}$ and $R=[-\\pi/2,\\pi/2]$",
+        "$D=\\{(x,y):\\ -\\dfrac{\\pi}{2}\\le x-y\\le\\dfrac{\\pi}{2}\\}$ and $R=[0,\\infty)$",
+        "$D=\\{(x,y):\\ -\\infty<x<\\infty\\text{ and }-\\infty<y<\\infty\\}$ and $R=[-1,1]$"
+      ],
+      "ans": 0,
+      "hints": [
+        "The domain of $\\arccos$ and its range are both fixed intervals.",
+        "The input $x-y$ must lie in the domain of $\\arccos$; rewrite that condition as bounds on $y$. The range is the range of $\\arccos$.",
+        "$\\arccos u$ is defined for $-1\\le u\\le1$ and takes values in $[0,\\pi]$."
+      ],
+      "steps": [
+        "Need $-1\\le x-y\\le1$.",
+        "Solving for $y$: $x-1\\le y\\le x+1$, so $D=\\{(x,y):-1+x\\le y\\le 1+x\\}$.",
+        "As $x-y$ runs over $[-1,1]$, $\\arccos$ takes every value in $[0,\\pi]$, so $R=[0,\\pi]$."
+      ],
+      "brief": "$-1\\le x-y\\le1\\iff x-1\\le y\\le x+1$; range of $\\arccos$ is $[0,\\pi]$."
+    },
+    {
+      "sec": "13.1",
+      "q": "The level surfaces of the function $f(x,y,z)=4x^2+4y^2-z^2$ are",
+      "opts": [
+        "hyperboloids of one sheet, hyperboloids of two sheets, and cones",
+        "ellipsoids",
+        "cones only",
+        "hyperboloids of one sheet only",
+        "elliptic paraboloids"
+      ],
+      "ans": 0,
+      "hints": [
+        "A level surface is the set where $f$ equals a constant $k$; look at how the shape changes with the sign of $k$.",
+        "Set $f(x,y,z)=k$ and consider the three cases $k>0$, $k=0$, $k<0$.",
+        "In the family $Ax^2+By^2-Cz^2=k$ with $A,B,C>0$: $k>0$ gives a hyperboloid of one sheet, $k=0$ a cone, and $k<0$ a hyperboloid of two sheets."
+      ],
+      "steps": [
+        "Level surface: $4x^2+4y^2-z^2=k$.",
+        "For $k>0$: one minus sign with a positive right side gives a hyperboloid of one sheet.",
+        "For $k=0$: $4x^2+4y^2=z^2$ is a cone.",
+        "For $k<0$: $z^2-4x^2-4y^2=-k>0$ gives a hyperboloid of two sheets."
+      ],
+      "brief": "$k>0$: one sheet; $k=0$: cone; $k<0$: two sheets."
+    },
+    {
+      "sec": "13.5",
+      "q": "Let $w=f(x,y)$ with $x=g(s,t)$ and $y=h(s,t)$, where $f$, $g$, and $h$ are differentiable functions, with the following values: \\[ \\begin{array}{c|c|c|c|c|c} g(1,2)&h(1,2)&g_s(1,2)&h_s(1,2)&f_x(4,3)&f_y(4,3)\\\\\\hline 4&3&-3&5&-4&6 \\end{array} \\] Then $w_s(1,2)=$",
+      "opts": [
+        "$42$",
+        "$-39$",
+        "$-38$",
+        "$36$",
+        "$20$"
+      ],
+      "ans": 0,
+      "hints": [
+        "This is the chain rule for a function of two intermediate variables.",
+        "Find the values of $x$ and $y$ at $(s,t)=(1,2)$ to know where to evaluate $f_x$ and $f_y$, then combine.",
+        "$\\dfrac{\\partial w}{\\partial s}=\\dfrac{\\partial f}{\\partial x}\\dfrac{\\partial x}{\\partial s}+\\dfrac{\\partial f}{\\partial y}\\dfrac{\\partial y}{\\partial s}$."
+      ],
+      "steps": [
+        "At $(s,t)=(1,2)$: $x=g(1,2)=4$ and $y=h(1,2)=3$, so use $f_x(4,3)$ and $f_y(4,3)$.",
+        "$w_s=f_x\\,g_s+f_y\\,h_s$.",
+        "$w_s(1,2)=(-4)(-3)+(6)(5)=12+30=42$."
+      ],
+      "brief": "$w_s=f_xg_s+f_yh_s=(-4)(-3)+(6)(5)=42$."
+    },
+    {
+      "sec": "13.2",
+      "q": "$\\lim_{(x,y)\\to(1,1)}\\frac{2x-y-1}{\\sqrt{2x-y}-1}=$",
+      "opts": [
+        "$2$",
+        "$0$",
+        "$-2$",
+        "DNE",
+        "$1$"
+      ],
+      "ans": 0,
+      "hints": [
+        "The limit depends on $x,y$ only through one combination of them, so reduce it to a one-variable idea.",
+        "Write the numerator in terms of the square root that appears in the denominator and factor it.",
+        "$a^2-b^2=(a-b)(a+b)$; the limit is unchanged by cancelling a common nonzero factor."
+      ],
+      "steps": [
+        "Write $2x-y-1=\\left(\\sqrt{2x-y}\\right)^2-1^2=\\left(\\sqrt{2x-y}-1\\right)\\left(\\sqrt{2x-y}+1\\right)$.",
+        "Wherever the denominator is nonzero, the fraction equals $\\sqrt{2x-y}+1$.",
+        "As $(x,y)\\to(1,1)$, $2x-y\\to1$, so the limit is $1+1=2$."
+      ],
+      "brief": "Factor: ratio $=\\sqrt{2x-y}+1\\to2$."
+    },
+    {
+      "sec": "13.2",
+      "q": "Let \\[ f(x,y)=|xy|\\left(\\frac{x^2-y^2}{x^2+y^2}\\right). \\] The value of $f(0,0)$ such that $f$ is continuous at the origin is",
+      "opts": [
+        "$0$",
+        "$1$",
+        "$-1$",
+        "$2$",
+        "$-2$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Continuity at the origin requires $f(0,0)$ to equal the limit of $f$ there.",
+        "Bound the fraction $\\dfrac{x^2-y^2}{x^2+y^2}$ and use the squeeze theorem on $|xy|$ times it.",
+        "Squeeze theorem: if $|g|\\le h$ and $h\\to0$ then $g\\to0$. Also $|x^2-y^2|\\le x^2+y^2$."
+      ],
+      "steps": [
+        "Since $|x^2-y^2|\\le x^2+y^2$, we have $\\left|\\dfrac{x^2-y^2}{x^2+y^2}\\right|\\le1$ for $(x,y)\\neq(0,0)$.",
+        "Hence $|f(x,y)|\\le|xy|\\to0$ as $(x,y)\\to(0,0)$.",
+        "The limit is $0$, so $f(0,0)=0$ makes $f$ continuous."
+      ],
+      "brief": "$|f|\\le|xy|\\to0$ by squeeze, so $f(0,0)=0$."
+    },
+    {
+      "sec": "13.5",
+      "q": "If $x\\ln y+y^2z+z^2=8$, then $\\dfrac{\\partial z}{\\partial x}=$",
+      "opts": [
+        "$\\dfrac{-\\ln y}{y^2+2z}$",
+        "$-\\dfrac{x\\ln y}{y+2z}$",
+        "$\\dfrac{x}{y^2+2z}$",
+        "$-\\dfrac{y^2z+z^2}{y^2+2z}$",
+        "$-\\dfrac{x\\ln y}{y^2+z^2-8}$"
+      ],
+      "ans": 0,
+      "hints": [
+        "The equation defines $z$ implicitly as a function of $x$ and $y$.",
+        "Move everything to one side to get $F(x,y,z)=0$ and find the partial derivatives of $F$ with respect to $x$ and $z$.",
+        "For $F(x,y,z)=0$: $\\dfrac{\\partial z}{\\partial x}=-\\dfrac{F_x}{F_z}$ (provided $F_z\\neq0$)."
+      ],
+      "steps": [
+        "Let $F=x\\ln y+y^2z+z^2-8$.",
+        "$F_x=\\ln y$ and $F_z=y^2+2z$.",
+        "$\\dfrac{\\partial z}{\\partial x}=-\\dfrac{F_x}{F_z}=-\\dfrac{\\ln y}{y^2+2z}$."
+      ],
+      "brief": "$F_x=\\ln y$, $F_z=y^2+2z$, so $z_x=-F_x/F_z=\\frac{-\\ln y}{y^2+2z}$."
+    },
+    {
+      "sec": "13.3",
+      "q": "If $z=\\arctan\\left(\\dfrac{y}{x}\\right)$, then \\[ \\frac{\\partial^2z}{\\partial x^2}+\\frac{\\partial^2z}{\\partial y^2}= \\]",
+      "opts": [
+        "$0$",
+        "$-\\dfrac{x+y}{(x^2+y^2)^2}$",
+        "$\\dfrac{x^2-y^2}{(x^2+y^2)^2}$",
+        "$\\dfrac{2xy}{(x^2+y^2)^2}$",
+        "$\\dfrac{1}{(x^2+y^2)^2}$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Compute the first partial derivatives, then the second ones, and add.",
+        "Use the chain rule with the derivative of $\\arctan$ and simplify each first derivative into a single fraction before differentiating again.",
+        "$\\dfrac{d}{du}\\arctan u=\\dfrac{1}{1+u^2}$, and the quotient rule $\\left(\\dfrac fg\\right)'=\\dfrac{f'g-fg'}{g^2}$."
+      ],
+      "steps": [
+        "$z_x=\\dfrac{1}{1+y^2/x^2}\\cdot\\left(-\\dfrac{y}{x^2}\\right)=\\dfrac{-y}{x^2+y^2}$.",
+        "$z_y=\\dfrac{1}{1+y^2/x^2}\\cdot\\dfrac1x=\\dfrac{x}{x^2+y^2}$.",
+        "$z_{xx}=\\dfrac{2xy}{(x^2+y^2)^2}$ and $z_{yy}=\\dfrac{-2xy}{(x^2+y^2)^2}$.",
+        "Their sum is $0$."
+      ],
+      "brief": "$z_x=\\frac{-y}{x^2+y^2}$, $z_y=\\frac{x}{x^2+y^2}$; $z_{xx}=-z_{yy}$, so the sum is $0$."
+    },
+    {
+      "sec": "13.5",
+      "q": "If $w=ze^{xy}$, $x=s-t$, $y=s+t$, $z=st$, then $w_s=$",
+      "opts": [
+        "$t(1+2s^2)e^{s^2-t^2}$",
+        "$(1+s^2)e^{s^2-t^2}$",
+        "$t(1-s^2)e^{s^2-t^2}$",
+        "$2ste^{s^2-t^2}$",
+        "$e^{s^2-t^2}$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Use the chain rule with three intermediate variables, or substitute first and differentiate directly.",
+        "Compute $xy$ in terms of $s$ and $t$ first, then write $w$ as a function of $s$ and $t$ only and differentiate with respect to $s$ by the product rule.",
+        "Product rule: $(uv)'=u'v+uv'$; and $\\dfrac{\\partial}{\\partial s}e^{g(s,t)}=e^{g}\\,g_s$."
+      ],
+      "steps": [
+        "$xy=(s-t)(s+t)=s^2-t^2$, so $w=st\\,e^{s^2-t^2}$.",
+        "$w_s=t\\,e^{s^2-t^2}+st\\cdot 2s\\,e^{s^2-t^2}$.",
+        "$w_s=t(1+2s^2)e^{s^2-t^2}$."
+      ],
+      "brief": "$w=st\\,e^{s^2-t^2}$, so $w_s=te^{s^2-t^2}(1+2s^2)$."
+    }
+  ]
+}

@@ -1,0 +1,341 @@
+{
+  "course": "math101",
+  "term": "242",
+  "kind": "e2",
+  "date": "",
+  "minutes": 90,
+  "source": "math101-242-e2.pdf",
+  "note": "The source has no cover page: the date is not printed (left empty) and the minutes are not printed (90 assumed, the usual length of a major exam). All 14 master answers were verified with sympy and agree with the printed key.",
+  "qs": [
+    {
+      "sec": "3.3",
+      "q": "If $f(x)=e^x\\sin x$, then $f'''(0)=$",
+      "opts": [
+        "$2$",
+        "$\\dfrac12$",
+        "$\\pi$",
+        "$1$",
+        "$\\dfrac12e^{\\pi}$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Repeated use of the product rule.",
+        "Differentiate once or twice and look for a pattern, then evaluate at $0$.",
+        "$(uv)'=u'v+uv'$, and $\\dfrac{d}{dx}e^x=e^x$, $\\dfrac{d}{dx}\\sin x=\\cos x$, $\\dfrac{d}{dx}\\cos x=-\\sin x$."
+      ],
+      "steps": [
+        "$f'=e^x\\sin x+e^x\\cos x=e^x(\\sin x+\\cos x)$.",
+        "$f''=e^x(\\sin x+\\cos x)+e^x(\\cos x-\\sin x)=2e^x\\cos x$.",
+        "$f'''=2e^x\\cos x-2e^x\\sin x$.",
+        "$f'''(0)=2\\cdot1\\cdot1-0=2$."
+      ],
+      "brief": "$f''=2e^x\\cos x$, $f'''=2e^x(\\cos x-\\sin x)$, so $f'''(0)=2$."
+    },
+    {
+      "sec": "3.3",
+      "q": "The slope of the tangent line to the curve $y=\\dfrac{1+\\csc x}{1-\\csc x}$ at $\\left(\\dfrac{\\pi}{6},-3\\right)$ is equal to:",
+      "opts": [
+        "$-4\\sqrt3$",
+        "$\\sqrt3$",
+        "$-3$",
+        "$2\\sqrt3$",
+        "$\\dfrac23\\sqrt3$"
+      ],
+      "ans": 0,
+      "hints": [
+        "The slope of the tangent line is the derivative at the given point; the function is a quotient.",
+        "Differentiate with the quotient rule, using the derivative of $\\csc x$, then substitute $x=\\pi/6$.",
+        "$\\left(\\dfrac uv\\right)'=\\dfrac{u'v-uv'}{v^2}$ and $\\dfrac{d}{dx}\\csc x=-\\csc x\\cot x$."
+      ],
+      "steps": [
+        "Let $u=1+\\csc x$, $v=1-\\csc x$; $u'=-\\csc x\\cot x$, $v'=\\csc x\\cot x$.",
+        "$y'=\\dfrac{-\\csc x\\cot x(1-\\csc x)-(1+\\csc x)\\csc x\\cot x}{(1-\\csc x)^2}=\\dfrac{-2\\csc x\\cot x}{(1-\\csc x)^2}$.",
+        "At $x=\\pi/6$: $\\csc x=2$, $\\cot x=\\sqrt3$.",
+        "$y'=\\dfrac{-2(2)(\\sqrt3)}{(1-2)^2}=-4\\sqrt3$."
+      ],
+      "brief": "$y'=\\frac{-2\\csc x\\cot x}{(1-\\csc x)^2}$; at $\\pi/6$ it is $-4\\sqrt3$."
+    },
+    {
+      "sec": "3.4",
+      "q": "If $y=\\ln\\left(\\dfrac{1+e^x}{1-e^x}\\right)$, then $y'=$",
+      "opts": [
+        "$\\dfrac{2e^x}{1-e^{2x}}$",
+        "$\\dfrac{e^x}{(1-e^x)^2}$",
+        "$\\dfrac12e^x\\left(\\dfrac{1+e^x}{1-e^x}\\right)$",
+        "$\\left(\\dfrac{1+e^x}{1-e^x}\\right)^2$",
+        "$\\dfrac{1+e^x}{1-e^{2x}}$"
+      ],
+      "ans": 0,
+      "hints": [
+        "A logarithm of a quotient: simplify with log laws before differentiating.",
+        "Write $y$ as a difference of two logarithms, then use the chain rule on each.",
+        "$\\ln\\dfrac ab=\\ln a-\\ln b$ and $\\dfrac{d}{dx}\\ln u=\\dfrac{u'}{u}$."
+      ],
+      "steps": [
+        "$y=\\ln(1+e^x)-\\ln(1-e^x)$.",
+        "$y'=\\dfrac{e^x}{1+e^x}+\\dfrac{e^x}{1-e^x}$.",
+        "Common denominator: $\\dfrac{e^x(1-e^x)+e^x(1+e^x)}{(1+e^x)(1-e^x)}=\\dfrac{2e^x}{1-e^{2x}}$."
+      ],
+      "brief": "$y=\\ln(1+e^x)-\\ln(1-e^x)$, so $y'=\\frac{2e^x}{1-e^{2x}}$."
+    },
+    {
+      "sec": "3.4",
+      "q": "If $f(x)=\\left(2+(x^2+1)^4\\right)^3$, then $f'(1)=$",
+      "opts": [
+        "$3^52^8$",
+        "$3^22^6$",
+        "$3\\cdot2^9$",
+        "$3^42^6$",
+        "$3^32^7$"
+      ],
+      "ans": 0,
+      "hints": [
+        "This is a nested composition, so use the chain rule twice.",
+        "Differentiate the outer power first, then the inner power, then the innermost $x^2+1$; finally substitute $x=1$.",
+        "$\\dfrac{d}{dx}\\left[g(x)\\right]^n=n\\left[g(x)\\right]^{n-1}g'(x)$."
+      ],
+      "steps": [
+        "$f'(x)=3\\left(2+(x^2+1)^4\\right)^2\\cdot4(x^2+1)^3\\cdot2x$.",
+        "At $x=1$: $x^2+1=2$, so $2+2^4=18$.",
+        "$f'(1)=3\\cdot18^2\\cdot4\\cdot2^3\\cdot2=3\\cdot(2\\cdot3^2)^2\\cdot2^2\\cdot2^3\\cdot2$.",
+        "$=3\\cdot2^2\\cdot3^4\\cdot2^6=3^52^8$."
+      ],
+      "brief": "$f'(1)=3\\cdot18^2\\cdot4\\cdot8\\cdot2=62208=3^52^8$."
+    },
+    {
+      "sec": "3.5",
+      "q": "The equation of the tangent line to the curve $\\tan(x+y)=x$ at $(0,0)$ is",
+      "opts": [
+        "$y=0$",
+        "$y=x+\\dfrac{\\pi}{4}$",
+        "$y=x-\\dfrac{\\pi}{4}$",
+        "$y=1$",
+        "$y=-1$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Implicit differentiation gives the slope at the point.",
+        "Differentiate both sides with respect to $x$, treating $y$ as a function of $x$, and substitute $(0,0)$.",
+        "$\\dfrac{d}{dx}\\tan u=\\sec^2u\\cdot u'$, and the tangent line at $(x_0,y_0)$ is $y-y_0=m(x-x_0)$."
+      ],
+      "steps": [
+        "Differentiate: $\\sec^2(x+y)(1+y')=1$.",
+        "At $(0,0)$: $\\sec^2 0=1$, so $1+y'=1$ and $y'=0$.",
+        "The tangent line has slope $0$ and passes through the origin: $y=0$."
+      ],
+      "brief": "$\\sec^2(x+y)(1+y')=1$ gives $y'(0,0)=0$, so $y=0$."
+    },
+    {
+      "sec": "3.4",
+      "q": "If $y=x^{\\ln x}$, $x>0$, then $y'(e)=$",
+      "opts": [
+        "$2$",
+        "$e$",
+        "$2e$",
+        "$e^2$",
+        "$\\dfrac12$"
+      ],
+      "ans": 0,
+      "hints": [
+        "The variable is in both the base and the exponent, so use logarithmic differentiation (or rewrite with $e$).",
+        "Take $\\ln$ of both sides, or write the function as a power of $e$, then differentiate.",
+        "$a^b=e^{b\\ln a}$, and $\\dfrac{d}{dx}e^{u}=e^{u}u'$."
+      ],
+      "steps": [
+        "$y=e^{(\\ln x)^2}$.",
+        "$y'=e^{(\\ln x)^2}\\cdot2\\ln x\\cdot\\dfrac1x=x^{\\ln x}\\dfrac{2\\ln x}{x}$.",
+        "At $x=e$: $y(e)=e^{1}=e$, $\\ln e=1$.",
+        "$y'(e)=e\\cdot\\dfrac{2}{e}=2$."
+      ],
+      "brief": "$y'=x^{\\ln x}\\frac{2\\ln x}{x}$, so $y'(e)=e\\cdot\\frac2e=2$."
+    },
+    {
+      "sec": "3.6",
+      "q": "If $y=\\sin(\\cos^{-1}x)$, then $y'=$",
+      "opts": [
+        "$\\dfrac{-x}{\\sqrt{1-x^2}}$",
+        "$\\dfrac{-1}{\\sqrt{1-x^2}}$",
+        "$\\dfrac{1}{\\sqrt{1-x^2}}$",
+        "$\\dfrac{2}{\\sqrt{1-x^2}}$",
+        "$\\dfrac{x}{\\sqrt{1-x^2}}$"
+      ],
+      "ans": 0,
+      "hints": [
+        "This is a composition with an inverse trigonometric function: use the chain rule.",
+        "Differentiate $\\sin$ first, leaving $\\cos^{-1}x$ inside, and then multiply by the derivative of $\\cos^{-1}x$.",
+        "$\\dfrac{d}{dx}\\cos^{-1}x=\\dfrac{-1}{\\sqrt{1-x^2}}$, and $\\cos(\\cos^{-1}x)=x$ for $-1\\le x\\le1$."
+      ],
+      "steps": [
+        "Chain rule: $y'=\\cos(\\cos^{-1}x)\\cdot\\left(\\dfrac{-1}{\\sqrt{1-x^2}}\\right)$.",
+        "$\\cos(\\cos^{-1}x)=x$.",
+        "So $y'=\\dfrac{-x}{\\sqrt{1-x^2}}$.",
+        "Check: $\\sin(\\cos^{-1}x)=\\sqrt{1-x^2}$, whose derivative is $\\dfrac{-x}{\\sqrt{1-x^2}}$."
+      ],
+      "brief": "$y'=\\cos(\\cos^{-1}x)\\cdot\\frac{-1}{\\sqrt{1-x^2}}=\\frac{-x}{\\sqrt{1-x^2}}$."
+    },
+    {
+      "sec": "3.7",
+      "q": "All edges of a cube are expanding at a rate of 6 centimeters per second. How fast is the surface area changing when each edge is 3 cm?",
+      "opts": [
+        "$216\\ \\text{cm}^2/\\text{sec}$",
+        "$168\\ \\text{cm}^2/\\text{sec}$",
+        "$144\\ \\text{cm}^2/\\text{sec}$",
+        "$72\\ \\text{cm}^2/\\text{sec}$",
+        "$256\\ \\text{cm}^2/\\text{sec}$"
+      ],
+      "ans": 0,
+      "hints": [
+        "This is a related rates problem.",
+        "Write the surface area of the cube in terms of the edge length, then differentiate with respect to time.",
+        "A cube with edge $s$ has surface area $A=6s^2$; differentiate with the chain rule: $\\dfrac{dA}{dt}=\\dfrac{dA}{ds}\\dfrac{ds}{dt}$."
+      ],
+      "steps": [
+        "$A=6s^2$.",
+        "$\\dfrac{dA}{dt}=12s\\dfrac{ds}{dt}$.",
+        "With $s=3$ and $\\dfrac{ds}{dt}=6$: $\\dfrac{dA}{dt}=12\\cdot3\\cdot6=216$ cm$^2$/sec."
+      ],
+      "brief": "$A=6s^2$, $A'=12s\\,s'=12\\cdot3\\cdot6=216$ cm$^2$/sec."
+    },
+    {
+      "sec": "3.8",
+      "q": "Starting with $x_1=2$, the second Newton's approximation $x_2$ to the root of $x^3-2x-5=0$ is",
+      "opts": [
+        "$2.10$",
+        "$2.01$",
+        "$2.00$",
+        "$1.99$",
+        "$1.89$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Newton's method.",
+        "Compute $f(x_1)$ and $f'(x_1)$ for $f(x)=x^3-2x-5$ and apply the iteration once.",
+        "$x_{n+1}=x_n-\\dfrac{f(x_n)}{f'(x_n)}$."
+      ],
+      "steps": [
+        "$f(x)=x^3-2x-5$, $f'(x)=3x^2-2$.",
+        "$f(2)=8-4-5=-1$ and $f'(2)=12-2=10$.",
+        "$x_2=2-\\dfrac{-1}{10}=2.1$."
+      ],
+      "brief": "$x_2=2-\\frac{f(2)}{f'(2)}=2-\\frac{-1}{10}=2.10$."
+    },
+    {
+      "sec": "4.1",
+      "q": "The sum of all critical numbers of $f(x)=\\sin^2x+\\cos x$ over $(0,2\\pi)$ is",
+      "opts": [
+        "$3\\pi$",
+        "$5\\pi$",
+        "$\\dfrac52\\pi$",
+        "$\\dfrac72\\pi$",
+        "$\\dfrac32\\pi$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Critical numbers are where the derivative is zero or does not exist.",
+        "Differentiate, factor the result, and solve each factor equal to $0$ in $(0,2\\pi)$.",
+        "A critical number is an interior $c$ with $f'(c)=0$ or $f'(c)$ undefined; $\\dfrac{d}{dx}\\sin^2x=2\\sin x\\cos x$."
+      ],
+      "steps": [
+        "$f'(x)=2\\sin x\\cos x-\\sin x=\\sin x(2\\cos x-1)$, defined everywhere.",
+        "$\\sin x=0$ on $(0,2\\pi)$ gives $x=\\pi$.",
+        "$\\cos x=\\dfrac12$ gives $x=\\dfrac\\pi3,\\ \\dfrac{5\\pi}3$.",
+        "Sum: $\\pi+\\dfrac\\pi3+\\dfrac{5\\pi}3=3\\pi$."
+      ],
+      "brief": "$f'=\\sin x(2\\cos x-1)=0$: $x=\\pi,\\frac\\pi3,\\frac{5\\pi}3$; sum $3\\pi$."
+    },
+    {
+      "sec": "4.1",
+      "q": "The critical number of $f(x)=x^{-2}\\ln x$ is",
+      "opts": [
+        "$\\sqrt e$",
+        "$e^{-2}$",
+        "$\\dfrac{1}{\\sqrt e}$",
+        "$\\dfrac12e$",
+        "$e\\sqrt e$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Find where $f'(x)=0$ (the domain is $x>0$).",
+        "Differentiate with the product rule, factor out a power of $x$, and set the other factor to $0$.",
+        "$(uv)'=u'v+uv'$ and $\\dfrac{d}{dx}\\ln x=\\dfrac1x$; a critical number must lie in the domain of $f$."
+      ],
+      "steps": [
+        "$f'(x)=-2x^{-3}\\ln x+x^{-2}\\cdot\\dfrac1x=x^{-3}(1-2\\ln x)$.",
+        "$x^{-3}\\neq0$, so set $1-2\\ln x=0$.",
+        "$\\ln x=\\dfrac12$, so $x=e^{1/2}=\\sqrt e$, which is in the domain."
+      ],
+      "brief": "$f'=x^{-3}(1-2\\ln x)=0$ gives $\\ln x=\\frac12$, $x=\\sqrt e$."
+    },
+    {
+      "sec": "4.1",
+      "q": "If the range of $f(x)=3x^4-4x^3-12x^2+1$ over the domain $[-2,3]$ is $[m,M]$, then $m+M=$",
+      "opts": [
+        "$2$",
+        "$61$",
+        "$-30$",
+        "$29$",
+        "$24$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Find the absolute extrema on a closed interval.",
+        "Find the critical numbers in $[-2,3]$ and evaluate $f$ there and at both endpoints.",
+        "Closed interval method: the absolute maximum and minimum of a continuous $f$ on $[a,b]$ occur at critical numbers in $(a,b)$ or at the endpoints $a$, $b$."
+      ],
+      "steps": [
+        "$f'(x)=12x^3-12x^2-24x=12x(x-2)(x+1)$, so the critical numbers are $-1,0,2$.",
+        "Values: $f(-2)=33$, $f(-1)=-4$, $f(0)=1$, $f(2)=-31$, $f(3)=28$.",
+        "$M=33$ and $m=-31$.",
+        "$m+M=2$."
+      ],
+      "brief": "Critical numbers $-1,0,2$; values $33,-4,1,-31,28$; $m+M=-31+33=2$."
+    },
+    {
+      "sec": "4.2",
+      "q": "If $c$ is the number that satisfies the conclusion of the Mean Value Theorem of $f(x)=\\dfrac{x}{x+2}$ over $[1,4]$, then",
+      "opts": [
+        "$2<c<3$",
+        "$1<c<2$",
+        "$3<c<4$",
+        "$\\dfrac52<c<\\dfrac72$",
+        "$\\dfrac12<c<\\dfrac32$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Mean Value Theorem.",
+        "Compute the average slope over $[1,4]$ and set $f'(c)$ equal to it.",
+        "If $f$ is continuous on $[a,b]$ and differentiable on $(a,b)$, there is $c$ in $(a,b)$ with $f'(c)=\\dfrac{f(b)-f(a)}{b-a}$."
+      ],
+      "steps": [
+        "$f(4)=\\dfrac46=\\dfrac23$ and $f(1)=\\dfrac13$, so the average slope is $\\dfrac{2/3-1/3}{3}=\\dfrac19$.",
+        "$f'(x)=\\dfrac{(x+2)-x}{(x+2)^2}=\\dfrac{2}{(x+2)^2}$.",
+        "$\\dfrac{2}{(c+2)^2}=\\dfrac19$, so $(c+2)^2=18$ and $c=3\\sqrt2-2$ (the root in $(1,4)$).",
+        "$c\\approx2.24$, so $2<c<3$."
+      ],
+      "brief": "$f'(c)=\\frac{2}{(c+2)^2}=\\frac19$ gives $c=3\\sqrt2-2\\approx2.24$."
+    },
+    {
+      "sec": "4.2",
+      "q": "One statement is False about $f(x)=x^3+3x+1$",
+      "opts": [
+        "There is an interval $[a,b]$, $a<b$, where Rolle's Theorem is applicable",
+        "$f(x)$ has at most one $x$-intercept",
+        "$f(x)$ is differentiable over $(-\\infty,\\infty)$",
+        "$f(x)$ has no point where the tangent line is horizontal",
+        "$f'(-1)=f'(1)$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Check each statement against $f'(x)$ and Rolle's Theorem.",
+        "Compute $f'(x)$ and look at its sign; ask whether $f(a)=f(b)$ can happen for $a<b$.",
+        "Rolle's Theorem needs $f$ continuous on $[a,b]$, differentiable on $(a,b)$ and $f(a)=f(b)$, and then $f'(c)=0$ for some $c$ in $(a,b)$."
+      ],
+      "steps": [
+        "$f'(x)=3x^2+3\\ge3>0$ for all $x$.",
+        "So $f$ is strictly increasing: $f(a)\\neq f(b)$ whenever $a\\neq b$, and Rolle's Theorem never applies. This statement is false.",
+        "The other statements are true: strictly increasing gives at most one $x$-intercept, $f$ is a polynomial (differentiable everywhere), $f'(x)\\neq0$ means no horizontal tangent, and $f'(-1)=f'(1)=6$."
+      ],
+      "brief": "$f'=3x^2+3>0$, so $f$ is increasing and Rolle's Theorem never applies: that claim is false."
+    }
+  ]
+}

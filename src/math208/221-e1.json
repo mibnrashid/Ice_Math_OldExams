@@ -1,0 +1,277 @@
+{
+  "course": "math208",
+  "term": "221",
+  "kind": "e1",
+  "date": "",
+  "minutes": 90,
+  "source": "math208-221-e1.pdf",
+  "note": "Scan has no cover page, so the date and exam length are not printed; date left empty and 90 minutes is the usual length of a major exam. The MASTER version has 8 multiple-choice questions (key: all A) and 4 written questions (Q9 to Q12, 11 points each, no printed choices) with handwritten solutions. Q9 to Q12 are kept as written questions; the answer of each is the final answer of the official handwritten solution, and the '(11 points)' marks were dropped. Q10 page header shows CODE04 but the solution is the master one. All answers verified with sympy; no disagreement with the key.",
+  "qs": [
+    {
+      "sec": "1.1",
+      "q": "If $y=x^m$ is a solution of the differential equation \\[ x^2y''+5xy'+4y=0, \\] then $m=$",
+      "opts": [
+        "$-2$",
+        "$-1$",
+        "$1$",
+        "$3$",
+        "$-3$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Verifying a proposed solution: substitute it into the equation and see what condition it puts on $m$.",
+        "Compute $y'$ and $y''$ for $y=x^m$, substitute, and factor out the common power of $x$.",
+        "For $y=x^m$: $y'=mx^{m-1}$ and $y''=m(m-1)x^{m-2}$; a product $x^m\\cdot p(m)=0$ for all $x>0$ forces $p(m)=0$."
+      ],
+      "steps": [
+        "$y'=mx^{m-1}$ and $y''=m(m-1)x^{m-2}$.",
+        "Substitute: $m(m-1)x^m+5mx^m+4x^m=0$, so $x^m\\left(m^2+4m+4\\right)=0$.",
+        "Hence $m^2+4m+4=(m+2)^2=0$.",
+        "So $m=-2$."
+      ],
+      "brief": "Substitute $y=x^m$: $m^2+4m+4=(m+2)^2=0$, so $m=-2$."
+    },
+    {
+      "sec": "1.2",
+      "q": "A particle is moving along a straight line with position function $x(t)$. If the acceleration of the particle is $a(t)=50\\sin(5t)$, the initial position is $x(0)=8$, and the initial velocity is $v(0)=-10$, then $x\\left(\\dfrac{\\pi}{2}\\right)=$",
+      "opts": [
+        "$6$",
+        "$10$",
+        "$8$",
+        "$12$",
+        "$4$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Acceleration is the derivative of velocity and velocity is the derivative of position, so integrate twice.",
+        "Integrate $a(t)$ and use $v(0)$ to fix the first constant, then integrate $v(t)$ and use $x(0)$ for the second.",
+        "$v(t)=\\int a(t)\\,dt$, $x(t)=\\int v(t)\\,dt$, and $\\int\\sin(kt)\\,dt=-\\dfrac{\\cos kt}{k}$, $\\int\\cos(kt)\\,dt=\\dfrac{\\sin kt}{k}$."
+      ],
+      "steps": [
+        "$v(t)=\\int 50\\sin(5t)\\,dt=-10\\cos(5t)+C_1$.",
+        "$v(0)=-10+C_1=-10$, so $C_1=0$ and $v(t)=-10\\cos(5t)$.",
+        "$x(t)=\\int -10\\cos(5t)\\,dt=-2\\sin(5t)+C_2$, and $x(0)=C_2=8$.",
+        "$x\\left(\\dfrac\\pi2\\right)=-2\\sin\\dfrac{5\\pi}{2}+8=-2+8=6$."
+      ],
+      "brief": "$v=-10\\cos5t$, $x=-2\\sin5t+8$, so $x(\\pi/2)=6$."
+    },
+    {
+      "sec": "1.6",
+      "q": "Which one of the following differential equations is an exact equation?",
+      "opts": [
+        "$\\left(y^3+\\dfrac{x}{y}\\right)dx+\\left(3xy^2-\\dfrac{x^2}{2y^2}\\right)dy=0$",
+        "$(4x+y)\\,dx+(6y-x)\\,dy=0$",
+        "$(x^2+2xy^2)\\,dx+(4xy+2y^2)\\,dy=0$",
+        "$(\\cos x+\\ln y)\\,dx+\\left(\\dfrac{x}{y}+\\sin x\\right)dy=0$",
+        "$(xy+e^y)\\,dx+(xy+e^x)\\,dy=0$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Use the test for exactness of $M\\,dx+N\\,dy=0$ on each equation.",
+        "For each choice, identify $M$ and $N$ and compute $\\partial M/\\partial y$ and $\\partial N/\\partial x$.",
+        "$M\\,dx+N\\,dy=0$ is exact if and only if $M_y=N_x$."
+      ],
+      "steps": [
+        "First equation: $M_y=3y^2-\\dfrac{x}{y^2}$ and $N_x=3y^2-\\dfrac{x}{y^2}$, which are equal, so it is exact.",
+        "Second: $M_y=1$ but $N_x=-1$.",
+        "Third: $M_y=4xy$ but $N_x=4y$.",
+        "Fourth: $M_y=\\dfrac1y$ but $N_x=\\dfrac1y+\\cos x$. Fifth: $M_y=x+e^y$ but $N_x=y+e^x$.",
+        "Only the first equation has $M_y=N_x$."
+      ],
+      "brief": "Only the first equation has $M_y=N_x=3y^2-\\frac{x}{y^2}$."
+    },
+    {
+      "sec": "1.2",
+      "q": "If $y=f(x)$ is the solution of the initial value problem \\[ \\frac{dy}{dx}=\\frac{20}{x^2+16}, \\qquad y(0)=0, \\] then $y(4)=$",
+      "opts": [
+        "$\\dfrac{5\\pi}{4}$",
+        "$\\dfrac{3\\pi}{4}$",
+        "$\\dfrac{7\\pi}{4}$",
+        "$0$",
+        "$\\dfrac{\\pi}{4}$"
+      ],
+      "ans": 0,
+      "hints": [
+        "The right side depends only on $x$, so the solution is an integral of it.",
+        "Integrate $\\dfrac{20}{x^2+16}$ and use $y(0)=0$ to find the constant, then evaluate at $x=4$.",
+        "$\\int\\dfrac{dx}{x^2+a^2}=\\dfrac1a\\tan^{-1}\\dfrac xa+C$."
+      ],
+      "steps": [
+        "$y=\\int\\dfrac{20}{x^2+16}\\,dx=20\\cdot\\dfrac14\\tan^{-1}\\dfrac x4+C=5\\tan^{-1}\\dfrac x4+C$.",
+        "$y(0)=0$ gives $C=0$.",
+        "$y(4)=5\\tan^{-1}(1)=5\\cdot\\dfrac{\\pi}{4}=\\dfrac{5\\pi}{4}$."
+      ],
+      "brief": "$y=5\\tan^{-1}(x/4)$, so $y(4)=5\\cdot\\frac{\\pi}{4}=\\frac{5\\pi}{4}$."
+    },
+    {
+      "sec": "1.4",
+      "q": "If $y(x)$ is the solution of the initial value problem \\[ x\\frac{dy}{dx}-y=2x^2y, \\qquad y(1)=1, \\] then $y(2)=$",
+      "opts": [
+        "$2e^3$",
+        "$2e^4$",
+        "$e^4$",
+        "$0$",
+        "$5e^3$"
+      ],
+      "ans": 0,
+      "hints": [
+        "After moving the $y$ term, the right side factors as a function of $x$ times a function of $y$, so the equation is separable.",
+        "Collect the terms in $y$ on the right to write $x\\,y'=y\\cdot(\\text{something in }x)$, then separate the variables and integrate.",
+        "For $\\dfrac{dy}{dx}=g(x)\\,y$: $\\ln|y|=\\int g(x)\\,dx+C$, and $\\dfrac{1+2x^2}{x}=\\dfrac1x+2x$."
+      ],
+      "steps": [
+        "$x\\,y'=y+2x^2y=y(1+2x^2)$, so $\\dfrac{dy}{y}=\\left(\\dfrac1x+2x\\right)dx$.",
+        "Integrate: $\\ln|y|=\\ln|x|+x^2+C_1$, so $y=Cxe^{x^2}$.",
+        "$y(1)=Ce=1$ gives $C=e^{-1}$, so $y=xe^{x^2-1}$.",
+        "$y(2)=2e^{4-1}=2e^3$."
+      ],
+      "brief": "Separable: $y=Cxe^{x^2}$, $C=e^{-1}$, so $y(2)=2e^3$."
+    },
+    {
+      "sec": "1.5",
+      "q": "The general solution of the linear differential equation \\[ \\frac{dy}{dx}+3y=2xe^{-3x} \\] is given by",
+      "opts": [
+        "$y(x)=e^{-3x}\\left(x^2+c\\right)$",
+        "$y(x)=e^{3x}\\left(x^2+c\\right)$",
+        "$y(x)=e^{3x}\\left(x^3+c\\right)$",
+        "$y(x)=e^{-3x}\\left(x^3+c\\right)$",
+        "$y(x)=e^{3x}\\left(2x^2+c\\right)$"
+      ],
+      "ans": 0,
+      "hints": [
+        "This is a first-order linear equation already in the form $y'+P(x)y=Q(x)$.",
+        "Find the integrating factor from $P(x)$, multiply the equation by it, and recognise the left side as a derivative.",
+        "$\\rho=e^{\\int P\\,dx}$ and $(\\rho y)'=\\rho Q$."
+      ],
+      "steps": [
+        "$P=3$, so $\\rho=e^{3x}$.",
+        "Multiply: $\\left(e^{3x}y\\right)'=e^{3x}\\cdot 2xe^{-3x}=2x$.",
+        "Integrate: $e^{3x}y=x^2+c$.",
+        "$y=e^{-3x}\\left(x^2+c\\right)$."
+      ],
+      "brief": "$\\rho=e^{3x}$: $(e^{3x}y)'=2x$, so $y=e^{-3x}(x^2+c)$."
+    },
+    {
+      "sec": "Ch. 3",
+      "q": "The matrix $A=\\begin{bmatrix}1&0&0\\\\1&b&b^2\\\\1&c&c^2\\end{bmatrix}$ is invertible if",
+      "opts": [
+        "$c\\neq0,\\ b\\neq0,\\ c\\neq b$",
+        "$c\\neq b,\\ b\\neq0$",
+        "$c\\neq0,\\ b\\neq0,\\ c=b$",
+        "$c=0,\\ b\\neq0,\\ c=b$",
+        "$c\\neq0,\\ b=0,\\ c\\neq b$"
+      ],
+      "ans": 0,
+      "hints": [
+        "A square matrix is invertible exactly when its determinant is nonzero.",
+        "Expand the determinant along the first row, which has two zeros, and factor the result.",
+        "A matrix is invertible if and only if $\\det\\neq0$, and a product of factors is nonzero exactly when every factor is nonzero."
+      ],
+      "steps": [
+        "Expand along the first row: $\\det A=1\\cdot\\begin{vmatrix}b&b^2\\\\c&c^2\\end{vmatrix}$.",
+        "$\\det A=bc^2-cb^2=bc(c-b)$.",
+        "$A$ is invertible exactly when $bc(c-b)\\neq0$.",
+        "That means $c\\neq0$, $b\\neq0$ and $c\\neq b$."
+      ],
+      "brief": "$\\det A=bc(c-b)\\neq0$, so $b\\neq0$, $c\\neq0$, $c\\neq b$."
+    },
+    {
+      "sec": "1.4",
+      "q": "A certain city had a population of 25000 in 1960 and a population of 30,000 in 1970. Assume that its population will continue to grow exponentially at a constant rate. The population in 1980 is",
+      "opts": [
+        "$36000$",
+        "$38000$",
+        "$34000$",
+        "$42000$",
+        "$48000$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Exponential growth at a constant rate is the natural growth model.",
+        "Measure time $t$ in years from 1960, write the population as $P_0e^{kt}$, and use the 1970 value to find $e^{10k}$.",
+        "$P(t)=P_0e^{kt}$, so $P(t+T)=P(t)\\,e^{kT}$: equal time spans multiply the population by the same factor."
+      ],
+      "steps": [
+        "Let $P(t)=25000e^{kt}$ with $t$ in years since 1960.",
+        "$P(10)=30000$ gives $e^{10k}=\\dfrac{30000}{25000}=\\dfrac65$.",
+        "1980 is $t=20$: $P(20)=25000\\left(e^{10k}\\right)^2=25000\\left(\\dfrac65\\right)^2$.",
+        "$P(20)=25000\\cdot\\dfrac{36}{25}=36000$."
+      ],
+      "brief": "$e^{10k}=\\frac65$, so $P(20)=25000\\left(\\frac65\\right)^2=36000$."
+    },
+    {
+      "sec": "Ch. 3",
+      "q": "Given the system \\[ \\begin{aligned} 3x-y-5z&=3\\\\ 4x-4y-3z&=-4\\\\ x-5z&=2 \\end{aligned} \\] Solve the system by using the Gaussian elimination method. (No other method is accepted.)",
+      "hints": [
+        "This is a linear system with three equations and three unknowns, to be solved by row reduction.",
+        "Write the augmented matrix and swap rows so that the leading entry in the first column is $1$, then clear the entries below it.",
+        "Use the row operations: swap two rows, multiply a row by a nonzero constant, add a multiple of one row to another. Continue until the matrix is in echelon form, then back-substitute."
+      ],
+      "steps": [
+        "Augmented matrix with $R_1\\leftrightarrow R_3$: $\\left[\\begin{array}{rrr|r}1&0&-5&2\\\\4&-4&-3&-4\\\\3&-1&-5&3\\end{array}\\right]$.",
+        "$R_2-4R_1$ and $R_3-3R_1$: rows $(0,-4,17\\,|\\,-12)$ and $(0,-1,10\\,|\\,-3)$.",
+        "Swap $R_2,R_3$ and multiply by $-1$: $(0,1,-10\\,|\\,3)$; then $R_3+4R_2$ gives $(0,0,-23\\,|\\,0)$, so $z=0$.",
+        "Back-substitute: $y-10z=3$ gives $y=3$, and $x-5z=2$ gives $x=2$.",
+        "The solution is $(x,y,z)=(2,3,0)$."
+      ],
+      "brief": "Row reduction gives $-23z=0$, so $z=0$, $y=3$, $x=2$: the solution is $(2,3,0)$.",
+      "written": true,
+      "answer": "$(x,y,z)=(2,3,0)$"
+    },
+    {
+      "sec": "Ch. 3",
+      "q": "Let $A=\\begin{bmatrix}-5&-2&2\\\\1&5&-3\\\\5&-3&1\\end{bmatrix}$. Find the inverse of $A$ only by using the adjoint formula.",
+      "hints": [
+        "Use the adjoint (adjugate) formula for the inverse: it needs the determinant and all the cofactors.",
+        "Compute $\\det A$ first, then the nine cofactors $A_{ij}=(-1)^{i+j}M_{ij}$, and arrange them in a matrix.",
+        "$A^{-1}=\\dfrac{1}{\\det A}\\operatorname{adj}(A)$, where $\\operatorname{adj}(A)$ is the transpose of the matrix of cofactors."
+      ],
+      "steps": [
+        "Expand along the first row: $\\det A=-5(-4)+2(16)+2(-28)=-4$.",
+        "Cofactors: $A_{11}=-4,\\ A_{12}=-16,\\ A_{13}=-28$; $A_{21}=-4,\\ A_{22}=-15,\\ A_{23}=-25$; $A_{31}=-4,\\ A_{32}=-13,\\ A_{33}=-23$.",
+        "The adjoint is the transpose: $\\operatorname{adj}(A)=\\begin{bmatrix}-4&-4&-4\\\\-16&-15&-13\\\\-28&-25&-23\\end{bmatrix}$.",
+        "Divide by $\\det A=-4$: $A^{-1}=\\begin{bmatrix}1&1&1\\\\4&\\frac{15}{4}&\\frac{13}{4}\\\\7&\\frac{25}{4}&\\frac{23}{4}\\end{bmatrix}$."
+      ],
+      "brief": "$\\det A=-4$, $A^{-1}=-\\frac14\\operatorname{adj}(A)$ with rows $(1,1,1)$, $(4,\\frac{15}{4},\\frac{13}{4})$, $(7,\\frac{25}{4},\\frac{23}{4})$.",
+      "written": true,
+      "answer": "$A^{-1}=\\begin{bmatrix}1&1&1\\\\4&\\frac{15}{4}&\\frac{13}{4}\\\\7&\\frac{25}{4}&\\frac{23}{4}\\end{bmatrix}$"
+    },
+    {
+      "sec": "1.6",
+      "q": "Verify that the differential equation \\[ \\left[\\sin(x^2+y)+2x^2\\cos(x^2+y)\\right]dx+\\left[x\\cos(x^2+y)+2ye^{y^2}\\right]dy=0 \\] is exact and then solve it.",
+      "hints": [
+        "Check exactness first, then build the potential function $F(x,y)$.",
+        "Compare $M_y$ and $N_x$; then integrate $N$ with respect to $y$ (or $M$ with respect to $x$) and fix the leftover function.",
+        "If $M_y=N_x$, there is $F$ with $F_x=M$ and $F_y=N$; the solution is $F(x,y)=C$. Integrating $N$ in $y$ gives $F=\\int N\\,dy+g(x)$, and $g$ comes from $F_x=M$."
+      ],
+      "steps": [
+        "$M_y=\\cos(x^2+y)-2x^2\\sin(x^2+y)$ and $N_x=\\cos(x^2+y)-2x^2\\sin(x^2+y)$, so the equation is exact.",
+        "$F=\\int\\left[x\\cos(x^2+y)+2ye^{y^2}\\right]dy=x\\sin(x^2+y)+e^{y^2}+g(x)$.",
+        "$F_x=\\sin(x^2+y)+2x^2\\cos(x^2+y)+g'(x)=M$, so $g'(x)=0$ and $g$ is constant.",
+        "The solution is $x\\sin(x^2+y)+e^{y^2}=C$."
+      ],
+      "brief": "Exact ($M_y=N_x$); $F=x\\sin(x^2+y)+e^{y^2}$, so the general solution is $x\\sin(x^2+y)+e^{y^2}=C$.",
+      "written": true,
+      "answer": "$x\\sin(x^2+y)+e^{y^2}=C$"
+    },
+    {
+      "sec": "1.5",
+      "q": "Solve the initial value problem \\[ (x^2+1)\\frac{dy}{dx}+3x^3y=6xe^{-\\frac32x^2}, \\qquad y(0)=1. \\]",
+      "hints": [
+        "This is a first-order linear equation once the coefficient of $y'$ is made equal to $1$.",
+        "Divide by $x^2+1$, then compute the integrating factor; split $\\dfrac{3x^3}{x^2+1}$ into a polynomial plus a simpler fraction first.",
+        "$\\rho=e^{\\int P\\,dx}$ and $(\\rho y)'=\\rho Q$; long division gives $\\dfrac{x^3}{x^2+1}=x-\\dfrac{x}{x^2+1}$."
+      ],
+      "steps": [
+        "Standard form: $y'+\\dfrac{3x^3}{x^2+1}y=\\dfrac{6x}{x^2+1}e^{-\\frac32x^2}$.",
+        "$\\int\\dfrac{3x^3}{x^2+1}dx=\\int\\left(3x-\\dfrac{3x}{x^2+1}\\right)dx=\\dfrac32x^2-\\dfrac32\\ln(x^2+1)$, so $\\rho=e^{\\frac32x^2}(x^2+1)^{-3/2}$.",
+        "$\\left(\\rho y\\right)'=\\rho Q=6x(x^2+1)^{-5/2}$, so $\\rho y=-2(x^2+1)^{-3/2}+C$.",
+        "$y=e^{-\\frac32x^2}\\left[-2+C(x^2+1)^{3/2}\\right]$; $y(0)=-2+C=1$ gives $C=3$.",
+        "$y=e^{-\\frac32x^2}\\left[-2+3\\sqrt{(x^2+1)^3}\\right]$."
+      ],
+      "brief": "$\\rho=e^{\\frac32x^2}(x^2+1)^{-3/2}$, $C=3$: $y=e^{-\\frac32x^2}\\left[-2+3\\sqrt{(x^2+1)^3}\\right]$.",
+      "written": true,
+      "answer": "$y=e^{-\\frac32x^2}\\left[-2+3\\sqrt{(x^2+1)^3}\\right]$"
+    }
+  ]
+}

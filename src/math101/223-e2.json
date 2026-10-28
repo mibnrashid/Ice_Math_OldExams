@@ -1,0 +1,441 @@
+{
+  "course": "math101",
+  "term": "223",
+  "kind": "e2",
+  "date": "31 July 2023",
+  "minutes": 120,
+  "source": "math101-223-ex2.pdf",
+  "note": "Date and 120 minutes (net time) are printed on the cover. All 18 master answers are marked (correct) as choice (a) and each was verified independently; no disagreements.",
+  "qs": [
+    {
+      "sec": "4.2",
+      "q": "The value of $c$ which satisfies the conclusion of Rolle's theorem for the function $f(x)=(x^2-2x)\\,e^{x}$ on $[0,2]$ is",
+      "opts": [
+        "$\\sqrt2$",
+        "$-\\sqrt2$",
+        "$1$",
+        "$\\dfrac{\\sqrt2}{2}$",
+        "$\\dfrac12$"
+      ],
+      "ans": 0,
+      "hints": [
+        "This is a Rolle's theorem problem: find a point in the open interval where the derivative is zero.",
+        "Check $f(0)=f(2)$, then differentiate with the product rule and set $f'(c)=0$.",
+        "Rolle's theorem: if $f$ is continuous on $[a,b]$, differentiable on $(a,b)$ and $f(a)=f(b)$, then $f'(c)=0$ for some $c$ in $(a,b)$. Also $(uv)'=u'v+uv'$."
+      ],
+      "steps": [
+        "$f(0)=0$ and $f(2)=0$, so Rolle's theorem applies.",
+        "$f'(x)=(2x-2)e^x+(x^2-2x)e^x=(x^2-2)e^x$.",
+        "$f'(c)=0$ gives $c^2=2$, so $c=\\pm\\sqrt2$.",
+        "Only $c=\\sqrt2$ lies in $(0,2)$."
+      ],
+      "brief": "$f'=(x^2-2)e^x=0$, so $c=\\sqrt2$ (the one in $(0,2)$)."
+    },
+    {
+      "sec": "4.1",
+      "q": "Let $f(x)=x^3-\\dfrac32x^2$ on $[-1,2]$ and let $M$ be the absolute maximum of $f(x)$ and $m$ be the absolute minimum of $f(x)$. Then $M+m=$",
+      "opts": [
+        "$\\dfrac{-1}{2}$",
+        "$\\dfrac{-5}{2}$",
+        "$1$",
+        "$\\dfrac{-3}{4}$",
+        "$\\dfrac32$"
+      ],
+      "ans": 0,
+      "hints": [
+        "This is an absolute extrema problem on a closed interval.",
+        "Find the critical numbers inside the interval, then evaluate $f$ at them and at both endpoints.",
+        "Closed Interval Method: for continuous $f$ on $[a,b]$, the absolute maximum and minimum are the largest and smallest values of $f$ at the critical numbers in $(a,b)$ and at $a$, $b$."
+      ],
+      "steps": [
+        "$f'(x)=3x^2-3x=3x(x-1)$, so the critical numbers are $x=0$ and $x=1$.",
+        "$f(-1)=-1-\\frac32=-\\frac52$, $f(0)=0$, $f(1)=1-\\frac32=-\\frac12$, $f(2)=8-6=2$.",
+        "So $M=2$ and $m=-\\frac52$.",
+        "$M+m=2-\\frac52=-\\frac12$."
+      ],
+      "brief": "Values $-\\frac52,0,-\\frac12,2$: $M=2$, $m=-\\frac52$, sum $-\\frac12$."
+    },
+    {
+      "sec": "3.8",
+      "q": "By using Newton's method to approximate a zero of the function $f(x)=x^3+x-1$ using the initial guess $x_1=\\dfrac12$, we get $x_2=$",
+      "opts": [
+        "$\\dfrac57$",
+        "$\\dfrac67$",
+        "$1$",
+        "$\\dfrac47$",
+        "$\\dfrac37$"
+      ],
+      "ans": 0,
+      "hints": [
+        "This is one step of Newton's method.",
+        "Compute $f(x_1)$ and $f'(x_1)$ for the given initial guess.",
+        "Newton's method: $x_{n+1}=x_n-\\dfrac{f(x_n)}{f'(x_n)}$."
+      ],
+      "steps": [
+        "$f'(x)=3x^2+1$.",
+        "$f\\left(\\frac12\\right)=\\frac18+\\frac12-1=-\\frac38$ and $f'\\left(\\frac12\\right)=\\frac34+1=\\frac74$.",
+        "$x_2=\\frac12-\\dfrac{-3/8}{7/4}=\\frac12+\\frac{3}{14}$.",
+        "$x_2=\\frac{7}{14}+\\frac{3}{14}=\\frac{10}{14}=\\frac57$."
+      ],
+      "brief": "$x_2=\\frac12-\\frac{-3/8}{7/4}=\\frac12+\\frac3{14}=\\frac57$."
+    },
+    {
+      "sec": "3.4",
+      "q": "If $f(t)=\\dfrac{3^{2t}}{t}$, then $f'(1)=$",
+      "opts": [
+        "$18\\ln3-9$",
+        "$9\\ln3-2$",
+        "$18\\ln3+4$",
+        "$9\\ln3-1$",
+        "$18\\ln3$"
+      ],
+      "ans": 0,
+      "hints": [
+        "This is a quotient of an exponential function and a power, so use the quotient rule with the chain rule.",
+        "Differentiate the numerator exponential using the chain rule, then apply the quotient rule and substitute the given value of $t$.",
+        "$\\dfrac{d}{dt}a^{u}=a^{u}\\ln a\\cdot u'$ and $\\left(\\dfrac uv\\right)'=\\dfrac{u'v-uv'}{v^2}$."
+      ],
+      "steps": [
+        "$\\dfrac{d}{dt}3^{2t}=3^{2t}\\ln3\\cdot 2$.",
+        "$f'(t)=\\dfrac{2\\ln3\\cdot3^{2t}\\cdot t-3^{2t}}{t^2}$.",
+        "At $t=1$: $f'(1)=2\\ln3\\cdot9-9$.",
+        "$f'(1)=18\\ln3-9$."
+      ],
+      "brief": "Quotient rule: $f'(1)=2\\ln3\\cdot9-9=18\\ln3-9$."
+    },
+    {
+      "sec": "4.3",
+      "q": "The sum of all values of $a$ in the interval $(0,2\\pi)$ for which the function $f(x)=\\cos^2(2x)$ has a relative extremum at $x=a$ is",
+      "opts": [
+        "$7\\pi$",
+        "$6\\pi$",
+        "$5\\pi$",
+        "$4\\pi$",
+        "$8\\pi$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Relative extrema occur at critical numbers where the derivative changes sign.",
+        "Differentiate $f$, set $f'(x)=0$ and list all solutions in $(0,2\\pi)$. Then decide which are sign changes.",
+        "$\\dfrac{d}{dx}\\cos^2u=-2\\cos u\\sin u\\cdot u'$ and $2\\sin u\\cos u=\\sin2u$. Also $\\sin u=0$ exactly when $u=k\\pi$, and the first derivative test looks for a sign change of $f'$."
+      ],
+      "steps": [
+        "$f'(x)=2\\cos2x\\cdot(-2\\sin2x)=-2\\sin4x$.",
+        "$f'(x)=0$ when $4x=k\\pi$, i.e. $x=\\frac{k\\pi}{4}$; in $(0,2\\pi)$ this gives $k=1,\\dots,7$.",
+        "At each of these $\\sin4x$ changes sign, so each is a relative extremum.",
+        "Sum $=\\frac{\\pi}{4}(1+2+\\cdots+7)=\\frac{\\pi}{4}\\cdot28=7\\pi$."
+      ],
+      "brief": "$f'=-2\\sin4x=0$: $x=\\frac{k\\pi}4$, $k=1..7$, all sign changes; sum $=7\\pi$."
+    },
+    {
+      "sec": "4.3",
+      "q": "The function $f(x)=\\dfrac{x^2}{2x-1}$ is decreasing on the interval",
+      "opts": [
+        "$\\left(0,\\dfrac12\\right)$",
+        "$(-\\infty,0)$",
+        "$(1,\\infty)$",
+        "$\\left(-1,\\dfrac12\\right)$",
+        "$\\left(\\dfrac12,2\\right)$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Decreasing intervals come from the sign of the first derivative.",
+        "Differentiate with the quotient rule, factor $f'$, and make a sign chart that also marks the point where $f$ is undefined.",
+        "If $f'(x)<0$ on an interval (inside the domain), then $f$ is decreasing there. $\\left(\\dfrac uv\\right)'=\\dfrac{u'v-uv'}{v^2}$."
+      ],
+      "steps": [
+        "$f'(x)=\\dfrac{2x(2x-1)-2x^2}{(2x-1)^2}=\\dfrac{2x^2-2x}{(2x-1)^2}=\\dfrac{2x(x-1)}{(2x-1)^2}$.",
+        "The denominator is positive for $x\\neq\\frac12$, so the sign of $f'$ is the sign of $x(x-1)$.",
+        "$f'<0$ for $0<x<1$ with $x\\neq\\frac12$, so $f$ is decreasing on $(0,\\frac12)$ and on $(\\frac12,1)$.",
+        "Of the given intervals, only $\\left(0,\\frac12\\right)$ lies inside such an interval."
+      ],
+      "brief": "$f'=\\frac{2x(x-1)}{(2x-1)^2}<0$ on $(0,\\frac12)\\cup(\\frac12,1)$."
+    },
+    {
+      "sec": "4.2",
+      "q": "The value of $c$ which satisfies the conclusion of the Mean Value Theorem for the function $f(x)=(x+3)\\ln(x+3)$ on $[-2,-1]$ is",
+      "opts": [
+        "$\\dfrac{4-3e}{e}$",
+        "$\\dfrac{2-3e}{e}$",
+        "$\\dfrac{3-3e}{e}$",
+        "$4-3e$",
+        "$3-3e$"
+      ],
+      "ans": 0,
+      "hints": [
+        "This is a Mean Value Theorem problem.",
+        "Compute the average slope $\\dfrac{f(b)-f(a)}{b-a}$ and set it equal to $f'(c)$, where $f'$ comes from the product rule.",
+        "MVT: there is $c$ in $(a,b)$ with $f'(c)=\\dfrac{f(b)-f(a)}{b-a}$. Also $\\ln$ and $e^{(\\cdot)}$ are inverse functions."
+      ],
+      "steps": [
+        "$f(-1)=2\\ln2$ and $f(-2)=1\\cdot\\ln1=0$, so the average slope is $\\dfrac{2\\ln2-0}{1}=2\\ln2$.",
+        "$f'(x)=\\ln(x+3)+1$.",
+        "$\\ln(c+3)+1=2\\ln2=\\ln4$, so $\\ln(c+3)=\\ln4-1$ and $c+3=\\dfrac4e$.",
+        "$c=\\dfrac4e-3=\\dfrac{4-3e}{e}$, which lies in $(-2,-1)$."
+      ],
+      "brief": "Slope $2\\ln2=\\ln(c+3)+1$, so $c+3=\\frac4e$ and $c=\\frac{4-3e}{e}$."
+    },
+    {
+      "sec": "4.1",
+      "q": "The sum of all critical numbers of the function $f(t)=t\\sqrt{4-t}$ in the interval $(-\\infty,3)$ is",
+      "opts": [
+        "$\\dfrac83$",
+        "$\\dfrac73$",
+        "$3$",
+        "$2$",
+        "$\\dfrac{10}{3}$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Critical numbers are points in the domain where $f'$ is zero or undefined.",
+        "Differentiate with the product and chain rules, combine into a single fraction, and find where the numerator is zero or the denominator is zero.",
+        "A critical number $c$ is in the domain of $f$ with $f'(c)=0$ or $f'(c)$ undefined. Only count those lying in the given interval."
+      ],
+      "steps": [
+        "$f'(t)=\\sqrt{4-t}-\\dfrac{t}{2\\sqrt{4-t}}=\\dfrac{2(4-t)-t}{2\\sqrt{4-t}}=\\dfrac{8-3t}{2\\sqrt{4-t}}$.",
+        "$f'(t)=0$ gives $t=\\frac83$, which is less than $3$.",
+        "$f'$ is undefined only at $t=4$, which is not in $(-\\infty,3)$.",
+        "So the only critical number is $\\frac83$, and the sum is $\\frac83$."
+      ],
+      "brief": "$f'=\\frac{8-3t}{2\\sqrt{4-t}}=0$ at $t=\\frac83$ (and $t=4$ is outside), so the sum is $\\frac83$."
+    },
+    {
+      "sec": "3.4",
+      "q": "If $y=\\dfrac{(2x+1)^3(x^2-1)^2}{x+3}$, then $y'(0)=$",
+      "opts": [
+        "$\\dfrac{17}{9}$",
+        "$2$",
+        "$\\dfrac{19}{9}$",
+        "$\\dfrac{16}{9}$",
+        "$\\dfrac53$"
+      ],
+      "ans": 0,
+      "hints": [
+        "A product and quotient of powers is handled neatly by logarithmic differentiation.",
+        "Take $\\ln|y|$, split it into a sum of logarithms, differentiate, and then evaluate at the given point using the value of $y$ there.",
+        "If $\\ln|y|=g(x)$ then $y'=y\\,g'(x)$, using $\\ln(ab)=\\ln a+\\ln b$, $\\ln(a/b)=\\ln a-\\ln b$, $\\ln a^n=n\\ln a$."
+      ],
+      "steps": [
+        "$\\ln|y|=3\\ln|2x+1|+2\\ln|x^2-1|-\\ln|x+3|$.",
+        "$\\dfrac{y'}{y}=\\dfrac{6}{2x+1}+\\dfrac{4x}{x^2-1}-\\dfrac{1}{x+3}$.",
+        "At $x=0$: $y(0)=\\dfrac{1\\cdot1}{3}=\\frac13$ and $\\dfrac{y'}{y}=6+0-\\frac13=\\frac{17}{3}$.",
+        "$y'(0)=\\frac13\\cdot\\frac{17}{3}=\\frac{17}{9}$."
+      ],
+      "brief": "Log differentiation: $y(0)=\\frac13$, $\\frac{y'}{y}=6-\\frac13$, so $y'(0)=\\frac{17}{9}$."
+    },
+    {
+      "sec": "3.7",
+      "q": "All edges of a cube are expanding at a rate of 6 centimeters per second ($cm/s$). How fast (in $cm^3/s$) is the volume changing when each edge is $2\\,cm$?",
+      "opts": [
+        "$72$",
+        "$36$",
+        "$144$",
+        "$108$",
+        "$60$"
+      ],
+      "ans": 0,
+      "hints": [
+        "This is a related rates problem.",
+        "Write the volume as a function of the edge length and differentiate both sides with respect to time.",
+        "For a cube with edge $s$, $V=s^3$; differentiating in $t$ gives $\\dfrac{dV}{dt}=3s^2\\dfrac{ds}{dt}$ by the chain rule."
+      ],
+      "steps": [
+        "$V=s^3$, so $\\dfrac{dV}{dt}=3s^2\\dfrac{ds}{dt}$.",
+        "Substitute $s=2$ and $\\dfrac{ds}{dt}=6$.",
+        "$\\dfrac{dV}{dt}=3(4)(6)=72\\ cm^3/s$."
+      ],
+      "brief": "$V=s^3$: $V'=3s^2s'=3(4)(6)=72$."
+    },
+    {
+      "sec": "3.6",
+      "q": "The slope of the graph of the equation $\\arcsin(xy)=\\dfrac23\\arctan(2x)$ at the point $\\left(\\dfrac12,1\\right)$ is",
+      "opts": [
+        "$\\dfrac{2\\sqrt3-6}{3}$",
+        "$\\dfrac{2\\sqrt3+4}{3}$",
+        "$\\dfrac{\\sqrt3-4}{2}$",
+        "$\\dfrac{2\\sqrt3+5}{3}$",
+        "$\\dfrac{2\\sqrt3-6}{5}$"
+      ],
+      "ans": 0,
+      "hints": [
+        "This is implicit differentiation involving inverse trigonometric functions.",
+        "Differentiate both sides with respect to $x$ (product rule on $xy$), then substitute the point and solve for $y'$.",
+        "$\\dfrac{d}{dx}\\arcsin u=\\dfrac{u'}{\\sqrt{1-u^2}}$ and $\\dfrac{d}{dx}\\arctan u=\\dfrac{u'}{1+u^2}$."
+      ],
+      "steps": [
+        "Differentiate: $\\dfrac{y+xy'}{\\sqrt{1-x^2y^2}}=\\dfrac23\\cdot\\dfrac{2}{1+4x^2}$.",
+        "At $\\left(\\frac12,1\\right)$: $xy=\\frac12$, so $\\sqrt{1-\\frac14}=\\frac{\\sqrt3}{2}$, and the right side is $\\frac43\\cdot\\frac12=\\frac23$.",
+        "So $\\dfrac{2}{\\sqrt3}\\left(1+\\frac{y'}{2}\\right)=\\frac23$, which gives $1+\\frac{y'}{2}=\\frac{\\sqrt3}{3}$.",
+        "$y'=\\dfrac{2\\sqrt3}{3}-2=\\dfrac{2\\sqrt3-6}{3}$."
+      ],
+      "brief": "Implicit: $\\frac{2}{\\sqrt3}(1+\\frac{y'}2)=\\frac23$, so $y'=\\frac{2\\sqrt3-6}{3}$."
+    },
+    {
+      "sec": "3.6",
+      "q": "If $f(x)=5-2x^3$ has an inverse function, then $(f^{-1})'(7)=$",
+      "opts": [
+        "$\\dfrac{-1}{6}$",
+        "$\\dfrac16$",
+        "$\\dfrac{-1}{5}$",
+        "$\\dfrac15$",
+        "$\\dfrac13$"
+      ],
+      "ans": 0,
+      "hints": [
+        "This is a derivative-of-an-inverse problem.",
+        "First find the $x$ with $f(x)$ equal to the given output, then compute $f'$ at that $x$.",
+        "$(f^{-1})'(b)=\\dfrac{1}{f'(a)}$ where $f(a)=b$."
+      ],
+      "steps": [
+        "Solve $f(a)=7$: $5-2a^3=7$, so $a^3=-1$ and $a=-1$.",
+        "$f'(x)=-6x^2$, so $f'(-1)=-6$.",
+        "$(f^{-1})'(7)=\\dfrac{1}{f'(-1)}=-\\dfrac16$."
+      ],
+      "brief": "$f(-1)=7$, $f'(-1)=-6$, so $(f^{-1})'(7)=-\\frac16$."
+    },
+    {
+      "sec": "3.5",
+      "q": "The number of points at which the graph of the equation $4x^2+y^2-8x+4y+4=0$ has a vertical tangent line is",
+      "opts": [
+        "$2$",
+        "$1$",
+        "$0$",
+        "$3$",
+        "$4$"
+      ],
+      "ans": 0,
+      "hints": [
+        "A vertical tangent occurs where $dy/dx$ has a zero denominator but the point lies on the curve.",
+        "Differentiate implicitly, then find where the denominator of $y'$ is zero and check which such points are on the curve.",
+        "If $F(x,y)=0$ gives $y'=-\\dfrac{F_x}{F_y}$, a vertical tangent needs $F_y=0$ (with $F_x\\neq0$) at a point on the curve."
+      ],
+      "steps": [
+        "Differentiate: $8x+2yy'-8+4y'=0$, so $y'=\\dfrac{8-8x}{2y+4}=\\dfrac{4(1-x)}{y+2}$.",
+        "The denominator is zero when $y=-2$.",
+        "Substitute $y=-2$ into the equation: $4x^2+4-8x-8+4=0$, so $4x^2-8x=0$ and $x=0$ or $x=2$.",
+        "At both points $4(1-x)\\neq0$, so there are 2 vertical tangents."
+      ],
+      "brief": "$y'=\\frac{4(1-x)}{y+2}$; $y=-2$ gives $x=0,2$: 2 points."
+    },
+    {
+      "sec": "3.5",
+      "q": "If $x^2+y^2=25$, then $\\dfrac{d^2y}{dx^2}=$",
+      "opts": [
+        "$\\dfrac{-25}{y^3}$",
+        "$\\dfrac{25}{y^3}$",
+        "$\\dfrac{-5}{y^3}$",
+        "$\\dfrac{5}{y^3}$",
+        "$\\dfrac{-25}{y^2}$"
+      ],
+      "ans": 0,
+      "hints": [
+        "This asks for a second derivative by implicit differentiation.",
+        "Find $y'$ first, then differentiate it again using the quotient rule and substitute $y'$ back in.",
+        "$\\dfrac{d}{dx}\\left(\\dfrac{u}{v}\\right)=\\dfrac{u'v-uv'}{v^2}$; at the end, use the original equation to simplify."
+      ],
+      "steps": [
+        "$2x+2yy'=0$, so $y'=-\\dfrac xy$.",
+        "$y''=-\\dfrac{y-xy'}{y^2}=-\\dfrac{y+x^2/y}{y^2}$.",
+        "$y''=-\\dfrac{y^2+x^2}{y^3}$.",
+        "Since $x^2+y^2=25$, $y''=-\\dfrac{25}{y^3}$."
+      ],
+      "brief": "$y'=-\\frac xy$, $y''=-\\frac{x^2+y^2}{y^3}=-\\frac{25}{y^3}$."
+    },
+    {
+      "sec": "3.4",
+      "q": "If $g(x)=\\left(\\dfrac{3x^2-2}{2x+3}\\right)^{-2}$, then $g'(0)=$",
+      "opts": [
+        "$3$",
+        "$4$",
+        "$2$",
+        "$1$",
+        "$5$"
+      ],
+      "ans": 0,
+      "hints": [
+        "This is a chain rule problem with a power of a quotient.",
+        "Use the power rule for the outside function and the quotient rule for the inside, then substitute $x=0$.",
+        "$\\dfrac{d}{dx}[h(x)]^n=n[h(x)]^{n-1}h'(x)$ and $\\left(\\dfrac uv\\right)'=\\dfrac{u'v-uv'}{v^2}$."
+      ],
+      "steps": [
+        "Let $h=\\dfrac{3x^2-2}{2x+3}$. Then $g'=-2h^{-3}h'$.",
+        "$h(0)=-\\frac23$.",
+        "$h'(x)=\\dfrac{6x(2x+3)-2(3x^2-2)}{(2x+3)^2}$, so $h'(0)=\\dfrac49$.",
+        "$g'(0)=-2\\left(-\\frac23\\right)^{-3}\\cdot\\frac49=-2\\cdot\\left(-\\frac{27}{8}\\right)\\cdot\\frac49=3$."
+      ],
+      "brief": "$g'=-2h^{-3}h'$ with $h(0)=-\\frac23$, $h'(0)=\\frac49$: $g'(0)=3$."
+    },
+    {
+      "sec": "4.3",
+      "q": "If the function $f(x)=a_3x^3+a_2x^2+a_1x+a_0$ has a relative minimum at $(0,0)$ and a relative maximum at $(2,2)$, then $a_3+a_2+a_1+a_0=$",
+      "opts": [
+        "$1$",
+        "$-1$",
+        "$0$",
+        "$2$",
+        "$-2$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Use the conditions on the graph to build equations for the coefficients.",
+        "A relative extremum of a differentiable function occurs where $f'=0$, and the given points lie on the graph, which gives four equations.",
+        "Fermat's theorem: if $f$ has a relative extremum at $c$ and is differentiable there, then $f'(c)=0$. Also $a_3+a_2+a_1+a_0=f(1)$."
+      ],
+      "steps": [
+        "$f'(x)=3a_3x^2+2a_2x+a_1$. $f'(0)=0$ gives $a_1=0$, and $f(0)=0$ gives $a_0=0$.",
+        "$f'(2)=12a_3+4a_2=0$, so $a_2=-3a_3$.",
+        "$f(2)=8a_3+4a_2=8a_3-12a_3=-4a_3=2$, so $a_3=-\\frac12$ and $a_2=\\frac32$.",
+        "The sum is $-\\frac12+\\frac32+0+0=1$."
+      ],
+      "brief": "$a_1=a_0=0$, $a_2=-3a_3$, $-4a_3=2$: $a_3=-\\frac12$, $a_2=\\frac32$, sum $=1$."
+    },
+    {
+      "sec": "3.7",
+      "q": "A ladder 10 meters long is leaning against the wall of a house. The base of the ladder is pulled away from the wall at a rate of $\\dfrac23$ meters per second ($m/s$). Consider the triangle formed by the side of the house, the ladder, and the ground. The rate (in $m^2/s$) at which the area of the triangle is changing when the base of the ladder is 6 meters from the wall is",
+      "opts": [
+        "$\\dfrac76$",
+        "$\\dfrac56$",
+        "$\\dfrac32$",
+        "$\\dfrac52$",
+        "$1$"
+      ],
+      "ans": 0,
+      "hints": [
+        "This is a related rates problem with a right triangle.",
+        "Let $x$ be the distance of the base from the wall and $y$ the height on the wall. Write the area and the Pythagorean relation, and differentiate both in $t$.",
+        "Right triangle: $x^2+y^2=L^2$, so $x\\dot x+y\\dot y=0$; area $A=\\frac12xy$, so $\\dot A=\\frac12(\\dot xy+x\\dot y)$."
+      ],
+      "steps": [
+        "$x^2+y^2=100$. At $x=6$: $y=8$.",
+        "$2x\\dot x+2y\\dot y=0$ gives $\\dot y=-\\dfrac xy\\dot x=-\\dfrac68\\cdot\\dfrac23=-\\dfrac12$.",
+        "$A=\\frac12xy$, so $\\dot A=\\frac12(\\dot x\\,y+x\\,\\dot y)=\\frac12\\left(\\frac23\\cdot8+6\\cdot\\left(-\\frac12\\right)\\right)$.",
+        "$\\dot A=\\frac12\\left(\\frac{16}{3}-3\\right)=\\frac12\\cdot\\frac73=\\frac76\\ m^2/s$."
+      ],
+      "brief": "$y=8$, $\\dot y=-\\frac12$; $\\dot A=\\frac12(\\frac23\\cdot8-3)=\\frac76$."
+    },
+    {
+      "sec": "3.5",
+      "q": "The normal line to the parabola $y=x^2$ at the point $(2,4)$ intersects the parabola a second time at",
+      "opts": [
+        "$\\left(\\dfrac{-9}{4},\\dfrac{81}{16}\\right)$",
+        "$(4,16)$",
+        "$(-1,1)$",
+        "$\\left(\\dfrac{-2}{3},\\dfrac49\\right)$",
+        "$\\left(\\dfrac{-7}{4},\\dfrac{49}{16}\\right)$"
+      ],
+      "ans": 0,
+      "hints": [
+        "The normal line is perpendicular to the tangent line at the point.",
+        "Find the slope of the tangent at the given point, take the negative reciprocal, write the normal line, and set it equal to the parabola.",
+        "The normal slope is $-\\dfrac{1}{f'(a)}$ when $f'(a)\\neq0$. Intersections of the line and the parabola solve a quadratic, one root of which is already known."
+      ],
+      "steps": [
+        "$y'=2x$, so the tangent slope at $x=2$ is $4$ and the normal slope is $-\\frac14$.",
+        "Normal line: $y-4=-\\frac14(x-2)$, i.e. $y=-\\frac x4+\\frac92$.",
+        "Set $x^2=-\\frac x4+\\frac92$: $4x^2+x-18=0$, so $(x-2)(4x+9)=0$.",
+        "The other root is $x=-\\frac94$, and $y=\\frac{81}{16}$."
+      ],
+      "brief": "Normal: $y=-\\frac x4+\\frac92$; $4x^2+x-18=0$ gives $x=-\\frac94$, point $(-\\frac94,\\frac{81}{16})$."
+    }
+  ]
+}

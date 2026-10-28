@@ -1,0 +1,437 @@
+{
+  "course": "math101",
+  "term": "221",
+  "kind": "e1",
+  "date": "",
+  "minutes": 90,
+  "source": "math101-221-e1.pdf",
+  "note": "Scanned master with handwritten solutions; no cover page, so the date and exam length are not printed (date left empty, 90 minutes assumed). Q2 is an epsilon-delta question (outside the current syllabus, solved normally). Q11: the tangent at (1,5) is the line y=3x+2 itself, so strictly only (-1,3) has a tangent parallel to but distinct from the given line; the official key (2) counts both points and is kept. Q18: the official key marks the limit definition (a) as always true.",
+  "qs": [
+    {
+      "sec": "2.4",
+      "q": "$\\lim_{x\\to0}\\frac{1+x}{1+e^{1/x}}=$",
+      "opts": [
+        "DNE",
+        "$1$",
+        "$0$",
+        "$\\infty$",
+        "$2$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Check the one-sided limits separately, because $e^{1/x}$ behaves differently on each side of $0$.",
+        "Find what $e^{1/x}$ does as $x\\to0^-$ and as $x\\to0^+$, then evaluate each one-sided limit.",
+        "$\\lim_{x\\to c}f(x)$ exists if and only if both one-sided limits exist and are equal; also $e^{u}\\to0$ as $u\\to-\\infty$ and $e^{u}\\to\\infty$ as $u\\to\\infty$."
+      ],
+      "steps": [
+        "As $x\\to0^-$, $\\frac1x\\to-\\infty$, so $e^{1/x}\\to0$ and the limit is $\\frac{1+0}{1+0}=1$.",
+        "As $x\\to0^+$, $\\frac1x\\to\\infty$, so $e^{1/x}\\to\\infty$ and the limit is $0$.",
+        "The one-sided limits differ ($1\\neq0$), so the limit does not exist."
+      ],
+      "brief": "Left limit $=1$, right limit $=0$, so the limit does not exist."
+    },
+    {
+      "sec": "2.2",
+      "q": "For the function $f(x)=\\dfrac{1}{1-x}$, the largest value of $\\delta$ such that $|f(x)+1|<0.1$ whenever $0<|x-2|<\\delta$ is equal to",
+      "opts": [
+        "$\\dfrac1{11}$",
+        "$\\dfrac1{10}$",
+        "$\\dfrac1{12}$",
+        "$\\dfrac19$",
+        "$\\dfrac18$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Turn $|f(x)+1|<0.1$ into an interval of $x$-values around $2$, then see how far that interval extends on each side.",
+        "Solve $-1.1<f(x)<-0.9$ for $x$, then measure the distance from $2$ to each endpoint.",
+        "The largest admissible $\\delta$ is the smaller of the two distances from $c$ to the endpoints of the interval where $|f(x)-L|<\\varepsilon$ holds."
+      ],
+      "steps": [
+        "Here $L=f(2)=-1$ and $|f(x)+1|<0.1$ means $-1.1<\\frac{1}{1-x}<-0.9$.",
+        "$\\frac1{1-x}=-1.1$ gives $x=\\frac{21}{11}$, and $\\frac1{1-x}=-0.9$ gives $x=\\frac{19}{9}$; near $x=2$ the interval is $\\frac{21}{11}<x<\\frac{19}{9}$.",
+        "Distances from $2$: $2-\\frac{21}{11}=\\frac1{11}$ and $\\frac{19}{9}-2=\\frac19$.",
+        "The largest $\\delta$ is the smaller one, $\\frac1{11}$."
+      ],
+      "brief": "Interval $\\frac{21}{11}<x<\\frac{19}{9}$; $\\delta=\\min\\{\\frac1{11},\\frac19\\}=\\frac1{11}$."
+    },
+    {
+      "sec": "2.3",
+      "q": "If $\\lim_{x\\to0}\\frac{\\sqrt2-\\sqrt{ax^2+b}}{x^2}=\\frac{1}{\\sqrt2}$, then $a+b=$",
+      "opts": [
+        "$0$",
+        "$-2$",
+        "$2$",
+        "$4$",
+        "$6$"
+      ],
+      "ans": 0,
+      "hints": [
+        "The denominator tends to $0$ but the limit is finite, so the numerator must also tend to $0$.",
+        "First force the numerator to vanish at $x=0$ to find one constant, then multiply by the conjugate to find the other.",
+        "If $\\lim\\frac{N(x)}{D(x)}$ is finite and $D(x)\\to0$, then $N(x)\\to0$; and $(\\sqrt p-\\sqrt r)(\\sqrt p+\\sqrt r)=p-r$."
+      ],
+      "steps": [
+        "A finite limit with $x^2\\to0$ requires $\\sqrt2-\\sqrt b=0$, so $b=2$.",
+        "Multiply by the conjugate: $\\frac{2-(ax^2+2)}{x^2\\left(\\sqrt2+\\sqrt{ax^2+2}\\right)}=\\frac{-a}{\\sqrt2+\\sqrt{ax^2+2}}$.",
+        "As $x\\to0$ this tends to $\\frac{-a}{2\\sqrt2}$. Setting $\\frac{-a}{2\\sqrt2}=\\frac1{\\sqrt2}$ gives $a=-2$.",
+        "So $a+b=-2+2=0$."
+      ],
+      "brief": "$b=2$ (numerator $\\to0$), conjugate gives $\\frac{-a}{2\\sqrt2}=\\frac1{\\sqrt2}$, $a=-2$; $a+b=0$."
+    },
+    {
+      "sec": "2.3",
+      "q": "$\\lim_{x\\to0}\\frac{\\sin\\frac{\\pi}{3}\\sin 2x+\\frac12\\cos x-\\frac12}{x}=$",
+      "opts": [
+        "$\\sqrt3$",
+        "$1$",
+        "$-\\sqrt3$",
+        "$-1$",
+        "$\\sqrt3-1$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Split the fraction and use the two special trigonometric limits.",
+        "Evaluate $\\sin\\frac\\pi3$ as a number, and write $\\frac12\\cos x-\\frac12=-\\frac12(1-\\cos x)$.",
+        "$\\lim_{u\\to0}\\frac{\\sin u}{u}=1$ and $\\lim_{x\\to0}\\frac{1-\\cos x}{x}=0$."
+      ],
+      "steps": [
+        "$\\sin\\frac\\pi3=\\frac{\\sqrt3}{2}$, so the limit is $\\lim\\frac{\\frac{\\sqrt3}{2}\\sin2x}{x}-\\frac12\\lim\\frac{1-\\cos x}{x}$.",
+        "$\\frac{\\sqrt3}{2}\\cdot\\frac{\\sin 2x}{x}=\\sqrt3\\cdot\\frac{\\sin2x}{2x}\\to\\sqrt3\\cdot1$.",
+        "$\\frac{1-\\cos x}{x}\\to0$, so the limit is $\\sqrt3-\\frac12\\cdot0=\\sqrt3$."
+      ],
+      "brief": "$\\sqrt3\\cdot\\frac{\\sin2x}{2x}\\to\\sqrt3$ and $\\frac{1-\\cos x}{x}\\to0$, so the limit is $\\sqrt3$."
+    },
+    {
+      "sec": "2.3",
+      "q": "If $x^3-x+3\\le 7x+\\dfrac{f(x)}{x}\\le 3x^2+x-3$, then $\\lim_{x\\to3}f(x)=$",
+      "opts": [
+        "$18$",
+        "$27$",
+        "$6$",
+        "$21$",
+        "$24$"
+      ],
+      "ans": 0,
+      "hints": [
+        "The middle expression is squeezed between two functions, so use the Squeeze Theorem.",
+        "Find the limits of the two outer functions at $x=3$ and see whether they agree.",
+        "Squeeze Theorem: if $g\\le h\\le k$ near $c$ and $\\lim g=\\lim k=L$, then $\\lim h=L$; then use the limit laws to isolate $\\lim f$."
+      ],
+      "steps": [
+        "$\\lim_{x\\to3}(x^3-x+3)=27$ and $\\lim_{x\\to3}(3x^2+x-3)=27$.",
+        "By the Squeeze Theorem, $\\lim_{x\\to3}\\left(7x+\\frac{f(x)}{x}\\right)=27$.",
+        "By the limit laws, $21+\\frac{\\lim f(x)}{3}=27$.",
+        "So $\\lim_{x\\to3}f(x)=3(27-21)=18$."
+      ],
+      "brief": "Both bounds $\\to27$, so $21+\\frac{L}{3}=27$ and $L=18$."
+    },
+    {
+      "sec": "2.4",
+      "q": "The value of $c$ for which the function \\[ f(x)=\\begin{cases}c^2+cx^2,&x<2\\\\ 6c,&x=2\\\\ cx+x^3,&x>2\\end{cases} \\] has a removable discontinuity is",
+      "opts": [
+        "$-4$",
+        "$-2$",
+        "$0$",
+        "$2$",
+        "$4$"
+      ],
+      "ans": 0,
+      "hints": [
+        "A removable discontinuity means the limit exists at the point but differs from the function value there.",
+        "Equate the two one-sided limits at $x=2$ to get candidate values of $c$, then compare the limit with $f(2)$ for each candidate.",
+        "$f$ has a removable discontinuity at $a$ if $\\lim_{x\\to a}f(x)$ exists but $\\lim_{x\\to a}f(x)\\neq f(a)$."
+      ],
+      "steps": [
+        "$\\lim_{x\\to2^-}f=c^2+4c$ and $\\lim_{x\\to2^+}f=2c+8$.",
+        "The limit exists when $c^2+4c=2c+8$, i.e. $c^2+2c-8=(c+4)(c-2)=0$, so $c=-4$ or $c=2$.",
+        "For $c=2$: the limit is $12=f(2)=6c$, so $f$ is continuous (no discontinuity).",
+        "For $c=-4$: the limit is $0$ but $f(2)=-24$, so the discontinuity is removable."
+      ],
+      "brief": "Limits agree for $c=-4,2$; $c=2$ gives continuity, $c=-4$ gives limit $0\\neq f(2)=-24$."
+    },
+    {
+      "sec": "2.4",
+      "q": "The number of discontinuities of the function $f(x)=x\\lfloor x\\rfloor$ on the interval $\\left(-\\dfrac52,\\dfrac52\\right)$ is",
+      "opts": [
+        "$4$",
+        "$6$",
+        "$3$",
+        "$2$",
+        "$0$"
+      ],
+      "ans": 0,
+      "hints": [
+        "The greatest integer function can only cause trouble at integers.",
+        "On each $[n,n+1)$ write $f(x)=nx$, and compare the left and right limits at each integer in the interval.",
+        "$\\lfloor x\\rfloor=n$ for $n\\le x<n+1$, so at an integer $n$: $\\lim_{x\\to n^+}x\\lfloor x\\rfloor=n^2$ and $\\lim_{x\\to n^-}x\\lfloor x\\rfloor=n(n-1)$."
+      ],
+      "steps": [
+        "$f$ is continuous between integers. The integers in the interval are $-2,-1,0,1,2$.",
+        "At an integer $n$, the right limit is $n^2$ and the left limit is $n(n-1)$; they are equal only if $n=0$.",
+        "At $x=0$ both one-sided limits are $0$ (and $f(0)=0$), so $f$ is continuous there.",
+        "$f$ is discontinuous at $-2,-1,1,2$: four points."
+      ],
+      "brief": "Right limit $n^2$ vs left limit $n(n-1)$ differ unless $n=0$: discontinuous at $\\pm1,\\pm2$, so $4$."
+    },
+    {
+      "sec": "2.4",
+      "q": "Let $f(x)=\\begin{cases}a+\\tan\\frac{\\pi x}{4},&|x|<1\\\\ bx,&|x|\\ge1\\end{cases}$. If $f$ is continuous on $\\mathbb{R}$, then $a^2+b^2=$",
+      "opts": [
+        "$1$",
+        "$4$",
+        "$5$",
+        "$8$",
+        "$10$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Continuity on $\\mathbb{R}$ needs matching one-sided limits at the places where the formula changes: $x=1$ and $x=-1$.",
+        "Write one equation from $x=1$ and one from $x=-1$, then solve for $a$ and $b$.",
+        "$f$ is continuous at $c$ if $\\lim_{x\\to c^-}f(x)=\\lim_{x\\to c^+}f(x)=f(c)$; recall $\\tan\\frac\\pi4=1$ and $\\tan$ is an odd function."
+      ],
+      "steps": [
+        "At $x=1$: $\\lim_{x\\to1^-}f=a+\\tan\\frac\\pi4=a+1$ and $f(1)=b$, so $a+1=b$.",
+        "At $x=-1$: $\\lim_{x\\to-1^+}f=a+\\tan\\left(-\\frac\\pi4\\right)=a-1$ and $f(-1)=-b$, so $a-1=-b$.",
+        "Adding the equations gives $2a=0$, so $a=0$ and $b=1$.",
+        "$a^2+b^2=1$."
+      ],
+      "brief": "$a+1=b$ and $a-1=-b$ give $a=0$, $b=1$, so $a^2+b^2=1$."
+    },
+    {
+      "sec": "2.5",
+      "q": "The function $f(x)=\\dfrac{\\sin(x^2-1)}{x(x+1)}$",
+      "opts": [
+        "has one vertical asymptote",
+        "has two vertical asymptotes",
+        "is continuous on $\\mathbb{R}$",
+        "has $\\lim_{x\\to(-1)^-}f(x)\\neq\\lim_{x\\to(-1)^+}f(x)$",
+        "has $\\lim_{x\\to-1}f(x)=\\infty$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Check each zero of the denominator and see whether the function blows up there or a factor cancels.",
+        "At $x=-1$ rewrite $x^2-1=(x-1)(x+1)$ and use a special limit; at $x=0$ look at the behaviour of the numerator and denominator.",
+        "$\\lim_{u\\to0}\\frac{\\sin u}{u}=1$; a vertical asymptote occurs where the function tends to $\\pm\\infty$ (nonzero numerator, zero denominator)."
+      ],
+      "steps": [
+        "The denominator vanishes at $x=0$ and $x=-1$.",
+        "At $x=-1$: $\\frac{\\sin(x^2-1)}{x(x+1)}=\\frac{\\sin(x^2-1)}{x^2-1}\\cdot\\frac{x-1}{x}\\to1\\cdot\\frac{-2}{-1}=2$, a finite limit (removable discontinuity, no asymptote).",
+        "At $x=0$: the numerator tends to $\\sin(-1)\\neq0$ while the denominator tends to $0$, so $|f|\\to\\infty$: a vertical asymptote.",
+        "So $f$ has exactly one vertical asymptote."
+      ],
+      "brief": "At $x=-1$ the limit is $2$ (removable); at $x=0$ $f\\to\\pm\\infty$: one vertical asymptote."
+    },
+    {
+      "sec": "3.1",
+      "q": "The slope of the tangent line to the graph of $f(x)=\\sin^2x$ at $x=\\dfrac\\pi4$ is equal to",
+      "opts": [
+        "$\\lim_{x\\to\\frac\\pi4}\\frac{\\sin^2x-\\frac12}{x-\\frac\\pi4}$",
+        "$\\lim_{x\\to\\frac\\pi4}\\frac{\\sin^2x-\\frac{\\sqrt2}{2}}{x-\\frac\\pi4}$",
+        "$\\lim_{x\\to\\frac\\pi4}\\frac{\\sin x-\\frac{\\sqrt2}{2}}{x-\\frac\\pi4}$",
+        "$\\lim_{x\\to\\frac\\pi4}\\frac{\\sin^2x-\\frac12}{x^2-\\frac{\\pi^2}{16}}$",
+        "$\\lim_{x\\to\\frac\\pi4}\\frac{\\sin^2x-\\frac{\\sqrt2}{2}}{x^2-\\frac\\pi4}$"
+      ],
+      "ans": 0,
+      "hints": [
+        "The slope of the tangent line is the derivative, given by a limit of difference quotients.",
+        "Use the alternative form of the derivative at a point, and compute $f\\left(\\frac\\pi4\\right)$ for this $f$.",
+        "$f'(c)=\\lim_{x\\to c}\\dfrac{f(x)-f(c)}{x-c}$."
+      ],
+      "steps": [
+        "The slope is $f'\\left(\\frac\\pi4\\right)=\\lim_{x\\to\\pi/4}\\frac{f(x)-f(\\pi/4)}{x-\\pi/4}$.",
+        "$f\\left(\\frac\\pi4\\right)=\\sin^2\\frac\\pi4=\\left(\\frac{\\sqrt2}{2}\\right)^2=\\frac12$.",
+        "So the slope is $\\lim_{x\\to\\pi/4}\\frac{\\sin^2x-\\frac12}{x-\\frac\\pi4}$."
+      ],
+      "brief": "$f'(c)=\\lim\\frac{f(x)-f(c)}{x-c}$ with $f(\\pi/4)=\\frac12$."
+    },
+    {
+      "sec": "3.1",
+      "q": "The number of points on the graph of $f(x)=x^3+4$ having a tangent line parallel to the line $3x-y+2=0$ is",
+      "opts": [
+        "$2$",
+        "$1$",
+        "$3$",
+        "$0$",
+        "$4$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Parallel lines have equal slopes, and the slope of a tangent line is the derivative.",
+        "Find the slope of the given line, then solve $f'(x)=$ that slope.",
+        "The line $Ax+By+C=0$ with $B\\neq0$ has slope $-A/B$; the tangent slope at $x$ is $f'(x)$."
+      ],
+      "steps": [
+        "The line $3x-y+2=0$ is $y=3x+2$, with slope $3$.",
+        "$f'(x)=3x^2=3$ gives $x^2=1$, so $x=\\pm1$.",
+        "The points are $(1,5)$ and $(-1,3)$: two points."
+      ],
+      "brief": "$f'(x)=3x^2=3\\Rightarrow x=\\pm1$: two points."
+    },
+    {
+      "sec": "3.2",
+      "q": "The value of $k$ such that the line $y=4x-3$ is tangent to the graph of $f(x)=kx^2$ is",
+      "opts": [
+        "$\\dfrac43$",
+        "$2$",
+        "$\\dfrac34$",
+        "$\\dfrac12$",
+        "$\\dfrac13$"
+      ],
+      "ans": 0,
+      "hints": [
+        "At the point of tangency the curve and the line share both a point and a slope.",
+        "Let the tangency be at $x=a$ and write two equations: equal slopes and equal heights.",
+        "At a point of tangency $x=a$ with a line $\\ell$: $f(a)=\\ell(a)$ and $f'(a)=\\ell'(a)$."
+      ],
+      "steps": [
+        "Let $x=a$ be the point of tangency. Equal slopes: $f'(a)=2ka=4$, so $ka=2$.",
+        "Equal heights: $ka^2=4a-3$.",
+        "Substitute $ka=2$: $2a=4a-3$, so $a=\\frac32$.",
+        "Then $k=\\frac2a=\\frac43$."
+      ],
+      "brief": "$2ka=4$ and $ka^2=4a-3$ give $a=\\frac32$, so $k=\\frac43$."
+    },
+    {
+      "sec": "3.2",
+      "q": "If a ball is thrown into the air with a velocity of $4\\ m/s$, its height (in meters) $t$ seconds later is given by $y=4t-4.9t^2$. The average velocity for the time period from $t=1$ to $t=3$ is",
+      "opts": [
+        "$-15.6$",
+        "$18.6$",
+        "$-13.7$",
+        "$17.7$",
+        "$13.7$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Average velocity is the change in position divided by the change in time.",
+        "Compute $y(3)$ and $y(1)$ and divide their difference by the length of the interval.",
+        "Average velocity on $[t_1,t_2]$ is $\\dfrac{y(t_2)-y(t_1)}{t_2-t_1}$."
+      ],
+      "steps": [
+        "$y(3)=12-44.1=-32.1$.",
+        "$y(1)=4-4.9=-0.9$.",
+        "Average velocity $=\\frac{-32.1-(-0.9)}{3-1}=\\frac{-31.2}{2}=-15.6$."
+      ],
+      "brief": "$\\frac{y(3)-y(1)}{2}=\\frac{-32.1+0.9}{2}=-15.6$."
+    },
+    {
+      "sec": "3.3",
+      "q": "A horizontal tangent line to the graph $C$ of the function $f(x)=\\dfrac{x^2}{x-1}$ at a point on $C$ is",
+      "opts": [
+        "$y=4$",
+        "$y=-4$",
+        "$y=2$",
+        "$y=-2$",
+        "$y=-1$"
+      ],
+      "ans": 0,
+      "hints": [
+        "A horizontal tangent line occurs where the derivative is zero.",
+        "Differentiate with the quotient rule, set $f'(x)=0$, and then find the $y$-value at each solution.",
+        "Quotient rule: $\\left(\\dfrac uv\\right)'=\\dfrac{u'v-uv'}{v^2}$; the horizontal tangent at $x=a$ is the line $y=f(a)$."
+      ],
+      "steps": [
+        "$f'(x)=\\frac{2x(x-1)-x^2}{(x-1)^2}=\\frac{x^2-2x}{(x-1)^2}$.",
+        "$f'(x)=0$ gives $x(x-2)=0$, so $x=0$ or $x=2$.",
+        "$f(0)=0$ and $f(2)=4$, so the horizontal tangent lines are $y=0$ and $y=4$.",
+        "Of the listed choices, only $y=4$ occurs."
+      ],
+      "brief": "$f'=\\frac{x^2-2x}{(x-1)^2}=0$ at $x=0,2$; tangent lines $y=0$ and $y=4$."
+    },
+    {
+      "sec": "2.5",
+      "q": "$\\lim_{x\\to1}\\frac{x^3-1}{x^2-2x+1}=$",
+      "opts": [
+        "DNE",
+        "$\\infty$",
+        "$-\\infty$",
+        "$0$",
+        "$1$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Factor first; the denominator is a perfect square, which hints at an infinite one-sided behaviour.",
+        "Cancel the common factor $x-1$ and study the sign of what remains on each side of $x=1$.",
+        "$a^3-b^3=(a-b)(a^2+ab+b^2)$; if the two one-sided limits are $+\\infty$ and $-\\infty$, the limit does not exist."
+      ],
+      "steps": [
+        "$\\frac{x^3-1}{(x-1)^2}=\\frac{(x-1)(x^2+x+1)}{(x-1)^2}=\\frac{x^2+x+1}{x-1}$.",
+        "As $x\\to1^+$: the numerator $\\to3$ and $x-1\\to0^+$, so the limit is $+\\infty$.",
+        "As $x\\to1^-$: the numerator $\\to3$ and $x-1\\to0^-$, so the limit is $-\\infty$.",
+        "The one-sided limits differ, so the limit does not exist."
+      ],
+      "brief": "$\\frac{x^2+x+1}{x-1}\\to+\\infty$ from the right and $-\\infty$ from the left: DNE."
+    },
+    {
+      "sec": "3.3",
+      "q": "If $f(x)=\\dfrac{1+\\cos x}{1-\\cos x}$, then $f'\\left(\\dfrac\\pi2\\right)=$",
+      "opts": [
+        "$-2$",
+        "$-\\sqrt3$",
+        "$0$",
+        "$\\sqrt3$",
+        "$2$"
+      ],
+      "ans": 0,
+      "hints": [
+        "This is a quotient of trigonometric functions, so use the quotient rule.",
+        "Differentiate, simplify the numerator, and then substitute $x=\\frac\\pi2$.",
+        "$\\left(\\dfrac uv\\right)'=\\dfrac{u'v-uv'}{v^2}$, with $(\\cos x)'=-\\sin x$."
+      ],
+      "steps": [
+        "$f'(x)=\\frac{-\\sin x(1-\\cos x)-(1+\\cos x)\\sin x}{(1-\\cos x)^2}$.",
+        "The numerator simplifies to $-2\\sin x$, so $f'(x)=\\frac{-2\\sin x}{(1-\\cos x)^2}$.",
+        "At $x=\\frac\\pi2$: $\\sin=1$, $\\cos=0$, so $f'=\\frac{-2}{1}=-2$."
+      ],
+      "brief": "$f'(x)=\\frac{-2\\sin x}{(1-\\cos x)^2}$, so $f'(\\pi/2)=-2$."
+    },
+    {
+      "sec": "3.3",
+      "q": "If $f(x)=-xe^x$, then $f^{(51)}(1)=$",
+      "opts": [
+        "$-52e$",
+        "$-50e$",
+        "$-51e^2$",
+        "$-52e^2$",
+        "$-51e$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Differentiate a few times and look for a pattern in the $n$th derivative.",
+        "Use the product rule for the first few derivatives and guess the general formula for $f^{(n)}$.",
+        "Product rule: $(uv)'=u'v+uv'$, and $(e^x)'=e^x$."
+      ],
+      "steps": [
+        "$f'=-e^x-xe^x=-(1+x)e^x$.",
+        "$f''=-(2+x)e^x$ and $f'''=-(3+x)e^x$.",
+        "The pattern is $f^{(n)}(x)=-(n+x)e^x$.",
+        "So $f^{(51)}(1)=-(51+1)e=-52e$."
+      ],
+      "brief": "$f^{(n)}(x)=-(n+x)e^x$, so $f^{(51)}(1)=-52e$."
+    },
+    {
+      "sec": "2.4",
+      "q": "Which of the following statements is always true.",
+      "opts": [
+        "$\\lim_{x\\to c}f(x)=L$ means that for any given positive number $q$ we can find a positive number $p$ such that $|f(x)-L|<q$ whenever $0<|x-c|<p$",
+        "If $f$ and $g$ are functions such that $g$ is continuous at $c$, then $f(g(x))$ is continuous at $c$",
+        "If $f$ and $g$ are functions such that $\\lim_{x\\to c}g(x)=L$, then $\\lim_{x\\to c}f(g(x))=f(L)$",
+        "If $f$ is continuous on $(a,b)$, $f(a)\\neq f(b)$ and $k$ is any number between $f(a)$ and $f(b)$, then there exists a number $c\\in(a,b)$ such that $f(c)=k$",
+        "If $f$ is a function defined on $[a,b]$, $f(a)\\neq f(b)$ and $k$ is any number between $f(a)$ and $f(b)$, then there exists a number $c\\in(a,b)$ such that $f(c)=k$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Test each statement against the exact hypotheses of the corresponding definition or theorem.",
+        "Look for missing hypotheses: the composition rule needs continuity of the outer function, and the Intermediate Value Theorem needs continuity on a closed interval.",
+        "Limit definition: $\\lim_{x\\to c}f(x)=L$ iff for every $\\varepsilon>0$ there is $\\delta>0$ with $|f(x)-L|<\\varepsilon$ when $0<|x-c|<\\delta$; the IVT requires $f$ continuous on $[a,b]$."
+      ],
+      "steps": [
+        "The first statement is exactly the epsilon-delta definition of a limit (with $q=\\varepsilon$, $p=\\delta$), so it is true.",
+        "The composition statement fails: $f(g(x))$ also needs $f$ continuous at $g(c)$.",
+        "Likewise $\\lim f(g(x))=f(L)$ needs $f$ continuous at $L$, so it is not always true.",
+        "The IVT statements need $f$ continuous on the closed interval $[a,b]$; continuity on $(a,b)$ only, or no continuity at all, is not enough."
+      ],
+      "brief": "Only the epsilon-delta definition of a limit is always true; the others omit hypotheses."
+    }
+  ]
+}

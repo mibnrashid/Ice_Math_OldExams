@@ -1,0 +1,437 @@
+{
+  "course": "math102",
+  "term": "232",
+  "kind": "e1",
+  "date": "18 February 2024",
+  "minutes": 120,
+  "source": "math102-232-e129fd6ff9-7097-433e-87df-2313c3ee451d.pdf",
+  "note": "No official key; answers derived and verified (sympy / numeric checks). Date and net time (120 minutes) are from the cover page. The cover says 'USE THIS AS A TEMPLATE'; the master starts on page 2. Q10 is long division plus the log rule, assigned to Sec 5.7.",
+  "qs": [
+    {
+      "sec": "5.2",
+      "q": "$\\sum_{i=1}^{7} i(i+3)^2=$",
+      "opts": [
+        "$1876$",
+        "$1678$",
+        "$1786$",
+        "$1668$",
+        "$1787$"
+      ],
+      "ans": 0,
+      "hints": [
+        "This is a sum that can be handled with the standard summation formulas.",
+        "Expand $i(i+3)^2$ into powers of $i$ and split the sum.",
+        "$\\sum_{i=1}^n i=\\frac{n(n+1)}2$, $\\sum_{i=1}^n i^2=\\frac{n(n+1)(2n+1)}6$, $\\sum_{i=1}^n i^3=\\left[\\frac{n(n+1)}2\\right]^2$."
+      ],
+      "steps": [
+        "$i(i+3)^2=i^3+6i^2+9i$.",
+        "$\\sum_{i=1}^7 i^3=28^2=784$.",
+        "$\\sum_{i=1}^7 i^2=\\frac{7\\cdot8\\cdot15}{6}=140$ and $\\sum_{i=1}^7 i=28$.",
+        "Total: $784+6(140)+9(28)=784+840+252=1876$."
+      ],
+      "brief": "$i^3+6i^2+9i$: $784+840+252=1876$."
+    },
+    {
+      "sec": "5.2",
+      "q": "Using the midpoint rule with $n=3$, the approximate area of the region bounded by the graph of $f(x)=\\sin\\pi x$ and the $x$-axis over $\\left[0,\\dfrac32\\right]$ is equal to",
+      "opts": [
+        "$\\dfrac34\\sqrt2$",
+        "$\\dfrac{\\sqrt2}{4}$",
+        "$\\dfrac{\\sqrt2}{2}$",
+        "$\\dfrac{3\\sqrt2}{2}$",
+        "$0$"
+      ],
+      "ans": 0,
+      "hints": [
+        "This is a midpoint-rule approximation.",
+        "Find the subinterval width, then the midpoint of each of the three subintervals.",
+        "Midpoint rule: $\\Delta x\\sum_{i=1}^n f(m_i)$ with $\\Delta x=\\frac{b-a}{n}$ and $m_i$ the midpoint of the $i$th subinterval."
+      ],
+      "steps": [
+        "$\\Delta x=\\frac{3/2}{3}=\\frac12$, with subintervals $[0,\\frac12],[\\frac12,1],[1,\\frac32]$ and midpoints $\\frac14,\\frac34,\\frac54$.",
+        "$f\\left(\\frac14\\right)=\\sin\\frac\\pi4=\\frac{\\sqrt2}2$, $f\\left(\\frac34\\right)=\\sin\\frac{3\\pi}4=\\frac{\\sqrt2}2$, $f\\left(\\frac54\\right)=\\sin\\frac{5\\pi}4=-\\frac{\\sqrt2}2$.",
+        "Sum of values $=\\frac{\\sqrt2}2$.",
+        "Approximation $=\\frac12\\cdot\\frac{\\sqrt2}2=\\frac{\\sqrt2}4$."
+      ],
+      "brief": "$\\Delta x=\\frac12$, midpoints $\\frac14,\\frac34,\\frac54$: $\\frac12\\cdot\\frac{\\sqrt2}{2}=\\frac{\\sqrt2}4$."
+    },
+    {
+      "sec": "5.3",
+      "q": "When evaluating the limit of $\\sum_{i=1}^{n}\\left(1+\\frac{3}{c_i}\\right)\\Delta x$, as $\\|\\Delta x\\|\\to0$ over $[1,5]$, where $c_i$ is any point in the $i^{th}$ subinterval, the value is equal to:",
+      "opts": [
+        "$4+\\ln(125)$",
+        "$4\\ln(5)$",
+        "$\\dfrac{-12}{5}$",
+        "$\\dfrac85$",
+        "$\\dfrac35$"
+      ],
+      "ans": 0,
+      "hints": [
+        "The limit of a Riemann sum is a definite integral.",
+        "Identify the function being summed and the interval, and write the integral.",
+        "$\\lim_{\\|\\Delta\\|\\to0}\\sum f(c_i)\\Delta x_i=\\int_a^b f(x)\\,dx$, and $\\int\\frac1x\\,dx=\\ln|x|+C$."
+      ],
+      "steps": [
+        "The limit equals $\\int_1^5\\left(1+\\frac3x\\right)dx$.",
+        "Antiderivative: $x+3\\ln x$.",
+        "Evaluate: $(5+3\\ln5)-(1+0)=4+3\\ln5$.",
+        "$3\\ln5=\\ln125$, so the value is $4+\\ln125$."
+      ],
+      "brief": "$\\int_1^5(1+\\frac3x)dx=4+3\\ln5=4+\\ln125$."
+    },
+    {
+      "sec": "5.3",
+      "q": "$\\lim_{n\\to\\infty}\\frac{\\sqrt1+\\sqrt2+\\sqrt3+\\dots+\\sqrt n}{n^{3/2}}$ equals to",
+      "opts": [
+        "$\\dfrac23$",
+        "$\\dfrac32$",
+        "$\\sqrt3$",
+        "$0$",
+        "$\\infty$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Rewrite the expression as a Riemann sum.",
+        "Factor $\\frac1n$ out so each term has the form $f\\left(\\frac in\\right)$.",
+        "$\\lim_{n\\to\\infty}\\frac1n\\sum_{i=1}^n f\\left(\\frac in\\right)=\\int_0^1 f(x)\\,dx$."
+      ],
+      "steps": [
+        "$\\dfrac{1}{n^{3/2}}\\sum_{i=1}^n\\sqrt i=\\dfrac1n\\sum_{i=1}^n\\sqrt{\\dfrac in}$.",
+        "This is a right Riemann sum for $f(x)=\\sqrt x$ on $[0,1]$.",
+        "Limit $=\\int_0^1\\sqrt x\\,dx=\\left[\\frac23x^{3/2}\\right]_0^1=\\frac23$."
+      ],
+      "brief": "Riemann sum of $\\sqrt x$ on $[0,1]$: $\\int_0^1\\sqrt x\\,dx=\\frac23$."
+    },
+    {
+      "sec": "5.3",
+      "q": "Given that $\\int_2^6 x^3\\,dx=A$ and $\\int_2^6 x\\,dx=B$, the integral $\\int_2^6\\left(6|x|-\\frac18x^3\\right)dx=$",
+      "opts": [
+        "$6B-\\dfrac18A$",
+        "$-6B-\\dfrac18A$",
+        "$12B-\\dfrac18A$",
+        "$2B-\\dfrac18A$",
+        "$-12B+\\dfrac18A$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Use the linearity properties of definite integrals.",
+        "Check the sign of $x$ on the interval to remove the absolute value.",
+        "$\\int_a^b\\left(cf+dg\\right)dx=c\\int_a^bf\\,dx+d\\int_a^bg\\,dx$, and $|x|=x$ when $x\\ge0$."
+      ],
+      "steps": [
+        "On $[2,6]$, $x>0$, so $|x|=x$.",
+        "$\\int_2^6 6|x|\\,dx=6\\int_2^6x\\,dx=6B$.",
+        "$\\int_2^6\\frac18x^3dx=\\frac18A$.",
+        "Therefore the integral is $6B-\\frac18A$."
+      ],
+      "brief": "$|x|=x$ on $[2,6]$, so the integral is $6B-\\frac18A$."
+    },
+    {
+      "sec": "5.4",
+      "q": "The constant $c$ that is guaranteed by the mean value theorem of integrals for $f(x)=5-\\dfrac1x$ over $[1,4]$ is equal to",
+      "opts": [
+        "$\\dfrac{3}{\\ln4}$",
+        "$\\dfrac{1}{\\ln4-10}$",
+        "$\\dfrac{1}{2\\ln2}$",
+        "$\\dfrac{1}{2\\ln2+10}$",
+        "$\\dfrac1{\\ln2}$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Use the Mean Value Theorem for integrals: $f(c)$ equals the average value.",
+        "Compute the average value of $f$ over the interval, then solve $f(c)=$ that value.",
+        "$f(c)=\\dfrac{1}{b-a}\\int_a^bf(x)\\,dx$ for some $c$ in $[a,b]$."
+      ],
+      "steps": [
+        "$\\int_1^4\\left(5-\\frac1x\\right)dx=\\left[5x-\\ln x\\right]_1^4=15-\\ln4$.",
+        "Average value: $\\frac{15-\\ln4}{3}=5-\\frac{\\ln4}3$.",
+        "Solve $5-\\frac1c=5-\\frac{\\ln4}{3}$.",
+        "So $\\frac1c=\\frac{\\ln4}3$ and $c=\\frac3{\\ln4}$ (which lies in $[1,4]$)."
+      ],
+      "brief": "Average $=5-\\frac{\\ln4}3$; $5-\\frac1c$ equal to it gives $c=\\frac3{\\ln4}$."
+    },
+    {
+      "sec": "5.4",
+      "q": "If $F(x)=\\int_0^{2x}\\cos t^4\\,dt$, then $F'(x)=$",
+      "opts": [
+        "$2\\cos(16x^4)$",
+        "$-2\\cos(16x^4)$",
+        "$32\\cos(x^4)$",
+        "$\\cos(16x^4)$",
+        "$-\\cos(16x^4)$"
+      ],
+      "ans": 0,
+      "hints": [
+        "This is the Fundamental Theorem of Calculus with a variable upper limit that is not just $x$.",
+        "Substitute the upper limit into the integrand and multiply by the derivative of the upper limit (chain rule).",
+        "$\\dfrac{d}{dx}\\int_a^{g(x)}f(t)\\,dt=f(g(x))\\,g'(x)$."
+      ],
+      "steps": [
+        "Here $f(t)=\\cos t^4$ and $g(x)=2x$.",
+        "$F'(x)=\\cos\\left((2x)^4\\right)\\cdot 2$.",
+        "$(2x)^4=16x^4$, so $F'(x)=2\\cos(16x^4)$."
+      ],
+      "brief": "$F'(x)=\\cos((2x)^4)\\cdot2=2\\cos(16x^4)$."
+    },
+    {
+      "sec": "5.5",
+      "q": "$\\int_9^1\\frac{\\sqrt2}{\\sqrt x\\,(1+\\sqrt x)^2}\\,dx=$",
+      "opts": [
+        "$\\dfrac{-\\sqrt2}{2}$",
+        "$\\dfrac{-1}{2}$",
+        "$\\dfrac{\\sqrt2}{2}$",
+        "$\\dfrac12$",
+        "$8\\sqrt2$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Use a substitution: look for an inner expression whose derivative also appears.",
+        "Let $u$ be the expression $1+\\sqrt x$ and compute $du$; change the limits too.",
+        "If $u=g(x)$ then $\\int_a^b f(g(x))g'(x)\\,dx=\\int_{g(a)}^{g(b)}f(u)\\,du$, and $\\int u^{-2}du=-u^{-1}$."
+      ],
+      "steps": [
+        "Let $u=1+\\sqrt x$, so $du=\\frac{dx}{2\\sqrt x}$ and $\\frac{dx}{\\sqrt x}=2\\,du$.",
+        "Limits: $x=9\\Rightarrow u=4$, $x=1\\Rightarrow u=2$.",
+        "Integral $=2\\sqrt2\\int_4^2u^{-2}du=2\\sqrt2\\left[-\\frac1u\\right]_4^2$.",
+        "$=2\\sqrt2\\left(-\\frac12+\\frac14\\right)=-\\frac{\\sqrt2}{2}$."
+      ],
+      "brief": "$u=1+\\sqrt x$: $2\\sqrt2\\int_4^2u^{-2}du=-\\frac{\\sqrt2}2$."
+    },
+    {
+      "sec": "5.5",
+      "q": "$\\int x\\sqrt{x+6}\\,dx=$",
+      "opts": [
+        "$\\dfrac25(x+6)^{3/2}(x-4)+C$",
+        "$\\dfrac25(x-4)^{3/2}(x+6)+C$",
+        "$\\dfrac23(x+6)^{2/3}(x-4)+C$",
+        "$\\dfrac32(x-6)^{1/2}(x-1)^{3/2}+C$",
+        "$\\dfrac45(x+6)^{3/2}(x+16)+C$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Use substitution for the expression under the root.",
+        "Let $u=x+6$ and rewrite the leftover $x$ in terms of $u$.",
+        "With $u=g(x)$, $\\int f(g(x))g'(x)\\,dx=\\int f(u)\\,du$, and $\\int u^n\\,du=\\frac{u^{n+1}}{n+1}+C$ for $n\\neq-1$."
+      ],
+      "steps": [
+        "Let $u=x+6$, $x=u-6$, $dx=du$.",
+        "$\\int(u-6)u^{1/2}du=\\int\\left(u^{3/2}-6u^{1/2}\\right)du=\\frac25u^{5/2}-4u^{3/2}+C$.",
+        "Factor: $\\frac25u^{3/2}(u-10)+C$.",
+        "Back-substitute: $\\frac25(x+6)^{3/2}(x-4)+C$."
+      ],
+      "brief": "$u=x+6$: $\\frac25u^{5/2}-4u^{3/2}=\\frac25(x+6)^{3/2}(x-4)+C$."
+    },
+    {
+      "sec": "5.7",
+      "q": "$\\int\\frac{x^4+x-4}{x^2+2}\\,dx=$",
+      "opts": [
+        "$\\dfrac13x^3-2x+\\ln\\sqrt{x^2+2}+C$",
+        "$\\dfrac12x^2-x+2\\ln\\sqrt{x^2+2}+C$",
+        "$\\dfrac13x^3+\\ln|x|+\\ln(x^2-4)+C$",
+        "$\\dfrac23x^3+\\ln|x|+\\ln(x^2+2)+C$",
+        "$\\dfrac13x^3+2x+\\ln(x^2-4)+C$"
+      ],
+      "ans": 0,
+      "hints": [
+        "The numerator has higher degree than the denominator, so divide first.",
+        "Do polynomial long division of $x^4+x-4$ by $x^2+2$, then integrate the quotient and the remainder term.",
+        "Improper rational function: $\\frac{P}{D}=\\text{quotient}+\\frac{\\text{remainder}}{D}$; and $\\int\\frac{u'}{u}\\,dx=\\ln|u|+C$."
+      ],
+      "steps": [
+        "$x^4+x-4=(x^2+2)(x^2-2)+x$, since $(x^2+2)(x^2-2)=x^4-4$.",
+        "So the integrand is $x^2-2+\\dfrac{x}{x^2+2}$.",
+        "$\\int(x^2-2)dx=\\frac13x^3-2x$.",
+        "$\\int\\frac{x}{x^2+2}dx=\\frac12\\ln(x^2+2)=\\ln\\sqrt{x^2+2}$. Add the pieces."
+      ],
+      "brief": "Divide: $x^2-2+\\frac{x}{x^2+2}$, giving $\\frac13x^3-2x+\\ln\\sqrt{x^2+2}+C$."
+    },
+    {
+      "sec": "5.5",
+      "q": "$\\int_0^{\\pi/2}\\cos x\\,\\sin(\\sin x)\\,dx=$",
+      "opts": [
+        "$1-\\cos1$",
+        "$0$",
+        "$\\pi-1$",
+        "$1$",
+        "$-1$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Use substitution with the inner function $\\sin x$.",
+        "Let $u=\\sin x$, so $du=\\cos x\\,dx$, and convert the limits.",
+        "$\\int\\sin u\\,du=-\\cos u+C$; with $u=g(x)$ the limits become $g(a)$ and $g(b)$."
+      ],
+      "steps": [
+        "Let $u=\\sin x$, $du=\\cos x\\,dx$; $x=0\\Rightarrow u=0$, $x=\\frac\\pi2\\Rightarrow u=1$.",
+        "Integral $=\\int_0^1\\sin u\\,du=\\left[-\\cos u\\right]_0^1$.",
+        "$=-\\cos1+\\cos0=1-\\cos1$."
+      ],
+      "brief": "$u=\\sin x$: $\\int_0^1\\sin u\\,du=1-\\cos1$."
+    },
+    {
+      "sec": "5.5",
+      "q": "$\\int_{-\\pi/4}^{\\pi/4}\\left(x^3+x^4\\tan x\\right)dx=$",
+      "opts": [
+        "$0$",
+        "$\\dfrac\\pi2$",
+        "$-\\dfrac\\pi2$",
+        "$\\tan^{-1}\\left(\\dfrac1{\\sqrt2}\\right)$",
+        "$\\left(\\dfrac\\pi4\\right)^4\\tan^{-1}\\left(\\dfrac1{\\sqrt2}\\right)$"
+      ],
+      "ans": 0,
+      "hints": [
+        "The interval is symmetric about $0$, so check whether the integrand is odd or even.",
+        "Test each term with $-x$ in place of $x$.",
+        "If $f$ is odd, $\\int_{-a}^af\\,dx=0$; $x^3$ and $\\tan x$ are odd, $x^4$ is even, and odd times even is odd."
+      ],
+      "steps": [
+        "$x^3$ is odd.",
+        "$x^4\\tan x$: $(-x)^4\\tan(-x)=-x^4\\tan x$, so it is odd.",
+        "The sum is odd on $[-\\frac\\pi4,\\frac\\pi4]$, so the integral is $0$."
+      ],
+      "brief": "Both terms are odd on a symmetric interval, so the integral is $0$."
+    },
+    {
+      "sec": "5.7",
+      "q": "$\\int_{\\pi/8}^{\\pi/4}\\left(\\csc2\\theta-\\cot2\\theta\\right)d\\theta=$",
+      "opts": [
+        "$\\ln\\sqrt{1+\\dfrac{\\sqrt2}{2}}$",
+        "$\\dfrac12\\ln(\\sqrt2-1)$",
+        "$\\dfrac14\\ln(\\pi-1)$",
+        "$\\dfrac{\\sqrt2}{2}\\ln(\\pi+1)$",
+        "$\\dfrac12\\ln\\left(\\dfrac{\\sqrt2+\\pi}{\\sqrt2-\\pi}\\right)$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Simplify the integrand with a trigonometric identity before integrating.",
+        "Write $\\csc2\\theta-\\cot2\\theta$ over $\\sin2\\theta$ and use double-angle formulas.",
+        "$\\dfrac{1-\\cos u}{\\sin u}=\\tan\\dfrac u2$, $\\int\\tan\\theta\\,d\\theta=-\\ln|\\cos\\theta|+C$, and $\\cos^2\\theta=\\frac{1+\\cos2\\theta}2$."
+      ],
+      "steps": [
+        "$\\csc2\\theta-\\cot2\\theta=\\dfrac{1-\\cos2\\theta}{\\sin2\\theta}=\\dfrac{2\\sin^2\\theta}{2\\sin\\theta\\cos\\theta}=\\tan\\theta$.",
+        "$\\int_{\\pi/8}^{\\pi/4}\\tan\\theta\\,d\\theta=\\left[-\\ln\\cos\\theta\\right]_{\\pi/8}^{\\pi/4}=-\\ln\\frac{\\sqrt2}2+\\ln\\cos\\frac\\pi8$.",
+        "$=\\ln\\left(\\sqrt2\\cos\\frac\\pi8\\right)=\\frac12\\ln\\left(2\\cos^2\\frac\\pi8\\right)$.",
+        "$2\\cos^2\\frac\\pi8=1+\\cos\\frac\\pi4=1+\\frac{\\sqrt2}2$, so the value is $\\ln\\sqrt{1+\\frac{\\sqrt2}2}$."
+      ],
+      "brief": "$\\csc2\\theta-\\cot2\\theta=\\tan\\theta$; result $\\frac12\\ln\\left(1+\\frac{\\sqrt2}2\\right)$."
+    },
+    {
+      "sec": "5.8",
+      "q": "$\\int\\frac{1}{x\\sqrt{x^4-4}}\\,dx=$",
+      "opts": [
+        "$\\dfrac14\\sec^{-1}\\left(\\dfrac{x^2}{2}\\right)+C$",
+        "$\\dfrac12\\sin^{-1}\\left(\\dfrac{x^2}{4}\\right)+C$",
+        "$\\dfrac12\\sec^{-1}\\left(\\dfrac{x^2}{4}\\right)+C$",
+        "$\\dfrac14\\sin^{-1}\\left(\\dfrac{x^2}{2}\\right)+C$",
+        "$\\dfrac12\\sin^{-1}\\left(\\dfrac{x^2}{2}\\right)+C$"
+      ],
+      "ans": 0,
+      "hints": [
+        "This reduces to an inverse trigonometric form after a substitution.",
+        "Let $u=x^2$ so that $\\sqrt{x^4-4}=\\sqrt{u^2-4}$ and $\\frac{dx}x$ can be written with $du$.",
+        "$\\int\\frac{du}{u\\sqrt{u^2-a^2}}=\\frac1a\\sec^{-1}\\frac{|u|}a+C$."
+      ],
+      "steps": [
+        "Let $u=x^2$, $du=2x\\,dx$, so $\\frac{dx}{x}=\\frac{du}{2u}$.",
+        "$\\int\\frac{dx}{x\\sqrt{x^4-4}}=\\frac12\\int\\frac{du}{u\\sqrt{u^2-4}}$.",
+        "Using the formula with $a=2$: $\\frac12\\cdot\\frac12\\sec^{-1}\\frac{u}{2}+C$.",
+        "So the result is $\\frac14\\sec^{-1}\\left(\\frac{x^2}{2}\\right)+C$."
+      ],
+      "brief": "$u=x^2$: $\\frac12\\int\\frac{du}{u\\sqrt{u^2-4}}=\\frac14\\sec^{-1}\\frac{x^2}2+C$."
+    },
+    {
+      "sec": "5.8",
+      "q": "$\\int\\frac{x}{x^4+25}\\,dx=$",
+      "opts": [
+        "$\\dfrac1{10}\\tan^{-1}\\left(\\dfrac{x^2}{5}\\right)+C$",
+        "$\\dfrac1{25}\\tan^{-1}\\left(\\dfrac{x^2}{25}\\right)+C$",
+        "$\\dfrac15\\tan^{-1}\\left(\\dfrac{x^2}{10}\\right)+C$",
+        "$\\dfrac1{10}\\tan^{-1}\\left(\\dfrac{x}{5}\\right)+C$",
+        "$\\dfrac15\\tan^{-1}\\left(\\dfrac{x}{10}\\right)+C$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Use a substitution to turn the denominator into the form $u^2+a^2$.",
+        "Let $u=x^2$, so that $x\\,dx=\\frac12du$.",
+        "$\\int\\frac{du}{u^2+a^2}=\\frac1a\\tan^{-1}\\frac ua+C$."
+      ],
+      "steps": [
+        "Let $u=x^2$, $du=2x\\,dx$, so $x\\,dx=\\frac12du$.",
+        "$\\int\\frac{x\\,dx}{x^4+25}=\\frac12\\int\\frac{du}{u^2+25}$.",
+        "$=\\frac12\\cdot\\frac15\\tan^{-1}\\frac u5+C=\\frac1{10}\\tan^{-1}\\left(\\frac{x^2}5\\right)+C$."
+      ],
+      "brief": "$u=x^2$: $\\frac12\\int\\frac{du}{u^2+25}=\\frac1{10}\\tan^{-1}\\frac{x^2}5+C$."
+    },
+    {
+      "sec": "7.1",
+      "q": "The area of the region bounded between $y_1=(x-1)^3$ and $y_2=x-1$ is equal to",
+      "opts": [
+        "$\\dfrac12$",
+        "$\\dfrac14$",
+        "$1$",
+        "$2\\sqrt[3]2$",
+        "$\\dfrac12\\sqrt[3]2$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Find where the curves intersect, then integrate the top curve minus the bottom curve on each piece.",
+        "Shift with $u=x-1$ to compare $u^3$ and $u$; check which is larger on each piece.",
+        "$A=\\int_a^b|f(x)-g(x)|\\,dx$; if the integrand $f-g$ is odd about the centre of the region, the two pieces are equal."
+      ],
+      "steps": [
+        "Let $u=x-1$. Intersections: $u^3=u\\Rightarrow u=-1,0,1$.",
+        "On $[-1,0]$, $u^3\\ge u$; on $[0,1]$, $u\\ge u^3$. The two pieces are equal by symmetry.",
+        "$A=2\\int_0^1(u-u^3)\\,du=2\\left[\\frac{u^2}2-\\frac{u^4}4\\right]_0^1$.",
+        "$=2\\cdot\\frac14=\\frac12$."
+      ],
+      "brief": "Intersections at $x=0,1,2$; $A=2\\int_0^1(u-u^3)du=\\frac12$."
+    },
+    {
+      "sec": "7.1",
+      "q": "If $A$ is the exact area of the region bounded between the two curves $f(x)=\\cos x$ and $g(x)=2-\\cos x$ over the interval $[0,2\\pi]$, then",
+      "opts": [
+        "$12<A<13$",
+        "$10<A<11$",
+        "$9<A<10$",
+        "$5<A<6$",
+        "$7<A<8$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Decide which curve is on top, then integrate the difference.",
+        "Compare $2-\\cos x$ with $\\cos x$: the sign of $2-2\\cos x$ settles which is higher.",
+        "$A=\\int_a^b\\left(f_{\\text{top}}-f_{\\text{bottom}}\\right)dx$, and $\\int_0^{2\\pi}\\cos x\\,dx=0$."
+      ],
+      "steps": [
+        "$g(x)-f(x)=2-2\\cos x\\ge0$ for all $x$, so $g$ is on top (they touch at $0$ and $2\\pi$).",
+        "$A=\\int_0^{2\\pi}(2-2\\cos x)\\,dx=\\left[2x-2\\sin x\\right]_0^{2\\pi}=4\\pi$.",
+        "$4\\pi\\approx12.57$, so $12<A<13$."
+      ],
+      "brief": "$A=\\int_0^{2\\pi}(2-2\\cos x)dx=4\\pi\\approx12.57$."
+    },
+    {
+      "sec": "5.9",
+      "q": "$\\int_0^{\\ln2}2e^{-x}\\cosh x\\,dx=$",
+      "opts": [
+        "$\\dfrac38+\\ln2$",
+        "$\\dfrac{2+\\ln2}{3}$",
+        "$2\\ln2+e$",
+        "$\\dfrac{1+\\ln2}{e}$",
+        "$e^{-1}\\ln2$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Rewrite $\\cosh x$ in terms of exponentials to simplify the product.",
+        "Use the definition of $\\cosh x$ and multiply out with $e^{-x}$.",
+        "$\\cosh x=\\dfrac{e^x+e^{-x}}2$ and $\\int e^{kx}dx=\\dfrac{e^{kx}}k+C$ for $k\\neq0$."
+      ],
+      "steps": [
+        "$2e^{-x}\\cosh x=e^{-x}\\left(e^x+e^{-x}\\right)=1+e^{-2x}$.",
+        "$\\int_0^{\\ln2}\\left(1+e^{-2x}\\right)dx=\\left[x-\\frac12e^{-2x}\\right]_0^{\\ln2}$.",
+        "$=\\left(\\ln2-\\frac12\\cdot\\frac14\\right)-\\left(0-\\frac12\\right)$.",
+        "$=\\ln2+\\frac38$."
+      ],
+      "brief": "$2e^{-x}\\cosh x=1+e^{-2x}$; integral $=\\ln2+\\frac38$."
+    }
+  ]
+}

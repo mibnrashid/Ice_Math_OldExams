@@ -1,0 +1,679 @@
+{
+  "course": "math101",
+  "term": "221",
+  "kind": "fx",
+  "date": "",
+  "minutes": 120,
+  "source": "math101-221-fx.pdf",
+  "note": "Date and exam length are not printed on the scan (no cover page); minutes assumed 120 (usual final length). All 28 master answers are (a) per the key table and were verified with sympy; no disagreements. Master pages used.",
+  "qs": [
+    {
+      "sec": "2.4",
+      "q": "Let \\[ f(x)=\\begin{cases} x+b & \\text{if } 0<x<2\\\\ ax^2+1 & \\text{if } 2\\le x\\le 4 \\end{cases} \\] If $f$ is continuous at $x=2$, then $4a-b=$",
+      "opts": [
+        "$1$",
+        "$3$",
+        "$-1$",
+        "$4$",
+        "$2$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Continuity at a point means the left-hand limit, the right-hand limit and the function value agree.",
+        "Compute the one-sided limit from the left using the first piece and the value from the second piece, and set them equal.",
+        "$f$ is continuous at $c$ iff $\\lim_{x\\to c^-}f(x)=\\lim_{x\\to c^+}f(x)=f(c)$."
+      ],
+      "steps": [
+        "Left limit: $\\lim_{x\\to2^-}(x+b)=2+b$.",
+        "$f(2)=4a+1$, which also equals the right limit.",
+        "Set $2+b=4a+1$.",
+        "So $4a-b=2-1=1$."
+      ],
+      "brief": "$2+b=4a+1$, so $4a-b=1$."
+    },
+    {
+      "sec": "3.3",
+      "q": "The sum of all values of $x$ at which the tangent lines to the graph of $y=\\dfrac{2x-1}{3x+1}$ are parallel to the line $4x-5y+1=0$ is",
+      "opts": [
+        "$-\\dfrac23$",
+        "$-\\dfrac45$",
+        "$-1$",
+        "$-\\dfrac14$",
+        "$-\\dfrac35$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Parallel lines have equal slopes, so the tangent slope $y'$ must equal the slope of the given line.",
+        "Find the slope of the given line, differentiate with the quotient rule, and solve $y'=$ that slope for $x$.",
+        "Quotient rule: $\\left(\\dfrac uv\\right)'=\\dfrac{u'v-uv'}{v^2}$; the line $Ax+By+C=0$ has slope $-A/B$."
+      ],
+      "steps": [
+        "The line is $y=\\frac45x+\\frac15$, slope $\\frac45$.",
+        "$y'=\\dfrac{2(3x+1)-3(2x-1)}{(3x+1)^2}=\\dfrac{5}{(3x+1)^2}$.",
+        "$\\dfrac{5}{(3x+1)^2}=\\dfrac45$ gives $(3x+1)^2=\\dfrac{25}{4}$, so $3x+1=\\pm\\dfrac52$.",
+        "$x=\\dfrac12$ or $x=-\\dfrac76$; the sum is $-\\dfrac23$."
+      ],
+      "brief": "$y'=\\frac{5}{(3x+1)^2}=\\frac45$ gives $x=\\frac12,-\\frac76$; sum $-\\frac23$."
+    },
+    {
+      "sec": "3.3",
+      "q": "If $h(x)=xf(x)g(x)$, with $f(1)=2$, $g(1)=2$, $f'(1)=1$ and $g'(1)=1$, then $h'(1)=$",
+      "opts": [
+        "$8$",
+        "$4$",
+        "$1$",
+        "$6$",
+        "$5$"
+      ],
+      "ans": 0,
+      "hints": [
+        "$h$ is a product of three factors.",
+        "Apply the product rule to the three-factor product and then evaluate at the given point.",
+        "$(uvw)'=u'vw+uv'w+uvw'$."
+      ],
+      "steps": [
+        "$h'(x)=f(x)g(x)+xf'(x)g(x)+xf(x)g'(x)$.",
+        "At $x=1$: $h'(1)=2\\cdot2+1\\cdot1\\cdot2+1\\cdot2\\cdot1$.",
+        "$=4+2+2=8$."
+      ],
+      "brief": "$h'=fg+xf'g+xfg'$, so $h'(1)=4+2+2=8$."
+    },
+    {
+      "sec": "2.3",
+      "q": "If $\\lim_{x\\to0}\\dfrac{\\sqrt{b-ax}-2}{x}=3$, then $a+b=$",
+      "opts": [
+        "$-8$",
+        "$8$",
+        "$-6$",
+        "$6$",
+        "$0$"
+      ],
+      "ans": 0,
+      "hints": [
+        "The denominator tends to $0$ while the limit is finite, so the numerator must also tend to $0$.",
+        "First force the numerator to vanish at $x=0$ to find one constant, then rationalize the numerator to evaluate the limit.",
+        "If $\\lim_{x\\to c}\\dfrac{N(x)}{D(x)}$ is finite and $D(c)=0$, then $N(c)=0$; rationalize with $(\\sqrt{u}-k)(\\sqrt{u}+k)=u-k^2$."
+      ],
+      "steps": [
+        "Need $\\sqrt b-2=0$, so $b=4$.",
+        "Multiply by the conjugate: $\\dfrac{(4-ax)-4}{x(\\sqrt{4-ax}+2)}=\\dfrac{-a}{\\sqrt{4-ax}+2}$.",
+        "As $x\\to0$ this tends to $-\\dfrac a4=3$, so $a=-12$.",
+        "$a+b=-12+4=-8$."
+      ],
+      "brief": "$b=4$; conjugate gives $-a/4=3$, $a=-12$; $a+b=-8$."
+    },
+    {
+      "sec": "2.2",
+      "q": "If $f(x)=\\dfrac12x+2$, then the largest number $\\delta>0$ such that $|f(x)-3|<0.45$ whenever $0<|x-2|<\\delta$ is equal to",
+      "opts": [
+        "$\\dfrac{9}{10}$",
+        "$1$",
+        "$\\dfrac{11}{10}$",
+        "$\\dfrac{12}{10}$",
+        "$\\dfrac{8}{10}$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Rewrite $|f(x)-3|<0.45$ as a condition on $|x-2|$.",
+        "Compute $f(x)-3$, factor out the coefficient of $x-2$, and divide the tolerance by it.",
+        "For a linear $f(x)=mx+c$ with $L=f(x_0)$: $|f(x)-L|<\\varepsilon\\iff|x-x_0|<\\varepsilon/|m|$, so the largest $\\delta$ is $\\varepsilon/|m|$."
+      ],
+      "steps": [
+        "$f(x)-3=\\dfrac12x-1=\\dfrac12(x-2)$.",
+        "$\\dfrac12|x-2|<0.45\\iff|x-2|<0.9$.",
+        "So the largest $\\delta$ is $0.9=\\dfrac9{10}$."
+      ],
+      "brief": "$|f(x)-3|=\\frac12|x-2|<0.45$, so $\\delta=0.9=\\frac9{10}$.",
+      "note": "Epsilon-delta question; the formal definition is excluded from the current syllabus but kept."
+    },
+    {
+      "sec": "4.3",
+      "q": "If $M$ and $N$ are the numbers of relative maximum points and relative minimum points of the function $f(x)=5x^{4/5}(x-1)^2$ respectively, then $2M+N=$",
+      "opts": [
+        "$4$",
+        "$3$",
+        "$6$",
+        "$5$",
+        "$2$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Use the first derivative test on every critical point, including points where $f'$ is undefined.",
+        "Differentiate with the product rule, factor $f'$, and list the zeros and the point where $f'$ does not exist.",
+        "First derivative test: a critical point where $f'$ changes from $-$ to $+$ is a relative minimum; from $+$ to $-$ a relative maximum."
+      ],
+      "steps": [
+        "$f'(x)=x^{-1/5}(x-1)(14x-4)$ (factor out $x^{-1/5}(x-1)$ and simplify).",
+        "Critical numbers: $x=0$ ($f'$ undefined), $x=\\frac27$, $x=1$.",
+        "Sign of $f'$: negative for $x<0$, positive on $(0,\\frac27)$, negative on $(\\frac27,1)$, positive for $x>1$.",
+        "Minima at $x=0$ and $x=1$ ($N=2$); maximum at $x=\\frac27$ ($M=1$).",
+        "$2M+N=2+2=4$."
+      ],
+      "brief": "$f'=x^{-1/5}(x-1)(14x-4)$: one maximum, two minima, so $2M+N=4$."
+    },
+    {
+      "sec": "4.1",
+      "q": "The absolute maximum of the function $f(x)=\\dfrac{x^2}{x-2}$ on $[-2,1]$ is",
+      "opts": [
+        "$0$",
+        "$-1$",
+        "$8$",
+        "$1$",
+        "$2$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Extreme value theorem: check the critical numbers inside the interval and the endpoints.",
+        "Differentiate with the quotient rule, find critical numbers in $[-2,1]$ (note $x=2$ is outside), then compare function values.",
+        "On a closed interval, the absolute maximum of a continuous function is the largest value among the endpoints and the critical numbers inside."
+      ],
+      "steps": [
+        "$f'(x)=\\dfrac{2x(x-2)-x^2}{(x-2)^2}=\\dfrac{x(x-4)}{(x-2)^2}$.",
+        "In $[-2,1]$ the only critical number is $x=0$.",
+        "$f(-2)=\\dfrac{4}{-4}=-1$, $f(0)=0$, $f(1)=\\dfrac{1}{-1}=-1$.",
+        "The absolute maximum is $0$."
+      ],
+      "brief": "$f'=\\frac{x(x-4)}{(x-2)^2}$; compare $f(-2)=-1$, $f(0)=0$, $f(1)=-1$: max $0$."
+    },
+    {
+      "sec": "3.5",
+      "q": "If $x^2y-4x=5$, then $\\dfrac{d^2y}{dx^2}$ at the point $(-1,1)$ is equal to",
+      "opts": [
+        "$22$",
+        "$38$",
+        "$14$",
+        "$6$",
+        "$24$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Use implicit differentiation twice, or solve for $y$ explicitly first.",
+        "Solve the equation for $y$ as a function of $x$ using negative powers and differentiate twice.",
+        "Power rule: $\\dfrac{d}{dx}x^n=nx^{n-1}$, applied twice to a sum of powers."
+      ],
+      "steps": [
+        "$y=\\dfrac{5+4x}{x^2}=5x^{-2}+4x^{-1}$ (check: $y(-1)=1$).",
+        "$y'=-10x^{-3}-4x^{-2}$.",
+        "$y''=30x^{-4}+8x^{-3}$.",
+        "At $x=-1$: $y''=30-8=22$."
+      ],
+      "brief": "$y=5x^{-2}+4x^{-1}$, $y''=30x^{-4}+8x^{-3}$, at $x=-1$: $22$."
+    },
+    {
+      "sec": "3.4",
+      "q": "The sum of all values of $x$ at which the function $f(x)=\\dfrac{-4x}{\\sqrt{2x-1}}$ has a horizontal tangent line is",
+      "opts": [
+        "$1$",
+        "$\\dfrac32$",
+        "$-1$",
+        "$-\\dfrac32$",
+        "$0$"
+      ],
+      "ans": 0,
+      "hints": [
+        "A horizontal tangent occurs where $f'(x)=0$ inside the domain.",
+        "Differentiate with the quotient rule and the chain rule, and set the numerator equal to zero.",
+        "Quotient rule $\\left(\\dfrac uv\\right)'=\\dfrac{u'v-uv'}{v^2}$ and chain rule $\\dfrac{d}{dx}\\sqrt{g}=\\dfrac{g'}{2\\sqrt g}$; a fraction is zero only when its numerator is zero."
+      ],
+      "steps": [
+        "Domain: $x>\\frac12$.",
+        "$f'(x)=\\dfrac{-4\\sqrt{2x-1}+\\dfrac{4x}{\\sqrt{2x-1}}}{2x-1}$; multiply the numerator by $\\sqrt{2x-1}$: it becomes $-4(2x-1)+4x=4-4x$.",
+        "$4-4x=0$ gives $x=1$, which is in the domain.",
+        "The sum of all such values is $1$."
+      ],
+      "brief": "$f'=0\\iff 4-4x=0$, so $x=1$ (only value in the domain)."
+    },
+    {
+      "sec": "3.5",
+      "q": "The sum of all $x$-coordinates of the points at which the curve \\[ x^2-5x+3y^3+6=0 \\] has vertical tangent line is",
+      "opts": [
+        "$5$",
+        "$6$",
+        "$4$",
+        "$3$",
+        "$2$"
+      ],
+      "ans": 0,
+      "hints": [
+        "A vertical tangent occurs where $dy/dx$ has a zero denominator and a nonzero numerator.",
+        "Differentiate implicitly, solve for $dy/dx$, set the denominator to zero, and substitute back into the curve.",
+        "If $\\dfrac{dy}{dx}=\\dfrac{N}{D}$, the tangent is vertical where $D=0$ and $N\\ne0$."
+      ],
+      "steps": [
+        "$2x-5+9y^2y'=0$, so $y'=\\dfrac{5-2x}{9y^2}$.",
+        "The denominator is zero when $y=0$.",
+        "Put $y=0$ in the curve: $x^2-5x+6=0$, so $x=2$ or $x=3$ (numerator $5-2x\\ne0$ for both).",
+        "The sum is $5$."
+      ],
+      "brief": "$y'=\\frac{5-2x}{9y^2}$; $y=0$ gives $x^2-5x+6=0$, $x=2,3$, sum $5$."
+    },
+    {
+      "sec": "4.4",
+      "q": "The sum of all values of $x$ at which the graph of $f(x)=\\dfrac{x}{e\\ln x}$ has a point of inflection is",
+      "opts": [
+        "$e^2$",
+        "$e^{-2}$",
+        "$\\ln 2$",
+        "$e$",
+        "$e^{-1}$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Inflection points occur where $f''$ changes sign.",
+        "Compute $f'$ and $f''$ using the quotient rule, find where $f''=0$ within the domain, and check the sign change.",
+        "A point $c$ in the domain is an inflection point if $f''(c)=0$ (or is undefined with $f$ defined) and $f''$ changes sign at $c$."
+      ],
+      "steps": [
+        "Domain: $x>0$, $x\\ne1$. $f'(x)=\\dfrac{\\ln x-1}{e\\ln^2x}$.",
+        "$f''(x)=\\dfrac1e\\cdot\\dfrac{2-\\ln x}{x\\ln^3x}$.",
+        "$f''=0$ when $\\ln x=2$, i.e. $x=e^2$.",
+        "$f''$ changes sign there (the factor $2-\\ln x$ changes sign), and $x=1$ is not in the domain.",
+        "So the sum is $e^2$."
+      ],
+      "brief": "$f''=\\frac1e\\frac{2-\\ln x}{x\\ln^3x}$ changes sign only at $x=e^2$."
+    },
+    {
+      "sec": "4.4",
+      "q": "If $(-12,0)$ is the largest open interval over which the graph of \\[ f(x)=x^4+ax^3 \\] is concave downward, then $a=$",
+      "opts": [
+        "$24$",
+        "$12$",
+        "$15$",
+        "$27$",
+        "$19$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Concave downward means $f''<0$.",
+        "Compute $f''$, factor it, and find where it is negative in terms of $a$.",
+        "$f''(x)<0$ on an interval means concave down there; the endpoints of the interval are where $f''=0$."
+      ],
+      "steps": [
+        "$f''(x)=12x^2+6ax=6x(2x+a)$.",
+        "The zeros are $x=0$ and $x=-\\dfrac a2$, and for $a>0$ the product is negative between them.",
+        "So the interval is $\\left(-\\dfrac a2,0\\right)$; set $-\\dfrac a2=-12$.",
+        "$a=24$."
+      ],
+      "brief": "$f''=6x(2x+a)<0$ on $(-\\frac a2,0)$; $-\\frac a2=-12$ gives $a=24$."
+    },
+    {
+      "sec": "4.5",
+      "q": "$\\lim_{x\\to-\\infty}\\left(2x+\\sqrt{4x^2-x}\\right)=$",
+      "opts": [
+        "$\\dfrac14$",
+        "$0$",
+        "$\\dfrac12$",
+        "$2$",
+        "does not exist"
+      ],
+      "ans": 0,
+      "hints": [
+        "This is an $\\infty-\\infty$ type limit at $-\\infty$ (be careful with the sign of $x$).",
+        "Multiply and divide by the conjugate, then divide numerator and denominator by $x$ using $\\sqrt{x^2}=|x|=-x$.",
+        "$A+B=\\dfrac{A^2-B^2}{A-B}$, and for $x<0$, $\\sqrt{x^2}=-x$."
+      ],
+      "steps": [
+        "Multiply by $\\dfrac{2x-\\sqrt{4x^2-x}}{2x-\\sqrt{4x^2-x}}$: the numerator is $4x^2-(4x^2-x)=x$.",
+        "The expression is $\\dfrac{x}{2x-\\sqrt{4x^2-x}}$.",
+        "For $x<0$, divide by $x$: $\\sqrt{4x^2-x}/x=-\\sqrt{4-1/x}$, so we get $\\dfrac{1}{2+\\sqrt{4-1/x}}$.",
+        "As $x\\to-\\infty$ this tends to $\\dfrac{1}{2+2}=\\dfrac14$."
+      ],
+      "brief": "Conjugate: $\\frac{x}{2x-\\sqrt{4x^2-x}}=\\frac{1}{2+\\sqrt{4-1/x}}\\to\\frac14$."
+    },
+    {
+      "sec": "4.5",
+      "q": "If $\\lim_{x\\to-\\infty}\\left(\\dfrac{3x-2}{\\sqrt{4x^2+5}}\\right)=L_1$ and $\\lim_{x\\to\\infty}\\left(\\dfrac{3x-2}{\\sqrt{4x^2+5}}\\right)=L_2$, then $L_1-L_2=$",
+      "opts": [
+        "$-3$",
+        "$-\\infty$",
+        "$\\infty$",
+        "$-\\dfrac32$",
+        "$0$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Divide by the highest power of $x$ and treat $x\\to\\infty$ and $x\\to-\\infty$ separately.",
+        "Divide numerator and denominator by $x$, taking care that $\\sqrt{x^2}=|x|$ has different signs at the two ends.",
+        "$\\sqrt{x^2}=x$ for $x>0$ and $\\sqrt{x^2}=-x$ for $x<0$; $\\lim 1/x^k=0$ as $x\\to\\pm\\infty$."
+      ],
+      "steps": [
+        "For $x\\to\\infty$: $\\dfrac{3-2/x}{\\sqrt{4+5/x^2}}\\to\\dfrac32$, so $L_2=\\dfrac32$.",
+        "For $x\\to-\\infty$: dividing by $x<0$ gives denominator $-\\sqrt{4+5/x^2}$, so the limit is $\\dfrac{3}{-2}=-\\dfrac32=L_1$.",
+        "$L_1-L_2=-\\dfrac32-\\dfrac32=-3$."
+      ],
+      "brief": "$L_1=-\\frac32$, $L_2=\\frac32$, so $L_1-L_2=-3$."
+    },
+    {
+      "sec": "4.5",
+      "q": "If $f(x)=\\dfrac{2x^3-3x+5}{x^2+x}$, then an equation of the slant asymptote for the graph of $f$ is",
+      "opts": [
+        "$y=2x-2$",
+        "$y=2x-3$",
+        "$y=x+3$",
+        "$y=3x+1$",
+        "$y=3x-2$"
+      ],
+      "ans": 0,
+      "hints": [
+        "The degree of the numerator is one more than the degree of the denominator.",
+        "Do polynomial long division; the quotient is the slant asymptote.",
+        "If $f=\\dfrac{P}{Q}$ with $\\deg P=\\deg Q+1$ and $P=Q\\cdot S+R$ with $\\deg R<\\deg Q$, then $y=S(x)$ is the slant asymptote."
+      ],
+      "steps": [
+        "Divide: $2x^3-3x+5=(x^2+x)(2x-2)+(5-x)$.",
+        "So $f(x)=2x-2+\\dfrac{5-x}{x^2+x}$.",
+        "The remainder term tends to $0$ as $x\\to\\pm\\infty$, so $y=2x-2$."
+      ],
+      "brief": "Long division: $f=2x-2+\\frac{5-x}{x^2+x}$, so $y=2x-2$."
+    },
+    {
+      "sec": "4.6",
+      "q": "The function \\[ f(x)=\\frac{2}{x\\ln x} \\] has",
+      "opts": [
+        "two vertical and one horizontal asymptotes",
+        "one vertical and one horizontal asymptotes",
+        "no vertical and one horizontal asymptote",
+        "one vertical and no horizontal asymptote",
+        "two vertical and no horizontal asymptotes"
+      ],
+      "ans": 0,
+      "hints": [
+        "Find the domain, then look at the limits at the edges of the domain and at infinity.",
+        "The denominator vanishes at two places; check the one-sided limits at each, and compute the limit as $x\\to\\infty$.",
+        "$x=c$ is a vertical asymptote if a one-sided limit at $c$ is infinite; $y=L$ is horizontal if $\\lim_{x\\to\\pm\\infty}f=L$."
+      ],
+      "steps": [
+        "Domain: $x>0$, $x\\ne1$.",
+        "At $x=1$: $x\\ln x\\to0$, so $f\\to\\pm\\infty$: vertical asymptote $x=1$.",
+        "As $x\\to0^+$: $x\\ln x\\to0^-$, so $f\\to-\\infty$: vertical asymptote $x=0$.",
+        "As $x\\to\\infty$: $x\\ln x\\to\\infty$, so $f\\to0$: horizontal asymptote $y=0$ (there is no limit at $-\\infty$ since $x>0$).",
+        "Two vertical and one horizontal."
+      ],
+      "brief": "Vertical at $x=0$ and $x=1$; horizontal $y=0$."
+    },
+    {
+      "sec": "4.5",
+      "q": "If $y=0$ and $y=5$ are two horizontal asymptotes of the function \\[ f(x)=\\frac{ae^x+be^{-x}}{2e^x+3e^{-x}},\\qquad b>0, \\] then $5a+b=$",
+      "opts": [
+        "$15$",
+        "$5$",
+        "$6$",
+        "$10$",
+        "$30$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Compute the limits at $+\\infty$ and at $-\\infty$ separately; one will involve $a$, the other $b$.",
+        "Divide numerator and denominator by the dominant exponential at each end.",
+        "$e^{x}\\to\\infty$, $e^{-x}\\to0$ as $x\\to\\infty$, and the reverse as $x\\to-\\infty$."
+      ],
+      "steps": [
+        "As $x\\to\\infty$ (divide by $e^x$): $f\\to\\dfrac{a}{2}$.",
+        "As $x\\to-\\infty$ (divide by $e^{-x}$): $f\\to\\dfrac b3$.",
+        "Since $b>0$, $\\dfrac b3\\ne0$, so $\\dfrac b3=5$ and $\\dfrac a2=0$.",
+        "$b=15$, $a=0$, so $5a+b=15$."
+      ],
+      "brief": "Limits $\\frac a2$ and $\\frac b3$; $b>0$ forces $a=0$, $b=15$."
+    },
+    {
+      "sec": "4.7",
+      "q": "If an open box of maximum volume is to be made from a square piece of material, $30$ cm on a side, by cutting equal squares from the corners and turning up the sides, then the sum of the dimensions of the box is",
+      "opts": [
+        "$45$ cm",
+        "$42$ cm",
+        "$48$ cm",
+        "$40$ cm",
+        "$30$ cm"
+      ],
+      "ans": 0,
+      "hints": [
+        "This is an optimization problem: maximize the volume of the box.",
+        "Let $x$ be the side of the cut-out squares, write the volume as a function of $x$, and find its critical number.",
+        "Maximize $V(x)$ on its domain by solving $V'(x)=0$ and checking that it gives a maximum."
+      ],
+      "steps": [
+        "Box dimensions: $(30-2x)\\times(30-2x)\\times x$, so $V=x(30-2x)^2$ for $0<x<15$.",
+        "$V'=(30-2x)^2-4x(30-2x)=(30-2x)(30-6x)$.",
+        "$V'=0$ in the domain gives $x=5$, and $V$ is maximum there (it is $0$ at both ends).",
+        "Dimensions: $20,\\ 20,\\ 5$; sum $=45$ cm."
+      ],
+      "brief": "$V=x(30-2x)^2$, $V'=0$ at $x=5$; dimensions $20,20,5$, sum $45$."
+    },
+    {
+      "sec": "4.7",
+      "q": "The area of the largest rectangle that can be inscribed in the region bounded by the $x$-axis, the $y$-axis and the line $y=3-\\dfrac12x$ is equal to",
+      "opts": [
+        "$\\dfrac92$",
+        "$3$",
+        "$\\dfrac72$",
+        "$6$",
+        "$9$"
+      ],
+      "ans": 0,
+      "hints": [
+        "This is an optimization problem: maximize the area of a rectangle with a corner on the line.",
+        "Let the corner on the line be $(x,y)$, write the area as a function of $x$ alone, and find the critical number.",
+        "The rectangle with corner at the origin and opposite corner $(x,y)$ has area $A=xy$; maximize $A$ by solving $A'=0$."
+      ],
+      "steps": [
+        "$A(x)=x\\left(3-\\dfrac12x\\right)=3x-\\dfrac12x^2$ for $0<x<6$.",
+        "$A'(x)=3-x=0$ gives $x=3$, and $A''=-1<0$ so it is a maximum.",
+        "$y=3-\\dfrac32=\\dfrac32$.",
+        "$A=3\\cdot\\dfrac32=\\dfrac92$."
+      ],
+      "brief": "$A=3x-\\frac12x^2$, max at $x=3$: $A=3\\cdot\\frac32=\\frac92$."
+    },
+    {
+      "sec": "4.8",
+      "q": "Using the tangent line approximation of $f(x)=\\sqrt{x+9}$ at the point $(0,3)$, $\\sqrt{9.03}$ can be approximated as",
+      "opts": [
+        "$3.005$",
+        "$3.004$",
+        "$3.003$",
+        "$3.002$",
+        "$3.001$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Use the linearization of $f$ at the given point.",
+        "Compute $f'(0)$, write the tangent line, and decide which $x$ gives $9.03$.",
+        "Linearization: $f(x)\\approx f(a)+f'(a)(x-a)$ for $x$ near $a$."
+      ],
+      "steps": [
+        "$f'(x)=\\dfrac{1}{2\\sqrt{x+9}}$, so $f'(0)=\\dfrac16$.",
+        "Tangent line: $L(x)=3+\\dfrac16x$.",
+        "$\\sqrt{9.03}=f(0.03)\\approx3+\\dfrac{0.03}{6}=3.005$."
+      ],
+      "brief": "$L(x)=3+\\frac x6$, $x=0.03$: $\\sqrt{9.03}\\approx3.005$."
+    },
+    {
+      "sec": "4.8",
+      "q": "The radius of a spherical balloon is measured as $8$ cm, with a possible error of $0.02$ cm. Using differentials, the percent error in computing the volume of the sphere is (Hint: $V=\\dfrac43\\pi r^3$)",
+      "opts": [
+        "$0.75\\,\\%$",
+        "$0.25\\,\\%$",
+        "$0.50\\,\\%$",
+        "$0.05\\,\\%$",
+        "$0.45\\,\\%$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Use differentials to estimate the relative error $dV/V$.",
+        "Compute $dV$ from $V'(r)$, then divide by $V$ and multiply by $100$.",
+        "$dV=V'(r)\\,dr$, and the percent error is $\\dfrac{dV}{V}\\times100$."
+      ],
+      "steps": [
+        "$dV=4\\pi r^2\\,dr$.",
+        "$\\dfrac{dV}{V}=\\dfrac{4\\pi r^2\\,dr}{\\frac43\\pi r^3}=\\dfrac{3\\,dr}{r}$.",
+        "$=\\dfrac{3(0.02)}{8}=0.0075$.",
+        "Percent error $=0.75\\,\\%$."
+      ],
+      "brief": "$\\frac{dV}{V}=\\frac{3\\,dr}{r}=\\frac{0.06}{8}=0.0075$, i.e. $0.75\\%$."
+    },
+    {
+      "sec": "5.1",
+      "q": "If $f(x)+f''(x)=1$ for all $x$, and $F(x)$ is an anti-derivative of $f(x)$ such that $F(0)=-1$, $F(1)=2$ and $f'(0)=2$, then $f'(1)=$",
+      "opts": [
+        "$0$",
+        "$-1$",
+        "$1$",
+        "$2$",
+        "$-2$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Antiderivatives of $f$ can be found by integrating the relation $f+f''=1$ once.",
+        "Integrate both sides of the equation: since $F'=f$, the term $\\int f\\,dx$ is $F$ and $\\int f''\\,dx=f'$.",
+        "$\\int f(x)\\,dx=F(x)+C$ and $\\int f''(x)\\,dx=f'(x)+C$; then evaluate the resulting identity at two points."
+      ],
+      "steps": [
+        "Integrating $f+f''=1$ gives $F(x)+f'(x)=x+C$.",
+        "At $x=0$: $F(0)+f'(0)=-1+2=1$, so $C=1$.",
+        "At $x=1$: $F(1)+f'(1)=1+1=2$.",
+        "So $f'(1)=2-F(1)=2-2=0$."
+      ],
+      "brief": "$F+f'=x+C$; $x=0$ gives $C=1$; $x=1$: $2+f'(1)=2$, so $f'(1)=0$."
+    },
+    {
+      "sec": "5.1",
+      "q": "If $f''(x)=\\dfrac{2}{x^2}$, $f'(1)=4$ and $f(1)=3$, then $2f(2)-f(4)=$",
+      "opts": [
+        "$-3$",
+        "$8\\ln2+3$",
+        "$-4\\ln2+21$",
+        "$4\\ln2+18$",
+        "$15$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Integrate twice, using the initial values to fix the constants.",
+        "Integrate $f''$ to get $f'$ and use $f'(1)$, then integrate again and use $f(1)$.",
+        "$\\int x^{-2}\\,dx=-x^{-1}+C$ and $\\int x^{-1}\\,dx=\\ln|x|+C$; here $x>0$ since the values are given at positive points."
+      ],
+      "steps": [
+        "$f'(x)=-\\dfrac2x+C$; $f'(1)=-2+C=4$ gives $C=6$.",
+        "$f(x)=6x-2\\ln x+D$; $f(1)=6+D=3$ gives $D=-3$.",
+        "$f(2)=12-2\\ln2-3=9-2\\ln2$, $f(4)=24-4\\ln2-3=21-4\\ln2$.",
+        "$2f(2)-f(4)=18-4\\ln2-21+4\\ln2=-3$."
+      ],
+      "brief": "$f'=6-\\frac2x$, $f=6x-2\\ln x-3$; $2f(2)-f(4)=-3$."
+    },
+    {
+      "sec": "5.6",
+      "q": "$\\lim_{x\\to3^+}\\left[4(x-3)\\right]^{(x-3)}=$",
+      "opts": [
+        "$1$",
+        "$2$",
+        "$3$",
+        "$4$",
+        "$5$"
+      ],
+      "ans": 0,
+      "hints": [
+        "This is a $0^0$ indeterminate form.",
+        "Take the natural log, rewrite the product as a quotient, and apply L'Hopital's rule.",
+        "If $\\ln L=\\lim g\\ln f$ is found, then $L=e^{\\ln L}$; for $0\\cdot\\infty$ write $u\\ln v=\\dfrac{\\ln v}{1/u}$."
+      ],
+      "steps": [
+        "Let $t=x-3\\to0^+$; $\\ln y=t\\ln(4t)=\\dfrac{\\ln(4t)}{1/t}$, which is of the form $\\dfrac{-\\infty}{\\infty}$.",
+        "L'Hopital: $\\dfrac{1/t}{-1/t^2}=-t\\to0$.",
+        "So $\\ln L=0$ and $L=e^0=1$."
+      ],
+      "brief": "$\\ln y=\\frac{\\ln 4t}{1/t}\\to0$ by L'Hopital, so the limit is $e^0=1$."
+    },
+    {
+      "sec": "5.6",
+      "q": "If $f''(x)$ is a continuous function, then \\[ \\lim_{h\\to0}\\frac{3f(x+4h)-7f(x)+4f(x-3h)}{6h^2}= \\]",
+      "opts": [
+        "$7f''(x)$",
+        "$3f'(x)$",
+        "$4f''(x)$",
+        "$3f''(x)+4f'(x)$",
+        "$f''(x)$"
+      ],
+      "ans": 0,
+      "hints": [
+        "The limit is of the form $0/0$ in the variable $h$; use L'Hopital's rule twice.",
+        "Differentiate numerator and denominator with respect to $h$ (chain rule), check whether the form is still $0/0$, and repeat.",
+        "L'Hopital: $\\lim\\dfrac{N}{D}=\\lim\\dfrac{N'}{D'}$ when the form is $0/0$; $\\dfrac{d}{dh}f(x+kh)=kf'(x+kh)$."
+      ],
+      "steps": [
+        "At $h=0$ the numerator is $3f-7f+4f=0$ and the denominator is $0$.",
+        "First application: $\\dfrac{12f'(x+4h)-12f'(x-3h)}{12h}$, still $0/0$.",
+        "Second application: $\\dfrac{48f''(x+4h)+36f''(x-3h)}{12}$.",
+        "As $h\\to0$ (using continuity of $f''$): $\\dfrac{84f''(x)}{12}=7f''(x)$."
+      ],
+      "brief": "L'Hopital twice: $\\frac{48f''+36f''}{12}=7f''(x)$."
+    },
+    {
+      "sec": "5.9",
+      "q": "If $f(x)=\\cosh(\\ln x)$, then $f'(1/5)=$",
+      "opts": [
+        "$-12$",
+        "$-10$",
+        "$24$",
+        "$-26$",
+        "$-1$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Use the definition of $\\cosh$ to simplify the composition, or use the chain rule.",
+        "Write $\\cosh(\\ln x)$ in terms of exponentials so that $e^{\\ln x}$ simplifies.",
+        "$\\cosh u=\\dfrac{e^u+e^{-u}}{2}$, $e^{\\ln x}=x$, and $(\\cosh u)'=\\sinh u\\cdot u'$."
+      ],
+      "steps": [
+        "$f(x)=\\dfrac{e^{\\ln x}+e^{-\\ln x}}{2}=\\dfrac12\\left(x+\\dfrac1x\\right)$.",
+        "$f'(x)=\\dfrac12\\left(1-\\dfrac1{x^2}\\right)$.",
+        "$f'(1/5)=\\dfrac12(1-25)=-12$."
+      ],
+      "brief": "$f=\\frac12(x+\\frac1x)$, $f'=\\frac12(1-\\frac1{x^2})$, so $f'(\\frac15)=-12$."
+    },
+    {
+      "sec": "5.9",
+      "q": "The function $f(x)=x\\sinh(x-1)-\\cosh(x-1)$ has",
+      "opts": [
+        "one relative minimum",
+        "one relative maximum",
+        "two relative extrema",
+        "no relative minimum",
+        "two critical points"
+      ],
+      "ans": 0,
+      "hints": [
+        "Use the first derivative test, so find $f'$ first.",
+        "Differentiate with the product rule using the derivatives of $\\sinh$ and $\\cosh$, then simplify.",
+        "$(\\sinh u)'=\\cosh u\\cdot u'$ and $(\\cosh u)'=\\sinh u\\cdot u'$; also $\\cosh u>0$ always."
+      ],
+      "steps": [
+        "$f'(x)=\\sinh(x-1)+x\\cosh(x-1)-\\sinh(x-1)=x\\cosh(x-1)$.",
+        "Since $\\cosh(x-1)>0$, $f'=0$ only at $x=0$: one critical point.",
+        "$f'<0$ for $x<0$ and $f'>0$ for $x>0$.",
+        "So $f$ has exactly one relative extremum, a relative minimum."
+      ],
+      "brief": "$f'=x\\cosh(x-1)$: sign change $-\\to+$ at $x=0$ only, one relative minimum."
+    },
+    {
+      "sec": "5.6",
+      "q": "$\\lim_{x\\to0}\\frac{1-\\cos x}{x^2}=$",
+      "opts": [
+        "$\\dfrac12$",
+        "$0$",
+        "$1$",
+        "$\\infty$",
+        "$-\\infty$"
+      ],
+      "ans": 0,
+      "hints": [
+        "The form is $0/0$.",
+        "Apply L'Hopital's rule, then check whether the new form is again $0/0$.",
+        "L'Hopital: $\\lim\\dfrac{f}{g}=\\lim\\dfrac{f'}{g'}$ for $0/0$; also $\\lim_{x\\to0}\\dfrac{\\sin x}{x}=1$."
+      ],
+      "steps": [
+        "At $x=0$ the form is $\\dfrac00$; differentiate: $\\dfrac{\\sin x}{2x}$.",
+        "Still $\\dfrac00$; use $\\lim\\dfrac{\\sin x}{x}=1$ (or differentiate again: $\\dfrac{\\cos x}{2}$).",
+        "The limit is $\\dfrac12$."
+      ],
+      "brief": "L'Hopital: $\\frac{\\sin x}{2x}\\to\\frac12$."
+    }
+  ]
+}

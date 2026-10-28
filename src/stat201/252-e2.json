@@ -1,0 +1,338 @@
+{
+  "course": "stat201",
+  "term": "252",
+  "kind": "e2",
+  "date": "6 April 2026",
+  "minutes": 120,
+  "source": "stat201-252-e2.pdf",
+  "note": "Cover prints April 06, 2026 and 120 minutes. All 14 answers are marked (correct) in the master and all agree with my computation (mpmath/statistics check). Q13: the short software-output table is typeset in LaTeX instead of an image. Last-digit differences in Q10 and Q7 come from table rounding of chi-square and z values. Q4 uses z=1.18.",
+  "qs": [
+    {
+      "sec": "4.2",
+      "q": "(Exercise 4-6) Suppose that $f(x)=e^{-(x-4)}$ for $x>4$. Determine $P(3.5<X<4.4)$.",
+      "opts": [
+        "0.3297",
+        "0.6703",
+        "0.5934",
+        "0.9784",
+        "0.0180"
+      ],
+      "ans": 0,
+      "hints": [
+        "This is a probability from a density: integrate $f$ over the part of the interval where it is non-zero.",
+        "The density is zero for $x\\le4$, so only the part of the interval from 4 to 4.4 counts.",
+        "$P(a<X<b)=\\int_a^b f(x)\\,dx$, with $f=0$ outside its stated range."
+      ],
+      "steps": [
+        "Since $f(x)=0$ for $x\\le4$, $P(3.5<X<4.4)=P(4<X<4.4)$.",
+        "$\\int_4^{4.4}e^{-(x-4)}dx=\\left[-e^{-(x-4)}\\right]_4^{4.4}$.",
+        "$=1-e^{-0.4}=1-0.6703=0.3297$."
+      ],
+      "brief": "Only $4<x<4.4$ counts: $1-e^{-0.4}=0.3297$."
+    },
+    {
+      "sec": "4.3",
+      "q": "(Exercise 4-22) The probability density function of the time you arrive at a terminal (in minutes after 8:00 a.m.) is $f(x)=e^{-x}$ for $x>0$. Determine the cumulative distribution function of $X$.",
+      "opts": [
+        "\\[ F(x)=\\begin{cases}0, & x\\le 0,\\\\ 1-e^{-x}, & x>0\\end{cases} \\]",
+        "\\[ F(x)=\\begin{cases}0, & x\\le 0,\\\\ e^{-x}, & x>0\\end{cases} \\]",
+        "\\[ F(x)=1-e^{-x}\\quad\\text{for all }x \\]",
+        "\\[ F(x)=\\begin{cases}e^{-x}, & x<0,\\\\ 0, & x\\ge 0\\end{cases} \\]",
+        "\\[ F(x)=\\begin{cases}0, & x\\le 0,\\\\ 1-e^{-x/2}, & x>0\\end{cases} \\]"
+      ],
+      "ans": 0,
+      "hints": [
+        "The CDF is the accumulated area under the density up to $x$.",
+        "Integrate $f$ from the lower end of its range up to $x$, and remember the CDF is 0 below that range.",
+        "$F(x)=\\int_{-\\infty}^{x}f(u)\\,du$; a valid CDF is non-decreasing, starts at 0 and tends to 1."
+      ],
+      "steps": [
+        "For $x\\le0$ there is no probability to the left, so $F(x)=0$.",
+        "For $x>0$: $F(x)=\\int_0^x e^{-u}du=\\left[-e^{-u}\\right]_0^x$.",
+        "$F(x)=1-e^{-x}$ for $x>0$, which increases from 0 to 1."
+      ],
+      "brief": "$F(x)=0$ for $x\\le0$ and $F(x)=1-e^{-x}$ for $x>0$."
+    },
+    {
+      "sec": "4.4",
+      "q": "(Exercise 4-35) The thickness of a conductive coating in micrometers has a density function \\[ f(x)=\\begin{cases}\\dfrac{200}{x^2}, & 100<x<c,\\\\[2mm] 0, & \\text{otherwise}\\end{cases} \\] where $c$ is chosen so that $f$ is a valid probability density function. What proportion of coating thicknesses lie in the interval from $\\mu-\\sigma$ to $\\mu+\\sigma$?",
+      "opts": [
+        "0.6067",
+        "0.6827",
+        "0.5774",
+        "0.5901",
+        "0.3033"
+      ],
+      "ans": 0,
+      "hints": [
+        "First find $c$ from the requirement that a density integrates to 1, then find the mean and variance of a continuous variable.",
+        "Set $\\int_{100}^{c}200/x^2\\,dx=1$ to get $c$, then compute $E(X)$ and $E(X^2)$ by integrating.",
+        "$\\mu=\\int xf(x)\\,dx$, $\\sigma^2=\\int x^2f(x)\\,dx-\\mu^2$, and $P(a<X<b)=\\int_a^b f(x)\\,dx$."
+      ],
+      "steps": [
+        "$\\int_{100}^{c}\\frac{200}{x^2}dx=200\\left(\\frac1{100}-\\frac1c\\right)=1$, so $c=200$.",
+        "$\\mu=\\int_{100}^{200}\\frac{200}{x}dx=200\\ln2=138.63$.",
+        "$E(X^2)=\\int_{100}^{200}200\\,dx=20000$, so $\\sigma^2=20000-138.63^2=781.7$ and $\\sigma=27.96$.",
+        "$\\mu-\\sigma=110.67$ and $\\mu+\\sigma=166.59$.",
+        "$P=200\\left(\\frac1{110.67}-\\frac1{166.59}\\right)=0.6067$."
+      ],
+      "brief": "$c=200$, $\\mu=138.63$, $\\sigma=27.96$; $P=200(1/110.67-1/166.59)=0.6067$."
+    },
+    {
+      "sec": "4.6",
+      "q": "(Exercise 4-60) Cholesterol is a fatty substance that is an important part of the outer lining (membrane) of cells in the body of animals. Its normal range for an adult is 120 - 240 mg/dl. The Food and Nutrition Institute of the Philippines found that the total cholesterol level for Filipino adults has a mean of 159.2 mg/dl and 88.1$\\%$ of adults have a cholesterol level more than 113.5 mg/dl. Suppose that the total cholesterol level is normally distributed. Determine the standard deviation of this distribution.",
+      "opts": [
+        "38.7288",
+        "38.4034",
+        "39.0598",
+        "45.7000",
+        "51.9318"
+      ],
+      "ans": 0,
+      "hints": [
+        "This is a reverse normal problem: a probability is given and the standard deviation is unknown.",
+        "Convert the given probability into a $z$-value, noting that 113.5 is below the mean, then solve the standardising equation for $\\sigma$.",
+        "$z=\\dfrac{x-\\mu}{\\sigma}$, and $P(X>x)=p$ means $P(Z<z)=1-p$."
+      ],
+      "steps": [
+        "$P(X>113.5)=0.881$, so $P(X<113.5)=0.119$.",
+        "The $z$ with area 0.119 to its left is $z=-1.18$.",
+        "$\\dfrac{113.5-159.2}{\\sigma}=-1.18$, so $\\sigma=\\dfrac{45.7}{1.18}$.",
+        "$\\sigma=38.73$ (with $z=-1.1800$ this is 38.7288)."
+      ],
+      "brief": "$P(Z<z)=0.119\\Rightarrow z=-1.18$; $\\sigma=45.7/1.18=38.7288$."
+    },
+    {
+      "sec": "4.8",
+      "q": "(Suggested Problem 4-98) The time between the arrival of electronic messages at your computer is exponentially distributed with a mean of three hours. If you have not had a message in the last two hours, what is the probability that you do not receive a message in the next four hours?",
+      "opts": [
+        "0.2636",
+        "0.1353",
+        "0.5134",
+        "0.7364",
+        "0.0000"
+      ],
+      "ans": 0,
+      "hints": [
+        "Use the lack-of-memory property of the exponential distribution.",
+        "The two hours already waited do not matter; find the rate from the mean and compute the probability of waiting more than four hours.",
+        "$P(X>t+s\\mid X>t)=P(X>s)=e^{-\\lambda s}$, with $\\lambda=1/\\text{mean}$."
+      ],
+      "steps": [
+        "Mean 3 hours, so $\\lambda=1/3$.",
+        "By the memoryless property, $P(X>6\\mid X>2)=P(X>4)$.",
+        "$P(X>4)=e^{-4/3}=0.2636$."
+      ],
+      "brief": "Memoryless: $P(X>4)=e^{-4/3}=0.2636$."
+    },
+    {
+      "sec": "4.10",
+      "q": "(Suggested Problem 4-134) Suppose that $X$ has a Weibull distribution with $\\beta=1.5$ and $\\delta=7.5$. Determine the value of $x$ such that $P(X<x)=0.95$.",
+      "opts": [
+        "15.5858",
+        "8.9383",
+        "22.4680",
+        "38.8880",
+        "1.0354"
+      ],
+      "ans": 0,
+      "hints": [
+        "This is a Weibull percentile: set the cumulative distribution function equal to 0.95 and solve for $x$.",
+        "Write $F(x)=1-e^{-(x/\\delta)^\\beta}=0.95$, take logarithms and then the $1/\\beta$ power.",
+        "Weibull CDF: $F(x)=1-\\exp\\left[-(x/\\delta)^{\\beta}\\right]$ for $x>0$."
+      ],
+      "steps": [
+        "$1-e^{-(x/7.5)^{1.5}}=0.95$, so $e^{-(x/7.5)^{1.5}}=0.05$.",
+        "$(x/7.5)^{1.5}=-\\ln0.05=2.9957$.",
+        "$x=7.5\\,(2.9957)^{1/1.5}=7.5\\times2.0781=15.5858$."
+      ],
+      "brief": "$(x/7.5)^{1.5}=-\\ln0.05$, so $x=7.5(2.9957)^{2/3}=15.5858$."
+    },
+    {
+      "sec": "4.11",
+      "q": "(Suggested Problem 4-141) The length of time (in seconds) that a user views a page on a Web site before moving to another page is a lognormal random variable with parameters $\\theta=0.6$ and $\\omega^2=1.5$. What is the probability that a page is viewed for less than 15 seconds?",
+      "opts": [
+        "0.9573",
+        "0.8860",
+        "0.0427",
+        "0.9968",
+        "0.6810"
+      ],
+      "ans": 0,
+      "hints": [
+        "A lognormal variable has a normal logarithm, so convert to a normal probability.",
+        "Take $\\ln 15$, subtract $\\theta$ and divide by $\\omega$ (the square root of $\\omega^2$) to get a $z$-value.",
+        "If $\\ln X\\sim N(\\theta,\\omega^2)$ then $P(X<x)=P\\left(Z<\\dfrac{\\ln x-\\theta}{\\omega}\\right)$."
+      ],
+      "steps": [
+        "$P(X<15)=P\\left(Z<\\dfrac{\\ln15-0.6}{\\sqrt{1.5}}\\right)$.",
+        "$\\ln15=2.7081$, $\\sqrt{1.5}=1.2247$, so $z=\\dfrac{2.1081}{1.2247}=1.72$.",
+        "$P(Z<1.72)=0.9573$."
+      ],
+      "brief": "$z=(\\ln15-0.6)/\\sqrt{1.5}=1.72$, $P=0.9573$."
+    },
+    {
+      "sec": "7.2",
+      "q": "(Suggested Problem 7-10) Suppose that the random variable $X$ has the exponential distribution \\[ f(x)=\\begin{cases}0.25\\,e^{-0.25x}, & x\\ge0,\\\\ 0, & \\text{otherwise}\\end{cases} \\] Suppose that a random sample of $n=36$ observations is selected from this distribution. What is the approximate distribution of $2\\bar X$?",
+      "opts": [
+        "$2\\bar X\\overset{\\text{approx.}}{\\sim}\\mathcal N(\\text{Mean}=8,\\ \\text{Variance}=1.7778)$",
+        "$2\\bar X\\overset{\\text{approx.}}{\\sim}\\mathcal N(\\text{Mean}=8,\\ \\text{Variance}=0.4444)$",
+        "$2\\bar X\\overset{\\text{approx.}}{\\sim}\\mathcal N(\\text{Mean}=4,\\ \\text{Variance}=0.4444)$",
+        "$2\\bar X\\overset{\\text{approx.}}{\\sim}\\text{Exponential}(\\lambda=0.125)$",
+        "$2\\bar X\\overset{\\text{approx.}}{\\sim}\\text{Exponential}(\\lambda=0.5)$"
+      ],
+      "ans": 0,
+      "hints": [
+        "With $n=36$ the central limit theorem applies to the sample mean.",
+        "Find the mean and variance of one exponential observation, get those of $\\bar X$, then scale by 2.",
+        "Exponential($\\lambda$): $\\mu=1/\\lambda$, $\\sigma^2=1/\\lambda^2$. CLT: $\\bar X\\approx N(\\mu,\\sigma^2/n)$. For a constant $a$: $E(aY)=aE(Y)$, $V(aY)=a^2V(Y)$."
+      ],
+      "steps": [
+        "$\\lambda=0.25$, so $\\mu=4$ and $\\sigma^2=16$.",
+        "By the CLT, $\\bar X\\approx N(4,\\,16/36)=N(4,\\,0.4444)$.",
+        "$E(2\\bar X)=8$ and $V(2\\bar X)=4(0.4444)=1.7778$, so $2\\bar X\\approx N(8,\\,1.7778)$."
+      ],
+      "brief": "$\\bar X\\approx N(4,0.4444)$, so $2\\bar X\\approx N(8,\\,1.7778)$."
+    },
+    {
+      "sec": "7.2",
+      "q": "(Exercise 7-58) A random sample of size $n=9$ is taken from a normal population with $\\mu=25$ and $\\sigma^2=4$. Find the probability that the sample mean is less than 22.",
+      "opts": [
+        "Approximately 0.",
+        "0.0668",
+        "0.2266",
+        "0.1587",
+        "Cannot be determined since $n<30$."
+      ],
+      "ans": 0,
+      "hints": [
+        "The population is normal, so the sample mean is exactly normal for any $n$.",
+        "Find the mean and standard deviation of $\\bar X$, then standardise 22.",
+        "$\\bar X\\sim N(\\mu,\\sigma^2/n)$, so $Z=\\dfrac{\\bar X-\\mu}{\\sigma/\\sqrt n}$."
+      ],
+      "steps": [
+        "$\\bar X\\sim N(25,\\,4/9)$, so the standard error is $2/3$.",
+        "$z=\\dfrac{22-25}{2/3}=-4.5$.",
+        "$P(Z<-4.5)\\approx3.4\\times10^{-6}$, which is approximately 0. Since the population is normal, $n<30$ is not a problem."
+      ],
+      "brief": "$z=(22-25)/(2/3)=-4.5$, so $P\\approx0$."
+    },
+    {
+      "sec": "8.3",
+      "q": "(Exercise 8-46) The sugar content of the syrup in canned peaches is normally distributed. A random sample of $n=16$ cans yields a sample mean $\\bar x=23.9$ and sample standard deviation $s=5.8$ milligrams. Calculate a 99$\\%$ two-sided confidence interval for $\\sigma$.",
+      "opts": [
+        "$(3.9222,\\ 10.4724)$",
+        "$(4.0512,\\ 10.8152)$",
+        "$(4.2830,\\ 8.9761)$",
+        "$(3.8361,\\ 9.9060)$",
+        "$(4.0143,\\ 11.1296)$"
+      ],
+      "ans": 0,
+      "hints": [
+        "This is a confidence interval for a standard deviation, which uses the chi-square distribution.",
+        "Build the interval for $\\sigma^2$ with $n-1=15$ degrees of freedom and then take square roots.",
+        "$\\dfrac{(n-1)s^2}{\\chi^2_{\\alpha/2,n-1}}\\le\\sigma^2\\le\\dfrac{(n-1)s^2}{\\chi^2_{1-\\alpha/2,n-1}}$."
+      ],
+      "steps": [
+        "$\\alpha=0.01$, $n-1=15$: $\\chi^2_{0.005,15}=32.80$ and $\\chi^2_{0.995,15}=4.60$.",
+        "$(n-1)s^2=15(5.8)^2=504.6$.",
+        "$\\sigma^2$ lies between $504.6/32.80=15.38$ and $504.6/4.60=109.7$.",
+        "Taking square roots: $3.92\\le\\sigma\\le10.47$, i.e. $(3.9222,\\ 10.4724)$."
+      ],
+      "brief": "$\\sqrt{15(5.8)^2/32.80}=3.92$ and $\\sqrt{15(5.8)^2/4.60}=10.47$."
+    },
+    {
+      "sec": "8.1",
+      "q": "(Exercise 8-17) The life in hours of a 75-watt light bulb is known to be normally distributed with $\\sigma=17$ hours. We want the total width of the two-sided confidence interval on mean life to be six hours at 95$\\%$ confidence. What sample size should be used?",
+      "opts": [
+        "124",
+        "123",
+        "87",
+        "31",
+        "171"
+      ],
+      "ans": 0,
+      "hints": [
+        "This is a sample-size problem for a mean with known $\\sigma$.",
+        "The total width is twice the margin of error; set it equal to 6 and solve for $n$, then round up.",
+        "Margin of error $E=z_{\\alpha/2}\\sigma/\\sqrt n$, so $n=\\left(\\dfrac{z_{\\alpha/2}\\sigma}{E}\\right)^2$, rounded up."
+      ],
+      "steps": [
+        "Total width 6 means $E=3$. At 95$\\%$, $z_{0.025}=1.96$.",
+        "$n=\\left(\\dfrac{1.96\\times17}{3}\\right)^2=(11.107)^2=123.4$.",
+        "Round up: $n=124$."
+      ],
+      "brief": "$E=3$: $n=(1.96\\cdot17/3)^2=123.4$, so $n=124$."
+    },
+    {
+      "sec": "8.2",
+      "q": "(Exercise 8-28) An Izod impact test was performed on 25 specimens of PVC pipe. The sample mean is 1.35 and the sample standard deviation is 0.5. Compute a 98$\\%$ confidence interval on average Izod impact strength. What is the value of the lower confidence limit?",
+      "opts": [
+        "1.1008",
+        "1.1170",
+        "1.1436",
+        "1.0703",
+        "1.2254"
+      ],
+      "ans": 0,
+      "hints": [
+        "The population standard deviation is unknown, so use a $t$ interval for the mean.",
+        "Find the $t$ critical value with $n-1=24$ degrees of freedom for 98$\\%$ confidence, then subtract the margin from the mean.",
+        "$\\bar x-t_{\\alpha/2,n-1}\\dfrac{s}{\\sqrt n}\\le\\mu\\le\\bar x+t_{\\alpha/2,n-1}\\dfrac{s}{\\sqrt n}$."
+      ],
+      "steps": [
+        "$\\alpha=0.02$, so $t_{0.01,24}=2.492$.",
+        "Margin $=2.492\\times\\dfrac{0.5}{\\sqrt{25}}=2.492\\times0.1=0.2492$.",
+        "Lower limit $=1.35-0.2492=1.1008$."
+      ],
+      "brief": "$t_{0.01,24}=2.492$: $1.35-2.492(0.5/5)=1.1008$."
+    },
+    {
+      "sec": "8.2",
+      "q": "(Exercise 8-25) A random sample has been taken from a normal distribution. Output from a software package is given below: \\[ \\begin{array}{ccccccc} \\text{Variable} & n & \\text{Mean} & \\text{SE Mean} & \\text{StDev} & \\text{Variance} & \\text{Sum}\\\\ \\hline X & 9 & ? & ? & 69.3 & ? & 23010.3 \\end{array} \\] Find a 95$\\%$ two-sided confidence interval on the population mean. What is the value of the upper confidence limit?",
+      "opts": [
+        "2609.9686",
+        "2601.9760",
+        "2608.9522",
+        "2716.5058",
+        "2599.6660"
+      ],
+      "ans": 0,
+      "hints": [
+        "The mean is not given directly, but the sum and $n$ determine it; $\\sigma$ is unknown so use a $t$ interval.",
+        "Compute $\\bar x=\\text{Sum}/n$, then add the $t$ margin of error using $s=69.3$ and 8 degrees of freedom.",
+        "$\\bar x+t_{\\alpha/2,n-1}\\dfrac{s}{\\sqrt n}$ is the upper confidence limit."
+      ],
+      "steps": [
+        "$\\bar x=23010.3/9=2556.7$.",
+        "$t_{0.025,8}=2.306$ and the standard error is $69.3/\\sqrt9=23.1$.",
+        "Margin $=2.306\\times23.1=53.27$.",
+        "Upper limit $=2556.7+53.27=2609.97$, i.e. 2609.9686 with the unrounded $t$."
+      ],
+      "brief": "$\\bar x=2556.7$; upper limit $=2556.7+2.306(69.3/3)=2609.97$."
+    },
+    {
+      "sec": "8.4",
+      "q": "(Exercise 8-59) The Arizona Department of Transportation wishes to survey state residents to determine what proportion of the population would like to increase statewide highway speed limits to 120 kmph from 100 kmph. How many residents do they need to survey if they want to be at least 98.36$\\%$ confident that the sample proportion is within 0.13 of the true proportion?",
+      "opts": [
+        "86",
+        "85",
+        "81",
+        "58",
+        "171"
+      ],
+      "ans": 0,
+      "hints": [
+        "This is a sample-size problem for a proportion with no prior estimate of $p$.",
+        "With no estimate use the worst case $p=0.5$, find $z_{\\alpha/2}$ for the confidence level, and solve for $n$, rounding up.",
+        "$n=\\left(\\dfrac{z_{\\alpha/2}}{E}\\right)^2p(1-p)$, rounded up, with $p(1-p)\\le0.25$."
+      ],
+      "steps": [
+        "$\\alpha=0.0164$, so $z_{0.0082}=2.40$.",
+        "$n=\\left(\\dfrac{2.40}{0.13}\\right)^2(0.25)=340.8\\times0.25=85.2$.",
+        "Round up: $n=86$."
+      ],
+      "brief": "$p=0.5$, $z=2.40$: $n=0.25(2.40/0.13)^2=85.2$, so $n=86$."
+    }
+  ]
+}

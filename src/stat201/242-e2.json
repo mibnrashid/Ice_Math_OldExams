@@ -1,0 +1,332 @@
+{
+  "course": "stat201",
+  "term": "242",
+  "kind": "e2",
+  "date": "7 April 2025",
+  "minutes": 90,
+  "source": "stat319-242-e2.pdf",
+  "note": "Original course STAT 319. Cover prints 07 April 2025 and 90 minutes. All 14 answers marked (correct) in the master. Q3: with sigma=2, z=1.5 gives 0.0668, which is not among the choices; the master key 0.0681 (z=1.49) is the closest, so it is kept. Q8 key 668.48 uses z=-2.33 (exact z gives 672.15). Q10 asks about X-bar with sigma_xbar=1/12 (variance 1/144).",
+  "qs": [
+    {
+      "sec": "4.3",
+      "q": "For the copper current measurement, the cumulative distribution function of continuous random variable $X$ is given as: \\[ F(x)=\\begin{cases}0, & x<0,\\\\ 0.05x, & 0\\le x<20,\\\\ 1, & x\\ge 20\\end{cases} \\] What is the probability density function of $X$?",
+      "opts": [
+        "\\[ f(x)=\\begin{cases}0.05, & 0\\le x\\le 20,\\\\ 0, & \\text{otherwise}\\end{cases} \\]",
+        "\\[ f(x)=\\begin{cases}0.05x, & 0\\le x\\le 20,\\\\ 0, & \\text{otherwise}\\end{cases} \\]",
+        "\\[ f(x)=\\begin{cases}0.05x^{2}, & 0\\le x\\le 20,\\\\ 0, & \\text{otherwise}\\end{cases} \\]",
+        "\\[ f(x)=\\begin{cases}0.05, & 0\\le x\\le 10,\\\\ 0, & \\text{otherwise}\\end{cases} \\]",
+        "\\[ f(x)=\\begin{cases}0.05x^{-1}, & 0\\le x\\le 20,\\\\ 0, & \\text{otherwise}\\end{cases} \\]"
+      ],
+      "ans": 0,
+      "hints": [
+        "The density is the rate of change of the cumulative distribution function.",
+        "Differentiate each piece of $F$ separately.",
+        "$f(x)=\\dfrac{dF(x)}{dx}$ wherever the derivative exists."
+      ],
+      "steps": [
+        "On $0\\le x<20$, $F(x)=0.05x$, so $f(x)=\\dfrac{d}{dx}(0.05x)=0.05$.",
+        "For $x<0$ and $x\\ge20$, $F$ is constant, so $f(x)=0$.",
+        "Check: $\\int_0^{20}0.05\\,dx=1$."
+      ],
+      "brief": "$f=F'=0.05$ on $[0,20]$, 0 otherwise."
+    },
+    {
+      "sec": "4.4",
+      "q": "Suppose that contamination particle size (in micrometers) can be modeled as \\[ f(x)=\\begin{cases}2x^{-3}, & x>1,\\\\ 0, & \\text{otherwise}\\end{cases} \\] Determine the mean of $X$.",
+      "opts": [
+        "$2$",
+        "$1$",
+        "$\\frac12$",
+        "$3$",
+        "$\\frac23$"
+      ],
+      "ans": 0,
+      "hints": [
+        "This is the mean of a continuous random variable given by its density.",
+        "Set up $\\int x f(x)\\,dx$ over the range where $f$ is non-zero.",
+        "$E(X)=\\int_{-\\infty}^{\\infty}x f(x)\\,dx$."
+      ],
+      "steps": [
+        "$E(X)=\\int_1^\\infty x\\cdot2x^{-3}dx=\\int_1^\\infty 2x^{-2}dx$.",
+        "$=\\left[-2x^{-1}\\right]_1^\\infty$.",
+        "$=0-(-2)=2$."
+      ],
+      "brief": "$E(X)=\\int_1^\\infty 2x^{-2}dx=2$."
+    },
+    {
+      "sec": "4.6",
+      "q": "Suppose the current measurements in a strip of wire are assumed to follow a normal distribution with a mean of 10 milliamperes and a variance of 4 (milliamperes)$^2$. What is the probability that a measurement will exceed 13 milliamperes?",
+      "opts": [
+        "0.0681",
+        "0.9331",
+        "0.1336",
+        "0.2672",
+        "0.2266"
+      ],
+      "ans": 0,
+      "hints": [
+        "This is a normal probability: standardise and use the standard normal table.",
+        "Compute the $z$-value of 13 using the standard deviation (the square root of the variance), then find the upper-tail area.",
+        "$Z=\\dfrac{X-\\mu}{\\sigma}$ and $P(X>x)=1-\\Phi\\left(\\dfrac{x-\\mu}{\\sigma}\\right)$."
+      ],
+      "steps": [
+        "$\\mu=10$ and $\\sigma=\\sqrt4=2$.",
+        "$P(X>13)=P\\left(Z>\\dfrac{13-10}{2}\\right)=P(Z>1.5)$.",
+        "$P(Z>1.5)=1-0.9332\\approx0.0668$, which is closest to the choice 0.0681 (the printed key; table rounding)."
+      ],
+      "brief": "$z=(13-10)/2=1.5$, upper tail about 0.067; key 0.0681."
+    },
+    {
+      "sec": "4.8",
+      "q": "In a large corporate computer network, user log-ons to the system can be modeled as a Poisson process with a mean of 25 log-ons per hour. What is the probability that there are no log-ons in an interval of 6 minutes?",
+      "opts": [
+        "0.082",
+        "0.918",
+        "0.000",
+        "1.000",
+        "0.250"
+      ],
+      "ans": 0,
+      "hints": [
+        "Count the log-ons in a fixed interval: this is a Poisson count.",
+        "Convert the rate to the 6-minute interval first, then find the probability of zero log-ons.",
+        "If $N\\sim\\text{Poisson}(\\lambda t)$ then $P(N=0)=e^{-\\lambda t}$."
+      ],
+      "steps": [
+        "Rate 25 per hour, so in 6 minutes (0.1 hour) the mean is $25(0.1)=2.5$.",
+        "$P(N=0)=e^{-2.5}\\dfrac{2.5^0}{0!}=e^{-2.5}$.",
+        "$e^{-2.5}=0.0821\\approx0.082$."
+      ],
+      "brief": "Mean $=2.5$ in 6 min: $P(0)=e^{-2.5}=0.082$."
+    },
+    {
+      "sec": "4.8",
+      "q": "In a large corporate computer network, user log-ons to the system can be modeled as a Poisson process with a mean of 25 log-ons per hour. What is the interval of time (in minutes) such that the probability that no log-on occurs in this interval is 0.90? (Note: Interval refers to the length of time from start until first log-on)",
+      "opts": [
+        "0.2529",
+        "0.0921",
+        "5.5262",
+        "0.0042",
+        "2.4000"
+      ],
+      "ans": 0,
+      "hints": [
+        "No log-on in an interval of length $x$ means the waiting time to the first log-on exceeds $x$: exponential distribution.",
+        "Convert the rate to log-ons per minute, then solve $P(X>x)=0.90$ for $x$.",
+        "For exponential with rate $\\lambda$: $P(X>x)=e^{-\\lambda x}$."
+      ],
+      "steps": [
+        "$\\lambda=25/60=0.41667$ per minute.",
+        "$P(X>x)=e^{-0.41667x}=0.90$.",
+        "$x=\\dfrac{-\\ln0.90}{0.41667}=\\dfrac{0.10536}{0.41667}=0.2529$ minutes."
+      ],
+      "brief": "$e^{-(25/60)x}=0.9$, so $x=0.2529$ minutes."
+    },
+    {
+      "sec": "4.8",
+      "q": "In a large corporate computer network, user log-ons to the system can be modeled as a Poisson process with a mean of 25 log-ons per hour. What is the standard deviation of the time (in minutes) until the next log-on?",
+      "opts": [
+        "2.4000",
+        "0.0400",
+        "0.0960",
+        "25.0000",
+        "0.0016"
+      ],
+      "ans": 0,
+      "hints": [
+        "The time until the next event in a Poisson process is exponential.",
+        "Express the rate per minute, then use the exponential standard deviation.",
+        "Exponential($\\lambda$): $\\mu=1/\\lambda$ and $\\sigma=1/\\lambda$."
+      ],
+      "steps": [
+        "$\\lambda=25/60$ log-ons per minute.",
+        "$\\sigma=\\dfrac1\\lambda=\\dfrac{60}{25}=2.4$ minutes."
+      ],
+      "brief": "$\\sigma=1/\\lambda=60/25=2.4$ minutes."
+    },
+    {
+      "sec": "4.10",
+      "q": "The time to failure (in hours) of a bearing in a mechanical shaft is satisfactorily modeled as a Weibull random variable with $\\beta=\\frac12$ and $\\delta=5000$ hours. What is the mean time (in hours) until failure?",
+      "opts": [
+        "10000.00",
+        "2215.55",
+        "8862.20",
+        "2500.00",
+        "4431.10"
+      ],
+      "ans": 0,
+      "hints": [
+        "This is the mean of a Weibull distribution, which involves the gamma function.",
+        "Compute $1+1/\\beta$ and evaluate the gamma function there.",
+        "Weibull mean: $\\mu=\\delta\\,\\Gamma\\left(1+\\dfrac1\\beta\\right)$, and $\\Gamma(n)=(n-1)!$ for integers."
+      ],
+      "steps": [
+        "$1+1/\\beta=1+2=3$.",
+        "$\\Gamma(3)=2!=2$.",
+        "$\\mu=5000\\times2=10000$ hours."
+      ],
+      "brief": "$\\mu=\\delta\\Gamma(1+2)=5000\\cdot2=10000$."
+    },
+    {
+      "sec": "4.11",
+      "q": "The lifetime of a semiconductor laser has a lognormal distribution with $\\theta=10$ hours and $\\omega=1.5$ hours. What lifetime is exceeded by 99$\\%$ of lasers?",
+      "opts": [
+        "668.48",
+        "725778.39",
+        "67846.30",
+        "15.00",
+        "6.51"
+      ],
+      "ans": 0,
+      "hints": [
+        "A lognormal variable has a normal logarithm, so work with $\\ln X$ and a normal percentile.",
+        "Exceeded by 99$\\%$ means 1$\\%$ lie below, so find the $z$-value with area 0.01 to its left, then undo the logarithm.",
+        "$P(X<x)=\\Phi\\left(\\dfrac{\\ln x-\\theta}{\\omega}\\right)$, so $x=\\exp(\\theta+z\\,\\omega)$."
+      ],
+      "steps": [
+        "We need $x$ with $P(X>x)=0.99$, i.e. $P(X<x)=0.01$, so $z=-2.33$.",
+        "$\\ln x=\\theta+z\\omega=10-2.33(1.5)=6.505$.",
+        "$x=e^{6.505}=668.48$ hours."
+      ],
+      "brief": "$z=-2.33$: $x=e^{10-2.33(1.5)}=668.48$."
+    },
+    {
+      "sec": "7.2",
+      "q": "An electronics company manufactures resistors that have a mean resistance of 100 ohms and a standard deviation of 10 ohms. The distribution of resistance is normal. Find the probability that a random sample of $n=25$ resistors will have an average resistance less than 95 ohms.",
+      "opts": [
+        "0.0062",
+        "0.9938",
+        "0.0124",
+        "0.6915",
+        "0.3085"
+      ],
+      "ans": 0,
+      "hints": [
+        "The population is normal, so the sample mean is exactly normal.",
+        "Find the standard error of the mean, then standardise 95.",
+        "$\\bar X\\sim N(\\mu,\\sigma^2/n)$, so $Z=\\dfrac{\\bar X-\\mu}{\\sigma/\\sqrt n}$."
+      ],
+      "steps": [
+        "Standard error $=10/\\sqrt{25}=2$.",
+        "$z=\\dfrac{95-100}{2}=-2.5$.",
+        "$P(Z<-2.5)=0.0062$."
+      ],
+      "brief": "$z=(95-100)/2=-2.5$, so $P=0.0062$."
+    },
+    {
+      "sec": "7.2",
+      "q": "Suppose that the random variable $X$ has the continuous distribution given by the following pdf: \\[ f(x)=\\begin{cases}1, & 0\\le x\\le 1,\\\\ 0, & \\text{otherwise}\\end{cases} \\] Suppose that a random sample of size $n=12$ is selected from this distribution. What is the sampling distribution of $\\bar X$?",
+      "opts": [
+        "The sampling distribution of $\\bar X$ is approximately $N\\left(\\mu_{\\bar x}=\\frac12,\\ \\sigma_{\\bar x}=\\frac1{12}\\right)$, by central limit theorem",
+        "The sampling distribution of $\\bar X$ is exactly $N\\left(\\mu_{\\bar x}=\\frac12,\\ \\sigma_{\\bar x}=\\frac1{12}\\right)$",
+        "The sampling distribution of $\\bar X$ is approximately $N\\left(\\mu_{\\bar x}=\\frac12,\\ \\sigma_{\\bar x}=\\frac1{\\sqrt{12}}\\right)$, by central limit theorem",
+        "The sampling distribution of $\\bar X$ is exactly $N\\left(\\mu_{\\bar x}=\\frac12,\\ \\sigma_{\\bar x}=\\frac1{\\sqrt{12}}\\right)$",
+        "The sampling distribution of $\\bar X$ is approximately $N\\left(\\mu_{\\bar x}=0,\\ \\sigma_{\\bar x}=1\\right)$, by central limit theorem"
+      ],
+      "ans": 0,
+      "hints": [
+        "The population is not normal, so the central limit theorem gives an approximate normal distribution for $\\bar X$.",
+        "Find the mean and variance of one observation from this density, then divide the variance by $n$.",
+        "$\\mu_{\\bar x}=\\mu$ and $\\sigma_{\\bar x}=\\sigma/\\sqrt n$; use $\\mu=\\int xf(x)dx$ and $\\sigma^2=\\int x^2f(x)dx-\\mu^2$."
+      ],
+      "steps": [
+        "$\\mu=\\int_0^1x\\,dx=\\frac12$ and $E(X^2)=\\int_0^1x^2dx=\\frac13$, so $\\sigma^2=\\frac13-\\frac14=\\frac1{12}$.",
+        "$\\mu_{\\bar x}=\\frac12$ and $\\sigma_{\\bar x}=\\sqrt{\\dfrac{1/12}{12}}=\\sqrt{\\dfrac1{144}}=\\dfrac1{12}$.",
+        "The parent is not normal, so $\\bar X$ is only approximately normal (CLT): $N\\left(\\frac12,\\frac1{12}\\right)$."
+      ],
+      "brief": "$\\mu=\\frac12$, $\\sigma^2=\\frac1{12}$; $\\sigma_{\\bar x}=\\frac1{12}$, approx. normal by CLT."
+    },
+    {
+      "sec": "8.1",
+      "q": "A civil engineer is analyzing the compressive strength of concrete. Compressive strength is normally distributed with $\\sigma^2=1000\\,(\\text{psi})^2$. A random sample of 12 specimens has a mean compressive strength of $\\bar x=3250$ psi. It is desired to estimate the compressive strength with an error that is less than 15 psi at 99$\\%$ confidence. What sample size is required?",
+      "opts": [
+        "30",
+        "29",
+        "31",
+        "32",
+        "28"
+      ],
+      "ans": 0,
+      "hints": [
+        "This is a sample-size problem for a mean with known $\\sigma$.",
+        "The error is the margin of error; use the $z$ value for 99$\\%$ confidence, solve for $n$ and round up.",
+        "$E=z_{\\alpha/2}\\dfrac{\\sigma}{\\sqrt n}$, so $n=\\left(\\dfrac{z_{\\alpha/2}\\sigma}{E}\\right)^2$, rounded up."
+      ],
+      "steps": [
+        "$z_{0.005}=2.576$ and $\\sigma=\\sqrt{1000}=31.623$.",
+        "$n=\\left(\\dfrac{2.576\\times31.623}{15}\\right)^2=(5.431)^2=29.49$.",
+        "Round up: $n=30$."
+      ],
+      "brief": "$n=(2.576\\sqrt{1000}/15)^2=29.5$, so $n=30$."
+    },
+    {
+      "sec": "8.2",
+      "q": "The brightness of a television picture tube can be evaluated by measuring the amount of current required to achieve a particular brightness level. A sample of 10 tubes results in $\\bar x=317.2$ and $s=15.7$. Find (in microamps) a 99$\\%$ confidence interval on mean current required. What is the length of the resulting interval?",
+      "opts": [
+        "32.2710",
+        "25.5686",
+        "19.4619",
+        "31.4668",
+        "22.4607"
+      ],
+      "ans": 0,
+      "hints": [
+        "$\\sigma$ is unknown, so use a $t$ interval for the mean.",
+        "The length is twice the margin of error; find $t$ with $n-1=9$ degrees of freedom at 99$\\%$ confidence.",
+        "Length $=2\\,t_{\\alpha/2,n-1}\\dfrac{s}{\\sqrt n}$."
+      ],
+      "steps": [
+        "$t_{0.005,9}=3.250$.",
+        "Margin $=3.250\\times\\dfrac{15.7}{\\sqrt{10}}=3.250\\times4.965=16.14$.",
+        "Length $=2(16.14)=32.27$."
+      ],
+      "brief": "$t_{0.005,9}=3.250$: length $=2(3.250)(15.7/\\sqrt{10})=32.27$."
+    },
+    {
+      "sec": "8.4",
+      "q": "In a random sample of 85 automobile engine crankshaft bearings, 10 have a surface finish that is rougher than the specifications allow. How large a sample is required if we want to be at least 95$\\%$ confident that our estimate $\\hat p$ of the true proportion $p$ was within 0.05 regardless of the value $p$?",
+      "opts": [
+        "385",
+        "163",
+        "384",
+        "162",
+        "386"
+      ],
+      "ans": 0,
+      "hints": [
+        "This is a sample-size problem for a proportion where $p$ is not assumed known.",
+        "Regardless of $p$ means using the worst case for $p(1-p)$.",
+        "$n=\\left(\\dfrac{z_{\\alpha/2}}{E}\\right)^2p(1-p)$, with the maximum of $p(1-p)$ equal to 0.25; round up."
+      ],
+      "steps": [
+        "Worst case $p=0.5$, $E=0.05$, $z_{0.025}=1.96$.",
+        "$n=\\left(\\dfrac{1.96}{0.05}\\right)^2(0.25)=1536.64\\times0.25=384.16$.",
+        "Round up: $n=385$."
+      ],
+      "brief": "$p=0.5$: $n=0.25(1.96/0.05)^2=384.16$, so $n=385$."
+    },
+    {
+      "sec": "8.4",
+      "q": "Of 1500 randomly selected cases of lung cancer, 850 resulted in death within 10 years. Calculate a 95$\\%$ two-sided confidence interval on the death rate from lung cancer. What is the upper limit of the resulting confidence interval?",
+      "opts": [
+        "0.5917",
+        "0.5416",
+        "0.5807",
+        "0.6049",
+        "0.6512"
+      ],
+      "ans": 0,
+      "hints": [
+        "This is a large-sample confidence interval for a proportion.",
+        "Compute $\\hat p$ from the counts, then its standard error, and add the margin to $\\hat p$.",
+        "Upper limit $=\\hat p+z_{\\alpha/2}\\sqrt{\\dfrac{\\hat p(1-\\hat p)}{n}}$."
+      ],
+      "steps": [
+        "$\\hat p=850/1500=0.5667$.",
+        "Standard error $=\\sqrt{0.5667(0.4333)/1500}=0.01279$.",
+        "Upper limit $=0.5667+1.96(0.01279)=0.5917$."
+      ],
+      "brief": "$\\hat p=0.5667$, SE $=0.0128$; upper $=0.5917$."
+    }
+  ]
+}

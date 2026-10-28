@@ -1,0 +1,335 @@
+{
+  "course": "stat201",
+  "term": "241",
+  "kind": "e2",
+  "date": "4 November 2024",
+  "minutes": 90,
+  "source": "stat319-241-e2.pdf",
+  "note": "Original STAT 319 exam (cover also says USE THIS AS A TEMPLATE; page 1 is the cover, questions on pp. 2-8). Cover prints November 04, 2024 and 90 minutes. All 14 answers are marked in red as (a) on the master and all agree with my computation. Q7 and Q8 differ in the last digit from direct computation (0.93065 and 0.24721) because the master rounds z to 2 decimals; Q12 uses t=4.604; Q14 uses z=2.17 (exact 2.1701 gives 1883.7, still 1884). Q3 and Q10 are conceptual. All questions within term 261 scope.",
+  "qs": [
+    {
+      "sec": "4.2",
+      "q": "(Q: 4-9(b), page 139) The probability density function of the net weight in kg of a packaged chemical herbicide is $f(x)=\\frac{1}{9}$ for $15.5<x<24.5$ kg. How much chemical is contained in 90$\\%$ of all packages, i.e., the weight above which 90$\\%$ of the packages lie?",
+      "opts": [
+        "16.4 kg",
+        "23.6 kg",
+        "20 kg",
+        "8.1 kg",
+        "15.6 kg"
+      ],
+      "ans": 0,
+      "hints": [
+        "This is a percentile of a density: find the value with a given area to its right.",
+        "Set the area above $x$ equal to 0.90 and solve for $x$; the density is constant so the area is a rectangle.",
+        "$P(X>x)=\\int_x^{b}f(u)\\,du$, which for a constant density $c$ on $(a,b)$ equals $c\\,(b-x)$."
+      ],
+      "steps": [
+        "$P(X>x)=\\frac19(24.5-x)=0.90$.",
+        "$24.5-x=8.1$.",
+        "$x=24.5-8.1=16.4$ kg."
+      ],
+      "brief": "$\\frac19(24.5-x)=0.9$ gives $x=16.4$ kg."
+    },
+    {
+      "sec": "4.3",
+      "q": "(Q: 4-23, page 140) The gap width is an important property of a magnetic recording head. In coded units, if the width is a continuous random variable over the range from $0<x<0.5$ with $f(x)=8x$, determine the cumulative distribution function of the gap width.",
+      "opts": [
+        "\\[ F(x)=\\begin{cases}0, & x\\le 0,\\\\ 4x^2, & 0<x<0.5,\\\\ 1, & x\\ge 0.5\\end{cases} \\]",
+        "\\[ F(x)=\\begin{cases}0, & x\\le 0.5,\\\\ 0.5x^2, & 0.5<x<8,\\\\ 4x^2, & x\\ge 8\\end{cases} \\]",
+        "\\[ F(x)=\\begin{cases}0, & x\\le 0,\\\\ 0.5x^2, & 0<x<0.5,\\\\ 1, & x\\ge 0.5\\end{cases} \\]",
+        "\\[ F(x)=\\begin{cases}0, & x\\le 0,\\\\ x^2, & 0<x<0.25,\\\\ 8x^2, & x\\ge 0.25\\end{cases} \\]",
+        "\\[ F(x)=\\begin{cases}0, & 0\\le x\\le 0.5,\\\\ 8x^2, & 0.5<x<8,\\\\ 1, & x\\ge 8\\end{cases} \\]"
+      ],
+      "ans": 0,
+      "hints": [
+        "The CDF is the accumulated area under the density.",
+        "Integrate $f$ from the start of its range up to $x$; below the range $F=0$ and above it $F=1$.",
+        "$F(x)=\\int_{-\\infty}^{x}f(u)\\,du$, and $F$ must increase from 0 to 1."
+      ],
+      "steps": [
+        "For $x\\le0$, $F(x)=0$.",
+        "For $0<x<0.5$: $F(x)=\\int_0^x 8u\\,du=4x^2$.",
+        "At $x=0.5$, $4(0.25)=1$, so $F(x)=1$ for $x\\ge0.5$."
+      ],
+      "brief": "$F(x)=4x^2$ on $(0,0.5)$, 0 below, 1 above."
+    },
+    {
+      "sec": "4.6",
+      "q": "(Q: 4-73, page 143) Assume that a random variable is normally distributed with a mean of 54 and a standard deviation of 2.5. Consider an interval of length two units that starts at the value $a$, so that the interval is $[a,a+2]$. For what value of $a$ is the probability of the interval greatest?",
+      "opts": [
+        "53",
+        "52",
+        "54",
+        "55",
+        "56"
+      ],
+      "ans": 0,
+      "hints": [
+        "Think about where a normal density is highest and how its shape is arranged around the mean.",
+        "For a fixed-length interval, the area is largest when the interval is placed where the density is highest on average.",
+        "The normal density is symmetric and unimodal about $\\mu$, so the best interval of length $L$ is centred at $\\mu$: $a=\\mu-L/2$."
+      ],
+      "steps": [
+        "The normal density is symmetric about the mean 54 and decreases away from it.",
+        "The interval of length 2 with the most area is centred at 54.",
+        "So $a+1=54$, giving $a=53$ (interval $[53,55]$, probability about 0.3108)."
+      ],
+      "brief": "Centre the interval at the mean: $[53,55]$, so $a=53$."
+    },
+    {
+      "sec": "4.8",
+      "q": "(Q: 4-103(e), page 146) The lifetime of a mechanical assembly in a vibration test is exponentially distributed with a mean of 500 hours. If 10 assemblies are tested, what is the probability that all have failed by 810 hours? Assume that the assemblies fail independently.",
+      "opts": [
+        "0.1102",
+        "0.8021",
+        "0.8898",
+        "0.1979",
+        "0"
+      ],
+      "ans": 0,
+      "hints": [
+        "First find the chance that one assembly fails by 810 hours, then use independence.",
+        "Use the exponential CDF with rate $1/500$ for one assembly, then raise it to the 10th power.",
+        "Exponential: $P(X\\le t)=1-e^{-\\lambda t}$ with $\\lambda=1/\\text{mean}$; for independent units $P(\\text{all})=p^n$."
+      ],
+      "steps": [
+        "$P(X\\le810)=1-e^{-810/500}=1-e^{-1.62}=1-0.1979=0.8021$.",
+        "All 10 fail independently: $0.8021^{10}$.",
+        "$0.8021^{10}=0.1102$."
+      ],
+      "brief": "$p=1-e^{-1.62}=0.8021$; $p^{10}=0.1102$."
+    },
+    {
+      "sec": "4.4",
+      "q": "(Q: 4-36(b), page 140) The probability density function of the weight of packages delivered by a post office is $f(x)=\\frac{50}{49x^2}$ for $1<x<50$ kg. If the shipping cost is $\\$2.50$ per kg, what is the average shipping cost of a package?",
+      "opts": [
+        "$\\$9.98$",
+        "$\\$3.99$",
+        "$\\$1.02$",
+        "$\\$2.55$",
+        "$\\$125$"
+      ],
+      "ans": 0,
+      "hints": [
+        "This is an expected value of a continuous variable, then scaled by the cost per kg.",
+        "Compute $E(X)$ by integrating $x f(x)$ over the range, then multiply by the cost per kg.",
+        "$E(X)=\\int x f(x)\\,dx$ and $E(aX)=aE(X)$."
+      ],
+      "steps": [
+        "$E(X)=\\int_1^{50}x\\cdot\\frac{50}{49x^2}dx=\\frac{50}{49}\\int_1^{50}\\frac1x\\,dx=\\frac{50}{49}\\ln50$.",
+        "$\\ln50=3.912$, so $E(X)=3.992$ kg.",
+        "Average cost $=2.50\\times3.992=9.98$ dollars."
+      ],
+      "brief": "$E(X)=\\frac{50}{49}\\ln50=3.992$; cost $=2.5E(X)=\\$9.98$."
+    },
+    {
+      "sec": "4.10",
+      "q": "(Q: 4-131(c), page 147) The life (in hours) of a magnetic resonance imaging machine (MRI) is modeled by a Weibull distribution with parameters $\\beta=2$ and $\\delta=500$ hours. Determine the probability that the MRI fails before 320 hours.",
+      "opts": [
+        "0.336",
+        "0.506",
+        "0.664",
+        "1.634",
+        "0.913"
+      ],
+      "ans": 0,
+      "hints": [
+        "This is a Weibull cumulative probability.",
+        "Plug the time, $\\beta$ and $\\delta$ into the Weibull CDF.",
+        "Weibull CDF: $F(x)=1-\\exp\\left[-(x/\\delta)^{\\beta}\\right]$ for $x>0$."
+      ],
+      "steps": [
+        "$P(X<320)=1-e^{-(320/500)^2}$.",
+        "$(0.64)^2=0.4096$ and $e^{-0.4096}=0.664$.",
+        "$P=1-0.664=0.336$."
+      ],
+      "brief": "$1-e^{-(0.64)^2}=1-0.664=0.336$."
+    },
+    {
+      "sec": "4.11",
+      "q": "(Q: 4-169(c), page 150) Suppose that $X$ has a lognormal distribution and that the mean ($\\mu$) and variance ($\\sigma^2$) of $X$ are 36 and 3000, respectively. Determine the probability that $X$ is less than 100.",
+      "opts": [
+        "0.93056",
+        "0.97558",
+        "0.28434",
+        "0.87286",
+        "0.87900"
+      ],
+      "ans": 0,
+      "hints": [
+        "A lognormal variable has a normal logarithm; first recover its parameters $\\theta$ and $\\omega^2$ from the mean and variance.",
+        "Solve for $\\omega^2$ from the variance-to-mean-squared ratio, then $\\theta$ from the mean, then standardise $\\ln 100$.",
+        "$E(X)=e^{\\theta+\\omega^2/2}$, $V(X)=e^{2\\theta+\\omega^2}(e^{\\omega^2}-1)$, so $e^{\\omega^2}=1+V/E^2$; then $P(X<x)=P\\left(Z<\\frac{\\ln x-\\theta}{\\omega}\\right)$."
+      ],
+      "steps": [
+        "$e^{\\omega^2}=1+\\frac{3000}{36^2}=3.3148$, so $\\omega^2=1.1984$ and $\\omega=1.0947$.",
+        "$\\theta=\\ln36-\\omega^2/2=3.5835-0.5992=2.9843$.",
+        "$z=\\frac{\\ln100-2.9843}{1.0947}=\\frac{1.6209}{1.0947}=1.48$.",
+        "$P(Z<1.48)=0.9306$, i.e. 0.93056 with the unrounded $z$."
+      ],
+      "brief": "$\\omega^2=\\ln(1+3000/36^2)=1.198$, $\\theta=2.984$; $z=1.48$, $P=0.9306$."
+    },
+    {
+      "sec": "7.2",
+      "q": "(Q: 7-7, page 260) The compressive strength of concrete is normally distributed with $\\mu=17200\\ \\text{KN/m}^2$ and $\\sigma=345\\ \\text{KN/m}^2$. Find the probability that a random sample of $n=5$ specimens will have a sample mean strength that falls in the interval from $17217\\ \\text{KN/m}^2$ to $17325\\ \\text{KN/m}^2$.",
+      "opts": [
+        "0.24723",
+        "0.54380",
+        "0.79103",
+        "0.12064",
+        "0.36614"
+      ],
+      "ans": 0,
+      "hints": [
+        "The population is normal, so the sample mean is exactly normal.",
+        "Find the standard error $\\sigma/\\sqrt n$, standardise both endpoints and subtract the areas.",
+        "$\\bar X\\sim N(\\mu,\\sigma^2/n)$, so $Z=\\dfrac{\\bar X-\\mu}{\\sigma/\\sqrt n}$."
+      ],
+      "steps": [
+        "Standard error $=345/\\sqrt5=154.29$.",
+        "$z_1=\\frac{17217-17200}{154.29}=0.11$ and $z_2=\\frac{17325-17200}{154.29}=0.81$.",
+        "$P=\\Phi(0.81)-\\Phi(0.11)=0.7910-0.5438=0.2472$."
+      ],
+      "brief": "$SE=154.29$; $P(0.11<Z<0.81)=0.7910-0.5438=0.2472$."
+    },
+    {
+      "sec": "7.2",
+      "q": "(Q: 7-6, page 260) A synthetic fiber used in manufacturing carpet has tensile strength that is normally distributed with mean $520\\ \\text{KN/m}^2$ and standard deviation $25\\ \\text{KN/m}^2$. A random sample of $n=6$ fiber specimens is selected and the standard deviation of the sample mean ($\\sigma_{\\bar X}$) is computed. How is the standard deviation of the sample mean changed when the sample size is increased from $n=6$ to $n=49$?",
+      "opts": [
+        "The standard deviation of the sample mean will decrease.",
+        "The standard deviation of the sample mean will increase.",
+        "The standard deviation of the sample mean will not change.",
+        "The standard deviation of the sample mean will become undefined.",
+        "The standard deviation of the sample mean will equal the population standard deviation."
+      ],
+      "ans": 0,
+      "hints": [
+        "Think about how the spread of the sample mean depends on the sample size.",
+        "Compute $\\sigma_{\\bar X}$ for each sample size and compare.",
+        "$\\sigma_{\\bar X}=\\dfrac{\\sigma}{\\sqrt n}$."
+      ],
+      "steps": [
+        "For $n=6$: $\\sigma_{\\bar X}=25/\\sqrt6=10.21$.",
+        "For $n=49$: $\\sigma_{\\bar X}=25/7=3.57$.",
+        "The value goes from 10.21 down to 3.57, so it decreases."
+      ],
+      "brief": "$25/\\sqrt6=10.21$ falls to $25/7=3.57$: it decreases."
+    },
+    {
+      "sec": "8.1",
+      "q": "(Q: 8-9, page 291) Suppose that $n=100$ random samples of water from a freshwater lake were taken and the calcium concentration (mg/L) measured. A 95$\\%$ Confidence Interval (CI) on the mean calcium concentration is $0.52\\le\\mu\\le0.74$. Which one of the following statements is not true?",
+      "opts": [
+        "There is a 95$\\%$ chance that $\\mu$ is between 0.52 and 0.74.",
+        "A 99$\\%$ CI calculated from the same sample data will be wider than 0.52 to 0.74.",
+        "If $n=100$ random samples of water from the lake were taken and the 95$\\%$ CI on $\\mu$ computed, and this process were repeated 1000 times, 950 of the CIs would contain the true value of $\\mu$.",
+        "A 90$\\%$ CI calculated from the same sample data will be narrower than 0.52 to 0.74.",
+        "If the sample size was increased, the width of the 95$\\%$ CI would likely decrease, assuming the variability in the data stays the same."
+      ],
+      "ans": 0,
+      "hints": [
+        "Recall what a confidence level really means and how width depends on confidence level and $n$.",
+        "Check each statement: is it about the long-run procedure, or about this one fixed interval? Does width grow or shrink?",
+        "Once computed, an interval either contains the fixed $\\mu$ or not; the confidence level is the long-run proportion of intervals that cover $\\mu$. Width is $2z_{\\alpha/2}\\sigma/\\sqrt n$ (or the $t$ analogue)."
+      ],
+      "steps": [
+        "The parameter $\\mu$ is fixed, not random; this particular interval either contains it or does not, so saying there is a 95$\\%$ chance that $\\mu$ lies in it is not a correct interpretation.",
+        "A higher confidence level (99$\\%$) needs a larger critical value, so a wider interval; 90$\\%$ gives a narrower one.",
+        "In repeated sampling about 950 of 1000 intervals cover $\\mu$, and a larger $n$ shrinks the width.",
+        "So the statement about a 95$\\%$ chance that $\\mu$ is in this interval is the one that is not true."
+      ],
+      "brief": "$\\mu$ is fixed; 95$\\%$ refers to the long-run procedure, not this interval."
+    },
+    {
+      "sec": "8.1",
+      "q": "(Q: 8-16, page 291) The life in hours of a 75-watt light bulb is known to be normally distributed with $\\sigma=39$ hours. Suppose that you wanted the total width of the two-sided confidence interval on mean life to be 18 hours at 95$\\%$ confidence (i.e. $Z_{\\alpha/2}=1.96$). What sample size should be used?",
+      "opts": [
+        "73",
+        "72",
+        "18",
+        "19",
+        "5"
+      ],
+      "ans": 0,
+      "hints": [
+        "This is a sample-size problem for a mean with known $\\sigma$.",
+        "The total width is twice the margin of error; set the margin equal to half of the width and solve for $n$, rounding up.",
+        "$E=z_{\\alpha/2}\\sigma/\\sqrt n$, so $n=\\left(\\dfrac{z_{\\alpha/2}\\sigma}{E}\\right)^2$, rounded up."
+      ],
+      "steps": [
+        "Total width 18 means $E=9$.",
+        "$n=\\left(\\frac{1.96\\times39}{9}\\right)^2=(8.493)^2=72.14$.",
+        "Round up: $n=73$."
+      ],
+      "brief": "$E=9$: $n=(1.96\\cdot39/9)^2=72.14$, so $n=73$."
+    },
+    {
+      "sec": "8.2",
+      "q": "(Q: 8-35, page 292) The brightness of a television picture tube can be evaluated by measuring the amount of current required to achieve a particular brightness level. A sample of 5 tubes results in $\\bar x=315.5$ and $s=15.3$. Find (in microamps) a 99$\\%$ (two-sided) confidence interval on mean current required. What is the lower limit of your confidence interval?",
+      "opts": [
+        "283.9977",
+        "347.0023",
+        "287.9116",
+        "343.0884",
+        "289.8616"
+      ],
+      "ans": 0,
+      "hints": [
+        "$\\sigma$ is unknown and $n$ is small, so use a $t$ interval.",
+        "Find the $t$ critical value with $n-1=4$ degrees of freedom for 99$\\%$ confidence, and subtract the margin of error from $\\bar x$.",
+        "Lower limit $=\\bar x-t_{\\alpha/2,n-1}\\dfrac{s}{\\sqrt n}$."
+      ],
+      "steps": [
+        "$\\alpha=0.01$, so $t_{0.005,4}=4.604$.",
+        "Margin $=4.604\\times\\frac{15.3}{\\sqrt5}=4.604\\times6.842=31.50$.",
+        "Lower limit $=315.5-31.50=283.9977$ (about 284.0)."
+      ],
+      "brief": "$t_{0.005,4}=4.604$: $315.5-4.604(15.3/\\sqrt5)=283.9977$."
+    },
+    {
+      "sec": "8.4",
+      "q": "(Q: 8-96, page 298) A manufacturer of electronic calculators takes a random sample of 120 calculators and finds nine defective units. Construct a 95$\\%$ (two-sided) confidence interval on the population proportion. The upper confidence limit is given as:",
+      "opts": [
+        "0.1221",
+        "0.0130",
+        "0.1370",
+        "0.0761",
+        "0.2471"
+      ],
+      "ans": 0,
+      "hints": [
+        "This is a large-sample confidence interval for a proportion.",
+        "Compute $\\hat p$ from the counts, then add $z_{\\alpha/2}$ times the estimated standard error.",
+        "$\\hat p+z_{\\alpha/2}\\sqrt{\\dfrac{\\hat p(1-\\hat p)}{n}}$ is the upper limit."
+      ],
+      "steps": [
+        "$\\hat p=9/120=0.075$ and $z_{0.025}=1.96$.",
+        "Standard error $=\\sqrt{0.075(0.925)/120}=0.02404$.",
+        "Upper limit $=0.075+1.96(0.02404)=0.1221$."
+      ],
+      "brief": "$\\hat p=0.075$: $0.075+1.96\\sqrt{0.075(0.925)/120}=0.1221$."
+    },
+    {
+      "sec": "8.4",
+      "q": "(Q: 8-58, page 295) A random sample of 90 suspension helmets used by motorcycle riders and automobile race-car drivers was subjected to an impact test, and some damage was observed on 18 of these helmets. Using the point estimate of $p$ from the 90 helmets, how many helmets must be tested to be 97$\\%$ confident that the error in estimating $p$ is less than 0.02?",
+      "opts": [
+        "1884",
+        "18",
+        "2944",
+        "1537",
+        "2943"
+      ],
+      "ans": 0,
+      "hints": [
+        "This is a sample-size problem for a proportion where a prior estimate $\\hat p$ is available.",
+        "Find $\\hat p$ from the sample, get $z_{\\alpha/2}$ for 97$\\%$ confidence, and solve for $n$, rounding up.",
+        "$n=\\left(\\dfrac{z_{\\alpha/2}}{E}\\right)^2\\hat p(1-\\hat p)$, rounded up."
+      ],
+      "steps": [
+        "$\\hat p=18/90=0.2$; for 97$\\%$ confidence $z_{0.015}=2.17$.",
+        "$n=\\left(\\frac{2.17}{0.02}\\right)^2(0.2)(0.8)=11772.25\\times0.16=1883.6$.",
+        "Round up: $n=1884$."
+      ],
+      "brief": "$\\hat p=0.2$, $z=2.17$: $n=(2.17/0.02)^2(0.16)=1883.6$, so $1884$."
+    }
+  ]
+}

@@ -1,0 +1,477 @@
+{
+  "course": "math201",
+  "term": "223",
+  "kind": "e1",
+  "date": "",
+  "minutes": 90,
+  "source": "math201-223-ex1.pdf",
+  "note": "Scanned master has no cover page: date and exam length are not printed. Date left empty; 90 minutes assumed (usual major exam length). All 20 questions read from the MASTER pages; the answer-key page shows A for every master question and all keys agree with my own work (checked with sympy). Q19 is a surface of revolution in polar form, filed under 10.5.",
+  "qs": [
+    {
+      "sec": "10.3",
+      "q": "The equation of the tangent line to the curve represented by the parametric equations $x=t^4+2,\\ y=t^3+t$ at the point $(3,-2)$ is",
+      "opts": [
+        "$y=1-x$",
+        "$y=5+x$",
+        "$y=7+2x$",
+        "$2y+3x=0$",
+        "$2y=-x+4$"
+      ],
+      "ans": 0,
+      "hints": [
+        "This is a slope-of-a-parametric-curve problem.",
+        "First find the value of $t$ that gives the point $(3,-2)$, then compute the slope there.",
+        "For $x=x(t),\\ y=y(t)$: $\\dfrac{dy}{dx}=\\dfrac{dy/dt}{dx/dt}$, and the tangent line at $(x_0,y_0)$ is $y-y_0=m(x-x_0)$."
+      ],
+      "steps": [
+        "$x=3$ gives $t^4=1$; $y=-2$ gives $t^3+t=-2$, which holds for $t=-1$ (and not for $t=1$).",
+        "$\\dfrac{dy}{dx}=\\dfrac{3t^2+1}{4t^3}$.",
+        "At $t=-1$: $\\dfrac{4}{-4}=-1$.",
+        "$y+2=-(x-3)$, so $y=1-x$."
+      ],
+      "brief": "$t=-1$, slope $\\frac{3t^2+1}{4t^3}=-1$, so $y+2=-(x-3)$, i.e. $y=1-x$."
+    },
+    {
+      "sec": "10.3",
+      "q": "The arc length of the curve represented by the parametric equations \\[ x=e^{-t}\\cos t,\\quad y=e^{-t}\\sin t,\\quad 0\\le t\\le\\frac{\\pi}{2} \\] is",
+      "opts": [
+        "$\\sqrt2\\left(1-e^{-\\pi/2}\\right)$",
+        "$2\\left(1+e^{-\\pi/2}\\right)$",
+        "$3\\left(1+e^{\\pi/2}\\right)$",
+        "$\\sqrt3\\left(1+e^{\\pi/2}\\right)$",
+        "$2-2e^{-\\pi/2}$"
+      ],
+      "ans": 0,
+      "hints": [
+        "This is an arc length problem for a parametric curve.",
+        "Differentiate $x$ and $y$ with respect to $t$ and simplify $x'^2+y'^2$ before integrating.",
+        "$L=\\int_a^b\\sqrt{\\left(\\dfrac{dx}{dt}\\right)^2+\\left(\\dfrac{dy}{dt}\\right)^2}\\,dt$, and $\\cos^2t+\\sin^2t=1$."
+      ],
+      "steps": [
+        "$x'=-e^{-t}(\\cos t+\\sin t)$ and $y'=e^{-t}(\\cos t-\\sin t)$.",
+        "$x'^2+y'^2=e^{-2t}\\left[(\\cos t+\\sin t)^2+(\\cos t-\\sin t)^2\\right]=2e^{-2t}$.",
+        "$L=\\int_0^{\\pi/2}\\sqrt2\\,e^{-t}\\,dt=\\sqrt2\\left[-e^{-t}\\right]_0^{\\pi/2}$.",
+        "$L=\\sqrt2\\left(1-e^{-\\pi/2}\\right)$."
+      ],
+      "brief": "$x'^2+y'^2=2e^{-2t}$, so $L=\\sqrt2\\int_0^{\\pi/2}e^{-t}dt=\\sqrt2(1-e^{-\\pi/2})$."
+    },
+    {
+      "sec": "10.3",
+      "q": "The area of the surface formed by revolving the curve represented by the equations \\[ x=2\\cos t,\\quad y=2\\sin t,\\quad 0\\le t\\le\\frac{\\pi}{3} \\] about the $x$-axis is",
+      "opts": [
+        "$4\\pi$",
+        "$5\\pi$",
+        "$6\\pi$",
+        "$2\\pi$",
+        "$\\pi$"
+      ],
+      "ans": 0,
+      "hints": [
+        "This is a surface of revolution for a parametric curve.",
+        "Compute the arc length element $ds$ from $x'(t)$ and $y'(t)$, then set up the integral with the radius equal to the distance from the axis.",
+        "About the $x$-axis: $S=\\int_a^b 2\\pi\\,y\\sqrt{(x')^2+(y')^2}\\,dt$."
+      ],
+      "steps": [
+        "$x'=-2\\sin t$, $y'=2\\cos t$, so $\\sqrt{x'^2+y'^2}=2$.",
+        "$S=\\int_0^{\\pi/3}2\\pi(2\\sin t)(2)\\,dt=8\\pi\\int_0^{\\pi/3}\\sin t\\,dt$.",
+        "$=8\\pi\\left[-\\cos t\\right]_0^{\\pi/3}=8\\pi\\left(1-\\tfrac12\\right)=4\\pi$."
+      ],
+      "brief": "$ds=2\\,dt$, $S=\\int_0^{\\pi/3}8\\pi\\sin t\\,dt=8\\pi\\cdot\\frac12=4\\pi$."
+    },
+    {
+      "sec": "10.4",
+      "q": "The slope of the tangent line to the polar curve $r=3\\sin\\theta$ at the point $\\left(\\dfrac32,\\dfrac{\\pi}{6}\\right)$ is equal to",
+      "opts": [
+        "$\\sqrt3$",
+        "$-\\sqrt3$",
+        "$\\dfrac{1}{\\sqrt3}$",
+        "$\\dfrac{-2}{\\sqrt3}$",
+        "$\\dfrac12$"
+      ],
+      "ans": 0,
+      "hints": [
+        "This is a slope of a tangent line to a polar curve.",
+        "Write $x=r\\cos\\theta$, $y=r\\sin\\theta$ with $r=f(\\theta)$ and differentiate with respect to $\\theta$.",
+        "$\\dfrac{dy}{dx}=\\dfrac{r'\\sin\\theta+r\\cos\\theta}{r'\\cos\\theta-r\\sin\\theta}$."
+      ],
+      "steps": [
+        "$r'=3\\cos\\theta$; at $\\theta=\\frac{\\pi}{6}$: $r'=\\frac{3\\sqrt3}{2}$ and $r=\\frac32$.",
+        "Numerator: $\\frac{3\\sqrt3}{2}\\cdot\\frac12+\\frac32\\cdot\\frac{\\sqrt3}{2}=\\frac{3\\sqrt3}{2}$.",
+        "Denominator: $\\frac{3\\sqrt3}{2}\\cdot\\frac{\\sqrt3}{2}-\\frac32\\cdot\\frac12=\\frac94-\\frac34=\\frac32$.",
+        "Slope $=\\dfrac{3\\sqrt3/2}{3/2}=\\sqrt3$."
+      ],
+      "brief": "$\\frac{dy}{dx}=\\frac{r'\\sin\\theta+r\\cos\\theta}{r'\\cos\\theta-r\\sin\\theta}=\\frac{3\\sqrt3/2}{3/2}=\\sqrt3$."
+    },
+    {
+      "sec": "10.4",
+      "q": "The polar coordinates $(r,\\theta)$ corresponding to the rectangular coordinates $(5,-5\\sqrt3)$ with $r<0$ and $0\\le\\theta<2\\pi$ is",
+      "opts": [
+        "$\\left(-10,\\dfrac{2\\pi}{3}\\right)$",
+        "$\\left(-10,\\dfrac{\\pi}{3}\\right)$",
+        "$\\left(-5,\\dfrac{2\\pi}{3}\\right)$",
+        "$\\left(-5,\\dfrac{\\pi}{3}\\right)$",
+        "$\\left(-10,\\dfrac{5\\pi}{3}\\right)$"
+      ],
+      "ans": 0,
+      "hints": [
+        "This is a rectangular-to-polar conversion with a negative $r$.",
+        "First find $|r|$ and the angle of the point itself, then switch to the negative $r$ by turning through half a revolution.",
+        "$r^2=x^2+y^2$, $\\tan\\theta=\\dfrac yx$, and $(r,\\theta)$ and $(-r,\\theta\\pm\\pi)$ describe the same point."
+      ],
+      "steps": [
+        "$|r|=\\sqrt{25+75}=10$.",
+        "The point $(5,-5\\sqrt3)$ is in quadrant IV with reference angle $\\frac{\\pi}{3}$, so $(10,\\frac{5\\pi}{3})$ works.",
+        "For $r=-10$ use $\\theta=\\frac{5\\pi}{3}-\\pi=\\frac{2\\pi}{3}$.",
+        "Check: $-10\\cos\\frac{2\\pi}{3}=5$ and $-10\\sin\\frac{2\\pi}{3}=-5\\sqrt3$."
+      ],
+      "brief": "$|r|=10$; point is $(10,\\frac{5\\pi}{3})=(-10,\\frac{2\\pi}{3})$."
+    },
+    {
+      "sec": "10.5",
+      "q": "The area of the region that lies inside $r=4\\sin\\theta$ and outside $r=2$ is equal to",
+      "opts": [
+        "$4\\int_{\\pi/6}^{\\pi/2}\\left(4\\sin^2\\theta-1\\right)d\\theta$",
+        "$8\\int_{\\pi/6}^{\\pi/2}\\left(4\\sin^2\\theta-1\\right)d\\theta$",
+        "$4\\int_{\\pi/6}^{\\pi/2}\\left(1-4\\sin^2\\theta\\right)d\\theta$",
+        "$\\int_{\\pi/6}^{5\\pi/6}\\left(4\\sin^2\\theta-1\\right)d\\theta$",
+        "$8\\int_{\\pi/6}^{5\\pi/6}\\left(1-4\\sin^2\\theta\\right)d\\theta$"
+      ],
+      "ans": 0,
+      "hints": [
+        "This is the area between two polar curves.",
+        "Find the intersection angles, decide which curve is the outer one, then use symmetry to halve the range.",
+        "$A=\\dfrac12\\int_\\alpha^\\beta\\left(r_{\\text{outer}}^2-r_{\\text{inner}}^2\\right)d\\theta$."
+      ],
+      "steps": [
+        "Intersections: $4\\sin\\theta=2$, so $\\theta=\\frac{\\pi}{6},\\frac{5\\pi}{6}$. Between them $4\\sin\\theta\\ge2$.",
+        "$A=\\frac12\\int_{\\pi/6}^{5\\pi/6}\\left(16\\sin^2\\theta-4\\right)d\\theta=\\int_{\\pi/6}^{5\\pi/6}\\left(8\\sin^2\\theta-2\\right)d\\theta$.",
+        "The integrand is symmetric about $\\theta=\\frac{\\pi}{2}$, so $A=2\\int_{\\pi/6}^{\\pi/2}\\left(8\\sin^2\\theta-2\\right)d\\theta$.",
+        "$A=4\\int_{\\pi/6}^{\\pi/2}\\left(4\\sin^2\\theta-1\\right)d\\theta$."
+      ],
+      "brief": "Intersect at $\\frac{\\pi}{6},\\frac{5\\pi}{6}$; $A=\\frac12\\int(16\\sin^2\\theta-4)d\\theta=4\\int_{\\pi/6}^{\\pi/2}(4\\sin^2\\theta-1)d\\theta$."
+    },
+    {
+      "sec": "10.5",
+      "q": "The arc length of the polar curve $r=2\\cos\\theta$, $0\\le\\theta\\le\\dfrac{\\pi}{2}$ is equal to",
+      "opts": [
+        "$\\pi$",
+        "$\\dfrac{3\\pi}{2}$",
+        "$2\\pi$",
+        "$\\dfrac{2\\pi}{3}$",
+        "$3\\pi$"
+      ],
+      "ans": 0,
+      "hints": [
+        "This is an arc length problem in polar coordinates.",
+        "Compute $r'$ and simplify $r^2+(r')^2$ before integrating.",
+        "$L=\\int_\\alpha^\\beta\\sqrt{r^2+\\left(\\dfrac{dr}{d\\theta}\\right)^2}\\,d\\theta$."
+      ],
+      "steps": [
+        "$r'=-2\\sin\\theta$, so $r^2+r'^2=4\\cos^2\\theta+4\\sin^2\\theta=4$.",
+        "$L=\\int_0^{\\pi/2}2\\,d\\theta=\\pi$."
+      ],
+      "brief": "$r^2+r'^2=4$, so $L=\\int_0^{\\pi/2}2\\,d\\theta=\\pi$."
+    },
+    {
+      "sec": "11.1",
+      "q": "A unit vector that is perpendicular to the graph of the function $f(x)=-x^2+5$ at the point $(1,4)$ is",
+      "opts": [
+        "$\\left\\langle-\\dfrac{2}{\\sqrt5},-\\dfrac{1}{\\sqrt5}\\right\\rangle$",
+        "$\\left\\langle\\dfrac{1}{\\sqrt5},\\dfrac{2}{\\sqrt5}\\right\\rangle$",
+        "$\\left\\langle-\\dfrac{1}{\\sqrt5},\\dfrac{2}{\\sqrt5}\\right\\rangle$",
+        "$\\left\\langle\\dfrac{1}{\\sqrt5},\\dfrac{-2}{\\sqrt5}\\right\\rangle$",
+        "$\\left\\langle\\dfrac{3}{\\sqrt{10}},\\dfrac{1}{\\sqrt{10}}\\right\\rangle$"
+      ],
+      "ans": 0,
+      "hints": [
+        "A vector perpendicular to the graph is perpendicular to its tangent direction.",
+        "Find the slope of the tangent line at the point, write a tangent vector, and find a vector orthogonal to it.",
+        "A tangent line of slope $m$ has direction $\\langle1,m\\rangle$; $\\langle a,b\\rangle\\cdot\\langle c,d\\rangle=0$ for perpendicular vectors, and a unit vector is $\\mathbf v/\\|\\mathbf v\\|$."
+      ],
+      "steps": [
+        "$f'(x)=-2x$, so the slope at $x=1$ is $-2$ and a tangent vector is $\\langle1,-2\\rangle$.",
+        "A perpendicular vector: $\\langle2,1\\rangle$ (dot product $2-2=0$), with length $\\sqrt5$.",
+        "Unit vectors: $\\pm\\left\\langle\\frac{2}{\\sqrt5},\\frac{1}{\\sqrt5}\\right\\rangle$.",
+        "Taking the negative sign gives $\\left\\langle-\\frac{2}{\\sqrt5},-\\frac{1}{\\sqrt5}\\right\\rangle$."
+      ],
+      "brief": "Tangent $\\langle1,-2\\rangle$, normal $\\pm\\langle2,1\\rangle/\\sqrt5$; listed: $\\langle-\\frac{2}{\\sqrt5},-\\frac{1}{\\sqrt5}\\rangle$."
+    },
+    {
+      "sec": "11.2",
+      "q": "The equation of the sphere that has a diameter with end points $(5,0,-1)$ and $(1,-4,1)$ is",
+      "opts": [
+        "$(x-3)^2+(y+2)^2+z^2=9$",
+        "$(x+3)^2+(y+2)^2+z^2=9$",
+        "$(x-3)+y^2+z^2=9$",
+        "$(x-3)^2+(y-2)^2+z^2=9$",
+        "$(x-3)+y^2+(z-1)^2=9$"
+      ],
+      "ans": 0,
+      "hints": [
+        "The centre of the sphere is the midpoint of the diameter.",
+        "Find the midpoint for the centre and half the distance between the end points for the radius.",
+        "Sphere: $(x-h)^2+(y-k)^2+(z-l)^2=r^2$, midpoint $=\\dfrac{P+Q}{2}$, and $r=\\tfrac12|PQ|$."
+      ],
+      "steps": [
+        "Centre: $\\left(\\frac{5+1}{2},\\frac{0-4}{2},\\frac{-1+1}{2}\\right)=(3,-2,0)$.",
+        "Diameter: $\\sqrt{4^2+4^2+2^2}=6$, so $r=3$.",
+        "$(x-3)^2+(y+2)^2+z^2=9$."
+      ],
+      "brief": "Centre $(3,-2,0)$, diameter $6$ so $r=3$: $(x-3)^2+(y+2)^2+z^2=9$."
+    },
+    {
+      "sec": "11.2",
+      "q": "If $\\vec w$ is a vector with length $6$ and has the same direction as $\\vec v=\\langle2,0,\\sqrt{12}\\rangle$, then $\\vec w=$",
+      "opts": [
+        "$\\langle3,0,3\\sqrt3\\rangle$",
+        "$\\langle12,0,12\\sqrt{12}\\rangle$",
+        "$\\langle\\sqrt6,0,\\sqrt{30}\\rangle$",
+        "$\\langle0,3,3\\sqrt3\\rangle$",
+        "$\\langle3\\sqrt3,0,3\\rangle$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Same direction means $\\vec w$ is a positive multiple of $\\vec v$.",
+        "Find $\\|\\vec v\\|$, form the unit vector in the direction of $\\vec v$, and scale it.",
+        "A unit vector in the direction of $\\mathbf v$ is $\\mathbf v/\\|\\mathbf v\\|$, so $\\mathbf w=L\\,\\mathbf v/\\|\\mathbf v\\|$ has length $L$."
+      ],
+      "steps": [
+        "$\\|\\vec v\\|=\\sqrt{4+0+12}=4$.",
+        "$\\vec w=\\frac{6}{4}\\vec v=\\frac32\\langle2,0,\\sqrt{12}\\rangle$.",
+        "$\\sqrt{12}=2\\sqrt3$, so $\\vec w=\\langle3,0,3\\sqrt3\\rangle$."
+      ],
+      "brief": "$\\|\\vec v\\|=4$, $\\vec w=\\frac64\\vec v=\\langle3,0,3\\sqrt3\\rangle$."
+    },
+    {
+      "sec": "11.3",
+      "q": "Let $\\vec u$ and $\\vec v$ be two vectors such that $\\vec u\\cdot\\vec v=-6$ and $\\vec v=\\langle1,2,k\\rangle$. If $\\operatorname{proj}_{\\vec v}\\vec u=-\\vec v$ and $k>0$, then $k=$",
+      "opts": [
+        "$1$",
+        "$\\sqrt2$",
+        "$\\sqrt3$",
+        "$\\dfrac12$",
+        "$\\dfrac13$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Use the formula for the projection of one vector onto another.",
+        "Write $\\operatorname{proj}_{\\vec v}\\vec u$ as a scalar multiple of $\\vec v$ and compare it with $-\\vec v$.",
+        "$\\operatorname{proj}_{\\mathbf v}\\mathbf u=\\dfrac{\\mathbf u\\cdot\\mathbf v}{\\|\\mathbf v\\|^2}\\,\\mathbf v$, and $\\|\\mathbf v\\|^2$ is the sum of the squares of the components."
+      ],
+      "steps": [
+        "$\\operatorname{proj}_{\\vec v}\\vec u=\\dfrac{-6}{\\|\\vec v\\|^2}\\vec v$ and this equals $-\\vec v$.",
+        "Since $\\vec v\\neq\\vec 0$: $\\dfrac{6}{\\|\\vec v\\|^2}=1$, so $\\|\\vec v\\|^2=6$.",
+        "$1+4+k^2=6$, so $k^2=1$ and $k=1$ (since $k>0$)."
+      ],
+      "brief": "$\\frac{-6}{\\|v\\|^2}=-1\\Rightarrow\\|v\\|^2=6=5+k^2$, so $k=1$."
+    },
+    {
+      "sec": "11.3",
+      "q": "The angle between the vectors $\\vec u=\\langle-2,0,1\\rangle$ and $\\vec v=\\langle4,0,-2\\rangle$ is equal to",
+      "opts": [
+        "$\\pi$",
+        "$2\\pi$",
+        "$3\\pi$",
+        "$\\dfrac{\\pi}{2}$",
+        "$\\dfrac{\\pi}{3}$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Use the dot product formula for the angle between two vectors.",
+        "Compute $\\vec u\\cdot\\vec v$ and the two lengths, then find $\\cos\\theta$.",
+        "$\\cos\\theta=\\dfrac{\\mathbf u\\cdot\\mathbf v}{\\|\\mathbf u\\|\\|\\mathbf v\\|}$ with $0\\le\\theta\\le\\pi$."
+      ],
+      "steps": [
+        "$\\vec u\\cdot\\vec v=-8+0-2=-10$.",
+        "$\\|\\vec u\\|=\\sqrt5$ and $\\|\\vec v\\|=\\sqrt{20}=2\\sqrt5$.",
+        "$\\cos\\theta=\\dfrac{-10}{\\sqrt5\\cdot2\\sqrt5}=-1$.",
+        "So $\\theta=\\pi$ (indeed $\\vec v=-2\\vec u$)."
+      ],
+      "brief": "$\\cos\\theta=\\frac{-10}{\\sqrt5\\cdot2\\sqrt5}=-1$, so $\\theta=\\pi$."
+    },
+    {
+      "sec": "11.3",
+      "q": "Let $\\vec u=\\langle1,2,-1\\rangle$ and $\\vec v=\\langle-1,1,k\\rangle$. If $\\vec u$ is orthogonal to $2\\vec u-\\vec v$, then $k=$",
+      "opts": [
+        "$-11$",
+        "$-8$",
+        "$11$",
+        "$8$",
+        "$-9$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Orthogonal vectors have dot product zero.",
+        "Compute the vector $2\\vec u-\\vec v$ in terms of $k$, then take its dot product with $\\vec u$.",
+        "$\\mathbf a\\perp\\mathbf b$ if and only if $\\mathbf a\\cdot\\mathbf b=0$."
+      ],
+      "steps": [
+        "$2\\vec u-\\vec v=\\langle2+1,4-1,-2-k\\rangle=\\langle3,3,-2-k\\rangle$.",
+        "$\\vec u\\cdot(2\\vec u-\\vec v)=3+6+(-1)(-2-k)=11+k$.",
+        "Setting $11+k=0$ gives $k=-11$."
+      ],
+      "brief": "$\\vec u\\cdot(2\\vec u-\\vec v)=11+k=0$, so $k=-11$."
+    },
+    {
+      "sec": "11.4",
+      "q": "The area of the parallelogram with vectors $\\langle1,2,0\\rangle$ and $\\langle-1,-3,4\\rangle$ as adjacent sides is equal to",
+      "opts": [
+        "$9$",
+        "$8$",
+        "$7$",
+        "$10$",
+        "$6$"
+      ],
+      "ans": 0,
+      "hints": [
+        "The area of a parallelogram is given by a cross product.",
+        "Compute the cross product of the two vectors and find its length.",
+        "Area $=\\|\\mathbf u\\times\\mathbf v\\|$, with $\\mathbf u\\times\\mathbf v=\\begin{vmatrix}\\mathbf i&\\mathbf j&\\mathbf k\\\\u_1&u_2&u_3\\\\v_1&v_2&v_3\\end{vmatrix}$."
+      ],
+      "steps": [
+        "$\\langle1,2,0\\rangle\\times\\langle-1,-3,4\\rangle=\\langle2\\cdot4-0,\\ 0-1\\cdot4,\\ -3+2\\rangle=\\langle8,-4,-1\\rangle$.",
+        "Area $=\\sqrt{64+16+1}=\\sqrt{81}=9$."
+      ],
+      "brief": "Cross product $\\langle8,-4,-1\\rangle$, length $\\sqrt{81}=9$."
+    },
+    {
+      "sec": "11.4",
+      "q": "If $\\vec u=\\langle a,1,0\\rangle$, $\\vec v=\\langle0,a,1\\rangle$, $\\vec w=\\langle1,0,a\\rangle$ are such that $\\vec u\\cdot(\\vec v\\times\\vec w)=9$, then $a=$",
+      "opts": [
+        "$2$",
+        "$1$",
+        "$3$",
+        "$4$",
+        "$0$"
+      ],
+      "ans": 0,
+      "hints": [
+        "This is a scalar triple product.",
+        "Write the triple product as a $3\\times3$ determinant with the vectors as rows and expand it.",
+        "$\\mathbf u\\cdot(\\mathbf v\\times\\mathbf w)=\\begin{vmatrix}u_1&u_2&u_3\\\\v_1&v_2&v_3\\\\w_1&w_2&w_3\\end{vmatrix}$."
+      ],
+      "steps": [
+        "$\\begin{vmatrix}a&1&0\\\\0&a&1\\\\1&0&a\\end{vmatrix}=a(a^2-0)-1(0-1)+0=a^3+1$.",
+        "$a^3+1=9$, so $a^3=8$ and $a=2$."
+      ],
+      "brief": "Determinant $=a^3+1=9$, so $a=2$."
+    },
+    {
+      "sec": "11.4",
+      "q": "Suppose that the three vectors $\\vec u=3\\vec i+c\\vec j+\\vec k$, $\\vec v=2\\vec j-2\\vec k$, and $\\vec w=\\langle3,1,1\\rangle$ are coplanar. Then $c=$",
+      "opts": [
+        "$1$",
+        "$2$",
+        "$-1$",
+        "$0$",
+        "$-2$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Three vectors are coplanar when they span no volume.",
+        "Set the scalar triple product (a determinant) of the three vectors equal to zero.",
+        "$\\mathbf u,\\mathbf v,\\mathbf w$ are coplanar if and only if $\\mathbf u\\cdot(\\mathbf v\\times\\mathbf w)=0$."
+      ],
+      "steps": [
+        "$\\begin{vmatrix}3&c&1\\\\0&2&-2\\\\3&1&1\\end{vmatrix}=3(2+2)-c(0+6)+1(0-6)$.",
+        "$=12-6c-6=6-6c$.",
+        "Setting this to $0$ gives $c=1$."
+      ],
+      "brief": "Triple product $=6-6c=0$, so $c=1$."
+    },
+    {
+      "sec": "10.2",
+      "q": "Which of the following has the same graph as the graph of the parametric equations $x=2t,\\ y=4t-3$?",
+      "opts": [
+        "$x=\\theta^3,\\ y=2\\theta^3-3$",
+        "$x=2t^2,\\ y=4t^2-3$",
+        "$x=2\\cos\\theta,\\ y=4\\cos\\theta-3$",
+        "$x=e^t,\\ y=2e^t-3$",
+        "$x=\\dfrac2\\theta,\\ y=\\dfrac4\\theta-3$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Eliminate the parameter and compare the resulting graphs, including which values of $x$ are reached.",
+        "Eliminate $t$ in the given equations to get a line, then check which $x$-values each option can take.",
+        "If the parameter function $g$ takes every real value, then $x=2g,\\ y=4g-3$ traces the whole line; a function with a restricted range traces only part of it."
+      ],
+      "steps": [
+        "Eliminate $t$: $t=\\frac x2$, so $y=2x-3$, the whole line (all real $x$).",
+        "$x=2t^2\\ge0$, $x=2\\cos\\theta\\in[-2,2]$, $x=e^t>0$ and $x=\\frac2\\theta\\neq0$ each give only part of the line.",
+        "$x=\\theta^3$ takes every real value and $y=2\\theta^3-3=2x-3$, so it traces the entire line."
+      ],
+      "brief": "Given curve is the full line $y=2x-3$; only $x=\\theta^3$ covers all real $x$."
+    },
+    {
+      "sec": "10.2",
+      "q": "The parametric equations \\[ x=3\\csc\\theta-1,\\quad y=4\\cot\\theta-1 \\] represent",
+      "opts": [
+        "A hyperbola",
+        "An ellipse",
+        "A parabola",
+        "A pair of intersecting lines",
+        "A line"
+      ],
+      "ans": 0,
+      "hints": [
+        "Eliminate the parameter using a trigonometric identity.",
+        "Solve for $\\csc\\theta$ and $\\cot\\theta$, then use the identity linking them.",
+        "$1+\\cot^2\\theta=\\csc^2\\theta$; $\\dfrac{X^2}{a^2}-\\dfrac{Y^2}{b^2}=1$ is a hyperbola."
+      ],
+      "steps": [
+        "$\\csc\\theta=\\dfrac{x+1}{3}$ and $\\cot\\theta=\\dfrac{y+1}{4}$.",
+        "$\\csc^2\\theta-\\cot^2\\theta=1$ gives $\\dfrac{(x+1)^2}{9}-\\dfrac{(y+1)^2}{16}=1$.",
+        "This is a hyperbola."
+      ],
+      "brief": "$\\csc^2\\theta-\\cot^2\\theta=1\\Rightarrow\\frac{(x+1)^2}{9}-\\frac{(y+1)^2}{16}=1$, a hyperbola."
+    },
+    {
+      "sec": "10.5",
+      "q": "The area of the surface formed by revolving the right part of the cardioid $r=1+\\sin\\theta$, $\\theta\\in\\left[-\\dfrac\\pi2,\\dfrac\\pi2\\right]$ about the line $\\theta=\\dfrac\\pi2$ is",
+      "opts": [
+        "$\\dfrac{32\\pi}{5}$",
+        "$\\dfrac{16\\pi}{5}$",
+        "$\\dfrac{8\\pi}{5}$",
+        "$\\dfrac{4\\pi}{5}$",
+        "$\\dfrac{2\\pi}{5}$"
+      ],
+      "ans": 0,
+      "hints": [
+        "This is a surface of revolution for a polar curve, and the line $\\theta=\\frac\\pi2$ is the $y$-axis.",
+        "The radius of revolution is the distance to the $y$-axis, which is $x=r\\cos\\theta$; simplify $r^2+(r')^2$ and use a substitution.",
+        "About the line $\\theta=\\frac\\pi2$: $S=\\int_\\alpha^\\beta2\\pi\\,r\\cos\\theta\\sqrt{r^2+(r')^2}\\,d\\theta$."
+      ],
+      "steps": [
+        "$r'=\\cos\\theta$, so $r^2+r'^2=(1+\\sin\\theta)^2+\\cos^2\\theta=2+2\\sin\\theta$.",
+        "$S=\\int_{-\\pi/2}^{\\pi/2}2\\pi(1+\\sin\\theta)\\cos\\theta\\sqrt2\\sqrt{1+\\sin\\theta}\\,d\\theta=2\\sqrt2\\,\\pi\\int(1+\\sin\\theta)^{3/2}\\cos\\theta\\,d\\theta$.",
+        "Let $u=1+\\sin\\theta$, from $0$ to $2$: $S=2\\sqrt2\\,\\pi\\cdot\\frac25u^{5/2}\\Big|_0^2$.",
+        "$u^{5/2}\\big|_{u=2}=4\\sqrt2$, so $S=2\\sqrt2\\,\\pi\\cdot\\frac25\\cdot4\\sqrt2=\\dfrac{32\\pi}{5}$."
+      ],
+      "brief": "$S=2\\sqrt2\\pi\\int_{-\\pi/2}^{\\pi/2}(1+\\sin\\theta)^{3/2}\\cos\\theta\\,d\\theta=\\frac{32\\pi}{5}$."
+    },
+    {
+      "sec": "11.1",
+      "q": "Consider the following statements about vectors. (I) If $\\vec u$ and $\\vec v$ have the same magnitude and direction, then $\\vec u$ and $\\vec v$ are equivalent. (II) If $\\vec u$ and $\\vec v$ are non-zero vectors sharing the same direction, then $\\vec v=\\|\\vec v\\|\\,\\vec u$. (III) If $a=b$, then $\\|a\\vec i+b\\vec j\\|=\\sqrt2\\,a$. (IV) If $\\vec u$ and $\\vec v$ have the same magnitude but opposite directions, then $\\vec u+\\vec v=\\vec 0$. Then",
+      "opts": [
+        "I and IV are true",
+        "I and II are true",
+        "I and III are true",
+        "II and IV are true",
+        "Only I is true"
+      ],
+      "ans": 0,
+      "hints": [
+        "Test each statement separately against the definitions of equivalent vectors, direction and magnitude.",
+        "For (II) and (III), try a simple example, such as a non-unit vector or a negative value.",
+        "Vectors are equivalent when they have the same magnitude and direction; $\\|a\\mathbf i+b\\mathbf j\\|=\\sqrt{a^2+b^2}$ and $\\sqrt{a^2}=|a|$."
+      ],
+      "steps": [
+        "(I) is true: this is the definition of equivalent vectors.",
+        "(II) is false: $\\vec v=\\|\\vec v\\|\\vec u$ needs $\\vec u$ to be a unit vector, e.g. $\\vec u=\\langle2,0\\rangle$, $\\vec v=\\langle4,0\\rangle$.",
+        "(III) is false: $\\|a\\vec i+a\\vec j\\|=\\sqrt2\\,|a|$, which is not $\\sqrt2\\,a$ when $a<0$.",
+        "(IV) is true: $\\vec v=-\\vec u$, so $\\vec u+\\vec v=\\vec 0$. Only I and IV are true."
+      ],
+      "brief": "I and IV are true; II needs unit $\\vec u$, III needs $|a|$."
+    }
+  ]
+}

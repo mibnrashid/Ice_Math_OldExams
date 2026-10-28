@@ -1,0 +1,676 @@
+{
+  "course": "math201",
+  "term": "222",
+  "kind": "fx",
+  "date": "",
+  "minutes": 180,
+  "source": "math201-222-fx.pdf",
+  "note": "The source PDF has no cover page, so the date and exam length are not printed. Date left empty; 180 minutes is an assumed usual final-exam length. Master key marks (a) correct for all 28 questions. Q7 (tangent plane to z=2x-y^2 at (2,1,3)): the tangent plane is 2x-2y-z+1=0 and none of the five printed points lies on it, including the keyed (-1,-2,-3) (value 6). Key kept as ans=0; the printed question likely has a typo. All other 27 answers were verified with sympy and agree with the key. Several scan pages show faint show-through text from the reverse side; it was ignored.",
+  "qs": [
+    {
+      "sec": "10.3",
+      "q": "The area under one arch of the cycloid given by the parametric equations $x=2(\\theta-\\sin\\theta)$ and $y=2(1-\\cos\\theta)$ is equal to",
+      "opts": [
+        "$12\\pi$",
+        "$6\\pi$",
+        "$10\\pi$",
+        "$9\\pi$",
+        "$8\\pi$"
+      ],
+      "ans": 0,
+      "hints": [
+        "This is the area under a parametric curve, so convert the integral $\\int y\\,dx$ to the parameter.",
+        "One arch corresponds to one full period of $\\theta$. Replace $y$ and $dx=x'(\\theta)\\,d\\theta$ and integrate over that period.",
+        "For $x=x(\\theta)$, $y=y(\\theta)$: $A=\\int_{\\alpha}^{\\beta} y(\\theta)\\,x'(\\theta)\\,d\\theta$, and $\\cos^2\\theta=\\dfrac{1+\\cos2\\theta}{2}$."
+      ],
+      "steps": [
+        "One arch is $0\\le\\theta\\le2\\pi$, and $dx=2(1-\\cos\\theta)\\,d\\theta$.",
+        "$A=\\int_0^{2\\pi}2(1-\\cos\\theta)\\cdot2(1-\\cos\\theta)\\,d\\theta=4\\int_0^{2\\pi}(1-\\cos\\theta)^2\\,d\\theta$.",
+        "Expand: $(1-\\cos\\theta)^2=1-2\\cos\\theta+\\dfrac{1+\\cos2\\theta}{2}$, whose integral over $[0,2\\pi]$ is $2\\pi+\\pi=3\\pi$.",
+        "$A=4\\cdot3\\pi=12\\pi$."
+      ],
+      "brief": "$A=\\int_0^{2\\pi}y\\,x'\\,d\\theta=4\\int_0^{2\\pi}(1-\\cos\\theta)^2d\\theta=12\\pi$."
+    },
+    {
+      "sec": "10.4",
+      "q": "The polar coordinates $(r,\\theta)$ of the point $(-6,0)$ where $r<0$ and $0\\le\\theta\\le2\\pi$ is",
+      "opts": [
+        "$(-6,0)$",
+        "$(-6,\\pi)$",
+        "$(-5,0)$",
+        "$(-5,2\\pi)$",
+        "$(6,\\pi)$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Convert a Cartesian point to polar form and keep track of the sign of $r$.",
+        "Use $x=r\\cos\\theta$ and $y=r\\sin\\theta$ and test which candidate pairs with $r<0$ give the point $(-6,0)$.",
+        "A polar pair $(r,\\theta)$ is the point $(r\\cos\\theta,\\ r\\sin\\theta)$, and $(r,\\theta)$ and $(-r,\\theta+\\pi)$ describe the same point."
+      ],
+      "steps": [
+        "The point $(-6,0)$ lies on the negative $x$-axis at distance $6$ from the origin, so $|r|=6$.",
+        "We need $r<0$: try $(r,\\theta)=(-6,\\theta)$, so $-6\\cos\\theta=-6$ and $-6\\sin\\theta=0$.",
+        "This gives $\\cos\\theta=1$, $\\sin\\theta=0$, so $\\theta=0$.",
+        "The point is $(-6,0)$."
+      ],
+      "brief": "$(r,\\theta)=(-6,0)$ gives $(-6\\cos0,-6\\sin0)=(-6,0)$ with $r<0$."
+    },
+    {
+      "sec": "11.1",
+      "q": "The unit vector in the direction of $2\\vec u-\\vec v$, where $\\vec u=\\langle1,0,-1\\rangle$ and $\\vec v=\\langle2,-1,0\\rangle$ is:",
+      "opts": [
+        "$\\left\\langle0,\\dfrac1{\\sqrt5},-\\dfrac2{\\sqrt5}\\right\\rangle$",
+        "$\\left\\langle\\dfrac1{\\sqrt5},0,-\\dfrac2{\\sqrt5}\\right\\rangle$",
+        "$\\left\\langle\\dfrac1{\\sqrt5},\\dfrac2{\\sqrt5},0\\right\\rangle$",
+        "$\\left\\langle-\\dfrac1{\\sqrt5},-\\dfrac2{\\sqrt5},0\\right\\rangle$",
+        "$\\left\\langle\\dfrac1{\\sqrt5},-\\dfrac2{\\sqrt5},-\\dfrac1{\\sqrt5}\\right\\rangle$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Form the vector first, then normalize it.",
+        "Compute $2\\vec u-\\vec v$ componentwise, then find its length.",
+        "The unit vector in the direction of $\\mathbf w$ is $\\mathbf w/\\|\\mathbf w\\|$ with $\\|\\mathbf w\\|=\\sqrt{w_1^2+w_2^2+w_3^2}$."
+      ],
+      "steps": [
+        "$2\\vec u=\\langle2,0,-2\\rangle$, so $2\\vec u-\\vec v=\\langle0,1,-2\\rangle$.",
+        "Its length is $\\sqrt{0+1+4}=\\sqrt5$.",
+        "Divide: $\\left\\langle0,\\dfrac1{\\sqrt5},-\\dfrac2{\\sqrt5}\\right\\rangle$."
+      ],
+      "brief": "$2\\vec u-\\vec v=\\langle0,1,-2\\rangle$, length $\\sqrt5$."
+    },
+    {
+      "sec": "11.4",
+      "q": "If $\\vec a=\\langle2,-3,1\\rangle$, $\\vec b=\\langle\\sqrt2,-2\\sqrt2,-\\sqrt2\\rangle$, $\\vec c=\\langle-1,1,-2\\rangle$ and $\\vec a\\times(\\vec b\\times\\vec c)+(\\vec a\\cdot\\vec b)\\vec c=\\langle x,y,z\\rangle$, then $x+y+z=$",
+      "opts": [
+        "$14\\sqrt2$",
+        "$7\\sqrt2$",
+        "$-14\\sqrt2$",
+        "$-7\\sqrt2$",
+        "$0$"
+      ],
+      "ans": 0,
+      "hints": [
+        "A vector triple product can be rewritten with dot products.",
+        "Replace $\\vec a\\times(\\vec b\\times\\vec c)$ by the expansion formula and see which terms cancel with $(\\vec a\\cdot\\vec b)\\vec c$.",
+        "$\\mathbf a\\times(\\mathbf b\\times\\mathbf c)=(\\mathbf a\\cdot\\mathbf c)\\mathbf b-(\\mathbf a\\cdot\\mathbf b)\\mathbf c$."
+      ],
+      "steps": [
+        "$\\vec a\\times(\\vec b\\times\\vec c)=(\\vec a\\cdot\\vec c)\\vec b-(\\vec a\\cdot\\vec b)\\vec c$, so the given expression equals $(\\vec a\\cdot\\vec c)\\vec b$.",
+        "$\\vec a\\cdot\\vec c=-2-3-2=-7$.",
+        "So $\\langle x,y,z\\rangle=-7\\vec b$ and $x+y+z=-7(\\sqrt2-2\\sqrt2-\\sqrt2)=-7(-2\\sqrt2)$.",
+        "$x+y+z=14\\sqrt2$."
+      ],
+      "brief": "Triple product: expression $=(\\vec a\\cdot\\vec c)\\vec b=-7\\vec b$, so the sum is $14\\sqrt2$."
+    },
+    {
+      "sec": "11.5",
+      "q": "The line through the points $(-3,1,0)$ and $(-1,5,6)$ intersects the plane $x+y+z=4$ at",
+      "opts": [
+        "$(-2,3,3)$",
+        "$(1,2,1)$",
+        "$(-1,4,1)$",
+        "$(0,3,1)$",
+        "$(4,1,-1)$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Write the line parametrically and substitute into the plane equation.",
+        "Use a point and the direction vector between the two given points to get $x(t),y(t),z(t)$, then solve for $t$.",
+        "A line through $P_0$ with direction $\\mathbf d$ is $(x,y,z)=P_0+t\\,\\mathbf d$; the intersection is the point whose $t$ satisfies the plane equation."
+      ],
+      "steps": [
+        "Direction: $\\langle-1+3,\\,5-1,\\,6-0\\rangle=\\langle2,4,6\\rangle$, so $x=-3+2t,\\ y=1+4t,\\ z=6t$.",
+        "Substitute: $(-3+2t)+(1+4t)+6t=4$, so $-2+12t=4$ and $t=\\dfrac12$.",
+        "The point is $(-3+1,\\,1+2,\\,3)=(-2,3,3)$."
+      ],
+      "brief": "Line $(-3+2t,1+4t,6t)$; plane gives $12t-2=4$, $t=\\frac12$: $(-2,3,3)$."
+    },
+    {
+      "sec": "13.2",
+      "q": "$\\lim_{(x,y)\\to(0,0)}\\dfrac{x^6y}{x^6+y^6}=$",
+      "opts": [
+        "$0$",
+        "DNE",
+        "$\\infty$",
+        "$1$",
+        "$2$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Look for a bound on the fraction rather than testing paths only.",
+        "Split the expression as $y$ times a factor $\\dfrac{x^6}{x^6+y^6}$ and bound that factor.",
+        "Squeeze theorem: if $|g(x,y)|\\le M$ and $h(x,y)\\to0$, then $g\\,h\\to0$."
+      ],
+      "steps": [
+        "Since $0\\le x^6\\le x^6+y^6$, we have $0\\le\\dfrac{x^6}{x^6+y^6}\\le1$ for $(x,y)\\ne(0,0)$.",
+        "So $\\left|\\dfrac{x^6y}{x^6+y^6}\\right|\\le|y|$.",
+        "As $(x,y)\\to(0,0)$, $|y|\\to0$, so by the squeeze theorem the limit is $0$."
+      ],
+      "brief": "$\\left|\\frac{x^6y}{x^6+y^6}\\right|\\le|y|\\to0$, so the limit is $0$."
+    },
+    {
+      "sec": "13.7",
+      "q": "The tangent plane to the surface $z=2x-y^2$ at the point $(2,1,3)$ contains the point",
+      "opts": [
+        "$(-1,-2,-3)$",
+        "$(0,0,3)$",
+        "$(0,-1,0)$",
+        "$(1,0,6)$",
+        "$(1,0,0)$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Write the surface as $F(x,y,z)=0$ and use its gradient as the normal vector.",
+        "Compute $F_x,F_y,F_z$ at the given point, write the plane equation, and test the candidate points.",
+        "The tangent plane to $F(x,y,z)=0$ at $P_0$ is $F_x(P_0)(x-x_0)+F_y(P_0)(y-y_0)+F_z(P_0)(z-z_0)=0$."
+      ],
+      "steps": [
+        "Let $F=2x-y^2-z$. Then $\\nabla F=\\langle2,-2y,-1\\rangle=\\langle2,-2,-1\\rangle$ at $(2,1,3)$.",
+        "Tangent plane: $2(x-2)-2(y-1)-(z-3)=0$, i.e. $2x-2y-z+1=0$.",
+        "Testing the choices in $2x-2y-z+1$: $(-1,-2,-3)$ gives $6$, $(0,0,3)$ gives $-2$, $(0,-1,0)$ gives $3$, $(1,0,6)$ gives $-3$, $(1,0,0)$ gives $3$.",
+        "None of them gives $0$ for the surface as printed, so the printed data and the official key do not agree; the official key lists $(-1,-2,-3)$."
+      ],
+      "brief": "Plane $2x-2y-z+1=0$ from $\\nabla F$; no printed point lies on it, the official key lists $(-1,-2,-3)$.",
+      "note": "KEY DISAGREEMENT (flawed question): the tangent plane to z=2x-y^2 at (2,1,3) is z=2x-2y+1, and none of the five printed points lies on it (checked against the scan by the coordinator). Official key (-1,-2,-3) kept; the steps say so."
+    },
+    {
+      "sec": "13.6",
+      "q": "The rate of change of $f(x,y,z)=x^2yz-xyz^3$ at the point $(2,-1,1)$ in the direction of $\\vec u=\\left\\langle0,\\dfrac45,-\\dfrac35\\right\\rangle$ is",
+      "opts": [
+        "$\\dfrac25$",
+        "$\\dfrac15$",
+        "$\\dfrac45$",
+        "$\\dfrac14$",
+        "$\\dfrac34$"
+      ],
+      "ans": 0,
+      "hints": [
+        "This is a directional derivative.",
+        "Compute the gradient of $f$ at the point and dot it with the direction vector (which is already a unit vector).",
+        "$D_{\\mathbf u}f=\\nabla f\\cdot\\mathbf u$ for a unit vector $\\mathbf u$, with $\\nabla f=\\langle f_x,f_y,f_z\\rangle$."
+      ],
+      "steps": [
+        "$f_x=2xyz-yz^3$, $f_y=x^2z-xz^3$, $f_z=x^2y-3xyz^2$.",
+        "At $(2,-1,1)$: $f_x=-4+1=-3$, $f_y=4-2=2$, $f_z=-4+6=2$, so $\\nabla f=\\langle-3,2,2\\rangle$.",
+        "$D_{\\mathbf u}f=0+2\\cdot\\dfrac45+2\\cdot\\left(-\\dfrac35\\right)=\\dfrac{8-6}{5}=\\dfrac25$."
+      ],
+      "brief": "$\\nabla f(2,-1,1)=\\langle-3,2,2\\rangle$, so $D_{\\mathbf u}f=\\frac85-\\frac65=\\frac25$."
+    },
+    {
+      "sec": "13.8",
+      "q": "The shortest distance between the point $(1,0,-1)$ and the surface $y^2=9+xz$ is",
+      "opts": [
+        "$\\sqrt7$",
+        "$\\sqrt{17}$",
+        "$\\sqrt{10}$",
+        "$3$",
+        "$4$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Minimize the squared distance from the point to a point on the surface.",
+        "Write $d^2=(x-1)^2+y^2+(z+1)^2$ and use the surface equation to eliminate $y^2$, leaving a function of $x$ and $z$.",
+        "Find critical points by setting $f_x=f_z=0$; the second partials test ($f_{xx}>0$ and $D>0$) confirms a minimum."
+      ],
+      "steps": [
+        "Using $y^2=9+xz$: $f(x,z)=(x-1)^2+9+xz+(z+1)^2=x^2+z^2+xz-2x+2z+11$.",
+        "$f_x=2x+z-2=0$ and $f_z=2z+x+2=0$, so $x=2$, $z=-2$ (then $y^2=5\\ge0$, so the point lies on the surface).",
+        "$f_{xx}=2$, $f_{zz}=2$, $f_{xz}=1$, so $D=3>0$ and $f_{xx}>0$: a minimum.",
+        "$f(2,-2)=4+4-4-4-4+11=7$, so the shortest distance is $\\sqrt7$."
+      ],
+      "brief": "Minimize $x^2+z^2+xz-2x+2z+11$: critical point $(2,-2)$, value $7$, distance $\\sqrt7$."
+    },
+    {
+      "sec": "13.8",
+      "q": "The function $f(x,y)=xy(1-x-y)$ has",
+      "opts": [
+        "one local maximum and three saddle points",
+        "one local minimum and three saddle points",
+        "one local maximum, one local minimum and two saddle points",
+        "one local minimum and two saddle points",
+        "one local maximum, one local minimum and three saddle points"
+      ],
+      "ans": 0,
+      "hints": [
+        "Find all critical points and classify each with the second partials test.",
+        "Set $f_x=0$ and $f_y=0$; each is a product, so solve by cases.",
+        "With $D=f_{xx}f_{yy}-f_{xy}^2$: $D<0$ is a saddle; $D>0$ with $f_{xx}<0$ is a local maximum and with $f_{xx}>0$ a local minimum."
+      ],
+      "steps": [
+        "$f=xy-x^2y-xy^2$, so $f_x=y(1-2x-y)$ and $f_y=x(1-x-2y)$.",
+        "Critical points: $(0,0)$, $(1,0)$, $(0,1)$, and $\\left(\\frac13,\\frac13\\right)$ (from $2x+y=1$, $x+2y=1$).",
+        "$f_{xx}=-2y$, $f_{yy}=-2x$, $f_{xy}=1-2x-2y$. At $(0,0)$: $D=-1$; at $(1,0)$: $D=-1$; at $(0,1)$: $D=-1$. These are saddle points.",
+        "At $\\left(\\frac13,\\frac13\\right)$: $D=\\frac49-\\frac19=\\frac13>0$ and $f_{xx}=-\\frac23<0$: a local maximum."
+      ],
+      "brief": "Critical points $(0,0),(1,0),(0,1)$ are saddles; $(\\frac13,\\frac13)$ is a local maximum."
+    },
+    {
+      "sec": "13.8",
+      "q": "If $M$ is the maximum value and $m$ is the minimum value of the function $f(x,y)=2x+y^2$ on the region $D=\\{(x,y)\\mid x^2+y^2\\le1\\}$, then $M+m=$",
+      "opts": [
+        "$0$",
+        "$1$",
+        "$2$",
+        "$-1$",
+        "$3$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Absolute extrema on a closed region: check the interior and the boundary.",
+        "Look for interior critical points, then reduce $f$ on the boundary circle to a function of one variable.",
+        "Candidates for absolute extrema are the interior critical points and the extreme values of $f$ on the boundary; compare them."
+      ],
+      "steps": [
+        "$f_x=2\\ne0$, so there is no interior critical point.",
+        "On the boundary $y^2=1-x^2$: $f=2x+1-x^2$ for $-1\\le x\\le1$.",
+        "$g(x)=2x+1-x^2$ has $g'=2-2x\\ge0$ on the interval, so it increases: minimum $g(-1)=-2$, maximum $g(1)=2$.",
+        "$M=2$, $m=-2$, so $M+m=0$."
+      ],
+      "brief": "No interior critical point; on the circle $f=2x+1-x^2$: $M=2$, $m=-2$, sum $0$."
+    },
+    {
+      "sec": "13.10",
+      "q": "If the maximum value and the minimum value of the function $f(x,y)=y^2-x^2$ on the ellipse $x^2+4y^2=4$ are $M$ and $m$ respectively, then $M-m=$",
+      "opts": [
+        "$5$",
+        "$4$",
+        "$6$",
+        "$3$",
+        "$0$"
+      ],
+      "ans": 0,
+      "hints": [
+        "This is an extremum problem with a constraint, so use Lagrange multipliers (or substitute the constraint).",
+        "Set $\\nabla f=\\lambda\\nabla g$ with $g(x,y)=x^2+4y^2=4$ and solve the cases $x=0$ and $y=0$.",
+        "Lagrange: extrema of $f$ subject to $g=k$ occur where $\\nabla f=\\lambda\\nabla g$ and $g=k$; compare $f$ at all solutions."
+      ],
+      "steps": [
+        "$\\nabla f=\\langle-2x,2y\\rangle=\\lambda\\langle2x,8y\\rangle$, so $-2x=2\\lambda x$ and $2y=8\\lambda y$.",
+        "If $x\\ne0$ then $\\lambda=-1$, forcing $y=0$ and $x=\\pm2$: $f=-4$.",
+        "If $x=0$ then $y=\\pm1$ from the constraint: $f=1$.",
+        "$M=1$, $m=-4$, so $M-m=5$."
+      ],
+      "brief": "Lagrange gives points $(\\pm2,0)$ with $f=-4$ and $(0,\\pm1)$ with $f=1$; $M-m=5$."
+    },
+    {
+      "sec": "13.10",
+      "q": "The maximum value of the function $f(x,y,z)=x+2y+3z$ on the curve of intersection of the plane $x+y+z=1$ and the cylinder $x^2+y^2=1$ is",
+      "opts": [
+        "$3+\\sqrt5$",
+        "$3-\\sqrt5$",
+        "$3+\\dfrac{\\sqrt5}{5}$",
+        "$3-\\dfrac{\\sqrt5}{5}$",
+        "$4$"
+      ],
+      "ans": 0,
+      "hints": [
+        "The curve is described by two constraints, so reduce to one by using the plane equation.",
+        "Solve the plane equation for $z$ and substitute into $f$, leaving a function of $x,y$ on the circle $x^2+y^2=1$.",
+        "Maximize $ax+by+c$ on $x^2+y^2=1$: the extreme values are $c\\pm\\sqrt{a^2+b^2}$ (Lagrange or Cauchy-Schwarz)."
+      ],
+      "steps": [
+        "$z=1-x-y$, so $f=x+2y+3-3x-3y=3-2x-y$.",
+        "Maximize $3-2x-y$ on $x^2+y^2=1$. Lagrange: $\\langle-2,-1\\rangle=\\lambda\\langle2x,2y\\rangle$ gives $y=\\dfrac x2$, and then $x^2+\\dfrac{x^2}{4}=1$.",
+        "$x=\\pm\\dfrac{2}{\\sqrt5}$, $y=\\pm\\dfrac1{\\sqrt5}$ (same signs), so $2x+y=\\pm\\sqrt5$.",
+        "The maximum occurs when $2x+y=-\\sqrt5$, giving $f=3+\\sqrt5$."
+      ],
+      "brief": "$z=1-x-y$: $f=3-2x-y$ on the unit circle, maximum $3+\\sqrt5$."
+    },
+    {
+      "sec": "14.2",
+      "q": "An estimate of the volume of the solid that lies below the surface $z=1+x^2+2y$ and above the rectangle $R=[1,3]\\times[0,3]$ using a Riemann sum with $m=n=2$ and sample points to be the lower left corner of each rectangle is",
+      "opts": [
+        "$30$",
+        "$20$",
+        "$40$",
+        "$25$",
+        "$35$"
+      ],
+      "ans": 0,
+      "hints": [
+        "This is a double Riemann sum over a grid of four subrectangles.",
+        "Find $\\Delta x$ and $\\Delta y$, list the lower left corners, and evaluate $f$ at each.",
+        "$V\\approx\\sum f(x_i^*,y_j^*)\\,\\Delta A$ with $\\Delta A=\\Delta x\\,\\Delta y$, $\\Delta x=\\dfrac{b-a}{m}$, $\\Delta y=\\dfrac{d-c}{n}$."
+      ],
+      "steps": [
+        "$\\Delta x=\\dfrac{3-1}{2}=1$, $\\Delta y=\\dfrac{3-0}{2}=\\dfrac32$, so $\\Delta A=\\dfrac32$.",
+        "Lower left corners: $(1,0),(2,0),(1,\\tfrac32),(2,\\tfrac32)$.",
+        "Values of $f=1+x^2+2y$: $2,\\ 5,\\ 5,\\ 8$, with sum $20$.",
+        "$V\\approx20\\cdot\\dfrac32=30$."
+      ],
+      "brief": "Four corners give $f=2,5,5,8$ (sum $20$); times $\\Delta A=\\frac32$ gives $30$."
+    },
+    {
+      "sec": "14.2",
+      "q": "The volume of the solid that lies under the plane $4x+6y-2z+15=0$ and above the rectangle $R=\\{(x,y)\\mid-1\\le x\\le2,\\ -1\\le y\\le1\\}$ is",
+      "opts": [
+        "$51$",
+        "$45$",
+        "$52$",
+        "$49$",
+        "$56$"
+      ],
+      "ans": 0,
+      "hints": [
+        "The volume under a surface and above a rectangle is a double integral.",
+        "Solve the plane for $z$ and integrate over $R$ as an iterated integral.",
+        "$V=\\iint_R f(x,y)\\,dA$, with $z=f(x,y)$ the top surface."
+      ],
+      "steps": [
+        "$z=2x+3y+\\dfrac{15}{2}$.",
+        "$V=\\int_{-1}^{1}\\int_{-1}^{2}\\left(2x+3y+\\tfrac{15}2\\right)dx\\,dy$.",
+        "Inner integral: $\\left[x^2+3xy+\\tfrac{15}2x\\right]_{-1}^{2}=3+9y+\\tfrac{45}2$.",
+        "$\\int_{-1}^{1}\\left(\\tfrac{51}{2}+9y\\right)dy=51$."
+      ],
+      "brief": "$z=2x+3y+\\frac{15}2$; $\\iint_R z\\,dA=51$."
+    },
+    {
+      "sec": "14.1",
+      "q": "$\\int_{-1}^{1}\\int_0^{1}x^6\\sin x\\sqrt{1+e^y}\\,dy\\,dx=$",
+      "opts": [
+        "$0$",
+        "$1$",
+        "$\\sqrt{1+e}$",
+        "$\\sqrt{1+e}\\,\\sin1$",
+        "$-1$"
+      ],
+      "ans": 0,
+      "hints": [
+        "The integrand is a product of a function of $x$ and a function of $y$ over a rectangle.",
+        "Separate the double integral into a product and look at the $x$-integral over a symmetric interval.",
+        "$\\int_{-a}^{a}g(x)\\,dx=0$ whenever $g$ is an odd function."
+      ],
+      "steps": [
+        "The integral factors as $\\left(\\int_{-1}^{1}x^6\\sin x\\,dx\\right)\\left(\\int_0^1\\sqrt{1+e^y}\\,dy\\right)$.",
+        "$g(x)=x^6\\sin x$ is odd, since $g(-x)=x^6(-\\sin x)=-g(x)$.",
+        "So $\\int_{-1}^{1}x^6\\sin x\\,dx=0$ and the whole integral is $0$."
+      ],
+      "brief": "Integrand separates; $x^6\\sin x$ is odd on $[-1,1]$, so the integral is $0$."
+    },
+    {
+      "sec": "14.2",
+      "q": "$\\int_0^{1}\\int_{x^2}^{1}\\sqrt y\\,\\sin(\\pi y)\\,dy\\,dx=$",
+      "opts": [
+        "$\\dfrac1\\pi$",
+        "$0$",
+        "$\\pi$",
+        "$-\\dfrac1\\pi$",
+        "$2\\pi$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Reverse the order of integration, since $\\sqrt y\\sin(\\pi y)$ is awkward to integrate over a variable lower limit.",
+        "Sketch the region $0\\le x\\le1$, $x^2\\le y\\le1$ and describe it as $0\\le y\\le1$ with $x$ between $0$ and a function of $y$.",
+        "Reversing order: $\\int_a^b\\int_{g(x)}^{h(x)}f\\,dy\\,dx=\\int_c^d\\int_{\\text{left}(y)}^{\\text{right}(y)}f\\,dx\\,dy$ over the same region; integrate $\\int y\\sin(\\pi y)\\,dy$ by parts."
+      ],
+      "steps": [
+        "The region is $0\\le y\\le1$, $0\\le x\\le\\sqrt y$.",
+        "$\\int_0^1\\int_0^{\\sqrt y}\\sqrt y\\sin(\\pi y)\\,dx\\,dy=\\int_0^1y\\sin(\\pi y)\\,dy$.",
+        "By parts: $\\left[-\\dfrac{y\\cos\\pi y}{\\pi}\\right]_0^1+\\dfrac1\\pi\\int_0^1\\cos\\pi y\\,dy=\\dfrac1\\pi+0$.",
+        "The value is $\\dfrac1\\pi$."
+      ],
+      "brief": "Swap order: $\\int_0^1 y\\sin(\\pi y)\\,dy=\\frac1\\pi$."
+    },
+    {
+      "sec": "14.2",
+      "q": "The volume of the solid bounded by $y^2+z^2=4$, $x=2y$, $x=0$, and $z=0$ in the first octant is",
+      "opts": [
+        "$\\dfrac{16}{3}$",
+        "$\\dfrac83$",
+        "$\\dfrac43$",
+        "$\\dfrac38$",
+        "$\\dfrac32$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Set up the volume as a double integral of the height $x=2y$ over a region in the $yz$-plane.",
+        "The region in the $yz$-plane is the quarter disk $y^2+z^2\\le4$, $y,z\\ge0$; integrate $2y$ over it.",
+        "$V=\\iint_D(\\text{front}-\\text{back})\\,dA$; for $\\int y\\sqrt{4-y^2}\\,dy$ use the substitution $u=4-y^2$."
+      ],
+      "steps": [
+        "Over the quarter disk, $x$ goes from $0$ to $2y$: $V=\\iint_D2y\\,dA$.",
+        "$V=\\int_0^2\\int_0^{\\sqrt{4-y^2}}2y\\,dz\\,dy=\\int_0^2 2y\\sqrt{4-y^2}\\,dy$.",
+        "With $u=4-y^2$, $du=-2y\\,dy$: $V=\\int_0^4u^{1/2}\\,du=\\dfrac23\\cdot8$.",
+        "$V=\\dfrac{16}{3}$."
+      ],
+      "brief": "$V=\\int_0^2 2y\\sqrt{4-y^2}\\,dy=\\frac{16}{3}$."
+    },
+    {
+      "sec": "14.3",
+      "q": "The volume of the solid bounded by the plane $z=0$ and the paraboloid $z=1-x^2-y^2$ is",
+      "opts": [
+        "$\\dfrac\\pi2$",
+        "$\\dfrac\\pi4$",
+        "$\\dfrac\\pi3$",
+        "$\\pi$",
+        "$2\\pi$"
+      ],
+      "ans": 0,
+      "hints": [
+        "The region is circular, so use polar coordinates.",
+        "The base is the disk where $1-x^2-y^2\\ge0$; write the height as $1-r^2$.",
+        "$V=\\iint_D f\\,dA=\\int\\!\\!\\int f(r\\cos\\theta,r\\sin\\theta)\\,r\\,dr\\,d\\theta$."
+      ],
+      "steps": [
+        "The paraboloid meets $z=0$ at $x^2+y^2=1$, so the base is $0\\le r\\le1$, $0\\le\\theta\\le2\\pi$.",
+        "$V=\\int_0^{2\\pi}\\int_0^1(1-r^2)\\,r\\,dr\\,d\\theta$.",
+        "$\\int_0^1(r-r^3)\\,dr=\\dfrac12-\\dfrac14=\\dfrac14$.",
+        "$V=2\\pi\\cdot\\dfrac14=\\dfrac\\pi2$."
+      ],
+      "brief": "Polar: $V=\\int_0^{2\\pi}\\int_0^1(1-r^2)r\\,dr\\,d\\theta=\\frac\\pi2$."
+    },
+    {
+      "sec": "14.3",
+      "q": "The average value of the function $f(x,y)=\\dfrac1{\\sqrt{x^2+y^2}}$ on the region $R=\\{(x,y)\\mid1\\le x^2+y^2\\le4\\}$ is",
+      "opts": [
+        "$\\dfrac23$",
+        "$\\dfrac34$",
+        "$\\dfrac12$",
+        "$\\dfrac35$",
+        "$\\dfrac25$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Average value is the integral of $f$ divided by the area of the region.",
+        "Compute the area of the annulus and the integral of $f$ in polar coordinates.",
+        "$f_{\\text{avg}}=\\dfrac{1}{A(R)}\\iint_Rf\\,dA$, and $dA=r\\,dr\\,d\\theta$ in polar coordinates."
+      ],
+      "steps": [
+        "The area of the annulus is $\\pi(4-1)=3\\pi$.",
+        "$\\iint_Rf\\,dA=\\int_0^{2\\pi}\\int_1^2\\dfrac1r\\,r\\,dr\\,d\\theta=2\\pi\\cdot1=2\\pi$.",
+        "$f_{\\text{avg}}=\\dfrac{2\\pi}{3\\pi}=\\dfrac23$."
+      ],
+      "brief": "$\\iint_R f\\,dA=2\\pi$, area $=3\\pi$, so the average is $\\frac23$."
+    },
+    {
+      "sec": "14.3",
+      "q": "$\\int_0^{2}\\int_0^{\\sqrt{4-x^2}}e^{-x^2-y^2}\\,dy\\,dx=$",
+      "opts": [
+        "$\\dfrac\\pi4\\left(1-e^{-4}\\right)$",
+        "$\\dfrac\\pi4\\left(e^{-4}-1\\right)$",
+        "$\\dfrac\\pi2\\left(1-e^{-4}\\right)$",
+        "$\\dfrac\\pi2\\left(e^{-4}-1\\right)$",
+        "$\\dfrac\\pi2\\left(e^{4}-1\\right)$"
+      ],
+      "ans": 0,
+      "hints": [
+        "The region is part of a disk and the integrand depends on $x^2+y^2$, so use polar coordinates.",
+        "Identify the region from the limits (a quarter disk of radius $2$) and convert the integrand to $e^{-r^2}$.",
+        "$x^2+y^2=r^2$, $dA=r\\,dr\\,d\\theta$, and $\\int re^{-r^2}dr=-\\tfrac12e^{-r^2}$."
+      ],
+      "steps": [
+        "The region $0\\le y\\le\\sqrt{4-x^2}$, $0\\le x\\le2$ is the quarter disk $0\\le r\\le2$, $0\\le\\theta\\le\\frac\\pi2$.",
+        "$I=\\int_0^{\\pi/2}\\int_0^2e^{-r^2}\\,r\\,dr\\,d\\theta$.",
+        "$\\int_0^2re^{-r^2}dr=\\dfrac12\\left(1-e^{-4}\\right)$.",
+        "$I=\\dfrac\\pi2\\cdot\\dfrac12\\left(1-e^{-4}\\right)=\\dfrac\\pi4\\left(1-e^{-4}\\right)$."
+      ],
+      "brief": "Polar over quarter disk: $\\frac\\pi2\\cdot\\frac12(1-e^{-4})=\\frac\\pi4(1-e^{-4})$."
+    },
+    {
+      "sec": "14.6",
+      "q": "The volume of the solid enclosed by the cylinder $y=x^2$ and the planes $z=0$ and $y+z=1$ equals",
+      "opts": [
+        "$\\dfrac8{15}$",
+        "$\\dfrac8{25}$",
+        "$\\dfrac7{15}$",
+        "$\\dfrac7{25}$",
+        "$\\dfrac{13}{30}$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Set up a triple (or double) integral with $z$ between the two planes.",
+        "The height is $z=1-y$; the base is the region in the $xy$-plane between $y=x^2$ and $y=1$.",
+        "$V=\\iiint_E dV=\\iint_D(z_{\\text{top}}-z_{\\text{bottom}})\\,dA$."
+      ],
+      "steps": [
+        "The cylinder meets $y=1$ at $x=\\pm1$, so $-1\\le x\\le1$, $x^2\\le y\\le1$, $0\\le z\\le1-y$.",
+        "$V=\\int_{-1}^{1}\\int_{x^2}^{1}(1-y)\\,dy\\,dx=\\int_{-1}^1\\dfrac{(1-x^2)^2}{2}\\,dx$.",
+        "$=\\int_0^1(1-2x^2+x^4)\\,dx=1-\\dfrac23+\\dfrac15$ (using symmetry).",
+        "$V=\\dfrac8{15}$."
+      ],
+      "brief": "$V=\\int_{-1}^1\\int_{x^2}^1(1-y)\\,dy\\,dx=\\frac8{15}$."
+    },
+    {
+      "sec": "14.6",
+      "q": "The volume of the solid enclosed by the paraboloids $y=x^2+z^2$ and $y=8-x^2-z^2$ is",
+      "opts": [
+        "$16\\pi$",
+        "$\\dfrac{15\\pi}{2}$",
+        "$8\\pi$",
+        "$\\dfrac{33\\pi}{2}$",
+        "$50$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Both surfaces are paraboloids about the $y$-axis, so project onto the $xz$-plane and use polar coordinates.",
+        "Find where the paraboloids meet to get the base disk, then integrate (top minus bottom) in $y$ with $r^2=x^2+z^2$.",
+        "$V=\\iint_D(y_{\\text{top}}-y_{\\text{bottom}})\\,dA$ with $dA=r\\,dr\\,d\\theta$ in the $xz$-plane."
+      ],
+      "steps": [
+        "Intersection: $x^2+z^2=8-x^2-z^2$, so $x^2+z^2=4$; the base is $0\\le r\\le2$.",
+        "Height: $(8-r^2)-r^2=8-2r^2$.",
+        "$V=\\int_0^{2\\pi}\\int_0^2(8-2r^2)\\,r\\,dr\\,d\\theta$ and $\\int_0^2(8r-2r^3)dr=16-8=8$.",
+        "$V=2\\pi\\cdot8=16\\pi$."
+      ],
+      "brief": "Base $r\\le2$, height $8-2r^2$: $V=2\\pi\\int_0^2(8r-2r^3)\\,dr=16\\pi$."
+    },
+    {
+      "sec": "14.6",
+      "q": "Let $E$ be the solid bounded by the parabolic cylinder $z=1-x^2$, the plane $y=1-x$ and the coordinate planes. The value of $\\iiint_E x\\,dV$ is",
+      "opts": [
+        "$\\dfrac7{60}$",
+        "$\\dfrac7{30}$",
+        "$\\dfrac7{15}$",
+        "$\\dfrac7{90}$",
+        "$\\dfrac7{20}$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Set up an iterated triple integral with limits taken from the bounding surfaces.",
+        "Choose the order $dz\\,dy\\,dx$: $0\\le z\\le1-x^2$, $0\\le y\\le1-x$, then $x$ from $0$ to $1$.",
+        "$\\iiint_Ef\\,dV=\\int\\!\\!\\int\\!\\!\\int f\\,dz\\,dy\\,dx$ with limits describing $E$."
+      ],
+      "steps": [
+        "For $x\\ge0$, $y\\ge0$, $z\\ge0$, $x$ ranges over $[0,1]$.",
+        "$I=\\int_0^1\\int_0^{1-x}\\int_0^{1-x^2}x\\,dz\\,dy\\,dx=\\int_0^1x(1-x^2)(1-x)\\,dx$.",
+        "$x(1-x^2)(1-x)=x-x^2-x^3+x^4$, with integral $\\dfrac12-\\dfrac13-\\dfrac14+\\dfrac15$.",
+        "$I=\\dfrac{30-20-15+12}{60}=\\dfrac7{60}$."
+      ],
+      "brief": "$\\int_0^1x(1-x^2)(1-x)\\,dx=\\frac12-\\frac13-\\frac14+\\frac15=\\frac7{60}$."
+    },
+    {
+      "sec": "14.7",
+      "q": "Using cylindrical coordinates, we find that $\\int_0^{2}\\int_0^{\\sqrt{4-x^2}}\\int_0^{4-x^2-y^2}x\\,dz\\,dy\\,dx$ is equal to",
+      "opts": [
+        "$\\dfrac{64}{15}$",
+        "$\\dfrac{32}{15}$",
+        "$\\dfrac{128}{15}$",
+        "$\\dfrac{256}{15}$",
+        "$0$"
+      ],
+      "ans": 0,
+      "hints": [
+        "The $xy$-region is a quarter disk and the top is a paraboloid, so convert to cylindrical coordinates.",
+        "Use $x=r\\cos\\theta$, $dV=r\\,dz\\,dr\\,d\\theta$, with $r$ from $0$ to the disk radius and $\\theta$ over the quarter turn.",
+        "Cylindrical: $x=r\\cos\\theta$, $y=r\\sin\\theta$, $dV=r\\,dz\\,dr\\,d\\theta$."
+      ],
+      "steps": [
+        "$I=\\int_0^{\\pi/2}\\int_0^2\\int_0^{4-r^2}r\\cos\\theta\\cdot r\\,dz\\,dr\\,d\\theta$.",
+        "$\\int_0^{\\pi/2}\\cos\\theta\\,d\\theta=1$ and the $z$-integral gives $r^2(4-r^2)$.",
+        "$\\int_0^2(4r^2-r^4)\\,dr=\\dfrac{32}3-\\dfrac{32}5=\\dfrac{64}{15}$."
+      ],
+      "brief": "$I=\\int_0^{\\pi/2}\\cos\\theta\\,d\\theta\\int_0^2r^2(4-r^2)\\,dr=\\frac{64}{15}$."
+    },
+    {
+      "sec": "14.7",
+      "q": "The volume of the solid that lies between the paraboloid $z=16-x^2-y^2$ and the cone $z=6\\sqrt{x^2+y^2}$ is equal to",
+      "opts": [
+        "$24\\pi$",
+        "$16\\pi$",
+        "$8\\pi$",
+        "$30\\pi$",
+        "$12\\pi$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Use cylindrical coordinates with the cone below and the paraboloid above.",
+        "Find the intersection by setting the two heights equal, which gives the radius of the base disk.",
+        "$V=\\int_0^{2\\pi}\\int_0^{R}\\int_{z_{\\text{bottom}}}^{z_{\\text{top}}}r\\,dz\\,dr\\,d\\theta$."
+      ],
+      "steps": [
+        "Intersection: $16-r^2=6r$, so $r^2+6r-16=0$, $(r+8)(r-2)=0$ and $r=2$.",
+        "$V=\\int_0^{2\\pi}\\int_0^2(16-r^2-6r)\\,r\\,dr\\,d\\theta$.",
+        "$\\int_0^2(16r-r^3-6r^2)\\,dr=32-4-16=12$.",
+        "$V=2\\pi\\cdot12=24\\pi$."
+      ],
+      "brief": "Cylindrical, $r\\le2$: $V=2\\pi\\int_0^2(16r-r^3-6r^2)\\,dr=24\\pi$."
+    },
+    {
+      "sec": "14.7",
+      "q": "The integral $\\iiint_E\\sqrt{x^2+y^2+z^2}\\,dV$ where $E$ is the region above $z=\\sqrt{x^2+y^2}$ and between $x^2+y^2+z^2=1$ and $x^2+y^2+z^2=4$, is equal to",
+      "opts": [
+        "$\\dfrac{15\\pi}{2}\\left(1-\\dfrac1{\\sqrt2}\\right)$",
+        "$\\dfrac{7\\pi}{2\\sqrt2}$",
+        "$\\dfrac\\pi2\\left(\\sqrt2-1\\right)$",
+        "$\\dfrac{15\\pi}{4}\\left(1+\\dfrac1{\\sqrt2}\\right)$",
+        "$\\dfrac\\pi4\\left(1-\\dfrac1{\\sqrt2}\\right)$"
+      ],
+      "ans": 0,
+      "hints": [
+        "The region is bounded by spheres and a cone, so use spherical coordinates.",
+        "The integrand is $\\rho$; the cone $z=\\sqrt{x^2+y^2}$ is a constant $\\phi$, and the region above it is $0\\le\\phi\\le$ that constant.",
+        "Spherical: $dV=\\rho^2\\sin\\phi\\,d\\rho\\,d\\phi\\,d\\theta$ and $\\sqrt{x^2+y^2+z^2}=\\rho$."
+      ],
+      "steps": [
+        "On the cone $z=r$, so $\\tan\\phi=r/z=1$ and $\\phi=\\frac\\pi4$. Limits: $1\\le\\rho\\le2$, $0\\le\\phi\\le\\frac\\pi4$, $0\\le\\theta\\le2\\pi$.",
+        "$I=\\int_0^{2\\pi}\\int_0^{\\pi/4}\\int_1^2\\rho\\cdot\\rho^2\\sin\\phi\\,d\\rho\\,d\\phi\\,d\\theta$.",
+        "$\\int_1^2\\rho^3d\\rho=\\dfrac{15}4$ and $\\int_0^{\\pi/4}\\sin\\phi\\,d\\phi=1-\\dfrac1{\\sqrt2}$.",
+        "$I=2\\pi\\cdot\\dfrac{15}4\\left(1-\\dfrac1{\\sqrt2}\\right)=\\dfrac{15\\pi}2\\left(1-\\dfrac1{\\sqrt2}\\right)$."
+      ],
+      "brief": "Spherical: $2\\pi\\cdot\\frac{15}4\\cdot(1-\\frac1{\\sqrt2})=\\frac{15\\pi}2(1-\\frac1{\\sqrt2})$."
+    },
+    {
+      "sec": "11.7",
+      "q": "The surface whose equation is $\\rho=\\cos\\phi$ is",
+      "opts": [
+        "a sphere of radius $\\dfrac12$",
+        "a sphere of radius $\\dfrac14$",
+        "a plane",
+        "a cone centered at $\\left(0,0,\\dfrac12\\right)$",
+        "a cone centered at $\\left(\\dfrac14,0,0\\right)$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Convert the spherical equation to rectangular coordinates.",
+        "Multiply both sides by $\\rho$ so that $\\rho\\cos\\phi$ and $\\rho^2$ appear, then substitute.",
+        "$\\rho^2=x^2+y^2+z^2$ and $z=\\rho\\cos\\phi$; complete the square to identify the surface."
+      ],
+      "steps": [
+        "Multiply by $\\rho$: $\\rho^2=\\rho\\cos\\phi$, so $x^2+y^2+z^2=z$.",
+        "Complete the square: $x^2+y^2+\\left(z-\\dfrac12\\right)^2=\\dfrac14$.",
+        "This is a sphere with center $\\left(0,0,\\frac12\\right)$ and radius $\\dfrac12$."
+      ],
+      "brief": "$\\rho^2=\\rho\\cos\\phi\\Rightarrow x^2+y^2+(z-\\frac12)^2=\\frac14$: sphere of radius $\\frac12$."
+    }
+  ]
+}

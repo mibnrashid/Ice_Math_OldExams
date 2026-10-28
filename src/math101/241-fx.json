@@ -1,0 +1,450 @@
+{
+  "course": "math101",
+  "term": "241",
+  "kind": "fx",
+  "date": "",
+  "minutes": 120,
+  "source": "math101-241-fx2dc879e4-87ec-45b8-9b15-6d1665b0576a.pdf",
+  "note": "Date and length are not printed on the scan (no cover page); 120 minutes assumed. The source PDF skips 'Page 4 of 10' (it goes from page 3 to page 5), so questions 7 and 8 are missing from the scan and are NOT included; this file has 18 of the 20 questions. The master key table gives A for all 20 master questions, and all 18 included answers were verified independently. The tangent-line question (master Q2) was tagged section 5.4 in the margin; filed under 3.4 here.",
+  "qs": [
+    {
+      "sec": "3.2",
+      "q": "If $f(t)=2t^3+3\\cos t$, then $f'(t)=$",
+      "opts": [
+        "$6t^2-3\\sin t$",
+        "$6t^2+3\\sin t$",
+        "$2t^2-3\\cos t$",
+        "$3t^2-3\\sin t$",
+        "$2t^3+3\\cos t$"
+      ],
+      "ans": 0,
+      "hints": [
+        "This is a basic differentiation question: differentiate term by term.",
+        "Apply the power rule to the polynomial term and the trigonometric rule to the cosine term.",
+        "$\\dfrac{d}{dt}t^n=nt^{n-1}$, $\\dfrac{d}{dt}\\cos t=-\\sin t$, and constants factor out."
+      ],
+      "steps": [
+        "$\\dfrac{d}{dt}\\left(2t^3\\right)=6t^2$.",
+        "$\\dfrac{d}{dt}(3\\cos t)=-3\\sin t$.",
+        "So $f'(t)=6t^2-3\\sin t$."
+      ],
+      "brief": "Power rule and $(\\cos t)'=-\\sin t$: $f'=6t^2-3\\sin t$."
+    },
+    {
+      "sec": "3.4",
+      "q": "If $y=Ax+B$ is an equation of the tangent line to the curve $y=e^{\\sinh(2x)}$ at the point $(0,1)$, then $AB=$",
+      "opts": [
+        "$2$",
+        "$3$",
+        "$-4$",
+        "$-3$",
+        "$1$"
+      ],
+      "ans": 0,
+      "hints": [
+        "The slope of the tangent line is the derivative at the point, so use the chain rule.",
+        "Differentiate $e^{\\sinh(2x)}$ with the chain rule, evaluate at $x=0$ for $A$, then use the point to find $B$.",
+        "$\\dfrac{d}{dx}e^{u}=e^{u}u'$, $\\dfrac{d}{dx}\\sinh u=\\cosh u\\cdot u'$, and the tangent line at $(x_0,y_0)$ is $y-y_0=f'(x_0)(x-x_0)$."
+      ],
+      "steps": [
+        "$y'=e^{\\sinh(2x)}\\cosh(2x)\\cdot2$.",
+        "At $x=0$: $y'=e^{0}\\cdot1\\cdot2=2$, so $A=2$.",
+        "The line through $(0,1)$ is $y=2x+1$, so $B=1$.",
+        "$AB=2$."
+      ],
+      "brief": "$y'(0)=2$, line $y=2x+1$, so $AB=2\\cdot1=2$."
+    },
+    {
+      "sec": "3.4",
+      "q": "If $f(x)=(2x-1)^3(3-2x)^5$, then $f'(x)=$",
+      "opts": [
+        "$4(7-8x)(2x-1)^2(3-2x)^4$",
+        "$2(9-10x)(2x-1)^2(3-2x)^4$",
+        "$4(7-2x)(2x-1)^2(3-2x)^4$",
+        "$2(4-2x)(2x-1)^2(3-2x)^4$",
+        "$(14-15x)(2x-1)^2(3-2x)^4$"
+      ],
+      "ans": 0,
+      "hints": [
+        "This is a product of two powers, so use the product rule together with the chain rule.",
+        "Differentiate each factor with the chain rule, then factor out the common powers of $(2x-1)$ and $(3-2x)$.",
+        "$(uv)'=u'v+uv'$ and $\\dfrac{d}{dx}g(x)^n=n\\,g(x)^{n-1}g'(x)$."
+      ],
+      "steps": [
+        "$f'=3(2x-1)^2(2)(3-2x)^5+(2x-1)^3\\cdot5(3-2x)^4(-2)$.",
+        "Factor out $(2x-1)^2(3-2x)^4$: the bracket is $6(3-2x)-10(2x-1)$.",
+        "The bracket is $18-12x-20x+10=28-32x$.",
+        "So $f'(x)=4(7-8x)(2x-1)^2(3-2x)^4$."
+      ],
+      "brief": "Product and chain rules: bracket $6(3-2x)-10(2x-1)=28-32x=4(7-8x)$."
+    },
+    {
+      "sec": "2.4",
+      "q": "The function $f(x)=\\dfrac{\\sqrt{x-2}}{x^2-3x-4}$ is continuous on",
+      "opts": [
+        "$[2,4)\\cup(4,\\infty)$",
+        "$[2,\\infty)$",
+        "$(-\\infty,-1)\\cup(-1,4)\\cup(4,\\infty)$",
+        "$(-\\infty,-1)\\cup(-1,2]$",
+        "$(-1,4)$"
+      ],
+      "ans": 0,
+      "hints": [
+        "A quotient of continuous functions is continuous wherever it is defined.",
+        "Find where the square root is defined and where the denominator is zero.",
+        "The square root requires a nonnegative radicand, and a quotient is undefined where its denominator is $0$."
+      ],
+      "steps": [
+        "The numerator needs $x-2\\ge0$, so $x\\ge2$.",
+        "The denominator $x^2-3x-4=(x-4)(x+1)$ is zero at $x=4$ and $x=-1$.",
+        "Only $x=4$ lies in $x\\ge2$, so it is excluded.",
+        "Continuous on $[2,4)\\cup(4,\\infty)$."
+      ],
+      "brief": "Need $x\\ge2$ and $x\\neq4,-1$: $[2,4)\\cup(4,\\infty)$."
+    },
+    {
+      "sec": "3.3",
+      "q": "If $y=e^x\\sin x$, then $y''-2y'+2y=$",
+      "opts": [
+        "$0$",
+        "$e^x\\cos x$",
+        "$3e^x\\sin x$",
+        "$e^x(\\cos x-2\\sin x)$",
+        "$-2e^x\\sin x$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Compute the first and second derivatives with the product rule, then substitute.",
+        "Find $y'$, differentiate again for $y''$, and combine the three terms.",
+        "$(uv)'=u'v+uv'$, $(e^x)'=e^x$, $(\\sin x)'=\\cos x$, $(\\cos x)'=-\\sin x$."
+      ],
+      "steps": [
+        "$y'=e^x\\sin x+e^x\\cos x$.",
+        "$y''=e^x\\sin x+e^x\\cos x+e^x\\cos x-e^x\\sin x=2e^x\\cos x$.",
+        "$y''-2y'+2y=2e^x\\cos x-2e^x\\sin x-2e^x\\cos x+2e^x\\sin x$.",
+        "This equals $0$."
+      ],
+      "brief": "$y'=e^x(\\sin x+\\cos x)$, $y''=2e^x\\cos x$, so the combination is $0$."
+    },
+    {
+      "sec": "3.4",
+      "q": "If $(a,b)$ and $(c,d)$ are the points at which the graph of $f(x)=\\ln\\left|\\dfrac{x^2+5}{x+2}\\right|$ has a horizontal tangent line, then $2ac=$",
+      "opts": [
+        "$-10$",
+        "$-6$",
+        "$12$",
+        "$15$",
+        "$18$"
+      ],
+      "ans": 0,
+      "hints": [
+        "A horizontal tangent occurs where the derivative is zero.",
+        "Use log laws to split the logarithm, differentiate, combine over a common denominator and find where the numerator is zero.",
+        "$\\ln\\left|\\dfrac uv\\right|=\\ln|u|-\\ln|v|$ and $\\dfrac{d}{dx}\\ln|g|=\\dfrac{g'}{g}$."
+      ],
+      "steps": [
+        "$f(x)=\\ln|x^2+5|-\\ln|x+2|$, so $f'(x)=\\dfrac{2x}{x^2+5}-\\dfrac1{x+2}$.",
+        "Combine: $f'(x)=\\dfrac{x^2+4x-5}{(x^2+5)(x+2)}=\\dfrac{(x+5)(x-1)}{(x^2+5)(x+2)}$.",
+        "$f'(x)=0$ gives $x=-5$ and $x=1$, so $a=-5$, $c=1$.",
+        "$2ac=2(-5)(1)=-10$."
+      ],
+      "brief": "$f'=\\frac{(x+5)(x-1)}{(x^2+5)(x+2)}=0$ at $x=-5,1$, so $2ac=-10$."
+    },
+    {
+      "omitted": true,
+      "q": "Question 7 of the original exam is omitted (missing from the published exam file (page 4 was not published))."
+    },
+    {
+      "omitted": true,
+      "q": "Question 8 of the original exam is omitted (missing from the published exam file (page 4 was not published))."
+    },
+    {
+      "sec": "4.4",
+      "q": "The graph of the function $f(x)=x^4-4x^3+2$ has",
+      "opts": [
+        "two inflection points",
+        "one inflection point",
+        "three inflection points",
+        "four inflection points",
+        "no inflection points"
+      ],
+      "ans": 0,
+      "hints": [
+        "Inflection points are where the concavity changes, which is governed by $f''$.",
+        "Compute $f''$, find where it is zero, and check whether its sign changes at each zero.",
+        "An inflection point occurs at $x=c$ where $f''(c)=0$ (or is undefined) and $f''$ changes sign at $c$."
+      ],
+      "steps": [
+        "$f'(x)=4x^3-12x^2$ and $f''(x)=12x^2-24x=12x(x-2)$.",
+        "$f''=0$ at $x=0$ and $x=2$.",
+        "$f''>0$ for $x<0$, $f''<0$ for $0<x<2$, $f''>0$ for $x>2$.",
+        "The sign changes at both points, so there are two inflection points."
+      ],
+      "brief": "$f''=12x(x-2)$ changes sign at $x=0$ and $x=2$: two inflection points."
+    },
+    {
+      "sec": "5.9",
+      "q": "If $\\tanh x=\\dfrac{-2}{3}$, then $\\sinh x=$",
+      "opts": [
+        "$-\\dfrac{2}{\\sqrt5}$",
+        "$-\\dfrac{3}{\\sqrt5}$",
+        "$\\dfrac{1}{\\sqrt5}$",
+        "$\\dfrac{2}{\\sqrt5}$",
+        "$\\dfrac{5}{\\sqrt5}$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Use a hyperbolic identity to find $\\cosh x$ first.",
+        "Find $\\operatorname{sech}^2x$ from $\\tanh x$, take the positive root for $\\cosh x$, then use $\\tanh x=\\sinh x/\\cosh x$.",
+        "$\\tanh^2x+\\operatorname{sech}^2x=1$, $\\cosh x>0$ for all $x$, and $\\sinh x=\\tanh x\\cosh x$."
+      ],
+      "steps": [
+        "$\\operatorname{sech}^2x=1-\\tanh^2x=1-\\dfrac49=\\dfrac59$.",
+        "$\\cosh x>0$, so $\\operatorname{sech}x=\\dfrac{\\sqrt5}{3}$ and $\\cosh x=\\dfrac{3}{\\sqrt5}$.",
+        "$\\sinh x=\\tanh x\\cdot\\cosh x=-\\dfrac23\\cdot\\dfrac3{\\sqrt5}$.",
+        "$\\sinh x=-\\dfrac{2}{\\sqrt5}$."
+      ],
+      "brief": "$\\operatorname{sech}^2x=\\frac59$, $\\cosh x=\\frac3{\\sqrt5}$, $\\sinh x=-\\frac2{\\sqrt5}$."
+    },
+    {
+      "sec": "5.1",
+      "q": "If $f'(x)=e^x+\\dfrac{1}{\\sqrt x}$ and $f(1)=e$, then $f(4)=$",
+      "opts": [
+        "$e^4+2$",
+        "$e^4+6$",
+        "$e^4-2$",
+        "$e^4-3$",
+        "$e^4-4$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Find $f$ by antiderivatives, then use the initial value.",
+        "Integrate $f'$ term by term (write $1/\\sqrt x$ as a power), include $+C$, and use $f(1)=e$ to find $C$.",
+        "$\\int e^x\\,dx=e^x+C$ and $\\int x^n\\,dx=\\dfrac{x^{n+1}}{n+1}+C$ for $n\\neq-1$."
+      ],
+      "steps": [
+        "$f(x)=e^x+2\\sqrt x+C$.",
+        "$f(1)=e+2+C=e$, so $C=-2$.",
+        "$f(x)=e^x+2\\sqrt x-2$.",
+        "$f(4)=e^4+4-2=e^4+2$."
+      ],
+      "brief": "$f=e^x+2\\sqrt x+C$, $C=-2$, so $f(4)=e^4+2$."
+    },
+    {
+      "sec": "4.4",
+      "q": "The graph of the function $f(x)=x^2-\\dfrac1x$ is",
+      "opts": [
+        "concave up on $(1,\\infty)$",
+        "concave up on $(0,\\infty)$",
+        "concave up on $(0,1)$",
+        "concave down on $(1,\\infty)$",
+        "concave down on $(-\\infty,0)$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Concavity is determined by the sign of $f''$.",
+        "Compute $f''$, find where it is zero or undefined, and test the sign on each interval.",
+        "$f''>0$ means concave up and $f''<0$ means concave down; also remember the domain excludes points where $f$ is undefined."
+      ],
+      "steps": [
+        "$f'(x)=2x+\\dfrac1{x^2}$ and $f''(x)=2-\\dfrac2{x^3}=\\dfrac{2(x^3-1)}{x^3}$.",
+        "$f''=0$ at $x=1$ and $f''$ is undefined at $x=0$.",
+        "Signs: $f''>0$ on $(-\\infty,0)$, $f''<0$ on $(0,1)$, $f''>0$ on $(1,\\infty)$.",
+        "So the graph is concave up on $(1,\\infty)$."
+      ],
+      "brief": "$f''=\\frac{2(x^3-1)}{x^3}>0$ for $x>1$: concave up on $(1,\\infty)$."
+    },
+    {
+      "sec": "4.3",
+      "q": "The graph of the function $g(x)=x^4e^{-2x}$ is",
+      "opts": [
+        "increasing on $(0,2)$",
+        "increasing on $(2,\\infty)$",
+        "increasing on $(0,\\infty)$",
+        "decreasing on $(-\\infty,2)$",
+        "decreasing on $(0,2)$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Monotonicity is determined by the sign of $g'$.",
+        "Differentiate with the product rule, factor, and make a sign chart of $g'$.",
+        "$g'>0$ on an interval means increasing there, $g'<0$ means decreasing."
+      ],
+      "steps": [
+        "$g'(x)=-2x^4e^{-2x}+4x^3e^{-2x}=2x^3e^{-2x}(2-x)$.",
+        "Critical numbers: $x=0$ and $x=2$.",
+        "$g'<0$ on $(-\\infty,0)$, $g'>0$ on $(0,2)$, $g'<0$ on $(2,\\infty)$.",
+        "So $g$ is increasing on $(0,2)$."
+      ],
+      "brief": "$g'=2x^3e^{-2x}(2-x)>0$ exactly on $(0,2)$: increasing there."
+    },
+    {
+      "sec": "4.6",
+      "q": "The graph of the function $f(x)=8x^{1/3}-x^{4/3}$ has",
+      "opts": [
+        "one local maximum only",
+        "one local minimum only",
+        "two local minima only",
+        "one local minimum and one local maximum",
+        "neither local minimum nor local maximum"
+      ],
+      "ans": 0,
+      "hints": [
+        "Use the first derivative test, including points where $f'$ is undefined.",
+        "Differentiate, factor, find where $f'=0$ or is undefined, and check the sign change at each.",
+        "A local maximum occurs where $f'$ changes from $+$ to $-$ and a local minimum where it changes from $-$ to $+$; no sign change means no extremum."
+      ],
+      "steps": [
+        "$f'(x)=\\dfrac83x^{-2/3}-\\dfrac43x^{1/3}=\\dfrac43x^{-2/3}(2-x)=\\dfrac{4(2-x)}{3x^{2/3}}$.",
+        "$f'=0$ at $x=2$ and $f'$ is undefined at $x=0$.",
+        "Since $x^{2/3}>0$ for $x\\neq0$, $f'>0$ on $(-\\infty,0)$ and $(0,2)$, and $f'<0$ on $(2,\\infty)$.",
+        "No sign change at $0$; $+$ to $-$ at $2$. One local maximum only."
+      ],
+      "brief": "$f'=\\frac{4(2-x)}{3x^{2/3}}$: no sign change at $0$, $+\\to-$ at $2$: one local max only."
+    },
+    {
+      "sec": "4.6",
+      "q": "Which one of the following statements is TRUE? (V.A: vertical asymptote(s); H.A: horizontal asymptote(s))",
+      "opts": [
+        "The graph of $f(x)=\\dfrac{\\sin(2x)}{x}$ has no V.A.",
+        "The graph of $f(x)=\\dfrac{\\sin(2x)}{x}$ has no H.A.",
+        "Every rational function has at least one V.A.",
+        "Every rational function has two H.A.",
+        "Every rational function has a slant asymptote"
+      ],
+      "ans": 0,
+      "hints": [
+        "Check each statement with limits or a simple counterexample.",
+        "For $\\dfrac{\\sin 2x}{x}$ look at the limit at $x=0$ and as $x\\to\\pm\\infty$; for rational functions try a simple example with a constant numerator and an even-degree denominator.",
+        "$\\lim_{x\\to0}\\dfrac{\\sin kx}{x}=k$, and $\\lim_{x\\to\\pm\\infty}\\dfrac{\\sin kx}{x}=0$ by the squeeze theorem; a V.A. needs an infinite limit."
+      ],
+      "steps": [
+        "$\\lim_{x\\to0}\\dfrac{\\sin2x}{x}=2$, which is finite, so there is no V.A.",
+        "$\\left|\\dfrac{\\sin2x}{x}\\right|\\le\\dfrac1{|x|}\\to0$, so $y=0$ is an H.A.; the statement about no H.A. is false.",
+        "$\\dfrac1{x^2+1}$ is rational with no V.A., only one H.A. and no slant asymptote, so the last three statements are false.",
+        "The true statement is that $\\dfrac{\\sin 2x}{x}$ has no V.A."
+      ],
+      "brief": "$\\lim_{x\\to0}\\frac{\\sin2x}{x}=2$ (no V.A.); $y=0$ is an H.A.; $\\frac1{x^2+1}$ refutes the rest."
+    },
+    {
+      "sec": "5.6",
+      "q": "$\\lim_{x\\to\\infty}\\left[\\cos\\left(\\dfrac3x\\right)\\right]^{2x^2}=$",
+      "opts": [
+        "$e^{-9}$",
+        "$e^{-3}$",
+        "$e^{-6}$",
+        "$1$",
+        "$\\infty$"
+      ],
+      "ans": 0,
+      "hints": [
+        "This is a $1^\\infty$ indeterminate form.",
+        "Take the natural log, rewrite the product as a quotient, and apply L'Hopital's rule.",
+        "If $L=\\lim\\ln y$ for $y=f^g$, then $\\lim y=e^{L}$; L'Hopital applies to $\\dfrac00$ or $\\dfrac\\infty\\infty$ forms: $\\lim\\dfrac fg=\\lim\\dfrac{f'}{g'}$."
+      ],
+      "steps": [
+        "$\\ln y=2x^2\\ln\\cos\\dfrac3x=\\dfrac{2\\ln\\cos(3/x)}{x^{-2}}$, a $\\dfrac00$ form.",
+        "L'Hopital: $\\dfrac{2\\cdot(-\\tan(3/x))\\cdot(-3/x^2)}{-2x^{-3}}=-3\\dfrac{\\tan(3/x)}{x^{-1}}$, again $\\dfrac00$.",
+        "L'Hopital again: $-3\\dfrac{\\sec^2(3/x)(-3/x^2)}{-x^{-2}}=-9\\sec^2\\dfrac3x\\to-9$.",
+        "So the limit is $e^{-9}$."
+      ],
+      "brief": "$\\ln y\\to-9$ by two applications of L'Hopital, so the limit is $e^{-9}$."
+    },
+    {
+      "sec": "5.6",
+      "q": "$\\lim_{x\\to0^+}\\dfrac{2-3\\ln x}{e^{2/x}}=$",
+      "opts": [
+        "$0$",
+        "$\\dfrac32$",
+        "$1$",
+        "$\\infty$",
+        "$2$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Check the form; both numerator and denominator grow without bound.",
+        "Apply L'Hopital's rule to this $\\dfrac\\infty\\infty$ form and simplify.",
+        "$\\dfrac{d}{dx}\\ln x=\\dfrac1x$, $\\dfrac{d}{dx}e^{u}=e^{u}u'$, and $\\lim_{t\\to\\infty}e^{t}=\\infty$."
+      ],
+      "steps": [
+        "As $x\\to0^+$, numerator $\\to\\infty$ and denominator $\\to\\infty$.",
+        "L'Hopital: $\\dfrac{-3/x}{e^{2/x}\\cdot(-2/x^2)}=\\dfrac32\\cdot\\dfrac{x}{e^{2/x}}$.",
+        "As $x\\to0^+$, $x\\to0$ and $e^{2/x}\\to\\infty$.",
+        "So the limit is $\\dfrac32\\cdot0=0$."
+      ],
+      "brief": "L'Hopital: $\\frac32\\cdot\\frac{x}{e^{2/x}}\\to0$."
+    },
+    {
+      "sec": "4.6",
+      "q": "The absolute minimum value of $f(x)=x\\ln x$ on $(0,\\infty)$ is equal to",
+      "opts": [
+        "$-\\dfrac1e$",
+        "$-\\dfrac2e$",
+        "$\\dfrac{3}{e^2}$",
+        "$-\\dfrac{2}{e^2}$",
+        "$\\dfrac1{e^2}$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Find the critical numbers and decide with the first derivative test.",
+        "Differentiate with the product rule, set $f'=0$, and check the sign of $f'$ on each side.",
+        "If $f'$ changes from $-$ to $+$ at the only critical number of an interval, the function has its absolute minimum there."
+      ],
+      "steps": [
+        "$f'(x)=\\ln x+1$.",
+        "$f'=0$ gives $\\ln x=-1$, so $x=e^{-1}$.",
+        "$f'<0$ for $0<x<e^{-1}$ and $f'>0$ for $x>e^{-1}$, so this is the absolute minimum.",
+        "$f(e^{-1})=e^{-1}\\ln e^{-1}=-\\dfrac1e$."
+      ],
+      "brief": "$f'=1+\\ln x=0$ at $x=e^{-1}$ (min): $f=-\\frac1e$."
+    },
+    {
+      "sec": "4.7",
+      "q": "What is the minimum area ($\\text{cm}^2$) of the triangle formed in the first quadrant by the $x$-axis, the $y$-axis and a line through the point $(1,2)$?",
+      "opts": [
+        "$4$",
+        "$2$",
+        "$6$",
+        "$8$",
+        "$10$"
+      ],
+      "ans": 0,
+      "hints": [
+        "This is an optimization problem: write the area as a function of one variable.",
+        "Let the line meet the axes at $(x,0)$ and $(0,y)$, use the point $(1,2)$ to express $y$ in terms of $x$, then minimize.",
+        "Triangle area is $\\tfrac12\\cdot\\text{base}\\cdot\\text{height}$; the slope between two points is $\\dfrac{y_2-y_1}{x_2-x_1}$; minimize by setting $A'=0$ and checking the sign change."
+      ],
+      "steps": [
+        "The slope through $(x,0)$ and $(1,2)$ equals the slope through $(0,y)$ and $(1,2)$: $\\dfrac{2}{1-x}=2-y$, which gives $y=\\dfrac{2x}{x-1}$ with $x>1$.",
+        "$A(x)=\\dfrac12xy=\\dfrac{x^2}{x-1}$.",
+        "$A'(x)=\\dfrac{2x(x-1)-x^2}{(x-1)^2}=\\dfrac{x(x-2)}{(x-1)^2}$, zero at $x=2$ (for $x>1$).",
+        "$A'<0$ for $1<x<2$ and $A'>0$ for $x>2$, so this is the minimum: $A(2)=\\dfrac{4}{1}=4$."
+      ],
+      "brief": "$A=\\frac{x^2}{x-1}$, $A'=0$ at $x=2$: minimum area $4$."
+    },
+    {
+      "sec": "3.1",
+      "q": "Two lines are tangent to the curve $y=4x-x^2$ and both pass through the point $\\left(\\dfrac52,6\\right)$. The product of the slopes of these two lines is equal to",
+      "opts": [
+        "$-8$",
+        "$-10$",
+        "$-\\dfrac34$",
+        "$-\\dfrac58$",
+        "$-12$"
+      ],
+      "ans": 0,
+      "hints": [
+        "The slope of a tangent line equals the derivative at the point of tangency.",
+        "Let the tangency point be $(t,4t-t^2)$ and equate the derivative there to the slope from the given point to it.",
+        "The slope between two points is $\\dfrac{y_2-y_1}{x_2-x_1}$, and the slope of the tangent at $x=t$ is $f'(t)$."
+      ],
+      "steps": [
+        "The slope at $x=t$ is $4-2t$, which must equal $\\dfrac{4t-t^2-6}{t-5/2}$.",
+        "$(4-2t)\\left(t-\\tfrac52\\right)=4t-t^2-6$ gives $t^2-5t+4=0$, so $t=1$ or $t=4$.",
+        "The slopes are $4-2(1)=2$ and $4-2(4)=-4$.",
+        "Product: $2\\cdot(-4)=-8$."
+      ],
+      "brief": "Tangency at $t=1,4$ gives slopes $2$ and $-4$, product $-8$."
+    }
+  ]
+}

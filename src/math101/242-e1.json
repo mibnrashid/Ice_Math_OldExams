@@ -1,0 +1,316 @@
+{
+  "course": "math101",
+  "term": "242",
+  "kind": "e1",
+  "date": "",
+  "minutes": 90,
+  "source": "math101-242-e1.pdf",
+  "note": "Date and exam length are not printed on the scanned master (no cover page); date left empty and minutes set to the usual 90. Original Q11 (piecewise f, 'One statement is False') is struck out and labelled 'Omitted' on the master, so it is left out: 13 questions. All master keys verified and agree. Q1 figure is the printed graph; one-sided limits at x=1 read as about 3.5 (left) and 1 (right). Handwriting on the scan ignored.",
+  "qs": [
+    {
+      "sec": "2.2",
+      "q": "One statement is TRUE about the given graph",
+      "opts": [
+        "$\\lim_{x\\to4}f(x)=2$",
+        "$\\lim_{x\\to4}f(x)$ does not exist",
+        "$\\lim_{x\\to1}f(x)=2$",
+        "$\\lim_{x\\to1}f(x)=1$",
+        "$3<\\lim_{x\\to1}f(x)<4$"
+      ],
+      "ans": 0,
+      "hints": [
+        "This is a graph-reading question about limits.",
+        "Look at the curve near each of the two $x$-values. A limit depends on where the curve is heading from both sides, not on the value (or hole) at the point itself.",
+        "$\\lim_{x\\to a}f(x)$ exists only if the left and right limits agree, and then it equals their common value, whatever $f(a)$ is."
+      ],
+      "steps": [
+        "Near $x=4$ the curve approaches height $2$ from both sides (the open circle at $(4,2)$ only marks a hole), so $\\lim_{x\\to4}f(x)=2$.",
+        "Near $x=1$ the left side approaches a height between $3$ and $4$ while the right side approaches $1$, so $\\lim_{x\\to1}f(x)$ does not exist; the filled point at $(1,2)$ does not matter.",
+        "So the only true statement is $\\lim_{x\\to4}f(x)=2$."
+      ],
+      "brief": "Both sides approach height 2 at $x=4$; at $x=1$ the one-sided limits differ.",
+      "img": "math101-242-e1-q1.png"
+    },
+    {
+      "sec": "2.3",
+      "q": "$\\lim_{x\\to4}\\frac{\\sqrt{x+5}-3}{x-4}=$",
+      "opts": [
+        "$\\dfrac16$",
+        "$\\dfrac14$",
+        "$\\dfrac15$",
+        "$\\dfrac13$",
+        "$\\dfrac17$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Direct substitution gives $0/0$, so the expression must be simplified first.",
+        "Multiply the numerator and denominator by the conjugate of the numerator.",
+        "$(a-b)(a+b)=a^2-b^2$, so multiplying $\\sqrt{u}-c$ by $\\sqrt{u}+c$ removes the square root."
+      ],
+      "steps": [
+        "Multiply by $\\dfrac{\\sqrt{x+5}+3}{\\sqrt{x+5}+3}$: the numerator becomes $(x+5)-9=x-4$.",
+        "The fraction is $\\dfrac{x-4}{(x-4)(\\sqrt{x+5}+3)}=\\dfrac{1}{\\sqrt{x+5}+3}$ for $x\\neq4$.",
+        "Let $x\\to4$: $\\dfrac{1}{3+3}=\\dfrac16$."
+      ],
+      "brief": "Conjugate: $\\frac{1}{\\sqrt{x+5}+3}\\to\\frac16$."
+    },
+    {
+      "sec": "2.3",
+      "q": "$\\lim_{x\\to0}\\frac{e^{2x}-1}{e^{x}-1}$",
+      "opts": [
+        "equals $2$",
+        "does not exist",
+        "goes to $-\\infty$",
+        "equals $1$",
+        "equals zero"
+      ],
+      "ans": 0,
+      "hints": [
+        "Direct substitution gives $0/0$; look for a factorization.",
+        "Write $e^{2x}$ in terms of $e^x$.",
+        "$a^2-b^2=(a-b)(a+b)$."
+      ],
+      "steps": [
+        "$e^{2x}-1=(e^x)^2-1=(e^x-1)(e^x+1)$.",
+        "Cancel $e^x-1$ (for $x\\neq0$): the expression equals $e^x+1$.",
+        "As $x\\to0$ this tends to $1+1=2$."
+      ],
+      "brief": "$\\frac{(e^x-1)(e^x+1)}{e^x-1}=e^x+1\\to2$."
+    },
+    {
+      "sec": "2.3",
+      "q": "The domain of $f(x)=\\dfrac{\\sqrt{x}}{|x|-4}$ is",
+      "opts": [
+        "$[0,4)\\cup(4,\\infty)$",
+        "$(-\\infty,\\infty)-\\{\\pm4\\}$",
+        "$(0,\\infty)$",
+        "$(-4,0)\\cup(0,4)$",
+        "$(0,\\infty)-\\{4\\}$"
+      ],
+      "ans": 0,
+      "hints": [
+        "The domain needs two conditions: the square root must be defined and the denominator must not be zero.",
+        "Write down the condition for $\\sqrt{x}$, then solve $|x|-4=0$ and see which solutions are allowed.",
+        "$\\sqrt{u}$ is defined only for $u\\ge0$, and a fraction is undefined where its denominator is $0$."
+      ],
+      "steps": [
+        "$\\sqrt{x}$ requires $x\\ge0$.",
+        "$|x|-4=0$ gives $x=\\pm4$; only $x=4$ satisfies $x\\ge0$.",
+        "Domain: $[0,\\infty)-\\{4\\}=[0,4)\\cup(4,\\infty)$ (note $x=0$ is allowed)."
+      ],
+      "brief": "$x\\ge0$ and $x\\neq4$: $[0,4)\\cup(4,\\infty)$."
+    },
+    {
+      "sec": "2.4",
+      "q": "The function $f(x)=\\begin{cases}\\ln(x+1), & x\\ge0\\\\ 1-x^2, & x<0\\end{cases}$",
+      "opts": [
+        "has a non removable discontinuity at $x=0$",
+        "is continuous on $(-\\infty,\\infty)$",
+        "has a removable discontinuity at $x=0$",
+        "has a non removable discontinuity at $x=1$",
+        "has a removable discontinuity at $x=1$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Check continuity at the point where the formula changes.",
+        "Compute the left-hand and right-hand limits at that point and compare them.",
+        "A discontinuity is removable if $\\lim_{x\\to a}f(x)$ exists; if the one-sided limits differ (a jump) it is non removable. Elementary pieces are continuous on their domains."
+      ],
+      "steps": [
+        "Right side: $\\lim_{x\\to0^+}\\ln(x+1)=\\ln1=0$.",
+        "Left side: $\\lim_{x\\to0^-}(1-x^2)=1$.",
+        "The one-sided limits differ, so $\\lim_{x\\to0}f(x)$ does not exist: a jump, a non removable discontinuity at $x=0$.",
+        "At $x=1$ the function is $\\ln(x+1)$, which is continuous."
+      ],
+      "brief": "At $x=0$: left limit $1$, right limit $0$, a jump (non removable)."
+    },
+    {
+      "sec": "2.5",
+      "q": "$\\lim_{x\\to-2^+}\\frac{1}{x+2}$",
+      "opts": [
+        "goes to $+\\infty$",
+        "goes to $-\\infty$",
+        "goes to $-\\dfrac14$",
+        "goes to zero",
+        "goes to $\\dfrac14$"
+      ],
+      "ans": 0,
+      "hints": [
+        "The denominator tends to $0$ while the numerator does not, so think about an infinite limit and its sign.",
+        "Decide the sign of $x+2$ for $x$ slightly bigger than $-2$.",
+        "$\\dfrac{c}{0^+}\\to+\\infty$ for $c>0$ and $\\dfrac{c}{0^-}\\to-\\infty$ for $c>0$."
+      ],
+      "steps": [
+        "As $x\\to-2^+$, $x>-2$, so $x+2>0$ and $x+2\\to0$.",
+        "The numerator is $1>0$, so the quotient is a large positive number.",
+        "Hence the limit is $+\\infty$."
+      ],
+      "brief": "$x+2\\to0^+$, so $\\frac{1}{x+2}\\to+\\infty$."
+    },
+    {
+      "sec": "2.5",
+      "q": "The function $f(x)=\\dfrac{x}{x^2-9}$",
+      "opts": [
+        "has 2 vertical asymptotes, moreover $\\lim_{x\\to3^-}f(x)=-\\infty$",
+        "has 2 vertical asymptotes, moreover $\\lim_{x\\to3^-}f(x)=+\\infty$",
+        "has no vertical asymptote",
+        "has one vertical asymptote, moreover $\\lim_{x\\to3}f(x)=+\\infty$",
+        "has one vertical asymptote, moreover $\\lim_{x\\to3^+}f(x)=-\\infty$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Vertical asymptotes occur where the denominator is zero but the numerator is not.",
+        "Factor the denominator, find its zeros, then check the sign of $f$ just to the left of $x=3$.",
+        "If $f=\\dfrac{p}{q}$ with $q(a)=0$ and $p(a)\\neq0$, then $x=a$ is a vertical asymptote; the sign of the one-sided limit is the sign of $p/q$ on that side."
+      ],
+      "steps": [
+        "$x^2-9=(x-3)(x+3)$ is zero at $x=\\pm3$, where the numerator is $\\pm3\\neq0$: 2 vertical asymptotes.",
+        "For $x$ slightly less than $3$: $x>0$, $x-3<0$, $x+3>0$, so $f<0$ and large.",
+        "Therefore $\\lim_{x\\to3^-}f(x)=-\\infty$."
+      ],
+      "brief": "Zeros of denominator $\\pm3$; just left of $3$, $f<0$, so $-\\infty$."
+    },
+    {
+      "sec": "4.5",
+      "q": "$\\lim_{x\\to\\infty}\\frac{5x^3+1}{10x^3-3x^2+7}=$",
+      "opts": [
+        "$\\dfrac12$",
+        "$2$",
+        "$\\dfrac1{10}$",
+        "$\\dfrac17$",
+        "$\\dfrac57$"
+      ],
+      "ans": 0,
+      "hints": [
+        "This is a limit at infinity of a rational function.",
+        "Compare the degrees of numerator and denominator, or divide everything by the highest power of $x$.",
+        "If the degrees are equal, the limit at infinity is the ratio of the leading coefficients."
+      ],
+      "steps": [
+        "Divide numerator and denominator by $x^3$: $\\dfrac{5+1/x^3}{10-3/x+7/x^3}$.",
+        "As $x\\to\\infty$ the terms $1/x^3$, $3/x$ and $7/x^3$ tend to $0$.",
+        "The limit is $\\dfrac{5}{10}=\\dfrac12$."
+      ],
+      "brief": "Equal degrees: ratio of leading coefficients $\\frac5{10}=\\frac12$."
+    },
+    {
+      "sec": "4.5",
+      "q": "$\\lim_{x\\to\\infty}x\\sin\\left(\\dfrac1x\\right)=$",
+      "opts": [
+        "$1$",
+        "$0$",
+        "$\\infty$",
+        "$-\\infty$",
+        "$-1$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Rewrite the product so that a known special limit appears.",
+        "Write $x\\sin(1/x)$ as $\\dfrac{\\sin(1/x)}{1/x}$ and set $t=1/x$.",
+        "$\\lim_{t\\to0}\\frac{\\sin t}{t}=1$."
+      ],
+      "steps": [
+        "$x\\sin\\frac1x=\\dfrac{\\sin(1/x)}{1/x}$.",
+        "Let $t=1/x$; as $x\\to\\infty$, $t\\to0^+$.",
+        "$\\lim_{t\\to0^+}\\frac{\\sin t}{t}=1$."
+      ],
+      "brief": "$t=1/x\\to0$: $\\frac{\\sin t}{t}\\to1$."
+    },
+    {
+      "sec": "3.2",
+      "q": "If $f(x)=\\dfrac{3}{(2x)^3}+2\\sin x$, then $f'\\left(\\dfrac{\\pi}{2}\\right)$ is equal to",
+      "opts": [
+        "$\\dfrac{-18}{\\pi^4}$",
+        "$\\dfrac{-36}{\\pi^4}$",
+        "$\\dfrac{-9}{\\pi^4}$",
+        "$\\dfrac{-72}{\\pi^4}$",
+        "$\\dfrac{-27}{\\pi^4}$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Simplify the first term into a power of $x$ before differentiating.",
+        "Write $(2x)^3=8x^3$, so the first term is a constant times $x^{-3}$, then use the power rule.",
+        "$\\dfrac{d}{dx}x^n=nx^{n-1}$ and $\\dfrac{d}{dx}\\sin x=\\cos x$."
+      ],
+      "steps": [
+        "$f(x)=\\dfrac38x^{-3}+2\\sin x$.",
+        "$f'(x)=-\\dfrac98x^{-4}+2\\cos x$.",
+        "At $x=\\pi/2$: $-\\dfrac98\\cdot\\dfrac{16}{\\pi^4}+2\\cos\\frac\\pi2=-\\dfrac{18}{\\pi^4}$."
+      ],
+      "brief": "$f'=-\\frac98x^{-4}+2\\cos x$, so $f'(\\pi/2)=-\\frac{18}{\\pi^4}$."
+    },
+    {
+      "omitted": true,
+      "q": "Question 11 of the original exam is omitted (marked as omitted on the original exam)."
+    },
+    {
+      "sec": "3.1",
+      "q": "The equation of the tangent line to the curve $f(x)=x^2+2x-1$ at the point $(1,2)$ is:",
+      "opts": [
+        "$y=4x-2$",
+        "$y=4x+2$",
+        "$y=2x-4$",
+        "$y=2x+4$",
+        "$y=2x-1$"
+      ],
+      "ans": 0,
+      "hints": [
+        "A tangent line needs a point and a slope; the slope is the derivative at the point.",
+        "Differentiate $f$ and evaluate at $x=1$.",
+        "The tangent at $(a,f(a))$ is $y-f(a)=f'(a)(x-a)$."
+      ],
+      "steps": [
+        "$f'(x)=2x+2$, so $f'(1)=4$.",
+        "Point-slope form: $y-2=4(x-1)$.",
+        "So $y=4x-2$."
+      ],
+      "brief": "$f'(1)=4$: $y-2=4(x-1)$, so $y=4x-2$."
+    },
+    {
+      "sec": "4.5",
+      "q": "$\\lim_{x\\to\\infty}\\left(e^{x}+e^{-x}+e\\right)=$",
+      "opts": [
+        "$\\infty$",
+        "$-\\infty$",
+        "$e$",
+        "$2+e$",
+        "$e+\\dfrac1e$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Look at what each term does as $x\\to\\infty$.",
+        "Treat $e^x$, $e^{-x}$ and the constant $e$ separately.",
+        "$e^x\\to\\infty$ and $e^{-x}\\to0$ as $x\\to\\infty$; a sum of a term going to $\\infty$ and terms with finite limits goes to $\\infty$."
+      ],
+      "steps": [
+        "$e^x\\to\\infty$.",
+        "$e^{-x}\\to0$ and the constant $e$ stays $e$.",
+        "The sum tends to $\\infty$."
+      ],
+      "brief": "$e^x\\to\\infty$, $e^{-x}\\to0$: the sum goes to $\\infty$."
+    },
+    {
+      "sec": "2.5",
+      "q": "One statement is false about $f(x)=\\dfrac{\\sin x}{x}$",
+      "opts": [
+        "$x=0$ is a vertical asymptote",
+        "$\\lim_{x\\to0^+}f(x)=1$",
+        "$f(x)$ is an even function",
+        "Domain of $f(x)$ is $(-\\infty,0)\\cup(0,\\infty)$",
+        "$\\lim_{x\\to-\\infty}f(x)=0$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Test each statement in turn and find the one that fails.",
+        "Recall the behaviour of $\\dfrac{\\sin x}{x}$ near $0$, and use the bound $|\\sin x|\\le1$ for large $|x|$.",
+        "$\\lim_{x\\to0}\\frac{\\sin x}{x}=1$ (finite), and $f$ is even if $f(-x)=f(x)$."
+      ],
+      "steps": [
+        "$\\lim_{x\\to0^+}\\frac{\\sin x}{x}=1$ is finite, so there is no vertical asymptote at $x=0$: that statement is false.",
+        "The other statements hold: $f(-x)=\\frac{-\\sin x}{-x}=f(x)$ (even); the domain excludes only $0$; $\\left|\\frac{\\sin x}{x}\\right|\\le\\frac1{|x|}\\to0$ as $x\\to-\\infty$.",
+        "So the false statement is that $x=0$ is a vertical asymptote."
+      ],
+      "brief": "$\\frac{\\sin x}{x}\\to1$ at $0$, so no vertical asymptote there."
+    }
+  ]
+}

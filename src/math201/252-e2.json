@@ -1,0 +1,366 @@
+{
+  "course": "math201",
+  "term": "252",
+  "kind": "e2",
+  "date": "14 April 2026",
+  "minutes": 90,
+  "source": "math201-252-e2.pdf",
+  "note": "Date and 90 minutes are printed on the cover. Master key kept throughout; all 15 answers verified with sympy. Q8: the master key (does not exist) rests on the textbook definition (no open disk around the origin lies in the domain); a naive computation gives 0 along the domain. Page 10 (appended Q8 explanation) was used only for context. Q5, Q11 and Q15 use section 13.7, which the syllabus lists as Final-only, but they appeared on this Exam II. Q15 angle of inclination taken as the angle between the tangent plane and the xy-plane.",
+  "qs": [
+    {
+      "sec": "11.5",
+      "q": "If the parametric equations of the line passing through the point $(2,3,4)$ and perpendicular to the plane given by $3x+2y-z=6$ are \\[ x=2+at,\\quad y=3+bt,\\quad z=4-t, \\] then $a+b=$",
+      "opts": [
+        "$5$",
+        "$3$",
+        "$1$",
+        "$-5$",
+        "$-3$"
+      ],
+      "ans": 0,
+      "hints": [
+        "A line perpendicular to a plane runs in the direction of the plane's normal vector.",
+        "Read the normal vector from the coefficients of the plane equation, then match it with the direction numbers of the given line, allowing a scalar multiple.",
+        "The plane $Ax+By+Cz=D$ has normal vector $\\langle A,B,C\\rangle$; a line $x=x_0+at,\\ y=y_0+bt,\\ z=z_0+ct$ has direction vector $\\langle a,b,c\\rangle$, and the two are parallel when they are scalar multiples."
+      ],
+      "steps": [
+        "The normal of the plane is $\\mathbf{n}=\\langle 3,2,-1\\rangle$.",
+        "The line's direction is $\\langle a,b,-1\\rangle$, and it must be parallel to $\\mathbf{n}$.",
+        "The $z$-components are both $-1$, so the scalar is $1$ and $a=3$, $b=2$.",
+        "$a+b=5$."
+      ],
+      "brief": "Direction $=\\mathbf n=\\langle3,2,-1\\rangle$, so $a=3$, $b=2$ and $a+b=5$."
+    },
+    {
+      "sec": "11.6",
+      "q": "The graph of the equation $x^2-2y^2+z^2-4x+4y-6z=k$ represents",
+      "opts": [
+        "an elliptic cone if $k=-11$.",
+        "a hyperboloid with two sheets if $k=0$.",
+        "a hyperboloid with one sheet if $k=-20$.",
+        "an elliptic cone if $k=20$.",
+        "an ellipsoid if $k=1$."
+      ],
+      "ans": 0,
+      "hints": [
+        "Complete the square in each variable to identify the quadric surface.",
+        "Group the $x$, $y$ and $z$ terms and complete the square in each, moving all constants to the right side.",
+        "$x^2+bx=\\left(x+\\frac b2\\right)^2-\\frac{b^2}{4}$. For a quadric with squares of mixed signs, a right side of $0$ gives a cone, and otherwise the number of negative squares (one or two) decides between one sheet and two sheets."
+      ],
+      "steps": [
+        "Complete the squares: $(x-2)^2-2(y-1)^2+(z-3)^2=k+4-2+9=k+11$.",
+        "Mixed signs (two positive squares, one negative) mean this is a cone when $k+11=0$, a one-sheet hyperboloid when $k+11>0$, and a two-sheet hyperboloid when $k+11<0$.",
+        "For $k=-11$ the right side is $0$: an elliptic cone.",
+        "The other choices fail: $k=0$ and $k=20$ give a positive right side (one sheet, not two sheets or a cone), $k=-20$ gives $-9$ (two sheets, not one), and no value of $k$ gives an ellipsoid."
+      ],
+      "brief": "Completing squares: $(x-2)^2-2(y-1)^2+(z-3)^2=k+11$; $k=-11$ gives an elliptic cone."
+    },
+    {
+      "sec": "13.5",
+      "q": "If $z$ is defined implicitly as a differentiable function of $x$ and $y$ by the equation \\[ 3x^2z-x^2y^2+2z^3+3yz-5=0, \\] then $\\dfrac{\\partial z}{\\partial x}$ is equal to",
+      "opts": [
+        "$\\dfrac{2x(y^2-3z)}{3(x^2+2z^2+y)}$",
+        "$\\dfrac{2xy^2}{3(x^2+2z^2+y)}$",
+        "$\\dfrac{-2x(y^2-3z)}{3(x^2+2z^2+y)}$",
+        "$\\dfrac{2(xy^2-3xz-3z^2)}{3(x^2+y)}$",
+        "$\\dfrac{2x^2y-3z}{3(x^2+2z^2+y)}$"
+      ],
+      "ans": 0,
+      "hints": [
+        "This is implicit partial differentiation of an equation $F(x,y,z)=0$.",
+        "Move everything to one side as $F(x,y,z)=0$ and compute the partial derivatives $F_x$ and $F_z$, treating the other letters as constants.",
+        "If $F(x,y,z)=0$ defines $z$ implicitly, then $\\dfrac{\\partial z}{\\partial x}=-\\dfrac{F_x}{F_z}$ (with $F_z\\neq0$)."
+      ],
+      "steps": [
+        "Let $F=3x^2z-x^2y^2+2z^3+3yz-5$.",
+        "$F_x=6xz-2xy^2$ and $F_z=3x^2+6z^2+3y$.",
+        "$\\dfrac{\\partial z}{\\partial x}=-\\dfrac{6xz-2xy^2}{3x^2+6z^2+3y}=\\dfrac{2x(y^2-3z)}{3(x^2+2z^2+y)}$."
+      ],
+      "brief": "$-F_x/F_z=-\\frac{6xz-2xy^2}{3x^2+6z^2+3y}=\\frac{2x(y^2-3z)}{3(x^2+2z^2+y)}$."
+    },
+    {
+      "sec": "13.1",
+      "q": "The range of the function $f(x,y)=\\ln\\left(25-x^2-y^2\\right)$ is",
+      "opts": [
+        "$(-\\infty,\\,2\\ln5]$",
+        "$(-\\infty,\\,5\\ln2]$",
+        "$[2\\ln5,\\,\\infty)$",
+        "$(0,\\,5\\ln5]$",
+        "$(-\\infty,\\,\\infty)$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Find the possible values of the inside expression first, then apply $\\ln$.",
+        "The input of $\\ln$ must be positive; find the largest and smallest values that $25-x^2-y^2$ can take over the domain.",
+        "$\\ln$ is increasing on $(0,\\infty)$, takes every real value as its input runs over $(0,\\infty)$, and $x^2+y^2\\ge0$ with equality only at the origin."
+      ],
+      "steps": [
+        "The domain requires $25-x^2-y^2>0$.",
+        "Since $x^2+y^2\\ge0$, the inside $u=25-x^2-y^2$ takes every value in $(0,25]$.",
+        "$\\ln u$ is increasing, tends to $-\\infty$ as $u\\to0^+$, and reaches $\\ln25$ at $u=25$.",
+        "Range $=(-\\infty,\\ln25]=(-\\infty,2\\ln5]$."
+      ],
+      "brief": "Inside $u\\in(0,25]$, so $\\ln u\\in(-\\infty,\\ln25]=(-\\infty,2\\ln5]$."
+    },
+    {
+      "sec": "13.7",
+      "q": "If the symmetric equations of the normal line to the surface $z=ye^{2xy}$ at the point $(0,2,2)$ are given by \\[ \\frac{x}{8}=\\frac{y-2}{b}=\\frac{z-2}{c}, \\] then $b+c=$",
+      "opts": [
+        "$0$",
+        "$1$",
+        "$2$",
+        "$-1$",
+        "$-2$"
+      ],
+      "ans": 0,
+      "hints": [
+        "The normal line to a surface at a point has the gradient of the surface function as its direction.",
+        "Write the surface as $F(x,y,z)=ye^{2xy}-z=0$, compute its gradient at the point, and match the first component with the given denominator.",
+        "For $F(x,y,z)=0$ the normal line at $(x_0,y_0,z_0)$ is $\\dfrac{x-x_0}{F_x}=\\dfrac{y-y_0}{F_y}=\\dfrac{z-z_0}{F_z}$, and any nonzero scalar multiple of $\\nabla F$ is also a valid direction."
+      ],
+      "steps": [
+        "Let $F=ye^{2xy}-z$. Then $F_x=2y^2e^{2xy}$, $F_y=e^{2xy}+2xye^{2xy}$, $F_z=-1$.",
+        "At $(0,2,2)$: $\\nabla F=\\langle 8,1,-1\\rangle$.",
+        "The first component already equals $8$, so $b=1$ and $c=-1$.",
+        "$b+c=0$."
+      ],
+      "brief": "$\\nabla F(0,2,2)=\\langle8,1,-1\\rangle$, so $b=1$, $c=-1$ and $b+c=0$."
+    },
+    {
+      "sec": "13.3",
+      "q": "Consider the function $f(x,y)=\\left(x^2+y^2\\right)^{2/3}$. Then",
+      "opts": [
+        "$f_x(0,0)=0$.",
+        "$f_x(0,0)$ and $f_y(0,0)$ do not exist.",
+        "$f_x(2,2)=\\dfrac34$.",
+        "$f_y(1,1)=\\dfrac43$.",
+        "$f_x(1,1)\\neq f_x(1,-1)$."
+      ],
+      "ans": 0,
+      "hints": [
+        "At the origin the formula for the derivative may break down, so use the limit definition there and the ordinary rules elsewhere.",
+        "Compute $f_x$ by the chain rule for points away from the origin, and use $f(h,0)$ to find $f_x(0,0)$ from the definition.",
+        "$f_x(a,b)=\\lim_{h\\to0}\\dfrac{f(a+h,b)-f(a,b)}{h}$, and $\\dfrac{\\partial}{\\partial x}(x^2+y^2)^p=2px(x^2+y^2)^{p-1}$."
+      ],
+      "steps": [
+        "For $(x,y)\\neq(0,0)$: $f_x=\\dfrac{4x}{3}(x^2+y^2)^{-1/3}$ and $f_y=\\dfrac{4y}{3}(x^2+y^2)^{-1/3}$.",
+        "At the origin: $f_x(0,0)=\\lim_{h\\to0}\\dfrac{|h|^{4/3}}{h}=0$, so the derivative exists and equals $0$.",
+        "$f_x(2,2)=\\dfrac83\\cdot8^{-1/3}=\\dfrac43\\neq\\dfrac34$ and $f_y(1,1)=\\dfrac43\\cdot2^{-1/3}\\neq\\dfrac43$.",
+        "$f_x(1,1)=f_x(1,-1)=\\dfrac43\\cdot2^{-1/3}$ because $y$ enters only through $y^2$. So only $f_x(0,0)=0$ is true."
+      ],
+      "brief": "$f_x(0,0)=\\lim\\frac{|h|^{4/3}}{h}=0$; the other statements fail by direct computation."
+    },
+    {
+      "sec": "13.4",
+      "q": "The total resistance $R$ (in ohms) of two resistors connected in parallel is given by \\[ \\frac1R=\\frac1{R_1}+\\frac1{R_2}. \\] By using the differentials $dR$, the change in $R$ as $R_1$ is increased from $10$ ohms to $10.5$ ohms and $R_2$ is decreased from $15$ ohms to $13$ ohms, is approximately equal to",
+      "opts": [
+        "$-0.14$",
+        "$0.14$",
+        "$-0.39$",
+        "$0.39$",
+        "$-1.40$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Use the total differential $dR$ as a linear approximation of the change in $R$.",
+        "Solve for $R$ as a function of $R_1$ and $R_2$ (or differentiate the relation implicitly), evaluate $R$ at the starting values, then use $dR_1$ and $dR_2$ equal to the changes.",
+        "$dR=\\dfrac{\\partial R}{\\partial R_1}\\,dR_1+\\dfrac{\\partial R}{\\partial R_2}\\,dR_2$. Differentiating $\\frac1R=\\frac1{R_1}+\\frac1{R_2}$ gives $\\dfrac{\\partial R}{\\partial R_i}=\\dfrac{R^2}{R_i^2}$."
+      ],
+      "steps": [
+        "At $R_1=10$, $R_2=15$: $\\dfrac1R=\\dfrac1{10}+\\dfrac1{15}=\\dfrac16$, so $R=6$.",
+        "$\\dfrac{\\partial R}{\\partial R_1}=\\dfrac{R^2}{R_1^2}=\\dfrac{36}{100}$ and $\\dfrac{\\partial R}{\\partial R_2}=\\dfrac{36}{225}$.",
+        "$dR_1=0.5$ and $dR_2=-2$.",
+        "$dR=0.36(0.5)+0.16(-2)=0.18-0.32=-0.14$."
+      ],
+      "brief": "$R=6$, $R_i'=R^2/R_i^2$: $dR=0.36(0.5)+0.16(-2)=-0.14$."
+    },
+    {
+      "sec": "13.2",
+      "q": "\\[ \\lim_{(x,y)\\to(0,0)}\\frac{x-y}{\\sqrt x-\\sqrt y}= \\]",
+      "opts": [
+        "does not exist",
+        "$0$",
+        "$1$",
+        "$2$",
+        "$\\sqrt2$"
+      ],
+      "ans": 0,
+      "hints": [
+        "A limit at a point needs the function to be defined on a whole open disk around that point (except possibly at the point).",
+        "Find the domain of the function and ask whether it contains such a disk around the origin.",
+        "In the textbook definition, $\\lim_{(x,y)\\to(x_0,y_0)}f(x,y)$ requires $f$ to be defined on an open disk centered at $(x_0,y_0)$, except possibly at the point itself; if no such disk exists the limit does not exist."
+      ],
+      "steps": [
+        "The function is defined only when $x>0$ and $y>0$ (the square roots must exist and $\\sqrt x\\neq\\sqrt y$).",
+        "Every open disk centered at $(0,0)$ contains points with $x<0$ or $y<0$, where $f$ is not defined.",
+        "By the textbook definition no such disk exists, so the limit does not exist."
+      ],
+      "brief": "The domain contains no open disk around $(0,0)$, so by the textbook definition the limit does not exist."
+    },
+    {
+      "sec": "13.3",
+      "q": "Let $f(x,y,z)=ye^x+x\\ln z$. Then $f_{xzz}(1,1,1)+f_{zxz}(1,1,1)+f_{zzx}(1,1,1)=$",
+      "opts": [
+        "$-3$",
+        "$-1$",
+        "$1$",
+        "$-27$",
+        "$-8$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Compute the third-order mixed partial derivatives one letter at a time, in the order given by the subscripts.",
+        "Subscripts are read left to right: differentiate first by the first letter, then the second, then the third.",
+        "$f_{xzz}$ means $\\left(\\left(f_x\\right)_z\\right)_z$, and $\\dfrac{d}{dz}\\ln z=\\dfrac1z$, $\\dfrac{d}{dz}\\dfrac1z=-\\dfrac1{z^2}$."
+      ],
+      "steps": [
+        "$f_x=ye^x+\\ln z$, $f_{xz}=\\dfrac1z$, so $f_{xzz}=-\\dfrac1{z^2}$.",
+        "$f_z=\\dfrac xz$, $f_{zx}=\\dfrac1z$, so $f_{zxz}=-\\dfrac1{z^2}$.",
+        "$f_{zz}=-\\dfrac x{z^2}$, so $f_{zzx}=-\\dfrac1{z^2}$.",
+        "At $(1,1,1)$ each equals $-1$, so the sum is $-3$."
+      ],
+      "brief": "Each of $f_{xzz},f_{zxz},f_{zzx}$ equals $-\\frac1{z^2}=-1$ at $(1,1,1)$; sum $=-3$."
+    },
+    {
+      "sec": "13.6",
+      "q": "The maximum value of the directional derivative of $f(x,y)=y^2-x\\sqrt y$ at the point $(0,3)$ is equal to",
+      "opts": [
+        "$\\sqrt{39}$",
+        "$\\sqrt{33}$",
+        "$33$",
+        "$\\sqrt{45}$",
+        "$39$"
+      ],
+      "ans": 0,
+      "hints": [
+        "The directional derivative is largest in the direction of the gradient.",
+        "Compute $\\nabla f$ and evaluate it at the given point.",
+        "The maximum value of $D_{\\mathbf u}f$ over unit vectors $\\mathbf u$ is $\\|\\nabla f\\|$, because $D_{\\mathbf u}f=\\nabla f\\cdot\\mathbf u$."
+      ],
+      "steps": [
+        "$f_x=-\\sqrt y$ and $f_y=2y-\\dfrac{x}{2\\sqrt y}$.",
+        "At $(0,3)$: $\\nabla f=\\langle-\\sqrt3,\\,6\\rangle$.",
+        "$\\|\\nabla f\\|=\\sqrt{3+36}=\\sqrt{39}$."
+      ],
+      "brief": "$\\nabla f(0,3)=\\langle-\\sqrt3,6\\rangle$, so the maximum is $\\|\\nabla f\\|=\\sqrt{39}$."
+    },
+    {
+      "sec": "13.7",
+      "q": "If the equation of the tangent plane to the surface $z^2-2x^2-2y^2=12$ at the point $(1,-1,4)$ is given by $x+ay+bz+c=0$, then $a+b+c=$",
+      "opts": [
+        "$3$",
+        "$4$",
+        "$-2$",
+        "$2$",
+        "$5$"
+      ],
+      "ans": 0,
+      "hints": [
+        "The tangent plane to a level surface is perpendicular to the gradient at the point.",
+        "Write the surface as $F(x,y,z)=12$, compute the gradient at the point, and write the plane through the point with that normal; then scale so the coefficient of $x$ is $1$.",
+        "The tangent plane to $F(x,y,z)=k$ at $(x_0,y_0,z_0)$ is $F_x(x-x_0)+F_y(y-y_0)+F_z(z-z_0)=0$."
+      ],
+      "steps": [
+        "$F=z^2-2x^2-2y^2$, so $\\nabla F=\\langle-4x,-4y,2z\\rangle=\\langle-4,4,8\\rangle$ at $(1,-1,4)$.",
+        "Plane: $-4(x-1)+4(y+1)+8(z-4)=0$, i.e. $-4x+4y+8z-24=0$.",
+        "Divide by $-4$: $x-y-2z+6=0$, so $a=-1$, $b=-2$, $c=6$.",
+        "$a+b+c=3$."
+      ],
+      "brief": "Plane $-4(x-1)+4(y+1)+8(z-4)=0\\Rightarrow x-y-2z+6=0$; $a+b+c=3$."
+    },
+    {
+      "sec": "11.5",
+      "q": "The distance between the point $(2,8,4)$ and the plane $2x+y+z=5$ is equal to",
+      "opts": [
+        "$\\dfrac{11}{\\sqrt6}$",
+        "$\\dfrac{16}{\\sqrt6}$",
+        "$\\dfrac{21}{\\sqrt6}$",
+        "$\\dfrac{11}{2}$",
+        "$\\dfrac{11}{2\\sqrt{21}}$"
+      ],
+      "ans": 0,
+      "hints": [
+        "This is the distance from a point to a plane.",
+        "Put the plane equation in the form $Ax+By+Cz+D=0$ and substitute the point.",
+        "The distance from $(x_0,y_0,z_0)$ to the plane $Ax+By+Cz+D=0$ is $\\dfrac{|Ax_0+By_0+Cz_0+D|}{\\sqrt{A^2+B^2+C^2}}$."
+      ],
+      "steps": [
+        "Write the plane as $2x+y+z-5=0$.",
+        "Numerator: $|2(2)+8+4-5|=11$.",
+        "Denominator: $\\sqrt{4+1+1}=\\sqrt6$.",
+        "Distance $=\\dfrac{11}{\\sqrt6}$."
+      ],
+      "brief": "$\\dfrac{|4+8+4-5|}{\\sqrt{4+1+1}}=\\dfrac{11}{\\sqrt6}$."
+    },
+    {
+      "sec": "13.6",
+      "q": "The directional derivative of $f(x,y)=x^2\\sin2y$ at the point $\\left(1,\\dfrac\\pi2\\right)$ in the direction of the vector $\\mathbf{v}=3\\mathbf{i}-4\\mathbf{j}$ is equal to",
+      "opts": [
+        "$\\dfrac85$",
+        "$\\dfrac65$",
+        "$-\\dfrac85$",
+        "$8$",
+        "$-8$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Directional derivative: dot the gradient with a unit vector in the given direction.",
+        "Compute $\\nabla f$ at the point and normalize $\\mathbf v$ first.",
+        "$D_{\\mathbf u}f=\\nabla f\\cdot\\mathbf u$ with $\\mathbf u=\\dfrac{\\mathbf v}{\\|\\mathbf v\\|}$."
+      ],
+      "steps": [
+        "$\\nabla f=\\langle2x\\sin2y,\\;2x^2\\cos2y\\rangle$, which at $\\left(1,\\frac\\pi2\\right)$ is $\\langle0,-2\\rangle$.",
+        "$\\|\\mathbf v\\|=5$, so $\\mathbf u=\\left\\langle\\frac35,-\\frac45\\right\\rangle$.",
+        "$D_{\\mathbf u}f=0\\cdot\\frac35+(-2)\\left(-\\frac45\\right)=\\frac85$."
+      ],
+      "brief": "$\\nabla f=\\langle0,-2\\rangle$, $\\mathbf u=\\langle\\frac35,-\\frac45\\rangle$, so $D_{\\mathbf u}f=\\frac85$."
+    },
+    {
+      "sec": "13.5",
+      "q": "If $w=xy+yz+xz$, where $x=s\\cos t$, $y=s\\sin t$ and $z=t$, then $\\dfrac{\\partial w}{\\partial s}$ when $s=1$ and $t=2\\pi$ is equal to",
+      "opts": [
+        "$2\\pi$",
+        "$1+2\\pi$",
+        "$0$",
+        "$4\\pi$",
+        "$2$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Use the chain rule for a function of several variables.",
+        "Compute $w_x$, $w_y$, $w_z$ and note which of $x,y,z$ depend on $s$.",
+        "$\\dfrac{\\partial w}{\\partial s}=\\dfrac{\\partial w}{\\partial x}\\dfrac{\\partial x}{\\partial s}+\\dfrac{\\partial w}{\\partial y}\\dfrac{\\partial y}{\\partial s}+\\dfrac{\\partial w}{\\partial z}\\dfrac{\\partial z}{\\partial s}$."
+      ],
+      "steps": [
+        "$w_x=y+z$, $w_y=x+z$, and $z=t$ does not depend on $s$, so $\\frac{\\partial z}{\\partial s}=0$.",
+        "$\\frac{\\partial x}{\\partial s}=\\cos t$ and $\\frac{\\partial y}{\\partial s}=\\sin t$.",
+        "$\\frac{\\partial w}{\\partial s}=(y+z)\\cos t+(x+z)\\sin t$.",
+        "At $s=1$, $t=2\\pi$: $x=1$, $y=0$, $z=2\\pi$, giving $2\\pi\\cdot1+(1+2\\pi)\\cdot0=2\\pi$."
+      ],
+      "brief": "$w_s=(y+z)\\cos t+(x+z)\\sin t$; at $s=1,t=2\\pi$ this is $2\\pi$."
+    },
+    {
+      "sec": "13.7",
+      "q": "If $\\theta$ is the angle of inclination of the tangent plane to the surface $3x^2+2y^2-z=4$ at the point $(1,1,1)$, then $\\cos\\theta=$",
+      "opts": [
+        "$\\dfrac1{\\sqrt{53}}$",
+        "$\\dfrac1{2\\sqrt{13}}$",
+        "$\\dfrac6{\\sqrt{53}}$",
+        "$\\dfrac1{\\sqrt{11}}$",
+        "$\\dfrac4{\\sqrt{53}}$"
+      ],
+      "ans": 0,
+      "hints": [
+        "The angle of inclination of a plane is the angle between its normal and the $z$-axis (equivalently, between the plane and the $xy$-plane).",
+        "Find the gradient of $F(x,y,z)=3x^2+2y^2-z$ at the point; it is normal to the tangent plane.",
+        "For a plane with normal $\\mathbf n$, the angle of inclination $\\theta$ satisfies $\\cos\\theta=\\dfrac{|\\mathbf n\\cdot\\mathbf k|}{\\|\\mathbf n\\|}$."
+      ],
+      "steps": [
+        "$\\nabla F=\\langle6x,4y,-1\\rangle=\\langle6,4,-1\\rangle$ at $(1,1,1)$.",
+        "$\\|\\nabla F\\|=\\sqrt{36+16+1}=\\sqrt{53}$.",
+        "$\\cos\\theta=\\dfrac{|\\nabla F\\cdot\\mathbf k|}{\\|\\nabla F\\|}=\\dfrac1{\\sqrt{53}}$."
+      ],
+      "brief": "$\\mathbf n=\\langle6,4,-1\\rangle$, so $\\cos\\theta=\\frac{|-1|}{\\sqrt{53}}=\\frac1{\\sqrt{53}}$."
+    }
+  ]
+}

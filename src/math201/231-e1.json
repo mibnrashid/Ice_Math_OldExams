@@ -1,0 +1,473 @@
+{
+  "course": "math201",
+  "term": "231",
+  "kind": "e1",
+  "date": "4 October 2023",
+  "minutes": 120,
+  "source": "math201-231-ex1.pdf",
+  "note": "The master version prints no answer marks and no key table. The correct choice was determined by solving each question (sympy-checked); in the master order it is choice (a) for every question. Date and 120 minutes are printed on the cover. Q1 (surface area of revolution) is placed under 10.3 and Q19 under 11.2.",
+  "qs": [
+    {
+      "sec": "10.3",
+      "q": "Let $C$ be the portion of the parametric curve $x=3\\cos t$ and $y=3\\sin t$ from the point $(3,0)$ to $\\left(\\dfrac32,\\dfrac{3\\sqrt3}{2}\\right)$. The area of the surface obtained by rotating $C$ about the $x$-axis is",
+      "opts": [
+        "$9\\pi$",
+        "$\\dfrac23$",
+        "$3\\pi$",
+        "$\\dfrac32$",
+        "$\\dfrac45\\pi$"
+      ],
+      "ans": 0,
+      "hints": [
+        "This is a surface of revolution for a parametric curve.",
+        "Find the parameter interval from the two endpoints, then compute $ds$ from $x'(t)$ and $y'(t)$.",
+        "For rotation about the $x$-axis, $S=\\int_a^b 2\\pi y(t)\\sqrt{x'(t)^2+y'(t)^2}\\,dt$."
+      ],
+      "steps": [
+        "$t=0$ gives $(3,0)$ and $t=\\pi/3$ gives $\\left(\\frac32,\\frac{3\\sqrt3}{2}\\right)$.",
+        "$x'=-3\\sin t$, $y'=3\\cos t$, so $\\sqrt{x'^2+y'^2}=3$.",
+        "$S=\\int_0^{\\pi/3}2\\pi(3\\sin t)(3)\\,dt=18\\pi\\int_0^{\\pi/3}\\sin t\\,dt$.",
+        "$=18\\pi\\left(1-\\cos\\frac\\pi3\\right)=18\\pi\\cdot\\frac12=9\\pi$."
+      ],
+      "brief": "$t\\in[0,\\pi/3]$, $ds=3\\,dt$: $S=18\\pi\\int_0^{\\pi/3}\\sin t\\,dt=9\\pi$."
+    },
+    {
+      "sec": "11.4",
+      "q": "If $\\vec a$ and $\\vec b$ are unit vectors in space and the angle between them is $\\dfrac{2\\pi}{3}$, then $(\\vec a\\times\\vec b)\\cdot(\\vec b\\times\\vec a)$ is equal to",
+      "opts": [
+        "$-\\dfrac34$",
+        "$\\dfrac23$",
+        "$-3$",
+        "$0$",
+        "$\\dfrac45$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Relate the two cross products to each other.",
+        "Swapping the order in a cross product changes its sign, so rewrite the second factor in terms of the first.",
+        "$\\vec b\\times\\vec a=-\\vec a\\times\\vec b$, $\\mathbf{w}\\cdot\\mathbf{w}=\\|\\mathbf{w}\\|^2$ and $\\|\\vec a\\times\\vec b\\|=\\|\\vec a\\|\\|\\vec b\\|\\sin\\theta$."
+      ],
+      "steps": [
+        "$\\vec b\\times\\vec a=-(\\vec a\\times\\vec b)$, so the product is $-\\|\\vec a\\times\\vec b\\|^2$.",
+        "$\\|\\vec a\\times\\vec b\\|=(1)(1)\\sin\\frac{2\\pi}{3}=\\frac{\\sqrt3}{2}$.",
+        "So the value is $-\\frac34$."
+      ],
+      "brief": "$-\\|\\vec a\\times\\vec b\\|^2=-\\sin^2\\frac{2\\pi}{3}=-\\frac34$."
+    },
+    {
+      "sec": "11.2",
+      "q": "If the equation $x^2+y^2+z^2+2x-4y+6z+5=0$ represents a sphere with center $(a,b,c)$ and radius $r$, then $a+b+c+r=$",
+      "opts": [
+        "$1$",
+        "$-2$",
+        "$-3$",
+        "$0$",
+        "$2$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Rewrite the equation in the standard form of a sphere.",
+        "Complete the square separately in $x$, $y$ and $z$.",
+        "A sphere with center $(a,b,c)$ and radius $r$ is $(x-a)^2+(y-b)^2+(z-c)^2=r^2$."
+      ],
+      "steps": [
+        "$(x+1)^2+(y-2)^2+(z+3)^2=1+4+9-5=9$.",
+        "Center $(-1,2,-3)$ and $r=3$.",
+        "$a+b+c+r=-1+2-3+3=1$."
+      ],
+      "brief": "Completing squares: center $(-1,2,-3)$, $r=3$, so the sum is $1$."
+    },
+    {
+      "sec": "10.2",
+      "q": "A set of parametric equations for the rectangular equation $y=2x-5$ that represents the point $(3,1)$ when $t=0$ is",
+      "opts": [
+        "$x=3-t,\\ y=1-2t$",
+        "$x=3+2t,\\ y=1+2t$",
+        "$x=3-t,\\ y=2+t$",
+        "$x=3+t,\\ y=1-t$",
+        "$x=3-2t,\\ y=1+t$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Two conditions must hold: the point at $t=0$ and the equation of the line.",
+        "Check that each candidate gives $(3,1)$ at $t=0$, then substitute $x(t)$ and $y(t)$ into $y=2x-5$.",
+        "A parametrization satisfies the equation when $y(t)=2x(t)-5$ holds for every $t$."
+      ],
+      "steps": [
+        "Choices 1, 2, 4 and 5 give $(3,1)$ at $t=0$; the third gives $(3,2)$, so it fails at once. Test $y=2x-5$ on the rest.",
+        "$x=3-t$: $2x-5=1-2t$, which equals $y=1-2t$ for all $t$.",
+        "The others fail: $x=3+2t$ gives $1+4t\\neq1+2t$; $x=3+t$ gives $1+2t\\neq1-t$; $x=3-2t$ gives $1-4t\\neq1+t$."
+      ],
+      "brief": "Need $y=2x-5$ for all $t$: $x=3-t$ gives $2x-5=1-2t=y$."
+    },
+    {
+      "sec": "10.3",
+      "q": "The parametric curve $x=t^2$, $y=t^3-3t$ is concave upward on the interval",
+      "opts": [
+        "$t\\in(0,\\infty)$",
+        "$t\\in(-\\infty,\\infty)$",
+        "$t\\in(-\\infty,1)$",
+        "$t\\in(-\\infty,0)$",
+        "$t\\in(-1,\\infty)$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Concavity of a parametric curve is decided by the sign of $\\dfrac{d^2y}{dx^2}$.",
+        "Compute $\\dfrac{dy}{dx}$ first, then differentiate it with respect to $t$ and divide by $x'(t)$.",
+        "$\\dfrac{dy}{dx}=\\dfrac{y'(t)}{x'(t)}$ and $\\dfrac{d^2y}{dx^2}=\\dfrac{\\frac{d}{dt}\\left(\\frac{dy}{dx}\\right)}{x'(t)}$; the curve is concave upward where this is positive."
+      ],
+      "steps": [
+        "$\\dfrac{dy}{dx}=\\dfrac{3t^2-3}{2t}=\\dfrac32\\left(t-\\dfrac1t\\right)$.",
+        "$\\dfrac{d}{dt}\\left(\\dfrac{dy}{dx}\\right)=\\dfrac32\\left(1+\\dfrac1{t^2}\\right)$.",
+        "$\\dfrac{d^2y}{dx^2}=\\dfrac{\\frac32\\left(1+t^{-2}\\right)}{2t}=\\dfrac{3(t^2+1)}{4t^3}$.",
+        "This is positive exactly when $t>0$."
+      ],
+      "brief": "$\\frac{d^2y}{dx^2}=\\frac{3(t^2+1)}{4t^3}>0$ iff $t>0$."
+    },
+    {
+      "sec": "10.3",
+      "q": "The slope of the tangent line to the curve $x=2t-1$, $y=t+t^2$ at the point $(1,2)$ is",
+      "opts": [
+        "$\\dfrac32$",
+        "$1$",
+        "$\\dfrac13$",
+        "$0$",
+        "$-\\dfrac12$"
+      ],
+      "ans": 0,
+      "hints": [
+        "This is the slope of a parametric curve.",
+        "Find the value of $t$ that gives the point $(1,2)$, then compute $\\dfrac{dy}{dx}$ there.",
+        "$\\dfrac{dy}{dx}=\\dfrac{dy/dt}{dx/dt}$ when $dx/dt\\neq0$."
+      ],
+      "steps": [
+        "$x=1$ gives $2t-1=1$, so $t=1$; then $y=1+1=2$, as required.",
+        "$\\dfrac{dy}{dx}=\\dfrac{1+2t}{2}$.",
+        "At $t=1$: $\\dfrac32$."
+      ],
+      "brief": "$t=1$; $\\frac{dy}{dx}=\\frac{1+2t}{2}=\\frac32$."
+    },
+    {
+      "sec": "11.1",
+      "q": "If $\\vec u=\\langle2,-4\\rangle$, $\\vec v=\\langle2,-3\\rangle$ and $a$, $b$ are scalars such that $a\\vec u+b\\vec v=\\langle-4,1\\rangle$, then $2a+b=$",
+      "opts": [
+        "$3$",
+        "$-2$",
+        "$2$",
+        "$0$",
+        "$1$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Compare components to get a linear system in $a$ and $b$.",
+        "Write one equation for the first components and one for the second components, then solve.",
+        "If $a\\langle u_1,u_2\\rangle+b\\langle v_1,v_2\\rangle=\\langle w_1,w_2\\rangle$ then $au_1+bv_1=w_1$ and $au_2+bv_2=w_2$."
+      ],
+      "steps": [
+        "$2a+2b=-4$ and $-4a-3b=1$.",
+        "From the first, $a=-2-b$. Substitute: $8+4b-3b=1$, so $b=-7$ and $a=5$.",
+        "$2a+b=10-7=3$."
+      ],
+      "brief": "$2a+2b=-4$, $-4a-3b=1$ give $a=5$, $b=-7$, so $2a+b=3$."
+    },
+    {
+      "sec": "11.2",
+      "q": "The sum of all possible values of $m$ such that the points $(0,2,1)$, $(m-1,0,m)$, $(5,-m,6)$ are collinear is equal to",
+      "opts": [
+        "$-1$",
+        "$-2$",
+        "$2$",
+        "$0$",
+        "$3$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Three points are collinear when two vectors between them are parallel.",
+        "Form the vectors from the first point to each of the other two and require one to be a scalar multiple of the other.",
+        "Vectors $\\mathbf{p}$ and $\\mathbf{q}$ are parallel when $\\mathbf{p}=k\\mathbf{q}$, so corresponding components have equal ratios."
+      ],
+      "steps": [
+        "Let $P=(0,2,1)$: $\\vec{PQ}=\\langle m-1,-2,m-1\\rangle$ and $\\vec{PR}=\\langle5,-m-2,5\\rangle$.",
+        "Parallel requires $\\dfrac{m-1}{5}=\\dfrac{-2}{-m-2}$, so $(m-1)(m+2)=10$.",
+        "$m^2+m-12=0$, so $m=3$ or $m=-4$. Both work: the first and third components are equal in each vector, so the third ratio matches automatically.",
+        "The sum is $3+(-4)=-1$."
+      ],
+      "brief": "$(m-1)(m+2)=10\\Rightarrow m^2+m-12=0$, roots $3,-4$, sum $-1$."
+    },
+    {
+      "sec": "11.4",
+      "q": "The area of the triangle with vertices $A(0,2,2)$, $B(2,0,-1)$, $C(3,4,0)$ is",
+      "opts": [
+        "$\\dfrac{15}{2}$",
+        "$\\dfrac54$",
+        "$5$",
+        "$\\dfrac{13}{3}$",
+        "$1$"
+      ],
+      "ans": 0,
+      "hints": [
+        "The area of a triangle in space comes from a cross product.",
+        "Form $\\vec{AB}$ and $\\vec{AC}$ and compute their cross product.",
+        "Area $=\\dfrac12\\|\\vec{AB}\\times\\vec{AC}\\|$."
+      ],
+      "steps": [
+        "$\\vec{AB}=\\langle2,-2,-3\\rangle$, $\\vec{AC}=\\langle3,2,-2\\rangle$.",
+        "$\\vec{AB}\\times\\vec{AC}=\\langle10,-5,10\\rangle$.",
+        "$\\|\\cdot\\|=\\sqrt{100+25+100}=15$, so the area is $\\dfrac{15}{2}$."
+      ],
+      "brief": "$\\vec{AB}\\times\\vec{AC}=\\langle10,-5,10\\rangle$, norm $15$, area $\\frac{15}{2}$."
+    },
+    {
+      "sec": "10.4",
+      "q": "The slope of the tangent line to the cardioid $r=1+\\sin\\theta$ when $\\theta=\\dfrac\\pi3$ is equal to",
+      "opts": [
+        "$-1$",
+        "$-2$",
+        "$2$",
+        "$3$",
+        "$-\\dfrac13$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Slope of a polar curve: write $x=r\\cos\\theta$, $y=r\\sin\\theta$ and treat $\\theta$ as the parameter.",
+        "Differentiate $x$ and $y$ with respect to $\\theta$ and evaluate at the given angle.",
+        "$\\dfrac{dy}{dx}=\\dfrac{r'\\sin\\theta+r\\cos\\theta}{r'\\cos\\theta-r\\sin\\theta}$."
+      ],
+      "steps": [
+        "At $\\theta=\\frac\\pi3$: $r=1+\\frac{\\sqrt3}{2}$, $r'=\\cos\\theta=\\frac12$.",
+        "Numerator: $\\frac12\\cdot\\frac{\\sqrt3}{2}+\\left(1+\\frac{\\sqrt3}{2}\\right)\\frac12=\\frac{1+\\sqrt3}{2}$.",
+        "Denominator: $\\frac12\\cdot\\frac12-\\left(1+\\frac{\\sqrt3}{2}\\right)\\frac{\\sqrt3}{2}=\\frac14-\\frac{\\sqrt3}{2}-\\frac34=-\\frac{1+\\sqrt3}{2}$.",
+        "The slope is $-1$."
+      ],
+      "brief": "$\\frac{dy}{dx}=\\frac{r'\\sin\\theta+r\\cos\\theta}{r'\\cos\\theta-r\\sin\\theta}=\\frac{(1+\\sqrt3)/2}{-(1+\\sqrt3)/2}=-1$."
+    },
+    {
+      "sec": "10.5",
+      "q": "The area enclosed by one loop of the four-leaved rose $r=\\cos2\\theta$ is equal to",
+      "opts": [
+        "$\\dfrac\\pi8$",
+        "$8\\pi$",
+        "$\\dfrac{2\\pi}{3}$",
+        "$\\dfrac{5\\pi}{8}$",
+        "$\\pi$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Area in polar coordinates, over the angle interval that traces one petal.",
+        "One petal is traced between two consecutive zeros of $r$ around the point where $r$ is largest.",
+        "$A=\\dfrac12\\int_\\alpha^\\beta r^2\\,d\\theta$ and $\\cos^2u=\\dfrac{1+\\cos2u}{2}$."
+      ],
+      "steps": [
+        "$r=0$ when $\\cos2\\theta=0$, so one loop is $-\\frac\\pi4\\le\\theta\\le\\frac\\pi4$.",
+        "$A=\\frac12\\int_{-\\pi/4}^{\\pi/4}\\cos^22\\theta\\,d\\theta=\\frac14\\int_{-\\pi/4}^{\\pi/4}(1+\\cos4\\theta)\\,d\\theta$.",
+        "$=\\frac14\\left[\\theta+\\frac{\\sin4\\theta}{4}\\right]_{-\\pi/4}^{\\pi/4}=\\frac14\\cdot\\frac\\pi2=\\frac\\pi8$."
+      ],
+      "brief": "One petal $-\\frac\\pi4\\le\\theta\\le\\frac\\pi4$: $A=\\frac12\\int\\cos^22\\theta\\,d\\theta=\\frac\\pi8$."
+    },
+    {
+      "sec": "10.5",
+      "q": "The exact length of the polar curve $r=2\\cos\\theta$, $0\\le\\theta\\le\\pi$ is equal to",
+      "opts": [
+        "$2\\pi$",
+        "$5\\pi$",
+        "$\\dfrac{3\\pi}{2}$",
+        "$\\dfrac{5\\pi}{7}$",
+        "$3\\pi$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Arc length in polar coordinates.",
+        "Compute $r^2+(r')^2$ and simplify before integrating.",
+        "$L=\\int_\\alpha^\\beta\\sqrt{r^2+\\left(\\dfrac{dr}{d\\theta}\\right)^2}\\,d\\theta$."
+      ],
+      "steps": [
+        "$r'=-2\\sin\\theta$, so $r^2+r'^2=4\\cos^2\\theta+4\\sin^2\\theta=4$.",
+        "$L=\\int_0^\\pi2\\,d\\theta=2\\pi$."
+      ],
+      "brief": "$\\sqrt{r^2+r'^2}=2$, so $L=\\int_0^\\pi2\\,d\\theta=2\\pi$."
+    },
+    {
+      "sec": "11.3",
+      "q": "If the vectors $\\vec a=\\langle2,2,-1\\rangle$ and $\\vec b=\\langle5,-4,m\\rangle$ are orthogonal, then $m=$",
+      "opts": [
+        "$2$",
+        "$-1$",
+        "$0$",
+        "$3$",
+        "$-3$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Orthogonal vectors and the dot product.",
+        "Compute $\\vec a\\cdot\\vec b$ in terms of $m$ and set it equal to zero.",
+        "Two vectors are orthogonal if and only if their dot product is $0$, where $\\langle a_1,a_2,a_3\\rangle\\cdot\\langle b_1,b_2,b_3\\rangle=a_1b_1+a_2b_2+a_3b_3$."
+      ],
+      "steps": [
+        "$\\vec a\\cdot\\vec b=10-8-m=2-m$.",
+        "Setting $2-m=0$ gives $m=2$."
+      ],
+      "brief": "$\\vec a\\cdot\\vec b=2-m=0$, so $m=2$."
+    },
+    {
+      "sec": "11.3",
+      "q": "Consider the vectors $\\vec u=\\langle-3,1,2\\rangle$ and $\\vec v=\\langle1,2,-3\\rangle$. If the vector projection of $\\vec u$ onto $\\vec v$ is $\\langle a,b,c\\rangle$, then $a+b+c=$",
+      "opts": [
+        "$0$",
+        "$-1$",
+        "$2$",
+        "$3$",
+        "$1$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Vector projection onto $\\vec v$.",
+        "Compute $\\vec u\\cdot\\vec v$ and $\\|\\vec v\\|^2$, then scale $\\vec v$.",
+        "$\\operatorname{proj}_{\\vec v}\\vec u=\\dfrac{\\vec u\\cdot\\vec v}{\\|\\vec v\\|^2}\\,\\vec v$."
+      ],
+      "steps": [
+        "$\\vec u\\cdot\\vec v=-3+2-6=-7$ and $\\|\\vec v\\|^2=1+4+9=14$.",
+        "$\\operatorname{proj}_{\\vec v}\\vec u=-\\frac12\\langle1,2,-3\\rangle=\\left\\langle-\\frac12,-1,\\frac32\\right\\rangle$.",
+        "$a+b+c=-\\frac12-1+\\frac32=0$."
+      ],
+      "brief": "$\\frac{-7}{14}\\langle1,2,-3\\rangle$, whose components sum to $0$."
+    },
+    {
+      "sec": "10.5",
+      "q": "The area of the region that lies inside the polar curve $r=2+\\sin\\theta$ and outside the circle $r=3\\sin\\theta$ is",
+      "opts": [
+        "$\\dfrac{9\\pi}{4}$",
+        "$\\dfrac{4\\pi}{3}$",
+        "$\\dfrac{5\\pi}{2}$",
+        "$\\pi$",
+        "$3\\pi$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Area between two polar curves; first find where they meet.",
+        "Solve $2+\\sin\\theta=3\\sin\\theta$ and decide which curve is farther from the origin at each angle.",
+        "$A=\\dfrac12\\int\\left(r_{\\text{outer}}^2-r_{\\text{inner}}^2\\right)d\\theta$, and the area of a circle of radius $\\rho$ is $\\pi\\rho^2$."
+      ],
+      "steps": [
+        "$2+\\sin\\theta=3\\sin\\theta$ gives $\\sin\\theta=1$, so the curves only touch at $\\theta=\\frac\\pi2$; and $2+\\sin\\theta\\ge3\\sin\\theta$ for all $\\theta$, so the circle lies inside the limacon.",
+        "Limacon area: $\\frac12\\int_0^{2\\pi}(2+\\sin\\theta)^2d\\theta=\\frac12(8\\pi+\\pi)=\\frac{9\\pi}{2}$.",
+        "Circle $r=3\\sin\\theta$ has radius $\\frac32$: area $\\frac{9\\pi}{4}$.",
+        "Region area: $\\frac{9\\pi}{2}-\\frac{9\\pi}{4}=\\frac{9\\pi}{4}$."
+      ],
+      "brief": "Circle lies inside the limacon: $\\frac{9\\pi}{2}-\\frac{9\\pi}{4}=\\frac{9\\pi}{4}$."
+    },
+    {
+      "sec": "10.2",
+      "q": "The Cartesian equation of the parametric curve $x=\\ln t$, $y=\\sqrt t$, $t\\ge1$ is given by",
+      "opts": [
+        "$y=e^{x/2},\\ x\\ge0$",
+        "$y=e^{x},\\ x\\ge0$",
+        "$y=e^{2x},\\ x\\ge1$",
+        "$y=e^{x},\\ x\\ge1$",
+        "$y=e^{2x},\\ x\\ge0$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Eliminate the parameter and keep track of the range of $x$.",
+        "Solve $x=\\ln t$ for $t$ and substitute into $y$.",
+        "$t=e^{x}$ when $x=\\ln t$, and $\\sqrt{e^{x}}=e^{x/2}$; the restriction on $t$ restricts $x$."
+      ],
+      "steps": [
+        "$x=\\ln t$ gives $t=e^x$.",
+        "$y=\\sqrt{e^x}=e^{x/2}$.",
+        "$t\\ge1$ gives $x=\\ln t\\ge0$."
+      ],
+      "brief": "$t=e^x$, $y=e^{x/2}$, and $t\\ge1$ means $x\\ge0$."
+    },
+    {
+      "sec": "11.4",
+      "q": "Consider the points $A(2,1,-1)$, $B(3,0,2)$, $C(4,-2,-1)$ and $D(3,m,0)$. If the volume of the parallelepiped determined by the vectors $\\vec{AB}$, $\\vec{AC}$, and $\\vec{AD}$ is $4$, then the sum of all possible values of $m$ is",
+      "opts": [
+        "$-\\dfrac23$",
+        "$\\dfrac32$",
+        "$-\\dfrac43$",
+        "$\\dfrac35$",
+        "$\\dfrac37$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Volume of a parallelepiped is the absolute value of a scalar triple product.",
+        "Form the three vectors, compute the determinant with $m$ in it, and set its absolute value equal to the volume.",
+        "$V=\\left|\\vec u\\cdot(\\vec v\\times\\vec w)\\right|$, the absolute value of the $3\\times3$ determinant of the vectors."
+      ],
+      "steps": [
+        "$\\vec{AB}=\\langle1,-1,3\\rangle$, $\\vec{AC}=\\langle2,-3,0\\rangle$, $\\vec{AD}=\\langle1,m-1,1\\rangle$.",
+        "Determinant: $\\begin{vmatrix}1&-1&3\\\\2&-3&0\\\\1&m-1&1\\end{vmatrix}=6m+2$.",
+        "$|6m+2|=4$: $6m+2=4$ gives $m=\\frac13$; $6m+2=-4$ gives $m=-1$.",
+        "Sum: $\\frac13-1=-\\frac23$."
+      ],
+      "brief": "$\\det=6m+2$, $|6m+2|=4$ gives $m=\\frac13,-1$, sum $-\\frac23$."
+    },
+    {
+      "sec": "10.3",
+      "q": "The parametric curve $x=t^2+4t$, $y=6t^2$ has a vertical tangent line at the point",
+      "opts": [
+        "$(-4,24)$",
+        "$(0,0)$",
+        "$(5,6)$",
+        "$(-3,6)$",
+        "$(2,-24)$"
+      ],
+      "ans": 0,
+      "hints": [
+        "A vertical tangent occurs where the horizontal rate of change vanishes but the vertical one does not.",
+        "Solve $dx/dt=0$ and check $dy/dt\\neq0$ there, then compute the point.",
+        "Vertical tangent: $\\dfrac{dx}{dt}=0$ and $\\dfrac{dy}{dt}\\neq0$."
+      ],
+      "steps": [
+        "$\\dfrac{dx}{dt}=2t+4=0$ gives $t=-2$.",
+        "$\\dfrac{dy}{dt}=12t=-24\\neq0$ there.",
+        "$x=4-8=-4$, $y=6\\cdot4=24$, the point $(-4,24)$."
+      ],
+      "brief": "$x'=2t+4=0\\Rightarrow t=-2$, $y'=-24\\neq0$: point $(-4,24)$."
+    },
+    {
+      "sec": "11.2",
+      "q": "A vector $\\vec v$ of length $3$ that has the direction opposite to the vector $\\vec a=\\langle1,2,-3\\rangle$ is",
+      "opts": [
+        "$\\dfrac1{\\sqrt{14}}\\langle-3,-6,9\\rangle$",
+        "$\\dfrac1{\\sqrt{11}}\\langle3,6,-9\\rangle$",
+        "$\\dfrac1{\\sqrt{14}}\\langle-1,-2,9\\rangle$",
+        "$\\dfrac1{\\sqrt{11}}\\langle1,2,-3\\rangle$",
+        "$\\dfrac1{\\sqrt{14}}\\langle2,4,-6\\rangle$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Build a vector from a unit vector in the required direction.",
+        "Find $\\|\\vec a\\|$, form the unit vector, reverse it, and scale it to the required length.",
+        "A vector of length $L$ opposite to $\\vec a$ is $-L\\dfrac{\\vec a}{\\|\\vec a\\|}$."
+      ],
+      "steps": [
+        "$\\|\\vec a\\|=\\sqrt{1+4+9}=\\sqrt{14}$.",
+        "$\\vec v=-3\\cdot\\dfrac{\\langle1,2,-3\\rangle}{\\sqrt{14}}=\\dfrac1{\\sqrt{14}}\\langle-3,-6,9\\rangle$."
+      ],
+      "brief": "$\\vec v=-3\\vec a/\\|\\vec a\\|=\\frac1{\\sqrt{14}}\\langle-3,-6,9\\rangle$."
+    },
+    {
+      "sec": "11.3",
+      "q": "If $\\|\\vec u\\|=\\sqrt3$, $\\|\\vec v\\|=2$ and $\\vec u\\cdot\\vec v=\\sqrt6$, the angle $\\theta$ between the two vectors $\\vec u$ and $\\vec v$ is",
+      "opts": [
+        "$\\dfrac\\pi4$",
+        "$\\dfrac\\pi3$",
+        "$\\dfrac{3\\pi}{2}$",
+        "$\\dfrac\\pi5$",
+        "$\\dfrac{5\\pi}{4}$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Angle between vectors from the dot product.",
+        "Solve for $\\cos\\theta$ and recall that $\\theta$ lies in $[0,\\pi]$.",
+        "$\\cos\\theta=\\dfrac{\\vec u\\cdot\\vec v}{\\|\\vec u\\|\\|\\vec v\\|}$ with $0\\le\\theta\\le\\pi$."
+      ],
+      "steps": [
+        "$\\cos\\theta=\\dfrac{\\sqrt6}{2\\sqrt3}=\\dfrac{\\sqrt2}{2}$.",
+        "In $[0,\\pi]$ this gives $\\theta=\\dfrac\\pi4$."
+      ],
+      "brief": "$\\cos\\theta=\\frac{\\sqrt6}{2\\sqrt3}=\\frac{\\sqrt2}2$, so $\\theta=\\frac\\pi4$."
+    }
+  ]
+}

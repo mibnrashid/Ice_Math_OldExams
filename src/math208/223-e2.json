@@ -1,0 +1,348 @@
+{
+  "course": "math208",
+  "term": "223",
+  "kind": "e2",
+  "date": "",
+  "minutes": 90,
+  "source": "math208-223-ex2.pdf",
+  "note": "Scanned master pages 1-7 plus answer key (page 8). The cover with date and duration is not included in the source, so the date is left empty and 90 minutes is assumed (usual length of a major exam). Master key is A for every question and all fourteen were verified. Question 8 is tagged section 5.1 on the source, but it uses complex-root solutions (5.3).",
+  "qs": [
+    {
+      "sec": "4.4",
+      "q": "Find all values of $k$ for which the following vectors \\[ v_1=(1,7,-3),\\quad v_2=(2,k,4),\\quad v_3=(k,0,k) \\] form a basis for $\\mathbb{R}^3$.",
+      "opts": [
+        "$k\\neq 0$ and $k\\neq -\\dfrac{7}{2}$",
+        "$k\\neq 2$",
+        "$k\\neq 0$ and $k\\neq -3$",
+        "$k\\neq 1$ and $k\\neq -4$",
+        "$k\\neq -1$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Three vectors form a basis of $\\mathbb{R}^3$ exactly when they are linearly independent.",
+        "Place the vectors as the columns of a $3\\times3$ matrix and compute its determinant as a function of $k$.",
+        "$n$ vectors in $\\mathbb{R}^n$ form a basis if and only if the matrix having them as columns has nonzero determinant."
+      ],
+      "steps": [
+        "They form a basis iff $\\det\\begin{bmatrix}1&2&k\\\\7&k&0\\\\-3&4&k\\end{bmatrix}\\neq0$.",
+        "Expand along the first row: $1(k^2-0)-2(7k-0)+k(28+3k)$.",
+        "This equals $4k^2+14k=2k(2k+7)$.",
+        "The determinant is nonzero iff $k\\neq0$ and $k\\neq-\\frac72$."
+      ],
+      "brief": "$\\det=4k^2+14k=2k(2k+7)\\neq0$, so $k\\neq0,-\\frac72$."
+    },
+    {
+      "sec": "4.3",
+      "q": "Which pairs of vectors in $\\mathbb{R}^3$ are linearly independent?",
+      "opts": [
+        "$v_1=(2,-1,3),\\ v_2=(2,1,-3)$",
+        "$v_1=(2,-1,3),\\ v_2=(4,-2,6)$",
+        "$v_1=(2,-1,3),\\ v_2=\\left(\\dfrac13,-\\dfrac16,\\dfrac12\\right)$",
+        "$v_1=(2,-1,3),\\ v_2=(0,0,0)$",
+        "$v_1=(2,-1,3),\\ v_2=(-10,5,-15)$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Two vectors are dependent exactly when one is a scalar multiple of the other.",
+        "For each pair, check whether the second vector is a constant times the first.",
+        "Two vectors $v_1,v_2$ are linearly dependent if and only if $v_2=cv_1$ for some scalar $c$ (or $v_1=\\mathbf{0}$)."
+      ],
+      "steps": [
+        "Check each pair for a scalar multiple.",
+        "$(4,-2,6)=2v_1$, $\\left(\\frac13,-\\frac16,\\frac12\\right)=\\frac16v_1$, $(0,0,0)=0\\cdot v_1$ and $(-10,5,-15)=-5v_1$, so those four pairs are dependent.",
+        "For $(2,1,-3)=cv_1$ the first entry needs $c=1$, but then the second entry would be $-1\\neq1$. So it is not a multiple.",
+        "Hence only the pair $(2,-1,3),\\ (2,1,-3)$ is independent."
+      ],
+      "brief": "Only $(2,1,-3)$ is not a scalar multiple of $(2,-1,3)$; the other pairs are multiples."
+    },
+    {
+      "sec": "4.5",
+      "q": "Find the rank of the matrix \\[ A=\\begin{bmatrix}1&1&3&3&1\\\\2&3&7&8&3\\\\4&6&14&16&6\\\\3&1&7&5&4\\end{bmatrix}. \\]",
+      "opts": [
+        "$3$",
+        "$4$",
+        "$5$",
+        "$1$",
+        "$2$"
+      ],
+      "ans": 0,
+      "hints": [
+        "The rank is the number of nonzero rows in a row echelon form.",
+        "Row reduce $A$ using the first row to clear the entries below the first pivot, and continue.",
+        "Row operations do not change the rank; $\\operatorname{rank}(A)$ equals the number of nonzero rows of an echelon form."
+      ],
+      "steps": [
+        "$R_2\\to R_2-2R_1,\\ R_3\\to R_3-4R_1,\\ R_4\\to R_4-3R_1$ gives rows $(0,1,1,2,1)$, $(0,2,2,4,2)$, $(0,-2,-2,-4,1)$.",
+        "$R_3\\to R_3-2R_2$ gives the zero row; $R_4\\to R_4+2R_2$ gives $(0,0,0,0,3)$.",
+        "The echelon form has three nonzero rows: $(1,1,3,3,1)$, $(0,1,1,2,1)$, $(0,0,0,0,3)$.",
+        "So $\\operatorname{rank}(A)=3$."
+      ],
+      "brief": "Row reduction leaves 3 nonzero rows, so the rank is $3$."
+    },
+    {
+      "sec": "4.3",
+      "q": "Which one of the following statements is True about the following vectors in $\\mathbb{R}^4$: \\[ v_1=(3,0,-4,1),\\quad v_2=(-3,-6,4,2),\\quad v_3=(-3,2,4,-2)? \\]",
+      "opts": [
+        "$v_1,v_2,v_3$ are linearly dependent",
+        "$v_1,v_2,v_3$ are linearly independent",
+        "$v_3=v_1+v_2$",
+        "$v_3=5v_1-v_2$",
+        "$v_3=2v_1+v_2$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Decide whether $c_1v_1+c_2v_2+c_3v_3=\\mathbf{0}$ has a nontrivial solution.",
+        "Write the vector equation as a homogeneous system with $v_1,v_2,v_3$ as columns and row reduce.",
+        "Vectors are linearly dependent iff the homogeneous system $c_1v_1+c_2v_2+c_3v_3=\\mathbf{0}$ has a nontrivial solution, i.e. there is a free variable."
+      ],
+      "steps": [
+        "Row reduce the matrix with columns $v_1,v_2,v_3$; it reduces to $\\begin{bmatrix}1&-1&-1\\\\0&1&-1/3\\\\0&0&0\\\\0&0&0\\end{bmatrix}$.",
+        "Column 3 has no pivot, so $c_3$ is free: $c_2=\\frac13c_3$, $c_1=\\frac43c_3$.",
+        "With $c_3=3$: $4v_1+v_2+3v_3=\\mathbf{0}$ (check: $(12-3-9,\\,0-6+6,\\,-16+4+12,\\,4+2-6)=\\mathbf{0}$).",
+        "So the vectors are linearly dependent."
+      ],
+      "brief": "$4v_1+v_2+3v_3=\\mathbf{0}$, so the vectors are linearly dependent."
+    },
+    {
+      "sec": "4.4",
+      "q": "Find a basis for the solution space of the system \\[ \\begin{cases} x_1-3x_2-9x_3-5x_4=0\\\\ 2x_1+x_2-4x_3+11x_4=0\\\\ x_1+3x_2+3x_3+13x_4=0 \\end{cases} \\]",
+      "opts": [
+        "$\\{(3,-2,1,0),\\ (-4,-3,0,1)\\}$",
+        "$\\{(-1,-5,1,1)\\}$",
+        "$\\{(6,-4,2,0)\\}$",
+        "$\\{(4,3,0,-1),\\ (-20,-15,0,5)\\}$",
+        "$\\{(0,2,-1,1),\\ (3,1,0,4)\\}$"
+      ],
+      "ans": 0,
+      "hints": [
+        "The solution space of a homogeneous system is found by Gaussian elimination, with free variables as parameters.",
+        "Row reduce the coefficient matrix, pick the free variables, and write the general solution as a combination of fixed vectors.",
+        "Each free variable multiplies one vector in the general solution; those vectors form a basis of the solution space."
+      ],
+      "steps": [
+        "Row reduce: $R_2\\to R_2-2R_1,\\ R_3\\to R_3-R_1$ gives rows $(0,7,14,21)$ and $(0,6,12,18)$.",
+        "Scaling both gives $(0,1,2,3)$, so the third row becomes zero. Free variables: $x_3=t,\\ x_4=s$.",
+        "$x_2=-2t-3s$ and $x_1=3x_2+9x_3+5x_4=3t-4s$.",
+        "$(x_1,x_2,x_3,x_4)=t(3,-2,1,0)+s(-4,-3,0,1)$, so these two vectors form a basis."
+      ],
+      "brief": "Free $x_3=t,\\ x_4=s$: $t(3,-2,1,0)+s(-4,-3,0,1)$."
+    },
+    {
+      "sec": "5.2",
+      "q": "Find the Wronskian of the functions $f(x)=e^{x}$, $g(x)=e^{2x}$, $h(x)=e^{3x}$ on $(-\\infty,\\infty)$.",
+      "opts": [
+        "$2e^{6x}$",
+        "$6e^{6x}$",
+        "$18e^{6x}$",
+        "$-4e^{6x}$",
+        "$-8e^{6x}$"
+      ],
+      "ans": 0,
+      "hints": [
+        "The Wronskian of three functions is a $3\\times3$ determinant.",
+        "Build the matrix whose rows are the functions, their first derivatives and their second derivatives, then take the determinant.",
+        "$W(f,g,h)=\\begin{vmatrix}f&g&h\\\\f'&g'&h'\\\\f''&g''&h''\\end{vmatrix}$."
+      ],
+      "steps": [
+        "$W=\\begin{vmatrix}e^x&e^{2x}&e^{3x}\\\\e^x&2e^{2x}&3e^{3x}\\\\e^x&4e^{2x}&9e^{3x}\\end{vmatrix}$.",
+        "Factor $e^x$, $e^{2x}$, $e^{3x}$ out of the columns: $W=e^{6x}\\begin{vmatrix}1&1&1\\\\1&2&3\\\\1&4&9\\end{vmatrix}$.",
+        "The determinant is $1(18-12)-1(9-3)+1(4-2)=6-6+2=2$.",
+        "So $W=2e^{6x}$."
+      ],
+      "brief": "Factor out $e^{6x}$; the remaining determinant is $2$, so $W=2e^{6x}$."
+    },
+    {
+      "sec": "5.2",
+      "q": "Which set of the following functions forms a linearly independent set of functions on $(-\\infty,\\infty)$?",
+      "opts": [
+        "$\\{1,\\ 2x,\\ x^3\\}$",
+        "$\\{0,\\ x,\\ e^x\\}$",
+        "$\\{x,\\ 2x^2,\\ 3x-x^2\\}$",
+        "$\\{2,\\ \\sin^2x,\\ \\cos^2x\\}$",
+        "$\\{1,\\ \\cos^2x,\\ \\cos(2x)\\}$"
+      ],
+      "ans": 0,
+      "hints": [
+        "A set is dependent if one function is a linear combination of the others.",
+        "Look in each set for a zero function, a linear relation among powers, or a trigonometric identity.",
+        "Useful facts: any set containing the zero function is dependent; $\\sin^2x+\\cos^2x=1$; $\\cos 2x=2\\cos^2x-1$."
+      ],
+      "steps": [
+        "$\\{0,x,e^x\\}$: $1\\cdot0+0\\cdot x+0\\cdot e^x=0$ with a nonzero coefficient on $0$, so dependent.",
+        "$\\{x,2x^2,3x-x^2\\}$: $3x-x^2=3(x)-\\frac12(2x^2)$, so dependent.",
+        "$\\{2,\\sin^2x,\\cos^2x\\}$: $2=2\\sin^2x+2\\cos^2x$; $\\{1,\\cos^2x,\\cos2x\\}$: $\\cos2x=2\\cos^2x-1$. Both dependent.",
+        "In $\\{1,2x,x^3\\}$ none is a combination of the others (different powers), so it is independent."
+      ],
+      "brief": "Only $\\{1,2x,x^3\\}$ has no function that is a combination of the others."
+    },
+    {
+      "sec": "5.1",
+      "q": "If $y=Ae^{4x}\\cos(3x)+Be^{4x}\\sin(3x)$ is the solution of the initial value problem \\[ y''-8y'+25y=0,\\quad y(0)=3,\\quad y'(0)=0, \\] then $AB=$",
+      "opts": [
+        "$-12$",
+        "$-9$",
+        "$0$",
+        "$6$",
+        "$10$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Use the two initial conditions to determine the constants $A$ and $B$.",
+        "Evaluate $y$ at $x=0$ first, then differentiate $y$ with the product rule and evaluate $y'$ at $x=0$.",
+        "For $y=e^{ax}(A\\cos bx+B\\sin bx)$: $y(0)=A$ and $y'(0)=aA+bB$."
+      ],
+      "steps": [
+        "$y(0)=A=3$.",
+        "$y'=e^{4x}\\left[(4A+3B)\\cos3x+(4B-3A)\\sin3x\\right]$, so $y'(0)=4A+3B$.",
+        "$0=12+3B$, so $B=-4$.",
+        "$AB=3\\cdot(-4)=-12$."
+      ],
+      "brief": "$y(0)=A=3$, $y'(0)=4A+3B=0\\Rightarrow B=-4$, so $AB=-12$."
+    },
+    {
+      "sec": "5.3",
+      "q": "Find a general solution of the differential equation \\[ y^{(5)}+y^{(4)}-2y^{(3)}=0. \\]",
+      "opts": [
+        "$y=c_1+c_2x+c_3x^2+c_4e^{x}+c_5e^{-2x}$",
+        "$y=c_1+c_2x+c_3x^2+c_4e^{x}+c_5xe^{x}$",
+        "$y=c_1+c_2x+c_3x^2+c_4e^{-x}+c_5e^{2x}$",
+        "$y=c_1+c_2e^{x}+c_3e^{-2x}$",
+        "$y=c_1+c_2x+c_3e^{x}+c_4e^{2x}$"
+      ],
+      "ans": 0,
+      "hints": [
+        "This is a linear homogeneous equation with constant coefficients, so use the characteristic equation.",
+        "Replace $y^{(n)}$ by $r^n$ and factor, noticing a repeated root at $r=0$.",
+        "A root $r$ of multiplicity $m$ contributes $e^{rx},xe^{rx},\\dots,x^{m-1}e^{rx}$."
+      ],
+      "steps": [
+        "Characteristic equation: $r^5+r^4-2r^3=0$.",
+        "Factor: $r^3(r^2+r-2)=r^3(r+2)(r-1)=0$.",
+        "Roots: $r=0$ (multiplicity 3), $r=-2$, $r=1$.",
+        "$y=c_1+c_2x+c_3x^2+c_4e^{x}+c_5e^{-2x}$."
+      ],
+      "brief": "$r^3(r+2)(r-1)=0$: $y=c_1+c_2x+c_3x^2+c_4e^x+c_5e^{-2x}$."
+    },
+    {
+      "sec": "5.3",
+      "q": "Let $r_1,r_2,r_3$ be the roots of the characteristic equation of the differential equation \\[ 3y'''-7y''-7y'+3y=0. \\] If $r_1\\le r_2\\le r_3$, then $r_1^2+r_2r_3=$",
+      "opts": [
+        "$2$",
+        "$0$",
+        "$\\dfrac{10}{9}$",
+        "$-\\dfrac{5}{3}$",
+        "$\\dfrac{7}{3}$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Write the characteristic equation and find its three roots.",
+        "Try a simple root such as $r=\\pm1$ and divide the cubic by the corresponding linear factor.",
+        "The characteristic equation of $ay'''+by''+cy'+dy=0$ is $ar^3+br^2+cr+d=0$; if $r=r_0$ is a root, then $(r-r_0)$ divides the polynomial."
+      ],
+      "steps": [
+        "Characteristic equation: $3r^3-7r^2-7r+3=0$.",
+        "$r=-1$ is a root, and dividing gives $(r+1)(3r^2-10r+3)=(r+1)(3r-1)(r-3)$.",
+        "Roots in order: $r_1=-1,\\ r_2=\\frac13,\\ r_3=3$.",
+        "$r_1^2+r_2r_3=1+\\frac13\\cdot3=2$."
+      ],
+      "brief": "$(r+1)(3r-1)(r-3)=0$: roots $-1,\\frac13,3$, so $1+1=2$."
+    },
+    {
+      "sec": "5.3",
+      "q": "Find a differential equation with constant coefficients whose general solution is \\[ y=c_1e^{3x}+c_2e^{-x}\\sin x+c_3e^{-x}\\cos x. \\]",
+      "opts": [
+        "$y'''-y''-4y'-6y=0$",
+        "$y'''-2y''-y'-4y=0$",
+        "$y'''+y''+4y'-6y=0$",
+        "$y'''+3y''-4y'+6y=0$",
+        "$y'''-y''-6y'=0$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Work backwards: read the characteristic roots from the solution.",
+        "Find the roots from each term, build the factors, and multiply them out.",
+        "$e^{ax}\\cos bx$ and $e^{ax}\\sin bx$ come from the roots $a\\pm bi$; each root $r_0$ gives a factor $(r-r_0)$ of the characteristic polynomial."
+      ],
+      "steps": [
+        "The roots are $r=3$ and $r=-1\\pm i$.",
+        "The characteristic polynomial is $(r-3)\\left[(r+1)^2+1\\right]=(r-3)(r^2+2r+2)$.",
+        "Expanding: $r^3+2r^2+2r-3r^2-6r-6=r^3-r^2-4r-6$.",
+        "So the equation is $y'''-y''-4y'-6y=0$."
+      ],
+      "brief": "Roots $3,-1\\pm i$: $(r-3)(r^2+2r+2)=r^3-r^2-4r-6$."
+    },
+    {
+      "sec": "5.5",
+      "q": "An appropriate form of a particular solution of the differential equation \\[ (D+1)(D-1)^2(D^2+4)y=1-3e^{x}+2x\\sin(2x) \\] is",
+      "opts": [
+        "$y_p=A+Bx^2e^{x}+(Cx+Dx^2)\\cos(2x)+(Ex+Fx^2)\\sin(2x)$",
+        "$y_p=A+Be^{x}+(Cx+D)\\cos(2x)+(Ex+F)\\sin(2x)$",
+        "$y_p=A+Bx^2e^{x}+(Cx+D)\\sin(2x)$",
+        "$y_p=A+Be^{x}+(Cx+Dx^2)\\sin(2x)$",
+        "$y_p=A+Bxe^{x}+(Cx+Dx^2)\\cos(2x)+(Ex+Fx^2)\\sin(2x)$"
+      ],
+      "ans": 0,
+      "hints": [
+        "First find the complementary solution, then choose the trial form for each term on the right and fix overlaps.",
+        "The roots of the characteristic equation are $r=-1$, $r=1$ (twice), $r=\\pm2i$. Compare each trial term with them.",
+        "If a trial term duplicates part of $y_c$, multiply that group by the smallest power $x^s$ that removes the duplication."
+      ],
+      "steps": [
+        "Roots: $r=-1,\\ 1,\\ 1,\\ \\pm2i$, so $y_c=c_1e^{-x}+c_2e^{x}+c_3xe^{x}+c_4\\cos2x+c_5\\sin2x$.",
+        "Term $1$: trial $A$, no overlap (0 is not a root).",
+        "Term $e^x$: trial $Be^x$ overlaps with $e^x,xe^x$, so use $Bx^2e^x$.",
+        "Term $2x\\sin2x$: trial $(Cx+D)\\cos2x+(Ex+F)\\sin2x$ overlaps with $y_c$, so multiply by $x$.",
+        "$y_p=A+Bx^2e^{x}+(Cx+Dx^2)\\cos(2x)+(Ex+Fx^2)\\sin(2x)$."
+      ],
+      "brief": "$y_c$ has $e^x,xe^x,\\cos2x,\\sin2x$, so use $x^2e^x$ and an extra factor $x$ on trig terms."
+    },
+    {
+      "sec": "5.5",
+      "q": "If $y_p$ is a particular solution of the differential equation \\[ y''+3y'-4y=2x^2, \\] then $y_p(-1)=$",
+      "opts": [
+        "$-\\dfrac{9}{16}$",
+        "$-\\dfrac12$",
+        "$\\dfrac74$",
+        "$\\dfrac{5}{16}$",
+        "$\\dfrac34$"
+      ],
+      "ans": 0,
+      "hints": [
+        "The right side is a polynomial, so use undetermined coefficients.",
+        "Check that the trial polynomial does not overlap $y_c$, then substitute $y_p=Ax^2+Bx+C$ and compare coefficients.",
+        "Match coefficients of $x^2$, $x$ and the constant on both sides to get a linear system for $A,B,C$."
+      ],
+      "steps": [
+        "Characteristic roots: $r^2+3r-4=(r+4)(r-1)=0$, so $y_c=c_1e^{-4x}+c_2e^{x}$ and there is no overlap.",
+        "Let $y_p=Ax^2+Bx+C$: $2A+3(2Ax+B)-4(Ax^2+Bx+C)=2x^2$.",
+        "$-4A=2$, $6A-4B=0$, $2A+3B-4C=0$ give $A=-\\frac12$, $B=-\\frac34$, $C=-\\frac{13}{16}$.",
+        "$y_p(-1)=-\\frac12+\\frac34-\\frac{13}{16}=-\\frac{9}{16}$."
+      ],
+      "brief": "$y_p=-\\frac12x^2-\\frac34x-\\frac{13}{16}$, so $y_p(-1)=-\\frac{9}{16}$."
+    },
+    {
+      "sec": "5.5",
+      "q": "A particular solution of the differential equation \\[ y''+16y=16\\sec^2(4x) \\] is",
+      "opts": [
+        "$y_p=-1+\\sin(4x)\\cdot\\ln|\\sec(4x)+\\tan(4x)|$",
+        "$y_p=-1+\\cos(4x)\\cdot\\ln|\\sec(4x)+\\tan(4x)|$",
+        "$y_p=-\\tan(4x)+\\sec(4x)\\tan(4x)$",
+        "$y_p=-4+\\sin(4x)\\cdot\\ln|\\sec(4x)+\\tan(4x)|$",
+        "$y_p=-\\sec(4x)+\\ln|\\sec(4x)+\\tan(4x)|$"
+      ],
+      "ans": 0,
+      "hints": [
+        "The right side is not of an undetermined-coefficients type, so use variation of parameters.",
+        "Find $y_1,y_2$ from the homogeneous equation, compute their Wronskian, then $u_1'$ and $u_2'$.",
+        "With $y_p=u_1y_1+u_2y_2$: $u_1'=-\\dfrac{y_2f}{W}$, $u_2'=\\dfrac{y_1f}{W}$ where $W=y_1y_2'-y_1'y_2$."
+      ],
+      "steps": [
+        "$r^2+16=0$ gives $y_1=\\cos4x$, $y_2=\\sin4x$, and $W=4$; here $f=16\\sec^2 4x$.",
+        "$u_1'=-\\dfrac{\\sin4x\\cdot16\\sec^24x}{4}=-4\\tan4x\\sec4x$, so $u_1=-\\sec4x$.",
+        "$u_2'=\\dfrac{\\cos4x\\cdot16\\sec^24x}{4}=4\\sec4x$, so $u_2=\\ln|\\sec4x+\\tan4x|$.",
+        "$y_p=-\\sec4x\\cos4x+\\sin4x\\ln|\\sec4x+\\tan4x|=-1+\\sin(4x)\\ln|\\sec(4x)+\\tan(4x)|$."
+      ],
+      "brief": "$W=4$, $u_1=-\\sec4x$, $u_2=\\ln|\\sec4x+\\tan4x|$: $y_p=-1+\\sin4x\\ln|\\sec4x+\\tan4x|$."
+    }
+  ]
+}

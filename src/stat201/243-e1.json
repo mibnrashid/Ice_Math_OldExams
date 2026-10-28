@@ -1,0 +1,335 @@
+{
+  "course": "stat201",
+  "term": "243",
+  "kind": "e1",
+  "date": "3 July 2025",
+  "minutes": 90,
+  "source": "stat319-243-e1.pdf",
+  "note": "no official key; answers derived and verified. Master has no (correct) marks (cover says USE THIS AS A TEMPLATE); all derived answers equal choice (a) except none (Q9 and Q10 needed interpretation, see per-question notes). Q11 is a NOT-true question and (a) is the false statement.  Date 03 July 2025 and 90 minutes are printed on the cover. Original course STAT 319 (now in Stat 201).",
+  "qs": [
+    {
+      "sec": "2.4",
+      "q": "Samples of emissions from three suppliers are classified for conformance to air-quality specifications. The results from 100 samples are summarized as follows: \\[\\begin{array}{c|cc} & \\text{Conforms} &  \\\\ \\text{Supplier} & \\text{Yes} & \\text{No} \\\\ \\hline H & 22 & 8 \\\\ L & 25 & 5 \\\\ M & 30 & 10 \\end{array}\\] Let $A$ denote the event that a sample is from supplier $H$, and let $B$ denote the event that a sample conforms to specifications. If a sample is selected at random, then $P(\\overline{A}\\mid\\overline{B})=$",
+      "opts": [
+        "0.6522",
+        "0.4286",
+        "0.1139",
+        "0.2025",
+        "0.7619"
+      ],
+      "ans": 0,
+      "hints": [
+        "This is a conditional probability computed from a two-way table, with complements.",
+        "Describe $\\overline{B}$ in words, then restrict attention to that column of the table only.",
+        "$P(E\\mid F)=\\dfrac{n(E\\cap F)}{n(F)}$ for equally likely outcomes, and $\\overline{A}$ means 'not $A$'."
+      ],
+      "steps": [
+        "$\\overline{B}$ = sample does not conform: $8+5+10=23$ samples.",
+        "Among these, those not from $H$ ($\\overline{A}$): $5+10=15$.",
+        "$P(\\overline{A}\\mid\\overline{B})=\\dfrac{15}{23}=0.6522$."
+      ],
+      "brief": "$P(\\bar A\\mid\\bar B)=15/23=0.6522$."
+    },
+    {
+      "sec": "2.3",
+      "q": "If $A$, $B$, and $C$ are mutually exclusive events with $P(A)=0.2$, $P(B)=0.3$, and $P(C)=0.4$, then $P(\\overline{A}\\cap\\overline{B}\\cap\\overline{C})=$",
+      "opts": [
+        "0.1",
+        "0",
+        "0.8",
+        "0.9",
+        "0.2"
+      ],
+      "ans": 0,
+      "hints": [
+        "Use De Morgan's law to turn the intersection of complements into the complement of a union.",
+        "Write $\\overline{A}\\cap\\overline{B}\\cap\\overline{C}=\\overline{A\\cup B\\cup C}$ and find the probability of the union.",
+        "For mutually exclusive events $P(A\\cup B\\cup C)=P(A)+P(B)+P(C)$, and $P(\\overline{E})=1-P(E)$."
+      ],
+      "steps": [
+        "$\\overline{A}\\cap\\overline{B}\\cap\\overline{C}=\\overline{A\\cup B\\cup C}$.",
+        "Mutually exclusive: $P(A\\cup B\\cup C)=0.2+0.3+0.4=0.9$.",
+        "So the probability is $1-0.9=0.1$."
+      ],
+      "brief": "$1-(0.2+0.3+0.4)=0.1$."
+    },
+    {
+      "sec": "2.4",
+      "q": "A lot of 50 spacing washers contains 30 washers that are thicker than the target dimension. Washers are selected from the lot at random without replacement; what is the minimum number of washers that need to be selected so that the probability that all the washers are thinner than the target is less than 0.10?",
+      "opts": [
+        "3",
+        "2",
+        "1",
+        "4",
+        "5"
+      ],
+      "ans": 0,
+      "hints": [
+        "Selection without replacement: multiply successive conditional probabilities (multiplication rule).",
+        "Find how many washers are thinner than the target, then compute the probability that the first $n$ chosen are all thinner for $n=1,2,3,\\dots$ until it drops below 0.10.",
+        "$P(\\text{all }n\\text{ thinner})=\\dfrac{T}{N}\\cdot\\dfrac{T-1}{N-1}\\cdots\\dfrac{T-n+1}{N-n+1}$, where $T$ is the number of thinner washers and $N$ the lot size."
+      ],
+      "steps": [
+        "Thinner washers: $50-30=20$ (every washer is thicker or thinner).",
+        "$n=1$: $20/50=0.4$. $n=2$: $0.4\\cdot\\frac{19}{49}=0.155$.",
+        "$n=3$: $0.155\\cdot\\frac{18}{48}=0.0582<0.10$.",
+        "The smallest $n$ is 3."
+      ],
+      "brief": "$P=\\frac{20}{50}\\frac{19}{49}\\frac{18}{48}=0.058<0.10$ first at $n=3$."
+    },
+    {
+      "sec": "2.7",
+      "q": "An email filter is being developed to help distinguish between spam and real (non-spam) emails. In this system, $10\\%$ of all emails are spam. The word 'free' appears in $80\\%$ of spam emails and in only $3\\%$ of real emails. What is the probability that a randomly selected email does not contain the word 'free'?",
+      "opts": [
+        "0.893",
+        "0.107",
+        "0.089",
+        "0.978",
+        "0.252"
+      ],
+      "ans": 0,
+      "hints": [
+        "Use the total probability rule over the two cases spam and real.",
+        "Find $P(\\text{free})$ by conditioning on spam / real, then take the complement.",
+        "$P(F)=P(F\\mid S)P(S)+P(F\\mid\\overline{S})P(\\overline{S})$ and $P(\\overline{F})=1-P(F)$."
+      ],
+      "steps": [
+        "$P(\\text{free})=0.8(0.10)+0.03(0.90)=0.08+0.027=0.107$.",
+        "$P(\\text{no 'free'})=1-0.107=0.893$."
+      ],
+      "brief": "$P(\\text{free})=0.107$, so the answer is $1-0.107=0.893$."
+    },
+    {
+      "sec": "3.3",
+      "q": "The thickness of wood paneling (in inches) that a customer orders is a random variable with the following cumulative distribution function: \\[F(x)=\\begin{cases}0 & x<1\\\\ 0.2 & 1\\le x<2\\\\ 0.5 & 2\\le x<3\\\\ 0.9 & 3\\le x<4\\\\ 1 & x\\ge 4\\end{cases}\\] What is the probability that a randomly selected order is for paneling at least 3 inches thick?",
+      "opts": [
+        "0.5",
+        "0.2",
+        "0.3",
+        "0.1",
+        "0.7"
+      ],
+      "ans": 0,
+      "hints": [
+        "Relate a probability about a discrete random variable to its CDF.",
+        "'At least 3' is the complement of 'less than 3'; for integer-valued $X$ this is $X\\le 2$.",
+        "For integer-valued $X$: $P(X\\ge a)=1-P(X\\le a-1)=1-F(a-1)$."
+      ],
+      "steps": [
+        "$X$ takes only the values 1, 2, 3, 4, so $P(X\\ge3)=1-P(X\\le2)$.",
+        "$F(2)=0.5$, so $P(X\\ge3)=1-0.5=0.5$.",
+        "Check: $P(3)+P(4)=0.4+0.1=0.5$."
+      ],
+      "brief": "$P(X\\ge3)=1-F(2)=0.5$."
+    },
+    {
+      "sec": "3.6",
+      "q": "In a sample of 30 heart failure patients, each independently having a $13\\%$ chance of being affected by external factors, what is the probability that at least 3 patients are affected by external factors?",
+      "opts": [
+        "0.767",
+        "0.208",
+        "0.130",
+        "0.870",
+        "0.792"
+      ],
+      "ans": 0,
+      "hints": [
+        "Independent trials with a fixed success chance: binomial distribution.",
+        "Use the complement: $P(X\\ge3)=1-P(X\\le2)$, and add the three terms $x=0,1,2$.",
+        "$P(X=x)=\\binom{n}{x}p^x(1-p)^{n-x}$."
+      ],
+      "steps": [
+        "$X\\sim\\text{Binomial}(n=30,\\,p=0.13)$.",
+        "$P(0)=0.87^{30}=0.0152$, $P(1)=30(0.13)(0.87)^{29}=0.0682$, $P(2)=435(0.13)^2(0.87)^{28}=0.1496$.",
+        "$P(X\\le2)=0.2330$, so $P(X\\ge3)=1-0.2330=0.767$."
+      ],
+      "brief": "$1-P(X\\le2)$ with $X\\sim\\text{Bin}(30,0.13)$ gives $0.767$."
+    },
+    {
+      "sec": "3.8",
+      "q": "A batch contains 40 bacterial cells, 12 of which are unable to replicate. If three cells are randomly selected without replacement, what is the probability that at least one of them is unable to replicate?",
+      "opts": [
+        "0.6684",
+        "0.7951",
+        "0.2049",
+        "0.3316",
+        "0.6830"
+      ],
+      "ans": 0,
+      "hints": [
+        "Sampling without replacement from a finite group with two types: hypergeometric.",
+        "Use the complement: 'at least one unable' is the opposite of 'none unable'.",
+        "$P(X=0)=\\dfrac{\\binom{K}{0}\\binom{N-K}{n}}{\\binom{N}{n}}$ for $N$ items, $K$ of the special type, sample size $n$."
+      ],
+      "steps": [
+        "$X$ = number unable to replicate, hypergeometric with $N=40$, $K=12$, $n=3$.",
+        "$P(X=0)=\\dfrac{\\binom{28}{3}}{\\binom{40}{3}}=\\dfrac{3276}{9880}=0.3316$.",
+        "$P(X\\ge1)=1-0.3316=0.6684$."
+      ],
+      "brief": "$1-\\binom{28}{3}/\\binom{40}{3}=0.6684$."
+    },
+    {
+      "sec": "3.9",
+      "q": "The number of telephone calls that arrive at a phone exchange is often modeled as a Poisson random variable. Assume that on the average there are 8 calls per hour, what is the probability that there are exactly 5 calls in 30 minutes?",
+      "opts": [
+        "0.1563",
+        "0.0916",
+        "0.0424",
+        "0.0992",
+        "0.1843"
+      ],
+      "ans": 0,
+      "hints": [
+        "Poisson count; first adjust the rate to the length of the interval.",
+        "Convert 8 calls per hour to the mean number of calls in 30 minutes, then use the Poisson pmf.",
+        "$P(X=x)=\\dfrac{e^{-\\lambda}\\lambda^x}{x!}$ with $\\lambda=(\\text{rate})\\times(\\text{length of interval})$."
+      ],
+      "steps": [
+        "For 30 minutes, $\\lambda=8\\times0.5=4$.",
+        "$P(X=5)=\\dfrac{e^{-4}4^5}{5!}=\\dfrac{0.018316\\cdot1024}{120}=0.1563$."
+      ],
+      "brief": "$\\lambda=4$; $P(5)=e^{-4}4^5/5!=0.1563$."
+    },
+    {
+      "sec": "3.4",
+      "q": "There is a chance that a bit transmitted through a digital transmission channel is received in error. Let $X$ equal the number of bits in error in the next four bits transmitted. Assume that the probability mass function of $X$ is given by \\[P(X=x)=\\begin{cases}ax & x=1,2,3\\text{ or }4\\\\ 0 & \\text{otherwise}\\end{cases}\\] The expected value of the number of properly functioning components",
+      "opts": [
+        "1",
+        "2",
+        "4",
+        "5",
+        "3"
+      ],
+      "ans": 0,
+      "hints": [
+        "First use the fact that a pmf sums to 1 to find the constant, then think about what 'properly functioning' means among the four bits.",
+        "Find $a$, compute $E(X)$, and note that the number of correctly received bits is the total number of bits minus $X$.",
+        "$\\sum_x P(X=x)=1$, $E(X)=\\sum_x xP(X=x)$, and $E(c-X)=c-E(X)$."
+      ],
+      "steps": [
+        "$a(1+2+3+4)=1$, so $a=0.1$.",
+        "$E(X)=0.1(1+4+9+16)=3$ bits in error on average.",
+        "Properly functioning (correctly received) bits are $4-X$, so the expected value is $4-3=1$."
+      ],
+      "brief": "$a=0.1$, $E(X)=3$ errors, so $E(4-X)=1$.",
+      "note": "The printed question is garbled ('properly functioning components' instead of a clear quantity). Interpreted as the expected number of correctly received bits among the four, 4 - E(X) = 1, which is choice (a) in the master. E(X) itself (=3) is also among the choices; the master convention supports 1."
+    },
+    {
+      "sec": "6.4",
+      "q": "The \"cold start ignition time\" of an automobile engine is being investigated by a gasoline manufacturer. Two formulation of the gasoline was tested in the same vehicle. Use the following graph to comment on both formulas (box plots of Formula1 and Formula2). Which of the following statements is true?",
+      "opts": [
+        "Formula 1 has a lower mean cold start ignition time and is more consistent",
+        "Both formulas have identical performance characteristics",
+        "Formula 2 has a lower median ignition time than Formula 1, indicating better performance",
+        "Formula 1 has more variation in ignition time than Formula 2",
+        "Formula 2 shows more consistent performance than Formula 1"
+      ],
+      "ans": 0,
+      "hints": [
+        "Read the box plots: the line in the box is the median and the box length is the interquartile range.",
+        "Compare the medians and the box lengths (and whiskers) of the two formulas.",
+        "A shorter box (smaller IQR) means less spread, i.e. more consistent; a lower median line means smaller typical values."
+      ],
+      "steps": [
+        "Formula 1: median about 2.45, box from about 1.95 to 2.97 (IQR about 1.0).",
+        "Formula 2: median about 2.8, box from about 2.0 to 3.3 (IQR about 1.3), and longer whiskers.",
+        "Formula 1 has the lower centre and the smaller spread, so it is the lower and more consistent one. The other statements contradict the plot."
+      ],
+      "brief": "Formula 1: lower centre, shorter box, so less variation.",
+      "img": "stat201-243-e1-q10.png",
+      "note": "Box plot cannot show the mean; the master statement (a) is the only one consistent with the plot (lower centre, smaller spread), so it is kept as the key."
+    },
+    {
+      "sec": "6.1",
+      "q": "Which of the following statements is NOT true?",
+      "opts": [
+        "The median can be greater than the mean when the sample is symmetric about the mean value",
+        "The median will equal the mode when the sample is symmetric with a single mode",
+        "The symmetry implies the mode is at the median of the sample",
+        "The median will be equal to the mean when the sample is symmetric about the mean value",
+        "The mean is sensitive to extreme values while the median is not sensitive to the extreme values"
+      ],
+      "ans": 0,
+      "hints": [
+        "Think about where the mean, median and mode lie for a symmetric distribution.",
+        "Check each statement against what symmetry forces; look for the one that contradicts it.",
+        "For a symmetric sample the mean and median coincide (and for a single mode, the mode too); the mean is affected by extreme values, the median is not."
+      ],
+      "steps": [
+        "If a sample is symmetric about its mean, the median equals the mean, so the first statement is false.",
+        "The other statements (median = mode for a single-mode symmetric sample, median = mean, mean sensitive and median resistant to extremes) are all true.",
+        "So the statement that is NOT true is the one saying the median can exceed the mean for a symmetric sample."
+      ],
+      "brief": "Symmetric means median = mean, so 'median can exceed the mean' is false."
+    },
+    {
+      "sec": "6.1",
+      "q": "Which of the following statements is true?",
+      "opts": [
+        "The sample standard deviation can be equal to zero",
+        "The sample mean will always correspond to one of the observations in the sample",
+        "Exactly half of the observations in a sample will fall below the mean",
+        "The sample mean will always be the most frequently occurring data value in the sample",
+        "Suppose that you add 10 to all of the observations in a sample, the sample standard deviation will change"
+      ],
+      "ans": 0,
+      "hints": [
+        "Think about what the standard deviation measures and which operations change it.",
+        "Test each statement with a tiny example, such as a sample whose values are all equal.",
+        "$s=\\sqrt{\\frac{\\sum(x_i-\\bar x)^2}{n-1}}$ is zero exactly when all observations are equal, and adding a constant shifts the mean but not the deviations."
+      ],
+      "steps": [
+        "If all observations are equal, every $x_i-\\bar x=0$, so $s=0$ is possible.",
+        "The mean need not be a data value (e.g. 1 and 2 give 1.5), need not be the mode, and need not split the data in half (that is the median).",
+        "Adding 10 to every value leaves $x_i-\\bar x$ unchanged, so $s$ does not change. Hence only the first statement is true."
+      ],
+      "brief": "$s=0$ when all values are equal; the others are false."
+    },
+    {
+      "sec": "6.1",
+      "q": "The following data are direct solar intensity measurements ($watts/m^2$) on different days at a location in southern Spain: \\[\\begin{array}{cccccccccccc} 562 & 869 & 708 & 775 & 775 & 704 & 809 & 856 & 655 & 806 & 878 & 909\\\\ 918 & 558 & 768 & 870 & 918 & 940 & 946 & 661 & 820 & 898 & 935 & 952\\\\ 957 & 693 & 835 & 905 & 939 & 955 & 960 & 498 & 653 & 730 & 753 & \\end{array}\\] Given that $\\sum_{i=1}^{35}x_i=28368$ and $\\sum_{i=1}^{35}x_i^2=23552500$. The estimated value of the population standard deviation.",
+      "opts": [
+        "128.3184",
+        "126.4719",
+        "15995.16",
+        "16465.61",
+        "810.5143"
+      ],
+      "ans": 0,
+      "hints": [
+        "Estimate the population standard deviation by the sample standard deviation, using the summation shortcut.",
+        "Compute $s^2$ from $\\sum x_i$ and $\\sum x_i^2$ with $n=35$, then take the square root.",
+        "$s^2=\\dfrac{\\sum x_i^2-\\left(\\sum x_i\\right)^2/n}{n-1}$ and $s=\\sqrt{s^2}$."
+      ],
+      "steps": [
+        "$\\left(\\sum x_i\\right)^2/n=28368^2/35=804\\,743\\,424/35=22\\,992\\,669.3$.",
+        "$s^2=\\dfrac{23\\,552\\,500-22\\,992\\,669.3}{34}=16465.61$.",
+        "$s=\\sqrt{16465.61}=128.3184$ (16465.61 is the variance, not the standard deviation)."
+      ],
+      "brief": "$s^2=16465.61$, so $s=128.3184$."
+    },
+    {
+      "sec": "6.4",
+      "q": "The data are available on compressive strengths in pounds per square inch (psi) of 80 specimens of a new aluminum-lithium alloy undergoing evaluation as a possible material for aircraft structural elements. A summary descriptive statistic of the data is given below: \\[\\begin{array}{cccccc} \\text{Min.} & \\text{1st Qu.} & \\text{Median} & \\text{Mean} & \\text{3rd Qu.} & \\text{Max.}\\\\ 76 & 144.5 & 161.5 & 162.7 & 181 & 245 \\end{array}\\] Which of the following is true?",
+      "opts": [
+        "The interquartile range equal to 36.5",
+        "There are no outliers in the data",
+        "There are extreme outliers in the data",
+        "The data negatively skewed (left skewed)",
+        "The data symmetric around the mean"
+      ],
+      "ans": 0,
+      "hints": [
+        "Use the quartiles to get the IQR and the box plot fences for outliers.",
+        "Compute IQR $=Q_3-Q_1$, then the fences $Q_1-1.5\\,\\text{IQR}$ and $Q_3+1.5\\,\\text{IQR}$ (extreme: 3 IQR), and compare with the min and max.",
+        "Outlier if $x<Q_1-1.5\\,\\text{IQR}$ or $x>Q_3+1.5\\,\\text{IQR}$; extreme outlier if beyond $3\\,\\text{IQR}$ from the box."
+      ],
+      "steps": [
+        "$\\text{IQR}=181-144.5=36.5$.",
+        "Fences: $144.5-54.75=89.75$ and $181+54.75=235.75$; min 76 and max 245 lie outside, so there are (mild) outliers, not 'none'.",
+        "Extreme fences $144.5-109.5=35$ and $181+109.5=290.5$ are not crossed, so no extreme outliers. Mean 162.7 > median 161.5 (and the quartile gaps 17 and 19.5 are not equal), so the data are not left skewed or exactly symmetric. Only the IQR statement is true."
+      ],
+      "brief": "IQR $=181-144.5=36.5$; outliers are mild only."
+    }
+  ]
+}

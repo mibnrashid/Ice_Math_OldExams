@@ -1,0 +1,325 @@
+{
+  "course": "math208",
+  "term": "222",
+  "kind": "e2",
+  "date": "27 March 2023",
+  "minutes": 120,
+  "source": "math208-222-ex2.pdf",
+  "note": "No answer marks or key table on the master; keys determined by solving every question (checked with sympy; the correct choice is (a) for all 13 in master order). Date and 120 net minutes taken from the cover page.",
+  "qs": [
+    {
+      "sec": "4.2",
+      "q": "Which one of the following sets $V$ is a subspace of $\\mathbb{R}^3$?",
+      "opts": [
+        "$V$ is the set of all $(x,y,z)$ such that $z=2x+3y$",
+        "$V$ is the set of all $(x,y,z)$ such that $y=1$",
+        "$V$ is the set of all $(x,y,z)$ such that $x+y+z=3$",
+        "$V$ is the set of all $(x,y,z)$ such that $z\\ge0$",
+        "$V$ is the set of all $(x,y,z)$ such that $xyz=1$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Use the subspace test: the zero vector, closure under addition, closure under scalar multiplication.",
+        "Check each set for the zero vector first, then look for a pair of vectors or a scalar that breaks closure.",
+        "The solution set of a homogeneous linear equation (or system) $A\\mathbf{x}=\\mathbf{0}$ is always a subspace of $\\mathbb{R}^n$."
+      ],
+      "steps": [
+        "$z=2x+3y$ is the homogeneous equation $2x+3y-z=0$, so $V$ contains $\\mathbf{0}$ and is closed under sums and scalar multiples: a subspace.",
+        "$y=1$: $(0,0,0)$ gives $0\\neq1$, so $\\mathbf{0}\\notin V$.",
+        "$x+y+z=3$: $(0,0,0)$ gives $0\\neq3$, so $\\mathbf{0}\\notin V$.",
+        "$z\\ge0$: $(0,0,1)\\in V$ but $-1\\cdot(0,0,1)=(0,0,-1)\\notin V$.",
+        "$xyz=1$: $\\mathbf{0}\\notin V$ since $0\\neq1$."
+      ],
+      "brief": "Only $z=2x+3y$ is a homogeneous linear condition; the others miss $\\mathbf{0}$ or fail closure."
+    },
+    {
+      "sec": "4.3",
+      "q": "Consider the vectors $\\vec t=(4,20,23)$, $\\vec u=(1,3,2)$, $\\vec v=(2,8,7)$ and $\\vec w=(1,7,9)$. If $\\vec t=a\\vec u+b\\vec v+c\\vec w$, then $a+b-c=$",
+      "opts": [
+        "$0$",
+        "$1$",
+        "$2$",
+        "$-1$",
+        "$-2$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Writing a vector as a linear combination of others leads to a linear system.",
+        "Compare components to get three equations in $a,b,c$ and row-reduce the augmented matrix.",
+        "$\\mathbf{t}=a\\mathbf{u}+b\\mathbf{v}+c\\mathbf{w}$ is equivalent to the system whose coefficient columns are $\\mathbf{u},\\mathbf{v},\\mathbf{w}$ and whose right side is $\\mathbf{t}$."
+      ],
+      "steps": [
+        "Components: $a+2b+c=4$, $3a+8b+7c=20$, $2a+7b+9c=23$.",
+        "$R_2-3R_1$: $2b+4c=8$, i.e. $b+2c=4$. $R_3-2R_1$: $3b+7c=15$.",
+        "Then $3b+7c-3(b+2c)=15-12$ gives $c=3$, so $b=4-6=-2$.",
+        "$a=4-2b-c=4+4-3=5$.",
+        "$a+b-c=5-2-3=0$."
+      ],
+      "brief": "Solve $a+2b+c=4$, $3a+8b+7c=20$, $2a+7b+9c=23$: $(a,b,c)=(5,-2,3)$, so $a+b-c=0$."
+    },
+    {
+      "sec": "4.3",
+      "q": "The vectors $v_1=(1,0,1)$, $v_2=(2,-3,4)$ and $v_3=(3,5,a)$ are linearly dependent if $3a=$",
+      "opts": [
+        "$-1$",
+        "$0$",
+        "$2$",
+        "$1$",
+        "$-2$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Three vectors in $\\mathbb{R}^3$ are dependent exactly when a certain determinant vanishes.",
+        "Form the $3\\times3$ matrix with the vectors as rows and compute its determinant in terms of $a$.",
+        "$n$ vectors in $\\mathbb{R}^n$ are linearly dependent if and only if the determinant of the matrix formed by them is $0$."
+      ],
+      "steps": [
+        "Set $\\det\\begin{bmatrix}1&0&1\\\\2&-3&4\\\\3&5&a\\end{bmatrix}=0$.",
+        "Expand along the first row: $1(-3a-20)-0+1(10+9)=-3a-1$.",
+        "$-3a-1=0$, so $3a=-1$."
+      ],
+      "brief": "$\\det=-3a-1=0$, so $3a=-1$."
+    },
+    {
+      "sec": "4.4",
+      "q": "Given that the vectors $v_1=(2,0,0,0)$, $v_2=(0,3,0,0)$, $v_3=(0,0,7,6)$ and $v_4=(0,0,4,a)$ form a basis for $\\mathbb{R}^4$, then $7a\\neq$",
+      "opts": [
+        "$24$",
+        "$18$",
+        "$12$",
+        "$6$",
+        "$0$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Four vectors form a basis of $\\mathbb{R}^4$ exactly when they are linearly independent, i.e. a determinant is nonzero.",
+        "Put the vectors in a $4\\times4$ matrix; it is block diagonal, so the determinant is easy to compute.",
+        "$n$ vectors form a basis of $\\mathbb{R}^n$ if and only if the matrix having them as rows has nonzero determinant; a block-diagonal matrix has determinant equal to the product of the block determinants."
+      ],
+      "steps": [
+        "The determinant is $\\begin{vmatrix}2&0&0&0\\\\0&3&0&0\\\\0&0&7&6\\\\0&0&4&a\\end{vmatrix}=2\\cdot3\\cdot(7a-24)$.",
+        "A basis needs this to be nonzero, so $7a-24\\neq0$.",
+        "Hence $7a\\neq24$."
+      ],
+      "brief": "$\\det=6(7a-24)\\neq0$, so $7a\\neq24$."
+    },
+    {
+      "sec": "4.4",
+      "q": "The dimension of the subspace consisting of the set of all vectors of the form $(a,b,c,d)$ for which $a+2b=c+3d=0$ is",
+      "opts": [
+        "$2$",
+        "$3$",
+        "$4$",
+        "$1$",
+        "$0$"
+      ],
+      "ans": 0,
+      "hints": [
+        "The dimension of a solution space of a homogeneous system equals the number of free variables.",
+        "Solve the two equations for some variables in terms of the others and count the free ones.",
+        "If a homogeneous system has $k$ free variables, its solution space has a basis of $k$ vectors, so its dimension is $k$."
+      ],
+      "steps": [
+        "The conditions are $a+2b=0$ and $c+3d=0$.",
+        "So $a=-2b$ and $c=-3d$, with $b$ and $d$ free.",
+        "$(a,b,c,d)=b(-2,1,0,0)+d(0,0,-3,1)$, two independent vectors.",
+        "The dimension is $2$."
+      ],
+      "brief": "Two equations on four variables, $b,d$ free: dimension $2$."
+    },
+    {
+      "sec": "4.5",
+      "q": "The rank of the matrix $A=\\begin{bmatrix}1&-2&-3&-5\\\\1&4&9&2\\\\1&3&7&1\\\\2&2&6&-3\\end{bmatrix}$ is",
+      "opts": [
+        "$3$",
+        "$4$",
+        "$2$",
+        "$1$",
+        "$0$"
+      ],
+      "ans": 0,
+      "hints": [
+        "The rank is the number of nonzero rows in a row-echelon form of the matrix.",
+        "Row-reduce $A$ using the first row to clear the first column.",
+        "Row operations do not change the rank, and the rank equals the number of nonzero rows (pivots) in an echelon form."
+      ],
+      "steps": [
+        "$R_2-R_1$, $R_3-R_1$, $R_4-2R_1$ give rows $(0,6,12,7)$, $(0,5,10,6)$, $(0,6,12,7)$.",
+        "The fourth row equals the second, so subtracting gives a zero row.",
+        "Scale row 2 by $\\frac16$: $(0,1,2,\\frac76)$. Then $R_3-5R_2$ gives $(0,0,0,\\frac16)\\neq\\mathbf{0}$.",
+        "The echelon form has pivots in columns $1,2,4$ and one zero row, so the rank is $3$."
+      ],
+      "brief": "Row reduction leaves 3 nonzero rows (4th row duplicates the 2nd): rank $3$."
+    },
+    {
+      "sec": "5.2",
+      "q": "If $y=c_1\\cos(\\ln x)+c_2\\sin(\\ln x)$ is a solution of the initial-value problem \\[ x^2y''+xy'+y=0,\\quad y(1)=7,\\ y'(1)=2, \\] then $c_1+c_2=$",
+      "opts": [
+        "$9$",
+        "$5$",
+        "$-5$",
+        "$-9$",
+        "$0$"
+      ],
+      "ans": 0,
+      "hints": [
+        "The solution is already given, so only the constants must be found from the two initial conditions.",
+        "Differentiate $y$ with the chain rule and evaluate $y$ and $y'$ at $x=1$, where $\\ln 1=0$.",
+        "$\\dfrac{d}{dx}\\cos(\\ln x)=-\\dfrac{\\sin(\\ln x)}{x}$ and $\\dfrac{d}{dx}\\sin(\\ln x)=\\dfrac{\\cos(\\ln x)}{x}$; also $\\cos0=1$, $\\sin0=0$."
+      ],
+      "steps": [
+        "$y'=\\dfrac{-c_1\\sin(\\ln x)+c_2\\cos(\\ln x)}{x}$.",
+        "$y(1)=c_1\\cos0+c_2\\sin0=c_1=7$.",
+        "$y'(1)=-c_1\\sin0+c_2\\cos0=c_2=2$.",
+        "$c_1+c_2=9$."
+      ],
+      "brief": "$y(1)=c_1=7$, $y'(1)=c_2=2$, so $c_1+c_2=9$."
+    },
+    {
+      "sec": "5.2",
+      "q": "Which of the following sets of solutions of homogeneous linear differential equations, is linearly independent?",
+      "opts": [
+        "$\\{1,\\ e^x,\\ \\sinh x\\}$",
+        "$\\{0,\\ \\sin x,\\ e^x\\}$",
+        "$\\{17,\\ 2\\sin^2x,\\ 3\\cos^2x\\}$",
+        "$\\{e^x,\\ \\cosh x,\\ \\sinh x\\}$",
+        "$\\{17,\\ \\cos^2x,\\ \\cos2x\\}$"
+      ],
+      "ans": 0,
+      "hints": [
+        "A set is dependent if one member is a linear combination of the others, so look for hidden identities.",
+        "Check each set for the zero function, trig identities, and the definitions of $\\sinh$ and $\\cosh$.",
+        "$\\sin^2x+\\cos^2x=1$, $\\cos2x=2\\cos^2x-1$, $\\cosh x=\\frac{e^x+e^{-x}}2$, $\\sinh x=\\frac{e^x-e^{-x}}2$; any set containing the zero function is dependent."
+      ],
+      "steps": [
+        "$\\{0,\\sin x,e^x\\}$ contains the zero function, so it is dependent.",
+        "$17=\\frac{17}{2}(2\\sin^2x)+\\frac{17}3(3\\cos^2x)$, so the third set is dependent.",
+        "$e^x=\\cosh x+\\sinh x$, so the fourth set is dependent.",
+        "$\\cos2x=2\\cos^2x-1=2\\cos^2x-\\frac1{17}\\cdot17$, so the fifth set is dependent.",
+        "In $\\{1,e^x,\\sinh x\\}$, $\\sinh x=\\frac12e^x-\\frac12e^{-x}$ contains $e^{-x}$, which is not a combination of $1$ and $e^x$, so the set is independent."
+      ],
+      "brief": "Others contain $0$ or satisfy an identity; $1,e^x,\\sinh x$ is independent."
+    },
+    {
+      "sec": "5.3",
+      "q": "The general solution of the differential equation $y^{(4)}+3y''-4y=0$ is $y=$",
+      "opts": [
+        "$c_1e^x+c_2e^{-x}+c_3\\sin2x+c_4\\cos2x$",
+        "$c_1e^x+c_2xe^x+c_3\\sin2x+c_4\\cos2x$",
+        "$c_1e^{-x}+c_2xe^{-x}+c_3\\sin2x+c_4\\cos2x$",
+        "$c_1e^x+c_2e^{-x}+c_3\\sin2x$",
+        "$c_1e^x+c_2e^{-x}+c_3\\sin4x+c_4\\cos4x$"
+      ],
+      "ans": 0,
+      "hints": [
+        "This is a linear homogeneous equation with constant coefficients, so use the characteristic equation.",
+        "Replace $y^{(k)}$ by $r^k$ and factor the resulting quartic as a quadratic in $r^2$.",
+        "Each simple real root $r$ gives $e^{rx}$; a pair $r=\\pm bi$ gives $\\cos bx$ and $\\sin bx$."
+      ],
+      "steps": [
+        "Characteristic equation: $r^4+3r^2-4=0$.",
+        "Factor: $(r^2+4)(r^2-1)=0$.",
+        "$r^2=1$ gives $r=\\pm1$; $r^2=-4$ gives $r=\\pm2i$.",
+        "$y=c_1e^x+c_2e^{-x}+c_3\\sin2x+c_4\\cos2x$."
+      ],
+      "brief": "$r^4+3r^2-4=(r^2+4)(r^2-1)$: roots $\\pm1,\\pm2i$."
+    },
+    {
+      "sec": "5.3",
+      "q": "If $y=c_1e^{ax}+c_2e^{-x}\\sin x+c_3g(x)$ is the general solution of the differential equation \\[ 9y'''+11y''+4y'-14y=0, \\] then $a=$",
+      "opts": [
+        "$\\dfrac79$",
+        "$\\dfrac59$",
+        "$\\dfrac13$",
+        "$-1$",
+        "$1$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Use the characteristic equation; the term $e^{-x}\\sin x$ tells you about a complex pair of roots.",
+        "Write down the cubic and use the complex pair to find a quadratic factor, then divide.",
+        "A term $e^{\\alpha x}\\sin\\beta x$ comes from the roots $r=\\alpha\\pm\\beta i$, which are roots of $(r-\\alpha)^2+\\beta^2=0$."
+      ],
+      "steps": [
+        "Characteristic equation: $9r^3+11r^2+4r-14=0$.",
+        "$e^{-x}\\sin x$ means $r=-1\\pm i$, i.e. the factor $(r+1)^2+1=r^2+2r+2$.",
+        "Divide: $9r^3+11r^2+4r-14=(r^2+2r+2)(9r-7)$.",
+        "The real root is $r=\\frac79$, so $a=\\frac79$."
+      ],
+      "brief": "$9r^3+11r^2+4r-14=(r^2+2r+2)(9r-7)$, real root $a=\\frac79$."
+    },
+    {
+      "sec": "5.3",
+      "q": "A linear homogeneous constant-coefficient equation which has the general solution $y(x)=(A+Bx)e^{2x}+Ce^{-2x}$ is",
+      "opts": [
+        "$y'''-2y''-4y'+8y=0$",
+        "$y'''+6y''-4y'+8y=0$",
+        "$y'''-2y''+4y'+8y=0$",
+        "$y'''-2y''-4y'-8y=0$",
+        "$y''-4y=0$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Work backwards from the solution to the characteristic roots and then to the characteristic polynomial.",
+        "Read off the roots with multiplicities, multiply out the factors, and turn $r^k$ back into $y^{(k)}$.",
+        "If the roots are $r_1,\\dots,r_n$, the characteristic polynomial is $(r-r_1)\\cdots(r-r_n)$; a factor $x$ in front of $e^{rx}$ means $r$ is a repeated root."
+      ],
+      "steps": [
+        "$(A+Bx)e^{2x}$ means $r=2$ is a double root, and $e^{-2x}$ means $r=-2$.",
+        "Characteristic polynomial: $(r-2)^2(r+2)=(r^2-4r+4)(r+2)$.",
+        "Expanding: $r^3-2r^2-4r+8$.",
+        "So the equation is $y'''-2y''-4y'+8y=0$."
+      ],
+      "brief": "Roots $2,2,-2$: $(r-2)^2(r+2)=r^3-2r^2-4r+8$."
+    },
+    {
+      "sec": "5.5",
+      "q": "An appropriate form of a particular solution $y_p$ for the non-homogeneous differential equation \\[ (D-1)^3(D^2-4)y=xe^x+e^{2x}+e^{-2x} \\] is given by $y_p(x)=$",
+      "opts": [
+        "$Axe^{2x}+Bxe^{-2x}+Cx^3e^x+Dx^4e^x$",
+        "$Ae^{2x}+Be^{-2x}+Ce^x+Dxe^x$",
+        "$Axe^{2x}+Bxe^{-2x}+Ce^x+Dx^2e^x+Ex^3e^x$",
+        "$Axe^{2x}+Be^{-2x}+Cx^3e^x+Dx^4e^x$",
+        "$Axe^{2x}+Bxe^{-2x}+Ce^x+Dxe^x+Ex^2e^x$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Use undetermined coefficients, and compare the trial terms with the solutions of the homogeneous equation.",
+        "Find the characteristic roots of the left side, write the trial form for each term on the right, then multiply by the lowest power of $x$ that avoids overlap.",
+        "For a right-hand-side term $x^me^{rx}$, the trial function is $x^s(A_0+\\dots+A_mx^m)e^{rx}$, where $s$ is the multiplicity of $r$ as a characteristic root ($s=0$ if it is not a root)."
+      ],
+      "steps": [
+        "Characteristic roots: $r=1$ (multiplicity 3), $r=2$, $r=-2$. So $y_c=(c_1+c_2x+c_3x^2)e^x+c_4e^{2x}+c_5e^{-2x}$.",
+        "For $xe^x$: the trial $(A+Bx)e^x$ is multiplied by $x^3$, giving $Cx^3e^x+Dx^4e^x$.",
+        "For $e^{2x}$: $r=2$ is a simple root, so the trial is $Axe^{2x}$.",
+        "For $e^{-2x}$: $r=-2$ is a simple root, so the trial is $Bxe^{-2x}$.",
+        "$y_p=Axe^{2x}+Bxe^{-2x}+Cx^3e^x+Dx^4e^x$."
+      ],
+      "brief": "Roots $1,1,1,2,-2$: trial terms $xe^{2x}$, $xe^{-2x}$, $x^3e^x$, $x^4e^x$."
+    },
+    {
+      "sec": "5.5",
+      "q": "Given that $y_p=u_1\\cos x-\\cos x\\sin x$ is a particular solution of the differential equation $y''+y=\\tan x$, then $u_1(x)=$",
+      "opts": [
+        "$\\sin x-\\ln|\\sec x+\\tan x|$",
+        "$\\cos x-\\ln|\\csc x+\\cot x|$",
+        "$\\sin x+\\ln|\\sec x+\\tan x|$",
+        "$\\sin x-\\ln|\\sec x|$",
+        "$\\cos x+\\ln|\\cot x|$"
+      ],
+      "ans": 0,
+      "hints": [
+        "This is variation of parameters with $y_1=\\cos x$ and $y_2=\\sin x$.",
+        "Compute the Wronskian of $\\cos x$ and $\\sin x$, then find $u_1'$ from the formula and integrate.",
+        "For $y''+Py'+Qy=f$ with solutions $y_1,y_2$ and $W=y_1y_2'-y_1'y_2$: $y_p=u_1y_1+u_2y_2$, $u_1'=-\\dfrac{y_2f}{W}$, $u_2'=\\dfrac{y_1f}{W}$."
+      ],
+      "steps": [
+        "$y_1=\\cos x$, $y_2=\\sin x$, $W=\\cos^2x+\\sin^2x=1$.",
+        "$u_1'=-\\sin x\\tan x=-\\dfrac{\\sin^2x}{\\cos x}=-\\dfrac{1-\\cos^2x}{\\cos x}=\\cos x-\\sec x$.",
+        "Integrate: $u_1=\\sin x-\\ln|\\sec x+\\tan x|$.",
+        "Check: $u_2'=\\cos x\\tan x=\\sin x$ gives $u_2=-\\cos x$, matching the given term $-\\cos x\\sin x$."
+      ],
+      "brief": "$W=1$, $u_1'=-\\sin x\\tan x=\\cos x-\\sec x$, so $u_1=\\sin x-\\ln|\\sec x+\\tan x|$."
+    }
+  ]
+}

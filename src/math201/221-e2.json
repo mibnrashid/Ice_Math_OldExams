@@ -1,0 +1,479 @@
+{
+  "course": "math201",
+  "term": "221",
+  "kind": "e2",
+  "date": "",
+  "minutes": 90,
+  "source": "math201-221-e2.pdf",
+  "qs": [
+    {
+      "sec": "11.5",
+      "q": "Symmetric equations for the line of intersection of the planes $x+2y+3z=1$ and $x-y+z=1$ are given by",
+      "opts": [
+        "$\\dfrac{x-1}{5}=\\dfrac{y}{2}=\\dfrac{z}{-3}$",
+        "$\\dfrac{x+1}{5}=\\dfrac{y}{2}=\\dfrac{z}{-3}$",
+        "$\\dfrac{x}{5}=\\dfrac{y-1}{2}=\\dfrac{z}{3}$",
+        "$\\dfrac{x}{5}=\\dfrac{y-1}{2}=\\dfrac{z-2}{3}$",
+        "$\\dfrac{x-1}{5}=\\dfrac{y-1}{2}=\\dfrac{z+1}{3}$"
+      ],
+      "ans": 0,
+      "hints": [
+        "A line is determined by a point on it and a direction vector.",
+        "The line lies in both planes, so its direction is perpendicular to both normal vectors. Also find any one point common to both planes.",
+        "The direction of the intersection of two planes is $\\mathbf{n}_1\\times\\mathbf{n}_2$; the symmetric equations through $(x_0,y_0,z_0)$ with direction $\\langle a,b,c\\rangle$ are $\\frac{x-x_0}{a}=\\frac{y-y_0}{b}=\\frac{z-z_0}{c}$."
+      ],
+      "steps": [
+        "Normals: $\\mathbf{n}_1=\\langle1,2,3\\rangle$, $\\mathbf{n}_2=\\langle1,-1,1\\rangle$.",
+        "Direction: $\\mathbf{n}_1\\times\\mathbf{n}_2=\\langle 2+3,\\ 3-1,\\ -1-2\\rangle=\\langle5,2,-3\\rangle$.",
+        "A point: set $z=0$, then $x+2y=1$ and $x-y=1$ give $y=0$, $x=1$, so $(1,0,0)$.",
+        "Symmetric equations: $\\dfrac{x-1}{5}=\\dfrac{y}{2}=\\dfrac{z}{-3}$."
+      ],
+      "brief": "Direction $\\mathbf{n}_1\\times\\mathbf{n}_2=\\langle5,2,-3\\rangle$, point $(1,0,0)$."
+    },
+    {
+      "sec": "11.5",
+      "q": "The point of intersection of the line whose parametric equations are $x=2-2t$, $y=3t$, $z=1+t$ and the plane $x+2y-z=7$ is $(a,b,c)$, then $a+b+c=$",
+      "opts": [
+        "$7$",
+        "$6$",
+        "$5$",
+        "$4$",
+        "$0$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Points on the line are given by a parameter, so the intersection corresponds to one value of that parameter.",
+        "Substitute the parametric expressions for $x,y,z$ into the plane equation and solve for $t$.",
+        "A point $(x(t),y(t),z(t))$ of a line lies on the plane $Ax+By+Cz=D$ exactly when $Ax(t)+By(t)+Cz(t)=D$."
+      ],
+      "steps": [
+        "Substitute: $(2-2t)+2(3t)-(1+t)=7$.",
+        "Simplify: $1+3t=7$, so $t=2$.",
+        "The point is $(2-4,\\ 6,\\ 1+2)=(-2,6,3)$.",
+        "$a+b+c=-2+6+3=7$."
+      ],
+      "brief": "$1+3t=7\\Rightarrow t=2$, point $(-2,6,3)$, sum $7$."
+    },
+    {
+      "sec": "11.5",
+      "q": "The equation of the plane through the point $(3,-2,8)$ and parallel to the plane $z=x+y$ is given by",
+      "opts": [
+        "$x+y-z+7=0$",
+        "$x-y+z+13=0$",
+        "$2x+y-z-4=0$",
+        "$x+2y-z+9=0$",
+        "$x-y-z+3=0$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Parallel planes have the same normal vector (up to a scalar).",
+        "Write the given plane in the form $Ax+By+Cz=D$ to read off a normal vector, then use the given point.",
+        "The plane through $(x_0,y_0,z_0)$ with normal $\\langle a,b,c\\rangle$ is $a(x-x_0)+b(y-y_0)+c(z-z_0)=0$."
+      ],
+      "steps": [
+        "Rewrite $z=x+y$ as $x+y-z=0$, so $\\mathbf{n}=\\langle1,1,-1\\rangle$.",
+        "Plane: $(x-3)+(y+2)-(z-8)=0$.",
+        "Expand: $x+y-z-3+2+8=0$, i.e. $x+y-z+7=0$."
+      ],
+      "brief": "Normal $\\langle1,1,-1\\rangle$: $(x-3)+(y+2)-(z-8)=0$, i.e. $x+y-z+7=0$."
+    },
+    {
+      "sec": "11.6",
+      "q": "Which of the following statements is true about the surface \\[ x^2-y^2+z^2-4x-2y-2z+4=0 \\]",
+      "opts": [
+        "circular cone with vertex $(2,-1,1)$ and axis parallel to $y$-axis",
+        "circular cone with vertex $(-1,0,2)$ and axis parallel to $y$-axis",
+        "circular cone with vertex $(0,0,0)$ and axis parallel to $y$-axis",
+        "circular cone with vertex $(-1,-1,-1)$ and axis parallel to $y$-axis",
+        "circular cone with vertex $(1,3,0)$ and axis parallel to $y$-axis"
+      ],
+      "ans": 0,
+      "hints": [
+        "Complete the square in each variable to identify the quadric surface and its centre.",
+        "Group the $x$, $y$ and $z$ terms separately and complete the square in each.",
+        "$x^2+bx=\\left(x+\\frac b2\\right)^2-\\frac{b^2}{4}$. A surface $(x-h)^2+(z-l)^2=(y-k)^2$ is a circular cone with vertex $(h,k,l)$ and axis parallel to the $y$-axis."
+      ],
+      "steps": [
+        "$(x^2-4x)=(x-2)^2-4$, $-(y^2+2y)=-(y+1)^2+1$, $(z^2-2z)=(z-1)^2-1$.",
+        "Sum: $(x-2)^2-(y+1)^2+(z-1)^2-4+1-1+4=0$.",
+        "So $(x-2)^2+(z-1)^2=(y+1)^2$.",
+        "This is a circular cone with vertex $(2,-1,1)$ and axis parallel to the $y$-axis."
+      ],
+      "brief": "$(x-2)^2+(z-1)^2=(y+1)^2$: cone, vertex $(2,-1,1)$, axis parallel to $y$."
+    },
+    {
+      "sec": "11.6",
+      "q": "Consider the following statements about the surface \\[ x^2=4-4y^2+z^2 \\] I. Axis of symmetry is the $y$-axis. II. The surface is called hyperboloid of one sheet. III. The surface is called hyperboloid of two sheets. IV. Axis of symmetry is $z$-axis. Which of the following is true?",
+      "opts": [
+        "II and IV",
+        "I and II",
+        "III and IV",
+        "II and III",
+        "I and III"
+      ],
+      "ans": 0,
+      "hints": [
+        "Rewrite the equation in standard form for a quadric surface and count the signs.",
+        "Move all variable terms to one side and divide by the constant so the right side is $1$.",
+        "For $\\frac{x^2}{a^2}+\\frac{y^2}{b^2}-\\frac{z^2}{c^2}=1$ (one negative sign) the surface is a hyperboloid of one sheet whose axis is the axis of the variable with the negative sign; two negative signs give two sheets."
+      ],
+      "steps": [
+        "Rewrite: $x^2+4y^2-z^2=4$, i.e. $\\dfrac{x^2}{4}+\\dfrac{y^2}{1}-\\dfrac{z^2}{4}=1$.",
+        "One negative sign, so it is a hyperboloid of one sheet (II true, III false).",
+        "The negative term is in $z$, so the axis of symmetry is the $z$-axis (IV true, I false).",
+        "So II and IV are true."
+      ],
+      "brief": "$\\frac{x^2}{4}+y^2-\\frac{z^2}{4}=1$: one sheet, axis $z$: II and IV."
+    },
+    {
+      "sec": "13.1",
+      "q": "The domain of the function \\[ f(x,y,z)=\\ln(x-y)+yz\\cos x \\] is",
+      "opts": [
+        "$\\{(x,y,z)\\in\\mathbb{R}^3: x>y\\}$",
+        "$\\{(x,y,z)\\in\\mathbb{R}^3: x<z\\}$",
+        "$\\{(x,y,z)\\in\\mathbb{R}^3: y>z\\}$",
+        "$\\{(x,y,z)\\in\\mathbb{R}^3: y<z\\}$",
+        "$\\{(x,y,z)\\in\\mathbb{R}^3: y^2+z^2=1\\}$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Ask which parts of the formula restrict the allowed inputs.",
+        "Polynomial and cosine terms are defined everywhere, so only the logarithm matters.",
+        "$\\ln u$ is defined exactly when $u>0$."
+      ],
+      "steps": [
+        "$yz\\cos x$ is defined for all real $x,y,z$.",
+        "$\\ln(x-y)$ requires $x-y>0$.",
+        "So the domain is $\\{(x,y,z): x>y\\}$."
+      ],
+      "brief": "Only $\\ln(x-y)$ restricts: $x-y>0$."
+    },
+    {
+      "sec": "13.1",
+      "q": "The range of $f(x,y)=\\ln(16-x^2-y^2)$ is",
+      "opts": [
+        "$(-\\infty,4\\ln2]$",
+        "$(-\\infty,\\ln2]$",
+        "$(-\\infty,\\ln5]$",
+        "$(-\\infty,2\\ln2]$",
+        "$(-\\infty,\\infty)$"
+      ],
+      "ans": 0,
+      "hints": [
+        "First find the possible values of the expression inside the logarithm.",
+        "The domain requires $16-x^2-y^2>0$; find the largest and the smallest values this expression can take there.",
+        "$\\ln$ is increasing on $(0,\\infty)$, tends to $-\\infty$ as its input tends to $0^+$, and $\\ln M$ is its maximum on $(0,M]$."
+      ],
+      "steps": [
+        "Domain: $x^2+y^2<16$, so $u=16-x^2-y^2$ takes every value in $(0,16]$.",
+        "$\\ln u$ is increasing, with $\\ln u\\to-\\infty$ as $u\\to0^+$.",
+        "The maximum is $\\ln16=4\\ln2$ at $(0,0)$.",
+        "Range: $(-\\infty,4\\ln2]$."
+      ],
+      "brief": "$u=16-x^2-y^2\\in(0,16]$, so $f\\in(-\\infty,\\ln16]=(-\\infty,4\\ln2]$."
+    },
+    {
+      "sec": "13.1",
+      "q": "The level curves of $f(x,y)=\\sqrt[3]{x^2+y^2}$ are",
+      "opts": [
+        "a family of circles",
+        "a family of ellipses",
+        "a family of lines",
+        "a family of parabolas",
+        "a family of hyperbolas"
+      ],
+      "ans": 0,
+      "hints": [
+        "A level curve is the set where $f$ equals a constant.",
+        "Set $f(x,y)=c$ and eliminate the cube root.",
+        "$x^2+y^2=r^2$ is a circle of radius $r$ centred at the origin."
+      ],
+      "steps": [
+        "Set $\\sqrt[3]{x^2+y^2}=c$ with $c>0$.",
+        "Cube both sides: $x^2+y^2=c^3$.",
+        "These are circles centred at the origin, so a family of circles."
+      ],
+      "brief": "$x^2+y^2=c^3$: circles centred at the origin."
+    },
+    {
+      "sec": "13.2",
+      "q": "The limit \\[ \\lim_{(x,y)\\to(0,0)}\\frac{8x^2\\sin y}{3x^3+5y^3} \\]",
+      "opts": [
+        "does not exist",
+        "is equal to $0$",
+        "is equal to $1$",
+        "is equal to $-1$",
+        "is equal to $\\infty$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Try approaching the origin along different paths and compare the results.",
+        "Compute the limit along the $y$-axis ($x=0$) and along the line $y=x$.",
+        "If the limits along two paths to the same point differ, the two-variable limit does not exist."
+      ],
+      "steps": [
+        "Along $x=0$: the expression is $\\dfrac{0}{5y^3}=0$, so the limit is $0$.",
+        "Along $y=x$: $\\dfrac{8x^2\\sin x}{8x^3}=\\dfrac{\\sin x}{x}\\to1$.",
+        "The two path limits differ, so the limit does not exist."
+      ],
+      "brief": "Paths $x=0$ gives $0$, $y=x$ gives $1$: limit does not exist."
+    },
+    {
+      "sec": "13.2",
+      "q": "The limit \\[ \\lim_{(x,y)\\to(3,3)}\\frac{x+2y-9}{\\sqrt{x+2y}-3} \\]",
+      "opts": [
+        "is equal to $6$",
+        "is equal to $9$",
+        "does not exist",
+        "is equal to $3$",
+        "is equal to $1$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Direct substitution gives $0/0$, so simplify the expression first.",
+        "Multiply numerator and denominator by the conjugate of the denominator.",
+        "$(\\sqrt a-b)(\\sqrt a+b)=a-b^2$."
+      ],
+      "steps": [
+        "Multiply by $\\dfrac{\\sqrt{x+2y}+3}{\\sqrt{x+2y}+3}$: the denominator becomes $x+2y-9$.",
+        "The fraction reduces to $\\sqrt{x+2y}+3$.",
+        "Substitute $(3,3)$: $\\sqrt{9}+3=6$."
+      ],
+      "brief": "Conjugate: expression $=\\sqrt{x+2y}+3\\to6$."
+    },
+    {
+      "sec": "13.2",
+      "q": "If \\[ f(x,y)=\\begin{cases}\\dfrac{2-2\\cos(x+y)}{(x+y)^2} & \\text{if }(x,y)\\neq(0,0)\\\\[2mm] k & \\text{if }(x,y)=(0,0)\\end{cases} \\] then $f(x,y)$ is",
+      "opts": [
+        "continuous at $(0,0)$ only if $k=1$",
+        "continuous at $(0,0)$ only if $k=-1$",
+        "continuous at $(0,0)$ only if $k=0$",
+        "not continuous at $(0,0)$ for all values of $k$",
+        "continuous at $(0,0)$ for any value of the real number $k$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Continuity at a point requires the limit to exist and equal the function value.",
+        "The expression depends only on $u=x+y$, so reduce the two-variable limit to a one-variable limit.",
+        "Use L'Hopital's rule for $0/0$, or the standard limit $\\lim_{u\\to0}\\frac{1-\\cos u}{u^2}=\\frac12$."
+      ],
+      "steps": [
+        "Let $u=x+y$; as $(x,y)\\to(0,0)$, $u\\to0$.",
+        "$\\lim_{u\\to0}\\dfrac{2-2\\cos u}{u^2}=\\lim_{u\\to0}\\dfrac{2\\sin u}{2u}=1$.",
+        "Continuity needs $f(0,0)=k$ to equal this limit, so $k=1$."
+      ],
+      "brief": "Limit is $\\lim_{u\\to0}\\frac{2-2\\cos u}{u^2}=1$, so $k=1$."
+    },
+    {
+      "sec": "13.3",
+      "q": "If $f(x,y)=\\tan^{-1}(x+y^2)$, then $f_y(1,2)=$",
+      "opts": [
+        "$\\dfrac{2}{13}$",
+        "$\\dfrac{4}{13}$",
+        "$\\dfrac{5}{13}$",
+        "$\\dfrac{3}{13}$",
+        "$\\dfrac{1}{13}$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Take the partial derivative with respect to $y$, treating $x$ as a constant, with the chain rule.",
+        "Differentiate the inside $x+y^2$ with respect to $y$.",
+        "$\\dfrac{d}{du}\\tan^{-1}u=\\dfrac{1}{1+u^2}$."
+      ],
+      "steps": [
+        "$f_y=\\dfrac{1}{1+(x+y^2)^2}\\cdot2y$.",
+        "At $(1,2)$: $x+y^2=5$ and $2y=4$.",
+        "$f_y(1,2)=\\dfrac{4}{1+25}=\\dfrac{2}{13}$."
+      ],
+      "brief": "$f_y=\\frac{2y}{1+(x+y^2)^2}$, so $f_y(1,2)=\\frac4{26}=\\frac2{13}$."
+    },
+    {
+      "sec": "13.3",
+      "q": "If $f(x,y)=\\cos(x^2y)$, then $f_x(x,y)-f_y(x,y)=$",
+      "opts": [
+        "$(x^2-2xy)\\sin(x^2y)$",
+        "$x^2\\sin(x^2y)$",
+        "$x^2\\cos(x^2y)$",
+        "$2xy\\cos(x^2y)$",
+        "$(x^2+2xy)\\sin(xy)$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Compute both first partial derivatives with the chain rule, then subtract.",
+        "Treat the other variable as constant each time; the inside function is $x^2y$.",
+        "$\\dfrac{\\partial}{\\partial x}\\cos u=-\\sin u\\cdot u_x$, and likewise for $y$."
+      ],
+      "steps": [
+        "$f_x=-\\sin(x^2y)\\cdot2xy$.",
+        "$f_y=-\\sin(x^2y)\\cdot x^2$.",
+        "$f_x-f_y=(-2xy+x^2)\\sin(x^2y)=(x^2-2xy)\\sin(x^2y)$."
+      ],
+      "brief": "$f_x=-2xy\\sin(x^2y)$, $f_y=-x^2\\sin(x^2y)$; difference $(x^2-2xy)\\sin(x^2y)$."
+    },
+    {
+      "sec": "13.4",
+      "q": "The base radius and height of a right circular cone are measured as 10 cm and 25 cm, respectively with a possible error in measurement as much as 0.01 cm in each. The maximum error in the calculated volume of the cone is (Hint: volume of a cone is $V=\\dfrac{\\pi r^2h}{3}$)",
+      "opts": [
+        "$2\\pi$",
+        "$3\\pi$",
+        "$\\pi$",
+        "$4\\pi$",
+        "$5\\pi$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Estimate the error with the total differential.",
+        "Compute $dV=V_r\\,dr+V_h\\,dh$ and use the largest allowed errors in $dr$ and $dh$.",
+        "$dV=\\frac{\\partial V}{\\partial r}dr+\\frac{\\partial V}{\\partial h}dh$, evaluated at the measured values."
+      ],
+      "steps": [
+        "$V_r=\\dfrac{2\\pi rh}{3}$ and $V_h=\\dfrac{\\pi r^2}{3}$.",
+        "At $r=10$, $h=25$: $V_r=\\dfrac{500\\pi}{3}$ and $V_h=\\dfrac{100\\pi}{3}$.",
+        "$dV=\\dfrac{500\\pi}{3}(0.01)+\\dfrac{100\\pi}{3}(0.01)=\\dfrac{600\\pi}{3}(0.01)=2\\pi$."
+      ],
+      "brief": "$dV=\\frac{500\\pi}{3}(0.01)+\\frac{100\\pi}{3}(0.01)=2\\pi$."
+    },
+    {
+      "sec": "13.4",
+      "q": "Consider the function $f(x,y)=y\\ln\\left(\\dfrac{x}{y}\\right)$. The linearization $L(x,y)$ of $f(x,y)$ at the point $(e,1)$ is:",
+      "opts": [
+        "$L(x,y)=\\dfrac{x}{e}$",
+        "$L(x,y)=\\dfrac{y}{e}+e$",
+        "$L(x,y)=\\dfrac{x}{e}+e$",
+        "$L(x,y)=\\dfrac{x}{e}-1$",
+        "$L(x,y)=\\dfrac{y}{e}-1$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Use the linear (tangent plane) approximation at the given point.",
+        "Compute the function value and both first partial derivatives at the point.",
+        "$L(x,y)=f(a,b)+f_x(a,b)(x-a)+f_y(a,b)(y-b)$."
+      ],
+      "steps": [
+        "$f(e,1)=\\ln e=1$.",
+        "$f_x=y\\cdot\\dfrac{1}{x}=\\dfrac yx$, so $f_x(e,1)=\\dfrac1e$.",
+        "$f_y=\\ln\\dfrac xy-1$, so $f_y(e,1)=0$.",
+        "$L=1+\\dfrac1e(x-e)+0=\\dfrac xe$."
+      ],
+      "brief": "$f=1$, $f_x=\\frac1e$, $f_y=0$ at $(e,1)$: $L=\\frac xe$."
+    },
+    {
+      "sec": "13.5",
+      "q": "If $e^z=xyz$, then $\\dfrac{\\partial z}{\\partial x}=$",
+      "opts": [
+        "$\\dfrac{yz}{e^z-xy}$",
+        "$\\dfrac{xy}{e^z-xy}$",
+        "$\\dfrac{x}{e^z-xy}$",
+        "$\\dfrac{xz}{e^z-xy}$",
+        "$\\dfrac{y}{e^z-xy}$"
+      ],
+      "ans": 0,
+      "hints": [
+        "$z$ is defined implicitly as a function of $x$ and $y$.",
+        "Differentiate both sides with respect to $x$, treating $z$ as a function of $x$ and $y$ fixed, then solve for $\\partial z/\\partial x$.",
+        "Use the chain rule $\\frac{\\partial}{\\partial x}e^z=e^z z_x$ and the product rule on $xyz$."
+      ],
+      "steps": [
+        "Differentiate: $e^z z_x=y(z+xz_x)$.",
+        "Collect: $(e^z-xy)z_x=yz$.",
+        "$\\dfrac{\\partial z}{\\partial x}=\\dfrac{yz}{e^z-xy}$."
+      ],
+      "brief": "$e^zz_x=yz+xyz_x\\Rightarrow z_x=\\frac{yz}{e^z-xy}$."
+    },
+    {
+      "sec": "13.5",
+      "q": "If $z=\\dfrac xy$, $x=se^t$, $y=1-se^{-t}$, then $\\dfrac{\\partial z}{\\partial s}$ at $x=3$, $y=-2$ and $t=0$ is",
+      "opts": [
+        "$\\dfrac14$",
+        "$\\dfrac34$",
+        "$\\dfrac54$",
+        "$1$",
+        "$4$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Use the chain rule for $z(x,y)$ with $x,y$ depending on $s$ and $t$.",
+        "Write $\\dfrac{\\partial z}{\\partial s}=z_xx_s+z_yy_s$ and compute each factor.",
+        "$\\dfrac{\\partial z}{\\partial s}=\\dfrac{\\partial z}{\\partial x}\\dfrac{\\partial x}{\\partial s}+\\dfrac{\\partial z}{\\partial y}\\dfrac{\\partial y}{\\partial s}$."
+      ],
+      "steps": [
+        "$z_x=\\dfrac1y$, $z_y=-\\dfrac{x}{y^2}$, $x_s=e^t$, $y_s=-e^{-t}$.",
+        "$\\dfrac{\\partial z}{\\partial s}=\\dfrac{e^t}{y}+\\dfrac{xe^{-t}}{y^2}$.",
+        "At $x=3$, $y=-2$, $t=0$: $-\\dfrac12+\\dfrac34=\\dfrac14$."
+      ],
+      "brief": "$z_s=\\frac{e^t}{y}+\\frac{xe^{-t}}{y^2}=-\\frac12+\\frac34=\\frac14$."
+    },
+    {
+      "sec": "13.5",
+      "q": "If $w=xy+z^2$, $x=2s-t$, $y=3t$ and $z=s$, then $\\dfrac{\\partial w}{\\partial s}+\\dfrac{\\partial w}{\\partial t}=$",
+      "opts": [
+        "$8s$",
+        "$2t+2s$",
+        "$2t-s$",
+        "$6t$",
+        "$4s$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Use the chain rule for $w$ with three intermediate variables.",
+        "Compute $\\partial w/\\partial s$ and $\\partial w/\\partial t$, add, then substitute $x,y,z$ in terms of $s,t$.",
+        "$\\dfrac{\\partial w}{\\partial s}=w_xx_s+w_yy_s+w_zz_s$ and similarly for $t$."
+      ],
+      "steps": [
+        "$w_s=y(2)+x(0)+2z(1)=2y+2z$.",
+        "$w_t=y(-1)+x(3)+2z(0)=-y+3x$.",
+        "Sum: $3x+y+2z=3(2s-t)+3t+2s$.",
+        "$=6s-3t+3t+2s=8s$."
+      ],
+      "brief": "$w_s+w_t=3x+y+2z=8s$."
+    },
+    {
+      "sec": "13.7",
+      "q": "The equation of the tangent plane at the point $(-3,1,-2)$ to the ellipsoid \\[ \\frac{x^2}{9}+y^2+z^2=6 \\] is $ax+by+6z+18=0$. Then $a+b=$",
+      "opts": [
+        "$-2$",
+        "$-3$",
+        "$-1$",
+        "$-4$",
+        "$-5$"
+      ],
+      "ans": 0,
+      "hints": [
+        "The gradient of the function defining the surface is normal to the tangent plane.",
+        "Compute the gradient at the point, write the plane, and scale so the $z$ coefficient is $6$.",
+        "For the surface $F(x,y,z)=k$ the tangent plane at $P_0$ is $\\nabla F(P_0)\\cdot\\langle x-x_0,y-y_0,z-z_0\\rangle=0$."
+      ],
+      "steps": [
+        "$\\nabla F=\\left\\langle\\dfrac{2x}{9},2y,2z\\right\\rangle$, so at $(-3,1,-2)$ it is $\\left\\langle-\\dfrac23,2,-4\\right\\rangle$.",
+        "Plane: $-\\dfrac23(x+3)+2(y-1)-4(z+2)=0$.",
+        "Multiply by $-\\dfrac32$: $(x+3)-3(y-1)+6(z+2)=0$, i.e. $x-3y+6z+18=0$.",
+        "So $a=1$, $b=-3$ and $a+b=-2$."
+      ],
+      "brief": "Plane $x-3y+6z+18=0$, so $a=1$, $b=-3$, $a+b=-2$."
+    },
+    {
+      "sec": "13.6",
+      "q": "The directional derivative of $f(x,y,z)=xe^y+ye^z+ze^x$ at $(0,0,0)$ in the direction of $\\vec v=\\langle-3,1,2\\rangle$ is",
+      "opts": [
+        "$0$",
+        "$-\\dfrac{3}{\\sqrt{14}}$",
+        "$\\dfrac{1}{\\sqrt{14}}$",
+        "$\\dfrac{2}{\\sqrt{14}}$",
+        "$1$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Use the gradient and a unit vector in the given direction.",
+        "Compute $\\nabla f$ at the origin and normalise $\\vec v$.",
+        "$D_{\\mathbf{u}}f=\\nabla f\\cdot\\mathbf{u}$, with $\\mathbf{u}=\\vec v/|\\vec v|$."
+      ],
+      "steps": [
+        "$\\nabla f=\\langle e^y+ze^x,\\ xe^y+e^z,\\ ye^z+e^x\\rangle$, so $\\nabla f(0,0,0)=\\langle1,1,1\\rangle$.",
+        "$|\\vec v|=\\sqrt{9+1+4}=\\sqrt{14}$.",
+        "$D_{\\mathbf{u}}f=\\dfrac{(1)(-3)+(1)(1)+(1)(2)}{\\sqrt{14}}=0$."
+      ],
+      "brief": "$\\nabla f(0)=\\langle1,1,1\\rangle$; $\\frac{-3+1+2}{\\sqrt{14}}=0$."
+    }
+  ],
+  "note": "Date and exam length are not printed on the scan (no cover page; page headers only say 221, Math 201, Major Exam II, MASTER). Date left empty. Minutes set to 90 as the usual major exam length (assumed). Master key is not marked; the handwritten worked solutions on the master all give choice (a), and each answer was independently verified with sympy. Section numbers in the handwritten textbook references (12.x, 14.x) are from an older edition and were mapped to the syllabus numbering. Q19 (tangent plane, 13.7) is listed as Final-only in the syllabus but appears here."
+}

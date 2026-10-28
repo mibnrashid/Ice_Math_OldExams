@@ -1,0 +1,436 @@
+{
+  "course": "math101",
+  "term": "222",
+  "kind": "e1",
+  "date": "",
+  "minutes": 90,
+  "source": "math101-222-ex1.pdf",
+  "note": "Scan has no cover page: date and exam length are not printed, so date is empty and 90 minutes is assumed. The master key marks (a) for every question (all 18 verified independently, no disagreements). Q8 is an epsilon-delta question (excluded from the current syllabus, kept). Q11 is read as f(x)=sqrt(2x)-4 (root over 2x only), which matches the key. Q4 uses the greatest integer function. Q7 option (d) says n is a positive integer (false because n can be any integer). Q16 to Q18 use the quotient/product rules (3.3).",
+  "qs": [
+    {
+      "sec": "2.3",
+      "q": "$\\lim_{x\\to0}\\frac{\\sin x\\,(1-\\cos x)}{x^2}=$",
+      "opts": [
+        "$0$",
+        "$1$",
+        "$-1$",
+        "$\\infty$",
+        "$-\\infty$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Split the fraction into pieces whose limits are standard trigonometric limits.",
+        "Write the quotient as $\\dfrac{\\sin x}{x}\\cdot(1-\\cos x)$ and take the limit of each factor.",
+        "$\\lim_{x\\to0}\\frac{\\sin x}{x}=1$, $\\cos 0=1$, and the limit of a product is the product of the limits when both exist."
+      ],
+      "steps": [
+        "$\\dfrac{\\sin x\\,(1-\\cos x)}{x^2}=\\dfrac{\\sin x}{x}\\cdot(1-\\cos x)$.",
+        "$\\dfrac{\\sin x}{x}\\to1$.",
+        "$1-\\cos x\\to1-1=0$.",
+        "So the limit is $1\\cdot0=0$."
+      ],
+      "brief": "$\\frac{\\sin x}{x}\\to1$ and $1-\\cos x\\to0$, so the limit is $0$."
+    },
+    {
+      "sec": "2.4",
+      "q": "One statement is true about \\[ g(x)=\\frac{x^2+x-6}{|x-2|} \\]",
+      "opts": [
+        "$\\lim_{x\\to2}g(x)$ does not exist",
+        "$x=2$ is a vertical asymptote",
+        "$\\lim_{x\\to2^+}g(x)$ does not exist",
+        "$\\lim_{x\\to2^-}g(x)=\\lim_{x\\to2^+}g(x)$",
+        "$\\lim_{x\\to2^-}g(x)=-\\infty$"
+      ],
+      "ans": 0,
+      "hints": [
+        "The absolute value changes its form on each side of $x=2$, so look at one-sided limits.",
+        "Factor the numerator and rewrite $|x-2|$ separately for $x>2$ and $x<2$.",
+        "$\\lim_{x\\to c}f(x)$ exists only if the left and right limits exist and are equal; $|u|=u$ for $u>0$ and $|u|=-u$ for $u<0$."
+      ],
+      "steps": [
+        "$x^2+x-6=(x+3)(x-2)$.",
+        "For $x>2$: $g(x)=x+3\\to5$.",
+        "For $x<2$: $g(x)=-(x+3)\\to-5$.",
+        "The one-sided limits are different, so $\\lim_{x\\to2}g(x)$ does not exist (there is no vertical asymptote and both one-sided limits are finite)."
+      ],
+      "brief": "$g\\to5$ from the right and $g\\to-5$ from the left, so the two-sided limit does not exist."
+    },
+    {
+      "sec": "2.4",
+      "q": "If the constant $a$ will make the function \\[ f(x)=\\begin{cases} ae^{x-1}+3, & x<1\\\\ \\tan^{-1}(x-1)+2, & x\\ge1\\end{cases} \\] continuous over $(-\\infty,\\infty)$, then the value of $a^2+a$ equals",
+      "opts": [
+        "$0$",
+        "$1$",
+        "$-1$",
+        "$\\dfrac{1}{e^2}$",
+        "$\\dfrac{-1}{e^2}$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Each piece is continuous by itself, so only the point where the formula changes matters.",
+        "Set the left-hand limit at the break point equal to the right-hand value and solve for $a$.",
+        "$f$ is continuous at $c$ iff $\\lim_{x\\to c^-}f(x)=\\lim_{x\\to c^+}f(x)=f(c)$; also $\\tan^{-1}0=0$."
+      ],
+      "steps": [
+        "Continuity at $x=1$: $\\lim_{x\\to1^-}f=a e^0+3=a+3$.",
+        "$f(1)=\\tan^{-1}(0)+2=2$.",
+        "$a+3=2$, so $a=-1$.",
+        "$a^2+a=1-1=0$."
+      ],
+      "brief": "$a+3=2$ gives $a=-1$, so $a^2+a=0$."
+    },
+    {
+      "sec": "2.4",
+      "q": "The domain of $f(x)=\\dfrac{1}{\\lfloor x\\rfloor-x}$, where $\\lfloor\\ \\rfloor$ denotes the greatest integer function, is",
+      "opts": [
+        "All real numbers except the integers",
+        "All real numbers except the positive integers",
+        "All non-negative rational numbers",
+        "Set of Natural numbers only",
+        "All real numbers except zero"
+      ],
+      "ans": 0,
+      "hints": [
+        "A fraction is defined except where its denominator is zero.",
+        "Find all $x$ with $\\lfloor x\\rfloor=x$.",
+        "$\\lfloor x\\rfloor$ is the greatest integer $\\le x$, so $\\lfloor x\\rfloor=x$ exactly when $x$ is an integer; otherwise $\\lfloor x\\rfloor<x$."
+      ],
+      "steps": [
+        "The denominator is zero when $\\lfloor x\\rfloor=x$.",
+        "This happens exactly when $x$ is an integer.",
+        "For non-integers $\\lfloor x\\rfloor-x\\neq0$, so $f$ is defined.",
+        "Domain: all real numbers except the integers."
+      ],
+      "brief": "$\\lfloor x\\rfloor-x=0$ exactly at the integers, so exclude the integers."
+    },
+    {
+      "sec": "3.1",
+      "q": "$\\lim_{x\\to\\pi/6}\\dfrac{\\dfrac{1+\\csc x}{1-\\csc x}+3}{x-\\dfrac{\\pi}{6}}=$",
+      "opts": [
+        "$-4\\sqrt3$",
+        "$2\\sqrt3$",
+        "$-2\\sqrt3$",
+        "$\\pi\\sqrt3$",
+        "$-\\pi\\sqrt3$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Check the value of the numerator at the limit point; the quotient looks like a difference quotient.",
+        "Let $F(x)=\\dfrac{1+\\csc x}{1-\\csc x}$ and evaluate $F(\\pi/6)$; the limit is then the derivative of $F$ there.",
+        "$f'(c)=\\lim_{x\\to c}\\frac{f(x)-f(c)}{x-c}$, $\\left(\\dfrac uv\\right)'=\\dfrac{u'v-uv'}{v^2}$, and $(\\csc x)'=-\\csc x\\cot x$."
+      ],
+      "steps": [
+        "$F(\\pi/6)=\\dfrac{1+2}{1-2}=-3$, so the numerator is $F(x)-F(\\pi/6)$ and the limit is $F'(\\pi/6)$.",
+        "$F'(x)=\\dfrac{(-\\csc x\\cot x)(1-\\csc x)+(1+\\csc x)(-\\csc x\\cot x)}{(1-\\csc x)^2}=\\dfrac{-2\\csc x\\cot x}{(1-\\csc x)^2}$.",
+        "At $\\pi/6$: $\\csc=2$, $\\cot=\\sqrt3$, so $F'=\\dfrac{-2\\cdot2\\sqrt3}{(-1)^2}=-4\\sqrt3$."
+      ],
+      "brief": "Difference quotient of $F=\\frac{1+\\csc x}{1-\\csc x}$ at $\\pi/6$: $F'=-4\\sqrt3$."
+    },
+    {
+      "sec": "3.1",
+      "q": "If $f(x)=\\begin{cases}\\cos x, & x<0\\\\ ax+b, & x\\ge0\\end{cases}$ is differentiable everywhere, then $b-a=$",
+      "opts": [
+        "$1$",
+        "$0$",
+        "$-1$",
+        "$2$",
+        "$-2$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Differentiable everywhere requires continuity and equal one-sided derivatives at the break point.",
+        "Match the function values at $x=0$, then match the derivatives of the two pieces at $x=0$.",
+        "If $f$ is differentiable at $c$, then $f$ is continuous at $c$ and $f'_-(c)=f'_+(c)$."
+      ],
+      "steps": [
+        "Continuity at $0$: $\\cos0=1=a\\cdot0+b$, so $b=1$.",
+        "Derivatives: $(\\cos x)'=-\\sin x\\to0$ at $0$, and $(ax+b)'=a$.",
+        "Equal derivatives give $a=0$.",
+        "$b-a=1-0=1$."
+      ],
+      "brief": "Continuity gives $b=1$, matching slopes gives $a=0$, so $b-a=1$."
+    },
+    {
+      "sec": "3.1",
+      "q": "One statement is True about $f(x)=|\\sin x|$ and $g(x)=\\sin|x|$",
+      "opts": [
+        "The domain of $g'(x)$ is $(-\\infty,\\infty)-\\{0\\}$",
+        "The range of $g(x)$ is $[0,1]$",
+        "The domain of $f(x)$ is $[0,\\infty)$",
+        "The domain of $f'$ is all $x\\neq n\\pi$ where $n$ is positive integer",
+        "The range of $f(x)$ is $(0,1]$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Think about the graphs: where do they have corners, and what values do they take?",
+        "Write $g$ separately for $x\\ge0$ and $x<0$, and look at its one-sided derivatives at $0$.",
+        "A function with a corner (different one-sided derivatives) is not differentiable there; $|u|=u$ for $u\\ge0$ and $-u$ for $u<0$."
+      ],
+      "steps": [
+        "$g(x)=\\sin x$ for $x\\ge0$ and $g(x)=-\\sin x$ for $x<0$; the slopes at $0$ are $1$ from the right and $-1$ from the left, so $g'(0)$ does not exist and the domain of $g'$ is $(-\\infty,\\infty)-\\{0\\}$.",
+        "$g$ takes values in $[-1,1]$ (for $x>0$ it equals $\\sin x$), so its range is not $[0,1]$.",
+        "$f=|\\sin x|$ is defined for all real $x$ and has range $[0,1]$ (it equals $0$ at $x=n\\pi$), so the claims about the domain and range of $f$ fail.",
+        "$f'$ fails to exist at every integer multiple of $\\pi$, including negative ones and $0$, so the statement about positive integers is false."
+      ],
+      "brief": "$g=\\sin|x|$ has a corner at $0$ only, so $g'$ exists for all $x\\neq0$."
+    },
+    {
+      "sec": "2.2",
+      "q": "If $\\lim_{x\\to4}\\left(4-\\frac x2\\right)=2$, then the value of $\\delta$ such that $|f(x)-L|<\\epsilon$ whenever $0<|x-4|<\\delta$ is",
+      "opts": [
+        "$2\\epsilon$",
+        "$4\\epsilon$",
+        "$\\dfrac{\\epsilon}{2}$",
+        "$\\dfrac{\\epsilon}{4}$",
+        "$\\epsilon$"
+      ],
+      "ans": 0,
+      "hints": [
+        "This is an epsilon-delta question: relate $|f(x)-L|$ to $|x-4|$.",
+        "Compute $|f(x)-L|$ and rewrite it as a constant times $|x-4|$.",
+        "For a linear $f(x)=mx+c$ with limit $L$ at $x_0$: $|f(x)-L|=|m|\\,|x-x_0|$, so $\\delta=\\epsilon/|m|$ works."
+      ],
+      "steps": [
+        "$|f(x)-L|=\\left|4-\\frac x2-2\\right|=\\left|2-\\frac x2\\right|=\\frac12|x-4|$.",
+        "We need $\\frac12|x-4|<\\epsilon$, i.e. $|x-4|<2\\epsilon$.",
+        "So $\\delta=2\\epsilon$."
+      ],
+      "brief": "$|f(x)-2|=\\frac12|x-4|<\\epsilon$ when $|x-4|<2\\epsilon$, so $\\delta=2\\epsilon$."
+    },
+    {
+      "sec": "2.3",
+      "q": "$\\lim_{x\\to0}\\frac{\\cos x-4\\sin3x-1}{2x}=$",
+      "opts": [
+        "$-6$",
+        "$0$",
+        "$6$",
+        "$-4$",
+        "$4$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Split the numerator into terms and use the standard trigonometric limits.",
+        "Write the fraction as $\\dfrac{\\cos x-1}{2x}-\\dfrac{4\\sin3x}{2x}$ and handle each part.",
+        "$\\lim_{x\\to0}\\frac{1-\\cos x}{x}=0$ and $\\lim_{x\\to0}\\frac{\\sin(bx)}{x}=b$."
+      ],
+      "steps": [
+        "$\\dfrac{\\cos x-4\\sin3x-1}{2x}=\\dfrac12\\cdot\\dfrac{\\cos x-1}{x}-2\\cdot\\dfrac{\\sin3x}{x}$.",
+        "$\\dfrac{\\cos x-1}{x}\\to0$.",
+        "$\\dfrac{\\sin3x}{x}\\to3$.",
+        "Limit $=0-2\\cdot3=-6$."
+      ],
+      "brief": "$\\frac12\\cdot0-2\\cdot3=-6$."
+    },
+    {
+      "sec": "2.3",
+      "q": "$\\lim_{x\\to\\ln3}\\frac{e^{3x}-27}{e^{2x}-9}=$",
+      "opts": [
+        "$\\dfrac92$",
+        "$0$",
+        "$1$",
+        "$9$",
+        "$\\ln3$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Direct substitution gives $0/0$, so factor to cancel the common factor.",
+        "Let $u=e^x$ so that $e^{3x}=u^3$ and $e^{2x}=u^2$, and $u\\to3$ as $x\\to\\ln3$.",
+        "$u^3-a^3=(u-a)(u^2+au+a^2)$ and $u^2-a^2=(u-a)(u+a)$."
+      ],
+      "steps": [
+        "With $u=e^x$, $u\\to e^{\\ln3}=3$.",
+        "$\\dfrac{u^3-27}{u^2-9}=\\dfrac{(u-3)(u^2+3u+9)}{(u-3)(u+3)}=\\dfrac{u^2+3u+9}{u+3}$.",
+        "At $u=3$: $\\dfrac{9+9+9}{6}=\\dfrac{27}{6}=\\dfrac92$."
+      ],
+      "brief": "$u=e^x\\to3$: $\\frac{u^2+3u+9}{u+3}\\to\\frac{27}{6}=\\frac92$."
+    },
+    {
+      "sec": "3.1",
+      "q": "Let $f(x)=\\sqrt{2x}-4$, then $\\lim_{h\\to0}\\frac{f(x+h)-f(x)}{h}=$",
+      "opts": [
+        "$\\dfrac{1}{\\sqrt{2x}}$",
+        "$\\dfrac{1}{2\\sqrt x}$",
+        "$\\dfrac{2}{\\sqrt x}$",
+        "$\\dfrac{1}{\\sqrt x}$",
+        "$2\\sqrt x$"
+      ],
+      "ans": 0,
+      "hints": [
+        "This limit is the definition of the derivative $f'(x)$.",
+        "Form $f(x+h)-f(x)$; the constant $-4$ cancels, then rationalize the square-root difference.",
+        "$(\\sqrt A-\\sqrt B)(\\sqrt A+\\sqrt B)=A-B$."
+      ],
+      "steps": [
+        "$f(x+h)-f(x)=\\sqrt{2x+2h}-\\sqrt{2x}$.",
+        "Multiply by the conjugate: $\\dfrac{2h}{h\\left(\\sqrt{2x+2h}+\\sqrt{2x}\\right)}=\\dfrac{2}{\\sqrt{2x+2h}+\\sqrt{2x}}$.",
+        "Let $h\\to0$: $\\dfrac{2}{2\\sqrt{2x}}=\\dfrac1{\\sqrt{2x}}$."
+      ],
+      "brief": "Rationalize: $\\frac{2}{\\sqrt{2x+2h}+\\sqrt{2x}}\\to\\frac{1}{\\sqrt{2x}}$."
+    },
+    {
+      "sec": "2.5",
+      "q": "The vertical asymptotes of the graph \\[ f(x)=\\frac{\\ln(x^2-4)}{(x-1)(x+4)} \\] are",
+      "opts": [
+        "$x=\\pm2,\\ x=-4$",
+        "$x=\\pm2,\\ x=1$",
+        "$x=1,\\ x=-4$",
+        "$x=1$",
+        "$x=\\pm2,\\ x=-4,\\ x=1$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Candidates are where the denominator is zero and where the logarithm blows up; check the domain too.",
+        "Find the domain of $\\ln(x^2-4)$, then test each candidate point for an infinite limit.",
+        "$\\ln u\\to-\\infty$ as $u\\to0^+$; a vertical asymptote at $x=c$ needs $f$ defined near $c$ with an infinite limit."
+      ],
+      "steps": [
+        "The domain requires $x^2-4>0$, i.e. $|x|>2$.",
+        "At $x=\\pm2$ (from inside the domain) $\\ln(x^2-4)\\to-\\infty$ while the denominator is nonzero: vertical asymptotes.",
+        "At $x=-4$: denominator $\\to0$ and $\\ln12\\neq0$: vertical asymptote.",
+        "$x=1$ is not in the domain (and no points near it are), so it is not an asymptote."
+      ],
+      "brief": "Domain $|x|>2$: asymptotes at $x=\\pm2$ (log) and $x=-4$ (denominator); $x=1$ is outside the domain."
+    },
+    {
+      "sec": "2.5",
+      "q": "$\\lim_{x\\to\\frac12^-}\\left(x^2\\sec\\pi x\\right)=$",
+      "opts": [
+        "$\\infty$",
+        "$-\\infty$",
+        "$0$",
+        "$\\dfrac14$",
+        "$\\dfrac12$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Rewrite $\\sec$ as $1/\\cos$ and see what the denominator does as $x$ approaches the point from the left.",
+        "Find the sign of $\\cos\\pi x$ just to the left of the limit point.",
+        "$\\sec u=\\dfrac1{\\cos u}$; if the numerator tends to a positive constant and the denominator tends to $0^+$, the quotient tends to $+\\infty$."
+      ],
+      "steps": [
+        "$x^2\\sec\\pi x=\\dfrac{x^2}{\\cos\\pi x}$.",
+        "As $x\\to\\frac12^-$, $\\pi x\\to\\frac\\pi2^-$ so $\\cos\\pi x\\to0^+$.",
+        "The numerator $\\to\\frac14>0$.",
+        "So the quotient $\\to+\\infty$."
+      ],
+      "brief": "$\\cos\\pi x\\to0^+$ and $x^2\\to\\frac14>0$, so the limit is $+\\infty$."
+    },
+    {
+      "sec": "2.5",
+      "q": "Let $f(x)=\\dfrac{x\\sin2x}{\\sin^2x}$, which of the following is false?",
+      "opts": [
+        "The graph of $f$ has vertical asymptote of $x=0$",
+        "The graph of $f$ has vertical asymptote of $x=\\pi$",
+        "The graph of $f$ has vertical asymptote of $x=2\\pi$",
+        "$f$ is discontinuous at $x=0$",
+        "$\\lim_{x\\to0}f(x)=2$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Simplify $f$ first, then check the behaviour at $0$, $\\pi$ and $2\\pi$.",
+        "Use $\\sin2x=2\\sin x\\cos x$ and cancel one factor of $\\sin x$.",
+        "A vertical asymptote needs an infinite limit; $\\lim_{x\\to0}\\frac{x}{\\sin x}=1$ gives a finite limit instead."
+      ],
+      "steps": [
+        "$f(x)=\\dfrac{2x\\sin x\\cos x}{\\sin^2x}=\\dfrac{2x\\cos x}{\\sin x}$ for $\\sin x\\neq0$.",
+        "At $x=0$: $f\\to2\\cdot1\\cdot1=2$, a finite limit, so $x=0$ is not a vertical asymptote but $f$ is undefined there (a removable discontinuity).",
+        "At $x=\\pi$ and $2\\pi$: $\\sin x\\to0$ while $2x\\cos x\\neq0$, so the limits are infinite: vertical asymptotes.",
+        "The false statement is that $x=0$ is a vertical asymptote."
+      ],
+      "brief": "$f=\\frac{2x\\cos x}{\\sin x}\\to2$ at $0$ (removable), so $x=0$ is not an asymptote."
+    },
+    {
+      "sec": "3.2",
+      "q": "If the line $y=-4x+1$ is tangent to the graph of the function $f(x)=k-x^2$, then $k=$",
+      "opts": [
+        "$k=-3$",
+        "$k=-4$",
+        "$k=4$",
+        "$k=3$",
+        "$k=2$"
+      ],
+      "ans": 0,
+      "hints": [
+        "At the point of tangency the curve and the line have the same slope and the same $y$-value.",
+        "Use the slope condition to find the tangency point, then match the heights.",
+        "The tangent line to $f$ at $x=c$ has slope $f'(c)$ and passes through $(c,f(c))$."
+      ],
+      "steps": [
+        "$f'(x)=-2x$; set $-2x=-4$ to get $x=2$.",
+        "The line at $x=2$ has $y=-4(2)+1=-7$.",
+        "$f(2)=k-4$ must equal $-7$.",
+        "So $k=-3$."
+      ],
+      "brief": "$f'=-2x=-4\\Rightarrow x=2$; $k-4=-7$, so $k=-3$."
+    },
+    {
+      "sec": "3.3",
+      "q": "Let $p(x)=\\dfrac{g(x)+1}{f(x)}$, $g(2)=-1$, $g'(2)=2$, $f(2)=3$, then $p'(2)=$",
+      "opts": [
+        "$\\dfrac23$",
+        "$0$",
+        "$\\dfrac13$",
+        "$\\dfrac49$",
+        "$\\dfrac59$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Use the quotient rule.",
+        "Differentiate numerator and denominator, then substitute $x=2$; check whether one term vanishes so that an unknown derivative is not needed.",
+        "$\\left(\\dfrac uv\\right)'=\\dfrac{u'v-uv'}{v^2}$."
+      ],
+      "steps": [
+        "$p'(x)=\\dfrac{g'(x)f(x)-(g(x)+1)f'(x)}{f(x)^2}$.",
+        "At $x=2$: $g(2)+1=0$, so the $f'(2)$ term vanishes.",
+        "$p'(2)=\\dfrac{2\\cdot3}{3^2}=\\dfrac69=\\dfrac23$."
+      ],
+      "brief": "Quotient rule with $g(2)+1=0$: $p'(2)=\\frac{2\\cdot3}{9}=\\frac23$."
+    },
+    {
+      "sec": "3.3",
+      "q": "Let $f(x)=\\dfrac12x\\sin(2x)$, then $f'\\!\\left(\\dfrac\\pi4\\right)=$",
+      "opts": [
+        "$\\dfrac12$",
+        "$\\dfrac12+\\dfrac\\pi4$",
+        "$\\dfrac\\pi4$",
+        "$\\dfrac\\pi4+\\dfrac14$",
+        "$\\dfrac12-\\dfrac\\pi4$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Use the product rule together with the chain rule.",
+        "Differentiate $x$ and $\\sin2x$ separately, then substitute the given point.",
+        "$(uv)'=u'v+uv'$ and $(\\sin kx)'=k\\cos kx$."
+      ],
+      "steps": [
+        "$f'(x)=\\dfrac12\\sin2x+\\dfrac12x\\cdot2\\cos2x=\\dfrac12\\sin2x+x\\cos2x$.",
+        "At $x=\\pi/4$: $\\sin\\frac\\pi2=1$ and $\\cos\\frac\\pi2=0$.",
+        "$f'(\\pi/4)=\\dfrac12\\cdot1+\\dfrac\\pi4\\cdot0=\\dfrac12$."
+      ],
+      "brief": "$f'=\\frac12\\sin2x+x\\cos2x$, so $f'(\\pi/4)=\\frac12$."
+    },
+    {
+      "sec": "3.3",
+      "q": "$f(x)=\\dfrac{\\cos x}{1-\\sin x}$, then $f'(x)=$",
+      "opts": [
+        "$\\dfrac{1}{1-\\sin x}$",
+        "$\\dfrac{\\sin x}{(1-\\sin x)^2}$",
+        "$\\dfrac{-\\sin x}{1-\\sin x}$",
+        "$\\dfrac{1}{(1-\\sin x)^2}$",
+        "$0$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Use the quotient rule and then simplify with a trigonometric identity.",
+        "Differentiate the numerator and denominator, form $\\dfrac{u'v-uv'}{v^2}$, and combine like terms.",
+        "$\\left(\\dfrac uv\\right)'=\\dfrac{u'v-uv'}{v^2}$ and $\\sin^2x+\\cos^2x=1$."
+      ],
+      "steps": [
+        "$f'(x)=\\dfrac{(-\\sin x)(1-\\sin x)-\\cos x(-\\cos x)}{(1-\\sin x)^2}$.",
+        "Numerator: $-\\sin x+\\sin^2x+\\cos^2x=1-\\sin x$.",
+        "$f'(x)=\\dfrac{1-\\sin x}{(1-\\sin x)^2}=\\dfrac1{1-\\sin x}$."
+      ],
+      "brief": "Numerator $=-\\sin x+\\sin^2x+\\cos^2x=1-\\sin x$, so $f'=\\frac{1}{1-\\sin x}$."
+    }
+  ]
+}

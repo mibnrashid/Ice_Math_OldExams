@@ -1,0 +1,426 @@
+{
+  "course": "stat201",
+  "term": "231",
+  "kind": "e2",
+  "date": "",
+  "minutes": 90,
+  "source": "stat319-231-ex2.pdf",
+  "note": "Original course STAT 319. The file has no cover, so the date is not printed (left empty) and 90 minutes is assumed. No answers are marked (correct); the red worked solution identifies the first choice for all 18 questions and all agree with my computation (python check). Rounding: Q3 exact value is 0.31731 (table 0.3174); Q9 exact 0.05235 (table z=-1.62 gives 0.0526); Q10 exact 0.50596 (printed 0.5059); Q13 exact 93.57 (table 93.56); Q11 uses z=2.33 (exact 2.326 also gives n=46). Q11 (continuous uniform, 4-5) is outside the current STAT 201 syllabus but kept and solved normally. The red solution of Q9 has a typo (mean of xbar printed as 1.1); ignored.",
+  "qs": [
+    {
+      "sec": "4.2",
+      "q": "(Example 4.2) Let the continuous random variable $X$ denote the diameter of a hole drilled in a sheet metal component. The target diameter is 12.5 millimeters. Most random disturbances to the process result in larger diameters. Historical data show that the distribution of $X$ can be modeled by a probability density function \\[ f(x)=20e^{-20(x-12.5)},\\qquad x\\ge 12.5 \\] If a part with a diameter greater than 12.60 mm is scrapped, what proportion of parts is scrapped?",
+      "opts": [
+        "0.13533",
+        "0.86467",
+        "0.00004",
+        "0.99996",
+        "0.5"
+      ],
+      "ans": 0,
+      "hints": [
+        "This is a probability from a density: integrate $f$ over the region of interest.",
+        "You need the area to the right of 12.60; the density lives on $x\\ge 12.5$, so you can integrate from 12.60 to infinity, or subtract the area from 12.5 to 12.60 from 1.",
+        "$P(X>a)=\\int_a^\\infty f(x)\\,dx=1-\\int_{\\text{start}}^{a}f(x)\\,dx$, and $\\int ce^{-c(x-x_0)}dx=-e^{-c(x-x_0)}$."
+      ],
+      "steps": [
+        "$P(X>12.6)=1-\\int_{12.5}^{12.6}20e^{-20(x-12.5)}dx$.",
+        "$\\int_{12.5}^{12.6}20e^{-20(x-12.5)}dx=\\left[-e^{-20(x-12.5)}\\right]_{12.5}^{12.6}=1-e^{-2}$.",
+        "So $P(X>12.6)=e^{-2}=0.13533$."
+      ],
+      "brief": "$P(X>12.6)=e^{-20(0.1)}=e^{-2}=0.13533$."
+    },
+    {
+      "sec": "4.4",
+      "q": "(Q4.48) The probability density function of the weight of packages delivered by a post office is \\[ f(x)=\\frac{70}{69x^2},\\qquad 1\\le x\\le 70 \\] If the shipping cost is $\\$2.50$ per pound, what is the average shipping cost of a package?",
+      "opts": [
+        "$\\$10.775$",
+        "$\\$4.31$",
+        "$\\$2.5$",
+        "$\\$6.81$",
+        "$\\$10.469$"
+      ],
+      "ans": 0,
+      "hints": [
+        "This is the mean of a continuous random variable, then scaled by a constant cost per pound.",
+        "First find the mean weight by integrating $x f(x)$ over the range, then multiply by the cost per pound.",
+        "$E(X)=\\int x f(x)\\,dx$ and $E(aX)=aE(X)$; also $\\int \\frac{1}{x}dx=\\ln x$."
+      ],
+      "steps": [
+        "Cost $=2.5X$, so the average cost is $2.5\\,E(X)$.",
+        "$E(X)=\\int_1^{70}x\\cdot\\frac{70}{69x^2}dx=\\frac{70}{69}\\int_1^{70}\\frac1x\\,dx=\\frac{70}{69}(\\ln70-\\ln1)=4.31$.",
+        "Average cost $=2.5(4.31)=\\$10.775$."
+      ],
+      "brief": "$E(X)=\\frac{70}{69}\\ln70=4.31$; cost $=2.5(4.31)=\\$10.775$."
+    },
+    {
+      "sec": "4.6",
+      "q": "(Q4.62) The fill volume of an automated filling machine used for filling cans of carbonated beverage is normally distributed with a mean of 12.4 fluid ounces and a standard deviation of 0.1 fluid ounce. If all cans less than 12.3 or more than 12.5 ounces are scrapped, what proportion of cans is scrapped?",
+      "opts": [
+        "0.3174",
+        "0.6826",
+        "0.1587",
+        "0.8413",
+        "0"
+      ],
+      "ans": 0,
+      "hints": [
+        "This is a normal probability problem with two tails.",
+        "Standardise both limits; they turn out to be symmetric about the mean, so the two tail areas are equal.",
+        "$Z=\\dfrac{X-\\mu}{\\sigma}$ and $P(\\text{scrap})=P(X<a)+P(X>b)$."
+      ],
+      "steps": [
+        "$z$ for 12.3: $\\frac{12.3-12.4}{0.1}=-1$; $z$ for 12.5: $\\frac{12.5-12.4}{0.1}=1$.",
+        "$P(Z<-1)=0.1587$ and $P(Z>1)=0.1587$.",
+        "Total scrapped $=0.1587+0.1587=0.3174$."
+      ],
+      "brief": "$z=\\pm1$: $2P(Z<-1)=2(0.1587)=0.3174$."
+    },
+    {
+      "sec": "4.8",
+      "q": "(Q4.96) The life of automobile voltage regulators has an exponential distribution with a mean life of six years. You purchase a six-year-old automobile, with a working voltage regulator and plan to own it for six years. What is the probability that the voltage regulator fails during your ownership?",
+      "opts": [
+        "0.6321",
+        "0.3678",
+        "0.5",
+        "0.5654",
+        "0.4346"
+      ],
+      "ans": 0,
+      "hints": [
+        "The exponential distribution has the lack-of-memory property.",
+        "Because the regulator is currently working, its age does not matter; ask for the probability of failing within the next six years.",
+        "$P(X>t+s\\mid X>t)=P(X>s)$, and $P(X<s)=1-e^{-\\lambda s}$ with $\\lambda=1/\\text{mean}$."
+      ],
+      "steps": [
+        "Mean 6 years gives $\\lambda=1/6$.",
+        "By the memoryless property the six years already used are irrelevant.",
+        "$P(X<6)=1-e^{-6/6}=1-e^{-1}=0.6321$."
+      ],
+      "brief": "Memoryless: $P(X<6)=1-e^{-1}=0.6321$."
+    },
+    {
+      "sec": "4.10",
+      "q": "(Q4.129) The life (in hours) of a computer processing unit (CPU) is modeled by a Weibull distribution with parameters $\\beta=2$ and $\\delta=900$ hours. What is the probability that the CPU fails before the mean life of the CPU?",
+      "opts": [
+        "0.5441",
+        "0.4559",
+        "0.6099",
+        "0.3901",
+        "0.5000"
+      ],
+      "ans": 0,
+      "hints": [
+        "This is a Weibull problem: first find the mean, then evaluate the CDF at the mean.",
+        "Compute the mean with the gamma function, using $\\Gamma(1/2)=\\sqrt\\pi$ and $\\Gamma(1+a)=a\\Gamma(a)$, then plug it into the CDF.",
+        "Weibull: $\\mu=\\delta\\,\\Gamma\\!\\left(1+\\tfrac1\\beta\\right)$ and $F(x)=1-e^{-(x/\\delta)^\\beta}$."
+      ],
+      "steps": [
+        "$\\mu=900\\,\\Gamma(1.5)=900(0.5)\\sqrt\\pi=797.60$.",
+        "$P(X<\\mu)=1-e^{-(797.60/900)^2}$.",
+        "$(0.8862)^2=0.7854$, so $P=1-e^{-0.7854}=1-0.4559=0.5441$."
+      ],
+      "brief": "$\\mu=900(0.5)\\sqrt\\pi=797.6$; $P=1-e^{-(0.8862)^2}=0.5441$."
+    },
+    {
+      "sec": "4.11",
+      "q": "(Q4.141) The length of time (in seconds) that a user views a page on a Web site before moving to another page is a lognormal random variable with parameters $\\theta=0.5$ and $\\omega^2=2$. By what length of time have 50$\\%$ of the users moved to another page?",
+      "opts": [
+        "1.649 seconds",
+        "1 second",
+        "6.782 seconds",
+        "2.495 seconds",
+        "0.147 seconds"
+      ],
+      "ans": 0,
+      "hints": [
+        "This asks for the median of a lognormal variable.",
+        "Work with $\\ln X$, which is normal; the 50th percentile of a normal variable is its mean.",
+        "If $\\ln X\\sim N(\\theta,\\omega^2)$ then the median of $X$ is $e^{\\theta}$, since $P(X<a)=P\\left(Z<\\frac{\\ln a-\\theta}{\\omega}\\right)$."
+      ],
+      "steps": [
+        "$0.5=P(X<a)=P\\left(Z<\\dfrac{\\ln a-0.5}{\\sqrt2}\\right)$.",
+        "$P(Z<0)=0.5$, so $\\dfrac{\\ln a-0.5}{\\sqrt2}=0$ and $\\ln a=0.5$.",
+        "$a=e^{0.5}=1.649$ seconds."
+      ],
+      "brief": "Median $=e^{\\theta}=e^{0.5}=1.649$ seconds."
+    },
+    {
+      "sec": "7.2",
+      "q": "(Example 7.1 and Q7.9) An electronics company manufactures resistors that have a mean resistance of 100 ohms and standard deviation of 10 ohms. The distribution of resistance is normal. How large must the random sample be if you want the standard error of the sample average to be no more than 1.5 ohms?",
+      "opts": [
+        "45",
+        "7",
+        "35",
+        "1",
+        "350"
+      ],
+      "ans": 0,
+      "hints": [
+        "Use the formula for the standard error of the sample mean.",
+        "Set $\\sigma/\\sqrt n\\le1.5$ and solve for $n$; round up to a whole number.",
+        "$\\sigma_{\\bar X}=\\dfrac{\\sigma}{\\sqrt n}$, so $n\\ge\\left(\\dfrac{\\sigma}{\\sigma_{\\bar X}}\\right)^2$."
+      ],
+      "steps": [
+        "Need $\\dfrac{10}{\\sqrt n}\\le1.5$.",
+        "$\\sqrt n\\ge\\dfrac{10}{1.5}=6.667$, so $n\\ge44.44$.",
+        "Round up: $n=45$."
+      ],
+      "brief": "$10/\\sqrt n\\le1.5\\Rightarrow n\\ge44.44$, so $n=45$."
+    },
+    {
+      "sec": "7.2",
+      "q": "(Example 7.1) An electronics company manufactures resistors that have a mean resistance of 100 ohms and a standard deviation of 10 ohms. The distribution of resistance is normal. Find the probability that a random sample of size 25 resistors will have an average resistance of fewer than 95 ohms.",
+      "opts": [
+        "0.0062",
+        "0.9938",
+        "0.2776",
+        "0.6914",
+        "0.5000"
+      ],
+      "ans": 0,
+      "hints": [
+        "The population is normal, so the sample mean is normal.",
+        "Find the standard error of $\\bar X$ and standardise 95.",
+        "$\\bar X\\sim N(\\mu,\\sigma^2/n)$, so $Z=\\dfrac{\\bar X-\\mu}{\\sigma/\\sqrt n}$."
+      ],
+      "steps": [
+        "$\\mu_{\\bar X}=100$ and $\\sigma_{\\bar X}=10/\\sqrt{25}=2$.",
+        "$z=\\dfrac{95-100}{2}=-2.5$.",
+        "$P(Z<-2.5)=0.0062$."
+      ],
+      "brief": "$\\sigma_{\\bar X}=2$, $z=-2.5$, $P=0.0062$."
+    },
+    {
+      "sec": "7.2",
+      "q": "A machine filling mini boxes of raisins fills the boxes so that the weight of the boxes has a population mean 14.1 grams and a population standard deviation 1.4 grams. A random sample of 49 boxes is selected. What is the probability that the total weight of the raisins will be at most 675 grams?",
+      "opts": [
+        "0.0526",
+        "0.4090",
+        "0.9438",
+        "0.5910",
+        "0.5"
+      ],
+      "ans": 0,
+      "hints": [
+        "Use the central limit theorem; a total at most 675 is the same as a sample mean at most 675 divided by $n$.",
+        "Convert the total into a sample mean, then standardise using the standard error $\\sigma/\\sqrt n$.",
+        "$\\bar X\\approx N(\\mu,\\sigma^2/n)$ for large $n$, and $\\sum X_i\\le T\\iff\\bar X\\le T/n$."
+      ],
+      "steps": [
+        "$\\sum X<675\\iff\\bar X<675/49=13.776$.",
+        "$\\sigma_{\\bar X}=1.4/\\sqrt{49}=0.2$, so $z=\\dfrac{13.776-14.1}{0.2}=-1.62$.",
+        "$P(Z<-1.62)=0.0526$."
+      ],
+      "brief": "$\\bar X<13.776$, $z=-1.62$, $P=0.0526$."
+    },
+    {
+      "sec": "7.2",
+      "q": "(Q7.16) Scientists at the Hopkins Memorial Forest in western Massachusetts have been collecting meteorological and environmental data in the forest data for more than 100 years. In the past few years, sulfate content in water samples from Birch Brook has averaged 7.48 mg/L with a standard deviation of 1.60 mg/L. What is the standard error of the sulfate in a collection of 10 water samples?",
+      "opts": [
+        "0.5059 mg/L",
+        "1.6 mg/L",
+        "31.623 mg/L",
+        "0.1834 mg/L",
+        "7.48 mg/L"
+      ],
+      "ans": 0,
+      "hints": [
+        "This asks for the standard deviation of a sample mean.",
+        "Divide the population standard deviation by the square root of the sample size.",
+        "$\\sigma_{\\bar X}=\\dfrac{\\sigma}{\\sqrt n}$."
+      ],
+      "steps": [
+        "$\\sigma=1.60$ and $n=10$.",
+        "$\\sigma_{\\bar X}=\\dfrac{1.60}{\\sqrt{10}}=\\dfrac{1.60}{3.1623}$.",
+        "$\\sigma_{\\bar X}\\approx0.506$ mg/L, which matches 0.5059 mg/L up to rounding."
+      ],
+      "brief": "$1.60/\\sqrt{10}\\approx0.5059$ mg/L."
+    },
+    {
+      "sec": "7.2",
+      "q": "(Example 7.2) Suppose that the random variable $X$ has the continuous uniform distribution with probability density function given by \\[ f(x)=0.5,\\qquad 4\\le x\\le 6 \\] How many observations should be selected in a sample from this distribution, if the sample mean is to be fewer than 5.2 with 99$\\%$ assurance?",
+      "opts": [
+        "46",
+        "7",
+        "25",
+        "5",
+        "30"
+      ],
+      "ans": 0,
+      "hints": [
+        "Use the central limit theorem and a percentile of the standard normal.",
+        "Find the mean and variance of the uniform distribution, then require $P(\\bar X<5.2)=0.99$, which fixes the $z$-value, and solve for $n$.",
+        "Uniform on $(a,b)$: $\\mu=\\frac{a+b}2$, $\\sigma^2=\\frac{(b-a)^2}{12}$; and $\\bar X\\approx N(\\mu,\\sigma^2/n)$."
+      ],
+      "steps": [
+        "$\\mu=5$ and $\\sigma^2=\\frac{(6-4)^2}{12}=\\frac13$, so $\\sigma_{\\bar X}=\\sqrt{\\frac1{3n}}$.",
+        "$P(\\bar X<5.2)=P\\left(Z<\\dfrac{0.2}{\\sqrt{1/(3n)}}\\right)=0.99$, so $\\dfrac{0.2}{\\sqrt{1/(3n)}}=z_{0.01}=2.33$.",
+        "$\\dfrac1{3n}=\\left(\\dfrac{0.2}{2.33}\\right)^2$, so $n=\\dfrac{(2.33/0.2)^2}{3}=45.2$.",
+        "Round up: $n=46$."
+      ],
+      "brief": "$\\mu=5,\\ \\sigma^2=1/3$; $0.2\\sqrt{3n}=2.33$ gives $n=45.2$, so $n=46$."
+    },
+    {
+      "sec": "7.2",
+      "q": "(page 239) For a sample of size 30 selected randomly from a lognormal distribution with $\\theta=2$ and $\\omega=0.75$, the sampling distribution of the sample mean will be",
+      "opts": [
+        "Approximately normal with standard error 1.55",
+        "Approximately normal with standard error 8.51",
+        "Lognormal with standard error 8.51",
+        "Lognormal with standard error 1.55",
+        "Normal with standard error 8.51"
+      ],
+      "ans": 0,
+      "hints": [
+        "Think about what the central limit theorem says when the population is not normal.",
+        "With $n=30$ the sample mean is approximately normal. For the standard error you need the standard deviation of the lognormal population, divided by $\\sqrt n$.",
+        "Lognormal: $E(X)=e^{\\theta+\\omega^2/2}$, $V(X)=e^{2\\theta+\\omega^2}\\left(e^{\\omega^2}-1\\right)$; standard error $=\\sigma/\\sqrt n$."
+      ],
+      "steps": [
+        "The population is lognormal (not normal) and $n=30$ is large, so by the CLT $\\bar X$ is approximately normal.",
+        "$\\sigma^2=e^{2(2)+0.75^2}\\left(e^{0.75^2}-1\\right)=e^{4.5625}(e^{0.5625}-1)=72.35$, so $\\sigma=8.506$.",
+        "Standard error $=8.506/\\sqrt{30}=1.55$."
+      ],
+      "brief": "CLT: approximately normal; $\\sigma=8.506$, so SE $=8.506/\\sqrt{30}=1.55$."
+    },
+    {
+      "sec": "8.1",
+      "q": "(Q8.1-c) For a normal population with known variance, the confidence level for the interval $\\bar x\\pm1.85\\dfrac{\\sigma}{\\sqrt n}$ is",
+      "opts": [
+        "93.56$\\%$",
+        "96.78$\\%$",
+        "98.39$\\%$",
+        "95$\\%$",
+        "90$\\%$"
+      ],
+      "ans": 0,
+      "hints": [
+        "The multiplier 1.85 is a $z_{\\alpha/2}$ value; work backwards to the confidence level.",
+        "Find the area in one tail beyond 1.85, double it to get $\\alpha$, and compute $1-\\alpha$.",
+        "The interval $\\bar x\\pm z_{\\alpha/2}\\sigma/\\sqrt n$ has confidence level $1-\\alpha=P(-z_{\\alpha/2}<Z<z_{\\alpha/2})$."
+      ],
+      "steps": [
+        "$z_{\\alpha/2}=1.85$, so $\\alpha/2=P(Z>1.85)=0.0322$.",
+        "$\\alpha=0.0644$.",
+        "Confidence level $=1-0.0644=0.9356=93.56\\%$."
+      ],
+      "brief": "$P(Z>1.85)=0.0322$, $\\alpha=0.0644$, level $=93.56\\%$."
+    },
+    {
+      "sec": "8.1",
+      "q": "(Q8.9) Suppose that 100 random samples of water from a freshwater lake were taken and the calcium concentration (milligrams per liter) measured. A 95$\\%$ CI on the mean calcium concentration is $0.49\\le\\mu\\le0.82$. The length of a 99$\\%$ CI calculated from the same sample data would be",
+      "opts": [
+        "wider",
+        "shorter",
+        "same length",
+        "sometimes wider and sometimes shorter",
+        "we need more information to tell"
+      ],
+      "ans": 0,
+      "hints": [
+        "Think about how the confidence level affects the margin of error.",
+        "With the same data ($\\bar x$, $s$, $n$ unchanged), only the critical value changes when the confidence level changes.",
+        "Length $=2z_{\\alpha/2}\\dfrac{\\sigma}{\\sqrt n}$ (or $2t_{\\alpha/2}\\dfrac{s}{\\sqrt n}$), which grows as the confidence level $1-\\alpha$ grows."
+      ],
+      "steps": [
+        "The sample data (and so $s$ and $n$) are the same for both intervals.",
+        "A higher confidence level needs a larger critical value: $2.576>1.96$ (similarly for $t$).",
+        "The margin of error grows, so the 99$\\%$ interval is wider."
+      ],
+      "brief": "Higher confidence means a larger critical value, so the interval is wider."
+    },
+    {
+      "sec": "8.1",
+      "q": "(Q8.18) Past experience has indicated that the breaking strength of yarn used in manufacturing drapery material is normally distributed with standard deviation of 2 psi. A random sample of nine specimens is tested, and the average breaking strength is found to be 98 psi. What is the length of a 95$\\%$ confidence interval on the true mean breaking strength?",
+      "opts": [
+        "2.613",
+        "1.306",
+        "1.1",
+        "2.2",
+        "1.706"
+      ],
+      "ans": 0,
+      "hints": [
+        "This is a known-$\\sigma$ interval; the length is twice the margin of error.",
+        "Use $z_{0.025}=1.96$, $\\sigma=2$ and $n=9$.",
+        "Length $=2\\,z_{\\alpha/2}\\dfrac{\\sigma}{\\sqrt n}$."
+      ],
+      "steps": [
+        "$z_{0.025}=1.96$.",
+        "Margin of error $=1.96\\cdot\\dfrac{2}{\\sqrt9}=1.3067$.",
+        "Length $=2(1.3067)=2.613$."
+      ],
+      "brief": "Length $=2(1.96)(2)/\\sqrt9=2.613$."
+    },
+    {
+      "sec": "8.1",
+      "q": "(Q8.11) The yield of a chemical process is being studied. From previous experience, yield is known to be normally distributed with standard deviation 3. How large must $n$ be if the length of the 99$\\%$ CI is to be 1?",
+      "opts": [
+        "239",
+        "60",
+        "35",
+        "139",
+        "98"
+      ],
+      "ans": 0,
+      "hints": [
+        "This is a sample-size problem for a mean with known $\\sigma$.",
+        "A length of 1 means a margin of error of 0.5; use the 99$\\%$ critical value and solve for $n$, rounding up.",
+        "$E=z_{\\alpha/2}\\dfrac{\\sigma}{\\sqrt n}$, so $n=\\left(\\dfrac{z_{\\alpha/2}\\sigma}{E}\\right)^2$."
+      ],
+      "steps": [
+        "Length 1 gives $E=0.5$; $z_{0.005}=2.575$.",
+        "$n=\\left(\\dfrac{2.575(3)}{0.5}\\right)^2=(15.45)^2=238.7$.",
+        "Round up: $n=239$."
+      ],
+      "brief": "$E=0.5$: $n=(2.575\\cdot3/0.5)^2=238.7$, so $n=239$."
+    },
+    {
+      "sec": "8.4",
+      "q": "(Example 8.8) In a random sample of 85 automobile engine crankshaft bearings, 10 have a surface finish that is rougher than the specifications allow. A 95$\\%$ confidence interval estimate of the proportion of bearings in the population that exceeds the roughness specification is given by",
+      "opts": [
+        "Between 4.92$\\%$ and 18.61$\\%$",
+        "Between 6.02$\\%$ and 17.51$\\%$",
+        "Between 7.29$\\%$ and 16.24$\\%$",
+        "Between 2.77$\\%$ and 20.76$\\%$",
+        "Between 8.44$\\%$ and 15.08$\\%$"
+      ],
+      "ans": 0,
+      "hints": [
+        "This is a large-sample confidence interval for a proportion.",
+        "Compute $\\hat p=10/85$, its standard error, and use $z_{0.025}=1.96$.",
+        "$\\hat p\\pm z_{\\alpha/2}\\sqrt{\\dfrac{\\hat p(1-\\hat p)}{n}}$."
+      ],
+      "steps": [
+        "$\\hat p=10/85=0.11765$.",
+        "Margin $=1.96\\sqrt{\\dfrac{0.11765(0.88235)}{85}}=1.96(0.03495)=0.0685$.",
+        "Interval: $0.1176\\pm0.0685$, i.e. $0.0492\\le p\\le0.1861$."
+      ],
+      "brief": "$\\hat p=0.1176$; margin $0.0685$; interval $4.92\\%$ to $18.61\\%$."
+    },
+    {
+      "sec": "8.4",
+      "q": "(Example 8.9) What is the needed sample size to estimate the true population proportion if we wanted to be at least 95$\\%$ confident that our estimate of the true population proportion was within 0.05 regardless of the true value of the population proportion $p$?",
+      "opts": [
+        "385",
+        "271",
+        "666",
+        "164",
+        "256"
+      ],
+      "ans": 0,
+      "hints": [
+        "This is a sample-size problem for a proportion with no prior estimate.",
+        "Regardless of $p$ means use the worst case $p(1-p)=1/4$.",
+        "$n=\\left(\\dfrac{z_{\\alpha/2}}{E}\\right)^2p(1-p)$, rounded up, with $p(1-p)\\le\\frac14$."
+      ],
+      "steps": [
+        "$z_{0.025}=1.96$, $E=0.05$, $p=0.5$.",
+        "$n=\\left(\\dfrac{1.96}{0.05}\\right)^2(0.25)=1536.64\\times0.25=384.16$.",
+        "Round up: $n=385$."
+      ],
+      "brief": "$p=0.5$: $n=0.25(1.96/0.05)^2=384.16$, so $n=385$."
+    }
+  ]
+}

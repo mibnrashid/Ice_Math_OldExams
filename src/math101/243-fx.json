@@ -1,0 +1,472 @@
+{
+  "course": "math101",
+  "term": "243",
+  "kind": "fx",
+  "date": "",
+  "minutes": 120,
+  "source": "math101-243-fx.pdf",
+  "note": "Date and duration are not printed on the master pages; 120 minutes is the usual Final length (syllabus). Master key is A for every question and matches my own solutions for all 20. Q7 uses derivatives of cosh/sinh, which go slightly past 5.9 Example 3 in the syllabus.",
+  "qs": [
+    {
+      "sec": "3.1",
+      "q": "An equation of the tangent line to the curve $y=\\dfrac{1}{x}$ at the point $\\left(2,\\dfrac12\\right)$ is",
+      "opts": [
+        "$x+4y=4$",
+        "$x-4y=0$",
+        "$8x+2y=17$",
+        "$3x+4y=8$",
+        "$x+4y=1$"
+      ],
+      "ans": 0,
+      "hints": [
+        "This is a tangent line problem: the slope comes from the derivative.",
+        "Differentiate, evaluate the derivative at the given $x$-value, and use the point-slope form.",
+        "The tangent line to $y=f(x)$ at $(a,f(a))$ is $y-f(a)=f'(a)(x-a)$, and $\\dfrac{d}{dx}x^{n}=nx^{n-1}$."
+      ],
+      "steps": [
+        "$y'=-\\dfrac{1}{x^2}$, so the slope at $x=2$ is $-\\dfrac14$.",
+        "Point-slope form: $y-\\dfrac12=-\\dfrac14(x-2)$.",
+        "Multiply by 4: $4y-2=-x+2$, so $x+4y=4$."
+      ],
+      "brief": "$y'=-1/x^2$, slope $-\\frac14$ at $x=2$: $x+4y=4$."
+    },
+    {
+      "sec": "3.4",
+      "q": "If $f(x)=\\sqrt{\\dfrac{x+1}{x-1}}$, then $f'(3)=$",
+      "opts": [
+        "$-\\dfrac{\\sqrt2}{8}$",
+        "$\\dfrac{\\sqrt2}{4}$",
+        "$-\\dfrac{\\sqrt2}{2}$",
+        "$\\sqrt2$",
+        "$-\\dfrac{\\sqrt2}{6}$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Use the chain rule together with the quotient rule.",
+        "Write the square root as a power $\\frac12$, differentiate the outside, then multiply by the derivative of the quotient inside.",
+        "$\\dfrac{d}{dx}u^{1/2}=\\dfrac12u^{-1/2}u'$ and $\\left(\\dfrac{g}{h}\\right)'=\\dfrac{g'h-gh'}{h^2}$."
+      ],
+      "steps": [
+        "$f'(x)=\\dfrac12\\left(\\dfrac{x+1}{x-1}\\right)^{-1/2}\\cdot\\dfrac{(x-1)-(x+1)}{(x-1)^2}=\\dfrac12\\left(\\dfrac{x+1}{x-1}\\right)^{-1/2}\\cdot\\dfrac{-2}{(x-1)^2}$.",
+        "At $x=3$: $\\left(\\dfrac42\\right)^{-1/2}=\\dfrac{1}{\\sqrt2}$ and $\\dfrac{-1}{2^2}=-\\dfrac14$.",
+        "$f'(3)=\\dfrac{1}{\\sqrt2}\\cdot\\left(-\\dfrac14\\right)=-\\dfrac{\\sqrt2}{8}$."
+      ],
+      "brief": "Chain and quotient rules: $f'(3)=\\frac1{\\sqrt2}\\cdot(-\\frac14)=-\\frac{\\sqrt2}{8}$."
+    },
+    {
+      "sec": "4.8",
+      "q": "The tangent line approximation of $f(x)=\\dfrac{\\pi}{4}-\\arctan(x-2)$ at the point $(3,0)$ is given by",
+      "opts": [
+        "$y=\\dfrac{3-x}{2}$",
+        "$y=3-x$",
+        "$y=\\dfrac{x-3}{2}$",
+        "$y=2x-6$",
+        "$y=1-\\dfrac{x}{3}$"
+      ],
+      "ans": 0,
+      "hints": [
+        "The tangent line approximation is the linearization of $f$ at the given point.",
+        "Find $f'(x)$ using the derivative of arctan, then evaluate it at the given $x$-value.",
+        "The linearization at $x=a$ is $y=f(a)+f'(a)(x-a)$, and $\\dfrac{d}{dx}\\arctan u=\\dfrac{u'}{1+u^2}$."
+      ],
+      "steps": [
+        "$f'(x)=-\\dfrac{1}{1+(x-2)^2}$, so $f'(3)=-\\dfrac12$.",
+        "$f(3)=\\dfrac\\pi4-\\arctan1=0$.",
+        "$y=0-\\dfrac12(x-3)=\\dfrac{3-x}{2}$."
+      ],
+      "brief": "$f(3)=0$, $f'(3)=-\\frac12$: $y=\\frac{3-x}{2}$."
+    },
+    {
+      "sec": "4.6",
+      "q": "The slant asymptote for the graph of $f(x)=\\dfrac{2x^2-3x+2}{x-1}$ is",
+      "opts": [
+        "$y=2x-1$",
+        "$y=2x+1$",
+        "$y=2x+2$",
+        "$y=x+2$",
+        "$y=x-2$"
+      ],
+      "ans": 0,
+      "hints": [
+        "A rational function whose numerator degree is one more than the denominator degree has a slant asymptote.",
+        "Divide the numerator by the denominator with polynomial long division.",
+        "If $f(x)=mx+c+\\dfrac{r}{x-a}$ with constant $r$, then $y=mx+c$ is the slant asymptote."
+      ],
+      "steps": [
+        "Divide $2x^2-3x+2$ by $x-1$: the first term is $2x$, leaving $-x+2$.",
+        "The next term is $-1$, leaving remainder $1$.",
+        "So $f(x)=2x-1+\\dfrac{1}{x-1}$, and the slant asymptote is $y=2x-1$."
+      ],
+      "brief": "Long division: $f(x)=2x-1+\\frac{1}{x-1}$, so $y=2x-1$."
+    },
+    {
+      "sec": "3.4",
+      "q": "If $y=\\cos^4 x$, then $y''=$",
+      "opts": [
+        "$-4\\cos^2x\\cdot(\\cos^2x-3\\sin^2x)$",
+        "$-2\\cos^2x\\cdot(2\\cos^2x-\\sin^2x)$",
+        "$3\\cos^2x\\cdot(\\cos^2x-2\\sin^2x)$",
+        "$4\\cos^2x\\cdot(\\cos^2x-2\\sin^2x)$",
+        "$\\cos^2x\\cdot(-4\\cos^2x+3\\sin^2x)$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Differentiate twice, using the chain rule and then the product rule.",
+        "Find $y'$ with the power rule and chain rule, then differentiate the product that results.",
+        "$\\dfrac{d}{dx}u^n=nu^{n-1}u'$, $(\\cos x)'=-\\sin x$, $(\\sin x)'=\\cos x$, $(uv)'=u'v+uv'$."
+      ],
+      "steps": [
+        "$y'=4\\cos^3x\\cdot(-\\sin x)=-4\\cos^3x\\sin x$.",
+        "$y''=-4\\left[\\cos^3x\\cdot\\cos x+\\sin x\\cdot3\\cos^2x\\cdot(-\\sin x)\\right]$.",
+        "$y''=-4\\left[\\cos^4x-3\\cos^2x\\sin^2x\\right]=-4\\cos^2x(\\cos^2x-3\\sin^2x)$."
+      ],
+      "brief": "$y'=-4\\cos^3x\\sin x$, then product rule: $y''=-4\\cos^2x(\\cos^2x-3\\sin^2x)$."
+    },
+    {
+      "sec": "5.9",
+      "q": "If $\\sinh x=-\\dfrac23$, then $\\coth x=$",
+      "opts": [
+        "$-\\dfrac{\\sqrt{13}}{2}$",
+        "$\\dfrac{\\sqrt{13}}{2}$",
+        "$2\\sqrt3$",
+        "$-\\dfrac{\\sqrt{13}}{3}$",
+        "$-\\dfrac{\\sqrt{13}}{4}$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Use a hyperbolic identity to find $\\cosh x$ first.",
+        "Find $\\cosh x$ from $\\sinh x$ (note that $\\cosh x>0$ always), then form the ratio for $\\coth x$.",
+        "$\\cosh^2x-\\sinh^2x=1$, $\\cosh x>0$, and $\\coth x=\\dfrac{\\cosh x}{\\sinh x}$."
+      ],
+      "steps": [
+        "$\\cosh^2x=1+\\sinh^2x=1+\\dfrac49=\\dfrac{13}{9}$, so $\\cosh x=\\dfrac{\\sqrt{13}}{3}$.",
+        "$\\coth x=\\dfrac{\\cosh x}{\\sinh x}=\\dfrac{\\sqrt{13}/3}{-2/3}$.",
+        "$\\coth x=-\\dfrac{\\sqrt{13}}{2}$."
+      ],
+      "brief": "$\\cosh x=\\frac{\\sqrt{13}}{3}$, so $\\coth x=\\frac{\\sqrt{13}/3}{-2/3}=-\\frac{\\sqrt{13}}2$."
+    },
+    {
+      "sec": "3.4",
+      "q": "If $y=\\sqrt{\\cosh(\\sqrt{x})}$, then $y\\cdot y'=$",
+      "opts": [
+        "$\\dfrac{\\sinh(\\sqrt x)}{4\\sqrt x}$",
+        "$\\dfrac{\\sinh(\\sqrt x)}{\\sqrt x}$",
+        "$\\sinh(\\sqrt x)$",
+        "$2\\sqrt x\\,\\sinh(\\sqrt x)$",
+        "$\\dfrac{\\sinh(\\sqrt x)}{2\\sqrt x}$"
+      ],
+      "ans": 0,
+      "hints": [
+        "This is a nested function, so use the chain rule more than once.",
+        "Differentiate from the outside in: square root, then $\\cosh$, then $\\sqrt x$. Multiply the result by $y$ at the end.",
+        "$\\dfrac{d}{dx}\\sqrt u=\\dfrac{u'}{2\\sqrt u}$ and $\\dfrac{d}{dx}\\cosh u=\\sinh u\\cdot u'$."
+      ],
+      "steps": [
+        "$y'=\\dfrac{1}{2\\sqrt{\\cosh\\sqrt x}}\\cdot\\sinh(\\sqrt x)\\cdot\\dfrac{1}{2\\sqrt x}=\\dfrac{1}{2y}\\cdot\\dfrac{\\sinh\\sqrt x}{2\\sqrt x}$.",
+        "Multiply by $y$: the factor $\\dfrac1{2y}$ cancels the $y$, leaving $\\dfrac12$.",
+        "$y\\cdot y'=\\dfrac{\\sinh(\\sqrt x)}{4\\sqrt x}$."
+      ],
+      "brief": "$y'=\\frac{1}{2y}\\sinh(\\sqrt x)\\frac{1}{2\\sqrt x}$, so $yy'=\\frac{\\sinh\\sqrt x}{4\\sqrt x}$."
+    },
+    {
+      "sec": "3.7",
+      "q": "In an electrical circuit, the voltage $V$, the resistance $R$, and the current $I$ are related by the equation \\[ V=IR. \\] If $R$ is increasing at a rate of 2 ohms per second and $V$ is increasing at a rate of 3 volts per second, then the rate at which $I$ is changing when $V=12$ volts and $R=4$ ohms is equal to",
+      "opts": [
+        "$-\\dfrac34$ amperes/sec",
+        "$-\\dfrac32$ amperes/sec",
+        "$-\\dfrac54$ amperes/sec",
+        "$-\\dfrac14$ amperes/sec",
+        "$-\\dfrac12$ amperes/sec"
+      ],
+      "ans": 0,
+      "hints": [
+        "This is a related rates problem.",
+        "Differentiate the relation with respect to time $t$, then substitute the given instants. First find $I$ at that moment from the relation itself.",
+        "For $V=IR$, the product rule gives $\\dfrac{dV}{dt}=I\\dfrac{dR}{dt}+R\\dfrac{dI}{dt}$."
+      ],
+      "steps": [
+        "At $V=12$, $R=4$: $I=\\dfrac{12}{4}=3$.",
+        "$\\dfrac{dV}{dt}=I\\dfrac{dR}{dt}+R\\dfrac{dI}{dt}$ gives $3=3\\cdot2+4\\dfrac{dI}{dt}$.",
+        "$4\\dfrac{dI}{dt}=-3$, so $\\dfrac{dI}{dt}=-\\dfrac34$ amperes/sec."
+      ],
+      "brief": "$I=3$; $3=3(2)+4\\,dI/dt$ gives $dI/dt=-\\frac34$."
+    },
+    {
+      "sec": "5.1",
+      "q": "If $f'(x)=\\sqrt[3]{x}+\\dfrac{1}{2\\sqrt x}$ and $f(1)=\\dfrac34$, then $f(4)=$",
+      "opts": [
+        "$3\\sqrt[3]{4}+1$",
+        "$4$",
+        "$\\sqrt[3]{4}+1$",
+        "$2\\sqrt[3]{4}-1$",
+        "$3\\sqrt[3]{4}+2$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Recover $f$ by antiderivatives, and use the initial value to fix the constant.",
+        "Rewrite with fractional powers, integrate term by term, then use $f(1)$ to find $C$.",
+        "$\\int x^n\\,dx=\\dfrac{x^{n+1}}{n+1}+C$ for $n\\neq-1$."
+      ],
+      "steps": [
+        "$f'(x)=x^{1/3}+\\dfrac12x^{-1/2}$, so $f(x)=\\dfrac34x^{4/3}+\\sqrt x+C$.",
+        "$f(1)=\\dfrac34+1+C=\\dfrac34$, so $C=-1$.",
+        "$f(4)=\\dfrac34\\cdot4^{4/3}+2-1=\\dfrac34\\cdot4\\sqrt[3]{4}+1=3\\sqrt[3]{4}+1$."
+      ],
+      "brief": "$f=\\frac34x^{4/3}+\\sqrt x-1$, so $f(4)=3\\sqrt[3]4+1$."
+    },
+    {
+      "sec": "2.4",
+      "q": "The set of all values of $x$ at which $f(x)=\\ln\\left(1-\\sqrt{x-1}\\right)$ is continuous is",
+      "opts": [
+        "$[1,2)$",
+        "$[1,\\infty)$",
+        "$(-\\infty,1)\\cup[2,\\infty)$",
+        "$[1,4)$",
+        "$(1,2)$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Compositions of continuous functions are continuous on their domain, so find the domain.",
+        "Require the square-root argument to be nonnegative and the logarithm argument to be positive.",
+        "$\\sqrt u$ needs $u\\ge0$ and $\\ln u$ needs $u>0$."
+      ],
+      "steps": [
+        "The square root needs $x-1\\ge0$, so $x\\ge1$.",
+        "The logarithm needs $1-\\sqrt{x-1}>0$, so $\\sqrt{x-1}<1$ and $x-1<1$, so $x<2$.",
+        "Combining: $1\\le x<2$, that is $[1,2)$."
+      ],
+      "brief": "Need $x\\ge1$ and $\\sqrt{x-1}<1$: continuous on $[1,2)$."
+    },
+    {
+      "sec": "3.1",
+      "q": "If \\[ f(x)=\\begin{cases} bx^2 & x\\le1\\\\ ax-2 & x>1\\end{cases} \\] is differentiable at $x=1$, then $ab=$",
+      "opts": [
+        "$8$",
+        "$-4$",
+        "$-1$",
+        "$6$",
+        "$3$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Differentiability at a point requires continuity there and equal one-sided derivatives.",
+        "Write two equations in $a,b$: one from matching the function values at $x=1$, one from matching the derivatives of the two pieces at $x=1$.",
+        "If $f$ is differentiable at $c$, then $\\lim_{x\\to c^-}f(x)=\\lim_{x\\to c^+}f(x)$ and $f'_-(c)=f'_+(c)$."
+      ],
+      "steps": [
+        "Continuity at $1$: $b=a-2$.",
+        "Derivatives at $1$: $2b=a$.",
+        "Substitute: $b=2b-2$, so $b=2$ and $a=4$. Then $ab=8$."
+      ],
+      "brief": "Continuity $b=a-2$, derivative $2b=a$: $b=2$, $a=4$, $ab=8$."
+    },
+    {
+      "sec": "4.1",
+      "q": "If $M$ and $m$ are, respectively, the absolute maximum value and absolute minimum value of \\[ f(x)=x^3+6x^2 \\] on the interval $[-6,1]$, then $M+m=$",
+      "opts": [
+        "$32$",
+        "$0$",
+        "$39$",
+        "$-7$",
+        "$22$"
+      ],
+      "ans": 0,
+      "hints": [
+        "This is an absolute extrema problem on a closed interval.",
+        "Find the critical numbers inside the interval, then compare $f$ at the critical numbers and at both endpoints.",
+        "The extreme value theorem: a continuous function on $[a,b]$ attains its absolute extrema at critical numbers or endpoints."
+      ],
+      "steps": [
+        "$f'(x)=3x^2+12x=3x(x+4)$, so the critical numbers are $x=0$ and $x=-4$, both in $[-6,1]$.",
+        "$f(-6)=0$, $f(-4)=32$, $f(0)=0$, $f(1)=7$.",
+        "$M=32$, $m=0$, so $M+m=32$."
+      ],
+      "brief": "Values $0,32,0,7$ at $-6,-4,0,1$: $M=32$, $m=0$, so $M+m=32$."
+    },
+    {
+      "sec": "4.6",
+      "q": "The absolute minimum value of $f(x)=\\ln(x^2+2x+3)$ is equal to",
+      "opts": [
+        "$\\ln2$",
+        "$\\ln3$",
+        "$2\\ln2$",
+        "$\\ln6$",
+        "$\\dfrac12\\ln3$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Find the critical numbers and decide which one gives the lowest value.",
+        "Differentiate, solve $f'(x)=0$, and check the sign of $f'$ on each side. Note the argument of the logarithm is always positive.",
+        "If $f'$ changes from negative to positive at the only critical number of a function defined on all of $\\mathbb{R}$, it gives the absolute minimum."
+      ],
+      "steps": [
+        "$x^2+2x+3=(x+1)^2+2>0$, so $f$ is defined for all $x$.",
+        "$f'(x)=\\dfrac{2x+2}{x^2+2x+3}$ is negative for $x<-1$ and positive for $x>-1$.",
+        "So the absolute minimum is $f(-1)=\\ln(1-2+3)=\\ln2$."
+      ],
+      "brief": "$f'=0$ only at $x=-1$ ($-$ to $+$): minimum $f(-1)=\\ln2$."
+    },
+    {
+      "sec": "4.4",
+      "q": "The graph of the function $f(x)=e^{-3/x}$",
+      "opts": [
+        "has one inflection point",
+        "has two inflection points",
+        "is concave upward on $(0,\\infty)$",
+        "is concave upward on $\\left(\\dfrac32,\\infty\\right)$",
+        "is concave downward on $\\left(0,\\dfrac32\\right)$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Concavity and inflection points are found from the sign of the second derivative.",
+        "Find $f''$, its zeros, and its sign on each interval, remembering that $x=0$ is not in the domain.",
+        "$f''>0$ means concave upward, $f''<0$ concave downward; an inflection point needs a sign change of $f''$ at a point of the domain."
+      ],
+      "steps": [
+        "$f'(x)=\\dfrac{3e^{-3/x}}{x^2}$.",
+        "$f''(x)=\\dfrac{3e^{-3/x}(3-2x)}{x^4}$, which is zero only at $x=\\dfrac32$.",
+        "$f''>0$ on $(-\\infty,0)$ and $\\left(0,\\dfrac32\\right)$, and $f''<0$ on $\\left(\\dfrac32,\\infty\\right)$. The sign changes only at $\\dfrac32$, which is in the domain, while $0$ is not.",
+        "So there is exactly one inflection point."
+      ],
+      "brief": "$f''=\\frac{3e^{-3/x}(3-2x)}{x^4}$ changes sign only at $x=\\frac32$: one inflection point."
+    },
+    {
+      "sec": "4.3",
+      "q": "The graph of the function $f(x)=\\dfrac{x^3}{3}-\\ln x$ is",
+      "opts": [
+        "increasing on $(1,\\infty)$",
+        "increasing on $(0,1)$",
+        "increasing on $(0,\\infty)$",
+        "decreasing on $(1,\\infty)$",
+        "decreasing on $(0,\\infty)$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Use the first derivative test for increasing and decreasing intervals.",
+        "Find $f'$ on the domain $x>0$, solve $f'=0$, and test the sign on each side.",
+        "$f'>0$ on an interval means $f$ is increasing there; $f'<0$ means decreasing."
+      ],
+      "steps": [
+        "The domain is $(0,\\infty)$ and $f'(x)=x^2-\\dfrac1x=\\dfrac{x^3-1}{x}$.",
+        "$f'(x)=0$ only at $x=1$.",
+        "$f'<0$ on $(0,1)$ and $f'>0$ on $(1,\\infty)$, so $f$ is increasing on $(1,\\infty)$."
+      ],
+      "brief": "$f'=\\frac{x^3-1}{x}$: negative on $(0,1)$, positive on $(1,\\infty)$."
+    },
+    {
+      "sec": "4.3",
+      "q": "If the graph of $f(x)=x^3+3kx^2+1$ has a local minimum at $x=10$, then $k=$",
+      "opts": [
+        "$-5$",
+        "$5$",
+        "$\\dfrac32$",
+        "$-\\dfrac32$",
+        "$-3$"
+      ],
+      "ans": 0,
+      "hints": [
+        "A local minimum at an interior point of a differentiable function occurs at a critical number.",
+        "Compute $f'(x)$, set it equal to zero at $x=10$, and solve for $k$. Then check that the point is a minimum.",
+        "If $f$ has a local extremum at $c$, then $f'(c)=0$; the second derivative test says $f''(c)>0$ gives a local minimum."
+      ],
+      "steps": [
+        "$f'(x)=3x^2+6kx=3x(x+2k)$, so the critical numbers are $0$ and $-2k$.",
+        "A local minimum at $10$ needs $-2k=10$, so $k=-5$.",
+        "Check: $f''(x)=6x+6k$, and $f''(10)=60-30=30>0$, so it is a local minimum."
+      ],
+      "brief": "$f'(10)=0$ gives $k=-5$; $f''(10)=30>0$ confirms a minimum."
+    },
+    {
+      "sec": "4.7",
+      "q": "If $(a,b)$, where $a>0$, is the point on the curve $y=x^2$ that is closest to the point $(0,4)$, then $ab=$",
+      "opts": [
+        "$\\dfrac{7\\sqrt{14}}{4}$",
+        "$\\dfrac{7\\sqrt{14}}{2}$",
+        "$\\dfrac{\\sqrt{14}}{2}$",
+        "$\\dfrac{\\sqrt{14}}{4}$",
+        "$\\dfrac{\\sqrt{14}}{8}$"
+      ],
+      "ans": 0,
+      "hints": [
+        "This is an optimization problem: minimize a distance.",
+        "Minimize the squared distance from a point $(x,x^2)$ on the curve to $(0,4)$, which has the same minimizer as the distance.",
+        "Distance squared: $d^2=(x-x_0)^2+(y-y_0)^2$; set the derivative to zero and confirm a minimum with the second derivative test."
+      ],
+      "steps": [
+        "$D(x)=x^2+(x^2-4)^2=x^4-7x^2+16$.",
+        "$D'(x)=4x^3-14x=2x(2x^2-7)=0$; with $x>0$, $x=\\sqrt{7/2}$. Also $D''=12x^2-14=28>0$, so it is a minimum.",
+        "$a=\\sqrt{7/2}$, $b=a^2=\\dfrac72$, so $ab=\\dfrac72\\sqrt{\\dfrac72}=\\dfrac{7\\sqrt{14}}{4}$."
+      ],
+      "brief": "Minimize $x^4-7x^2+16$: $a=\\sqrt{7/2}$, $b=\\frac72$, $ab=\\frac{7\\sqrt{14}}{4}$."
+    },
+    {
+      "sec": "5.6",
+      "q": "$\\lim_{x\\to0^+}x^2(\\ln x)^3=$",
+      "opts": [
+        "$0$",
+        "$-\\dfrac32$",
+        "$\\dfrac32$",
+        "$-\\dfrac34$",
+        "$-\\infty$"
+      ],
+      "ans": 0,
+      "hints": [
+        "This is an indeterminate product $0\\cdot(-\\infty)$.",
+        "Rewrite it as a quotient, for example $\\dfrac{(\\ln x)^3}{x^{-2}}$, and apply L'Hopital's rule repeatedly.",
+        "L'Hopital's rule: if $\\dfrac{f}{g}$ has the form $\\dfrac{\\pm\\infty}{\\pm\\infty}$ or $\\dfrac00$, then $\\lim\\dfrac fg=\\lim\\dfrac{f'}{g'}$ when the latter exists."
+      ],
+      "steps": [
+        "$\\lim_{x\\to0^+}\\dfrac{(\\ln x)^3}{x^{-2}}$ has the form $\\dfrac{-\\infty}{\\infty}$. L'Hopital: $\\dfrac{3(\\ln x)^2/x}{-2x^{-3}}=-\\dfrac32\\cdot\\dfrac{(\\ln x)^2}{x^{-2}}$.",
+        "Again: $-\\dfrac32\\cdot\\dfrac{2\\ln x/x}{-2x^{-3}}=\\dfrac32\\cdot\\dfrac{\\ln x}{x^{-2}}$.",
+        "Again: $\\dfrac32\\cdot\\dfrac{1/x}{-2x^{-3}}=-\\dfrac34x^2\\to0$."
+      ],
+      "brief": "Write as $\\frac{(\\ln x)^3}{x^{-2}}$, apply L'Hopital three times: limit $0$."
+    },
+    {
+      "sec": "5.6",
+      "q": "$\\lim_{x\\to\\infty}\\left(\\dfrac{2^x-1}{x}\\right)^{1/x}=$",
+      "opts": [
+        "$2$",
+        "$1$",
+        "$\\dfrac12$",
+        "$2\\ln2$",
+        "$\\dfrac{\\ln2}{2}$"
+      ],
+      "ans": 0,
+      "hints": [
+        "This is an indeterminate power of the form $\\infty^0$.",
+        "Take the natural log of the expression to turn the power into a quotient, then use L'Hopital's rule.",
+        "If $\\lim\\ln y=L$ then $\\lim y=e^{L}$; L'Hopital's rule applies to $\\dfrac{\\infty}{\\infty}$ forms."
+      ],
+      "steps": [
+        "Let $y=\\left(\\dfrac{2^x-1}{x}\\right)^{1/x}$, so $\\ln y=\\dfrac{\\ln\\left(\\frac{2^x-1}{x}\\right)}{x}$, of the form $\\dfrac\\infty\\infty$.",
+        "L'Hopital gives $\\dfrac{x}{2^x-1}\\cdot\\dfrac{x2^x\\ln2-(2^x-1)}{x^2}=\\dfrac{2^x\\ln2}{2^x-1}-\\dfrac1x$.",
+        "Apply L'Hopital again to the first term: $\\dfrac{2^x(\\ln2)^2}{2^x\\ln2}=\\ln2$, and $\\dfrac1x\\to0$. So $\\ln y\\to\\ln2$ and $y\\to2$."
+      ],
+      "brief": "$\\ln y\\to\\ln2$ by L'Hopital (twice), so the limit is $2$."
+    },
+    {
+      "sec": "3.1",
+      "q": "Which one of the following statements is TRUE about the function \\[ f(x)=\\begin{cases} x\\sin\\left(\\dfrac1x\\right) & x\\neq0\\\\ 0 & x=0\\end{cases} \\]",
+      "opts": [
+        "$f'(0)$ does not exist",
+        "$f'(0)=0$",
+        "$f'(0)=1$",
+        "$f$ is not continuous at $x=0$",
+        "$f$ is not continuous at $x=1$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Check continuity and the derivative at $0$ using the definitions.",
+        "Use the squeeze theorem for $\\lim_{x\\to0}f(x)$, and use the difference quotient at $0$ for $f'(0)$.",
+        "$f'(0)=\\lim_{h\\to0}\\dfrac{f(h)-f(0)}{h}$, and $-|x|\\le x\\sin\\frac1x\\le|x|$."
+      ],
+      "steps": [
+        "Since $-|x|\\le x\\sin\\frac1x\\le|x|$, $\\lim_{x\\to0}f(x)=0=f(0)$, so $f$ is continuous at $0$. Away from $0$, $f$ is a product of continuous functions, so it is continuous at $x=1$ too.",
+        "$f'(0)=\\lim_{h\\to0}\\dfrac{h\\sin(1/h)-0}{h}=\\lim_{h\\to0}\\sin\\dfrac1h$.",
+        "This limit oscillates between $-1$ and $1$ and does not exist, so $f'(0)$ does not exist."
+      ],
+      "brief": "$\\frac{f(h)-f(0)}{h}=\\sin\\frac1h$ has no limit at $0$; $f'(0)$ does not exist."
+    }
+  ]
+}

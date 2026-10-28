@@ -1,0 +1,33 @@
+<!doctype html>
+<meta charset="utf-8">
+<script>
+window.MathJax={tex:{inlineMath:[["$","$"]],displayMath:[["\\[","\\]"]]},svg:{fontCache:"global"},startup:{typeset:false}};
+</script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3.2.2/es5/tex-svg-full.js"></script>
+<script src="../data/math101.js"></script><script src="../data/math102.js"></script><script src="../data/math201.js"></script>
+<script src="../data/math208.js"></script><script src="../data/stat201.js"></script>
+<body><pre id="out">running</pre><div id="box"></div>
+<script>
+// Render every student-visible string with the site's MathJax config and report TeX errors.
+MathJax.startup.promise.then(async () => {
+  const box = document.getElementById("box"), errs = []; let n = 0;
+  for (const [course, exams] of Object.entries(window.ICE_DATA)) for (const T of exams) T.qs.forEach((q, i) => {
+    const parts = [["q", q.q], ["answer", q.answer], ...(q.opts || []).map((o, j) => ["opt" + j, o]),
+                   ...(q.hints || []).map((h, j) => ["hint" + j, h]), ...(q.steps || []).map((s, j) => ["step" + j, s])];
+    for (const [k, s] of parts) if (s) {
+      const d = document.createElement("div"); d.textContent = s;
+      d.dataset.where = `${course} ${T.term}-${T.kind} Q${i + 1} ${k}`; box.append(d); n++;
+    }
+  });
+  await MathJax.typesetPromise([box]);
+  box.querySelectorAll('mjx-merror, [data-mjx-error], [data-mml-node="mtext"][fill="red"]').forEach(e => {
+    const d = e.closest("[data-where]"); errs.push(d.dataset.where + " :: " + (e.getAttribute("data-mjx-error") || e.textContent));
+  });
+  // Unrendered TeX left as raw text also counts as a problem.
+  box.querySelectorAll("[data-where]").forEach(d => {
+    const raw = [...d.childNodes].filter(c => c.nodeType === 3).map(c => c.textContent).join("");
+    if (/\\[a-zA-Z]+|\$/.test(raw)) errs.push(d.dataset.where + " :: raw TeX left: " + raw.slice(0, 80));
+  });
+  document.getElementById("out").textContent = "checked " + n + " strings, problems " + errs.length + "\n" + errs.join("\n");
+});
+</script>

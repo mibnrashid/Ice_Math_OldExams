@@ -1,0 +1,432 @@
+{
+  "course": "math101",
+  "term": "231",
+  "kind": "e2",
+  "date": "",
+  "minutes": 90,
+  "source": "math101-231-ex2.pdf",
+  "note": "Scan has no cover page: date and exam length are not printed, so date is left empty and 90 minutes is assumed. All 18 master answers (key table: all A) were verified with sympy and agree. Handwritten solutions and red annotations were ignored.",
+  "qs": [
+    {
+      "sec": "3.3",
+      "q": "If $f(x)=\\dfrac{\\cos x}{1-\\sin x}$, then $f'(x)=$",
+      "opts": [
+        "$\\dfrac{1}{1-\\sin x}$",
+        "$\\dfrac{-\\cos x}{(1-\\sin x)^2}$",
+        "$\\dfrac{1+\\cos x}{(1-\\sin x)^2}$",
+        "$\\dfrac{\\sin x}{1-\\sin x}$",
+        "$\\dfrac{1-\\cos x}{1-\\sin x}$"
+      ],
+      "ans": 0,
+      "hints": [
+        "This is a quotient of two functions.",
+        "Apply the quotient rule, then simplify the numerator using a trigonometric identity.",
+        "$\\left(\\dfrac uv\\right)'=\\dfrac{u'v-uv'}{v^2}$ and $\\sin^2x+\\cos^2x=1$."
+      ],
+      "steps": [
+        "$u=\\cos x$, $v=1-\\sin x$, so $u'=-\\sin x$, $v'=-\\cos x$.",
+        "$f'=\\dfrac{(-\\sin x)(1-\\sin x)-\\cos x(-\\cos x)}{(1-\\sin x)^2}$.",
+        "Numerator: $-\\sin x+\\sin^2x+\\cos^2x=1-\\sin x$.",
+        "$f'(x)=\\dfrac{1-\\sin x}{(1-\\sin x)^2}=\\dfrac{1}{1-\\sin x}$."
+      ],
+      "brief": "Quotient rule; numerator $=1-\\sin x$, so $f'=\\frac{1}{1-\\sin x}$."
+    },
+    {
+      "sec": "3.3",
+      "q": "If $y=Ax+B$ is an equation of the tangent line to the graph of $f(x)=(x-1)e^x$ at the point $(1,0)$, then $A-B=$",
+      "opts": [
+        "$2e$",
+        "$0$",
+        "$e+1$",
+        "$-2e$",
+        "$e$"
+      ],
+      "ans": 0,
+      "hints": [
+        "The slope of a tangent line is the derivative at the point.",
+        "Use the product rule to find $f'(1)$, then write the line through $(1,0)$.",
+        "Tangent line at $(a,f(a))$: $y-f(a)=f'(a)(x-a)$; $(uv)'=u'v+uv'$."
+      ],
+      "steps": [
+        "$f'(x)=e^x+(x-1)e^x=xe^x$, so $A=f'(1)=e$.",
+        "Line: $y-0=e(x-1)$, so $y=ex-e$ and $B=-e$.",
+        "$A-B=e-(-e)=2e$."
+      ],
+      "brief": "$f'=xe^x$, $A=e$, line $y=ex-e$, so $B=-e$ and $A-B=2e$."
+    },
+    {
+      "sec": "3.3",
+      "q": "If $f(t)=t\\sin t$, then $f^{(3)}(t)=$",
+      "opts": [
+        "$-t\\cos t-3\\sin t$",
+        "$t\\cos t-\\sin t$",
+        "$-t\\sin t-3\\cos t$",
+        "$2t\\cos t-\\sin t$",
+        "$t^3\\sin^3t$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Differentiate three times in a row.",
+        "Use the product rule each time.",
+        "$(uv)'=u'v+uv'$, $(\\sin t)'=\\cos t$, $(\\cos t)'=-\\sin t$."
+      ],
+      "steps": [
+        "$f'=t\\cos t+\\sin t$.",
+        "$f''=-t\\sin t+\\cos t+\\cos t=-t\\sin t+2\\cos t$.",
+        "$f'''=-t\\cos t-\\sin t-2\\sin t=-t\\cos t-3\\sin t$."
+      ],
+      "brief": "$f'=t\\cos t+\\sin t$, $f''=-t\\sin t+2\\cos t$, $f'''=-t\\cos t-3\\sin t$."
+    },
+    {
+      "sec": "3.4",
+      "q": "The sum of the $x$-coordinates of the points at which the graph of $f(x)=(3x-2x^2)^3$ has a horizontal tangent line is equal to",
+      "opts": [
+        "$\\dfrac94$",
+        "$\\dfrac92$",
+        "$3$",
+        "$\\dfrac34$",
+        "$2$"
+      ],
+      "ans": 0,
+      "hints": [
+        "A horizontal tangent means the slope is zero.",
+        "Differentiate with the chain rule, set $f'(x)=0$ and solve each factor.",
+        "$\\left(u^n\\right)'=nu^{n-1}u'$; a product is zero when one factor is zero."
+      ],
+      "steps": [
+        "$f'(x)=3(3x-2x^2)^2(3-4x)$.",
+        "$f'=0$: $3x-2x^2=0$ gives $x=0$ or $x=\\frac32$; $3-4x=0$ gives $x=\\frac34$.",
+        "Sum: $0+\\frac32+\\frac34=\\frac94$."
+      ],
+      "brief": "$f'=3(3x-2x^2)^2(3-4x)=0$: $x=0,\\frac32,\\frac34$; sum $\\frac94$."
+    },
+    {
+      "sec": "3.4",
+      "q": "If $h(x)=\\log_3\\!\\left(\\dfrac{x\\sqrt{x-1}}{2}\\right)$, then $h'(2)=$",
+      "opts": [
+        "$\\dfrac{1}{\\ln 3}$",
+        "$\\dfrac{3}{2\\ln 3}$",
+        "$0$",
+        "$-\\dfrac{2}{\\ln 3}$",
+        "$\\dfrac{2}{\\ln 3}$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Use properties of logarithms before differentiating.",
+        "Split the logarithm into a sum and difference of simpler logs.",
+        "$\\log_b(uv/w)=\\log_bu+\\log_bv-\\log_bw$ and $\\dfrac{d}{dx}\\log_b x=\\dfrac{1}{x\\ln b}$."
+      ],
+      "steps": [
+        "$h(x)=\\log_3x+\\frac12\\log_3(x-1)-\\log_32$.",
+        "$h'(x)=\\dfrac{1}{x\\ln3}+\\dfrac{1}{2(x-1)\\ln3}$.",
+        "$h'(2)=\\dfrac{1}{2\\ln3}+\\dfrac{1}{2\\ln3}=\\dfrac{1}{\\ln3}$."
+      ],
+      "brief": "Expand the log: $h'=\\frac{1}{x\\ln3}+\\frac{1}{2(x-1)\\ln3}$, so $h'(2)=\\frac1{\\ln3}$."
+    },
+    {
+      "sec": "3.4",
+      "q": "If $g(x)=\\dfrac{x^2}{\\sqrt{1-x^2}}$, then $g'(x)=$",
+      "opts": [
+        "$\\dfrac{2x-x^3}{(1-x^2)^{3/2}}$",
+        "$\\dfrac{2x-3x^3}{(1-x^2)^{3/2}}$",
+        "$\\dfrac{x}{\\sqrt{1-x^2}}$",
+        "$\\dfrac{-2x}{\\sqrt{1-x^2}}$",
+        "$\\dfrac{x}{(1-x^2)^{3/2}}$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Quotient rule together with the chain rule for the square root.",
+        "Differentiate $\\sqrt{1-x^2}$ with the chain rule, then combine over a common denominator.",
+        "$\\dfrac{d}{dx}\\sqrt{u}=\\dfrac{u'}{2\\sqrt u}$ and $\\left(\\dfrac fg\\right)'=\\dfrac{f'g-fg'}{g^2}$."
+      ],
+      "steps": [
+        "$g'=\\dfrac{2x\\sqrt{1-x^2}+\\dfrac{x^3}{\\sqrt{1-x^2}}}{1-x^2}$.",
+        "Multiply top and bottom by $\\sqrt{1-x^2}$: $\\dfrac{2x(1-x^2)+x^3}{(1-x^2)^{3/2}}$.",
+        "$g'=\\dfrac{2x-x^3}{(1-x^2)^{3/2}}$."
+      ],
+      "brief": "Quotient and chain rules: $g'=\\frac{2x(1-x^2)+x^3}{(1-x^2)^{3/2}}=\\frac{2x-x^3}{(1-x^2)^{3/2}}$."
+    },
+    {
+      "sec": "3.5",
+      "q": "If $y$ is defined implicitly as a differentiable function of $x$ by the equation $(x^2+y^2)^3=8xy$, then $\\dfrac{dy}{dx}=$",
+      "opts": [
+        "$\\dfrac{4y-3x(x^2+y^2)^2}{-4x+3y(x^2+y^2)^2}$",
+        "$\\dfrac{8y-3x(x^2+y^2)^2}{-8x+3y(x^2+y^2)^2}$",
+        "$\\dfrac{4x-3y(x^2+y^2)^2}{-4y+3x(x^2+y^2)^2}$",
+        "$\\dfrac{4y+3x(x^2+y^2)^2}{-4x+3y(x^2+y^2)^2}$",
+        "$\\dfrac{4y-3x(x^2+y^2)}{-4x-3y(x^2+y^2)}$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Implicit differentiation.",
+        "Differentiate both sides with respect to $x$, treating $y$ as a function of $x$, then collect the $y'$ terms.",
+        "Chain rule: $\\dfrac{d}{dx}y^2=2yy'$; product rule: $(xy)'=y+xy'$."
+      ],
+      "steps": [
+        "$3(x^2+y^2)^2(2x+2yy')=8y+8xy'$.",
+        "$6x(x^2+y^2)^2+6y(x^2+y^2)^2y'=8y+8xy'$.",
+        "Collect: $\\left[6y(x^2+y^2)^2-8x\\right]y'=8y-6x(x^2+y^2)^2$.",
+        "Divide numerator and denominator by 2: $y'=\\dfrac{4y-3x(x^2+y^2)^2}{-4x+3y(x^2+y^2)^2}$."
+      ],
+      "brief": "Differentiate implicitly and solve for $y'$: $\\frac{4y-3x(x^2+y^2)^2}{-4x+3y(x^2+y^2)^2}$."
+    },
+    {
+      "sec": "3.5",
+      "q": "If $y=(\\sin x)^{\\ln(\\cos x)}$, $0<x<\\dfrac{\\pi}{2}$, then $y'=$",
+      "opts": [
+        "$(\\sin x)^{\\ln(\\cos x)}\\left[\\cot x\\cdot\\ln(\\cos x)-\\tan x\\cdot\\ln(\\sin x)\\right]$",
+        "$(\\sin x)^{\\ln(\\cos x)}\\left[\\dfrac{\\ln(\\cos x)}{\\sin x}+\\dfrac{\\ln(\\sin x)}{\\cos x}\\right]$",
+        "$(\\sin x)^{\\ln(\\cos x)}\\left[\\tan x\\cdot\\ln(\\cos x)+\\cot x\\cdot\\ln(\\sin x)\\right]$",
+        "$(\\sin x)^{\\ln(\\cos x)}\\left[\\ln(\\cos x)-\\ln(\\sin x)\\right]$",
+        "$\\ln(\\cos x)\\cdot(\\sin x)^{\\ln(\\cos x)-1}\\cdot\\cos x$"
+      ],
+      "ans": 0,
+      "hints": [
+        "The variable appears in both the base and the exponent.",
+        "Take $\\ln$ of both sides, then differentiate implicitly using the product rule.",
+        "$\\ln y=g(x)\\ln f(x)$ gives $\\dfrac{y'}{y}=g'\\ln f+g\\dfrac{f'}{f}$."
+      ],
+      "steps": [
+        "$\\ln y=\\ln(\\cos x)\\cdot\\ln(\\sin x)$.",
+        "$\\dfrac{y'}{y}=\\dfrac{-\\sin x}{\\cos x}\\ln(\\sin x)+\\ln(\\cos x)\\dfrac{\\cos x}{\\sin x}$.",
+        "$y'=y\\left[\\cot x\\ln(\\cos x)-\\tan x\\ln(\\sin x)\\right]$."
+      ],
+      "brief": "Logarithmic differentiation: $y'=y[\\cot x\\ln(\\cos x)-\\tan x\\ln(\\sin x)]$."
+    },
+    {
+      "sec": "3.6",
+      "q": "The slope of the tangent line to the graph of \\[ f(x)=x\\arctan(2x)-\\frac14\\ln(1+4x^2) \\] at the point with $x$-coordinate $\\dfrac{\\sqrt3}{2}$ is equal to",
+      "opts": [
+        "$\\dfrac{\\pi}{3}$",
+        "$\\dfrac{\\pi}{6}$",
+        "$\\dfrac{\\pi}{4}$",
+        "$\\dfrac{2\\pi}{3}$",
+        "$\\dfrac{\\pi}{2}$"
+      ],
+      "ans": 0,
+      "hints": [
+        "The slope is $f'$ at the given $x$; the derivative involves an inverse trigonometric function.",
+        "Differentiate with the product rule and chain rule; some terms cancel.",
+        "$\\dfrac{d}{dx}\\arctan u=\\dfrac{u'}{1+u^2}$ and $\\dfrac{d}{dx}\\ln u=\\dfrac{u'}{u}$."
+      ],
+      "steps": [
+        "$f'(x)=\\dfrac{2x}{1+4x^2}+\\arctan(2x)-\\dfrac14\\cdot\\dfrac{8x}{1+4x^2}$.",
+        "The fractions cancel: $f'(x)=\\arctan(2x)$.",
+        "$f'\\!\\left(\\frac{\\sqrt3}{2}\\right)=\\arctan\\sqrt3=\\dfrac{\\pi}{3}$."
+      ],
+      "brief": "$f'(x)=\\arctan(2x)$, so the slope is $\\arctan\\sqrt3=\\frac{\\pi}{3}$."
+    },
+    {
+      "sec": "3.4",
+      "q": "Let $h(4)=3$, $h'(4)=-\\dfrac14$, $g(3)=3$, $g'(3)=-4$. If $f(x)=[g(h(x^2))]^2$, then $f'(2)=$",
+      "opts": [
+        "$24$",
+        "$-24$",
+        "$-6$",
+        "$12$",
+        "$-8$"
+      ],
+      "ans": 0,
+      "hints": [
+        "A nested composition: use the chain rule repeatedly.",
+        "Work from the outside in, differentiating the power, then $g$, then $h$, then $x^2$.",
+        "$\\dfrac{d}{dx}[F(G(H(x)))]=F'(G(H))\\,G'(H)\\,H'(x)$."
+      ],
+      "steps": [
+        "$f'(x)=2\\,g(h(x^2))\\cdot g'(h(x^2))\\cdot h'(x^2)\\cdot2x$.",
+        "At $x=2$: $x^2=4$, $h(4)=3$, so $f'(2)=2\\,g(3)\\,g'(3)\\,h'(4)\\cdot4$.",
+        "$=2\\cdot3\\cdot(-4)\\cdot\\left(-\\frac14\\right)\\cdot4=24$."
+      ],
+      "brief": "Chain rule: $f'(2)=2\\,g(3)\\,g'(3)\\,h'(4)\\cdot4=24$."
+    },
+    {
+      "sec": "3.5",
+      "q": "If $y=Ax+B$ is an equation of the normal line to the graph of the equation $y\\ln x+y^2=0$ at the point $(e,-1)$, then $A^2+B=$",
+      "opts": [
+        "$-1$",
+        "$1$",
+        "$0$",
+        "$-e$",
+        "$e$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Find the slope of the tangent by implicit differentiation; the normal line is perpendicular to it.",
+        "Differentiate implicitly, substitute $(e,-1)$, then take the negative reciprocal slope.",
+        "Normal slope $=-\\dfrac{1}{m_{\\tan}}$; line through $(x_0,y_0)$: $y-y_0=m(x-x_0)$."
+      ],
+      "steps": [
+        "$\\dfrac yx+y'\\ln x+2yy'=0$. At $(e,-1)$: $-\\dfrac1e+y'-2y'=0$, so $y'=-\\dfrac1e$.",
+        "Normal slope: $A=e$.",
+        "$y+1=e(x-e)$, so $y=ex-e^2-1$ and $B=-e^2-1$.",
+        "$A^2+B=e^2-e^2-1=-1$."
+      ],
+      "brief": "Tangent slope $-\\frac1e$, normal slope $e$, $B=-e^2-1$, so $A^2+B=-1$."
+    },
+    {
+      "sec": "3.7",
+      "q": "If the length $s$ of each side of an equilateral triangle is increasing at a rate of $5\\,\\text{m/min}$, then the rate at which the area $A$ of the triangle changes when $s=4\\,\\text{m}$ is equal to $\\left(A=\\dfrac{\\sqrt3}{4}s^2\\right)$",
+      "opts": [
+        "$10\\sqrt3\\ \\text{m}^2/\\text{min}$",
+        "$5\\sqrt3\\ \\text{m}^2/\\text{min}$",
+        "$\\dfrac{\\sqrt3}{5}\\ \\text{m}^2/\\text{min}$",
+        "$\\dfrac{5\\sqrt3}{2}\\ \\text{m}^2/\\text{min}$",
+        "$4\\sqrt3\\ \\text{m}^2/\\text{min}$"
+      ],
+      "ans": 0,
+      "hints": [
+        "A related rates problem.",
+        "Differentiate the area formula with respect to time $t$.",
+        "$\\dfrac{dA}{dt}=\\dfrac{dA}{ds}\\cdot\\dfrac{ds}{dt}$."
+      ],
+      "steps": [
+        "$\\dfrac{dA}{dt}=\\dfrac{\\sqrt3}{4}\\cdot2s\\,\\dfrac{ds}{dt}=\\dfrac{\\sqrt3}{2}s\\,\\dfrac{ds}{dt}$.",
+        "With $s=4$, $\\dfrac{ds}{dt}=5$: $\\dfrac{dA}{dt}=\\dfrac{\\sqrt3}{2}\\cdot4\\cdot5=10\\sqrt3$."
+      ],
+      "brief": "$A'=\\frac{\\sqrt3}{2}s\\,s'=\\frac{\\sqrt3}{2}(4)(5)=10\\sqrt3\\ \\text{m}^2/\\text{min}$."
+    },
+    {
+      "sec": "3.7",
+      "q": "A man 2 meters tall walks at a rate of 2.5 meters per second away from a light that is 7 meters above the ground. At what rate is the tip of his shadow moving when he is 5 meters from the base of the light?",
+      "opts": [
+        "3.5 meter per second",
+        "0.5 meter per second",
+        "0.7 meter per second",
+        "2.7 meter per second",
+        "2.5 meter per second"
+      ],
+      "ans": 0,
+      "hints": [
+        "Similar triangles relate the man's distance and the distance to the shadow tip, then differentiate in time.",
+        "Let $x$ be the man's distance from the light base and $z$ the distance of the shadow tip; write the similar-triangle ratio and solve for $z$ in terms of $x$.",
+        "Similar triangles give equal ratios of corresponding sides; the tip moves at $\\dfrac{dz}{dt}$, which is found by differentiating the relation between $z$ and $x$."
+      ],
+      "steps": [
+        "Similar triangles: $\\dfrac z7=\\dfrac{z-x}{2}$, so $2z=7z-7x$ and $z=\\dfrac75x$.",
+        "Differentiate: $\\dfrac{dz}{dt}=\\dfrac75\\dfrac{dx}{dt}$.",
+        "$\\dfrac{dz}{dt}=\\dfrac75(2.5)=3.5$ m/s, independent of the distance $x=5$."
+      ],
+      "brief": "$z=\\frac75x$, so $\\frac{dz}{dt}=\\frac75(2.5)=3.5$ m/s."
+    },
+    {
+      "sec": "3.8",
+      "q": "Newton's Method is used to approximate a zero of the function $f(x)=x^3+x-3$. If we choose $x_1=1$, then $x_2=$",
+      "opts": [
+        "$\\dfrac54$",
+        "$\\dfrac34$",
+        "$\\dfrac12$",
+        "$\\dfrac14$",
+        "$\\dfrac32$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Apply one step of Newton's method.",
+        "Compute $f(1)$ and $f'(1)$.",
+        "$x_{n+1}=x_n-\\dfrac{f(x_n)}{f'(x_n)}$."
+      ],
+      "steps": [
+        "$f(1)=1+1-3=-1$.",
+        "$f'(x)=3x^2+1$, so $f'(1)=4$.",
+        "$x_2=1-\\dfrac{-1}{4}=\\dfrac54$."
+      ],
+      "brief": "$x_2=1-\\frac{f(1)}{f'(1)}=1-\\frac{-1}{4}=\\frac54$."
+    },
+    {
+      "sec": "4.1",
+      "q": "The sum of the critical numbers of \\[ f(x)=x\\sqrt[3]{4-x} \\] is equal to",
+      "opts": [
+        "$7$",
+        "$3$",
+        "$\\dfrac13$",
+        "$\\dfrac{13}{3}$",
+        "$0$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Critical numbers are points in the domain where $f'$ is zero or undefined.",
+        "Differentiate with the product and chain rules, combine into one fraction, and check both the numerator and the denominator.",
+        "$c$ is a critical number if $f'(c)=0$ or $f'(c)$ does not exist, with $c$ in the domain of $f$."
+      ],
+      "steps": [
+        "$f'(x)=-\\dfrac x3(4-x)^{-2/3}+(4-x)^{1/3}=\\dfrac{-\\frac43x+4}{(4-x)^{2/3}}$.",
+        "$f'=0$ when $-\\frac43x+4=0$, so $x=3$.",
+        "$f'$ is undefined at $x=4$, which is in the domain of $f$ (all reals).",
+        "Sum: $3+4=7$."
+      ],
+      "brief": "$f'=\\frac{-\\frac43x+4}{(4-x)^{2/3}}$: critical numbers $3$ and $4$, sum $7$."
+    },
+    {
+      "sec": "4.1",
+      "q": "On the closed interval $[-2,1]$, if \\[ f(x)=\\frac{6x^2}{x-2} \\] has an absolute maximum at the point $(a,b)$, then $b=$",
+      "opts": [
+        "$0$",
+        "$-6$",
+        "$48$",
+        "$-1$",
+        "$10$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Closed Interval Method: compare values at critical numbers and endpoints.",
+        "Find $f'$ and its zeros inside $(-2,1)$, then evaluate $f$ at those points and at both endpoints.",
+        "The absolute maximum of a continuous $f$ on $[a,b]$ is the largest of $f$ at the critical numbers in $(a,b)$ and at $a$, $b$."
+      ],
+      "steps": [
+        "$f'(x)=6\\cdot\\dfrac{(x-2)2x-x^2}{(x-2)^2}=\\dfrac{6x(x-4)}{(x-2)^2}$.",
+        "Zeros $x=0$, $x=4$; the point $x=2$ is undefined. Only $x=0$ lies in $(-2,1)$.",
+        "$f(0)=0$, $f(-2)=-6$, $f(1)=-6$.",
+        "The largest value is $0$, so $b=0$."
+      ],
+      "brief": "$f'=\\frac{6x(x-4)}{(x-2)^2}$; compare $f(0)=0$, $f(-2)=f(1)=-6$: max value $0$."
+    },
+    {
+      "sec": "4.2",
+      "q": "Which one of the following functions can Rolle's Theorem be applied to on the interval $[-1,1]$.",
+      "opts": [
+        "$f(x)=2+\\sin(\\pi x)$",
+        "$f(x)=|x|-1$",
+        "$f(x)=|x-2|$",
+        "$f(x)=\\dfrac{1}{x^4+x^2}$",
+        "$f(x)=2-x^{2/3}$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Check the three hypotheses of Rolle's Theorem for each function.",
+        "For each function ask: continuous on $[-1,1]$, differentiable on $(-1,1)$, and $f(-1)=f(1)$?",
+        "Rolle's Theorem needs: $f$ continuous on $[a,b]$, differentiable on $(a,b)$, and $f(a)=f(b)$."
+      ],
+      "steps": [
+        "$2+\\sin(\\pi x)$ is differentiable everywhere and $f(-1)=f(1)=2$, so it qualifies.",
+        "$|x|-1$ has a corner at $0$, so it is not differentiable on $(-1,1)$.",
+        "$|x-2|$: $f(-1)=3\\ne1=f(1)$.",
+        "$\\frac{1}{x^4+x^2}$ is not defined or continuous at $0$.",
+        "$2-x^{2/3}$ has $f'=-\\frac23x^{-1/3}$, undefined at $0$."
+      ],
+      "brief": "Only $2+\\sin(\\pi x)$ is differentiable on $(-1,1)$ with $f(-1)=f(1)$."
+    },
+    {
+      "sec": "4.2",
+      "q": "The value of $c$ that satisfies the Mean Value Theorem when applied to $f(x)=\\dfrac{x}{x-5}$ on $[1,4]$ is equal to",
+      "opts": [
+        "$3$",
+        "$2$",
+        "$1$",
+        "$\\dfrac12$",
+        "$\\dfrac13$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Mean Value Theorem: set $f'(c)$ equal to the average slope.",
+        "Compute $f'(x)$ and the slope $\\dfrac{f(4)-f(1)}{4-1}$, then solve for $c$ in $(1,4)$.",
+        "$f'(c)=\\dfrac{f(b)-f(a)}{b-a}$ for some $c$ in $(a,b)$."
+      ],
+      "steps": [
+        "$f'(x)=\\dfrac{(x-5)-x}{(x-5)^2}=\\dfrac{-5}{(x-5)^2}$.",
+        "$f(4)=-4$, $f(1)=-\\frac14$, so the average slope is $\\dfrac{-4+\\frac14}{3}=-\\dfrac54$.",
+        "$\\dfrac{-5}{(c-5)^2}=-\\dfrac54$ gives $(c-5)^2=4$, so $c=3$ or $c=7$.",
+        "Only $c=3$ lies in $(1,4)$."
+      ],
+      "brief": "$\\frac{-5}{(c-5)^2}=-\\frac54\\Rightarrow c=3$ or $7$; only $3\\in(1,4)$."
+    }
+  ]
+}

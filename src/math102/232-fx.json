@@ -1,0 +1,664 @@
+{
+  "course": "math102",
+  "term": "232",
+  "kind": "fx",
+  "date": "",
+  "minutes": 120,
+  "source": "math102-232-fx.pdf",
+  "note": "The PDF has only the 14 master pages (no cover): date not printed, left empty; minutes not printed, 120 assumed. No key table; answers taken from the (correct) marks on the master (all marked (a)). Q20 key (3) kept although a literal count of terms gives 4; see that question's note.",
+  "qs": [
+    {
+      "sec": "8.3",
+      "q": "$\\int \\sec^3 x\\,dx=$",
+      "opts": [
+        "$\\dfrac12\\left(\\sec x\\tan x+\\ln|\\sec x+\\tan x|\\right)+c$",
+        "$2|\\sec x\\tan x|+\\ln|\\sec x+\\tan x|+c$",
+        "$\\dfrac12\\tan x+\\sec x\\ln|\\sec x+\\tan x|+c$",
+        "$2\\sec x+\\dfrac{\\sqrt3}{2}\\ln|\\sec x+\\tan x|+c$",
+        "$\\dfrac{\\sqrt3}{2}|\\sec x\\tan x|+\\dfrac12\\ln|\\sec x+\\tan x|+c$"
+      ],
+      "ans": 0,
+      "hints": [
+        "An odd power of secant with no tangent factor to peel off is handled by integration by parts.",
+        "Write $\\sec^3x=\\sec x\\cdot\\sec^2x$ and take $u=\\sec x$, $dv=\\sec^2x\\,dx$; then rewrite $\\tan^2x$ in terms of $\\sec^2x$.",
+        "$\\int u\\,dv=uv-\\int v\\,du$, $\\tan^2x=\\sec^2x-1$, and $\\int\\sec x\\,dx=\\ln|\\sec x+\\tan x|+c$."
+      ],
+      "steps": [
+        "By parts with $u=\\sec x$, $dv=\\sec^2x\\,dx$: $\\int\\sec^3x\\,dx=\\sec x\\tan x-\\int\\sec x\\tan^2x\\,dx$.",
+        "Use $\\tan^2x=\\sec^2x-1$: $\\int\\sec x\\tan^2x\\,dx=\\int\\sec^3x\\,dx-\\int\\sec x\\,dx$.",
+        "So $I=\\sec x\\tan x-I+\\ln|\\sec x+\\tan x|$, giving $2I=\\sec x\\tan x+\\ln|\\sec x+\\tan x|$.",
+        "$I=\\dfrac12\\left(\\sec x\\tan x+\\ln|\\sec x+\\tan x|\\right)+c$."
+      ],
+      "brief": "By parts: $2I=\\sec x\\tan x+\\ln|\\sec x+\\tan x|$."
+    },
+    {
+      "sec": "8.3",
+      "q": "$\\int_0^{\\pi}\\sin^5x\\,dx=$",
+      "opts": [
+        "$\\dfrac{16}{15}$",
+        "$\\dfrac{13}{15}$",
+        "$\\dfrac{11}{15}$",
+        "$\\dfrac{17}{15}$",
+        "$\\dfrac{19}{15}$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Odd power of sine.",
+        "Save one factor of $\\sin x$ and convert the remaining even power of sine into cosines, then substitute $u=\\cos x$.",
+        "$\\sin^2x=1-\\cos^2x$, and $\\int_a^b f(\\cos x)\\sin x\\,dx=-\\int_{\\cos a}^{\\cos b}f(u)\\,du$."
+      ],
+      "steps": [
+        "$\\sin^5x=(1-\\cos^2x)^2\\sin x$.",
+        "Let $u=\\cos x$: limits $x=0\\to u=1$, $x=\\pi\\to u=-1$, so the integral is $\\int_{-1}^{1}(1-u^2)^2\\,du$.",
+        "$\\int_{-1}^{1}(1-2u^2+u^4)\\,du=2\\left(1-\\frac23+\\frac15\\right)=\\dfrac{16}{15}$."
+      ],
+      "brief": "$\\int_{-1}^{1}(1-u^2)^2du=\\frac{16}{15}$."
+    },
+    {
+      "sec": "7.4",
+      "q": "If $L$ is the length of the curve $f(x)=\\cosh x$ over $[0,2]$, then",
+      "opts": [
+        "$3<L<4$",
+        "$1<L<2$",
+        "$2<L<3$",
+        "$4<L<5$",
+        "$5<L<6$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Use the arc length formula and a hyperbolic identity.",
+        "Compute $f'(x)$ and simplify $1+(f')^2$ using the identity relating $\\cosh^2$ and $\\sinh^2$.",
+        "$L=\\int_a^b\\sqrt{1+(f'(x))^2}\\,dx$, $\\cosh^2x-\\sinh^2x=1$, and $\\int\\cosh x\\,dx=\\sinh x$."
+      ],
+      "steps": [
+        "$f'(x)=\\sinh x$, so $1+f'^2=1+\\sinh^2x=\\cosh^2x$.",
+        "$L=\\int_0^2\\cosh x\\,dx=\\sinh 2$.",
+        "$\\sinh2=\\dfrac{e^2-e^{-2}}{2}\\approx3.63$, so $3<L<4$."
+      ],
+      "brief": "$L=\\int_0^2\\cosh x\\,dx=\\sinh2\\approx3.63$."
+    },
+    {
+      "sec": "8.5",
+      "q": "$\\int\\dfrac{5x-2}{(x-2)^2}\\,dx=$",
+      "opts": [
+        "$5\\ln|x-2|-\\dfrac{8}{x-2}+c$",
+        "$\\ln|x-2|-\\ln|5x-2|+c$",
+        "$5\\ln|x-2|-2\\ln|x+2|+c$",
+        "$\\dfrac12\\ln|x-2|+\\dfrac{5}{(x-2)^2}+c$",
+        "$-2\\ln|x-2|+\\dfrac{2/5}{(x-2)^2}+c$"
+      ],
+      "ans": 0,
+      "hints": [
+        "A rational function with a repeated linear factor in the denominator.",
+        "Either use partial fractions with $\\frac{A}{x-2}+\\frac{B}{(x-2)^2}$, or substitute $u=x-2$.",
+        "A repeated factor $(x-a)^2$ gives terms $\\frac{A}{x-a}+\\frac{B}{(x-a)^2}$; $\\int(x-a)^{-2}dx=-\\frac{1}{x-a}$."
+      ],
+      "steps": [
+        "Let $u=x-2$, so $5x-2=5u+8$.",
+        "$\\int\\dfrac{5u+8}{u^2}\\,du=\\int\\left(\\dfrac5u+\\dfrac8{u^2}\\right)du$.",
+        "$=5\\ln|u|-\\dfrac8u+c=5\\ln|x-2|-\\dfrac{8}{x-2}+c$."
+      ],
+      "brief": "$\\frac{5x-2}{(x-2)^2}=\\frac5{x-2}+\\frac8{(x-2)^2}$."
+    },
+    {
+      "sec": "8.5",
+      "q": "$\\int\\dfrac{e^x}{(e^{2x}+1)(e^x-1)}\\,dx=$",
+      "opts": [
+        "$\\dfrac12\\left(\\ln|e^x-1|-\\dfrac12\\ln(e^{2x}+1)-\\tan^{-1}(e^x)\\right)+c$",
+        "$\\dfrac12e^x\\left(\\ln|e^x-1|+\\ln|e^{2x}-1|\\right)+c$",
+        "$\\dfrac12e^x\\left(\\ln|e^x+1|+\\ln|e^{2x}+1|+\\tan^{-1}(e^x-1)\\right)+c$",
+        "$\\dfrac12\\ln|e^x-1|+\\ln|e^{2x}-1|-x\\tan^{-1}(e^x)+c$",
+        "$\\dfrac14\\ln\\left|e^x-\\dfrac12\\right|-\\ln|e^{2x}+1|+x\\tan^{-1}(e^x)+c$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Substitute to turn it into a rational function, then use partial fractions.",
+        "Let $u=e^x$ so that $du=e^x\\,dx$, and decompose $\\frac{1}{(u^2+1)(u-1)}$.",
+        "A linear factor gives $\\frac{A}{u-a}$ and an irreducible quadratic gives $\\frac{Bu+C}{u^2+1}$; $\\int\\frac{du}{u^2+1}=\\tan^{-1}u$ and $\\int\\frac{u\\,du}{u^2+1}=\\frac12\\ln(u^2+1)$."
+      ],
+      "steps": [
+        "With $u=e^x$ the integral is $\\int\\dfrac{du}{(u^2+1)(u-1)}$.",
+        "$\\dfrac{1}{(u^2+1)(u-1)}=\\dfrac{1/2}{u-1}-\\dfrac{(u+1)/2}{u^2+1}$.",
+        "Integrate: $\\dfrac12\\ln|u-1|-\\dfrac14\\ln(u^2+1)-\\dfrac12\\tan^{-1}u+c$.",
+        "Replace $u=e^x$ and factor out $\\frac12$."
+      ],
+      "brief": "$u=e^x$: $\\frac12\\ln|u-1|-\\frac14\\ln(u^2+1)-\\frac12\\tan^{-1}u$."
+    },
+    {
+      "sec": "8.7",
+      "q": "$\\int_0^{\\pi/2}\\dfrac{1}{3-2\\cos\\theta}\\,d\\theta=$",
+      "opts": [
+        "$\\dfrac{2}{\\sqrt5}\\tan^{-1}(\\sqrt5)$",
+        "$\\tan^{-1}\\left(\\dfrac{\\sqrt5}{5}\\right)$",
+        "$\\dfrac12\\tan^{-1}\\left(\\dfrac{\\sqrt5}{5}\\right)$",
+        "$\\dfrac{\\sqrt5}{5}\\tan^{-1}\\left(\\dfrac1{\\sqrt5}\\right)$",
+        "$\\dfrac{\\sqrt5}{5}\\tan^{-1}\\left(\\dfrac{\\sqrt5}{2}\\right)$"
+      ],
+      "ans": 0,
+      "hints": [
+        "A rational function of cosine: use the half-angle tangent substitution.",
+        "Let $t=\\tan(\\theta/2)$ and rewrite $\\cos\\theta$ and $d\\theta$ in terms of $t$; also change the limits.",
+        "$\\cos\\theta=\\dfrac{1-t^2}{1+t^2}$, $d\\theta=\\dfrac{2\\,dt}{1+t^2}$, and $\\int\\frac{dt}{a^2t^2+1}=\\frac1a\\tan^{-1}(at)$."
+      ],
+      "steps": [
+        "With $t=\\tan(\\theta/2)$: limits $0\\to0$, $\\pi/2\\to1$.",
+        "$3-2\\cos\\theta=\\dfrac{3(1+t^2)-2(1-t^2)}{1+t^2}=\\dfrac{1+5t^2}{1+t^2}$.",
+        "Integral $=\\int_0^1\\dfrac{2\\,dt}{1+5t^2}$.",
+        "$=\\dfrac{2}{\\sqrt5}\\tan^{-1}(\\sqrt5\\,t)\\Big|_0^1=\\dfrac{2}{\\sqrt5}\\tan^{-1}(\\sqrt5)$."
+      ],
+      "brief": "$t=\\tan\\frac\\theta2$: $\\int_0^1\\frac{2\\,dt}{1+5t^2}=\\frac2{\\sqrt5}\\tan^{-1}\\sqrt5$."
+    },
+    {
+      "sec": "8.8",
+      "q": "$\\int_e^{\\infty}\\dfrac{1}{x\\ln x}\\,dx=$",
+      "opts": [
+        "$\\infty$",
+        "$e$",
+        "$\\dfrac{e}{\\sqrt e}$",
+        "$e\\sqrt e$",
+        "$e\\sqrt e-1$"
+      ],
+      "ans": 0,
+      "hints": [
+        "An improper integral with an infinite upper limit.",
+        "Replace the limit by $b$, find the antiderivative with $u=\\ln x$, then let $b\\to\\infty$.",
+        "$\\int_a^\\infty f\\,dx=\\lim_{b\\to\\infty}\\int_a^bf\\,dx$ and $\\int\\frac{du}{u}=\\ln|u|$."
+      ],
+      "steps": [
+        "$\\int_e^b\\dfrac{dx}{x\\ln x}$ with $u=\\ln x$, $du=dx/x$ gives $\\int_1^{\\ln b}\\dfrac{du}{u}$.",
+        "$=\\ln(\\ln b)-\\ln1=\\ln(\\ln b)$.",
+        "As $b\\to\\infty$, $\\ln(\\ln b)\\to\\infty$, so the integral diverges to $\\infty$."
+      ],
+      "brief": "$\\int_e^b=\\ln(\\ln b)\\to\\infty$: diverges."
+    },
+    {
+      "sec": "8.8",
+      "q": "$\\int_0^{\\infty}\\dfrac{4}{\\sqrt x\\,(x+6)}\\,dx=$",
+      "opts": [
+        "$\\dfrac{4\\pi}{\\sqrt6}$",
+        "$4\\sqrt6$",
+        "$\\dfrac{\\pi}{4\\sqrt6}$",
+        "$\\dfrac{\\pi}{\\sqrt6}-1$",
+        "$\\dfrac23\\pi-1$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Improper at both ends; substitute to remove the square root first.",
+        "Let $u=\\sqrt x$, so $x=u^2$ and $dx=2u\\,du$.",
+        "$\\int\\dfrac{du}{u^2+a^2}=\\dfrac1a\\tan^{-1}\\dfrac ua$, and $\\tan^{-1}u\\to\\frac\\pi2$ as $u\\to\\infty$."
+      ],
+      "steps": [
+        "With $u=\\sqrt x$: $\\dfrac{4\\cdot2u\\,du}{u(u^2+6)}=\\dfrac{8\\,du}{u^2+6}$, limits $0$ to $\\infty$.",
+        "$\\int_0^\\infty\\dfrac{8\\,du}{u^2+6}=\\dfrac{8}{\\sqrt6}\\tan^{-1}\\dfrac{u}{\\sqrt6}\\Big|_0^\\infty$.",
+        "$=\\dfrac8{\\sqrt6}\\cdot\\dfrac\\pi2=\\dfrac{4\\pi}{\\sqrt6}$."
+      ],
+      "brief": "$u=\\sqrt x$: $\\int_0^\\infty\\frac{8\\,du}{u^2+6}=\\frac{4\\pi}{\\sqrt6}$."
+    },
+    {
+      "sec": "7.1",
+      "q": "The area of the region between the curves $f(x)=-2^x$ and $g(x)=1-3x$ is equal to",
+      "opts": [
+        "$10-\\dfrac{6}{\\ln2}$",
+        "$6+\\dfrac1{\\ln2}$",
+        "$4-\\dfrac3{\\ln2}$",
+        "$8+\\dfrac1{\\ln2}$",
+        "$4+\\dfrac3{\\ln2}$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Find where the curves meet, then integrate top minus bottom.",
+        "Set $-2^x=1-3x$ and find the two intersection points by inspection; test a point between them to see which curve is on top.",
+        "Area $=\\int_a^b(\\text{top}-\\text{bottom})\\,dx$ and $\\int a^x\\,dx=\\dfrac{a^x}{\\ln a}$."
+      ],
+      "steps": [
+        "$2^x=3x-1$ holds at $x=1$ ($2=2$) and $x=3$ ($8=8$).",
+        "At $x=2$: $f=-4>g=-5$, so $f$ is on top between them.",
+        "$A=\\int_1^3(f-g)\\,dx=\\int_1^3(3x-1-2^x)\\,dx$.",
+        "$=\\left[\\frac{3x^2}2-x-\\frac{2^x}{\\ln2}\\right]_1^3=10-\\dfrac{6}{\\ln2}$."
+      ],
+      "brief": "Intersections $x=1,3$: $\\int_1^3(3x-1-2^x)dx=10-\\frac6{\\ln2}$."
+    },
+    {
+      "sec": "7.2",
+      "q": "The volume of the solid whose base is bounded by the circle $x^2+y^2=9$ and whose cross sections perpendicular to the $x$-axis are equilateral triangles is equal to",
+      "opts": [
+        "$36\\sqrt3$",
+        "$18\\sqrt3$",
+        "$9\\sqrt3$",
+        "$72$",
+        "$36$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Volume by known cross sections.",
+        "At each $x$ the side of the triangle is the length of the chord of the circle; write its area in terms of $x$.",
+        "$V=\\int_a^bA(x)\\,dx$, and an equilateral triangle of side $s$ has area $\\frac{\\sqrt3}{4}s^2$."
+      ],
+      "steps": [
+        "The chord at $x$ has length $s=2\\sqrt{9-x^2}$.",
+        "$A(x)=\\dfrac{\\sqrt3}4\\cdot4(9-x^2)=\\sqrt3(9-x^2)$.",
+        "$V=\\int_{-3}^{3}\\sqrt3(9-x^2)\\,dx=\\sqrt3\\left[9x-\\frac{x^3}3\\right]_{-3}^{3}=36\\sqrt3$."
+      ],
+      "brief": "$A=\\sqrt3(9-x^2)$, $V=\\int_{-3}^3A\\,dx=36\\sqrt3$."
+    },
+    {
+      "sec": "7.3",
+      "q": "The volume of the solid generated by revolving the region bounded by the graphs of $y=2x-x^2$ and $y=0$ about the line $x=4$ is equal to:",
+      "opts": [
+        "$8\\pi$",
+        "$6\\pi$",
+        "$4\\pi$",
+        "$\\dfrac83\\pi$",
+        "$\\dfrac43\\pi$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Revolving about a vertical line with a function of $x$ suggests the shell method.",
+        "The region lies between $x=0$ and $x=2$; the shell radius is the distance from $x$ to the axis.",
+        "$V=2\\pi\\int_a^b(\\text{radius})(\\text{height})\\,dx$."
+      ],
+      "steps": [
+        "Radius $=4-x$, height $=2x-x^2$, for $0\\le x\\le2$.",
+        "$V=2\\pi\\int_0^2(4-x)(2x-x^2)\\,dx=2\\pi\\int_0^2(8x-6x^2+x^3)\\,dx$.",
+        "$=2\\pi\\left[4x^2-2x^3+\\frac{x^4}4\\right]_0^2=2\\pi(16-16+4)=8\\pi$."
+      ],
+      "brief": "Shells: $2\\pi\\int_0^2(4-x)(2x-x^2)dx=8\\pi$."
+    },
+    {
+      "sec": "5.4",
+      "q": "If $F(x)=\\int_x^{x+2}(4t+1)\\,dt$, then $F'(x)=$",
+      "opts": [
+        "$8$",
+        "$4$",
+        "$6$",
+        "$2$",
+        "$10$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Both limits depend on $x$, so use the Fundamental Theorem of Calculus with the chain rule.",
+        "Differentiate directly as the upper-limit term minus the lower-limit term (or split at a constant).",
+        "$\\dfrac{d}{dx}\\int_{h(x)}^{g(x)}f(t)\\,dt=f(g(x))g'(x)-f(h(x))h'(x)$."
+      ],
+      "steps": [
+        "$F'(x)=(4(x+2)+1)\\cdot1-(4x+1)\\cdot1$.",
+        "$=4x+9-4x-1=8$."
+      ],
+      "brief": "$F'=(4(x+2)+1)-(4x+1)=8$."
+    },
+    {
+      "sec": "5.5",
+      "q": "$\\int_1^3\\dfrac{e^{3/x}}{x^2}\\,dx=$",
+      "opts": [
+        "$\\dfrac13(e^3-e)$",
+        "$\\dfrac{e^3+e}{2}$",
+        "$\\dfrac13e^3-1$",
+        "$\\dfrac{e^3+e}{\\sqrt3}$",
+        "$\\dfrac{e^3-e}{\\sqrt3}$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Substitution: the exponent's derivative appears as a factor.",
+        "Let $u$ be the exponent and compute $du$; change the limits.",
+        "$\\int_a^bf(g(x))g'(x)\\,dx=\\int_{g(a)}^{g(b)}f(u)\\,du$ and $\\int e^u\\,du=e^u$."
+      ],
+      "steps": [
+        "$u=3/x$, $du=-\\dfrac{3}{x^2}dx$, so $\\dfrac{dx}{x^2}=-\\dfrac{du}3$.",
+        "Limits: $x=1\\to u=3$, $x=3\\to u=1$.",
+        "$\\int_3^1e^u\\left(-\\dfrac13\\right)du=\\dfrac13\\int_1^3e^u\\,du=\\dfrac13(e^3-e)$."
+      ],
+      "brief": "$u=3/x$: $\\frac13\\int_1^3e^u\\,du=\\frac13(e^3-e)$."
+    },
+    {
+      "sec": "9.1",
+      "q": "The sequence whose $n$th term $a_n=\\dfrac{2^n}{3^n-1}$ converges to",
+      "opts": [
+        "$0$",
+        "$1$",
+        "$\\ln2$",
+        "$\\ln3$",
+        "$\\ln\\dfrac13$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Compare the growth of the exponentials in the numerator and denominator.",
+        "Divide the numerator and denominator by the dominant exponential.",
+        "$r^n\\to0$ when $|r|<1$."
+      ],
+      "steps": [
+        "$a_n=\\dfrac{(2/3)^n}{1-3^{-n}}$.",
+        "As $n\\to\\infty$, $(2/3)^n\\to0$ and $3^{-n}\\to0$.",
+        "So $a_n\\to\\dfrac{0}{1}=0$."
+      ],
+      "brief": "$a_n=\\frac{(2/3)^n}{1-3^{-n}}\\to0$."
+    },
+    {
+      "sec": "9.2",
+      "q": "The infinite series $\\sum_{n=1}^{\\infty}\\dfrac{1}{n(n+2)}$ converges to",
+      "opts": [
+        "$\\dfrac34$",
+        "$\\dfrac12$",
+        "$1$",
+        "$\\dfrac14$",
+        "$0$"
+      ],
+      "ans": 0,
+      "hints": [
+        "This is a telescoping series.",
+        "Use partial fractions on the general term and write out the first few terms of the partial sum.",
+        "For $\\frac1{n(n+k)}=\\frac1k\\left(\\frac1n-\\frac1{n+k}\\right)$, the partial sum keeps only the first $k$ and last $k$ pieces."
+      ],
+      "steps": [
+        "$\\dfrac1{n(n+2)}=\\dfrac12\\left(\\dfrac1n-\\dfrac1{n+2}\\right)$.",
+        "$S_N=\\dfrac12\\left(1+\\dfrac12-\\dfrac1{N+1}-\\dfrac1{N+2}\\right)$.",
+        "As $N\\to\\infty$: $S=\\dfrac12\\cdot\\dfrac32=\\dfrac34$."
+      ],
+      "brief": "Telescoping: $S_N\\to\\frac12\\left(1+\\frac12\\right)=\\frac34$."
+    },
+    {
+      "sec": "9.2",
+      "q": "The sum of the series $\\sum_{n=0}^{\\infty}\\left(\\dfrac{3}{2^n}-\\dfrac{2}{3^n}\\right)$ is",
+      "opts": [
+        "$3$",
+        "$6$",
+        "$2$",
+        "$0$",
+        "$4$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Split into two geometric series.",
+        "Write each as a constant times $r^n$ and identify the ratio of each.",
+        "$\\sum_{n=0}^\\infty ar^n=\\dfrac{a}{1-r}$ for $|r|<1$."
+      ],
+      "steps": [
+        "$sum3\\left(\\frac12\\right)^n=\\dfrac{3}{1-1/2}=6$.",
+        "$\\sum2\\left(\\frac13\\right)^n=\\dfrac{2}{1-1/3}=3$.",
+        "The sum is $6-3=3$."
+      ],
+      "brief": "$\\frac{3}{1-1/2}-\\frac{2}{1-1/3}=6-3=3$."
+    },
+    {
+      "sec": "9.3",
+      "q": "The series $\\sum_{n=1}^{\\infty}\\dfrac{\\arctan n}{n^2+1}$",
+      "opts": [
+        "converges",
+        "converges to $\\dfrac{3\\pi^2}{32}$",
+        "converges to $\\dfrac{\\pi^2}{32}$",
+        "diverges because $\\lim_{n\\to\\infty}\\dfrac{\\arctan n}{n^2+1}\\neq0$",
+        "diverges because $\\int_1^{\\infty}\\dfrac{\\arctan x}{x^2+1}\\,dx=\\infty$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Compare with a convergent series or test with the integral.",
+        "Bound the numerator by a constant and compare with a $p$-series, or integrate with $u=\\arctan x$.",
+        "Direct comparison: $0\\le a_n\\le b_n$ and $\\sum b_n$ converges imply $\\sum a_n$ converges; $\\sum\\frac1{n^p}$ converges for $p>1$."
+      ],
+      "steps": [
+        "$0<\\arctan n<\\dfrac\\pi2$, so $0<\\dfrac{\\arctan n}{n^2+1}<\\dfrac{\\pi/2}{n^2+1}<\\dfrac{\\pi}{2n^2}$.",
+        "$sum\\dfrac1{n^2}$ is a convergent $p$-series ($p=2$).",
+        "By direct comparison the series converges."
+      ],
+      "brief": "$\\le\\frac{\\pi}{2n^2}$, a convergent $p$-series: converges."
+    },
+    {
+      "sec": "9.2",
+      "q": "For positive values of $p$, the series $\\sum_{n=1}^{\\infty}\\left(\\dfrac{3}{2p}\\right)^n$ converges if",
+      "opts": [
+        "$p>\\dfrac32$",
+        "$p\\ge\\dfrac32$",
+        "$0<p\\le\\dfrac32$",
+        "$p>0$",
+        "$0<p<\\dfrac32$"
+      ],
+      "ans": 0,
+      "hints": [
+        "This is a geometric series.",
+        "Identify the common ratio and require its absolute value to be less than 1.",
+        "$\\sum r^n$ converges if and only if $|r|<1$."
+      ],
+      "steps": [
+        "The ratio is $r=\\dfrac{3}{2p}$, which is positive for $p>0$.",
+        "Convergence needs $\\dfrac3{2p}<1$.",
+        "Multiply by $2p>0$: $3<2p$, so $p>\\dfrac32$."
+      ],
+      "brief": "Geometric, $r=\\frac3{2p}<1\\iff p>\\frac32$."
+    },
+    {
+      "sec": "9.4",
+      "q": "Which of the following series is/are convergent? \\[ \\text{I. }\\sum_{n=0}^{\\infty}\\frac{4^n}{5^n+3}\\qquad \\text{II. }\\sum_{n=2}^{\\infty}\\frac{\\ln n}{n+1}\\qquad \\text{III. }\\sum_{n=1}^{\\infty}\\frac{n}{n^2+1} \\]",
+      "opts": [
+        "I only",
+        "I and II",
+        "II and III",
+        "I and III",
+        "I, II and III"
+      ],
+      "ans": 0,
+      "hints": [
+        "Use comparison tests with a geometric series or a $p$-series.",
+        "For I compare with a geometric series; for II compare with $\\frac1{n+1}$; for III use limit comparison with $\\frac1n$.",
+        "Direct comparison: $0\\le b_n\\le a_n$ with $\\sum b_n$ divergent implies $\\sum a_n$ diverges; limit comparison with $\\sum\\frac1n$ shows divergence when $\\lim na_n>0$."
+      ],
+      "steps": [
+        "I: $\\dfrac{4^n}{5^n+3}<\\left(\\dfrac45\\right)^n$, a convergent geometric series, so I converges.",
+        "II: for $n\\ge3$, $\\ln n>1$, so $\\dfrac{\\ln n}{n+1}>\\dfrac1{n+1}$, and $sum\\frac1{n+1}$ diverges; II diverges.",
+        "III: $im\\dfrac{n/(n^2+1)}{1/n}=1>0$ and $sum\\frac1n$ diverges, so III diverges.",
+        "Only I converges."
+      ],
+      "brief": "I converges (geometric bound); II and III diverge (comparison with $1/n$)."
+    },
+    {
+      "sec": "9.5",
+      "q": "The least number of terms required to approximate the sum of the series $\\sum_{n=0}^{\\infty}\\dfrac{(-1)^n}{2n^3-1}$ with an error of less than $0.01$ is",
+      "opts": [
+        "$3$",
+        "$2$",
+        "$4$",
+        "$5$",
+        "$6$"
+      ],
+      "ans": 0,
+      "hints": [
+        "This is an alternating series, so use the alternating series remainder estimate.",
+        "Write $b_n=\\frac1{2n^3-1}$ and find the first index for which $b_n<0.01$.",
+        "For an alternating series with decreasing $b_n\\to0$, $|S-S_N|\\le b_{N+1}$, where $S_N$ is the partial sum through the term $n=N$."
+      ],
+      "steps": [
+        "$b_n=\\dfrac1{2n^3-1}$ decreases to $0$ for $n\\ge1$.",
+        "We need $|R_N|\\le b_{N+1}<0.01$, i.e. $2(N+1)^3-1>100$.",
+        "$b_3=\\dfrac1{53}\\approx0.019$ is too big, while $b_4=\\dfrac1{127}\\approx0.0079<0.01$, so $N+1=4$, $N=3$.",
+        "With the official counting this gives $3$."
+      ],
+      "brief": "$|R_N|\\le b_{N+1}$; $b_4=\\frac1{127}<0.01$, so $N=3$.",
+      "note": "Master key says 3. Strictly, S_3 (n=0..3) has 4 terms; the error after 3 terms (n=0..2) is bounded by b_3=1/53>0.01, so a literal count gives 4. Key kept; the key evidently uses N=3 in |R_N|<=b_{N+1}."
+    },
+    {
+      "sec": "9.5",
+      "q": "Which of the following series is/are divergent? \\[ \\text{I. }\\sum_{n=1}^{\\infty}\\frac{(-1)^{n+1}}{n+1}\\qquad \\text{II. }\\sum_{n=1}^{\\infty}\\frac{(-1)^n\\sqrt n}{\\sqrt[3]{n}}\\qquad \\text{III. }\\sum_{n=1}^{\\infty}\\frac{(-1)^n}{e^n} \\]",
+      "opts": [
+        "II only",
+        "II and I",
+        "II and III",
+        "I and III",
+        "I only"
+      ],
+      "ans": 0,
+      "hints": [
+        "Check the $n$th-term test first, then the alternating series test.",
+        "For II look at the limit of the terms; for I use the alternating series test; for III the series is geometric.",
+        "If $\\lim a_n\\ne0$ the series diverges; an alternating series with $b_n$ decreasing to $0$ converges; $\\sum r^n$ converges for $|r|<1$."
+      ],
+      "steps": [
+        "I: $\\frac1{n+1}$ decreases to $0$, so it converges by the alternating series test.",
+        "II: $\\dfrac{\\sqrt n}{\\sqrt[3]n}=n^{1/6}\\to\\infty$, so the terms do not go to $0$ and II diverges.",
+        "III: geometric with $r=-1/e$, $|r|<1$, so it converges.",
+        "Only II diverges."
+      ],
+      "brief": "I converges (AST), II diverges ($n^{1/6}\\to\\infty$), III geometric converges."
+    },
+    {
+      "sec": "9.6",
+      "q": "Which of the following series is/are divergent? \\[ \\text{I. }\\sum_{n=1}^{\\infty}\\frac{5}{n!}\\qquad \\text{II. }\\sum_{n=1}^{\\infty}\\frac{9^n}{n^5}\\qquad \\text{III. }\\sum_{n=2}^{\\infty}e^{-3n} \\]",
+      "opts": [
+        "II only",
+        "II and III",
+        "II and I",
+        "I and III",
+        "I only"
+      ],
+      "ans": 0,
+      "hints": [
+        "The ratio test works well with factorials and exponentials.",
+        "Compute $im|a_{n+1}/a_n|$ for I and II; III is geometric.",
+        "Ratio test: if $L=\\lim\\left|\\frac{a_{n+1}}{a_n}\\right|<1$ the series converges, if $L>1$ it diverges."
+      ],
+      "steps": [
+        "I: $\\dfrac{a_{n+1}}{a_n}=\\dfrac1{n+1}\\to0<1$, converges.",
+        "II: $\\dfrac{9^{n+1}n^5}{(n+1)^59^n}\\to9>1$, diverges.",
+        "III: $sum(e^{-3})^n$ geometric with $r=e^{-3}<1$, converges.",
+        "Only II diverges."
+      ],
+      "brief": "Ratio test: I gives $0$, II gives $9$, III geometric $r=e^{-3}$."
+    },
+    {
+      "sec": "9.7",
+      "q": "If $p_2(x)$ is the second Maclaurin polynomial for the function $f(x)=\\cos\\pi x$, then $p_2\\left(\\dfrac1\\pi\\right)=$",
+      "opts": [
+        "$\\dfrac12$",
+        "$1$",
+        "$0$",
+        "$\\dfrac14$",
+        "$\\dfrac1\\pi$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Build the degree-2 Maclaurin polynomial from derivatives at $0$.",
+        "Compute $f(0)$, $f'(0)$, $f''(0)$, then evaluate at the given point.",
+        "$p_2(x)=f(0)+f'(0)x+\\dfrac{f''(0)}{2!}x^2$."
+      ],
+      "steps": [
+        "$f(0)=1$, $f'(x)=-\\pi\\sin\\pi x$ so $f'(0)=0$, $f''(x)=-\\pi^2\\cos\\pi x$ so $f''(0)=-\\pi^2$.",
+        "$p_2(x)=1-\\dfrac{\\pi^2}{2}x^2$.",
+        "$p_2(1/\\pi)=1-\\dfrac{\\pi^2}{2}\\cdot\\dfrac1{\\pi^2}=\\dfrac12$."
+      ],
+      "brief": "$p_2(x)=1-\\frac{\\pi^2x^2}{2}$, so $p_2(1/\\pi)=\\frac12$."
+    },
+    {
+      "sec": "9.8",
+      "q": "The series $\\sum_{n=0}^{\\infty}\\dfrac{x^{2n}}{(2n)!}$ converges",
+      "opts": [
+        "for all $x$",
+        "only at $x=0$",
+        "only for $x\\in[-1,1)$",
+        "only for $x\\in[-1,1]$",
+        "only for $x\\in[0,1]$"
+      ],
+      "ans": 0,
+      "hints": [
+        "A power series: find its radius of convergence with the ratio test.",
+        "Compute $im\\left|\\dfrac{a_{n+1}}{a_n}\\right|$ for the terms $\\frac{x^{2n}}{(2n)!}$.",
+        "Ratio test: converges when $im|a_{n+1}/a_n|<1$; if the limit is $0$ for every $x$ the radius is infinite."
+      ],
+      "steps": [
+        "$\\left|\\dfrac{x^{2n+2}/(2n+2)!}{x^{2n}/(2n)!}\\right|=\\dfrac{x^2}{(2n+2)(2n+1)}$.",
+        "This tends to $0<1$ for every $x$.",
+        "So the series converges for all $x$."
+      ],
+      "brief": "Ratio $=\\frac{x^2}{(2n+2)(2n+1)}\\to0$: converges for all $x$."
+    },
+    {
+      "sec": "9.8",
+      "q": "If $f(x)=\\sum_{n=2}^{\\infty}\\left(\\dfrac x2\\right)^n$, then the interval of convergence of $\\int f(x)\\,dx$ is",
+      "opts": [
+        "$[-2,2)$",
+        "$[-2,2]$",
+        "$(-2,2]$",
+        "$(-2,2)$",
+        "$(-\\infty,\\infty)$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Integrate the power series term by term; the radius stays the same but the endpoints may change.",
+        "Integrate $\\left(\\frac x2\\right)^n$, then test each endpoint of the interval.",
+        "Use the alternating series test and the $p$-series (harmonic) test at the endpoints."
+      ],
+      "steps": [
+        "$f$ is geometric with $|x/2|<1$, radius $2$.",
+        "$\\int f\\,dx=C+\\sum_{n=2}^\\infty\\dfrac{x^{n+1}}{(n+1)2^n}$.",
+        "At $x=2$: $sum\\dfrac{2}{n+1}$ is harmonic-type and diverges.",
+        "At $x=-2$: the series is alternating with terms decreasing to $0$, so it converges. Interval: $[-2,2)$."
+      ],
+      "brief": "Integrated series: $x=2$ diverges (harmonic), $x=-2$ converges (AST): $[-2,2)$."
+    },
+    {
+      "sec": "9.9",
+      "q": "The Power Series representation for the function $f(x)=\\dfrac{5}{2x-3}$, centered at $c=-3$ is",
+      "opts": [
+        "$-5\\sum_{n=0}^{\\infty}\\dfrac{2^n}{9^{n+1}}(x+3)^n,\\ \\left|\\dfrac29(x+3)\\right|<1$",
+        "$\\sum_{n=0}^{\\infty}5\\left(\\dfrac29\\right)^n(x+3)^n,\\ \\left|\\dfrac29(x+3)\\right|<1$",
+        "$\\sum_{n=0}^{\\infty}-5\\dfrac{2^n}{9^n}(x-3)^n,\\ \\left|\\dfrac29(x+3)\\right|<1$",
+        "$\\sum_{n=0}^{\\infty}\\dfrac{2^n}{9^n}(x-3)^n,\\ \\left|\\dfrac29(x+3)\\right|<1$",
+        "$\\sum_{n=0}^{\\infty}\\dfrac{2^n}{9^{n+1}}(x-3)^n,\\ \\left|\\dfrac29(x+3)\\right|<1$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Rewrite the function in the form $\\frac{a}{1-r}$ with $r$ a multiple of $x-c$.",
+        "Write $x=(x+3)-3$ in the denominator and factor out the constant so that a $1$ remains.",
+        "$\\dfrac{1}{1-r}=\\sum_{n=0}^\\infty r^n$ for $|r|<1$."
+      ],
+      "steps": [
+        "Let $t=x+3$: $2x-3=2(t-3)-3=2t-9$.",
+        "$\\dfrac5{2x-3}=\\dfrac{5}{-9\\left(1-\\frac{2t}9\\right)}=-\\dfrac59\\cdot\\dfrac1{1-\\frac{2t}{9}}$.",
+        "$=-\\dfrac59\\sum_{n=0}^\\infty\\left(\\dfrac{2t}{9}\\right)^n=-5\\sum_{n=0}^\\infty\\dfrac{2^n}{9^{n+1}}(x+3)^n$, valid for $\\left|\\frac29(x+3)\\right|<1$."
+      ],
+      "brief": "$\\frac5{2x-3}=-\\frac59\\frac{1}{1-\\frac29(x+3)}=-5\\sum\\frac{2^n}{9^{n+1}}(x+3)^n$."
+    },
+    {
+      "sec": "9.10",
+      "q": "The Power Series representation of $f(x)=\\cos\\sqrt x$ is",
+      "opts": [
+        "$\\sum_{n=0}^{\\infty}(-1)^n\\dfrac{x^n}{(2n)!}$",
+        "$\\sum_{n=0}^{\\infty}(-1)^n\\dfrac{x^{n+1}}{(2n)!}$",
+        "$\\sum_{n=0}^{\\infty}(-1)^n\\dfrac{x^{2n+2}}{(2n)!}$",
+        "$\\sum_{n=0}^{\\infty}(-1)^n\\dfrac{x^n}{n!}$",
+        "$\\sum_{n=0}^{\\infty}(-1)^n\\dfrac{x^{2n}}{n!}$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Start from the Maclaurin series of cosine and substitute.",
+        "Replace the variable in the cosine series by $\\sqrt x$ and simplify the power.",
+        "$\\cos u=\\sum_{n=0}^\\infty(-1)^n\\dfrac{u^{2n}}{(2n)!}$."
+      ],
+      "steps": [
+        "$\\cos u=\\sum(-1)^n\\dfrac{u^{2n}}{(2n)!}$.",
+        "Put $u=\\sqrt x$: $u^{2n}=(\\sqrt x)^{2n}=x^n$.",
+        "So $\\cos\\sqrt x=\\sum_{n=0}^\\infty(-1)^n\\dfrac{x^n}{(2n)!}$."
+      ],
+      "brief": "$\\cos u$ series with $u=\\sqrt x$: $sum(-1)^n\\frac{x^n}{(2n)!}$."
+    },
+    {
+      "sec": "5.5",
+      "q": "If $f$ is continuous on the interval $[0,b]$ where $f(x)+f(b-x)\\neq0$ on $[0,b]$, then the value of $\\int_0^b\\dfrac{f(x)}{f(x)+f(b-x)}\\,dx=$",
+      "opts": [
+        "$\\dfrac12b$",
+        "$2b$",
+        "$2b+1$",
+        "$2b+\\sqrt2$",
+        "$\\sqrt{2b}$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Use the substitution $u=b-x$ and add the two forms of the integral.",
+        "Call the integral $I$, substitute $u=b-x$ to get a second expression for $I$, then add.",
+        "$\\int_0^bg(x)\\,dx=\\int_0^bg(b-x)\\,dx$."
+      ],
+      "steps": [
+        "Let $I$ be the integral. With $u=b-x$: $I=\\int_0^b\\dfrac{f(b-u)}{f(b-u)+f(u)}\\,du$.",
+        "Add: $2I=\\int_0^b\\dfrac{f(x)+f(b-x)}{f(x)+f(b-x)}\\,dx=\\int_0^b1\\,dx=b$.",
+        "So $I=\\dfrac b2$."
+      ],
+      "brief": "$I=\\int_0^b\\frac{f(b-x)}{f(x)+f(b-x)}dx$, so $2I=b$, $I=\\frac b2$."
+    }
+  ]
+}

@@ -1,0 +1,369 @@
+{
+  "course": "math208",
+  "term": "251",
+  "kind": "e2",
+  "date": "11 November 2025",
+  "minutes": 90,
+  "source": "math208-251-e2.pdf",
+  "note": "Date and time (90 minutes) from the cover. Master version has 15 questions; keys are the (correct) marks on the master. Question 1 has a flaw (rank is 3 for every alpha) and question 15 has garbled printed choices; see per-question notes.",
+  "qs": [
+    {
+      "sec": "4.5",
+      "q": "If the rank of the matrix \\[ \\begin{bmatrix}1&1&3&3&0\\\\-1&0&-2&-1&1\\\\2&3&7&8&\\alpha\\\\-2&4&0&6&7\\end{bmatrix} \\] is equal to 3, then $\\alpha=$",
+      "opts": [
+        "$1$",
+        "$0$",
+        "$2$",
+        "$3$",
+        "$-2$"
+      ],
+      "ans": 0,
+      "hints": [
+        "The rank is the number of nonzero rows after row reduction, so row-reduce and look at how $\\alpha$ enters.",
+        "Use the first row to clear the first column, then use the second row to clear the second column, and see what is left in the last column.",
+        "The rank of a matrix is the number of nonzero rows in any row echelon form; a row of zeros is produced exactly when a row is a combination of the rows above it."
+      ],
+      "steps": [
+        "Add $R_1$ to $R_2$, subtract $2R_1$ from $R_3$, add $2R_1$ to $R_4$: rows $[0,1,1,2,1]$, $[0,1,1,2,\\alpha]$, $[0,6,6,12,7]$.",
+        "Subtract $R_2$ from $R_3$ and $6R_2$ from $R_4$: the last two rows become $[0,0,0,0,\\alpha-1]$ and $[0,0,0,0,1]$.",
+        "The only row that involves $\\alpha$ is $[0,0,0,0,\\alpha-1]$; it is a zero row exactly when $\\alpha=1$, which is the value the problem intends.",
+        "So $\\alpha=1$."
+      ],
+      "brief": "Row reduce: last rows $[0,0,0,0,\\alpha-1]$ and $[0,0,0,0,1]$; the $\\alpha$-row vanishes at $\\alpha=1$.",
+      "note": "The master key is kept (alpha = 1), but the question is flawed: the 4x5 matrix has rank 3 for EVERY alpha (all 4x4 minors are identically 0 and rows 1,2,4 are independent), so every choice satisfies the hypothesis. At alpha = 1 row 3 equals 3*row1 + row2, which is presumably the intended condition."
+    },
+    {
+      "sec": "4.4",
+      "q": "A basis for the subspace of $\\mathbb{R}^3$ consists of the line of intersection of the planes $x-4y+7z=0$ and $y=-z$ is given by $v=(\\alpha,-1,1)$ where $\\alpha=$",
+      "opts": [
+        "$-11$",
+        "$10$",
+        "$-10$",
+        "$0$",
+        "$9$"
+      ],
+      "ans": 0,
+      "hints": [
+        "The line of intersection consists of the points satisfying both plane equations at once.",
+        "Substitute $y=-z$ into the first plane and solve for $x$ in terms of $z$.",
+        "A point on both planes solves the homogeneous system; with one free variable, every solution is a multiple of one vector, and the given vector must have second entry $-1$."
+      ],
+      "steps": [
+        "Put $y=-z$ into $x-4y+7z=0$: $x+4z+7z=0$, so $x=-11z$.",
+        "Points on the line: $(x,y,z)=z(-11,-1,1)$.",
+        "The vector with $y=-1$ is $z=1$: $v=(-11,-1,1)$, so $\\alpha=-11$."
+      ],
+      "brief": "$y=-z$ gives $x=-11z$, so $v=(-11,-1,1)$."
+    },
+    {
+      "sec": "4.4",
+      "q": "If the solution space of the system \\[\\begin{aligned} x_1-2x_2-3x_3-16x_4&=0\\\\ 2x_1-4x_2+x_3+17x_4&=0\\\\ x_1-2x_2+3x_3+26x_4&=0 \\end{aligned}\\] consists of all linear combinations of the vectors $v_1=(a,1,0,b)$ and $v_2=(c,0,-7,d)$, then $a+b+c+d=$",
+      "opts": [
+        "$-2$",
+        "$-3$",
+        "$-4$",
+        "$5$",
+        "$0$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Find the solution space by row-reducing the coefficient matrix and writing the solution in terms of free variables.",
+        "Row-reduce the $3\\times4$ coefficient matrix, identify the free variables, and write the general solution as a combination of two vectors.",
+        "The solution set of a homogeneous system is spanned by one vector per free variable (set that variable to 1 and the other free variables to 0, then scale to match the requested form)."
+      ],
+      "steps": [
+        "Row reduction gives $x_1-2x_2+5x_4=0$ and $x_3+7x_4=0$; free variables are $x_2$ and $x_4$.",
+        "So $x_1=2x_2-5x_4$ and $x_3=-7x_4$.",
+        "$(x_1,x_2,x_3,x_4)=x_2(2,1,0,0)+x_4(-5,0,-7,1)$.",
+        "Hence $v_1=(2,1,0,0)$ and $v_2=(-5,0,-7,1)$: $a=2,b=0,c=-5,d=1$, and $a+b+c+d=-2$."
+      ],
+      "brief": "RREF: $x_1=2x_2-5x_4$, $x_3=-7x_4$; $v_1=(2,1,0,0)$, $v_2=(-5,0,-7,1)$, sum $-2$."
+    },
+    {
+      "sec": "5.2",
+      "q": "If $W(x)$ is the Wronskian of the functions \\[ f_1(x)=2x+3\\cos x,\\quad f_2(x)=5\\cos x,\\quad f_3(x)=-3x, \\] then $W(x)=$",
+      "opts": [
+        "$0$",
+        "$2x$",
+        "$-2x$",
+        "$\\sin x$",
+        "$3\\cos x$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Before computing a $3\\times3$ Wronskian, check whether the functions are linearly dependent.",
+        "Try to write one of the functions as a combination of the other two.",
+        "If one function is a linear combination of the others, the functions are linearly dependent on the interval and their Wronskian is identically $0$."
+      ],
+      "steps": [
+        "Note $3\\cos x=\\tfrac35(5\\cos x)=\\tfrac35 f_2$ and $2x=-\\tfrac23(-3x)=-\\tfrac23 f_3$.",
+        "So $f_1=\\tfrac35 f_2-\\tfrac23 f_3$, i.e. the three functions are linearly dependent.",
+        "The columns of the Wronskian matrix are then dependent in the same way, so $W(x)=0$."
+      ],
+      "brief": "$f_1=\\frac35f_2-\\frac23f_3$: linearly dependent, so $W=0$."
+    },
+    {
+      "sec": "5.3",
+      "q": "If $y(x)$ is the solution of the initial-value problem \\[ (D+2)^2y=0,\\quad y(0)=1,\\quad y'(0)=-1, \\] then $y\\left(\\dfrac12\\right)=$",
+      "opts": [
+        "$\\dfrac{3}{2e}$",
+        "$\\dfrac3e$",
+        "$\\dfrac5e$",
+        "$\\dfrac{5}{2e}$",
+        "$0$"
+      ],
+      "ans": 0,
+      "hints": [
+        "This is a constant-coefficient homogeneous equation with a repeated root.",
+        "Read the characteristic equation from the operator and write the general solution for a repeated root.",
+        "For a double root $r$ the general solution is $y=(c_1+c_2x)e^{rx}$."
+      ],
+      "steps": [
+        "The characteristic equation $(r+2)^2=0$ has the double root $r=-2$, so $y=(c_1+c_2x)e^{-2x}$.",
+        "$y(0)=c_1=1$.",
+        "$y'=(c_2-2c_1-2c_2x)e^{-2x}$, so $y'(0)=c_2-2=-1$ and $c_2=1$.",
+        "$y=(1+x)e^{-2x}$, so $y(1/2)=\\dfrac32e^{-1}=\\dfrac{3}{2e}$."
+      ],
+      "brief": "Double root $-2$: $y=(1+x)e^{-2x}$, so $y(\\frac12)=\\frac{3}{2e}$."
+    },
+    {
+      "sec": "5.3",
+      "q": "The general solution of the differential equation \\[ (D^5-2D^3-2D^2-3D-2)y=0 \\] is",
+      "opts": [
+        "$y(x)=e^{-x}(c_1+c_2x)+c_3e^{2x}+c_4\\cos x+c_5\\sin x$",
+        "$y(x)=c_1e^{-x}+(c_2+c_3x)e^{2x}+c_4\\cos x+c_5\\sin x$",
+        "$y(x)=e^{x}(c_1+c_2x)+c_3e^{2x}+c_4\\cos x+c_5\\sin x$",
+        "$y(x)=e^{-x}(c_1+c_2x)+c_3e^{2x}+c_4e^{x}\\cos x+c_5e^{x}\\sin x$",
+        "$y(x)=e^{-x}(c_1+c_2x)+c_3e^{2x}+c_4e^{-x}\\cos x+c_5e^{-x}\\sin x$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Write the characteristic polynomial and factor it completely.",
+        "Look for integer roots among the divisors of the constant term, then divide the polynomial down.",
+        "A root $r$ of multiplicity $m$ gives $e^{rx},xe^{rx},\\dots,x^{m-1}e^{rx}$; roots $a\\pm bi$ give $e^{ax}\\cos bx$ and $e^{ax}\\sin bx$."
+      ],
+      "steps": [
+        "Characteristic polynomial: $r^5-2r^3-2r^2-3r-2$.",
+        "$r=2$ is a root and $r=-1$ is a root (twice): $r^5-2r^3-2r^2-3r-2=(r-2)(r+1)^2(r^2+1)$.",
+        "Roots: $2$ (simple), $-1$ (double), $\\pm i$.",
+        "$y=e^{-x}(c_1+c_2x)+c_3e^{2x}+c_4\\cos x+c_5\\sin x$."
+      ],
+      "brief": "$(r-2)(r+1)^2(r^2+1)$: $e^{-x}(c_1+c_2x)+c_3e^{2x}+c_4\\cos x+c_5\\sin x$."
+    },
+    {
+      "sec": "5.3",
+      "q": "A linear homogeneous differential equation with real coefficients having the solutions $xe^{x}$, $5e^{x}\\cos(3x)$ is",
+      "opts": [
+        "$y^{(4)}-4y^{(3)}+15y''-22y'+10y=0$",
+        "$y^{(4)}+4y^{(3)}+15y''-22y'+2y=0$",
+        "$y^{(4)}-4y^{(3)}+13y''-22y'+12y=0$",
+        "$y^{(4)}-4y^{(3)}+15y''-20y'+8y=0$",
+        "$y^{(4)}-10y^{(3)}+15y''-22y'+16y=0$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Work backwards from the solutions to the characteristic roots, then to the characteristic polynomial.",
+        "Find the roots forced by each solution (including the repeated and complex conjugate roots) and multiply the corresponding factors.",
+        "$xe^{rx}$ forces $r$ to be a double root; $e^{ax}\\cos bx$ forces $a\\pm bi$ to be roots (real coefficients), contributing $(r-a)^2+b^2$."
+      ],
+      "steps": [
+        "$xe^{x}$ means $r=1$ is a double root: factor $(r-1)^2$.",
+        "$e^{x}\\cos 3x$ means $r=1\\pm3i$ are roots: factor $(r-1)^2+9$.",
+        "Product: $(r-1)^2\\left[(r-1)^2+9\\right]=(r-1)^4+9(r-1)^2$, which expands to $r^4-4r^3+15r^2-22r+10$.",
+        "The equation is $y^{(4)}-4y^{(3)}+15y''-22y'+10y=0$."
+      ],
+      "brief": "Roots $1,1,1\\pm3i$: $(r-1)^2((r-1)^2+9)=r^4-4r^3+15r^2-22r+10$."
+    },
+    {
+      "sec": "5.5",
+      "q": "If $y_p=Ax^3+Bx^2+Cx+D\\cos x+E\\sin x$ is a particular solution of the differential equation \\[ y'''+4y'=24\\left(x^2+\\sin x\\right), \\] then $A+B+C+D+E=$",
+      "opts": [
+        "$-9$",
+        "$9$",
+        "$-8$",
+        "$8$",
+        "$11$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Substitute the given form into the equation and match coefficients.",
+        "Compute $y_p'$ and $y_p'''$, add $4y_p'$, and compare the coefficients of $x^2$, $x$, $1$, $\\cos x$ and $\\sin x$ with the right side.",
+        "Two functions of the form (polynomial) + $a\\cos x$ + $b\\sin x$ are equal for all $x$ only if the coefficients of each independent term agree."
+      ],
+      "steps": [
+        "$y_p'=3Ax^2+2Bx+C-D\\sin x+E\\cos x$ and $y_p'''=6A+D\\sin x-E\\cos x$.",
+        "$y_p'''+4y_p'=12Ax^2+8Bx+(6A+4C)-3D\\sin x+3E\\cos x$.",
+        "Match with $24x^2+24\\sin x$: $12A=24$, $8B=0$, $6A+4C=0$, $-3D=24$, $3E=0$.",
+        "So $A=2$, $B=0$, $C=-3$, $D=-8$, $E=0$, and the sum is $-9$."
+      ],
+      "brief": "Matching gives $A=2,B=0,C=-3,D=-8,E=0$, sum $-9$."
+    },
+    {
+      "sec": "5.5",
+      "q": "An appropriate form of a particular solution $y_p$ for the non-homogeneous differential equation \\[ (D^2-1)^2y=e^x+\\sin x \\] is given by $y_p(x)=$",
+      "opts": [
+        "$Ax^2e^x+B\\cos x+C\\sin x$",
+        "$Ae^x+B\\cos x+C\\sin x$",
+        "$Axe^x+B\\cos x+C\\sin x$",
+        "$Ax^2e^x+B\\sin x$",
+        "$Ax^2e^x+Bx^2\\cos x+Cx^2\\sin x$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Use undetermined coefficients, and compare each forcing term with the solutions of the homogeneous equation.",
+        "Find the roots of the characteristic equation and their multiplicities, then check whether $e^x$ or $\\cos x,\\sin x$ already appear in the complementary solution.",
+        "If the trial term for a forcing term $x^k e^{rx}$ (or with $\\cos,\\sin$) overlaps the complementary solution with $r$ a root of multiplicity $s$, multiply the trial by $x^s$."
+      ],
+      "steps": [
+        "Characteristic equation $(r^2-1)^2=(r-1)^2(r+1)^2=0$: roots $1,1,-1,-1$.",
+        "For $e^x$: $r=1$ is a double root, so the trial is $Ax^2e^x$.",
+        "For $\\sin x$: $\\pm i$ are not roots, so the trial is $B\\cos x+C\\sin x$.",
+        "$y_p=Ax^2e^x+B\\cos x+C\\sin x$."
+      ],
+      "brief": "Double root $r=1$ gives $Ax^2e^x$; $\\pm i$ not roots gives $B\\cos x+C\\sin x$."
+    },
+    {
+      "sec": "5.3",
+      "q": "Given that $y=e^{-x}\\cos x$ is a solution of the differential equation $9y^{(3)}+11y''+4y'-14y=0$, the general solution of the differential equation is",
+      "opts": [
+        "$y=c_1e^{\\frac79x}+c_2e^{-x}\\cos x+c_3e^{-x}\\sin x$",
+        "$y=c_1e^{\\frac29x}+c_2e^{-x}\\cos x+c_3e^{-x}\\sin x$",
+        "$y=c_1e^{-\\frac79x}+c_2e^{-x}\\cos x+c_3e^{-x}\\sin x$",
+        "$y=c_1e^{-\\frac29x}+c_2e^{-x}\\cos x+c_3e^{-x}\\sin x$",
+        "$y=c_1e^{x}+c_2e^{-x}\\cos x+c_3e^{-x}\\sin x$"
+      ],
+      "ans": 0,
+      "hints": [
+        "A real solution $e^{ax}\\cos bx$ tells you two complex conjugate characteristic roots; use them to factor the cubic.",
+        "Form the quadratic factor with the conjugate pair of roots and divide the characteristic cubic by it to find the third root.",
+        "Roots $a\\pm bi$ give the quadratic factor $(r-a)^2+b^2$, and a real simple root $r_0$ gives $e^{r_0x}$."
+      ],
+      "steps": [
+        "Characteristic equation: $9r^3+11r^2+4r-14=0$.",
+        "The roots $-1\\pm i$ give the factor $(r+1)^2+1=r^2+2r+2$.",
+        "Divide: $9r^3+11r^2+4r-14=(r^2+2r+2)(9r-7)$, so the third root is $r=\\dfrac79$.",
+        "$y=c_1e^{\\frac79x}+c_2e^{-x}\\cos x+c_3e^{-x}\\sin x$."
+      ],
+      "brief": "Factor $r^2+2r+2$; $9r^3+11r^2+4r-14=(r^2+2r+2)(9r-7)$, third root $\\frac79$."
+    },
+    {
+      "sec": "5.5",
+      "q": "A particular solution of the differential equation \\[ y''-3y'+2y=\\cos\\left(e^{-x}\\right) \\] is given by $y_p(x)=$",
+      "opts": [
+        "$-e^{2x}\\cos\\left(e^{-x}\\right)$",
+        "$e^{x}\\cos\\left(e^{-x}\\right)+e^{2x}\\sin\\left(e^{-x}\\right)$",
+        "$2e^{2x}\\sin\\left(e^{-x}\\right)$",
+        "$2e^{x}\\cos\\left(e^{-x}\\right)+e^{2x}\\sin\\left(e^{-x}\\right)$",
+        "$-2e^{2x}\\cos\\left(e^{-x}\\right)$"
+      ],
+      "ans": 0,
+      "hints": [
+        "The right side is not of an undetermined-coefficients type, so use variation of parameters.",
+        "Solve the homogeneous equation to get $y_1,y_2$, compute their Wronskian, then form the two integrals.",
+        "For $y''+py'+qy=f$: $y_p=-y_1\\int\\dfrac{y_2f}{W}\\,dx+y_2\\int\\dfrac{y_1f}{W}\\,dx$ with $W=y_1y_2'-y_1'y_2$."
+      ],
+      "steps": [
+        "$r^2-3r+2=0$ gives $y_1=e^{x}$, $y_2=e^{2x}$, and $W=e^{x}\\cdot2e^{2x}-e^{x}e^{2x}=e^{3x}$.",
+        "$y_p=-e^{x}\\int e^{-x}\\cos(e^{-x})\\,dx+e^{2x}\\int e^{-2x}\\cos(e^{-x})\\,dx$.",
+        "With $u=e^{-x}$, $du=-u\\,dx$: the first integral is $-\\sin u$; the second is $-\\int u\\cos u\\,du=-(u\\sin u+\\cos u)$.",
+        "$y_p=e^{x}\\sin(e^{-x})-e^{2x}\\left(e^{-x}\\sin(e^{-x})+\\cos(e^{-x})\\right)=-e^{2x}\\cos(e^{-x})$."
+      ],
+      "brief": "Variation of parameters, $y_1=e^x$, $y_2=e^{2x}$, $W=e^{3x}$: $y_p=-e^{2x}\\cos(e^{-x})$."
+    },
+    {
+      "sec": "6.1",
+      "q": "The characteristic equation of the matrix $\\begin{bmatrix}0&1&-1\\\\-3&1&-3\\\\1&-4&2\\end{bmatrix}$ is",
+      "opts": [
+        "$\\lambda^3-3\\lambda^2-6\\lambda+8=0$",
+        "$\\lambda^3-4\\lambda^2-6\\lambda+8=0$",
+        "$\\lambda^3-3\\lambda^2+6\\lambda-8=0$",
+        "$\\lambda^3-5\\lambda^2-6\\lambda-8=0$",
+        "$\\lambda^3-3\\lambda^2-5\\lambda+6=0$"
+      ],
+      "ans": 0,
+      "hints": [
+        "The characteristic equation comes from a determinant.",
+        "Form $A-\\lambda I$ and expand its determinant along a row or column.",
+        "The characteristic equation of $A$ is $\\det(A-\\lambda I)=0$."
+      ],
+      "steps": [
+        "$A-\\lambda I=\\begin{bmatrix}-\\lambda&1&-1\\\\-3&1-\\lambda&-3\\\\1&-4&2-\\lambda\\end{bmatrix}$.",
+        "Expand along the first row: $-\\lambda\\left[(1-\\lambda)(2-\\lambda)-12\\right]-1\\left[-3(2-\\lambda)+3\\right]-1\\left[12-(1-\\lambda)\\right]$.",
+        "$=-\\lambda(\\lambda^2-3\\lambda-10)-(3\\lambda-3)-(11+\\lambda)=-\\lambda^3+3\\lambda^2+6\\lambda-8$.",
+        "Setting this to $0$ and multiplying by $-1$: $\\lambda^3-3\\lambda^2-6\\lambda+8=0$."
+      ],
+      "brief": "$\\det(A-\\lambda I)=-\\lambda^3+3\\lambda^2+6\\lambda-8$, so $\\lambda^3-3\\lambda^2-6\\lambda+8=0$."
+    },
+    {
+      "sec": "6.1",
+      "q": "An eigenvector associated with the eigenvalue $\\lambda=5$ of the matrix $A=\\begin{bmatrix}5&0\\\\4&-1\\end{bmatrix}$ is $\\begin{bmatrix}3\\\\\\alpha\\end{bmatrix}$ where $\\alpha=$",
+      "opts": [
+        "$2$",
+        "$-2$",
+        "$3$",
+        "$-3$",
+        "$1$"
+      ],
+      "ans": 0,
+      "hints": [
+        "An eigenvector for $\\lambda$ is a nonzero vector in the null space of $A-\\lambda I$.",
+        "Form $A-5I$ and solve $(A-5I)\\mathbf{v}=\\mathbf{0}$ for the vector with first entry $3$.",
+        "$\\mathbf{v}\\neq\\mathbf{0}$ is an eigenvector for $\\lambda$ exactly when $(A-\\lambda I)\\mathbf{v}=\\mathbf{0}$."
+      ],
+      "steps": [
+        "$A-5I=\\begin{bmatrix}0&0\\\\4&-6\\end{bmatrix}$.",
+        "The system reduces to $4v_1-6v_2=0$, so $v_2=\\tfrac23v_1$.",
+        "For $v_1=3$: $v_2=2$, so $\\alpha=2$."
+      ],
+      "brief": "$(A-5I)\\mathbf{v}=\\mathbf{0}$: $4v_1=6v_2$, so $\\mathbf{v}=(3,2)$ and $\\alpha=2$."
+    },
+    {
+      "sec": "6.1",
+      "q": "If the characteristic polynomial of the matrix $A=\\begin{bmatrix}0&3&1\\\\1&2&1\\\\1&3&0\\end{bmatrix}$ is $p(\\lambda)=-(\\lambda+1)^2(\\lambda-4)$, then a basis for the eigenspace of $\\lambda=-1$ is $v_1=\\begin{bmatrix}\\alpha\\\\0\\\\-1\\end{bmatrix}$, $v_2=\\begin{bmatrix}\\beta\\\\-1\\\\0\\end{bmatrix}$, where $\\alpha+\\beta=$",
+      "opts": [
+        "$4$",
+        "$-4$",
+        "$0$",
+        "$3$",
+        "$2$"
+      ],
+      "ans": 0,
+      "hints": [
+        "The eigenspace of $\\lambda$ is the null space of $A-\\lambda I$.",
+        "Row-reduce $A+I$, find the free variables, and write the null space in terms of them; then scale the basis vectors to match the shape of $v_1$ and $v_2$.",
+        "The eigenspace of $\\lambda$ is $\\{\\mathbf{v}:(A-\\lambda I)\\mathbf{v}=\\mathbf{0}\\}$; its dimension equals the number of free variables."
+      ],
+      "steps": [
+        "$A+I=\\begin{bmatrix}1&3&1\\\\1&3&1\\\\1&3&1\\end{bmatrix}$, which row-reduces to the single equation $x+3y+z=0$.",
+        "So $x=-3y-z$ with $y,z$ free: $y\\,(-3,1,0)+z\\,(-1,0,1)$.",
+        "$v_1=(\\alpha,0,-1)$ needs $z=-1$, $y=0$: $x=1$, so $\\alpha=1$.",
+        "$v_2=(\\beta,-1,0)$ needs $y=-1$, $z=0$: $x=3$, so $\\beta=3$, and $\\alpha+\\beta=4$."
+      ],
+      "brief": "$A+I$ gives $x+3y+z=0$: $v_1=(1,0,-1)$, $v_2=(3,-1,0)$, so $\\alpha+\\beta=4$."
+    },
+    {
+      "sec": "6.2",
+      "q": "If the matrix $A=\\begin{bmatrix}-1&3\\\\-2&4\\end{bmatrix}$ is diagonalizable with a diagonalizing matrix $P$ and a diagonal matrix $D$ such that $P^{-1}AP=D$, then",
+      "opts": [
+        "$P=\\begin{bmatrix}3&1\\\\2&1\\end{bmatrix},\\ D=\\begin{bmatrix}1&0\\\\0&2\\end{bmatrix}$",
+        "$P=\\begin{bmatrix}1&3\\\\1&2\\end{bmatrix},\\ D=\\begin{bmatrix}1&0\\\\0&2\\end{bmatrix}$",
+        "$P=\\begin{bmatrix}3&1\\\\-2&1\\end{bmatrix},\\ D=\\begin{bmatrix}1&0\\\\0&2\\end{bmatrix}$",
+        "$P=\\begin{bmatrix}1&3\\\\1&-2\\end{bmatrix},\\ D=\\begin{bmatrix}0&1\\\\2&0\\end{bmatrix}$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Diagonalize by finding eigenvalues and eigenvectors; the columns of $P$ must match the order of the eigenvalues in $D$.",
+        "Solve $\\det(A-\\lambda I)=0$, then find an eigenvector for each eigenvalue.",
+        "If $P$ has eigenvectors $\\mathbf{v}_1,\\mathbf{v}_2$ as columns, then $P^{-1}AP=\\operatorname{diag}(\\lambda_1,\\lambda_2)$ with $A\\mathbf{v}_i=\\lambda_i\\mathbf{v}_i$."
+      ],
+      "steps": [
+        "$\\det(A-\\lambda I)=(-1-\\lambda)(4-\\lambda)+6=\\lambda^2-3\\lambda+2=(\\lambda-1)(\\lambda-2)$, so $\\lambda=1,2$.",
+        "$\\lambda=1$: $A-I=\\begin{bmatrix}-2&3\\\\-2&3\\end{bmatrix}$ gives $\\mathbf{v}_1=(3,2)$.",
+        "$\\lambda=2$: $A-2I=\\begin{bmatrix}-3&3\\\\-2&2\\end{bmatrix}$ gives $\\mathbf{v}_2=(1,1)$.",
+        "With $P=[\\mathbf{v}_1\\ \\mathbf{v}_2]=\\begin{bmatrix}3&1\\\\2&1\\end{bmatrix}$, $D=\\begin{bmatrix}1&0\\\\0&2\\end{bmatrix}$."
+      ],
+      "brief": "$\\lambda=1,2$, eigenvectors $(3,2)$, $(1,1)$: $P=\\begin{bmatrix}3&1\\\\2&1\\end{bmatrix}$, $D=\\operatorname{diag}(1,2)$.",
+      "note": "Source PDF prints the choice matrices run together (typesetting bug): (a) [31211002, (b) [13121002, (c) [31-211002, (d) [13121002 (identical to (b)), (e) [131-20120. Each is read as P (4 entries) then D (4 entries). (d) duplicates (b) and was dropped, so 4 choices. Key (a) confirmed by computation."
+    }
+  ]
+}

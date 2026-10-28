@@ -1,0 +1,336 @@
+{
+  "course": "math101",
+  "term": "251",
+  "kind": "e1",
+  "date": "",
+  "minutes": 90,
+  "source": "math101-251-e1.pdf",
+  "note": "Scan with no cover page: date and duration are not printed, so date is empty and 90 minutes is assumed. All 14 master answers (marked correct) agree with my own work. In Q11 the handwritten solution states f(2)=3 and right limit 2, which is a slip (f(2)=5, right limit 6); the conclusion (not differentiable) is unchanged. In Q9 the vertical asymptote is only x=1 because x=-1 is a hole.",
+  "qs": [
+    {
+      "sec": "2.1",
+      "q": "If the points $P_1(2,0)$, $P_2(0,y_1)$, and $P_3(1,y_2)$ lie on the graph of $y=f(x)$ and the slope of the secant line through $P_1$ and $P_2$ is 2 while the slope of the secant line through $P_1$ and $P_3$ is 3, then $f(0)+f(1)=$",
+      "opts": [
+        "$-7$",
+        "$21$",
+        "$1$",
+        "$-3$",
+        "$-1$"
+      ],
+      "ans": 0,
+      "hints": [
+        "This is about the slope of a secant line between two points on a graph.",
+        "Write the slope formula for each pair of points and solve for $y_1$ and $y_2$.",
+        "The slope through $(x_1,y_1)$ and $(x_2,y_2)$ is $\\dfrac{y_2-y_1}{x_2-x_1}$, and a point on the graph of $f$ at $x=c$ has $y=f(c)$."
+      ],
+      "steps": [
+        "$P_1,P_2$: $\\dfrac{y_1-0}{0-2}=2$, so $y_1=-4$.",
+        "$P_1,P_3$: $\\dfrac{y_2-0}{1-2}=3$, so $y_2=-3$.",
+        "$f(0)=y_1=-4$ and $f(1)=y_2=-3$.",
+        "$f(0)+f(1)=-7$."
+      ],
+      "brief": "$y_1=-4$, $y_2=-3$, so $f(0)+f(1)=-7$."
+    },
+    {
+      "sec": "2.3",
+      "q": "$\\lim_{x\\to2^-}\\dfrac{\\dfrac{x+1}{x}-\\dfrac32}{x-2}=$",
+      "opts": [
+        "$-\\dfrac14$",
+        "$-1$",
+        "$\\infty$",
+        "$-\\infty$",
+        "$\\dfrac12$"
+      ],
+      "ans": 0,
+      "hints": [
+        "The limit gives $0/0$ at $x=2$, so simplify the algebra first.",
+        "Combine the two fractions in the numerator over a common denominator.",
+        "After combining, factor so that the factor vanishing at the limit point cancels, and then substitute."
+      ],
+      "steps": [
+        "Common denominator: $\\dfrac{x+1}{x}-\\dfrac32=\\dfrac{2(x+1)-3x}{2x}=\\dfrac{2-x}{2x}$.",
+        "Divide by $x-2$: $\\dfrac{2-x}{2x(x-2)}=-\\dfrac{1}{2x}$ for $x\\neq2$.",
+        "Let $x\\to2$: $-\\dfrac{1}{4}$."
+      ],
+      "brief": "Combine: $\\frac{2-x}{2x(x-2)}=-\\frac1{2x}\\to-\\frac14$."
+    },
+    {
+      "sec": "2.3",
+      "q": "$\\lim_{x\\to1}\\dfrac{|x+1|-|-x-1|}{x-1}=$",
+      "opts": [
+        "$0$",
+        "$2$",
+        "$-2$",
+        "DNE",
+        "$-1$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Look at how the two absolute values are related.",
+        "Rewrite $|-x-1|$ by pulling out a factor $-1$ from inside.",
+        "For any real $u$, $|-u|=|u|$."
+      ],
+      "steps": [
+        "$|-x-1|=|-(x+1)|=|x+1|$.",
+        "So the numerator is $|x+1|-|x+1|=0$ for all $x$.",
+        "The quotient is $0$ for $x\\neq1$, so the limit is $0$."
+      ],
+      "brief": "$|-x-1|=|x+1|$, numerator is $0$, so the limit is $0$."
+    },
+    {
+      "sec": "2.3",
+      "q": "$\\lim_{x\\to0}\\dfrac{1-e^{-x}+4\\left(e^{2x}-1\\right)}{e^x-1}=$",
+      "opts": [
+        "$9$",
+        "$7$",
+        "DNE",
+        "$\\dfrac97$",
+        "$\\dfrac79$"
+      ],
+      "ans": 0,
+      "hints": [
+        "The limit has the form $0/0$; split it into two parts and simplify each using algebra.",
+        "Write $1-e^{-x}$ as $e^{-x}(e^x-1)$ and factor $e^{2x}-1$ as a difference of squares.",
+        "Difference of squares: $u^2-1=(u-1)(u+1)$ with $u=e^x$; also $e^{-x}=1/e^x$."
+      ],
+      "steps": [
+        "$1-e^{-x}=e^{-x}(e^x-1)$, so the first part is $e^{-x}\\to1$.",
+        "$e^{2x}-1=(e^x-1)(e^x+1)$, so the second part is $4(e^x+1)\\to8$.",
+        "Total: $1+8=9$."
+      ],
+      "brief": "$\\frac{1-e^{-x}}{e^x-1}=e^{-x}\\to1$; $4(e^x+1)\\to8$; sum $9$."
+    },
+    {
+      "sec": "2.3",
+      "q": "$\\lim_{x\\to0}\\dfrac{2\\cos x-2}{x^2}=$",
+      "opts": [
+        "$-1$",
+        "$1$",
+        "$0$",
+        "$\\dfrac12$",
+        "DNE"
+      ],
+      "ans": 0,
+      "hints": [
+        "This is a trigonometric limit of the form $0/0$.",
+        "Multiply numerator and denominator by $\\cos x+1$ to create a $\\sin^2 x$.",
+        "$\\cos^2x-1=-\\sin^2x$ and $\\lim_{x\\to0}\\dfrac{\\sin x}{x}=1$."
+      ],
+      "steps": [
+        "$\\dfrac{2(\\cos x-1)(\\cos x+1)}{x^2(\\cos x+1)}=\\dfrac{-2\\sin^2x}{x^2(\\cos x+1)}$.",
+        "$=-2\\left(\\dfrac{\\sin x}{x}\\right)^2\\dfrac{1}{\\cos x+1}$.",
+        "As $x\\to0$: $-2\\cdot1\\cdot\\dfrac12=-1$."
+      ],
+      "brief": "Multiply by $\\cos x+1$: $-2(\\frac{\\sin x}{x})^2\\frac1{\\cos x+1}\\to-1$."
+    },
+    {
+      "sec": "2.4",
+      "q": "$\\lim_{x\\to2}\\left(2x-[\\![x]\\!]\\right)=$",
+      "opts": [
+        "DNE",
+        "$2$",
+        "$3$",
+        "$1$",
+        "$0$"
+      ],
+      "ans": 0,
+      "hints": [
+        "The greatest integer function jumps at integers, so check the one-sided limits.",
+        "Compute the limit as $x\\to2^+$ and as $x\\to2^-$ separately.",
+        "A two-sided limit exists only if both one-sided limits exist and are equal."
+      ],
+      "steps": [
+        "As $x\\to2^+$, $[\\![x]\\!]=2$, so the limit is $4-2=2$.",
+        "As $x\\to2^-$, $[\\![x]\\!]=1$, so the limit is $4-1=3$.",
+        "The one-sided limits differ, so the limit does not exist."
+      ],
+      "brief": "Right limit $2$, left limit $3$, so DNE."
+    },
+    {
+      "sec": "2.4",
+      "q": "The value of $a$ for which the function \\[ f(x)=\\begin{cases}\\dfrac{x^2-a^2}{x-a}, & x\\neq a\\\\ 8, & x=a\\end{cases} \\] is continuous is equal to",
+      "opts": [
+        "$4$",
+        "$8$",
+        "$2$",
+        "$0$",
+        "$-2$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Use the definition of continuity at the point $x=a$.",
+        "Simplify the quotient for $x\\neq a$ and find its limit as $x\\to a$.",
+        "$f$ is continuous at $a$ iff $\\lim_{x\\to a}f(x)=f(a)$; also $u^2-v^2=(u-v)(u+v)$."
+      ],
+      "steps": [
+        "For $x\\neq a$: $\\dfrac{x^2-a^2}{x-a}=x+a$, so the limit at $a$ is $2a$.",
+        "Continuity needs $2a=f(a)=8$.",
+        "So $a=4$."
+      ],
+      "brief": "$\\lim_{x\\to a}(x+a)=2a=8$, so $a=4$."
+    },
+    {
+      "sec": "4.5",
+      "q": "$\\lim_{x\\to-\\infty}\\left(x+\\sqrt{x^2+3}\\right)=$",
+      "opts": [
+        "$0$",
+        "$3$",
+        "DNE",
+        "$-\\infty$",
+        "$\\infty$"
+      ],
+      "ans": 0,
+      "hints": [
+        "This is an $-\\infty+\\infty$ form, so rationalize.",
+        "Multiply and divide by the conjugate $x-\\sqrt{x^2+3}$.",
+        "$(u+v)(u-v)=u^2-v^2$; a constant divided by a quantity that grows without bound tends to $0$."
+      ],
+      "steps": [
+        "Multiply by the conjugate: $\\dfrac{x^2-(x^2+3)}{x-\\sqrt{x^2+3}}=\\dfrac{-3}{x-\\sqrt{x^2+3}}$.",
+        "As $x\\to-\\infty$, both $x$ and $-\\sqrt{x^2+3}$ tend to $-\\infty$, so the denominator tends to $-\\infty$.",
+        "The limit is $0$."
+      ],
+      "brief": "Conjugate: $\\frac{-3}{x-\\sqrt{x^2+3}}\\to0$."
+    },
+    {
+      "sec": "4.5",
+      "q": "The graph of the function $f(x)=\\dfrac{|x(x+1)|}{x^2-1}$ has",
+      "opts": [
+        "One horizontal and one vertical asymptotes.",
+        "Two horizontal and one vertical asymptotes.",
+        "One horizontal and two vertical asymptotes.",
+        "Two horizontal and two vertical asymptotes.",
+        "No horizontal and one vertical asymptotes."
+      ],
+      "ans": 0,
+      "hints": [
+        "Check horizontal asymptotes at $\\pm\\infty$ and vertical asymptotes where the denominator vanishes.",
+        "Simplify $f$ by removing the absolute value on each interval and cancelling common factors.",
+        "A common factor that cancels gives a hole, not a vertical asymptote; horizontal asymptotes come from $\\lim_{x\\to\\pm\\infty}f(x)$."
+      ],
+      "steps": [
+        "For $x<-1$ or $x\\ge0$: $f=\\dfrac{x(x+1)}{(x-1)(x+1)}=\\dfrac{x}{x-1}$. For $-1<x<0$: $f=\\dfrac{-x}{x-1}$.",
+        "At $x=-1$ the factor $x+1$ cancels (a hole), so the only vertical asymptote is $x=1$.",
+        "As $x\\to\\pm\\infty$, $f=\\dfrac{x}{x-1}\\to1$, so $y=1$ is the only horizontal asymptote."
+      ],
+      "brief": "$f=\\frac{x}{x-1}$ for large $|x|$: only $x=1$ vertical, only $y=1$ horizontal."
+    },
+    {
+      "sec": "2.5",
+      "q": "The graph of the function $f(x)=\\dfrac{4x^2+4x-24}{x^4-2x^3-9x^2+18x}$ has",
+      "opts": [
+        "Two vertical asymptotes and two holes",
+        "Three vertical asymptotes and one hole",
+        "Four vertical asymptotes and no holes",
+        "No vertical asymptotes and four holes",
+        "One vertical asymptote and one hole"
+      ],
+      "ans": 0,
+      "hints": [
+        "Factor the numerator and denominator completely and compare the zeros.",
+        "Factor the denominator by grouping after taking out $x$.",
+        "A zero of the denominator that cancels against the numerator gives a hole; one that remains gives a vertical asymptote."
+      ],
+      "steps": [
+        "Numerator: $4(x^2+x-6)=4(x+3)(x-2)$.",
+        "Denominator: $x(x^3-2x^2-9x+18)=x(x-2)(x-3)(x+3)$.",
+        "Cancel $(x+3)(x-2)$: $f=\\dfrac{4}{x(x-3)}$, so holes at $x=-3$ and $x=2$.",
+        "The remaining zeros $x=0$ and $x=3$ are vertical asymptotes."
+      ],
+      "brief": "$f=\\frac{4}{x(x-3)}$: asymptotes $x=0,3$; holes $x=-3,2$."
+    },
+    {
+      "sec": "3.1",
+      "q": "If $f(x)=\\begin{cases}x^2+1, & x\\le2\\\\ 4x-2, & x>2\\end{cases}$ Then",
+      "opts": [
+        "$f$ is not differentiable at $x=2$",
+        "$f'(2)=4$",
+        "$f'(2)=2$",
+        "$f'(2)=1$",
+        "$f'(2)=\\dfrac12$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Check continuity at $x=2$ before thinking about the derivative.",
+        "Compare the right-hand limit of $f$ at $x=2$ with $f(2)$.",
+        "A function that is differentiable at a point must be continuous there."
+      ],
+      "steps": [
+        "$f(2)=2^2+1=5$.",
+        "$\\lim_{x\\to2^+}(4x-2)=6\\neq5$, so $f$ is not continuous at $2$.",
+        "Hence $f$ is not differentiable at $x=2$."
+      ],
+      "brief": "Jump at $x=2$ ($5$ vs $6$), so not continuous, not differentiable."
+    },
+    {
+      "sec": "3.1",
+      "q": "If $f(x)=\\begin{cases}x^2\\sin\\dfrac1x, & x\\neq0\\\\ 0, & x=0\\end{cases}$ Then",
+      "opts": [
+        "$f'(0)=0$",
+        "$f$ is not differentiable at $x=0$",
+        "$f'(0)=1$",
+        "$f'(0)=2$",
+        "$f'(0)=\\dfrac12$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Use the limit definition of the derivative at $x=0$.",
+        "Form $\\dfrac{f(x)-f(0)}{x-0}$ and simplify it.",
+        "If $|g(x)|\\le1$ and $h(x)\\to0$, then $h(x)g(x)\\to0$ by the Squeeze Theorem."
+      ],
+      "steps": [
+        "$f'(0)=\\lim_{x\\to0}\\dfrac{x^2\\sin(1/x)-0}{x}=\\lim_{x\\to0}x\\sin\\dfrac1x$.",
+        "Since $\\left|x\\sin\\frac1x\\right|\\le|x|\\to0$, the Squeeze Theorem gives the limit $0$.",
+        "So $f'(0)=0$."
+      ],
+      "brief": "$f'(0)=\\lim x\\sin\\frac1x=0$ by squeeze."
+    },
+    {
+      "sec": "3.2",
+      "q": "The value of $k$ for which the line $y=\\dfrac{kx}{4}+4$ is tangent to the graph of $f(x)=k\\sqrt{x}$ is equal to",
+      "opts": [
+        "$4$",
+        "$-4$",
+        "$2$",
+        "$-2$",
+        "$\\dfrac14$"
+      ],
+      "ans": 0,
+      "hints": [
+        "At the point of tangency the line and the curve share a point and a slope.",
+        "Set the slope of the line equal to $f'(x)$ to find the point of tangency, then equate the function values.",
+        "The power rule: $\\dfrac{d}{dx}x^{1/2}=\\dfrac{1}{2\\sqrt x}$; tangency means equal $y$-values and equal slopes."
+      ],
+      "steps": [
+        "$f'(x)=\\dfrac{k}{2\\sqrt x}$ and the line has slope $\\dfrac k4$, so $\\dfrac{k}{2\\sqrt x}=\\dfrac k4$, giving $x=4$ (with $k\\neq0$).",
+        "At $x=4$: $k\\sqrt4=\\dfrac{4k}{4}+4$, i.e. $2k=k+4$.",
+        "So $k=4$."
+      ],
+      "brief": "Slopes equal give $x=4$; then $2k=k+4$, so $k=4$."
+    },
+    {
+      "sec": "3.2",
+      "q": "$\\dfrac{d}{dx}\\left(e^2+x^e+\\dfrac{2}{\\sqrt[3]{x}}+3\\cos x\\right)=$",
+      "opts": [
+        "$ex^{e-1}-\\dfrac{2}{3x^{4/3}}-3\\sin x$",
+        "$ex^{e-1}+\\dfrac{2}{3x^{4/3}}-3\\sin x$",
+        "$ex^{e-1}-\\dfrac{2}{3x^{1/3}}+3\\sin x$",
+        "$2e+ex^{e-1}+2x^{-\\frac23}-3\\sin x$",
+        "$ex^e\\ln x-\\dfrac{2}{3x^{4/3}}-3\\cos x$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Differentiate term by term with the basic rules.",
+        "Remember that $e^2$ is a constant, and rewrite the root as a power of $x$.",
+        "Power rule $\\dfrac{d}{dx}x^n=nx^{n-1}$ for any constant $n$; $\\dfrac{d}{dx}c=0$ and $\\dfrac{d}{dx}\\cos x=-\\sin x$."
+      ],
+      "steps": [
+        "$e^2$ is a constant, so its derivative is $0$.",
+        "$\\dfrac{d}{dx}x^e=ex^{e-1}$.",
+        "$\\dfrac{2}{\\sqrt[3]x}=2x^{-1/3}$, with derivative $-\\dfrac23x^{-4/3}=-\\dfrac{2}{3x^{4/3}}$.",
+        "$\\dfrac{d}{dx}(3\\cos x)=-3\\sin x$; add the terms."
+      ],
+      "brief": "$0+ex^{e-1}-\\frac23x^{-4/3}-3\\sin x$."
+    }
+  ]
+}

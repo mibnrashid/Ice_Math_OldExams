@@ -1,0 +1,369 @@
+{
+  "course": "math208",
+  "term": "253",
+  "kind": "e1",
+  "date": "2 July 2026",
+  "minutes": 90,
+  "source": "math208-253-ex1.pdf",
+  "qs": [
+    {
+      "sec": "4.1",
+      "q": "If the vectors $\\mathbf{u}=(1,k,2)$, $\\mathbf{v}=(2,2,0)$, and $\\mathbf{w}=(1,2,-2)$ in $\\mathbb{R}^3$ are linearly dependent, then $k=$",
+      "opts": [
+        "$0$",
+        "$1$",
+        "$-1$",
+        "$2$",
+        "$-2$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Three vectors in $\\mathbb{R}^3$ are dependent exactly when the matrix built from them is not invertible.",
+        "Put $\\mathbf{u}$, $\\mathbf{v}$, $\\mathbf{w}$ as the rows of a $3\\times3$ matrix and compute its determinant as a function of $k$.",
+        "The vectors are linearly dependent if and only if $\\det\\begin{bmatrix}\\mathbf{u}&\\mathbf{v}&\\mathbf{w}\\end{bmatrix}=0$."
+      ],
+      "steps": [
+        "Take $\\det\\begin{bmatrix}1&k&2\\\\2&2&0\\\\1&2&-2\\end{bmatrix}$ and expand along the first row.",
+        "$=1(-4-0)-k(-4-0)+2(4-2)=-4+4k+4=4k$.",
+        "The vectors are dependent exactly when $4k=0$, so $k=0$."
+      ],
+      "brief": "$\\det\\begin{bmatrix}1&k&2\\\\2&2&0\\\\1&2&-2\\end{bmatrix}=4k=0$, so $k=0$."
+    },
+    {
+      "sec": "1.4",
+      "q": "If $y=y(x)$ is the solution of the initial value problem \\[ \\left(\\frac{2+\\sin x}{y+1}\\right)\\frac{dy}{dx}=-\\cos x, \\qquad y(0)=1, \\] then $y\\left(\\dfrac{\\pi}{2}\\right)$ equals",
+      "opts": [
+        "$\\dfrac13$",
+        "$-\\dfrac13$",
+        "$-\\dfrac23$",
+        "$\\dfrac23$",
+        "$\\dfrac43$"
+      ],
+      "ans": 0,
+      "hints": [
+        "The $x$-terms and the $y$-terms can be moved to opposite sides, so the equation is separable.",
+        "Rewrite it as $\\dfrac{dy}{y+1}=-\\dfrac{\\cos x}{2+\\sin x}\\,dx$ and integrate both sides.",
+        "$\\int\\dfrac{f'(x)}{f(x)}\\,dx=\\ln|f(x)|+C$; after integrating, use the initial condition to find the constant."
+      ],
+      "steps": [
+        "Separate: $\\dfrac{dy}{y+1}=-\\dfrac{\\cos x}{2+\\sin x}\\,dx$.",
+        "Integrate: $\\ln|y+1|=-\\ln(2+\\sin x)+C$, so $y+1=\\dfrac{K}{2+\\sin x}$.",
+        "$y(0)=1$: $2=\\dfrac{K}{2}$, so $K=4$ and $y=\\dfrac{4}{2+\\sin x}-1$.",
+        "$y\\left(\\dfrac{\\pi}{2}\\right)=\\dfrac{4}{3}-1=\\dfrac13$."
+      ],
+      "brief": "Separable: $y+1=\\frac{4}{2+\\sin x}$, so $y(\\frac{\\pi}{2})=\\frac43-1=\\frac13$."
+    },
+    {
+      "sec": "1.6",
+      "q": "If the function $g(x)$ with $g(0)=1$ makes the differential equation \\[ \\left[g(x)-x\\cos(xy)\\right]dy=\\left[e^{2x}+y\\cos(xy)\\right]dx \\] an exact differential equation, then $g(x)=$",
+      "opts": [
+        "$1$",
+        "$\\cos(x)$",
+        "$\\sin(x)+1$",
+        "$e^{2x}$",
+        "$\\cos(2x)$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Use the test for exactness, after writing the equation in the form $M\\,dx+N\\,dy=0$.",
+        "Move everything to one side to read off $M$ and $N$, then compute $\\partial M/\\partial y$ and $\\partial N/\\partial x$.",
+        "$M\\,dx+N\\,dy=0$ is exact when $M_y=N_x$; this gives $g'(x)$, which you integrate and fix with $g(0)$."
+      ],
+      "steps": [
+        "Rewrite: $\\left[e^{2x}+y\\cos(xy)\\right]dx+\\left[-g(x)+x\\cos(xy)\\right]dy=0$.",
+        "$M_y=\\cos(xy)-xy\\sin(xy)$ and $N_x=-g'(x)+\\cos(xy)-xy\\sin(xy)$.",
+        "$M_y=N_x$ gives $g'(x)=0$, so $g$ is constant.",
+        "$g(0)=1$, so $g(x)=1$."
+      ],
+      "brief": "$M=e^{2x}+y\\cos xy$, $N=-g+x\\cos xy$: $M_y=N_x\\Rightarrow g'=0$, so $g=1$."
+    },
+    {
+      "sec": "1.6",
+      "q": "A general solution of the exact differential equation \\[ \\left(\\frac{2x}{y}-\\frac{3y^2}{x^4}\\right)dx+\\left(\\frac{2y}{x^3}-\\frac{x^2}{y^2}+\\frac{1}{\\sqrt{y}}\\right)dy=0 \\] is",
+      "opts": [
+        "$\\dfrac{x^2}{y}+\\dfrac{y^2}{x^3}+2\\sqrt{y}=c$",
+        "$\\dfrac{x^2}{y}-\\dfrac{y^2}{x^2}+2\\sqrt{y}=c$",
+        "$\\dfrac{x}{y}+\\dfrac{y^2}{x^3}+2\\sqrt{y}=c$",
+        "$\\dfrac{x^2}{y}-\\dfrac{y}{x^3}+\\sqrt{y}=c$",
+        "$\\dfrac{x^2}{y^2}+\\dfrac{y^2}{x^3}+\\sqrt{y}=c$"
+      ],
+      "ans": 0,
+      "hints": [
+        "The equation is exact, so look for a potential function $F(x,y)$.",
+        "Integrate $M$ with respect to $x$, treating $y$ as a constant, and add an unknown $g(y)$.",
+        "For an exact equation, $F=\\int M\\,dx+g(y)$ with $F_y=N$, and the general solution is $F(x,y)=c$."
+      ],
+      "steps": [
+        "$F=\\int\\left(\\dfrac{2x}{y}-3y^2x^{-4}\\right)dx=\\dfrac{x^2}{y}+\\dfrac{y^2}{x^3}+g(y)$.",
+        "$F_y=-\\dfrac{x^2}{y^2}+\\dfrac{2y}{x^3}+g'(y)$.",
+        "Matching $N$ gives $g'(y)=\\dfrac{1}{\\sqrt{y}}$, so $g(y)=2\\sqrt{y}$.",
+        "The general solution is $\\dfrac{x^2}{y}+\\dfrac{y^2}{x^3}+2\\sqrt{y}=c$."
+      ],
+      "brief": "$F=\\int M\\,dx=\\frac{x^2}{y}+\\frac{y^2}{x^3}+g(y)$, $g'=\\frac{1}{\\sqrt y}$, so $g=2\\sqrt y$."
+    },
+    {
+      "sec": "1.5",
+      "q": "The general solution of the differential equation \\[ \\frac{dy}{dx}+y\\cot x=\\sin x, \\qquad 0 < x < \\pi \\] is",
+      "opts": [
+        "$4y\\sin x=2x-\\sin(2x)+c$",
+        "$2y\\sin x=x-\\sin(2x)+c$",
+        "$4y\\sin x=x-2\\sin(2x)+c$",
+        "$2y\\sin x=2x+\\sin(2x)+c$",
+        "$3y\\sin x=4x-\\sin(2x)+c$"
+      ],
+      "ans": 0,
+      "hints": [
+        "This is a first-order linear equation in $y$.",
+        "It is already in the form $y'+P(x)y=Q(x)$ with $P=\\cot x$; find the integrating factor.",
+        "$\\rho=e^{\\int P\\,dx}$ and $(\\rho y)'=\\rho Q$; use $\\sin^2x=\\dfrac{1-\\cos 2x}{2}$ to integrate."
+      ],
+      "steps": [
+        "$\\rho=e^{\\int\\cot x\\,dx}=e^{\\ln\\sin x}=\\sin x$ (positive on $0 < x < \\pi$).",
+        "$(y\\sin x)'=\\sin^2x=\\dfrac{1-\\cos 2x}{2}$.",
+        "Integrate: $y\\sin x=\\dfrac{x}{2}-\\dfrac{\\sin 2x}{4}+C$.",
+        "Multiply by 4: $4y\\sin x=2x-\\sin(2x)+c$."
+      ],
+      "brief": "$\\rho=\\sin x$: $(y\\sin x)'=\\sin^2x$, so $y\\sin x=\\frac x2-\\frac{\\sin2x}{4}+C$."
+    },
+    {
+      "sec": "1.4",
+      "q": "A thermometer with an initial reading of $10^\\circ$ is brought into a room maintained at a constant temperature of $30^\\circ$. If the thermometer reads $20^\\circ$ after 2 minutes, what is the total time required for the thermometer to reach $25^\\circ$?",
+      "opts": [
+        "4 minutes",
+        "3 minutes",
+        "5 minutes",
+        "6 minutes",
+        "8 minutes"
+      ],
+      "ans": 0,
+      "hints": [
+        "Newton's law of cooling says the temperature difference $T-A$ from the room changes exponentially.",
+        "Write $T(t)$ with the room temperature $A=30$ and $T_0=10$, then use the reading at $t=2$ to find $e^{-2k}$.",
+        "$T(t)=A+(T_0-A)e^{-kt}$, and $e^{-kt}=\\left(e^{-2k}\\right)^{t/2}$."
+      ],
+      "steps": [
+        "$T(t)=30+(10-30)e^{-kt}=30-20e^{-kt}$.",
+        "$T(2)=20$: $30-20e^{-2k}=20$, so $e^{-2k}=\\dfrac12$.",
+        "$T(t)=25$: $20e^{-kt}=5$, so $e^{-kt}=\\dfrac14=\\left(\\dfrac12\\right)^2=e^{-4k}$.",
+        "Hence $t=4$ minutes."
+      ],
+      "brief": "$T=30-20e^{-kt}$, $e^{-2k}=\\frac12$; $e^{-kt}=\\frac14=e^{-4k}$, so $t=4$ min."
+    },
+    {
+      "sec": "1.6",
+      "q": "The general solution of the differential equation \\[ (x^2+3xy+y^2)\\,dx-x^2\\,dy=0 \\] is given by",
+      "opts": [
+        "$\\ln|x|+\\left(1+\\dfrac{y}{x}\\right)^{-1}=c$",
+        "$y=x\\ln|x|+cx$",
+        "$\\ln|x|+\\left(1+\\dfrac{x}{y}\\right)^{-1}=c$",
+        "$y=2x\\ln|x|+cx$",
+        "$\\ln|x|+\\dfrac{y}{x}+1=c$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Every term has the same total degree in $x$ and $y$, so the equation is homogeneous.",
+        "Solve for $y'$, divide through by $x^2$ to write it in terms of $y/x$, then substitute $v=y/x$.",
+        "With $v=\\dfrac yx$: $y=vx$ and $y'=v+xv'$; the resulting equation in $v$ and $x$ is separable."
+      ],
+      "steps": [
+        "$y'=\\dfrac{x^2+3xy+y^2}{x^2}=1+3v+v^2$ with $v=\\dfrac yx$.",
+        "$v+xv'=1+3v+v^2$, so $xv'=v^2+2v+1=(v+1)^2$.",
+        "Separate: $\\dfrac{dv}{(v+1)^2}=\\dfrac{dx}{x}$, so $-\\dfrac{1}{v+1}=\\ln|x|-c$.",
+        "Hence $\\ln|x|+\\left(1+\\dfrac yx\\right)^{-1}=c$."
+      ],
+      "brief": "Homogeneous, $v=y/x$: $xv'=(v+1)^2$, so $\\ln|x|+(1+\\frac yx)^{-1}=c$."
+    },
+    {
+      "sec": "1.6",
+      "q": "The general solution of the differential equation \\[ xy''+y'=4x, \\qquad x>0 \\] is given by",
+      "opts": [
+        "$y(x)=x^2+A\\ln x+B$",
+        "$y(x)=2x^2+A\\ln x+B$",
+        "$y(x)=3x^2+A\\ln x+B$",
+        "$y(x)=4x^2+Ax\\ln x+B$",
+        "$y(x)=2x^2+Ax\\ln x+B$"
+      ],
+      "ans": 0,
+      "hints": [
+        "The dependent variable $y$ does not appear, so this is a reducible second-order equation with $y$ missing.",
+        "Set $p=y'$, so $y''=p'$, and solve the first-order equation for $p$.",
+        "With $y$ missing, $p=y'$ and $y''=\\dfrac{dp}{dx}$; also $xp'+p=(xp)'$ by the product rule."
+      ],
+      "steps": [
+        "With $p=y'$: $xp'+p=4x$, that is, $(xp)'=4x$.",
+        "Integrate: $xp=2x^2+A$, so $p=2x+\\dfrac{A}{x}$.",
+        "Integrate again: $y=x^2+A\\ln x+B$ (since $x>0$)."
+      ],
+      "brief": "$p=y'$: $(xp)'=4x$, $p=2x+\\frac Ax$, so $y=x^2+A\\ln x+B$."
+    },
+    {
+      "sec": "1.6",
+      "q": "The solution of the initial-value problem \\[ x\\frac{dy}{dx}-y=y^2\\ln x, \\qquad y(1)=\\frac12 \\] is given by",
+      "opts": [
+        "$\\dfrac1y=1-\\ln x+\\dfrac1x$",
+        "$y=1-\\ln x+\\dfrac1x$",
+        "$\\dfrac1y=1-2\\ln x+\\dfrac1x$",
+        "$\\dfrac1y=1+2\\ln x+\\dfrac1x$",
+        "$y=1+2\\ln x-\\dfrac{1}{2x}$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Besides the linear terms the equation has a $y^2$ term, so it is a Bernoulli equation.",
+        "Divide by $x$ to get the form $y'+P(x)y=Q(x)y^n$, then substitute $v=y^{1-n}$.",
+        "$v=y^{1-n}$ gives $v'=(1-n)y^{-n}y'$; solve the resulting linear equation with $\\rho=e^{\\int P\\,dx}$ and $(\\rho v)'=\\rho Q$."
+      ],
+      "steps": [
+        "Divide by $x$: $y'-\\dfrac1x y=\\dfrac{\\ln x}{x}y^2$, so $n=2$, $v=y^{-1}$ and $v'=-y^{-2}y'$.",
+        "Multiply the equation by $-y^{-2}$: $v'+\\dfrac1x v=-\\dfrac{\\ln x}{x}$.",
+        "$\\rho=x$: $(xv)'=-\\ln x$, so $xv=x-x\\ln x+C$ and $v=1-\\ln x+\\dfrac Cx$.",
+        "$y(1)=\\dfrac12$ means $v(1)=2$: $1+C=2$, so $C=1$ and $\\dfrac1y=1-\\ln x+\\dfrac1x$."
+      ],
+      "brief": "Bernoulli $n=2$, $v=\\frac1y$: $(xv)'=-\\ln x$, $v=1-\\ln x+\\frac1x$ (from $v(1)=2$)."
+    },
+    {
+      "sec": "1.1",
+      "q": "The sum of all values of $m$ for which $y=x^m$ is a solution of the differential equation \\[ x^2y''-7xy'+15y=0 \\] is",
+      "opts": [
+        "$8$",
+        "$-8$",
+        "$2$",
+        "$-2$",
+        "$0$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Substituting a power $y=x^m$ into the equation gives an equation for $m$.",
+        "Compute $y'$ and $y''$ for $y=x^m$, substitute, and divide by $x^m$.",
+        "For $y=x^m$: $y'=mx^{m-1}$ and $y''=m(m-1)x^{m-2}$, so $x^2y''$ and $xy'$ are both multiples of $x^m$."
+      ],
+      "steps": [
+        "With $y=x^m$: $x^2y''=m(m-1)x^m$ and $xy'=mx^m$.",
+        "Substitute: $\\left(m(m-1)-7m+15\\right)x^m=0$, so $m^2-8m+15=0$.",
+        "$(m-3)(m-5)=0$, so $m=3$ or $m=5$.",
+        "The sum is $3+5=8$."
+      ],
+      "brief": "$m(m-1)-7m+15=m^2-8m+15=(m-3)(m-5)$: $m=3,5$, sum $8$."
+    },
+    {
+      "sec": "1.6",
+      "q": "By using an appropriate substitution, the differential equation \\[ \\frac{dy}{dx}=1+\\sqrt{y-4x+1} \\] transforms into the separable differential equation",
+      "opts": [
+        "$\\dfrac{du}{\\sqrt{u}-3}=dx$",
+        "$\\dfrac{du}{\\sqrt{u}+1}=dx$",
+        "$\\dfrac{du}{\\sqrt{u}+2}=3\\,dx$",
+        "$\\dfrac{du}{\\sqrt{u}-1}=2\\,dx$",
+        "$\\dfrac{du}{\\sqrt{u}+3}=dx$"
+      ],
+      "ans": 0,
+      "hints": [
+        "The right side depends on $x$ and $y$ only through one linear expression, so substitute for that expression.",
+        "Let $u$ be the expression under the square root and compute $\\dfrac{du}{dx}$ in terms of $\\dfrac{dy}{dx}$.",
+        "For $u=ax+by+c$, $\\dfrac{du}{dx}=a+b\\dfrac{dy}{dx}$, which turns $y'=F(ax+by+c)$ into a separable equation in $u$."
+      ],
+      "steps": [
+        "Let $u=y-4x+1$, so $\\dfrac{du}{dx}=\\dfrac{dy}{dx}-4$.",
+        "Substitute: $\\dfrac{du}{dx}=1+\\sqrt{u}-4=\\sqrt{u}-3$.",
+        "Separate: $\\dfrac{du}{\\sqrt{u}-3}=dx$."
+      ],
+      "brief": "$u=y-4x+1$: $u'=y'-4=\\sqrt u-3$, so $\\frac{du}{\\sqrt u-3}=dx$."
+    },
+    {
+      "sec": "4.2",
+      "q": "Which one of the following subsets is a subspace of $\\mathbb{R}^4$?",
+      "opts": [
+        "The set of all vectors $(x_1,x_2,x_3,x_4)$ such that $x_1-2x_2=0$ and $x_3+5x_4=0$",
+        "The set of all vectors $(x_1,x_2,x_3,x_4)$ such that $x_1^2+x_2^2=1$",
+        "The set of all vectors $(x_1,x_2,x_3,x_4)$ such that $x_1+x_2-x_3+2x_4=1$",
+        "The set of all vectors $(x_1,x_2,x_3,x_4)$ such that $x_1\\ge 0$",
+        "The set of all vectors $(x_1,x_2,x_3,x_4)$ such that $x_1x_3=0$"
+      ],
+      "ans": 0,
+      "hints": [
+        "A subset is a subspace when it contains $\\mathbf{0}$ and is closed under addition and scalar multiplication.",
+        "Check each set for the zero vector first, then look for a pair of vectors or a scalar that breaks closure.",
+        "The solution set of a homogeneous linear system $A\\mathbf{x}=\\mathbf{0}$ is always a subspace of $\\mathbb{R}^n$."
+      ],
+      "steps": [
+        "$x_1-2x_2=0,\\ x_3+5x_4=0$ is a homogeneous linear system, so its solution set contains $\\mathbf{0}$ and is closed under sums and scalar multiples: a subspace.",
+        "$x_1^2+x_2^2=1$: the zero vector gives $0\\neq1$, so $\\mathbf{0}$ is not in it.",
+        "$x_1+x_2-x_3+2x_4=1$: the zero vector gives $0\\neq1$, so $\\mathbf{0}$ is not in it.",
+        "$x_1\\ge0$: $(1,0,0,0)$ is in it, but $-1\\cdot(1,0,0,0)$ has $x_1=-1<0$.",
+        "$x_1x_3=0$: $(1,0,0,0)$ and $(0,0,1,0)$ are in it, but their sum has $x_1x_3=1$."
+      ],
+      "brief": "Only the homogeneous linear system $x_1-2x_2=0,\\ x_3+5x_4=0$ gives a subspace."
+    },
+    {
+      "sec": "4.2",
+      "q": "If the solution space of the system \\[\\begin{aligned} x_1-2x_2+x_3+x_4&=0\\\\ x_1-2x_2+2x_3-x_4&=0 \\end{aligned}\\] is the set of all linear combinations of the form $s\\mathbf{u}+t\\mathbf{v}$, where $s$ and $t$ are real numbers and \\[ \\mathbf{u}=(a,b,0,0), \\qquad \\mathbf{v}=(m,n,2,l), \\] then $\\dfrac{a}{b}+\\dfrac{2}{l}=$",
+      "opts": [
+        "$4$",
+        "$2$",
+        "$3$",
+        "$1$",
+        "$0$"
+      ],
+      "ans": 0,
+      "hints": [
+        "The solution space of a homogeneous system is described by its free variables.",
+        "Reduce the coefficient matrix to reduced echelon form and write the leading variables in terms of the free ones.",
+        "Writing the general solution as a combination of vectors, one per free variable, gives a set of vectors that spans the solution space; any vector in the space must satisfy the same relations."
+      ],
+      "steps": [
+        "Subtract row 1 from row 2: $x_3-2x_4=0$, so $x_3=2x_4$.",
+        "Then $x_1=2x_2-x_3-x_4=2x_2-3x_4$; the free variables are $x_2$ and $x_4$.",
+        "$(x_1,x_2,x_3,x_4)=x_2(2,1,0,0)+x_4(-3,0,2,1)$.",
+        "A vector with $x_3=x_4=0$ is a multiple of $(2,1,0,0)$, so $\\dfrac ab=2$; a vector with $x_3=2$ has $x_4=1$, so $l=1$.",
+        "$\\dfrac ab+\\dfrac2l=2+2=4$."
+      ],
+      "brief": "$x_3=2x_4$, $x_1=2x_2-3x_4$: $\\mathbf u\\parallel(2,1,0,0)$, $l=1$, so $2+2=4$."
+    },
+    {
+      "sec": "1.5",
+      "q": "The solution of the linear differential equation \\[ \\frac{dy}{dx}=\\frac{y}{2y\\ln y+y-x} \\] is given by",
+      "opts": [
+        "$xy=c+y^2\\ln y$",
+        "$2xy=c+y^2\\ln y$",
+        "$xy=cx+y^2\\ln y$",
+        "$2xy=cx+y^2\\ln y$",
+        "$xy=c+x^2\\ln y$"
+      ],
+      "ans": 0,
+      "hints": [
+        "The equation is not linear in $y$, but it becomes linear if you treat $x$ as a function of $y$.",
+        "Flip both sides to get $\\dfrac{dx}{dy}$, and write it in the form $\\dfrac{dx}{dy}+P(y)x=Q(y)$.",
+        "$\\rho=e^{\\int P(y)\\,dy}$ and $\\dfrac{d}{dy}(\\rho x)=\\rho Q$; use integration by parts for $\\int y\\ln y\\,dy$."
+      ],
+      "steps": [
+        "$\\dfrac{dx}{dy}=\\dfrac{2y\\ln y+y-x}{y}$, so $\\dfrac{dx}{dy}+\\dfrac1y x=2\\ln y+1$.",
+        "$\\rho=e^{\\int\\frac1y dy}=y$: $\\dfrac{d}{dy}(xy)=2y\\ln y+y$.",
+        "By parts, $\\int 2y\\ln y\\,dy=y^2\\ln y-\\dfrac{y^2}{2}$, and $\\int y\\,dy=\\dfrac{y^2}{2}$.",
+        "So $xy=y^2\\ln y+c$."
+      ],
+      "brief": "Linear in $x$: $\\frac{dx}{dy}+\\frac xy=2\\ln y+1$, $\\rho=y$, so $xy=y^2\\ln y+c$."
+    },
+    {
+      "sec": "1.2",
+      "q": "If a particle is moving in a straight line with an acceleration $a(t)=\\dfrac{1}{\\sqrt{1-t^2}}$, initial position $x(0)=1$, and an initial velocity $v(0)=0$, then the position of the particle at any time $t$ is given by",
+      "opts": [
+        "$x(t)=t\\sin^{-1}t+\\sqrt{1-t^2}$",
+        "$x(t)=2t\\sin^{-1}t+\\sqrt{1-t^2}$",
+        "$x(t)=2t\\sin^{-1}t+4\\sqrt{1-t^2}$",
+        "$x(t)=t\\sin^{-1}t+2\\sqrt{1-t^2}$",
+        "$x(t)=t\\sin^{-1}t+3\\sqrt{1-t^2}$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Acceleration is the derivative of velocity, and velocity is the derivative of position, so integrate twice.",
+        "Integrate $a(t)$ once to get $v(t)$ and use $v(0)=0$ to find the first constant.",
+        "$\\int\\dfrac{dt}{\\sqrt{1-t^2}}=\\sin^{-1}t+C$, and $\\int\\sin^{-1}t\\,dt$ is done by parts with $u=\\sin^{-1}t$, $dv=dt$."
+      ],
+      "steps": [
+        "$v(t)=\\int\\dfrac{dt}{\\sqrt{1-t^2}}=\\sin^{-1}t+C_1$, and $v(0)=0$ gives $C_1=0$.",
+        "By parts: $\\int\\sin^{-1}t\\,dt=t\\sin^{-1}t-\\int\\dfrac{t}{\\sqrt{1-t^2}}\\,dt=t\\sin^{-1}t+\\sqrt{1-t^2}+C_2$.",
+        "$x(0)=0+1+C_2=1$, so $C_2=0$.",
+        "Hence $x(t)=t\\sin^{-1}t+\\sqrt{1-t^2}$."
+      ],
+      "brief": "$v=\\sin^{-1}t$; by parts $x=t\\sin^{-1}t+\\sqrt{1-t^2}+C_2$ with $C_2=0$."
+    }
+  ]
+}

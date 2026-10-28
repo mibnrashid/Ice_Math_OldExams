@@ -1,0 +1,335 @@
+{
+  "course": "stat201",
+  "term": "251",
+  "kind": "e2",
+  "date": "10 November 2025",
+  "minutes": 90,
+  "source": "stat201-251-e2.pdf",
+  "note": "No official key: the master has no (correct) marks (cover says USE THIS AS A TEMPLATE); answers derived and verified, and all agree with option (a), the usual master convention. Q12 assumes p = 0.5 (no prior estimate given). Date and 90 minutes are printed on the cover.",
+  "qs": [
+    {
+      "sec": "4.11",
+      "q": "(Exercise 4-178) The life of a semiconductor laser at a constant power is a lognormal random variable with a mean of 7104.26 hours and a standard deviation of 790.33 hours. What is the life in hours that 99.9$\\%$ of the lasers exceed? Note: Round your final answer to the nearest whole hour.",
+      "opts": [
+        "5012 hours",
+        "5062 hours",
+        "4662 hours",
+        "6797 hours",
+        "9947 hours"
+      ],
+      "ans": 0,
+      "hints": [
+        "This is a lognormal percentile problem: the logarithm of the life is normal.",
+        "First convert the given mean and standard deviation of $X$ into the parameters $\\theta$ and $\\omega$ of $\\ln X$, then find the 0.1th percentile of the normal variable $\\ln X$.",
+        "For lognormal $X$: $E(X)=e^{\\theta+\\omega^2/2}$ and $V(X)=e^{2\\theta+\\omega^2}(e^{\\omega^2}-1)$, so $\\omega^2=\\ln\\left(1+\\sigma^2/\\mu^2\\right)$; and $P(X>x)=p$ means $\\ln x=\\theta+z\\,\\omega$ where $P(Z>z)=p$ (here $z$ is negative when $p>0.5$)."
+      ],
+      "steps": [
+        "$\\omega^2=\\ln\\left(1+\\dfrac{790.33^2}{7104.26^2}\\right)=0.01230$, so $\\omega=0.1109$.",
+        "$\\theta=\\ln 7104.26-\\dfrac{\\omega^2}{2}=8.8688-0.0062=8.8623$.",
+        "We need $P(X>x)=0.999$, so $P(Z>z)=0.999$ and $z=-3.09$.",
+        "$x=e^{\\theta+z\\omega}=e^{8.8623-3.09(0.1109)}=e^{8.5196}\\approx 5012$ hours."
+      ],
+      "brief": "$\\omega=0.1109$, $\\theta=8.8623$, $x=e^{8.8623-3.09\\omega}\\approx5012$ hours."
+    },
+    {
+      "sec": "4.10",
+      "q": "(Exercise 4-131) The life (in hours) of a magnetic resonance imaging machine (MRI) is modeled by a Weibull distribution with parameters $\\beta=0.5$ and $\\delta=1200$ hours. Determine the probability that the MRI fails before 4800 hours.",
+      "opts": [
+        "0.8647",
+        "0.1353",
+        "0.9817",
+        "0.3935",
+        "1.0000"
+      ],
+      "ans": 0,
+      "hints": [
+        "This is a Weibull cumulative probability.",
+        "Identify the shape $\\beta$ and scale $\\delta$ and evaluate the Weibull cdf at the given time.",
+        "For a Weibull variable with shape $\\beta$ and scale $\\delta$: $F(x)=P(X\\le x)=1-e^{-(x/\\delta)^{\\beta}}$ for $x>0$."
+      ],
+      "steps": [
+        "$P(X<4800)=1-e^{-(4800/1200)^{0.5}}$.",
+        "$4^{0.5}=2$, so $P=1-e^{-2}$.",
+        "$1-e^{-2}=1-0.1353=0.8647$."
+      ],
+      "brief": "$F(4800)=1-e^{-(4800/1200)^{0.5}}=1-e^{-2}=0.8647$."
+    },
+    {
+      "sec": "4.8",
+      "q": "(Suggested Problem 4-102) The distance between major cracks in a highway follows an exponential distribution with a mean of 12 km. What is the probability that the first major crack occurs between 24 and 36 km of the start of inspection?",
+      "opts": [
+        "0.0855",
+        "0.6321",
+        "0.9502",
+        "0.1353",
+        "0.9145"
+      ],
+      "ans": 0,
+      "hints": [
+        "This is an exponential probability over an interval.",
+        "Find the rate from the mean, then subtract the survival (or cdf) values at the two endpoints.",
+        "If $X$ is exponential with mean $1/\\lambda$, then $P(X>x)=e^{-\\lambda x}$ and $P(a<X<b)=e^{-\\lambda a}-e^{-\\lambda b}$."
+      ],
+      "steps": [
+        "Mean $=1/\\lambda=12$, so $\\lambda=1/12$.",
+        "$P(24<X<36)=e^{-24/12}-e^{-36/12}=e^{-2}-e^{-3}$.",
+        "$=0.13534-0.04979=0.0855$."
+      ],
+      "brief": "$\\lambda=\\frac1{12}$: $P=e^{-2}-e^{-3}=0.1353-0.0498=0.0855$."
+    },
+    {
+      "sec": "4.6",
+      "q": "(Suggested Problem 4-62) The fill volume of an automated filling machine used for filling cans of carbonated beverage is normally distributed with a mean of 355 cc and a standard deviation of 5 cc. What is the probability that a fill volume is exactly 345 cc?",
+      "opts": [
+        "0",
+        "0.97725",
+        "0.02275",
+        "0.15866",
+        "0.84134"
+      ],
+      "ans": 0,
+      "hints": [
+        "Think about what the probability of a single exact value means for a continuous random variable.",
+        "The fill volume is continuous, so ask how much area lies under the density curve over a single point.",
+        "For a continuous random variable $X$ and any number $c$: $P(X=c)=\\int_c^c f(x)\\,dx=0$."
+      ],
+      "steps": [
+        "The normal distribution is continuous.",
+        "$P(X=345)=\\int_{345}^{345}f(x)\\,dx=0$.",
+        "The values 0.02275 and 0.97725 would be $P(X<345)$ and $P(X>345)$, which are different questions."
+      ],
+      "brief": "Continuous variable, so $P(X=345)=0$."
+    },
+    {
+      "sec": "4.2",
+      "q": "(Exercise 4-7) Suppose that $f(x)=1.5x^2$ for $-1<x<1$. Determine $\\mathbb{P}(-0.5<X<0.5)$.",
+      "opts": [
+        "0.1250",
+        "0.0833",
+        "0.1667",
+        "0.0625",
+        "0.5000"
+      ],
+      "ans": 0,
+      "hints": [
+        "This is a probability from a density function, so integrate the density.",
+        "Integrate $f(x)$ over the interval from $-0.5$ to $0.5$.",
+        "For a pdf $f$: $P(a<X<b)=\\int_a^b f(x)\\,dx$, and $\\int x^n\\,dx=\\dfrac{x^{n+1}}{n+1}$."
+      ],
+      "steps": [
+        "$P(-0.5<X<0.5)=\\int_{-0.5}^{0.5}1.5x^2\\,dx$.",
+        "$=\\left[0.5x^3\\right]_{-0.5}^{0.5}$.",
+        "$=0.5(0.125)-0.5(-0.125)=0.0625+0.0625=0.1250$."
+      ],
+      "brief": "$\\int_{-0.5}^{0.5}1.5x^2dx=[0.5x^3]_{-0.5}^{0.5}=0.1250$."
+    },
+    {
+      "sec": "4.3",
+      "q": "(Exercise 4-23) The gap width is an important property of a magnetic recording head. In coded units, if the width is a continuous random variable over the range $0<x<4$ with $f(x)=0.125x$, determine the cumulative distribution function of the gap width.",
+      "opts": [
+        "$F(x)=\\begin{cases}0, & x\\le 0,\\\\ 0.0625\\,x^2, & 0<x<4,\\\\ 1, & x\\ge 4.\\end{cases}$",
+        "$F(x)=\\begin{cases}0, & x\\le 0,\\\\ 0.1250\\,x^2, & 0<x<4,\\\\ 1, & x\\ge 4.\\end{cases}$",
+        "$F(x)=\\begin{cases}0, & x\\le 0,\\\\ 0.0313\\,x^2, & 0<x<4,\\\\ 1, & x\\ge 4.\\end{cases}$",
+        "$F(x)=\\begin{cases}0, & x\\le 0,\\\\ 0.2500\\,x, & 0<x<4,\\\\ 1, & x\\ge 4.\\end{cases}$",
+        "$F(x)=\\begin{cases}0, & x\\le 0,\\\\ 0.0625\\,x^2, & 0<x<2,\\\\ 1, & x\\ge 2.\\end{cases}$"
+      ],
+      "ans": 0,
+      "hints": [
+        "The cdf is obtained by accumulating the density from the left end of the range.",
+        "Integrate $f(t)$ from the lower end of the range up to $x$, and remember the cdf is 0 below the range and 1 above it.",
+        "$F(x)=\\int_{-\\infty}^{x}f(t)\\,dt$, and $F(x)=1$ once $x$ reaches the upper end of the range."
+      ],
+      "steps": [
+        "For $0<x<4$: $F(x)=\\int_0^x0.125t\\,dt=0.0625x^2$.",
+        "Check: $F(4)=0.0625(16)=1$, so $F(x)=1$ for $x\\ge4$.",
+        "$F(x)=0$ for $x\\le0$, which gives the piecewise function with $0.0625x^2$ on $0<x<4$."
+      ],
+      "brief": "$F(x)=\\int_0^x0.125t\\,dt=0.0625x^2$ on $0<x<4$, 0 below, 1 above."
+    },
+    {
+      "sec": "7.2",
+      "q": "(Exercise 7-4) Suppose that samples of size $n=5$ are selected at random from a normal population with mean 120 and standard deviation 12. What can you say about the probability that the sample mean falls in the interval from $\\mu_{\\bar X}-1.73\\,\\sigma_{\\bar X}$ to $\\mu_{\\bar X}+0.95\\,\\sigma_{\\bar X}$?",
+      "opts": [
+        "0.78712",
+        "0.91637",
+        "0.21287",
+        "This probability cannot be found because the sample size is small.",
+        "0.82894"
+      ],
+      "ans": 0,
+      "hints": [
+        "The population is normal, so the sample mean is exactly normal for any sample size.",
+        "Standardize: the interval endpoints are already given in units of $\\sigma_{\\bar X}$ from the mean, so they are the $z$ values.",
+        "If the population is normal, $\\bar X\\sim N(\\mu,\\sigma^2/n)$ exactly and $Z=\\dfrac{\\bar X-\\mu}{\\sigma/\\sqrt n}\\sim N(0,1)$."
+      ],
+      "steps": [
+        "Since the population is normal, $\\bar X$ is normal for any $n$, with $\\mu_{\\bar X}=120$ and $\\sigma_{\\bar X}=12/\\sqrt5$.",
+        "The endpoints correspond to $z=-1.73$ and $z=0.95$.",
+        "$P(-1.73<Z<0.95)=\\Phi(0.95)-\\Phi(-1.73)=0.82894-0.04182=0.78712$."
+      ],
+      "brief": "$\\bar X$ exactly normal: $P(-1.73<Z<0.95)=0.82894-0.04182=0.78712$."
+    },
+    {
+      "sec": "7.2",
+      "q": "(Exercise 7-12) The amount of time that a customer spends waiting at an airport check-in counter is a random variable with mean 8.5 minutes and standard deviation 6 minutes. Suppose that a random sample of $n=58$ customers is observed. Find the probability that the average time waiting in line for these customers is more than 10.1 minutes.",
+      "opts": [
+        "0.02118",
+        "0.00159",
+        "0.05480",
+        "0.39358",
+        "0.97882"
+      ],
+      "ans": 0,
+      "hints": [
+        "The sample is large, so use the central limit theorem for the sample mean.",
+        "Standardize 10.1 using the mean and standard error of $\\bar X$, then take an upper-tail probability.",
+        "By the CLT, for large $n$, $\\bar X$ is approximately $N(\\mu,\\sigma^2/n)$, so $Z=\\dfrac{\\bar X-\\mu}{\\sigma/\\sqrt n}$ is approximately standard normal."
+      ],
+      "steps": [
+        "$\\sigma_{\\bar X}=6/\\sqrt{58}=0.7878$.",
+        "$z=\\dfrac{10.1-8.5}{0.7878}=2.03$.",
+        "$P(\\bar X>10.1)\\approx P(Z>2.03)=1-0.97882=0.02118$."
+      ],
+      "brief": "CLT: $z=\\frac{10.1-8.5}{6/\\sqrt{58}}=2.03$, $P(Z>2.03)=0.02118$."
+    },
+    {
+      "sec": "8.1",
+      "q": "(Exercise 8-9) Suppose that $n=100$ random samples of water from a freshwater lake are taken and calcium concentration (mg/L) measured. A 95$\\%$ confidence interval on the mean calcium concentration is $[0.52,\\ 0.74]$. Which interpretation of this interval is correct?",
+      "opts": [
+        "If we were to repeat this entire sampling process many times (taking $n=100$ samples and computing a 95$\\%$ CI), about 95$\\%$ of those intervals would contain the true mean $\\mu$.",
+        "There is a 95$\\%$ probability that the true mean calcium concentration $\\mu$ lies between 0.52 and 0.74 mg/L.",
+        "About 95$\\%$ of individual water samples from this lake have calcium concentration between 0.52 and 0.74 mg/L.",
+        "Because the confidence level is 95$\\%$, at least 95 of the 100 measured samples in this study must lie between 0.52 and 0.74 mg/L.",
+        "With 95$\\%$ confidence, the calcium concentration of the next single water sample drawn from this lake will lie between 0.52 and 0.74 mg/L."
+      ],
+      "ans": 0,
+      "hints": [
+        "This is about the meaning of a confidence level.",
+        "Ask what is random: the interval (it changes from sample to sample) or the fixed true mean.",
+        "A $100(1-\\alpha)\\%$ confidence level is the long-run proportion of intervals, built the same way from repeated samples, that contain the fixed parameter; it is not a probability statement about one computed interval, and not about individual observations."
+      ],
+      "steps": [
+        "The true mean $\\mu$ is a fixed number, and the interval depends on the random sample.",
+        "The 95$\\%$ describes the method: in repeated sampling, about 95$\\%$ of the intervals formed this way capture $\\mu$.",
+        "The interval is for the mean, not for individual measurements, so the statements about individual samples or the next sample are wrong.",
+        "A given computed interval either contains $\\mu$ or not, so a 95$\\%$ probability statement about it is not correct. Only the repeated-sampling statement is correct."
+      ],
+      "brief": "CI level = long-run proportion of such intervals that contain $\\mu$."
+    },
+    {
+      "sec": "8.1",
+      "q": "(Exercise 8-7) A confidence interval estimate is desired for the gain in a circuit of semiconductor device. Assume that the gain is normally distributed with the standard deviation $\\sigma=30$. How large $n$ must be if the length of the 95$\\%$ confidence interval is to be 30?",
+      "opts": [
+        "16",
+        "15",
+        "4",
+        "3",
+        "30"
+      ],
+      "ans": 0,
+      "hints": [
+        "This is a sample size problem for a mean with known $\\sigma$.",
+        "The length of the interval is twice the margin of error; set it equal to the required length and solve for $n$.",
+        "The length is $L=2z_{\\alpha/2}\\dfrac{\\sigma}{\\sqrt n}$, so $n=\\left(\\dfrac{2z_{\\alpha/2}\\sigma}{L}\\right)^2$, rounded up."
+      ],
+      "steps": [
+        "For 95$\\%$, $z_{0.025}=1.96$.",
+        "$30=2(1.96)\\dfrac{30}{\\sqrt n}$, so $\\sqrt n=2(1.96)=3.92$.",
+        "$n=3.92^2=15.37$, round up to $n=16$."
+      ],
+      "brief": "$L=2(1.96)\\frac{30}{\\sqrt n}=30\\Rightarrow n=15.37\\to16$."
+    },
+    {
+      "sec": "8.1",
+      "q": "(Exercise 8-14) The lifetime in hours of 75-watt light bulbs is known to be normally distributed with standard deviation of 25 hours. A random sample of size 20 bulbs has a mean life of 1014 hours. The margin of error for a 78.87$\\%$ confidence interval on the mean lifetime is",
+      "opts": [
+        "6.99",
+        "10.95",
+        "13.98",
+        "7.16",
+        "1.56"
+      ],
+      "ans": 0,
+      "hints": [
+        "This is a confidence interval for a mean with known $\\sigma$; the question asks for the margin of error only.",
+        "Find the $z$ value that leaves $\\alpha/2$ in each tail for the given confidence level, then multiply by the standard error.",
+        "Margin of error $E=z_{\\alpha/2}\\dfrac{\\sigma}{\\sqrt n}$, where $\\alpha=1-\\text{confidence level}$."
+      ],
+      "steps": [
+        "$\\alpha=1-0.7887=0.2113$, so $\\alpha/2=0.10565$ and $z_{0.10565}=1.25$.",
+        "$E=1.25\\cdot\\dfrac{25}{\\sqrt{20}}=1.25(5.590)$.",
+        "$E=6.99$."
+      ],
+      "brief": "$z_{0.10565}=1.25$, $E=1.25\\cdot25/\\sqrt{20}=6.99$."
+    },
+    {
+      "sec": "8.4",
+      "q": "(Exercise 8-60) A study is to be conducted of the percentage of homeowners who own at least two television sets. How large a sample is required if we wish to be 97$\\%$ confident that the error in estimating this percentage is less than 0.017?",
+      "opts": [
+        "4074",
+        "32",
+        "3324",
+        "273",
+        "8148"
+      ],
+      "ans": 0,
+      "hints": [
+        "This is a sample size problem for a proportion with no prior estimate of $p$.",
+        "Since no estimate of $p$ is given, use the value of $p$ that makes the required $n$ largest (the conservative choice).",
+        "$n=\\left(\\dfrac{z_{\\alpha/2}}{E}\\right)^2p(1-p)$, which is largest at $p=0.5$, giving $n=0.25\\left(\\dfrac{z_{\\alpha/2}}{E}\\right)^2$, rounded up."
+      ],
+      "steps": [
+        "97$\\%$ confidence: $\\alpha/2=0.015$, so $z_{0.015}=2.17$.",
+        "With $p=0.5$: $n=0.25\\left(\\dfrac{2.17}{0.017}\\right)^2$.",
+        "$n=0.25(127.65)^2=4073.4$, round up to $4074$."
+      ],
+      "brief": "No $p$ given, use $p=0.5$: $n=0.25(2.17/0.017)^2=4073.4\\to4074$."
+    },
+    {
+      "sec": "8.1",
+      "q": "(Exercise 8-1(c)) For a normal population with known variance, the confidence level for the interval $\\bar x\\pm1.85\\dfrac{\\sigma}{\\sqrt n}$ is",
+      "opts": [
+        "93.57$\\%$",
+        "96.78$\\%$",
+        "98.39$\\%$",
+        "95$\\%$",
+        "90$\\%$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Reverse the usual confidence interval construction: find the confidence level from the $z$ multiplier.",
+        "The multiplier 1.85 is $z_{\\alpha/2}$; find the area between $-1.85$ and $1.85$ under the standard normal curve.",
+        "The confidence level is $1-\\alpha=P(-z_{\\alpha/2}<Z<z_{\\alpha/2})=2\\Phi(z_{\\alpha/2})-1$."
+      ],
+      "steps": [
+        "$z_{\\alpha/2}=1.85$, and $P(Z>1.85)=1-0.96784=0.03216$.",
+        "So $\\alpha=2(0.03216)=0.06432$.",
+        "Confidence level $=1-0.06432=0.9357$, that is 93.57$\\%$."
+      ],
+      "brief": "$2\\Phi(1.85)-1=2(0.96784)-1=0.9357$, i.e. 93.57$\\%$."
+    },
+    {
+      "sec": "8.2",
+      "q": "(Exercise 8-27 modified) A research engineer for a tire manufacturer is investigating tire life for a new rubber compound and has build 16 tires and tested them to end-of-life in a road test. The sample mean is $\\bar x$ km and the sample standard deviation is $s$ km. A 90$\\%$ confidence interval on the mean tire life is reported as $[5514.28,\\ 60284.91]$. What is the value of the sample standard deviation $s$?",
+      "opts": [
+        "62,487.88 km",
+        "66,590.43 km",
+        "124,972.18 km",
+        "15,621.52 km",
+        "62,738.41 km"
+      ],
+      "ans": 0,
+      "hints": [
+        "This is a t confidence interval for the mean (unknown $\\sigma$), worked backwards.",
+        "The margin of error is half the width of the interval; equate it to $t_{\\alpha/2,n-1}\\,s/\\sqrt n$ and solve for $s$.",
+        "The interval is $\\bar x\\pm t_{\\alpha/2,n-1}\\dfrac{s}{\\sqrt n}$, so $s=\\dfrac{E\\sqrt n}{t_{\\alpha/2,n-1}}$ with $E=\\dfrac{\\text{upper}-\\text{lower}}{2}$."
+      ],
+      "steps": [
+        "Margin of error $E=\\dfrac{60284.91-5514.28}{2}=27385.315$.",
+        "$n=16$, df $=15$, 90$\\%$ confidence: $t_{0.05,15}=1.753$.",
+        "$s=\\dfrac{E\\sqrt{16}}{t}=\\dfrac{27385.315(4)}{1.753}\\approx62{,}487.88$ km."
+      ],
+      "brief": "$E=27385.315=t_{0.05,15}s/4$ with $t=1.753$: $s\\approx62{,}487.88$ km."
+    }
+  ]
+}

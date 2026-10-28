@@ -1,0 +1,437 @@
+{
+  "course": "math102",
+  "term": "221",
+  "kind": "e2",
+  "date": "",
+  "minutes": 90,
+  "source": "math102-221-e2.pdf",
+  "note": "The scan has no cover page: date and exam length are not printed (minutes set to 90 as the usual major-exam length). Handwritten solution work was not used. Q2 prints f(x) but the variable is theta; written as f(theta). Q3: the handwritten work uses sqrt(4-x^2) by mistake, but the printed integral and the key (16/3 - 7sqrt5/3) are for sqrt(4+x^2) and verified. Q6: the handwriting shows +ln|sec x| but the marked key (1/2 tan^2 x - ln|sec x|) is correct and was verified. All 18 marked keys agree with my own computations (sympy).",
+  "qs": [
+    {
+      "sec": "7.3",
+      "q": "The volume of the solid obtained by rotating about the $x$-axis, the region bounded by $x+y=3$, $x=4-(y-1)^2$ is",
+      "opts": [
+        "$\\dfrac{27}{2}\\pi$",
+        "$\\dfrac{81}{4}\\pi$",
+        "$\\dfrac{16}{3}\\pi$",
+        "$\\dfrac{13}{4}\\pi$",
+        "$\\dfrac{31}{3}\\pi$"
+      ],
+      "ans": 0,
+      "hints": [
+        "The region is described most easily in terms of $y$, and the axis of rotation is horizontal, so think about the shell method.",
+        "Find where the line and the parabola meet, then take the right curve minus the left curve as a function of $y$.",
+        "Shell method about the $x$-axis: $V=2\\pi\\int_c^d y\\,\\big(x_{\\text{right}}(y)-x_{\\text{left}}(y)\\big)\\,dy$."
+      ],
+      "steps": [
+        "Intersections: $4-(y-1)^2=3-y\\Rightarrow -y^2+3y=0$, so $y=0$ and $y=3$.",
+        "For $0\\le y\\le3$ the parabola is on the right and the line on the left: width $=4-(y-1)^2-(3-y)=3y-y^2$.",
+        "$V=2\\pi\\int_0^3 y(3y-y^2)\\,dy=2\\pi\\left[y^3-\\dfrac{y^4}{4}\\right]_0^3$.",
+        "$V=2\\pi\\left(27-\\dfrac{81}{4}\\right)=\\dfrac{27}{2}\\pi$."
+      ],
+      "brief": "Shells: $V=2\\pi\\int_0^3 y(3y-y^2)\\,dy=\\frac{27}{2}\\pi$."
+    },
+    {
+      "sec": "5.4",
+      "q": "The average value of $f(\\theta)=\\sec^2\\left(\\dfrac{\\theta}{2}\\right)$ over $\\left[0,\\dfrac{\\pi}{2}\\right]$ is equal to:",
+      "opts": [
+        "$\\dfrac{4}{\\pi}$",
+        "$\\dfrac{2}{\\pi}$",
+        "$2$",
+        "$4$",
+        "$\\dfrac{\\pi}{2}$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Use the formula for the average value of a function on an interval.",
+        "Write $\\dfrac{1}{b-a}\\int_a^b f$, then find an antiderivative of $\\sec^2$ of a linear expression.",
+        "$f_{\\text{avg}}=\\dfrac{1}{b-a}\\int_a^b f(x)\\,dx$ and $\\int\\sec^2(kx)\\,dx=\\dfrac1k\\tan(kx)+C$."
+      ],
+      "steps": [
+        "$f_{\\text{avg}}=\\dfrac{1}{\\pi/2}\\int_0^{\\pi/2}\\sec^2\\dfrac{\\theta}{2}\\,d\\theta=\\dfrac2\\pi\\int_0^{\\pi/2}\\sec^2\\dfrac{\\theta}{2}\\,d\\theta$.",
+        "$\\int\\sec^2\\dfrac\\theta2\\,d\\theta=2\\tan\\dfrac\\theta2$.",
+        "$\\dfrac2\\pi\\left[2\\tan\\dfrac\\theta2\\right]_0^{\\pi/2}=\\dfrac4\\pi(\\tan\\dfrac\\pi4-0)=\\dfrac4\\pi$."
+      ],
+      "brief": "$\\frac{2}{\\pi}\\left[2\\tan\\frac{\\theta}{2}\\right]_0^{\\pi/2}=\\frac4\\pi$."
+    },
+    {
+      "sec": "8.2",
+      "q": "$\\int_0^1\\frac{x^3}{\\sqrt{4+x^2}}\\,dx=$",
+      "opts": [
+        "$\\dfrac{16}{3}-\\dfrac{7}{3}\\sqrt5$",
+        "$\\dfrac{8-\\sqrt[3]{7}}{3}$",
+        "$10\\sqrt5-\\dfrac13$",
+        "$5\\sqrt5-\\dfrac83\\sqrt7$",
+        "$0$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Write $x^3$ as $x^2\\cdot x$ so that part of the integrand is the derivative of the expression under the root.",
+        "Let $u=4+x^2$, so that $x^2=u-4$ and $x\\,dx=\\tfrac12du$; change the limits too.",
+        "Substitution for definite integrals: $\\int_a^b f(g(x))g'(x)\\,dx=\\int_{g(a)}^{g(b)}f(u)\\,du$, and $\\int u^{n}\\,du=\\dfrac{u^{n+1}}{n+1}$."
+      ],
+      "steps": [
+        "$u=4+x^2$, $x\\,dx=\\tfrac12du$; limits $u=4$ to $u=5$.",
+        "$\\int_0^1\\frac{x^2\\cdot x\\,dx}{\\sqrt{4+x^2}}=\\frac12\\int_4^5(u-4)u^{-1/2}\\,du=\\frac12\\int_4^5\\left(u^{1/2}-4u^{-1/2}\\right)du$.",
+        "$=\\left[\\dfrac13u^{3/2}-4u^{1/2}\\right]_4^5=\\left(\\dfrac{5\\sqrt5}{3}-4\\sqrt5\\right)-\\left(\\dfrac83-8\\right)$.",
+        "$=-\\dfrac{7\\sqrt5}{3}+\\dfrac{16}{3}$."
+      ],
+      "brief": "$u=4+x^2$: $\\frac12\\int_4^5(u^{1/2}-4u^{-1/2})du=\\frac{16}{3}-\\frac{7}{3}\\sqrt5$."
+    },
+    {
+      "sec": "8.2",
+      "q": "$\\int_0^{1/2}x\\cos(\\pi x)\\,dx=$",
+      "opts": [
+        "$\\dfrac{1}{2\\pi}-\\dfrac{1}{\\pi^2}$",
+        "$\\dfrac{1-\\pi}{2}$",
+        "$\\dfrac{\\pi-1}{3}$",
+        "$\\dfrac{2\\pi-1}{3}$",
+        "$\\dfrac{1+\\pi}{\\pi}$"
+      ],
+      "ans": 0,
+      "hints": [
+        "A product of a polynomial and a trigonometric function suggests integration by parts.",
+        "Take $u=x$ (it becomes simpler when differentiated) and $dv=\\cos(\\pi x)\\,dx$.",
+        "$\\int u\\,dv=uv-\\int v\\,du$ and $\\int\\cos(kx)\\,dx=\\dfrac1k\\sin(kx)+C$."
+      ],
+      "steps": [
+        "$u=x$, $dv=\\cos\\pi x\\,dx$, so $du=dx$, $v=\\dfrac1\\pi\\sin\\pi x$.",
+        "$\\int_0^{1/2}x\\cos\\pi x\\,dx=\\left[\\dfrac{x}{\\pi}\\sin\\pi x\\right]_0^{1/2}-\\dfrac1\\pi\\int_0^{1/2}\\sin\\pi x\\,dx$.",
+        "The first term is $\\dfrac{1}{2\\pi}$; the integral gives $\\dfrac1\\pi\\left[-\\dfrac{\\cos\\pi x}{\\pi}\\right]_0^{1/2}=\\dfrac1\\pi\\left(0+\\dfrac1\\pi\\right)=\\dfrac1{\\pi^2}$.",
+        "So the value is $\\dfrac1{2\\pi}-\\dfrac1{\\pi^2}$."
+      ],
+      "brief": "By parts: $\\left[\\frac x\\pi\\sin\\pi x\\right]_0^{1/2}-\\frac1{\\pi^2}=\\frac1{2\\pi}-\\frac1{\\pi^2}$."
+    },
+    {
+      "sec": "8.2",
+      "q": "$\\int x\\ln(1+x)\\,dx=$",
+      "opts": [
+        "$\\dfrac12(x^2-1)\\ln(1+x)-\\dfrac14x^2+\\dfrac12x+c$",
+        "$x\\ln(1+x)+x^2+\\ln(1+x)+c$",
+        "$x^2\\ln(x+1)-x\\ln(1+x)+c$",
+        "$x\\ln(1+x)-x^2-x+c$",
+        "$\\dfrac12x^2\\ln(x+1)-\\dfrac12x^2+x+c$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Integration by parts, with a logarithm as the part to differentiate.",
+        "Take $u=\\ln(1+x)$ and $dv=x\\,dx$; the new integral is a rational function that needs long division.",
+        "$\\int u\\,dv=uv-\\int v\\,du$; for a rational function with numerator degree at least the denominator degree, divide first."
+      ],
+      "steps": [
+        "$u=\\ln(1+x)$, $dv=x\\,dx$: $du=\\dfrac{dx}{1+x}$, $v=\\dfrac{x^2}{2}$.",
+        "$\\int x\\ln(1+x)\\,dx=\\dfrac{x^2}{2}\\ln(1+x)-\\dfrac12\\int\\dfrac{x^2}{1+x}\\,dx$.",
+        "Long division: $\\dfrac{x^2}{x+1}=x-1+\\dfrac1{x+1}$, so the integral is $\\dfrac{x^2}2-x+\\ln|1+x|$.",
+        "Result: $\\dfrac{x^2}2\\ln(1+x)-\\dfrac{x^2}4+\\dfrac x2-\\dfrac12\\ln(1+x)+c=\\dfrac12(x^2-1)\\ln(1+x)-\\dfrac14x^2+\\dfrac12x+c$."
+      ],
+      "brief": "By parts then division: $\\frac12(x^2-1)\\ln(1+x)-\\frac14x^2+\\frac12x+c$."
+    },
+    {
+      "sec": "8.3",
+      "q": "$\\int\\tan^3x\\,dx=$",
+      "opts": [
+        "$\\dfrac12\\tan^2x-\\ln|\\sec x|+c$",
+        "$\\dfrac14(\\tan x)^4+c$",
+        "$\\tan x\\sec^2x+c$",
+        "$\\ln|\\sec x+\\tan x|+c$",
+        "$\\tan x-\\ln|\\tan x|+c$"
+      ],
+      "ans": 0,
+      "hints": [
+        "This is a power-of-tangent integral from the trigonometric integrals section.",
+        "Split off $\\tan^2x$ and replace it using a Pythagorean identity.",
+        "$\\tan^2x=\\sec^2x-1$, $\\int\\tan x\\sec^2x\\,dx=\\dfrac{\\tan^2x}2+C$ and $\\int\\tan x\\,dx=\\ln|\\sec x|+C$."
+      ],
+      "steps": [
+        "$\\tan^3x=\\tan x(\\sec^2x-1)=\\tan x\\sec^2x-\\tan x$.",
+        "With $u=\\tan x$, $\\int\\tan x\\sec^2x\\,dx=\\dfrac{\\tan^2x}{2}$.",
+        "$\\int\\tan x\\,dx=\\ln|\\sec x|$.",
+        "So $\\int\\tan^3x\\,dx=\\dfrac12\\tan^2x-\\ln|\\sec x|+c$."
+      ],
+      "brief": "$\\tan^3x=\\tan x\\sec^2x-\\tan x$: $\\frac12\\tan^2x-\\ln|\\sec x|+c$."
+    },
+    {
+      "sec": "8.3",
+      "q": "$\\int_0^{\\pi/4}\\sqrt{1+\\cos4x}\\,dx=$",
+      "opts": [
+        "$\\dfrac{\\sqrt2}{2}$",
+        "$\\sqrt2$",
+        "$2\\sqrt2$",
+        "$2+\\sqrt2$",
+        "$4+\\sqrt2$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Use a half-angle identity to remove the square root.",
+        "Rewrite $1+\\cos(4x)$ as a perfect square, and check the sign of the result on the interval.",
+        "$1+\\cos2\\alpha=2\\cos^2\\alpha$ and $\\sqrt{u^2}=|u|$."
+      ],
+      "steps": [
+        "$1+\\cos4x=2\\cos^2 2x$.",
+        "$\\sqrt{2\\cos^22x}=\\sqrt2\\,|\\cos2x|=\\sqrt2\\cos2x$ on $[0,\\pi/4]$, since $\\cos2x\\ge0$ there.",
+        "$\\sqrt2\\left[\\dfrac{\\sin2x}{2}\\right]_0^{\\pi/4}=\\sqrt2\\cdot\\dfrac12=\\dfrac{\\sqrt2}2$."
+      ],
+      "brief": "$\\sqrt{1+\\cos4x}=\\sqrt2\\cos2x$: $\\sqrt2\\cdot\\frac12=\\frac{\\sqrt2}{2}$."
+    },
+    {
+      "sec": "8.3",
+      "q": "$\\int\\sin^6x\\cos^3x\\,dx=$",
+      "opts": [
+        "$\\dfrac{(\\sin x)^7}{7}-\\dfrac{(\\sin x)^9}{9}+c$",
+        "$-\\dfrac{(\\sin x)^7}{7}+\\dfrac{(\\sin x)^9}{9}+c$",
+        "$\\dfrac{(\\sin x)^5}{5}+\\dfrac{(\\sin x)^7}{7}-\\dfrac{(\\sin x)^9}{9}+c$",
+        "$\\dfrac{(\\sin x)^3}{3}+\\dfrac{(\\sin x)^6}{6}+c$",
+        "$\\dfrac{(\\sin x)^7}{7}-\\dfrac{(\\sin x)^9}{9}+\\dfrac{(\\sin x)^3}{3}+c$"
+      ],
+      "ans": 0,
+      "hints": [
+        "One power is odd (the cosine), so save one factor of it.",
+        "Split $\\cos^3x=\\cos^2x\\cos x$, turn $\\cos^2x$ into sine, and substitute $u=\\sin x$.",
+        "$\\cos^2x=1-\\sin^2x$, $du=\\cos x\\,dx$ and $\\int u^n\\,du=\\dfrac{u^{n+1}}{n+1}$."
+      ],
+      "steps": [
+        "$\\sin^6x\\cos^3x=\\sin^6x(1-\\sin^2x)\\cos x$.",
+        "With $u=\\sin x$, $du=\\cos x\\,dx$: $\\int u^6(1-u^2)\\,du=\\int(u^6-u^8)\\,du$.",
+        "$=\\dfrac{u^7}{7}-\\dfrac{u^9}{9}+c=\\dfrac{(\\sin x)^7}{7}-\\dfrac{(\\sin x)^9}{9}+c$."
+      ],
+      "brief": "$u=\\sin x$: $\\int(u^6-u^8)du=\\frac{\\sin^7x}{7}-\\frac{\\sin^9x}{9}+c$."
+    },
+    {
+      "sec": "8.4",
+      "q": "$\\int_{\\sqrt2}^{2}\\frac{dx}{x^3\\sqrt{x^2-1}}=$",
+      "opts": [
+        "$\\dfrac{\\pi}{24}+\\dfrac{\\sqrt3}{8}-\\dfrac14$",
+        "$0$",
+        "$\\dfrac{\\pi}{13}-\\dfrac{\\sqrt3}{8}+1$",
+        "$\\dfrac{\\pi}{2}-2\\sqrt2+\\dfrac14$",
+        "$2\\sqrt2\\pi+\\dfrac1{12}$"
+      ],
+      "ans": 0,
+      "hints": [
+        "The expression $\\sqrt{x^2-1}$ calls for a trigonometric substitution.",
+        "Let $x=\\sec\\theta$ and convert the limits to $\\theta$ values.",
+        "For $\\sqrt{x^2-a^2}$ use $x=a\\sec\\theta$, $dx=a\\sec\\theta\\tan\\theta\\,d\\theta$, $\\sqrt{x^2-a^2}=a\\tan\\theta$; and $\\cos^2\\theta=\\dfrac{1+\\cos2\\theta}2$."
+      ],
+      "steps": [
+        "$x=\\sec\\theta$, $dx=\\sec\\theta\\tan\\theta\\,d\\theta$, $\\sqrt{x^2-1}=\\tan\\theta$; $x=\\sqrt2\\to\\theta=\\dfrac\\pi4$, $x=2\\to\\theta=\\dfrac\\pi3$.",
+        "$\\int_{\\pi/4}^{\\pi/3}\\frac{\\sec\\theta\\tan\\theta}{\\sec^3\\theta\\tan\\theta}\\,d\\theta=\\int_{\\pi/4}^{\\pi/3}\\cos^2\\theta\\,d\\theta$.",
+        "$=\\dfrac12\\left[\\theta+\\dfrac{\\sin2\\theta}{2}\\right]_{\\pi/4}^{\\pi/3}=\\dfrac12\\left(\\dfrac\\pi3+\\dfrac{\\sqrt3}{4}-\\dfrac\\pi4-\\dfrac12\\right)$.",
+        "$=\\dfrac\\pi{24}+\\dfrac{\\sqrt3}8-\\dfrac14$."
+      ],
+      "brief": "$x=\\sec\\theta$: $\\int_{\\pi/4}^{\\pi/3}\\cos^2\\theta\\,d\\theta=\\frac\\pi{24}+\\frac{\\sqrt3}8-\\frac14$."
+    },
+    {
+      "sec": "8.4",
+      "q": "$\\int\\frac{\\sqrt{1+x^2}}{x}\\,dx=$",
+      "opts": [
+        "$\\ln\\left|\\dfrac{\\sqrt{1+x^2}-1}{x}\\right|+\\sqrt{1+x^2}+c$",
+        "$\\ln\\left|x\\sqrt{1+x^2}\\right|-\\dfrac1x+c$",
+        "$\\dfrac1x-\\sqrt{1+x^2}+\\dfrac12\\ln(1+x^2)+c$",
+        "$\\ln\\left|\\dfrac1x-\\sqrt{1+x^2}\\right|+x+c$",
+        "$\\dfrac{\\sqrt{1+x^2}}{x}+\\ln\\left|\\dfrac{1+\\sqrt{x^2+1}}{x}\\right|+c$"
+      ],
+      "ans": 0,
+      "hints": [
+        "The expression $\\sqrt{1+x^2}$ suggests a trigonometric substitution.",
+        "Let $x=\\tan\\theta$, simplify to an integral in $\\csc\\theta$ and $\\sec\\theta$, then return to $x$ with a right triangle.",
+        "For $\\sqrt{a^2+x^2}$ use $x=a\\tan\\theta$; also $\\int\\csc\\theta\\,d\\theta=\\ln|\\csc\\theta-\\cot\\theta|+C$ and $\\int\\sec\\theta\\tan\\theta\\,d\\theta=\\sec\\theta+C$."
+      ],
+      "steps": [
+        "$x=\\tan\\theta$, $dx=\\sec^2\\theta\\,d\\theta$: $\\int\\frac{\\sec\\theta}{\\tan\\theta}\\sec^2\\theta\\,d\\theta=\\int\\frac{\\sec\\theta(1+\\tan^2\\theta)}{\\tan\\theta}\\,d\\theta$.",
+        "$=\\int(\\csc\\theta+\\sec\\theta\\tan\\theta)\\,d\\theta=\\ln|\\csc\\theta-\\cot\\theta|+\\sec\\theta+C$.",
+        "From the triangle with legs $x$ and $1$: $\\csc\\theta=\\dfrac{\\sqrt{1+x^2}}x$, $\\cot\\theta=\\dfrac1x$, $\\sec\\theta=\\sqrt{1+x^2}$.",
+        "So the result is $\\ln\\left|\\dfrac{\\sqrt{1+x^2}-1}{x}\\right|+\\sqrt{1+x^2}+c$."
+      ],
+      "brief": "$x=\\tan\\theta$: $\\ln|\\csc\\theta-\\cot\\theta|+\\sec\\theta$, i.e. $\\ln\\left|\\frac{\\sqrt{1+x^2}-1}{x}\\right|+\\sqrt{1+x^2}+c$."
+    },
+    {
+      "sec": "7.3",
+      "q": "The volume of the solid obtained by rotating the region, in the first quadrant, bounded by $y=x$, $y=\\dfrac{2x}{1+x^3}$ about $x=-1$, is given by:",
+      "opts": [
+        "$2\\pi\\int_0^1(x+1)\\left(\\dfrac{2x}{1+x^3}-x\\right)dx$",
+        "$2\\pi\\int_{-1}^1(x+1)\\left(x-\\dfrac{2x}{1+x^3}\\right)dx$",
+        "$2\\pi\\int_0^1(x-1)\\left(\\dfrac{2x}{1+x^3}+x\\right)dx$",
+        "$\\pi\\int_0^2(x+1)\\left(\\dfrac{2x}{1+x^3}-x\\right)dx$",
+        "$\\pi\\int_{-1}^1(-x-1)\\left(\\dfrac{2x}{1+x^3}-x\\right)dx$"
+      ],
+      "ans": 0,
+      "hints": [
+        "The axis of rotation is vertical and the region is described in terms of $x$, so the shell method fits.",
+        "Find where the two curves meet in the first quadrant, decide which one is on top, and find the distance from a typical $x$ to the line $x=-1$.",
+        "Shell method about $x=h$: $V=2\\pi\\int_a^b|x-h|\\,\\big(y_{\\text{top}}-y_{\\text{bottom}}\\big)\\,dx$."
+      ],
+      "steps": [
+        "Intersection: $x=\\dfrac{2x}{1+x^3}\\Rightarrow x+x^4=2x\\Rightarrow x(x^3-1)=0$, so $x=0$ or $x=1$.",
+        "On $[0,1]$ the curve $y=\\dfrac{2x}{1+x^3}$ lies above $y=x$ (for example at $x=\\tfrac12$: $\\approx0.89>0.5$).",
+        "The shell radius is the distance from $x$ to $x=-1$, namely $x+1$.",
+        "$V=2\\pi\\int_0^1(x+1)\\left(\\dfrac{2x}{1+x^3}-x\\right)dx$."
+      ],
+      "brief": "Shells, radius $x+1$, height $\\frac{2x}{1+x^3}-x$, $x\\in[0,1]$."
+    },
+    {
+      "sec": "8.5",
+      "q": "If the fraction $\\dfrac{10}{x^3+9x-x^2-9}$ can be decomposed into two subfractions $\\dfrac{A}{x+K}$ and $\\dfrac{Bx+C}{x^2+9}$, then $K+A+B+C=$",
+      "opts": [
+        "$-2$",
+        "$0$",
+        "$1$",
+        "$-1$",
+        "$2$"
+      ],
+      "ans": 0,
+      "hints": [
+        "This is a partial fractions decomposition with a linear factor and an irreducible quadratic factor.",
+        "Factor the denominator by grouping, then multiply both sides by it and compare coefficients (or plug in convenient $x$ values).",
+        "A linear factor $x-r$ gives $\\dfrac{A}{x-r}$ and an irreducible quadratic gives $\\dfrac{Bx+C}{\\text{quadratic}}$; after clearing denominators, equal polynomials have equal coefficients."
+      ],
+      "steps": [
+        "$x^3-x^2+9x-9=x^2(x-1)+9(x-1)=(x-1)(x^2+9)$, so $K=-1$.",
+        "$10=A(x^2+9)+(Bx+C)(x-1)$. At $x=1$: $10=10A$, so $A=1$.",
+        "At $x=0$: $10=9A-C$, so $C=-1$. The $x^2$ coefficients give $0=A+B$, so $B=-1$.",
+        "$K+A+B+C=-1+1-1-1=-2$."
+      ],
+      "brief": "$(x-1)(x^2+9)$: $K=-1$, $A=1$, $B=-1$, $C=-1$, sum $=-2$."
+    },
+    {
+      "sec": "8.5",
+      "q": "$\\int\\frac{x^2+1}{(x-3)(x-2)^2}\\,dx=$",
+      "opts": [
+        "$10\\ln|x-3|-9\\ln|x-2|+\\dfrac{5}{x-2}+c$",
+        "$9\\ln|x-3|+10\\ln|x-2|-\\dfrac{5}{x-2}+c$",
+        "$\\dfrac{9}{10}\\ln\\left|\\dfrac{x-3}{x-2}\\right|+\\dfrac{5}{(x-2)^2}+c$",
+        "$\\dfrac{10}{9}\\ln|x-2|+5\\ln|x-3|+\\dfrac{1}{(x-2)^2}+c$",
+        "$\\dfrac{9}{10}\\ln|x-3|+\\dfrac{10}{9}\\ln|x-2|+\\dfrac{5}{(x-2)^2}+c$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Partial fractions with a repeated linear factor.",
+        "Write $\\dfrac{A}{x-3}+\\dfrac{B}{x-2}+\\dfrac{C}{(x-2)^2}$, clear denominators, and substitute $x=2$ and $x=3$.",
+        "A repeated factor $(x-r)^2$ contributes both $\\dfrac{B}{x-r}$ and $\\dfrac{C}{(x-r)^2}$; also $\\int\\dfrac{dx}{(x-r)^2}=-\\dfrac1{x-r}+C$."
+      ],
+      "steps": [
+        "$x^2+1=A(x-2)^2+B(x-3)(x-2)+C(x-3)$.",
+        "$x=2$: $5=-C$, so $C=-5$. $x=3$: $10=A$. Coefficient of $x^2$: $A+B=1$, so $B=-9$.",
+        "$\\int\\left(\\frac{10}{x-3}-\\frac9{x-2}-\\frac5{(x-2)^2}\\right)dx$.",
+        "$=10\\ln|x-3|-9\\ln|x-2|+\\dfrac5{x-2}+c$."
+      ],
+      "brief": "$A=10$, $B=-9$, $C=-5$: $10\\ln|x-3|-9\\ln|x-2|+\\frac5{x-2}+c$."
+    },
+    {
+      "sec": "8.5",
+      "q": "$\\int\\frac{x^2+x+1}{(x^2+1)^2}\\,dx=$",
+      "opts": [
+        "$\\tan^{-1}(x)-\\dfrac{1}{2(x^2+1)}+c$",
+        "$\\tan^{-1}(x^2+1)-\\ln|x|+c$",
+        "$2\\tan^{-1}(x)-\\dfrac12\\ln(x^2+1)+c$",
+        "$\\tan^{-1}(x^2+x+1)-\\dfrac12(x^2+1)+c$",
+        "$\\dfrac12\\tan^{-1}(x^2+1)-\\ln|x^2+x+1|+c$"
+      ],
+      "ans": 0,
+      "hints": [
+        "The denominator is already a power of an irreducible quadratic, so split the numerator instead of looking for new fractions.",
+        "Write the numerator as $(x^2+1)+x$ and separate into two fractions.",
+        "$\\int\\dfrac{dx}{x^2+1}=\\tan^{-1}x+C$, and $\\int\\dfrac{x}{(x^2+1)^2}dx$ is done with $u=x^2+1$, $\\int u^{-2}\\,du=-u^{-1}$."
+      ],
+      "steps": [
+        "$\\dfrac{x^2+x+1}{(x^2+1)^2}=\\dfrac{1}{x^2+1}+\\dfrac{x}{(x^2+1)^2}$.",
+        "$\\int\\dfrac{dx}{x^2+1}=\\tan^{-1}x$.",
+        "With $u=x^2+1$: $\\int\\dfrac{x}{(x^2+1)^2}dx=\\dfrac12\\int u^{-2}du=-\\dfrac{1}{2(x^2+1)}$.",
+        "Total: $\\tan^{-1}(x)-\\dfrac{1}{2(x^2+1)}+c$."
+      ],
+      "brief": "Split: $\\frac1{x^2+1}+\\frac{x}{(x^2+1)^2}$ gives $\\tan^{-1}x-\\frac1{2(x^2+1)}+c$."
+    },
+    {
+      "sec": "8.8",
+      "q": "$\\int_1^\\infty\\frac{e^{-\\sqrt x}}{\\sqrt x}\\,dx$ converges to:",
+      "opts": [
+        "$\\dfrac2e$",
+        "$\\sqrt e$",
+        "$\\dfrac12e$",
+        "$\\sqrt{2e}$",
+        "$2\\sqrt e$"
+      ],
+      "ans": 0,
+      "hints": [
+        "An improper integral with an infinite upper limit: replace it by a limit.",
+        "Write $\\lim_{b\\to\\infty}\\int_1^b$ and substitute $u=\\sqrt x$.",
+        "$\\int_a^\\infty f=\\lim_{b\\to\\infty}\\int_a^bf$; with $u=\\sqrt x$, $du=\\dfrac{dx}{2\\sqrt x}$."
+      ],
+      "steps": [
+        "$u=\\sqrt x$, $du=\\dfrac{dx}{2\\sqrt x}$, so $\\dfrac{dx}{\\sqrt x}=2\\,du$; limits $1$ to $\\sqrt b$.",
+        "$\\lim_{b\\to\\infty}2\\int_1^{\\sqrt b}e^{-u}\\,du=\\lim_{b\\to\\infty}2\\left[-e^{-u}\\right]_1^{\\sqrt b}$.",
+        "$=2\\lim_{b\\to\\infty}\\left(e^{-1}-e^{-\\sqrt b}\\right)=\\dfrac2e$."
+      ],
+      "brief": "$u=\\sqrt x$: $2\\int_1^\\infty e^{-u}du=\\frac2e$."
+    },
+    {
+      "sec": "8.8",
+      "q": "The improper integral $\\int_0^\\infty\\sin^2x\\,dx$",
+      "opts": [
+        "Diverges to $+\\infty$",
+        "Diverges to $-\\infty$",
+        "Converges to $\\dfrac{1}{\\sqrt3}$",
+        "Converges to $\\dfrac13$",
+        "Diverges to $\\pm\\dfrac13$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Replace the infinite limit by a limit and evaluate the proper integral first.",
+        "Use the power-reducing identity for $\\sin^2x$, integrate, and look at what happens as the upper limit grows.",
+        "$\\sin^2x=\\dfrac{1-\\cos2x}{2}$; a bounded term such as $\\sin(2t)$ cannot cancel a term that grows without bound."
+      ],
+      "steps": [
+        "$\\int_0^t\\sin^2x\\,dx=\\int_0^t\\frac{1-\\cos2x}{2}dx=\\left[\\frac x2-\\frac{\\sin2x}{4}\\right]_0^t$.",
+        "$=\\dfrac t2-\\dfrac{\\sin2t}{4}$.",
+        "As $t\\to\\infty$, $\\dfrac t2\\to\\infty$ while $\\left|\\dfrac{\\sin2t}4\\right|\\le\\dfrac14$, so the limit is $+\\infty$."
+      ],
+      "brief": "$\\int_0^t\\sin^2x\\,dx=\\frac t2-\\frac{\\sin2t}{4}\\to+\\infty$: diverges to $+\\infty$."
+    },
+    {
+      "sec": "8.8",
+      "q": "$\\int_0^\\infty\\frac{e^x}{e^{2x}+3}\\,dx=$",
+      "opts": [
+        "$\\dfrac{\\pi}{3\\sqrt3}$",
+        "$\\dfrac{2\\pi}{3\\sqrt3}$",
+        "$\\infty$",
+        "$3\\pi\\sqrt e$",
+        "$\\dfrac32\\pi\\sqrt e$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Improper integral with an infinite limit; the integrand suggests an inverse tangent after a substitution.",
+        "Let $u=e^x$ so that $du=e^x\\,dx$ and the denominator becomes $u^2+3$.",
+        "$\\int\\dfrac{du}{u^2+a^2}=\\dfrac1a\\tan^{-1}\\dfrac ua+C$, and $\\tan^{-1}u\\to\\dfrac\\pi2$ as $u\\to\\infty$."
+      ],
+      "steps": [
+        "$u=e^x$: $\\int_0^\\infty\\frac{e^x}{e^{2x}+3}dx=\\lim_{t\\to\\infty}\\int_1^{e^t}\\frac{du}{u^2+3}$.",
+        "$=\\lim_{t\\to\\infty}\\dfrac1{\\sqrt3}\\left[\\tan^{-1}\\dfrac u{\\sqrt3}\\right]_1^{e^t}$.",
+        "$=\\dfrac1{\\sqrt3}\\left(\\dfrac\\pi2-\\dfrac\\pi6\\right)=\\dfrac1{\\sqrt3}\\cdot\\dfrac\\pi3=\\dfrac\\pi{3\\sqrt3}$."
+      ],
+      "brief": "$u=e^x$: $\\frac1{\\sqrt3}\\left[\\tan^{-1}\\frac u{\\sqrt3}\\right]_1^\\infty=\\frac{\\pi}{3\\sqrt3}$."
+    },
+    {
+      "sec": "8.2",
+      "q": "$\\int\\tan^{-1}(\\sqrt x)\\,dx=$",
+      "opts": [
+        "$x\\tan^{-1}(\\sqrt x)-\\sqrt x+\\tan^{-1}(\\sqrt x)+c$",
+        "$x\\tan^{-1}x-\\sqrt x+x+c$",
+        "$(1+\\tan^{-1}(\\sqrt x))x+\\dfrac1x+c$",
+        "$\\tan^{-1}(x)-x\\sqrt x+c$",
+        "$\\sqrt x\\tan^{-1}(\\sqrt x)-\\sqrt x+c$"
+      ],
+      "ans": 0,
+      "hints": [
+        "First remove the square root with a substitution, then use integration by parts on an inverse trigonometric function.",
+        "Let $t=\\sqrt x$ so $dx=2t\\,dt$, then take $u=\\tan^{-1}t$ and $dv=t\\,dt$.",
+        "$\\int u\\,dv=uv-\\int v\\,du$, $\\dfrac{d}{dt}\\tan^{-1}t=\\dfrac1{1+t^2}$, and $\\dfrac{t^2}{1+t^2}=1-\\dfrac1{1+t^2}$."
+      ],
+      "steps": [
+        "$t=\\sqrt x$, $dx=2t\\,dt$: the integral is $2\\int t\\tan^{-1}t\\,dt$.",
+        "Parts with $u=\\tan^{-1}t$, $dv=t\\,dt$: $2\\left[\\dfrac{t^2}2\\tan^{-1}t-\\dfrac12\\int\\dfrac{t^2}{1+t^2}dt\\right]$.",
+        "$\\int\\dfrac{t^2}{1+t^2}dt=\\int\\left(1-\\dfrac1{1+t^2}\\right)dt=t-\\tan^{-1}t$.",
+        "$=t^2\\tan^{-1}t-t+\\tan^{-1}t+c=x\\tan^{-1}\\sqrt x-\\sqrt x+\\tan^{-1}\\sqrt x+c$."
+      ],
+      "brief": "$t=\\sqrt x$, by parts: $x\\tan^{-1}\\sqrt x-\\sqrt x+\\tan^{-1}\\sqrt x+c$."
+    }
+  ]
+}

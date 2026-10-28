@@ -1,0 +1,674 @@
+{
+  "course": "math201",
+  "term": "221",
+  "kind": "fx",
+  "date": "",
+  "minutes": 120,
+  "source": "math201-221-fx.pdf",
+  "note": "Scanned master with no cover page: date and exam length are not printed. Date left empty; 120 minutes assumed (usual final exam length). The scan has no marked key and no key table; the correct choice is (a) for all 28 master questions, determined by my own work and confirmed with sympy (the handwritten solutions on the scan agree but were not transcribed). Sections were assigned from the syllabus; the handwritten textbook tags use a different edition numbering and were ignored. Q23 is filed under 14.7 and Q28 under 11.7.",
+  "qs": [
+    {
+      "sec": "10.3",
+      "q": "The exact length of the curve $x=1+3t^2,\\ y=4+2t^3,\\ 0\\le t\\le 1$ is",
+      "opts": [
+        "$4\\sqrt2-2$",
+        "$6\\sqrt2-1$",
+        "$\\sqrt2+1$",
+        "$\\sqrt2+3$",
+        "$\\sqrt2-3$"
+      ],
+      "ans": 0,
+      "hints": [
+        "This is the arc length of a parametric curve.",
+        "Compute $x'(t)$ and $y'(t)$ and simplify $\\sqrt{(x')^2+(y')^2}$ before integrating.",
+        "$L=\\int_a^b\\sqrt{\\left(\\dfrac{dx}{dt}\\right)^2+\\left(\\dfrac{dy}{dt}\\right)^2}\\,dt$; a substitution $u=1+t^2$ handles $\\int t\\sqrt{1+t^2}\\,dt$."
+      ],
+      "steps": [
+        "$x'=6t$, $y'=6t^2$, so $\\sqrt{36t^2+36t^4}=6t\\sqrt{1+t^2}$ for $t\\ge0$.",
+        "$L=\\int_0^1 6t\\sqrt{1+t^2}\\,dt$; let $u=1+t^2$, $du=2t\\,dt$.",
+        "$L=3\\int_1^2 u^{1/2}\\,du=3\\cdot\\dfrac23\\left[u^{3/2}\\right]_1^2=2\\left(2\\sqrt2-1\\right)$.",
+        "$L=4\\sqrt2-2$."
+      ],
+      "brief": "$L=\\int_0^1 6t\\sqrt{1+t^2}\\,dt=2(2\\sqrt2-1)=4\\sqrt2-2$."
+    },
+    {
+      "sec": "10.4",
+      "q": "The graph of $r\\cot\\theta=6\\sec\\theta$ is",
+      "opts": [
+        "a parabola",
+        "an ellipse",
+        "a circle",
+        "a hyperbola",
+        "a straight line"
+      ],
+      "ans": 0,
+      "hints": [
+        "Convert the polar equation to rectangular coordinates.",
+        "Write $\\cot\\theta$ and $\\sec\\theta$ in terms of $x$, $y$ and $r$.",
+        "$x=r\\cos\\theta$, $y=r\\sin\\theta$, so $\\cot\\theta=\\dfrac xy$ and $\\sec\\theta=\\dfrac rx$."
+      ],
+      "steps": [
+        "$\\cot\\theta=\\dfrac xy$ and $\\sec\\theta=\\dfrac rx$, so $r\\cdot\\dfrac xy=6\\cdot\\dfrac rx$.",
+        "Cancel $r$ (for $r\\neq0$): $\\dfrac xy=\\dfrac6x$.",
+        "So $x^2=6y$, i.e. $y=\\dfrac{x^2}{6}$.",
+        "This is a parabola."
+      ],
+      "brief": "$r\\frac xy=\\frac{6r}{x}\\Rightarrow x^2=6y$, a parabola."
+    },
+    {
+      "sec": "11.3",
+      "q": "If $\\vec a=\\langle -2,3,1\\rangle$ and $\\vec b=\\langle 1,2,2\\rangle$, then $\\operatorname{comp}_{\\vec a}\\vec b=$",
+      "opts": [
+        "$\\dfrac{6}{\\sqrt{14}}$",
+        "$\\dfrac{10}{\\sqrt{14}}$",
+        "$\\dfrac{8}{\\sqrt{14}}$",
+        "$\\dfrac{4}{\\sqrt{14}}$",
+        "$\\dfrac{3}{\\sqrt{14}}$"
+      ],
+      "ans": 0,
+      "hints": [
+        "This is the scalar component of one vector along another.",
+        "Note the order: the component of $\\vec b$ along $\\vec a$, so divide by $|\\vec a|$.",
+        "$\\operatorname{comp}_{\\vec a}\\vec b=\\dfrac{\\vec a\\cdot\\vec b}{|\\vec a|}$."
+      ],
+      "steps": [
+        "$\\vec a\\cdot\\vec b=-2+6+2=6$.",
+        "$|\\vec a|=\\sqrt{4+9+1}=\\sqrt{14}$.",
+        "$\\operatorname{comp}_{\\vec a}\\vec b=\\dfrac{6}{\\sqrt{14}}$."
+      ],
+      "brief": "$\\frac{\\vec a\\cdot\\vec b}{|\\vec a|}=\\frac{6}{\\sqrt{14}}$."
+    },
+    {
+      "sec": "11.4",
+      "q": "The value of $k$ for which the vectors $\\vec a=\\langle 1,2,3\\rangle$, $\\vec b=\\langle 0,1,1\\rangle$ and $\\vec c=\\langle k,0,-1\\rangle$ lie in the same plane is",
+      "opts": [
+        "$-1$",
+        "$-2$",
+        "$0$",
+        "$1$",
+        "$2$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Three vectors are coplanar when the parallelepiped they span has zero volume.",
+        "Compute the scalar triple product as a $3\\times3$ determinant in terms of $k$ and set it equal to $0$.",
+        "$\\vec a,\\vec b,\\vec c$ are coplanar if and only if $\\vec a\\cdot(\\vec b\\times\\vec c)=0$, which is the determinant with the three vectors as rows."
+      ],
+      "steps": [
+        "Set $\\det\\begin{vmatrix}1&2&3\\\\0&1&1\\\\k&0&-1\\end{vmatrix}=0$.",
+        "Expand along the first row: $1(-1-0)-2(0-k)+3(0-k)=-1+2k-3k$.",
+        "So $-1-k=0$.",
+        "$k=-1$."
+      ],
+      "brief": "$\\det=-1-k=0\\Rightarrow k=-1$."
+    },
+    {
+      "sec": "11.5",
+      "q": "The distance between the parallel planes $10x+2y+2z=10$ and $5x+y+z=2$ is",
+      "opts": [
+        "$\\dfrac{1}{\\sqrt3}$",
+        "$\\dfrac{1}{\\sqrt2}$",
+        "$\\sqrt3$",
+        "$\\sqrt2$",
+        "$1$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Distance between parallel planes: pick a point on one and find its distance to the other.",
+        "Pick an easy point on the first plane, then use the second plane's equation and normal vector.",
+        "The distance from $P_0$ to $ax+by+cz+d=0$ is $D=\\dfrac{|ax_0+by_0+cz_0+d|}{\\sqrt{a^2+b^2+c^2}}$."
+      ],
+      "steps": [
+        "The point $(1,0,0)$ lies on $10x+2y+2z=10$.",
+        "The second plane is $5x+y+z-2=0$.",
+        "$D=\\dfrac{|5\\cdot1+0+0-2|}{\\sqrt{25+1+1}}=\\dfrac{3}{\\sqrt{27}}$.",
+        "$D=\\dfrac{3}{3\\sqrt3}=\\dfrac1{\\sqrt3}$."
+      ],
+      "brief": "Point $(1,0,0)$: $D=\\frac{|5-2|}{\\sqrt{27}}=\\frac{1}{\\sqrt3}$."
+    },
+    {
+      "sec": "11.6",
+      "q": "The quadratic surface $x^2-y^2+z^2-4x+2y-4z+6=0$ represents",
+      "opts": [
+        "a hyperboloid of one sheet",
+        "a hyperboloid of two sheets",
+        "a cone",
+        "a paraboloid",
+        "an ellipsoid"
+      ],
+      "ans": 0,
+      "hints": [
+        "Complete the square in each variable to reach a standard form.",
+        "Group the $x$, $y$ and $z$ terms and complete the square in each group.",
+        "The form $\\dfrac{X^2}{a^2}-\\dfrac{Y^2}{b^2}+\\dfrac{Z^2}{c^2}=1$ has one minus sign and a positive right side; compare the signs and the constant to identify the quadric."
+      ],
+      "steps": [
+        "$(x-2)^2-4-\\left[(y-1)^2-1\\right]+(z-2)^2-4+6=0$.",
+        "Simplify the constants: $-4+1-4+6=-1$.",
+        "$(x-2)^2-(y-1)^2+(z-2)^2=1$.",
+        "One negative term and a positive right side: hyperboloid of one sheet."
+      ],
+      "brief": "Completing squares: $(x-2)^2-(y-1)^2+(z-2)^2=1$, one sheet."
+    },
+    {
+      "sec": "13.6",
+      "q": "The maximum rate of change of $f(x,y)=xe^{y}$ at the point $P(2,0)$ is",
+      "opts": [
+        "$\\sqrt5$",
+        "$\\sqrt3$",
+        "$\\sqrt2$",
+        "$1$",
+        "$0$"
+      ],
+      "ans": 0,
+      "hints": [
+        "The maximum rate of change of a function is related to its gradient.",
+        "Compute $\\nabla f$ and evaluate it at $P$.",
+        "The maximum rate of change of $f$ at $P$ is $|\\nabla f(P)|$, attained in the direction of $\\nabla f(P)$."
+      ],
+      "steps": [
+        "$\\nabla f=\\langle e^{y},\\,xe^{y}\\rangle$.",
+        "$\\nabla f(2,0)=\\langle1,2\\rangle$.",
+        "$|\\nabla f(2,0)|=\\sqrt{1+4}=\\sqrt5$."
+      ],
+      "brief": "$|\\nabla f(2,0)|=|\\langle1,2\\rangle|=\\sqrt5$."
+    },
+    {
+      "sec": "13.5",
+      "q": "If $w=xy$, $x=\\cos t$ and $y=\\sin t$, then $\\dfrac{dw}{dt}=$",
+      "opts": [
+        "$\\cos 2t$",
+        "$\\sin 2t$",
+        "$2\\cos 2t$",
+        "$2\\sin 2t$",
+        "$1$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Use the chain rule for a function of two variables that each depend on $t$.",
+        "Compute $\\partial w/\\partial x$, $\\partial w/\\partial y$, $dx/dt$, $dy/dt$ and combine them.",
+        "$\\dfrac{dw}{dt}=\\dfrac{\\partial w}{\\partial x}\\dfrac{dx}{dt}+\\dfrac{\\partial w}{\\partial y}\\dfrac{dy}{dt}$, and $\\cos^2t-\\sin^2t=\\cos2t$."
+      ],
+      "steps": [
+        "$\\dfrac{\\partial w}{\\partial x}=y$, $\\dfrac{\\partial w}{\\partial y}=x$, $\\dfrac{dx}{dt}=-\\sin t$, $\\dfrac{dy}{dt}=\\cos t$.",
+        "$\\dfrac{dw}{dt}=y(-\\sin t)+x\\cos t=-\\sin^2t+\\cos^2t$.",
+        "$=\\cos 2t$."
+      ],
+      "brief": "$\\frac{dw}{dt}=-\\sin^2t+\\cos^2t=\\cos2t$."
+    },
+    {
+      "sec": "13.3",
+      "q": "If $f(x,y)=x^{y}$, then $f_{xy}(x,y)$ at $x=1$ and $y=2$ is",
+      "opts": [
+        "$1$",
+        "$3$",
+        "$4$",
+        "$5$",
+        "$2$"
+      ],
+      "ans": 0,
+      "hints": [
+        "This is a mixed second partial derivative.",
+        "Differentiate with respect to $x$ first, then with respect to $y$ (the order given by the subscript $xy$), treating the other variable as a constant.",
+        "$\\dfrac{d}{dx}x^{c}=cx^{c-1}$ and $\\dfrac{d}{dy}a^{y}=a^{y}\\ln a$ for constants $a,c$; use the product rule where needed."
+      ],
+      "steps": [
+        "$f_x=y\\,x^{y-1}$.",
+        "$f_{xy}=\\dfrac{\\partial}{\\partial y}\\left(yx^{y-1}\\right)=x^{y-1}+y\\,x^{y-1}\\ln x$.",
+        "At $(1,2)$: $1^{1}+2\\cdot1\\cdot\\ln1=1+0$.",
+        "$f_{xy}(1,2)=1$."
+      ],
+      "brief": "$f_{xy}=x^{y-1}+yx^{y-1}\\ln x$, which equals $1$ at $(1,2)$."
+    },
+    {
+      "sec": "13.8",
+      "q": "The absolute maximum of $f(x,y)=e^{-x^2-y^2}\\left(2x^2+y^2\\right)$ on the disk $x^2+y^2\\le4$ is",
+      "opts": [
+        "$\\dfrac2e$",
+        "$\\dfrac{2}{e^2}$",
+        "$\\dfrac4e$",
+        "$\\dfrac{4}{e^2}$",
+        "$\\dfrac1e$"
+      ],
+      "ans": 0,
+      "hints": [
+        "This is an absolute extremum problem on a closed region.",
+        "Find the critical points inside the disk, then examine $f$ on the boundary circle, and compare all values.",
+        "Absolute extrema on a closed bounded region occur at interior critical points (where $f_x=f_y=0$) or on the boundary."
+      ],
+      "steps": [
+        "$f_x=2xe^{-x^2-y^2}\\left(2-2x^2-y^2\\right)$ and $f_y=2ye^{-x^2-y^2}\\left(1-2x^2-y^2\\right)$; the critical points inside are $(0,0)$, $(0,\\pm1)$, $(\\pm1,0)$.",
+        "Values: $f(0,0)=0$, $f(0,\\pm1)=\\dfrac1e$, $f(\\pm1,0)=\\dfrac2e$.",
+        "On the boundary $x^2+y^2=4$: $f=e^{-4}\\left(x^2+4\\right)$ with $-2\\le x\\le2$, whose maximum is $\\dfrac{8}{e^4}$ at $(\\pm2,0)$.",
+        "Since $\\dfrac2e>\\dfrac8{e^4}$, the absolute maximum is $\\dfrac2e$."
+      ],
+      "brief": "Interior critical points give $f(\\pm1,0)=\\frac2e$; boundary maximum is $\\frac{8}{e^4}<\\frac2e$."
+    },
+    {
+      "sec": "13.8",
+      "q": "The function $f(x,y)=xy+\\dfrac1x+\\dfrac1y$ has local minimum value at $(x,y)=$",
+      "opts": [
+        "$(1,1)$",
+        "$(0,0)$",
+        "$(-1,1)$",
+        "$(-1,-1)$",
+        "$(-1,0)$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Find the critical points and classify them with the second partials test.",
+        "Set $f_x=0$ and $f_y=0$ and solve; remember $f$ is not defined when $x=0$ or $y=0$.",
+        "Second partials test: with $D=f_{xx}f_{yy}-(f_{xy})^2$, a critical point is a local minimum if $D>0$ and $f_{xx}>0$."
+      ],
+      "steps": [
+        "$f_x=y-\\dfrac1{x^2}=0$ and $f_y=x-\\dfrac1{y^2}=0$, so $y=\\dfrac1{x^2}$ and $x=\\dfrac1{y^2}=x^4$.",
+        "$x(x^3-1)=0$; $x=0$ is not allowed, so $x=1$, $y=1$: the only critical point is $(1,1)$.",
+        "$f_{xx}=\\dfrac2{x^3}$, $f_{yy}=\\dfrac2{y^3}$, $f_{xy}=1$, so $D(1,1)=4-1=3>0$ and $f_{xx}(1,1)=2>0$.",
+        "Hence $(1,1)$ is a local minimum."
+      ],
+      "brief": "Only critical point $(1,1)$; $D=3>0$, $f_{xx}=2>0$: local minimum."
+    },
+    {
+      "sec": "13.10",
+      "q": "The sum of the extreme values of the function $f(x,y)=xe^{y}$, subject to the constraint $x^2+y^2=2$ is",
+      "opts": [
+        "$0$",
+        "$1$",
+        "$e$",
+        "$-e$",
+        "$2e$"
+      ],
+      "ans": 0,
+      "hints": [
+        "This is a constrained optimization problem, so use Lagrange multipliers.",
+        "Write $\\nabla f=\\lambda\\nabla g$ with $g=x^2+y^2$, together with the constraint, and solve for the candidate points.",
+        "Lagrange multipliers: solve $\\nabla f=\\lambda\\nabla g$ and $g=c$, then compare the values of $f$ at all candidate points."
+      ],
+      "steps": [
+        "$e^{y}=2\\lambda x$, $xe^{y}=2\\lambda y$, $x^2+y^2=2$. The first equation forces $x\\neq0$; if $y=0$ the second would give $x=0$, so $y\\neq0$.",
+        "Dividing the equations (eliminating $\\lambda$): $2ye^{y}=2x^2e^{y}$, so $y=x^2$.",
+        "Substitute: $x^2+x^4=2$, so $(x^2+2)(x^2-1)=0$ and $x=\\pm1$, giving the points $(1,1)$ and $(-1,1)$.",
+        "$f(1,1)=e$ and $f(-1,1)=-e$, so the sum is $0$."
+      ],
+      "brief": "$y=x^2$, $x=\\pm1$: $f=e$ and $f=-e$, sum $0$."
+    },
+    {
+      "sec": "13.8",
+      "q": "The function $f(x,y)=x^4-2x^2+y^3-3y$ has how many critical points?",
+      "opts": [
+        "$6$",
+        "$4$",
+        "$5$",
+        "$8$",
+        "$3$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Critical points occur where both first partial derivatives vanish.",
+        "Solve $f_x=0$ and $f_y=0$ separately, then count the combinations.",
+        "A critical point is a point where $f_x=0$ and $f_y=0$; if each equation involves only one variable, every combination of solutions counts."
+      ],
+      "steps": [
+        "$f_x=4x^3-4x=4x(x-1)(x+1)=0$, so $x=0,\\pm1$.",
+        "$f_y=3y^2-3=0$, so $y=\\pm1$.",
+        "Each $x$ value pairs with each $y$ value: $3\\times2=6$ points, namely $(0,\\pm1),(1,\\pm1),(-1,\\pm1)$."
+      ],
+      "brief": "$x\\in\\{0,\\pm1\\}$, $y\\in\\{\\pm1\\}$: $3\\cdot2=6$ critical points."
+    },
+    {
+      "sec": "14.1",
+      "q": "The iterated integral $\\int_1^2\\int_0^3\\left(6x^2y-4x\\right)dy\\,dx$ is equal to",
+      "opts": [
+        "$45$",
+        "$42$",
+        "$48$",
+        "$-52$",
+        "$21$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Evaluate the inner integral first.",
+        "Integrate with respect to $y$ (treating $x$ as constant) from $0$ to $3$, then integrate the result in $x$.",
+        "$\\int c\\,y\\,dy=\\dfrac{c\\,y^2}{2}$ and $\\int c\\,dy=cy$ for constants $c$, and $\\int x^n\\,dx=\\dfrac{x^{n+1}}{n+1}$."
+      ],
+      "steps": [
+        "$\\int_0^3(6x^2y-4x)\\,dy=\\left[3x^2y^2-4xy\\right]_0^3=27x^2-12x$.",
+        "$\\int_1^2(27x^2-12x)\\,dx=\\left[9x^3-6x^2\\right]_1^2$.",
+        "$=(72-24)-(9-6)=48-3=45$."
+      ],
+      "brief": "Inner: $27x^2-12x$; outer: $[9x^3-6x^2]_1^2=48-3=45$."
+    },
+    {
+      "sec": "14.2",
+      "q": "Let $R=[0,4]\\times[-1,2]$. Use a Riemann sum with $m=2$ (number of subintervals in $x$-direction) and $n=3$ (number of subintervals in $y$-direction) to estimate $\\iint_R(2-2xy^2)\\,dA$. Take the sample points to be upper left corners of the rectangles.",
+      "opts": [
+        "$-16$",
+        "$-18$",
+        "$-14$",
+        "$-12$",
+        "$-10$"
+      ],
+      "ans": 0,
+      "hints": [
+        "A double integral is estimated by a Riemann sum over a grid of equal rectangles.",
+        "Divide $[0,4]$ into 2 equal pieces and $[-1,2]$ into 3 equal pieces, find $\\Delta A$, and list the upper left corner of each rectangle.",
+        "$\\iint_R f\\,dA\\approx\\sum f(x_i^*,y_j^*)\\,\\Delta A$ with $\\Delta A=\\Delta x\\,\\Delta y$; the upper left corner of a rectangle has its smallest $x$ and its largest $y$."
+      ],
+      "steps": [
+        "$\\Delta x=2$, $\\Delta y=1$, so $\\Delta A=2$.",
+        "The $x$-intervals start at $x=0,2$ and the $y$-intervals have tops $y=0,1,2$, so the points are $(0,0),(0,1),(0,2),(2,0),(2,1),(2,2)$.",
+        "$f$ equals $2$ at the three points with $x=0$, and $f(2,0)=2$, $f(2,1)=-2$, $f(2,2)=-14$.",
+        "Sum $=2+2+2+2-2-14=-8$, so the estimate is $-8\\cdot2=-16$."
+      ],
+      "brief": "$\\Delta A=2$; sum of $f$ at the six upper left corners is $-8$; estimate $-16$."
+    },
+    {
+      "sec": "14.2",
+      "q": "The value of $\\iint_D e^{-y^2}\\,dA$, where $D=\\{(x,y):0\\le y\\le2,\\ 0\\le x\\le y\\}$ is equal to",
+      "opts": [
+        "$\\dfrac12\\left(1-e^{-4}\\right)$",
+        "$\\dfrac12\\left(1-e^{-6}\\right)$",
+        "$\\dfrac12\\left(1-e^{-2}\\right)$",
+        "$\\dfrac12\\left(1-e\\right)$",
+        "$\\dfrac12\\left(1-e^{-3}\\right)$"
+      ],
+      "ans": 0,
+      "hints": [
+        "The region is already described with $x$ between $0$ and $y$, and $e^{-y^2}$ depends only on $y$.",
+        "Integrate with respect to $x$ first (the integrand is constant in $x$), then use a substitution in $y$.",
+        "$\\int y\\,e^{-y^2}\\,dy=-\\dfrac12e^{-y^2}+C$."
+      ],
+      "steps": [
+        "$\\int_0^2\\int_0^y e^{-y^2}\\,dx\\,dy=\\int_0^2 y\\,e^{-y^2}\\,dy$.",
+        "$=\\left[-\\dfrac12e^{-y^2}\\right]_0^2$.",
+        "$=-\\dfrac12e^{-4}+\\dfrac12=\\dfrac12\\left(1-e^{-4}\\right)$."
+      ],
+      "brief": "$\\int_0^2 ye^{-y^2}dy=\\frac12(1-e^{-4})$."
+    },
+    {
+      "sec": "14.2",
+      "q": "If $D$ is the triangular region with vertices $(0,1)$, $(1,2)$, $(4,1)$, then $\\iint_D y^2\\,dA=$",
+      "opts": [
+        "$\\dfrac{11}{3}$",
+        "$\\dfrac{9}{3}$",
+        "$\\dfrac{13}{3}$",
+        "$\\dfrac{7}{3}$",
+        "$\\dfrac{17}{3}$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Sketch the triangle and describe it as a region where $x$ runs between two lines for $y$ in a fixed interval.",
+        "Find the equations of the two slanted sides as $x$ in terms of $y$; the integrand $y^2$ suggests integrating $dx$ first.",
+        "The line through $(x_1,y_1)$ and $(x_2,y_2)$ is $y-y_1=\\dfrac{y_2-y_1}{x_2-x_1}(x-x_1)$; then $\\iint_D f\\,dA=\\int_c^d\\int_{x_{\\text{left}}(y)}^{x_{\\text{right}}(y)}f\\,dx\\,dy$."
+      ],
+      "steps": [
+        "The side from $(0,1)$ to $(1,2)$ is $x=y-1$; the side from $(1,2)$ to $(4,1)$ is $x=7-3y$; $y$ runs from $1$ to $2$.",
+        "$\\int_1^2\\int_{y-1}^{7-3y}y^2\\,dx\\,dy=\\int_1^2(8-4y)\\,y^2\\,dy=\\int_1^2\\left(8y^2-4y^3\\right)dy$.",
+        "$=\\left[\\dfrac83y^3-y^4\\right]_1^2=\\left(\\dfrac{64}3-16\\right)-\\left(\\dfrac83-1\\right)$.",
+        "$=\\dfrac{16}3-\\dfrac53=\\dfrac{11}{3}$."
+      ],
+      "brief": "$\\int_1^2\\int_{y-1}^{7-3y}y^2dx\\,dy=\\int_1^2(8y^2-4y^3)dy=\\frac{11}{3}$."
+    },
+    {
+      "sec": "14.2",
+      "q": "$\\int_0^1\\int_{x^2}^1\\sqrt y\\,\\sin y\\,dy\\,dx=$",
+      "opts": [
+        "$\\int_0^1\\int_0^{\\sqrt y}\\sqrt y\\,\\sin y\\,dx\\,dy$",
+        "$\\int_0^1\\int_y^{\\sqrt y}\\sqrt y\\,\\sin y\\,dx\\,dy$",
+        "$\\int_0^1\\int_0^{y}\\sqrt y\\,\\sin y\\,dx\\,dy$",
+        "$\\int_0^1\\int_0^{y^2}\\sqrt y\\,\\sin y\\,dx\\,dy$",
+        "$\\int_0^1\\int_0^{2y}\\sqrt y\\,\\sin y\\,dx\\,dy$"
+      ],
+      "ans": 0,
+      "hints": [
+        "This is a change of the order of integration.",
+        "Sketch the region from the given limits ($0\\le x\\le1$, $x^2\\le y\\le1$) and describe it with $y$ as the outer variable.",
+        "The curve $y=x^2$ with $x\\ge0$ is $x=\\sqrt y$; for a fixed $y$ find where $x$ enters and leaves the region."
+      ],
+      "steps": [
+        "The region is $0\\le x\\le1$, $x^2\\le y\\le 1$, bounded by $y=x^2$, $y=1$ and $x=0$.",
+        "For fixed $y\\in[0,1]$, $x$ goes from the line $x=0$ to the parabola $x=\\sqrt y$.",
+        "So the integral equals $\\int_0^1\\int_0^{\\sqrt y}\\sqrt y\\,\\sin y\\,dx\\,dy$."
+      ],
+      "brief": "Region $x^2\\le y\\le1$: for fixed $y$, $0\\le x\\le\\sqrt y$, $0\\le y\\le1$."
+    },
+    {
+      "sec": "14.3",
+      "q": "The volume of the solid bounded by the plane $z=0$ and the paraboloid $z=1-x^2-y^2$ is (Hint: Use polar coordinates)",
+      "opts": [
+        "$\\dfrac{\\pi}{2}$",
+        "$\\pi$",
+        "$2\\pi$",
+        "$\\dfrac{\\pi}{4}$",
+        "$0$"
+      ],
+      "ans": 0,
+      "hints": [
+        "The volume under a surface over a region is a double integral; the circular symmetry suggests polar coordinates.",
+        "Find the base region where $1-x^2-y^2\\ge0$, then write the integral in $r$ and $\\theta$.",
+        "In polar coordinates $x^2+y^2=r^2$ and $dA=r\\,dr\\,d\\theta$."
+      ],
+      "steps": [
+        "The paraboloid meets $z=0$ on $x^2+y^2=1$, so the base is the unit disk: $0\\le r\\le1$, $0\\le\\theta\\le2\\pi$.",
+        "$V=\\int_0^{2\\pi}\\int_0^1(1-r^2)\\,r\\,dr\\,d\\theta$.",
+        "$\\int_0^1(r-r^3)\\,dr=\\dfrac12-\\dfrac14=\\dfrac14$.",
+        "$V=2\\pi\\cdot\\dfrac14=\\dfrac\\pi2$."
+      ],
+      "brief": "$V=\\int_0^{2\\pi}\\int_0^1(1-r^2)r\\,dr\\,d\\theta=2\\pi\\cdot\\frac14=\\frac\\pi2$."
+    },
+    {
+      "sec": "14.3",
+      "q": "The value of the integral \\[ I=\\int_0^1\\int_{-\\sqrt{1-y^2}}^{\\sqrt{1-y^2}}(2x+y)\\,dx\\,dy \\] is",
+      "opts": [
+        "$\\dfrac23$",
+        "$\\dfrac43$",
+        "$\\dfrac53$",
+        "$\\dfrac83$",
+        "$\\dfrac13$"
+      ],
+      "ans": 0,
+      "hints": [
+        "The limits describe part of a disk, so polar coordinates are natural.",
+        "Identify the region from the limits, then convert $x=r\\cos\\theta$, $y=r\\sin\\theta$.",
+        "In polar form $dA=r\\,dr\\,d\\theta$, and an integral with separate constant $r$ and $\\theta$ limits factors into a product."
+      ],
+      "steps": [
+        "The region is the upper half of the unit disk: $0\\le r\\le1$, $0\\le\\theta\\le\\pi$.",
+        "$I=\\int_0^\\pi\\int_0^1(2r\\cos\\theta+r\\sin\\theta)\\,r\\,dr\\,d\\theta=\\int_0^1r^2\\,dr\\int_0^\\pi(2\\cos\\theta+\\sin\\theta)\\,d\\theta$.",
+        "$\\int_0^1r^2\\,dr=\\dfrac13$ and $\\int_0^\\pi(2\\cos\\theta+\\sin\\theta)\\,d\\theta=\\left[2\\sin\\theta-\\cos\\theta\\right]_0^\\pi=1-(-1)=2$.",
+        "$I=\\dfrac13\\cdot2=\\dfrac23$."
+      ],
+      "brief": "Polar over the upper half disk: $I=\\frac13\\cdot2=\\frac23$."
+    },
+    {
+      "sec": "14.6",
+      "q": "The value of $\\iiint_E z\\,dV$, where $E$ is the solid bounded by the coordinate planes and the plane $x+y+z=1$ is",
+      "opts": [
+        "$\\dfrac1{24}$",
+        "$\\dfrac1{12}$",
+        "$\\dfrac16$",
+        "$\\dfrac1{48}$",
+        "$\\dfrac12$"
+      ],
+      "ans": 0,
+      "hints": [
+        "$E$ is a tetrahedron in the first octant, so set up a triple integral over it.",
+        "Integrate $z$ from $0$ to the plane, then $y$ over the shadow's height in terms of $x$, then $x$ over its range.",
+        "$\\int u^n\\,du=\\dfrac{u^{n+1}}{n+1}$, and for a power of a linear factor use a substitution such as $u=1-x$."
+      ],
+      "steps": [
+        "$\\int_0^{1-x-y}z\\,dz=\\dfrac{(1-x-y)^2}2$.",
+        "$\\int_0^{1-x}\\dfrac{(1-x-y)^2}2\\,dy=\\dfrac{(1-x)^3}{6}$.",
+        "$\\int_0^1\\dfrac{(1-x)^3}{6}\\,dx=\\dfrac16\\cdot\\dfrac14=\\dfrac1{24}$."
+      ],
+      "brief": "$\\int_0^1\\int_0^{1-x}\\int_0^{1-x-y}z\\,dz\\,dy\\,dx=\\frac16\\cdot\\frac14=\\frac1{24}$."
+    },
+    {
+      "sec": "14.7",
+      "q": "If \\[ \\iiint_E x\\,dV=\\int_0^a\\int_0^b\\left(cr^2-r^4\\right)\\cos\\theta\\,dr\\,d\\theta, \\] where $E$ is the solid bounded by the paraboloid $z=x^2+y^2$ and the plane $z=4$, then $a+b-c=$",
+      "opts": [
+        "$2(\\pi-1)$",
+        "$2\\pi$",
+        "$4(\\pi-1)$",
+        "$\\pi-2$",
+        "$\\pi-4$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Use cylindrical coordinates: $z$ goes from the paraboloid to the plane.",
+        "Integrate in $z$ first, then multiply by $x=r\\cos\\theta$ and the factor $r$ from $dV$; read off the limits and $c$.",
+        "Cylindrical coordinates: $x=r\\cos\\theta$, $x^2+y^2=r^2$, $dV=r\\,dz\\,dr\\,d\\theta$; the outer limits ($a$ for $\\theta$, $b$ for $r$) come from the shadow of $E$ on the $xy$-plane."
+      ],
+      "steps": [
+        "$\\iiint_Ex\\,dV=\\iint_D\\int_{x^2+y^2}^4x\\,dz\\,dA=\\iint_Dx\\left(4-x^2-y^2\\right)dA$.",
+        "The paraboloid meets $z=4$ at $r=2$, so $D$ is $0\\le r\\le2$, $0\\le\\theta\\le2\\pi$.",
+        "The integral is $\\int_0^{2\\pi}\\int_0^2(r\\cos\\theta)(4-r^2)\\,r\\,dr\\,d\\theta=\\int_0^{2\\pi}\\int_0^2\\left(4r^2-r^4\\right)\\cos\\theta\\,dr\\,d\\theta$, so $a=2\\pi$, $b=2$, $c=4$.",
+        "$a+b-c=2\\pi+2-4=2\\pi-2=2(\\pi-1)$."
+      ],
+      "brief": "Cylindrical: $a=2\\pi$, $b=2$, $c=4$, so $a+b-c=2(\\pi-1)$."
+    },
+    {
+      "sec": "14.7",
+      "q": "The volume of the region enclosed by the cylinder $x^2+(y-1)^2=1$ and the planes $z=0$, $z=y$ is",
+      "opts": [
+        "$\\int_0^\\pi\\int_0^{2\\sin\\theta}\\int_0^{r\\sin\\theta}r\\,dz\\,dr\\,d\\theta$",
+        "$\\int_0^{2\\pi}\\int_0^{\\sin\\theta}\\int_0^{\\cos\\theta}r\\,dz\\,dr\\,d\\theta$",
+        "$\\int_0^{\\pi/2}\\int_0^{\\sin\\theta}\\int_0^{r\\cos\\theta}r\\,dz\\,dr\\,d\\theta$",
+        "$\\int_0^{\\pi}\\int_0^{\\cos\\theta}\\int_0^{r\\sin\\theta}r\\,dz\\,dr\\,d\\theta$",
+        "$\\int_0^{\\pi}\\int_0^{2\\cos\\theta}\\int_0^{r\\sin\\theta}r\\,dz\\,dr\\,d\\theta$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Use cylindrical coordinates and convert the cylinder to polar form.",
+        "Substitute $x=r\\cos\\theta$, $y=r\\sin\\theta$ into the cylinder equation to find the bound on $r$, and write $z=y$ in terms of $r$ and $\\theta$.",
+        "$x=r\\cos\\theta$, $y=r\\sin\\theta$, $x^2+y^2=r^2$, $dV=r\\,dz\\,dr\\,d\\theta$."
+      ],
+      "steps": [
+        "The cylinder $x^2+(y-1)^2=1$ becomes $r^2-2r\\sin\\theta=0$, so $r=2\\sin\\theta$ (nonnegative for $0\\le\\theta\\le\\pi$).",
+        "The solid lies between $z=0$ and $z=y=r\\sin\\theta$.",
+        "So $0\\le\\theta\\le\\pi$, $0\\le r\\le2\\sin\\theta$, $0\\le z\\le r\\sin\\theta$.",
+        "The volume integral is $\\int_0^\\pi\\int_0^{2\\sin\\theta}\\int_0^{r\\sin\\theta}r\\,dz\\,dr\\,d\\theta$."
+      ],
+      "brief": "$r=2\\sin\\theta$, $0\\le\\theta\\le\\pi$, $0\\le z\\le r\\sin\\theta$."
+    },
+    {
+      "sec": "14.7",
+      "q": "Let $E$ be the region bounded by the cone $z^2=x^2+y^2$ and the paraboloid $z=2-x^2-y^2$. Then $\\iiint_E z\\,dV=$",
+      "opts": [
+        "$\\dfrac{11\\pi}{12}$",
+        "$\\pi$",
+        "$\\dfrac{5\\pi}{4}$",
+        "$\\dfrac{4\\pi}{5}$",
+        "$2\\pi$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Use cylindrical coordinates, since both surfaces are surfaces of revolution about the $z$-axis.",
+        "Find where the cone (upper nappe) meets the paraboloid to get the range of $r$, then integrate $z$ from the cone up to the paraboloid.",
+        "In cylindrical coordinates, $z^2=x^2+y^2$ becomes $z=r$ (upper nappe) and $x^2+y^2=r^2$; $dV=r\\,dz\\,dr\\,d\\theta$."
+      ],
+      "steps": [
+        "Intersection: $r=2-r^2$ gives $r=1$. So $0\\le\\theta\\le2\\pi$, $0\\le r\\le1$, $r\\le z\\le2-r^2$.",
+        "$\\int_r^{2-r^2}z\\,dz=\\dfrac{(2-r^2)^2-r^2}{2}$, so the integral is $2\\pi\\int_0^1\\dfrac r2\\left(4-5r^2+r^4\\right)dr$.",
+        "$=\\pi\\int_0^1\\left(r^5-5r^3+4r\\right)dr=\\pi\\left(\\dfrac16-\\dfrac54+2\\right)$.",
+        "$=\\pi\\cdot\\dfrac{2-15+24}{12}=\\dfrac{11\\pi}{12}$."
+      ],
+      "brief": "$2\\pi\\int_0^1\\frac r2[(2-r^2)^2-r^2]dr=\\frac{11\\pi}{12}$."
+    },
+    {
+      "sec": "14.7",
+      "q": "$\\int_{-2}^{2}\\int_0^{\\sqrt{4-y^2}}\\int_{\\frac{x^2+y^2}{4}}^{\\frac{\\sqrt{x^2+y^2}}{2}}xz\\,dz\\,dx\\,dy=$",
+      "opts": [
+        "$\\dfrac1{16}\\int_0^2\\left(4r^4-r^6\\right)dr$",
+        "$\\dfrac1{16}\\int_0^2\\left(4r^3-r^5\\right)dr$",
+        "$\\int_0^1\\left(r^4-r^6\\right)dr$",
+        "$\\int_0^1\\left(r^3-r^5\\right)dr$",
+        "$\\dfrac1{32}\\int_0^1\\left(4r^4-r^6\\right)dr$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Convert to cylindrical coordinates; the base region is a half disk.",
+        "Read the region from the limits: $x\\ge0$ and $x^2+y^2\\le4$, so $-\\frac\\pi2\\le\\theta\\le\\frac\\pi2$ and $0\\le r\\le2$; integrate $z$ first.",
+        "$x=r\\cos\\theta$, $dV=r\\,dz\\,dr\\,d\\theta$, and $\\int_{-\\pi/2}^{\\pi/2}\\cos\\theta\\,d\\theta=2$."
+      ],
+      "steps": [
+        "The limits $0\\le x\\le\\sqrt{4-y^2}$, $-2\\le y\\le2$ describe the right half of the disk $r\\le2$: $-\\frac\\pi2\\le\\theta\\le\\frac\\pi2$, $0\\le r\\le2$; $z$ goes from $\\frac{r^2}{4}$ to $\\frac r2$.",
+        "$\\int_{r^2/4}^{r/2}z\\,dz=\\dfrac12\\left(\\dfrac{r^2}{4}-\\dfrac{r^4}{16}\\right)=\\dfrac{r^2}{8}-\\dfrac{r^4}{32}$.",
+        "The integrand becomes $(r\\cos\\theta)\\left(\\dfrac{r^2}8-\\dfrac{r^4}{32}\\right)r=\\dfrac{\\cos\\theta}{32}\\left(4r^4-r^6\\right)$.",
+        "$\\int_{-\\pi/2}^{\\pi/2}\\cos\\theta\\,d\\theta=2$, so the result is $\\dfrac2{32}\\int_0^2\\left(4r^4-r^6\\right)dr=\\dfrac1{16}\\int_0^2\\left(4r^4-r^6\\right)dr$."
+      ],
+      "brief": "Cylindrical, half disk: $\\frac{\\cos\\theta}{32}(4r^4-r^6)$, $\\int\\cos=2$: $\\frac1{16}\\int_0^2(4r^4-r^6)dr$."
+    },
+    {
+      "sec": "14.7",
+      "q": "Let $E$ be the solid lying above the cone $z=\\sqrt{x^2+y^2}$ and between the spheres $x^2+y^2+z^2=1$ and $x^2+y^2+z^2=4$. Then $\\iiint_E\\sqrt{x^2+y^2+z^2}\\,dV=$",
+      "opts": [
+        "$\\dfrac{15}{2}\\pi\\left(1-\\dfrac{\\sqrt2}{2}\\right)$",
+        "$\\dfrac{15}{2}\\pi\\left(1+\\dfrac{\\sqrt2}{2}\\right)$",
+        "$\\dfrac{15}{4}\\pi\\left(1-\\dfrac{\\sqrt2}{2}\\right)$",
+        "$\\dfrac{15}{4}\\pi\\left(1+\\dfrac{\\sqrt2}{2}\\right)$",
+        "$\\dfrac{15\\pi}{2}\\left(1-\\sqrt3\\right)$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Use spherical coordinates: the region is bounded by spheres and a cone.",
+        "Find $\\phi$ for the cone $z=\\sqrt{x^2+y^2}$, then set the limits for $\\rho$, $\\theta$ and $\\phi$; the integrand is $\\rho$.",
+        "$\\sqrt{x^2+y^2+z^2}=\\rho$, $dV=\\rho^2\\sin\\phi\\,d\\rho\\,d\\theta\\,d\\phi$, and above a cone means $0\\le\\phi\\le\\phi_0$, where $\\phi_0$ is the cone's angle with the positive $z$-axis."
+      ],
+      "steps": [
+        "The cone $z=\\sqrt{x^2+y^2}$ is $\\phi=\\frac\\pi4$, so $1\\le\\rho\\le2$, $0\\le\\theta\\le2\\pi$, $0\\le\\phi\\le\\frac\\pi4$.",
+        "$I=\\int_0^{\\pi/4}\\int_0^{2\\pi}\\int_1^2\\rho\\cdot\\rho^2\\sin\\phi\\,d\\rho\\,d\\theta\\,d\\phi$.",
+        "$\\int_1^2\\rho^3\\,d\\rho=\\dfrac{15}4$, $\\int_0^{2\\pi}d\\theta=2\\pi$, $\\int_0^{\\pi/4}\\sin\\phi\\,d\\phi=1-\\dfrac{\\sqrt2}2$.",
+        "$I=\\dfrac{15}4\\cdot2\\pi\\left(1-\\dfrac{\\sqrt2}2\\right)=\\dfrac{15}2\\pi\\left(1-\\dfrac{\\sqrt2}2\\right)$."
+      ],
+      "brief": "Spherical: $\\frac{15}{4}\\cdot2\\pi\\cdot\\left(1-\\frac{\\sqrt2}2\\right)=\\frac{15\\pi}2\\left(1-\\frac{\\sqrt2}2\\right)$."
+    },
+    {
+      "sec": "14.7",
+      "q": "If $B$ is the ball with center at the origin and radius $2$, then $\\iiint_B\\left(x^2+y^2+z^2\\right)^2dV=$",
+      "opts": [
+        "$\\dfrac{512\\pi}{7}$",
+        "$\\dfrac{510\\pi}{7}$",
+        "$\\dfrac{508\\pi}{7}$",
+        "$\\dfrac{506\\pi}{7}$",
+        "$\\dfrac{500\\pi}{7}$"
+      ],
+      "ans": 0,
+      "hints": [
+        "The integrand and the region are spherically symmetric, so use spherical coordinates.",
+        "Write $(x^2+y^2+z^2)^2=\\rho^4$, and use $0\\le\\rho\\le2$, $0\\le\\theta\\le2\\pi$, $0\\le\\phi\\le\\pi$.",
+        "$dV=\\rho^2\\sin\\phi\\,d\\rho\\,d\\theta\\,d\\phi$, and $\\int_0^\\pi\\sin\\phi\\,d\\phi=2$."
+      ],
+      "steps": [
+        "$I=\\int_0^\\pi\\int_0^{2\\pi}\\int_0^2\\rho^4\\cdot\\rho^2\\sin\\phi\\,d\\rho\\,d\\theta\\,d\\phi$.",
+        "$\\int_0^2\\rho^6\\,d\\rho=\\dfrac{128}{7}$, $\\int_0^{2\\pi}d\\theta=2\\pi$, $\\int_0^\\pi\\sin\\phi\\,d\\phi=2$.",
+        "$I=\\dfrac{128}{7}\\cdot2\\pi\\cdot2=\\dfrac{512\\pi}{7}$."
+      ],
+      "brief": "$\\int_0^2\\rho^6d\\rho\\cdot2\\pi\\cdot2=\\frac{128}7\\cdot4\\pi=\\frac{512\\pi}7$."
+    },
+    {
+      "sec": "11.7",
+      "q": "The surface $\\rho=\\sin\\theta\\sin\\phi$ represents",
+      "opts": [
+        "a sphere with radius $\\dfrac12$ and center $\\left(0,\\dfrac12,0\\right)$",
+        "a sphere with radius $\\dfrac14$ and center $\\left(0,\\dfrac12,0\\right)$",
+        "a sphere with radius $\\dfrac12$ and center $(0,1,0)$",
+        "a sphere with radius $\\dfrac14$ and center $(0,1,0)$",
+        "a sphere with radius $1$ and center $(0,0,0)$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Convert the spherical equation to rectangular coordinates.",
+        "Multiply both sides by $\\rho$ so that $\\rho\\sin\\phi\\sin\\theta$ appears, then complete the square.",
+        "$\\rho^2=x^2+y^2+z^2$ and $y=\\rho\\sin\\phi\\sin\\theta$."
+      ],
+      "steps": [
+        "Multiply by $\\rho$: $\\rho^2=\\rho\\sin\\phi\\sin\\theta=y$.",
+        "So $x^2+y^2+z^2=y$, i.e. $x^2+y^2-y+z^2=0$.",
+        "Complete the square: $x^2+\\left(y-\\dfrac12\\right)^2+z^2=\\dfrac14$.",
+        "A sphere with radius $\\dfrac12$ and center $\\left(0,\\dfrac12,0\\right)$."
+      ],
+      "brief": "$\\rho^2=y$: $x^2+(y-\\frac12)^2+z^2=\\frac14$, radius $\\frac12$, center $(0,\\frac12,0)$."
+    }
+  ]
+}

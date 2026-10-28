@@ -1,0 +1,477 @@
+{
+  "course": "stat201",
+  "term": "241",
+  "kind": "fx",
+  "date": "22 December 2024",
+  "minutes": 120,
+  "source": "stat319-241-fx.pdf",
+  "note": "Date and minutes printed on the cover (December 22, 2024; net time 120 minutes). Original course STAT 319. Master key marks (a) correct in every question and my own calculations agree with every key. Q6, Q8, Q13, Q14, Q15 and Q20 use cropped software output (Q14 and Q15 share stat201-241-fx-q14.png). Q11 and Q12 share the same data and differ only in the question. Q7 is a 'not true' question: the false statement is the one-tailed rule z0>1.96. Q4 uses a non-standard 76.2 percent level (z=1.18, by calculator). Section tags are assigned by me (not printed).",
+  "qs": [
+    {
+      "sec": "2.5",
+      "q": "The probability is $1\\%$ that an electrical connector that is kept dry fails during the warranty period of a portable computer. If the connector is ever wet, the probability of a failure during the warranty period is $6\\%$. If $90\\%$ of the connectors are kept dry and $10\\%$ are wet, what proportion of connectors fail during the warranty period?",
+      "opts": [
+        "$0.015$",
+        "$0.009$",
+        "$0.006$",
+        "$0.070$",
+        "$0.059$"
+      ],
+      "ans": 0,
+      "hints": [
+        "This is a total probability problem: split the connectors into two groups that cover everything.",
+        "Find the failure probability within each group and weight it by the size of the group.",
+        "$P(F)=P(F\\mid A)P(A)+P(F\\mid A^c)P(A^c)$ for a partition $A,A^c$."
+      ],
+      "steps": [
+        "Let $D$ = dry and $W$ = wet: $P(D)=0.9$, $P(W)=0.1$.",
+        "$P(F\\mid D)=0.01$ and $P(F\\mid W)=0.06$.",
+        "$P(F)=0.01(0.9)+0.06(0.1)=0.009+0.006=0.015$."
+      ],
+      "brief": "$P(F)=0.01(0.9)+0.06(0.1)=0.015$."
+    },
+    {
+      "sec": "3.4",
+      "q": "Trees are subjected to different levels of carbon dioxide atmosphere with $6\\%$ of them in a minimal growth condition at 350 parts per million (ppm), $10\\%$ at 450 ppm (slow growth), $47\\%$ at 550 ppm (moderate growth), and $37\\%$ at 650 ppm (rapid growth). What is the standard deviation of the carbon dioxide atmosphere (in ppm) for these trees in ppm?",
+      "opts": [
+        "$82.92$ ppm",
+        "$95.6$ ppm",
+        "$120.3$ ppm",
+        "$85.7$ ppm",
+        "$110.2$ ppm"
+      ],
+      "ans": 0,
+      "hints": [
+        "Treat the percentages as a probability mass function and find the standard deviation of a discrete random variable.",
+        "First compute the mean, then the variance using the pmf weights.",
+        "$\\mu=\\sum x f(x)$, $\\sigma^2=\\sum (x-\\mu)^2 f(x)=\\sum x^2f(x)-\\mu^2$, $\\sigma=\\sqrt{\\sigma^2}$."
+      ],
+      "steps": [
+        "$\\mu=350(0.06)+450(0.10)+550(0.47)+650(0.37)=21+45+258.5+240.5=565$.",
+        "$\\sigma^2=0.06(215)^2+0.10(115)^2+0.47(15)^2+0.37(85)^2=2773.5+1322.5+105.75+2673.25=6875$.",
+        "$\\sigma=\\sqrt{6875}=82.92$ ppm."
+      ],
+      "brief": "$\\mu=565$, $\\sigma^2=6875$, $\\sigma=82.92$ ppm."
+    },
+    {
+      "sec": "4.8",
+      "q": "The time to failure (in hours) for a laser in a cytometry machine is modeled by an exponential distribution with $\\lambda=0.005$. What is the probability that the time until failure is between 120 and 150 hours?",
+      "opts": [
+        "$0.0764$",
+        "$0.4512$",
+        "$0.5276$",
+        "$0.9788$",
+        "$0.0019$"
+      ],
+      "ans": 0,
+      "hints": [
+        "This is an exponential distribution probability over an interval.",
+        "Write the probability as a difference of two cumulative probabilities (or of two survival probabilities).",
+        "For $X\\sim\\text{Exp}(\\lambda)$: $P(X>x)=e^{-\\lambda x}$, so $P(a<X<b)=e^{-\\lambda a}-e^{-\\lambda b}$."
+      ],
+      "steps": [
+        "$P(120<X<150)=e^{-0.005(120)}-e^{-0.005(150)}$.",
+        "$=e^{-0.6}-e^{-0.75}=0.54881-0.47237$.",
+        "$=0.0764$."
+      ],
+      "brief": "$e^{-0.6}-e^{-0.75}=0.0764$."
+    },
+    {
+      "sec": "8.4",
+      "q": "A random sample of 60 suspension helmets used by motorcycle riders and automobile race-car drivers was subjected to an impact test, and some damage was observed on 18 of these helmets. Find a $76.2\\%$ two-sided confidence interval on the true proportion of helmets that would show damage from this test. The upper limit of interval is:",
+      "opts": [
+        "$0.3698$",
+        "$0.3422$",
+        "$0.3179$",
+        "$0.2302$",
+        "$0.3041$"
+      ],
+      "ans": 0,
+      "hints": [
+        "This is a large-sample confidence interval for a population proportion.",
+        "Compute $\\hat p$, find the critical $z$ for the given confidence level, then add the margin of error.",
+        "$\\hat p\\pm z_{\\alpha/2}\\sqrt{\\dfrac{\\hat p(1-\\hat p)}{n}}$ with $\\hat p=x/n$."
+      ],
+      "steps": [
+        "$\\hat p=18/60=0.3$. For $76.2\\%$, $\\alpha/2=0.119$, so $z_{0.119}=1.18$.",
+        "Standard error: $\\sqrt{0.3(0.7)/60}=0.05916$.",
+        "Upper limit: $0.3+1.18(0.05916)=0.3698$."
+      ],
+      "brief": "$\\hat p=0.3$, $z=1.18$: upper limit $0.3+1.18(0.05916)=0.3698$."
+    },
+    {
+      "sec": "9.1",
+      "q": "A semiconductor manufacturer collects data from a new tool and conducts a hypothesis test with the null hypothesis that a critical dimension mean width equals 100 nm. Based on sample data, the decision is to not reject the null hypothesis. What is the correct conclusion?",
+      "opts": [
+        "The critical dimension mean is not significantly different from 100 nm.",
+        "The critical dimension mean is significantly higher than 100 nm.",
+        "The critical dimension mean is significantly different from 100 nm.",
+        "The critical dimension mean is not close to 100 nm.",
+        "The critical dimension mean is significantly less than 100 nm."
+      ],
+      "ans": 0,
+      "hints": [
+        "Think about what failing to reject $H_0$ means.",
+        "Decide whether the data give enough evidence against $H_0$ in any direction.",
+        "Failing to reject $H_0$ means there is insufficient evidence against it; it does not prove $H_0$ true, and it gives no evidence of a difference."
+      ],
+      "steps": [
+        "The null hypothesis is $H_0:\\mu=100$.",
+        "Not rejecting $H_0$ means the sample does not provide enough evidence that $\\mu$ differs from 100.",
+        "So the mean is not significantly different from 100 nm."
+      ],
+      "brief": "Do not reject $H_0$: no significant difference from 100 nm."
+    },
+    {
+      "sec": "9.2",
+      "q": "Output from a software package follows (see the figure). The test is of $\\mu=20$ versus $\\mu>20$, with assumed standard deviation $0.75$; for $X$: $n=20$, mean $=20.218$, and the $Z$ and $p$-value entries are missing. Find the missing $p$-value.",
+      "opts": [
+        "$0.0968$",
+        "$0.1936$",
+        "$0.9036$",
+        "$0.8064$",
+        "$0.0823$"
+      ],
+      "ans": 0,
+      "hints": [
+        "This is a one-sided $z$-test with known $\\sigma$.",
+        "Compute the missing $Z$ value, then take the tail area in the direction of the alternative.",
+        "$z_0=\\dfrac{\\bar x-\\mu_0}{\\sigma/\\sqrt n}$; for $H_1:\\mu>\\mu_0$, $p=1-\\Phi(z_0)$."
+      ],
+      "steps": [
+        "$z_0=\\dfrac{20.218-20}{0.75/\\sqrt{20}}=\\dfrac{0.218}{0.16771}=1.30$.",
+        "The alternative is $\\mu>20$, so use the upper tail.",
+        "$p=1-\\Phi(1.30)=1-0.9032=0.0968$."
+      ],
+      "brief": "$z_0=1.30$; $p=1-\\Phi(1.30)=0.0968$.",
+      "img": "stat201-241-fx-q6.png"
+    },
+    {
+      "sec": "9.2",
+      "q": "An engineer who is studying the tensile strength of a steel alloy intended for use in golf club shafts knows that tensile strength is approximately normally distributed with $\\sigma=415\\ \\text{kN/m}^2$. A random sample of 12 specimens has a mean tensile strength of $\\bar x=23800\\ \\text{kN/m}^2$. Test the hypothesis that mean strength is $24150\\ \\text{kN/m}^2$. Use $\\alpha=0.05$ and find which one of the following statements is NOT true.",
+      "opts": [
+        "We reject the null hypothesis if $z_0>1.96$.",
+        "We reject the null hypothesis if $|z_0|>1.96$.",
+        "The $p$-value of this test is approximately equal to $0.0035$.",
+        "We reject the null hypothesis if $z_0>1.96$ or if $z_0<-1.96$.",
+        "Rounded to 2 decimal points, the computed value of $Z$ is $-2.92$."
+      ],
+      "ans": 0,
+      "hints": [
+        "The hypothesis is two-sided, since it only says the mean is or is not a given value.",
+        "Compute the test statistic, then check each statement against the two-tailed rejection region and $p$-value.",
+        "For $H_1:\\mu\\neq\\mu_0$: reject when $|z_0|>z_{\\alpha/2}$; $z_0=\\dfrac{\\bar x-\\mu_0}{\\sigma/\\sqrt n}$ and $p=2\\,[1-\\Phi(|z_0|)]$."
+      ],
+      "steps": [
+        "$H_0:\\mu=24150$ versus $H_1:\\mu\\neq24150$; $z_0=\\dfrac{23800-24150}{415/\\sqrt{12}}=-2.92$.",
+        "Rejection region at $\\alpha=0.05$: $|z_0|>1.96$, i.e. $z_0>1.96$ or $z_0<-1.96$. The $p$-value is $2(0.00175)\\approx0.0035$.",
+        "These statements are all true. The statement that rejects only when $z_0>1.96$ ignores the lower tail, so it is the one that is not true."
+      ],
+      "brief": "Two-sided: reject if $|z_0|>1.96$; $z_0=-2.92$, $p\\approx0.0035$. The one-tail rule is false."
+    },
+    {
+      "sec": "9.3",
+      "q": "Output from a software package follows (see the figure). One-Sample T: test of $\\mu=12$ versus $\\mu\\neq12$; for $X$: $n=10$, mean $=12.564$, StDev $=1.1859$, $T=1.504$, and the $p$-value is missing. Find the missing $p$-value.",
+      "opts": [
+        "$0.1<p\\text{-value}<0.2$",
+        "$0.05<p\\text{-value}<0.1$",
+        "$0.01<p\\text{-value}<0.05$",
+        "$0.02<p\\text{-value}<0.05$",
+        "$0.01<p\\text{-value}<0.02$"
+      ],
+      "ans": 0,
+      "hints": [
+        "This is a two-sided $t$-test, and the $p$-value must be bracketed using $t$ table values.",
+        "Find the degrees of freedom, then locate $|T|$ between two critical values in that row of the $t$ table and double the tail areas.",
+        "For $H_1:\\mu\\neq\\mu_0$: $p=2P(T_{n-1}>|t_0|)$, with $df=n-1$."
+      ],
+      "steps": [
+        "$df=n-1=9$.",
+        "In the $t_9$ row, $t_{0.10}=1.383$ and $t_{0.05}=1.833$, so $1.383<1.504<1.833$ gives $0.05<P(T>1.504)<0.10$.",
+        "Doubling for two sides: $0.1<p<0.2$ (software value $\\approx0.167$)."
+      ],
+      "brief": "$df=9$, $1.383<1.504<1.833$: $0.1<p<0.2$.",
+      "img": "stat201-241-fx-q8.png"
+    },
+    {
+      "sec": "9.2",
+      "q": "The United States Golf Association tests golf balls to ensure that they conform to the rules of golf. Balls are tested for weight, diameter, roundness, and overall distance. The overall distance test is conducted by hitting balls with a driver swung by a mechanical device. Using a random sample of 277 distances (in yards) achieved by a particular brand of golf ball in the overall distance test, the mean distance came out to be 282 with a standard deviation of 12.06. Can you support a claim that mean distance achieved by this particular golf ball exceeds 280 yards? Find the $p$-value.",
+      "opts": [
+        "$0.00289$",
+        "$0.00578$",
+        "$0.00500$",
+        "$0.99711$",
+        "$0.99422$"
+      ],
+      "ans": 0,
+      "hints": [
+        "This is a large-sample test on a mean, so a $z$ statistic with $s$ in place of $\\sigma$ is used; the claim is one-sided.",
+        "State $H_1$ from the claim, compute the test statistic, and take the tail in the direction of $H_1$.",
+        "$z_0=\\dfrac{\\bar x-\\mu_0}{s/\\sqrt n}$; for $H_1:\\mu>\\mu_0$, $p=1-\\Phi(z_0)$."
+      ],
+      "steps": [
+        "$H_0:\\mu=280$ versus $H_1:\\mu>280$.",
+        "$z_0=\\dfrac{282-280}{12.06/\\sqrt{277}}=\\dfrac{2}{0.72462}=2.76$.",
+        "$p=1-\\Phi(2.76)=1-0.99711=0.00289$."
+      ],
+      "brief": "$z_0=2.76$; $p=1-\\Phi(2.76)=0.00289$."
+    },
+    {
+      "sec": "9.5",
+      "q": "A researcher claims that at least $10\\%$ of all football helmets have manufacturing flaws that could potentially cause injury to the wearer i.e. $H_0:p\\ge0.1$ against $H_1:p<0.1$. A sample of 200 helmets revealed that 16 helmets contained such defects. Does this finding support the researcher's claim? Using the critical value of $2.62$, which of the following statements correctly applies the decision rule and conclusion?",
+      "opts": [
+        "Since $z_0=-0.94$ and it is not less than $-2.62$, we fail to reject the null hypothesis and conclude that the researcher's claim is valid.",
+        "Since $z_0=-0.94$ and it is not less than $-2.62$, we reject the null hypothesis and conclude that the researcher's claim is not supported.",
+        "Since $z_0=-0.94$ and its absolute value is less than $2.62$, we accept the null hypothesis and conclude that the researcher's claim is false.",
+        "Since $z_0=-1.04$ and it is less than $2.62$, we accept the null hypothesis and conclude that the researcher's claim is correct.",
+        "Since $z_0=-1.04$ and it falls above $-2.62$, we reject the null hypothesis and determine that the researcher's claim is not true."
+      ],
+      "ans": 0,
+      "hints": [
+        "This is a one-sided (lower-tail) test on a population proportion.",
+        "Compute $z_0$ using the hypothesised proportion $p_0$ in the standard error, then compare with the lower critical value.",
+        "$z_0=\\dfrac{x-np_0}{\\sqrt{np_0(1-p_0)}}=\\dfrac{\\hat p-p_0}{\\sqrt{p_0(1-p_0)/n}}$; for $H_1:p<p_0$ reject if $z_0<-z_\\alpha$."
+      ],
+      "steps": [
+        "$\\hat p=16/200=0.08$ and $p_0=0.1$.",
+        "$z_0=\\dfrac{16-200(0.1)}{\\sqrt{200(0.1)(0.9)}}=\\dfrac{-4}{4.2426}=-0.94$.",
+        "$-0.94$ is not less than $-2.62$, so we fail to reject $H_0$; the data do not contradict the claim that $p\\ge0.1$, so the claim stands."
+      ],
+      "brief": "$z_0=-0.94>-2.62$: fail to reject $H_0$; claim remains valid."
+    },
+    {
+      "sec": "11.2",
+      "q": "Regression methods were used to analyze the data from a study investigating the relationship between roadway surface temperature ($x$) and pavement deflection ($y$). Summary quantities were $n=20$, $\\sum y_i=12.75$, $\\sum y_i^2=8.86$, $\\sum x_i=1478$, $\\sum x_i^2=143{,}215.8$, and $\\sum x_iy_i=1083.67$. Predict what pavement deflection would be observed when the surface temperature is $90^\\circ\\text{F}$? Note: for this question, round your calculations to 5 decimal places.",
+      "opts": [
+        "$0.70448$",
+        "$141.445$",
+        "$0.33008$",
+        "$0.00797$",
+        "$0.00416$"
+      ],
+      "ans": 0,
+      "hints": [
+        "This is simple linear regression: find the least-squares line first, then evaluate it at the given $x$.",
+        "Compute $S_{xx}$ and $S_{xy}$ from the sums, then the slope and the intercept.",
+        "$S_{xx}=\\sum x_i^2-\\dfrac{(\\sum x_i)^2}{n}$, $S_{xy}=\\sum x_iy_i-\\dfrac{\\sum x_i\\sum y_i}{n}$, $\\hat\\beta_1=\\dfrac{S_{xy}}{S_{xx}}$, $\\hat\\beta_0=\\bar y-\\hat\\beta_1\\bar x$."
+      ],
+      "steps": [
+        "$S_{xx}=143215.8-\\dfrac{1478^2}{20}=33991.6$ and $S_{xy}=1083.67-\\dfrac{1478(12.75)}{20}=141.445$.",
+        "$\\hat\\beta_1=\\dfrac{141.445}{33991.6}=0.00416$ and $\\hat\\beta_0=0.6375-0.00416(73.9)=0.33008$.",
+        "At $x=90$: $\\hat y=0.33008+0.00416(90)=0.70448$."
+      ],
+      "brief": "$\\hat\\beta_1=0.00416$, $\\hat\\beta_0=0.33008$; $\\hat y(90)=0.70448$."
+    },
+    {
+      "sec": "11.2",
+      "q": "Regression methods were used to analyze the data from a study investigating the relationship between roadway surface temperature ($x$) and pavement deflection ($y$). Summary quantities were $n=20$, $\\sum y_i=12.75$, $\\sum y_i^2=8.86$, $\\sum x_i=1478$, $\\sum x_i^2=143{,}215.8$, and $\\sum x_iy_i=1083.67$. What is the mean pavement deflection when the surface temperature is $90^\\circ\\text{F}$? Note: for this question, round your calculations to 5 decimal places.",
+      "opts": [
+        "$0.70448$",
+        "$141.445$",
+        "$0.33008$",
+        "$0.00797$",
+        "$0.00416$"
+      ],
+      "ans": 0,
+      "hints": [
+        "This is simple linear regression: find the least-squares line first, then evaluate it at the given $x$.",
+        "Compute $S_{xx}$ and $S_{xy}$ from the sums, then the slope and the intercept.",
+        "$S_{xx}=\\sum x_i^2-\\dfrac{(\\sum x_i)^2}{n}$, $S_{xy}=\\sum x_iy_i-\\dfrac{\\sum x_i\\sum y_i}{n}$, $\\hat\\beta_1=\\dfrac{S_{xy}}{S_{xx}}$, $\\hat\\beta_0=\\bar y-\\hat\\beta_1\\bar x$."
+      ],
+      "steps": [
+        "$S_{xx}=143215.8-\\dfrac{1478^2}{20}=33991.6$ and $S_{xy}=1083.67-\\dfrac{1478(12.75)}{20}=141.445$.",
+        "$\\hat\\beta_1=\\dfrac{141.445}{33991.6}=0.00416$ and $\\hat\\beta_0=0.6375-0.00416(73.9)=0.33008$.",
+        "At $x=90$: $\\hat y=0.33008+0.00416(90)=0.70448$."
+      ],
+      "brief": "$\\hat\\beta_1=0.00416$, $\\hat\\beta_0=0.33008$; $\\hat y(90)=0.70448$."
+    },
+    {
+      "sec": "11.4",
+      "q": "Consider the regression equation $\\hat y=38.02+0.774x$ and the following output generated from a dataset with $n=16$ (see the figure). Find the value of $a_2$ i.e. the $p$-value for testing the significance of $X$.",
+      "opts": [
+        "$0.10<a_2<0.20$",
+        "$0.05<a_2<0.10$",
+        "$0.20<a_2<0.50$",
+        "$0.01<a_2<0.02$",
+        "$0.02<a_2<0.05$"
+      ],
+      "ans": 0,
+      "hints": [
+        "This is the $t$-test on the slope; the missing $T$ must be computed first.",
+        "Divide the coefficient by its standard error, then bracket the two-sided $p$-value using the $t$ table with the right degrees of freedom.",
+        "$t_0=\\dfrac{\\hat\\beta_1}{se(\\hat\\beta_1)}$ with $df=n-2$; $p=2P(T_{n-2}>|t_0|)$."
+      ],
+      "steps": [
+        "$a_1=\\dfrac{0.774}{0.5116}=1.513$ and $df=n-2=14$.",
+        "In the $t_{14}$ row, $t_{0.10}=1.345$ and $t_{0.05}=1.761$, so $0.05<P(T>1.513)<0.10$.",
+        "Two-sided: $0.10<a_2<0.20$ (software value $\\approx0.152$)."
+      ],
+      "brief": "$t=0.774/0.5116=1.513$, $df=14$: $0.10<p<0.20$.",
+      "img": "stat201-241-fx-q13.png"
+    },
+    {
+      "sec": "11.4",
+      "q": "Consider the regression equation $\\hat y=38.02+0.774x$ and the following ANOVA output generated from a dataset with $n=16$ (see the figure; $b_1$ to $b_4$ are the missing entries in the Regression row). Find the value of $b_3$ i.e. the $F$-statistic for testing the significance of regression model.",
+      "opts": [
+        "$b_3=2.2895$",
+        "$b_3=0.4368$",
+        "$b_3=52.59$",
+        "$b_3=3.7564$",
+        "$b_3=0.774$"
+      ],
+      "ans": 0,
+      "hints": [
+        "This is the overall $F$-test in an ANOVA table for simple regression.",
+        "Get the regression sum of squares by subtraction, then its mean square.",
+        "$SSR=SST-SSE$, $MSR=\\dfrac{SSR}{df_R}$, $F_0=\\dfrac{MSR}{MSE}$."
+      ],
+      "steps": [
+        "$b_1=SSR=374.13-321.54=52.59$.",
+        "$b_2=MSR=52.59/1=52.59$ and $MSE=22.97$.",
+        "$b_3=\\dfrac{52.59}{22.97}=2.2895$."
+      ],
+      "brief": "$SSR=52.59$; $F=52.59/22.97=2.2895$.",
+      "img": "stat201-241-fx-q14.png"
+    },
+    {
+      "sec": "11.4",
+      "q": "Consider the regression equation $\\hat y=38.02+0.774x$ and the following ANOVA output generated from a dataset with $n=16$ (see the figure; $b_1$ to $b_4$ are the missing entries in the Regression row). Find the value of $b_4$ i.e. the $p$-value for testing the significance of regression model.",
+      "opts": [
+        "$0.1<b_4<0.25$",
+        "$0.05<b_4<0.1$",
+        "$0.025<b_4<0.05$",
+        "$0.01<b_4<0.025$",
+        "$0.005<b_4<0.01$"
+      ],
+      "ans": 0,
+      "hints": [
+        "This is the overall $F$-test; the $p$-value is an upper-tail $F$ probability.",
+        "Compute $F_0$ from the table, then compare with upper-tail $F$ critical values for the correct numerator and denominator degrees of freedom.",
+        "$F_0=\\dfrac{MSR}{MSE}$ with $(df_R,df_E)=(k,\\,n-k-1)$; $p=P(F_{k,n-k-1}>F_0)$."
+      ],
+      "steps": [
+        "$F_0=\\dfrac{52.59}{22.97}=2.29$ with $(1,14)$ degrees of freedom.",
+        "The upper critical values are $F_{0.25,1,14}=1.44$ and $F_{0.10,1,14}=3.10$, and $1.44<2.29<3.10$.",
+        "So $0.10<p<0.25$ (software value $\\approx0.152$)."
+      ],
+      "brief": "$F=2.29$ on $(1,14)$ df: $0.1<p<0.25$.",
+      "img": "stat201-241-fx-q14.png"
+    },
+    {
+      "sec": "11.6",
+      "q": "Data are available on the highway gasoline mileage performance and engine displacement for DaimlerChrysler vehicles for model year 2005. A simple linear model relating highway miles per gallon ($y$) to engine displacement ($x$) in $\\text{cm}^3$ was fitted using least squares. Following results are obtained: $\\sum y_i=620.5$, $\\sum y_i^2=18985.71$, $\\sum x_i=5017$, $\\sum x_i^2=1436737$, $\\sum x_iy_i=138662.8$, $n=21$, $S_{xx}=238151.8095$, $S_{xy}=-9577.6048$, $\\hat\\beta_1=-0.0402$, $\\hat\\beta_0=39.1516$, $SST=651.4124$, $SSR=385.0197$ and $SSE=266.3927$. Construct a $99\\%$ prediction interval on highway gasoline mileage when the engine displacement is $x=158\\ \\text{cm}^3$. Use $t_{\\alpha/2,19}=2.861$ and report the upper limit.",
+      "opts": [
+        "$43.9$ miles per gallon",
+        "$74.4$ miles per gallon",
+        "$35.7$ miles per gallon",
+        "$44.3$ miles per gallon",
+        "$81.2$ miles per gallon"
+      ],
+      "ans": 0,
+      "hints": [
+        "This is a prediction interval for a new observation in simple regression.",
+        "Compute the point prediction, the error variance estimate, and the standard error that includes the extra $1$ for a new observation.",
+        "$\\hat y_0\\pm t_{\\alpha/2,n-2}\\sqrt{\\hat\\sigma^2\\left[1+\\dfrac1n+\\dfrac{(x_0-\\bar x)^2}{S_{xx}}\\right]}$, with $\\hat\\sigma^2=\\dfrac{SSE}{n-2}$."
+      ],
+      "steps": [
+        "$\\hat y_0=39.1516-0.0402(158)=32.80$; $\\hat\\sigma^2=266.3927/19=14.0207$; $\\bar x=5017/21=238.905$.",
+        "$\\hat\\sigma^2\\left[1+\\dfrac1{21}+\\dfrac{(158-238.905)^2}{238151.8}\\right]=14.0207(1.07509)=15.0736$, so the standard error is $3.8825$.",
+        "Margin $=2.861(3.8825)=11.11$; upper limit $=32.80+11.11=43.9$."
+      ],
+      "brief": "$\\hat y_0=32.80$, se $=3.8825$; upper limit $32.80+2.861(3.8825)=43.9$."
+    },
+    {
+      "sec": "11.8",
+      "q": "An engineer at a semiconductor assembly plant is investigating the relationship between pull strength of a wire bond and the wire length. A random sample of 25 units is selected and tested, and the wire bond pull strength and wire length are observed for each unit. We assume that pull strength and wire length are jointly normally distributed. For fitting a simple linear regression of wire pull strength ($y$) on wire length ($x$), we have the following results: $S_{xx}=698.56$, $S_{xy}=2027.7132$ and $S_{yy}=6105.9$. What percent of variability in pull strength is explained by the linear relationship to wire length i.e. Coefficient of determination $R^2$?",
+      "opts": [
+        "$96.4\\%$",
+        "$95.0\\%$",
+        "$98.2\\%$",
+        "$99.4\\%$",
+        "$20.3\\%$"
+      ],
+      "ans": 0,
+      "hints": [
+        "$R^2$ is the proportion of total variation explained by the regression line.",
+        "Express $R^2$ using the corrected sums of squares given.",
+        "$R^2=\\dfrac{SSR}{SST}=\\dfrac{S_{xy}^2}{S_{xx}S_{yy}}$."
+      ],
+      "steps": [
+        "$SSR=\\hat\\beta_1S_{xy}=\\dfrac{S_{xy}^2}{S_{xx}}=\\dfrac{2027.7132^2}{698.56}=5885.9$.",
+        "$SST=S_{yy}=6105.9$.",
+        "$R^2=\\dfrac{5885.9}{6105.9}=0.9640$, i.e. $96.4\\%$."
+      ],
+      "brief": "$R^2=S_{xy}^2/(S_{xx}S_{yy})=0.9640=96.4\\%$."
+    },
+    {
+      "sec": "12.1",
+      "q": "A study was performed to investigate the shear strength of soil ($y$) as it related to depth in feet ($x_1$) and percent of moisture content ($x_2$). Ten observations were collected, and the fitted linear regression model is given as: $\\hat y=171.055+3.714x_1-1.126x_2$. Using this model, the predicted shear strength for a soil sample with a depth of 18 feet (i.e. $x_1=18$) and a moisture content of $43\\%$ (i.e. $x_2=43$) was calculated. Afterwards, the actual shear strength for this specific sample was measured to be $191.2$. What is the residual value for this observation?",
+      "opts": [
+        "$1.711$",
+        "$189.489$",
+        "$3.714$",
+        "$-1.126$",
+        "$171.055$"
+      ],
+      "ans": 0,
+      "hints": [
+        "A residual is the observed value minus the fitted value.",
+        "Substitute the given values into the fitted equation to get the predicted shear strength.",
+        "$e=y-\\hat y$ with $\\hat y=\\hat\\beta_0+\\hat\\beta_1x_1+\\hat\\beta_2x_2$."
+      ],
+      "steps": [
+        "$\\hat y=171.055+3.714(18)-1.126(43)=171.055+66.852-48.418=189.489$.",
+        "The observed value is $y=191.2$.",
+        "$e=191.2-189.489=1.711$."
+      ],
+      "brief": "$\\hat y=189.489$; $e=191.2-189.489=1.711$."
+    },
+    {
+      "sec": "12.2",
+      "q": "You have fit a regression model with two regressors to a data set that has 20 observations. The total sum of squares (SST) is 1200 and the model sum of squares (SSR) is 1000. Suppose that you add a third regressor to the model and as a result, the model sum of squares is now 1100. For testing the hypothesis that adding this regressor has improved the model significantly, what is the value of partial $F$-statistic?",
+      "opts": [
+        "$16$",
+        "$6.25$",
+        "$17$",
+        "$20$",
+        "$5.88$"
+      ],
+      "ans": 0,
+      "hints": [
+        "This is a partial (extra sum of squares) $F$-test for one added regressor.",
+        "Find the extra regression sum of squares and the error mean square of the full model.",
+        "$F_0=\\dfrac{SSR(\\text{full})-SSR(\\text{reduced})}{r\\cdot MSE(\\text{full})}$ with $MSE=\\dfrac{SST-SSR(\\text{full})}{n-k-1}$, where $r$ = number of added regressors."
+      ],
+      "steps": [
+        "Extra sum of squares $=1100-1000=100$, with $r=1$ added regressor.",
+        "Full model: $k=3$, $SSE=1200-1100=100$, $MSE=\\dfrac{100}{20-3-1}=6.25$.",
+        "$F_0=\\dfrac{100/1}{6.25}=16$."
+      ],
+      "brief": "Extra SS $=100$, $MSE_{\\text{full}}=100/16=6.25$; $F=16$."
+    },
+    {
+      "sec": "12.1",
+      "q": "A multiple linear regression model produced the following summary and ANOVA table (see the figure): $S=3.07827$, R-sq $=93.7\\%$, R-sq(adj) $=$ ??, with Regression $df=2$, $SS=842.37$; Residual error $df=6$, $SS=56.85$, $MS=9.48$; Total $df=8$, $SS=899.22$. Find the adjusted R-square.",
+      "opts": [
+        "$91.6\\%$",
+        "$94.8\\%$",
+        "$93.7\\%$",
+        "$92.3\\%$",
+        "$88.1\\%$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Adjusted $R^2$ penalises $R^2$ for the number of predictors, using mean squares.",
+        "Take the error and total degrees of freedom from the ANOVA table.",
+        "$R^2_{adj}=1-\\dfrac{SSE/(n-p)}{SST/(n-1)}$, where $p$ is the number of parameters, so $n-p$ is the error degrees of freedom."
+      ],
+      "steps": [
+        "$MSE=56.85/6=9.475$ and $SST/(n-1)=899.22/8=112.4025$.",
+        "$R^2_{adj}=1-\\dfrac{9.475}{112.4025}=1-0.0843$.",
+        "$R^2_{adj}=0.9157\\approx91.6\\%$."
+      ],
+      "brief": "$1-(56.85/6)/(899.22/8)=0.916=91.6\\%$.",
+      "img": "stat201-241-fx-q20.png"
+    }
+  ]
+}

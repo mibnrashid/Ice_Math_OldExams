@@ -1,0 +1,373 @@
+{
+  "course": "math208",
+  "term": "261",
+  "kind": "e1",
+  "date": "28 September 2026",
+  "minutes": 90,
+  "source": "math208-261-ex1.pdf",
+  "note": "Date and exam length are not printed on the master. Date taken from the Term 261 syllabus (Exam I, Monday 28 September 2026); 90 minutes is the usual length of a major exam.",
+  "qs": [
+    {
+      "sec": "1.1",
+      "q": "Suppose $y=Ce^{mx}$ is a solution of the differential equation \\[ y''+y'-6y=0. \\] If $y(0)=2$ and $\\lim_{x\\to\\infty} y(x)=0$, then $y$ is",
+      "opts": [
+        "$y=2e^{-3x}$",
+        "$y=-2e^{-2x}$",
+        "$y=2e^{-2x}$",
+        "$y=2e^{3x}$",
+        "$y=-2e^{-3x}$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Substituting an exponential $y=Ce^{mx}$ into the equation gives an equation for $m$.",
+        "Compute $y'$ and $y''$ for $y=Ce^{mx}$, substitute, and divide by $Ce^{mx}$.",
+        "Substituting $y=e^{rx}$ into $ay''+by'+cy=0$ gives the characteristic equation $ar^2+br+c=0$; $e^{rx}\\to0$ as $x\\to\\infty$ only when $r<0$, and $y(0)=C$ for $y=Ce^{rx}$."
+      ],
+      "steps": [
+        "With $y=Ce^{mx}$: $y'=mCe^{mx}$, $y''=m^2Ce^{mx}$, so $(m^2+m-6)Ce^{mx}=0$.",
+        "$m^2+m-6=(m+3)(m-2)=0$, so $m=-3$ or $m=2$.",
+        "$\\lim_{x\\to\\infty}y=0$ needs a negative exponent, so $m=-3$.",
+        "$y(0)=C=2$, so $y=2e^{-3x}$."
+      ],
+      "brief": "$m^2+m-6=0\\Rightarrow m=-3$ (decay), $C=y(0)=2$: $y=2e^{-3x}$."
+    },
+    {
+      "sec": "1.2",
+      "q": "A particle moves along a straight line with acceleration \\[ a(t)=\\frac{1}{t^2}, \\qquad t>0. \\] If $s(t)$ denotes the position of the particle, $s(1)=0$, and $s'(1)=1$, then $s(t)$ is",
+      "opts": [
+        "$s(t)=2t-\\ln t-2$",
+        "$s(t)=\\ln t$",
+        "$s(t)=2t+\\dfrac{1}{t}-3$",
+        "$s(t)=t+(\\ln t)^2-1$",
+        "$s(t)=t-(\\ln t)^2-1$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Acceleration is the derivative of velocity, and velocity is the derivative of position, so integrate twice.",
+        "Integrate $a(t)$ once to get $v(t)=s'(t)$ and use $s'(1)=1$ to find the first constant.",
+        "$v(t)=\\int a(t)\\,dt+C_1$ and $s(t)=\\int v(t)\\,dt+C_2$, using $\\int t^n\\,dt=\\dfrac{t^{n+1}}{n+1}$ for $n\\neq-1$ and $\\int t^{-1}\\,dt=\\ln t$ for $t>0$."
+      ],
+      "steps": [
+        "$v(t)=\\int t^{-2}\\,dt=-\\dfrac{1}{t}+C_1$.",
+        "$v(1)=-1+C_1=1$, so $C_1=2$ and $v(t)=2-\\dfrac{1}{t}$.",
+        "$s(t)=\\int\\left(2-\\dfrac1t\\right)dt=2t-\\ln t+C_2$ (since $t>0$).",
+        "$s(1)=2+C_2=0$, so $C_2=-2$ and $s(t)=2t-\\ln t-2$."
+      ],
+      "brief": "$v=2-\\frac1t$ (from $v(1)=1$), then $s=2t-\\ln t-2$ (from $s(1)=0$)."
+    },
+    {
+      "sec": "1.4",
+      "q": "The solution of the initial-value problem \\[ \\frac{dy}{dx}=\\frac{1+\\sin x}{y-1}, \\qquad y(0)=2, \\] is",
+      "opts": [
+        "$y=1+\\sqrt{2x-2\\cos x+3}$",
+        "$y=1+\\sqrt{2x+2\\cos x-1}$",
+        "$y=1+\\sqrt{2x-\\cos x+2}$",
+        "$y=1+\\sqrt{2x-4\\cos x+5}$",
+        "$y=1+\\sqrt{2x-2\\cos x+1}$"
+      ],
+      "ans": 0,
+      "hints": [
+        "The right side is a function of $x$ times a function of $y$, so the equation is separable.",
+        "Move every $y$ factor to the side with $dy$ and every $x$ factor to the side with $dx$, then integrate both sides.",
+        "For $\\dfrac{dy}{dx}=\\dfrac{g(x)}{f(y)}$: $\\int f(y)\\,dy=\\int g(x)\\,dx+C$. Use the initial condition for $C$, and when taking a square root choose the sign that fits the initial value."
+      ],
+      "steps": [
+        "Separate: $(y-1)\\,dy=(1+\\sin x)\\,dx$.",
+        "Integrate: $\\dfrac{(y-1)^2}{2}=x-\\cos x+C$.",
+        "At $x=0$, $y=2$: $\\dfrac12=-1+C$, so $C=\\dfrac32$.",
+        "$(y-1)^2=2x-2\\cos x+3$, and $y-1>0$ at $x=0$, so $y=1+\\sqrt{2x-2\\cos x+3}$."
+      ],
+      "brief": "Separable: $\\frac{(y-1)^2}{2}=x-\\cos x+\\frac32$, so $y=1+\\sqrt{2x-2\\cos x+3}$."
+    },
+    {
+      "sec": "1.4",
+      "q": "A hot cup of coffee is placed in a room whose temperature is $25^\\circ\\text{C}$. The temperature of the coffee is initially $85^\\circ\\text{C}$, and after 10 minutes it is $55^\\circ\\text{C}$. Using Newton's law of cooling, the temperature $T(t)$ after $t$ minutes is",
+      "opts": [
+        "$T(t)=25+60\\left(\\dfrac12\\right)^{t/10}$",
+        "$T(t)=25+60\\left(\\dfrac13\\right)^{t/10}$",
+        "$T(t)=25+60\\left(\\dfrac12\\right)^{10t}$",
+        "$T(t)=25+60\\left(\\dfrac23\\right)^{t/10}$",
+        "$T(t)=25+60\\left(\\dfrac12\\right)^{t/5}$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Newton's law of cooling says the temperature difference $T-A$ from the room decays exponentially.",
+        "Write the general cooling solution using the room and initial temperatures, then use the 10-minute reading to find the decay factor.",
+        "Newton's law gives $T(t)=A+(T_0-A)e^{-kt}$, and for any fixed time $t_1$, $e^{-kt}=\\left(e^{-kt_1}\\right)^{t/t_1}$."
+      ],
+      "steps": [
+        "$T(t)=25+(85-25)e^{-kt}=25+60e^{-kt}$.",
+        "$T(10)=55$: $25+60e^{-10k}=55$, so $e^{-10k}=\\dfrac{30}{60}=\\dfrac12$.",
+        "$e^{-kt}=\\left(e^{-10k}\\right)^{t/10}=\\left(\\dfrac12\\right)^{t/10}$.",
+        "So $T(t)=25+60\\left(\\dfrac12\\right)^{t/10}$."
+      ],
+      "brief": "$T=25+60e^{-kt}$, $e^{-10k}=\\frac{30}{60}=\\frac12$: $T=25+60(\\frac12)^{t/10}$."
+    },
+    {
+      "sec": "1.5",
+      "q": "The solution of the initial-value problem \\[ (x^2+1)y'+2xy=xe^x, \\qquad y(0)=1 \\] is",
+      "opts": [
+        "$y=\\dfrac{(x-1)e^x+2}{x^2+1}$",
+        "$y=\\dfrac{xe^x+1}{x^2+1}$",
+        "$y=\\dfrac{(x+1)e^x}{x^2+1}$",
+        "$y=\\dfrac{(x-1)e^x+1}{x^2+1}$",
+        "$y=\\dfrac{(x-2)e^x+2}{x^2+1}$"
+      ],
+      "ans": 0,
+      "hints": [
+        "This is a first-order linear equation in $y$.",
+        "Divide by $x^2+1$ to get the form $y'+P(x)y=Q(x)$ and find the integrating factor.",
+        "$\\rho=e^{\\int P\\,dx}$ and $(\\rho y)'=\\rho Q$; integration by parts is $\\int u\\,dv=uv-\\int v\\,du$."
+      ],
+      "steps": [
+        "Standard form: $y'+\\dfrac{2x}{x^2+1}y=\\dfrac{xe^x}{x^2+1}$, so $\\rho=e^{\\int \\frac{2x}{x^2+1}dx}=x^2+1$.",
+        "Then $\\left((x^2+1)y\\right)'=xe^x$.",
+        "Integrate by parts: $(x^2+1)y=(x-1)e^x+C$.",
+        "$y(0)=1$: $1=-1+C$, so $C=2$ and $y=\\dfrac{(x-1)e^x+2}{x^2+1}$."
+      ],
+      "brief": "$\\rho=x^2+1$: $((x^2+1)y)'=xe^x$, so $(x^2+1)y=(x-1)e^x+2$."
+    },
+    {
+      "sec": "1.6",
+      "q": "A one-parameter family of solutions of the differential equation \\[ y'=-4x^2+4xy-y^2+2 \\] is given by",
+      "opts": [
+        "$y=2x+\\dfrac{1}{x+C}$",
+        "$y=2x-\\dfrac{1}{x+C}$",
+        "$y=2x+\\dfrac{1}{C-x}$",
+        "$y=x+\\dfrac{1}{x+C}$",
+        "$y=2x+\\dfrac{1}{2(x+C)}$"
+      ],
+      "ans": 0,
+      "hints": [
+        "The right side depends on $x$ and $y$ only through one linear combination, so use a substitution $v=ax+by$.",
+        "Collect the quadratic terms into a perfect square of a linear expression in $x$ and $y$, and let $v$ be that expression.",
+        "With $v=ax+by+c$, $v'=a+by'$; the equation becomes $v'=f(v)$, which is separable: $\\int\\dfrac{dv}{f(v)}=\\int dx$."
+      ],
+      "steps": [
+        "Rewrite: $y'=-(2x-y)^2+2$.",
+        "Let $v=2x-y$, so $v'=2-y'=2-\\left(2-v^2\\right)=v^2$.",
+        "Separate: $\\dfrac{dv}{v^2}=dx$, so $-\\dfrac1v=x+C$ and $v=-\\dfrac{1}{x+C}$.",
+        "Then $y=2x-v=2x+\\dfrac{1}{x+C}$."
+      ],
+      "brief": "$v=2x-y$: $v'=v^2$, $v=-\\frac{1}{x+C}$, so $y=2x+\\frac{1}{x+C}$."
+    },
+    {
+      "sec": "1.6",
+      "q": "A general nonzero solution of the differential equation \\[ x^2y'=xy+3y^2 \\] is",
+      "opts": [
+        "$\\dfrac{x}{y}+3\\ln|x|=C$",
+        "$\\dfrac{y}{x}+3\\ln|x|=C$",
+        "$\\dfrac{x}{y}-3\\ln|x|=C$",
+        "$\\dfrac{3x}{y}+\\ln|x|=C$",
+        "$\\dfrac{x}{y}+3\\ln|y|=C$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Every term has the same total degree in $x$ and $y$, so the equation is homogeneous.",
+        "Divide by $x^2$ to write $y'$ as a function of $y/x$, then substitute $v=y/x$.",
+        "With $v=\\dfrac yx$: $y=vx$ and $y'=v+xv'$; the resulting equation in $v$ and $x$ is separable."
+      ],
+      "steps": [
+        "Divide by $x^2$: $y'=\\dfrac yx+3\\left(\\dfrac yx\\right)^2$.",
+        "Put $y=vx$, $y'=v+xv'$: $v+xv'=v+3v^2$, so $xv'=3v^2$.",
+        "Separate: $\\dfrac{dv}{v^2}=\\dfrac{3\\,dx}{x}$, so $-\\dfrac1v=3\\ln|x|+C$.",
+        "Since $\\dfrac1v=\\dfrac xy$: $\\dfrac xy+3\\ln|x|=C$ (renaming the constant)."
+      ],
+      "brief": "Homogeneous, $v=y/x$: $xv'=3v^2$, $-\\frac1v=3\\ln|x|+C$, so $\\frac xy+3\\ln|x|=C$."
+    },
+    {
+      "sec": "1.6",
+      "q": "By an appropriate substitution, the Bernoulli equation \\[ x\\sqrt[3]{y^2}\\,y'+5\\sqrt[3]{y^5}=x^3 \\] can be transformed into the linear equation",
+      "opts": [
+        "$3xv'+25v=5x^3$",
+        "$3xv'-25v=-5x^3$",
+        "$3xv'+5v=x^3$",
+        "$3xv'-25v=5x^3$",
+        "$3xv'-5v=x^3$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Write the equation in the Bernoulli form $y'+P(x)y=Q(x)y^n$ and identify $n$.",
+        "Divide by the coefficient of $y'$ to reach the standard Bernoulli form, then substitute $v=y^{1-n}$.",
+        "For $y'+Py=Qy^n$, the substitution $v=y^{1-n}$ gives $v'=(1-n)y^{-n}y'$, which turns the equation into a linear one in $v$."
+      ],
+      "steps": [
+        "Divide by $xy^{2/3}$: $y'+\\dfrac5x\\,y=x^2y^{-2/3}$, so $n=-\\dfrac23$.",
+        "Let $v=y^{1-n}=y^{5/3}$, so $v'=\\dfrac53y^{2/3}y'$.",
+        "Multiply the equation by $\\dfrac53y^{2/3}$: $v'+\\dfrac{25}{3x}v=\\dfrac53x^2$.",
+        "Multiply by $3x$: $3xv'+25v=5x^3$."
+      ],
+      "brief": "$n=-\\frac23$, $v=y^{5/3}$: $v'+\\frac{25}{3x}v=\\frac53x^2$, i.e. $3xv'+25v=5x^3$."
+    },
+    {
+      "sec": "1.6",
+      "q": "A general nonzero solution of the differential equation \\[ 2xy'+y^3e^{-2x}=2xy \\] is given by",
+      "opts": [
+        "$y^{-2}=e^{-2x}\\left(\\ln|x|+C\\right)$",
+        "$y^{-2}=e^{2x}\\left(\\ln|x|+C\\right)$",
+        "$y^{-2}=e^{-2x}\\left(-\\ln|x|+C\\right)$",
+        "$y^{2}=e^{-2x}\\left(\\ln|x|+C\\right)$",
+        "$y^{-2}=e^{-2x}\\left(\\dfrac12\\ln|x|+C\\right)$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Besides the linear terms the equation has a $y^3$ term, so it is a Bernoulli equation.",
+        "Divide by the coefficient of $y'$ and rearrange to reach $y'+P(x)y=Q(x)y^n$, then substitute $v=y^{1-n}$.",
+        "$v=y^{1-n}$ gives $v'=(1-n)y^{-n}y'$; solve the resulting linear equation with $\\rho=e^{\\int P\\,dx}$."
+      ],
+      "steps": [
+        "Divide by $2x$: $y'-y=-\\dfrac{e^{-2x}}{2x}y^3$, so $n=3$, $v=y^{-2}$ and $v'=-2y^{-3}y'$.",
+        "Multiply the equation by $-2y^{-3}$: $v'+2v=\\dfrac{e^{-2x}}{x}$.",
+        "$\\rho=e^{2x}$: $\\left(e^{2x}v\\right)'=\\dfrac1x$, so $e^{2x}v=\\ln|x|+C$.",
+        "Hence $y^{-2}=e^{-2x}\\left(\\ln|x|+C\\right)$."
+      ],
+      "brief": "Bernoulli $n=3$, $v=y^{-2}$: $v'+2v=\\frac{e^{-2x}}{x}$, $\\rho=e^{2x}$, $y^{-2}=e^{-2x}(\\ln|x|+C)$."
+    },
+    {
+      "sec": "1.6",
+      "q": "If $k(0)=2$ and the differential equation \\[ \\left(2y\\cos 2x+5x^4y^2\\right)dx+\\left(k(x)+2x^5y\\right)dy=0 \\] is exact, then $k(x)$ is",
+      "opts": [
+        "$2+\\sin 2x$",
+        "$2-\\sin 2x$",
+        "$\\sin 2x$",
+        "$2+2\\sin 2x$",
+        "$2+\\cos 2x$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Use the test for exactness of $M\\,dx+N\\,dy=0$.",
+        "Compute $\\partial M/\\partial y$ and $\\partial N/\\partial x$ and set them equal.",
+        "$M\\,dx+N\\,dy=0$ is exact if and only if $M_y=N_x$; integrate the resulting $k'(x)$ and use the given value of $k(0)$ for the constant."
+      ],
+      "steps": [
+        "$M_y=2\\cos 2x+10x^4y$ and $N_x=k'(x)+10x^4y$.",
+        "Exactness $M_y=N_x$ gives $k'(x)=2\\cos 2x$.",
+        "So $k(x)=\\sin 2x+C$, and $k(0)=C=2$.",
+        "Therefore $k(x)=2+\\sin 2x$."
+      ],
+      "brief": "$M_y=N_x\\Rightarrow k'=2\\cos2x$, so $k=\\sin2x+C$ with $k(0)=2$: $k=2+\\sin 2x$."
+    },
+    {
+      "sec": "1.6",
+      "q": "The general solution of the differential equation \\[ \\left(x^3+\\frac{y}{x}\\right)dx+\\left(y^2+\\ln x\\right)dy=0 \\] is",
+      "opts": [
+        "$3x^4+12y\\ln x+4y^3=C$",
+        "$x^4+y\\ln x+\\dfrac{y^3}{3}=C$",
+        "$\\dfrac{x^4}{4}+y\\ln x+y^3=C$",
+        "$\\dfrac{x^4}{4}+x\\ln|y|+\\dfrac{y^3}{3}=C$",
+        "$\\dfrac{x^4}{4}+y\\ln x+\\dfrac{y^2}{2}=C$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Check whether the equation is exact.",
+        "Compare $\\partial M/\\partial y$ with $\\partial N/\\partial x$, then integrate $M$ with respect to $x$ to start building $F(x,y)$.",
+        "If $M_y=N_x$, then $F=\\int M\\,dx+g(y)$ with $F_y=N$, and the solution is $F(x,y)=C$."
+      ],
+      "steps": [
+        "$M_y=\\dfrac1x=N_x$, so the equation is exact.",
+        "$F=\\int\\left(x^3+\\dfrac yx\\right)dx=\\dfrac{x^4}{4}+y\\ln x+g(y)$.",
+        "$F_y=\\ln x+g'(y)=y^2+\\ln x$, so $g(y)=\\dfrac{y^3}{3}$.",
+        "$\\dfrac{x^4}{4}+y\\ln x+\\dfrac{y^3}{3}=C$; multiply by 12: $3x^4+12y\\ln x+4y^3=C$."
+      ],
+      "brief": "Exact ($M_y=N_x=\\frac1x$): $\\frac{x^4}{4}+y\\ln x+\\frac{y^3}{3}=C$, times 12."
+    },
+    {
+      "sec": "1.6",
+      "q": "If a nonconstant solution of the differential equation \\[ yy''=(y')^2+y' \\] has tangent line $y=2x+1$ at $x=0$, then the solution is given by",
+      "opts": [
+        "$y=\\dfrac13+\\dfrac23e^{3x}$",
+        "$y=\\dfrac12+\\dfrac12e^{4x}$",
+        "$y=e^{2x}$",
+        "$y=-1+2e^{x}$",
+        "$y=3-2e^{-x}$"
+      ],
+      "ans": 0,
+      "hints": [
+        "The independent variable $x$ does not appear, so this is a reducible second-order equation with $x$ missing.",
+        "Read off $y(0)$ and $y'(0)$ from the tangent line, then set $p=y'$ with $y''=p\\,\\dfrac{dp}{dy}$.",
+        "With $x$ missing, set $p=y'$ and $y''=p\\dfrac{dp}{dy}$. A tangent line $y=mx+b$ at $x=x_0$ means $y(x_0)=mx_0+b$ and $y'(x_0)=m$."
+      ],
+      "steps": [
+        "The tangent line gives $y(0)=1$ and $y'(0)=2$.",
+        "With $p=y'$, $y''=p\\dfrac{dp}{dy}$: $yp\\dfrac{dp}{dy}=p^2+p$; for $p\\neq 0$, $y\\dfrac{dp}{dy}=p+1$.",
+        "Separate: $\\dfrac{dp}{p+1}=\\dfrac{dy}{y}$, so $p+1=Ay$; $y=1,\\ p=2$ gives $A=3$, so $y'=3y-1$.",
+        "$\\dfrac{dy}{3y-1}=dx$ gives $3y-1=Be^{3x}$; $y(0)=1$ gives $B=2$.",
+        "So $y=\\dfrac13+\\dfrac23e^{3x}$."
+      ],
+      "brief": "$p=y'$: $y\\frac{dp}{dy}=p+1$, $p+1=3y$, so $y'=3y-1$ and $y=\\frac13+\\frac23e^{3x}$."
+    },
+    {
+      "sec": "Ch. 3",
+      "q": "If \\[ a\\begin{bmatrix}1\\\\2\\end{bmatrix}+b\\begin{bmatrix}1\\\\-1\\end{bmatrix}+c\\begin{bmatrix}-1\\\\0\\end{bmatrix}+d\\begin{bmatrix}0\\\\1\\end{bmatrix}=\\begin{bmatrix}0\\\\0\\end{bmatrix}, \\] and every solution $(a,b,c,d)$ can be written in the form \\[ s(1,0,p,q)+t(0,1,r,l), \\] then the value of $\\dfrac{p+r}{q+l}$ is",
+      "opts": [
+        "$-2$",
+        "$2$",
+        "$-1$",
+        "$1$",
+        "$0$"
+      ],
+      "ans": 0,
+      "hints": [
+        "The vector equation is a homogeneous linear system in $a,b,c,d$.",
+        "Write the two component equations and solve them for $c$ and $d$ in terms of $a$ and $b$.",
+        "In a solution written as $s\\mathbf{u}+t\\mathbf{w}$, the variables whose entries are $1,0$ and $0,1$ are the free variables; express the other variables in terms of them and read off the vectors."
+      ],
+      "steps": [
+        "Components: $a+b-c=0$ and $2a-b+d=0$.",
+        "So $c=a+b$ and $d=-2a+b$.",
+        "$(a,b,c,d)=a(1,0,1,-2)+b(0,1,1,1)$, so $p=1,\\ q=-2,\\ r=1,\\ l=1$.",
+        "$\\dfrac{p+r}{q+l}=\\dfrac{2}{-1}=-2$."
+      ],
+      "brief": "$c=a+b$, $d=b-2a$: $(1,0,1,-2)$, $(0,1,1,1)$, so $\\frac{1+1}{-2+1}=-2$."
+    },
+    {
+      "sec": "4.2",
+      "q": "Which one of the following subsets is a subspace of $\\mathbb{R}^4$?",
+      "opts": [
+        "The set of all vectors $(x_1,x_2,x_3,x_4)$ such that $x_1+x_2+x_3=0$ and $2x_2-x_4=0$",
+        "The set of all vectors $(x_1,x_2,x_3,x_4)$ such that $x_1^2+x_2=0$",
+        "The set of all vectors $(x_1,x_2,x_3,x_4)$ such that $x_1-3x_2+x_4=2$",
+        "The set of all vectors $(x_1,x_2,x_3,x_4)$ such that $x_1\\le x_2$",
+        "The set of all vectors $(x_1,x_2,x_3,x_4)$ such that $x_1x_4=0$"
+      ],
+      "ans": 0,
+      "hints": [
+        "A subset is a subspace when it contains $\\mathbf{0}$ and is closed under addition and scalar multiplication.",
+        "Check each set for the zero vector first, then look for a pair of vectors or a scalar that breaks closure.",
+        "The solution set of a homogeneous linear system $A\\mathbf{x}=\\mathbf{0}$ is always a subspace of $\\mathbb{R}^n$."
+      ],
+      "steps": [
+        "$x_1+x_2+x_3=0,\\ 2x_2-x_4=0$ is a homogeneous linear system, so its solution set contains $\\mathbf{0}$ and is closed under sums and scalar multiples: a subspace.",
+        "$x_1^2+x_2=0$: $(1,-1,0,0)$ is in it, but $2(1,-1,0,0)=(2,-2,0,0)$ gives $4-2\\neq0$.",
+        "$x_1-3x_2+x_4=2$: the zero vector gives $0\\neq2$, so $\\mathbf{0}$ is not in it.",
+        "$x_1\\le x_2$: $(0,1,0,0)$ is in it, but $-1\\cdot(0,1,0,0)$ would need $0\\le-1$.",
+        "$x_1x_4=0$: $(1,0,0,0)$ and $(0,0,0,1)$ are in it, but their sum has $x_1x_4=1$."
+      ],
+      "brief": "Only the homogeneous linear system $x_1+x_2+x_3=0,\\ 2x_2-x_4=0$ gives a subspace."
+    },
+    {
+      "sec": "4.1",
+      "q": "The vectors $u=(1,0,k)$, $v=(0,1,1)$, and $w=(4-k,1,4)$ in $\\mathbb{R}^3$ are linearly independent when",
+      "opts": [
+        "$k\\neq 1,3$",
+        "$k=1$ or $k=3$",
+        "$k\\neq -1,-3$",
+        "$k=-1$ or $k=-3$",
+        "$k\\neq -1,3$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Three vectors in $\\mathbb{R}^3$ are independent exactly when the matrix built from them is invertible.",
+        "Put $u$, $v$, $w$ as the rows (or columns) of a $3\\times3$ matrix and compute its determinant as a function of $k$.",
+        "$n$ vectors in $\\mathbb{R}^n$ are linearly independent if and only if the matrix having them as columns (or rows) has nonzero determinant."
+      ],
+      "steps": [
+        "Take $\\det\\begin{bmatrix}1&0&k\\\\0&1&1\\\\4-k&1&4\\end{bmatrix}$ and expand along the first row.",
+        "$=1(4-1)-0+k\\left(0-(4-k)\\right)=3-4k+k^2$.",
+        "$k^2-4k+3=(k-1)(k-3)$.",
+        "The determinant is nonzero, so the vectors are independent, exactly when $k\\neq1,3$."
+      ],
+      "brief": "$\\det=k^2-4k+3=(k-1)(k-3)\\neq0$, so $k\\neq1,3$."
+    }
+  ]
+}

@@ -1,0 +1,329 @@
+{
+  "course": "math201",
+  "term": "233",
+  "kind": "e2",
+  "date": "",
+  "minutes": 90,
+  "source": "math201-233-e2.pdf",
+  "note": "The scan has no cover page: date and exam length are not printed. Date left empty; 90 minutes is assumed (usual length of a major exam). Official master key (all A) agrees with my own solutions for all 15 questions. The master pages carry handwritten work, which was not transcribed.",
+  "qs": [
+    {
+      "sec": "11.5",
+      "q": "A set of parametric equations for the line passing through the point $(2,3,4)$ and is perpendicular to the plane given by $3x+2y-z=6$ is given by",
+      "opts": [
+        "$x=2+3t,\\ y=3+2t,\\ z=4-t$",
+        "$x=2-t,\\ y=3+2t,\\ z=4+3t$",
+        "$x=3+2t,\\ y=2+3t,\\ z=-1+4t$",
+        "$x=1+t,\\ y=-1+t,\\ z=2+t$",
+        "$x=2+2t,\\ y=3+3t,\\ z=4+4t$"
+      ],
+      "ans": 0,
+      "hints": [
+        "A line perpendicular to a plane runs in the direction of the plane's normal vector.",
+        "Read the normal vector from the coefficients of the plane equation and use it as the direction vector of the line.",
+        "The plane $ax+by+cz=d$ has normal $\\langle a,b,c\\rangle$; the line through $(x_0,y_0,z_0)$ with direction $\\langle a,b,c\\rangle$ is $x=x_0+at,\\ y=y_0+bt,\\ z=z_0+ct$."
+      ],
+      "steps": [
+        "The normal of $3x+2y-z=6$ is $\\mathbf{n}=\\langle 3,2,-1\\rangle$.",
+        "The line is perpendicular to the plane, so its direction is $\\mathbf{n}$.",
+        "Through $(2,3,4)$: $x=2+3t,\\ y=3+2t,\\ z=4-t$."
+      ],
+      "brief": "Direction = normal $\\langle3,2,-1\\rangle$: $x=2+3t,\\ y=3+2t,\\ z=4-t$."
+    },
+    {
+      "sec": "11.5",
+      "q": "If $x+by+cz=d$ is an equation for the plane that passes through the points $P(0,0,0)$, $Q(1,0,1)$, and $R(-1,1,0)$, then $b+c+d=$",
+      "opts": ["$0$", "$1$", "$-1$", "$2$", "$-2$"],
+      "ans": 0,
+      "hints": [
+        "A plane is determined by a point and a normal vector, and the normal is perpendicular to two vectors lying in the plane.",
+        "Form two vectors in the plane from the three points and take their cross product to get a normal.",
+        "For vectors $\\mathbf{u},\\mathbf{v}$ in the plane, $\\mathbf{n}=\\mathbf{u}\\times\\mathbf{v}$ and the plane is $\\mathbf{n}\\cdot(\\langle x,y,z\\rangle-P)=0$. Scale so the coefficient of $x$ is 1."
+      ],
+      "steps": [
+        "$\\overrightarrow{PQ}=\\langle1,0,1\\rangle$ and $\\overrightarrow{PR}=\\langle-1,1,0\\rangle$.",
+        "$\\mathbf{n}=\\overrightarrow{PQ}\\times\\overrightarrow{PR}=\\langle-1,-1,1\\rangle$.",
+        "Plane through the origin: $-x-y+z=0$, i.e. $x+y-z=0$.",
+        "So $b=1$, $c=-1$, $d=0$ and $b+c+d=0$."
+      ],
+      "brief": "$\\mathbf n=\\overrightarrow{PQ}\\times\\overrightarrow{PR}=\\langle-1,-1,1\\rangle$, plane $x+y-z=0$: $b+c+d=0$."
+    },
+    {
+      "sec": "11.5",
+      "q": "If $(a,b,c)$ is the point of intersection between the plane $x+3y+z=6$ and the line $x=t,\\ y=1-t,\\ z=2+3t$, then $a+b+c=$",
+      "opts": ["$6$", "$5$", "$8$", "$-4$", "$-7$"],
+      "ans": 0,
+      "hints": [
+        "The intersection point lies on both the line and the plane.",
+        "Substitute the parametric expressions of the line into the plane equation and solve for $t$.",
+        "A point $(x(t),y(t),z(t))$ of the line lies on the plane $Ax+By+Cz=D$ exactly when $Ax(t)+By(t)+Cz(t)=D$; then substitute that $t$ back into the line."
+      ],
+      "steps": [
+        "Substitute: $t+3(1-t)+(2+3t)=6$.",
+        "This simplifies to $t+5=6$, so $t=1$.",
+        "The point is $(1,0,5)$.",
+        "$a+b+c=1+0+5=6$."
+      ],
+      "brief": "$t+3(1-t)+2+3t=6\\Rightarrow t=1$, point $(1,0,5)$, sum $6$."
+    },
+    {
+      "sec": "11.6",
+      "q": "The graph of the equation $4x^2-3y^2-12z^2=0$ is",
+      "opts": [
+        "an elliptic cone",
+        "a hyperboloid of two sheets",
+        "a hyperboloid of one sheet",
+        "an ellipsoid",
+        "an elliptic paraboloid"
+      ],
+      "ans": 0,
+      "hints": [
+        "This is a quadric surface; identify it from the signs of the squared terms and the constant.",
+        "Move the terms so that one squared variable is alone on one side, and note the right side is zero.",
+        "A quadric of the form $\\dfrac{x^2}{a^2}=\\dfrac{y^2}{b^2}+\\dfrac{z^2}{c^2}$ (all squares, no constant, no linear term) is an elliptic cone."
+      ],
+      "steps": [
+        "Rewrite as $4x^2=3y^2+12z^2$.",
+        "All terms are squares, there is no constant term and no linear term.",
+        "Slices $x=k$ are ellipses and the surface passes through the origin, so it is an elliptic cone with axis the $x$-axis."
+      ],
+      "brief": "$4x^2=3y^2+12z^2$ has the form of an elliptic cone (axis the $x$-axis)."
+    },
+    {
+      "sec": "13.1",
+      "q": "The domain of the function $f(x,y)=\\ln(y-x+2)$ is",
+      "opts": [
+        "$\\{(x,y): y>x-2\\}$",
+        "$\\{(x,y): y\\ge x-2\\}$",
+        "$\\{(x,y): y=x-2\\}$",
+        "$\\{(x,y): y>x-1\\}$",
+        "$\\{(x,y): y<x-2\\}$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Think about which inputs the natural logarithm accepts.",
+        "Set the expression inside the logarithm with the correct inequality and solve for $y$.",
+        "$\\ln u$ is defined exactly when $u>0$ (strictly positive)."
+      ],
+      "steps": [
+        "$\\ln(y-x+2)$ requires $y-x+2>0$.",
+        "Solving for $y$: $y>x-2$."
+      ],
+      "brief": "Need $y-x+2>0$, i.e. $y>x-2$."
+    },
+    {
+      "sec": "13.1",
+      "q": "An equation of the level curve of the function $f(x,y)=\\dfrac{x}{x^2+y^2}$ that passes through the point $(1,1)$ is",
+      "opts": [
+        "$x^2-2x+y^2=0$",
+        "$2x^2-x+2y^2=0$",
+        "$x^2-3x+y^2=-1$",
+        "$2x^2-3x+2y^2=1$",
+        "$x^2+x+y^2=3$"
+      ],
+      "ans": 0,
+      "hints": [
+        "A level curve is the set where $f(x,y)$ equals a constant.",
+        "Find the constant by evaluating $f$ at the given point, then set $f(x,y)$ equal to it and clear the denominator.",
+        "The level curve of $f$ through $(x_0,y_0)$ is $f(x,y)=f(x_0,y_0)$."
+      ],
+      "steps": [
+        "$f(1,1)=\\dfrac{1}{2}$, so the level curve is $\\dfrac{x}{x^2+y^2}=\\dfrac12$.",
+        "Clear the denominator: $2x=x^2+y^2$.",
+        "So $x^2-2x+y^2=0$."
+      ],
+      "brief": "$f(1,1)=\\frac12$, so $2x=x^2+y^2$, i.e. $x^2-2x+y^2=0$."
+    },
+    {
+      "sec": "13.2",
+      "q": "$\\lim_{(x,y)\\to(0,0)}\\frac{\\ln(2x^2+2y^2+1)}{x^2+y^2}=$",
+      "opts": ["$2$", "$\\dfrac12$", "$\\dfrac14$", "$0$", "$1$"],
+      "ans": 0,
+      "hints": [
+        "The expression depends on $x$ and $y$ only through $x^2+y^2$, and it is a $0/0$ form.",
+        "Let $u=x^2+y^2$ (or use polar coordinates with $r\\to0^+$) to reduce to a one-variable limit.",
+        "L'Hopital's rule: for a $0/0$ form, $\\lim\\dfrac{f}{g}=\\lim\\dfrac{f'}{g'}$ when the latter exists; also $\\dfrac{d}{du}\\ln(h(u))=\\dfrac{h'(u)}{h(u)}$."
+      ],
+      "steps": [
+        "Let $u=x^2+y^2\\to0^+$. The limit becomes $\\lim_{u\\to0^+}\\frac{\\ln(2u+1)}{u}$, a $0/0$ form.",
+        "By L'Hopital: $\\lim_{u\\to0^+}\\frac{2/(2u+1)}{1}$.",
+        "This equals $2$."
+      ],
+      "brief": "With $u=x^2+y^2$: $\\lim\\frac{\\ln(2u+1)}{u}=\\lim\\frac{2}{2u+1}=2$."
+    },
+    {
+      "sec": "13.2",
+      "q": "Which one of the following statements is TRUE: \\[ f(x,y)=\\frac{x^2y}{x^4+y^2} \\]",
+      "opts": [
+        "along the line $y=2x$, $\\lim_{(x,y)\\to(0,0)}f(x,y)=0$",
+        "along the line $y=-x$, $\\lim_{(x,y)\\to(0,0)}f(x,y)=-1$",
+        "along the parabola $y=x^2$, $\\lim_{(x,y)\\to(0,0)}f(x,y)=2$",
+        "$\\lim_{(x,y)\\to(0,0)}f(x,y)=\\dfrac12$",
+        "$\\lim_{(x,y)\\to(0,0)}f(x,y)=0$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Evaluate the function along each stated path by substituting the path into $f$.",
+        "Substitute each curve for $y$, simplify, and take the limit as $x\\to0$.",
+        "If two different paths to the same point give different limits, the two-variable limit does not exist."
+      ],
+      "steps": [
+        "Along $y=2x$: $f=\\dfrac{2x^3}{x^4+4x^2}=\\dfrac{2x}{x^2+4}\\to0$, so this statement is true.",
+        "Along $y=-x$: $f=\\dfrac{-x}{x^2+1}\\to0$, not $-1$.",
+        "Along $y=x^2$: $f=\\dfrac{x^4}{2x^4}=\\dfrac12$, not $2$.",
+        "The limit along $y=x^2$ is $\\frac12$ but along lines it is $0$, so the two-variable limit does not exist and the last two statements are false."
+      ],
+      "brief": "Along $y=2x$: $\\frac{2x}{x^2+4}\\to0$; the limit along $y=x^2$ is $\\frac12$, so no overall limit."
+    },
+    {
+      "sec": "13.3",
+      "q": "The slope of the surface $f(x,y)=xe^{x^2y}$ at the point $(1,2,e^2)$ in the $x$-direction is equal to",
+      "opts": ["$5e^2$", "$4e^2$", "$3e^2$", "$2e^2$", "$e^2$"],
+      "ans": 0,
+      "hints": [
+        "The slope in the $x$-direction is a partial derivative.",
+        "Differentiate $f$ with respect to $x$ holding $y$ constant, using the product rule and chain rule, then evaluate at $(1,2)$.",
+        "The slope in the $x$-direction at $(a,b)$ is $f_x(a,b)$; the product rule gives $(uv)'=u'v+uv'$ and $\\dfrac{d}{dx}e^{g}=g'e^{g}$."
+      ],
+      "steps": [
+        "$f_x=x\\,e^{x^2y}(2xy)+e^{x^2y}$.",
+        "At $(1,2)$: $e^{2}\\cdot4+e^{2}$.",
+        "So the slope is $5e^2$."
+      ],
+      "brief": "$f_x=2x^2ye^{x^2y}+e^{x^2y}$, so $f_x(1,2)=4e^2+e^2=5e^2$."
+    },
+    {
+      "sec": "13.3",
+      "q": "If $z=e^{-t}\\cos\\left(\\dfrac{x}{2}\\right)$, then $\\dfrac{\\partial z}{\\partial t}-4\\dfrac{\\partial^2z}{\\partial x^2}=$",
+      "opts": [
+        "$0$",
+        "$2e^{-t}\\cos\\left(\\dfrac{x}{2}\\right)$",
+        "$-2e^{-t}\\cos\\left(\\dfrac{x}{2}\\right)$",
+        "$2e^{-t}\\sin\\left(\\dfrac{x}{2}\\right)$",
+        "$-2e^{-t}\\sin\\left(\\dfrac{x}{2}\\right)$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Compute the needed partial derivatives separately and combine them.",
+        "Find $z_t$ (treat $x$ as constant) and differentiate twice with respect to $x$ (treat $t$ as constant).",
+        "$\\dfrac{d}{dx}\\cos(kx)=-k\\sin(kx)$ and $\\dfrac{d}{dx}\\sin(kx)=k\\cos(kx)$."
+      ],
+      "steps": [
+        "$z_t=-e^{-t}\\cos\\left(\\frac x2\\right)$.",
+        "$z_x=-\\frac12e^{-t}\\sin\\left(\\frac x2\\right)$, $z_{xx}=-\\frac14e^{-t}\\cos\\left(\\frac x2\\right)$.",
+        "$z_t-4z_{xx}=-e^{-t}\\cos\\left(\\frac x2\\right)+e^{-t}\\cos\\left(\\frac x2\\right)=0$."
+      ],
+      "brief": "$z_t=-e^{-t}\\cos\\frac x2$, $z_{xx}=-\\frac14e^{-t}\\cos\\frac x2$, so the difference is $0$."
+    },
+    {
+      "sec": "13.4",
+      "q": "Let $z=\\sqrt{29-x^2-y^2}$. If $(x,y)$ moves from the point $(3,4)$ to the point $(3.01,3.97)$, then the change in $z$ is approximately equal to",
+      "opts": [
+        "$\\dfrac{9}{200}$",
+        "$\\dfrac{1}{20}$",
+        "$\\dfrac{1}{25}$",
+        "$\\dfrac{7}{200}$",
+        "$\\dfrac{3}{25}$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Approximate the change $\\Delta z$ by the total differential $dz$.",
+        "Compute $z_x$ and $z_y$ at $(3,4)$ and the increments $dx$ and $dy$ from the two points.",
+        "$\\Delta z\\approx dz=f_x(a,b)\\,dx+f_y(a,b)\\,dy$ with $dx=\\Delta x$, $dy=\\Delta y$."
+      ],
+      "steps": [
+        "$dx=3.01-3=0.01$, $dy=3.97-4=-0.03$.",
+        "$z_x=\\dfrac{-x}{\\sqrt{29-x^2-y^2}}=-\\dfrac32$ and $z_y=\\dfrac{-y}{\\sqrt{29-x^2-y^2}}=-2$ at $(3,4)$.",
+        "$dz=-\\dfrac32(0.01)-2(-0.03)=-0.015+0.06=0.045=\\dfrac{9}{200}$."
+      ],
+      "brief": "$dz=-\\frac32(0.01)-2(-0.03)=0.045=\\frac{9}{200}$."
+    },
+    {
+      "sec": "13.5",
+      "q": "Let $w=xy^2+yz^2+zx^2$, $x=s+t^2$, $y=\\dfrac{s}{t}$, $z=s^2$. The value of $\\dfrac{\\partial w}{\\partial t}$ when $s=1,\\ t=1$ is equal to",
+      "opts": ["$5$", "$4$", "$12$", "$8$", "$0$"],
+      "ans": 0,
+      "hints": [
+        "Use the chain rule, since $w$ depends on $t$ through $x$ and $y$ (and $z$ does not depend on $t$).",
+        "Write $\\dfrac{\\partial w}{\\partial t}=w_x x_t+w_y y_t+w_z z_t$, and find the values of $x,y,z$ at $s=t=1$ first.",
+        "Chain rule: $\\dfrac{\\partial w}{\\partial t}=\\dfrac{\\partial w}{\\partial x}\\dfrac{\\partial x}{\\partial t}+\\dfrac{\\partial w}{\\partial y}\\dfrac{\\partial y}{\\partial t}+\\dfrac{\\partial w}{\\partial z}\\dfrac{\\partial z}{\\partial t}$."
+      ],
+      "steps": [
+        "At $s=t=1$: $x=2$, $y=1$, $z=1$.",
+        "$w_x=y^2+2xz=5$, $w_y=2xy+z^2=5$; $x_t=2t=2$, $y_t=-\\dfrac{s}{t^2}=-1$, $z_t=0$.",
+        "$\\dfrac{\\partial w}{\\partial t}=5(2)+5(-1)+0=5$."
+      ],
+      "brief": "$w_xx_t+w_yy_t=5\\cdot2+5\\cdot(-1)=5$ at $s=t=1$."
+    },
+    {
+      "sec": "13.5",
+      "q": "If $z$ is defined implicitly as a differentiable function of $x$ and $y$ by the equation \\[ xyz=\\sin(3x-2y-z), \\] then $\\dfrac{\\partial z}{\\partial x}=$",
+      "opts": [
+        "$\\dfrac{3\\cos(3x-2y-z)-yz}{\\cos(3x-2y-z)+xy}$",
+        "$\\dfrac{3\\sin(3x-2y-z)-yz}{\\sin(3x-2y-z)+xy}$",
+        "$\\dfrac{\\cos(3x-2y-z)+yz}{3\\cos(3x-2y-z)-xy}$",
+        "$\\dfrac{3yz-\\cos(3x-2y-z)}{xy+\\cos(3x-2y-z)}$",
+        "$\\dfrac{3\\cos(3x-2y-z)+xy}{\\cos(3x-2y-z)-yz}$"
+      ],
+      "ans": 0,
+      "hints": [
+        "This is implicit differentiation of a function of three variables.",
+        "Move everything to one side to define $F(x,y,z)=0$ and compute $F_x$ and $F_z$.",
+        "If $F(x,y,z)=0$ defines $z$ implicitly, then $\\dfrac{\\partial z}{\\partial x}=-\\dfrac{F_x}{F_z}$."
+      ],
+      "steps": [
+        "Let $F=\\sin(3x-2y-z)-xyz$.",
+        "$F_x=3\\cos(3x-2y-z)-yz$ and $F_z=-\\cos(3x-2y-z)-xy$.",
+        "$\\dfrac{\\partial z}{\\partial x}=-\\dfrac{F_x}{F_z}=\\dfrac{3\\cos(3x-2y-z)-yz}{\\cos(3x-2y-z)+xy}$."
+      ],
+      "brief": "$F=\\sin(3x-2y-z)-xyz$, $z_x=-F_x/F_z=\\frac{3\\cos(\\cdot)-yz}{\\cos(\\cdot)+xy}$."
+    },
+    {
+      "sec": "11.5",
+      "q": "The distance between the point $Q(1,1,1)$ and the line $L:\\ x=t,\\ y=-t,\\ z=2t$ is equal to",
+      "opts": [
+        "$\\dfrac{\\sqrt{21}}{3}$",
+        "$\\dfrac{\\sqrt{21}}{2}$",
+        "$\\dfrac{\\sqrt7}{4}$",
+        "$\\dfrac{\\sqrt7}{2}$",
+        "$\\dfrac{\\sqrt{21}}{4}$"
+      ],
+      "ans": 0,
+      "hints": [
+        "Use the point-to-line distance formula based on the cross product.",
+        "Pick a point $P$ on the line (for example at $t=0$), form $\\overrightarrow{PQ}$, and find the direction vector of the line.",
+        "The distance from $Q$ to the line through $P$ with direction $\\mathbf{u}$ is $D=\\dfrac{\\|\\overrightarrow{PQ}\\times\\mathbf{u}\\|}{\\|\\mathbf{u}\\|}$."
+      ],
+      "steps": [
+        "Take $P(0,0,0)$ on the line and $\\mathbf u=\\langle1,-1,2\\rangle$; then $\\overrightarrow{PQ}=\\langle1,1,1\\rangle$.",
+        "$\\overrightarrow{PQ}\\times\\mathbf u=\\langle3,-1,-2\\rangle$, with norm $\\sqrt{14}$.",
+        "$\\|\\mathbf u\\|=\\sqrt6$, so $D=\\dfrac{\\sqrt{14}}{\\sqrt6}=\\sqrt{\\dfrac73}=\\dfrac{\\sqrt{21}}{3}$."
+      ],
+      "brief": "$D=\\frac{\\|\\langle3,-1,-2\\rangle\\|}{\\|\\langle1,-1,2\\rangle\\|}=\\frac{\\sqrt{14}}{\\sqrt6}=\\frac{\\sqrt{21}}{3}$."
+    },
+    {
+      "sec": "11.6",
+      "q": "The set of all points equidistant from the point $(0,0,3)$ and the plane $z=-1$ forms",
+      "opts": [
+        "an elliptic paraboloid",
+        "a hyperbolic paraboloid",
+        "an elliptic cone",
+        "an ellipsoid",
+        "a hyperboloid of one sheet"
+      ],
+      "ans": 0,
+      "hints": [
+        "Write the condition for a general point $(x,y,z)$ as an equation and identify the resulting surface.",
+        "Set the distance to the point equal to the distance to the plane, square both sides and simplify.",
+        "The distance from $(x,y,z)$ to the plane $z=k$ is $|z-k|$; a surface $z=ax^2+by^2+c$ with $a,b>0$ is an elliptic paraboloid."
+      ],
+      "steps": [
+        "Equidistance: $\\sqrt{x^2+y^2+(z-3)^2}=|z+1|$.",
+        "Square: $x^2+y^2+z^2-6z+9=z^2+2z+1$.",
+        "So $x^2+y^2+8=8z$, i.e. $z=\\dfrac{x^2}{8}+\\dfrac{y^2}{8}+1$.",
+        "This is an elliptic (circular) paraboloid."
+      ],
+      "brief": "$\\sqrt{x^2+y^2+(z-3)^2}=|z+1|$ gives $z=\\frac{x^2+y^2}{8}+1$: elliptic paraboloid."
+    }
+  ]
+}
